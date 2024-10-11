@@ -1,0 +1,45 @@
+uuid: 3f5262ba-87f8-48ab-a683-7cd9eaf4042a
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_asset_type
+field_name: field_asset_type
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Animation
+      label: Animation
+    -
+      value: Audio
+      label: Audio
+    -
+      value: Film
+      label: Film
+    -
+      value: Illustration
+      label: Illustration
+    -
+      value: Image
+      label: Image
+    -
+      value: PDF
+      label: PDF
+    -
+      value: 'Technical Assets'
+      label: 'Technical Assets'
+    -
+      value: Templates
+      label: Templates
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

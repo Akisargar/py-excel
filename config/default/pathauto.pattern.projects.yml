@@ -1,0 +1,22 @@
+uuid: d8b3814b-7e2a-4c06-bb48-2d3d7f803ffc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: projects
+label: 'Project(Case Studies)'
+type: 'canonical_entities:node'
+pattern: '/projects/[node:title]'
+selection_criteria:
+  a2a8fecb-faad-4500-9ea2-ae5c866286d0:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: a2a8fecb-faad-4500-9ea2-ae5c866286d0
+    context_mapping:
+      node: node
+    bundles:
+      project: project
+selection_logic: and
+weight: -5
+relationships: {  }

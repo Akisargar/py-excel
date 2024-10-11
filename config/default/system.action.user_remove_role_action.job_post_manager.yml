@@ -1,0 +1,14 @@
+uuid: 9b287e9c-84be-43f3-b50c-eed1cbb54988
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.job_post_manager
+  module:
+    - user
+id: user_remove_role_action.job_post_manager
+label: 'Remove the Job Post Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: job_post_manager

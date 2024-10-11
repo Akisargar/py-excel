@@ -1,0 +1,24 @@
+uuid: a4b25321-ec09-4db3-aab9-475d0998b414
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.decking_cladding_homepage_logo_desktop
+    - image.style.decking_cladding_homepage_logo_mobile
+  theme:
+    - millboard
+id: decking_cladding_logo_on_homepage_responsive_image_style
+label: 'Decking & Cladding logo on Homepage Responsive Image Style'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: decking_cladding_homepage_logo_desktop
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: decking_cladding_homepage_logo_mobile
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: decking_cladding_homepage_logo_mobile

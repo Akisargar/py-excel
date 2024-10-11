@@ -1,0 +1,378 @@
+uuid: 3c852715-5b42-44fc-bd2a-2ea2076edac2
+langcode: en-gb
+status: open
+dependencies:
+  module:
+    - hubspot
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: sample_order_form
+title: 'UK Version Sample Order Form'
+description: '<p>This form is for the sample order.</p>'
+categories: {  }
+elements: |-
+  sample_names:
+    '#type': webform_entity_checkboxes
+    '#title': 'Sample Names'
+    '#required': true
+    '#attributes':
+      class:
+        - sample-name-checkbox
+    '#target_type': commerce_product_variation
+    '#selection_handler': views
+    '#selection_settings':
+      view:
+        view_name: product_variation_sample_order_form
+        display_name: entity_reference_1
+        arguments: {  }
+  sample_names_hubspot:
+    '#type': textfield
+    '#title': 'Sample Names Hubspot'
+    '#title_display': none
+    '#attributes':
+      class:
+        - sample-names-hubspot
+  first_name:
+    '#type': textfield
+    '#title': 'First Name'
+    '#required': true
+    '#required_error': 'First Name is required'
+  last_name:
+    '#type': textfield
+    '#title': 'Last Name'
+    '#required': true
+    '#required_error': 'Last Name is required'
+  email_address:
+    '#type': email
+    '#title': 'Email Address'
+    '#required': true
+    '#required_error': 'Email Address is required'
+  telephone_number:
+    '#type': tel
+    '#title': 'Telephone Number'
+    '#required': true
+    '#required_error': 'Telephone Number is required'
+  company:
+    '#type': textfield
+    '#title': 'Company Name'
+  address:
+    '#type': pca_address
+    '#title': Address
+    '#title_display': none
+    '#loqate_api_key': loquate_key
+  this_project_is_to_be_installed_at_:
+    '#type': select
+    '#title': 'This project is to be installed at:'
+    '#options':
+      'My Home': 'My Home'
+      "My Client's Home": "My Client's Home"
+      'A Commercial Project': 'A Commercial Project'
+    '#select2': true
+    '#required': true
+  which_of_the_following_are_you:
+    '#type': select
+    '#title': 'Which of the following are you?'
+    '#options':
+      Homeowner: Homeowner
+      Contractor: Contractor
+      Builder: Builder
+      Architect/Designer: Architect/Designer
+      Dealer: Dealer
+      Consultancy: Consultancy
+      Manufacturer: Manufacturer
+      Press: Press
+      Two-stepper: Two-stepper
+      One-stepper: One-stepper
+    '#select2': true
+    '#required': true
+    '#required_error': 'This field is required'
+  project_type_name:
+    '#type': checkboxes
+    '#title': 'Project Type'
+    '#options':
+      'Millboard Decking': 'Millboard Decking'
+      'Envello Cladding': 'Envello Cladding'
+    '#required': true
+    '#attributes':
+      class:
+        - project-type-checkbox
+  project_size:
+    '#type': select
+    '#title': 'Project Size'
+    '#options':
+      'Less than 20 m2': 'Less than 20 m2'
+      'Between 21-100 m2': 'Between 21-100 m2'
+      'More than 101 m2': 'More than 101 m2'
+      'I don’t know': 'I don’t know'
+    '#select2': true
+    '#required': true
+    '#required_error': 'Project Size is required'
+  when_will_you_start_your_project_:
+    '#type': select
+    '#title': 'Project Start Time'
+    '#options':
+      'Within 1 Month': 'Within 1 Month'
+      '1-3 Months': '1-3 Months'
+      '3-6 Months': '3-6 Months'
+      '6+ Months': '6+ Months'
+    '#select2': true
+    '#required': true
+    '#required_error': 'When will you start your project is required'
+  millboard_is_committed_to_protecting_and_respecting_your_privacy:
+    '#type': label
+    '#title': 'Millboard is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below to say how you would like us to contact you:'
+  i_agree_to_receive_other_communications_from_millboard_:
+    '#type': checkbox
+    '#title': 'I agree to receive other communications from Millboard.'
+    '#wrapper_attributes':
+      class:
+        - sample-order-form-agreement-checkbox
+  in_order_to_provide_you_the_content_requested_we_need_to_store_a:
+    '#type': label
+    '#title': 'In order to provide you the content requested, we need to store and process your personal data. If you consent to us storing your personal data for this purpose, please tick the checkbox below.'
+  i_agree_to_allow_millboard_to_store_and_process_my_personal_data:
+    '#type': checkbox
+    '#title': 'I agree to allow Millboard to store and process my personal data.'
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - sample-order-form-agreement-checkbox
+  you_can_unsubscribe_from_these_communications_at_any_time_for_mo:
+    '#type': label
+    '#title': 'You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - order-a-sample-submit
+    '#submit__label': Submit
+    '#submit__attributes':
+      class:
+        - coh-style-primary-button
+  website_order_code:
+    '#type': textfield
+    '#title': 'Website Order Code'
+    '#title_display': none
+    '#wrapper_attributes':
+      class:
+        - website-order-code
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes:
+    class:
+      - coh-style-checkout-form-style
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_url: '/[language:langcode]/thank-you'
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  hubspot_webform_handler:
+    id: hubspot_webform_handler
+    handler_id: hubspot_webform_handler
+    label: 'HubSpot Webform Handler'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      form_guid: 0d010854-c913-4066-b89c-b014f30f36eb
+      field_mapping:
+        sample_names: sample_names_hubspot
+        firstname: first_name
+        lastname: last_name
+        email: email_address
+        phone: telephone_number
+        company: company
+        address: 'address:address_line1'
+        city: 'address:locality'
+        zip: 'address:postal_code'
+        country: 'address:country_code'
+        this_project_is_to_be_installed_at: this_project_is_to_be_installed_at_
+        latest_project_category: project_type_name
+        project_start_time_dropdown: when_will_you_start_your_project_
+        project_size_dropdown: project_size
+      legal_consent:
+        include: never
+      subscriptions: null
+variants: {  }

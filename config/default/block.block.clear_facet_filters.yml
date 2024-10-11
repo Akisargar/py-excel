@@ -1,0 +1,31 @@
+uuid: 0f846bf1-cd98-4adf-b808-b03bf271b642
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - acquia_cms_search
+    - cohesion
+    - collapsiblock
+  theme:
+    - cohesion_theme
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+_core:
+  default_config_hash: gfXkrIBghr4IHRjXzsaLFmvqXsGWU8Qw4EmthxwN9EQ
+id: clear_facet_filters
+theme: cohesion_theme
+region: dx8_hidden
+weight: 0
+provider: null
+plugin: clear_facet_filters
+settings:
+  id: clear_facet_filters
+  label: 'Clear Facet Filters'
+  label_display: '0'
+  provider: acquia_cms_search
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    negate: false
+    using_master_template: 0

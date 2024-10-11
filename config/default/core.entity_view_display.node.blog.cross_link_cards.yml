@@ -1,0 +1,48 @@
+uuid: 0145975e-c7b7-4b80-a44a-56bacff5d6cb
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cross_link_cards
+    - field.field.node.blog.field_blog_builder
+    - field.field.node.blog.field_blog_category
+    - field.field.node.blog.field_blog_image
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_product_type
+    - field.field.node.blog.field_publish_date
+    - field.field.node.blog.field_subtitle
+    - field.field.node.blog.field_title_override
+    - node.type.blog
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.blog.cross_link_cards
+targetEntityType: node
+bundle: blog
+mode: cross_link_cards
+content:
+  field_blog_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: cross_link_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_blog_builder: true
+  field_blog_category: true
+  field_metatag: true
+  field_product_type: true
+  field_publish_date: true
+  field_subtitle: true
+  field_title_override: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

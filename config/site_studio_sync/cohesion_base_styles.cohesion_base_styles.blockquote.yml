@@ -1,0 +1,167 @@
+uuid: 05db1a38-8f84-48cf-a980-e78ee360c2aa
+langcode: en
+status: true
+dependencies: {  }
+label: 'Block quote'
+id: blockquote
+json_values: |
+  {
+      "preview": {
+          "text": "<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this.<\/p>\n\n<blockquote>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.<\/blockquote>\n\n<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.&nbsp;<\/p>\n",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "blockquote",
+              "class": "",
+              "combinator": "",
+              "pseudo": ""
+          },
+          "styles": {
+              "xl": {
+                  "font-size": {},
+                  "line-height": {},
+                  "margin": {
+                      "margin-left": {},
+                      "margin-top": {},
+                      "margin-bottom": {}
+                  },
+                  "color": {},
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  },
+                  "border-left-width": {},
+                  "border-left-style": {},
+                  "border-left-color": {},
+                  "display": {},
+                  "flex-container": {
+                      "flex-direction": {}
+                  },
+                  "width": {}
+              },
+              "lg": {
+                  "font-size": {},
+                  "padding": {
+                      "padding-left": {}
+                  },
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              },
+              "sm": {
+                  "font-size": {},
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              },
+              "ps": {
+                  "font-size": {},
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              },
+              "md": {
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "xs": {
+                  "font-size": {
+                      "value": "14"
+                  },
+                  "line-height": {
+                      "value": "24"
+                  },
+                  "font-family": {
+                      "value": "$coh-font-f37 ginger regular"
+                  }
+              }
+          }
+      },
+      "variableFields": [],
+      "previewModel": {}
+  }
+json_mapper: |
+  {
+      "styles": {
+          "selectorType": "topLevel",
+          "items": [],
+          "title": "Block quote",
+          "formDefinition": [
+              {
+                  "formKey": "font",
+                  "children": [
+                      {
+                          "formKey": "font-sizing-and-alignment",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "font-size",
+                                  "active": true
+                              },
+                              {
+                                  "name": "line-height",
+                                  "active": true
+                              },
+                              {
+                                  "name": "text-align",
+                                  "active": false
+                              },
+                              {
+                                  "name": "letter-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "word-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "text-indent",
+                                  "active": false
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "font-and-color",
+                          "activeFields": [
+                              {
+                                  "name": "font-family",
+                                  "active": true
+                              },
+                              {
+                                  "name": "font-weight",
+                                  "active": false
+                              },
+                              {
+                                  "name": "color",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "form": null
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: false
+custom: null

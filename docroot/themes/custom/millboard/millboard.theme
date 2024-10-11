@@ -1,0 +1,469 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the millboard theme.
+ */
+
+use Drupal\acquia_dam\Plugin\media\Source\Asset;
+use Drupal\commerce_product\Entity\Product;
+use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
+use Drupal\views\Views;
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function millboard_preprocess_page(&$variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    // Disable page cache for the front page.
+    $variables['#cache']['max-age'] = 0;
+  }
+  $variables['#attached']['library'][] = 'millboard_pim_integration/millboard_pim_integration.basket';
+}
+
+/**
+ * Implements hook_preprocess_pager().
+ */
+function millboard_preprocess_pager(&$variables) {
+  $element = $variables['pager']['#element'];
+  $pager_manager = \Drupal::service('pager.manager');
+  $pager = $pager_manager
+    ->getPager($element);
+  if (!isset($pager)) {
+    return;
+  }
+  $pager_max = $pager
+    ->getTotalPages();
+  $variables['items']['total_pages'] = $pager_max;
+}
+
+/**
+ * Implements hook_preprocess_views_view_fields().
+ */
+function millboard_preprocess_views_view_fields(&$variables) {
+  $view_id = $variables['view']->id();
+  $display_id = $variables['view']->current_display;
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if ($view_id === 'millboard_image_gallery' && $display_id === 'gallery_block') {
+    $media_id = $variables['fields']['mid']->content->__toString();
+    unset($variables['fields']['mid']);
+    $exposed_filter_input = $variables['view']->getExposedInput();
+    $popup_url = '/popup/' .
+      ($exposed_filter_input['field_type_of_project_target_id'] ?? 'no_data') . '/' .
+      ($exposed_filter_input['collection'] ?? 'no_data') . '/' .
+      ($exposed_filter_input['colour'] ?? 'no_data') . '/' .
+      ($exposed_filter_input['field_location_target_id'] ?? 'no_data') . '/' .
+      ($exposed_filter_input['sort_by'] ?? 'no_data') . '/' .
+      ($exposed_filter_input['sort_order'] ?? 'no_data') . '/' .
+      remove_tags_and_newlines($media_id);
+    $variables['popup_url'] = $popup_url;
+  }
+  elseif ($view_id === 'inspiration_gallery' && $display_id === 'inspiration_image_block') {
+    $product_id = reset($variables['view']->args);
+    $media_id = $variables['fields']['mid']->content->__toString();
+    unset($variables['fields']['mid']);
+    $variables['popup_url'] = '/popup/' . $product_id . '/' . remove_tags_and_newlines($media_id) . '/' . $language;
+  }
+}
+
+/**
+ * Implements template_preprocess_views_exposed_form().
+ */
+function millboard_preprocess_views_exposed_form(&$variables) {
+  if ($variables['form']['#id'] == 'views-exposed-form-millboard-find-installers-where-to-buy') {
+    if (isset($variables["form"]["field_type_of_inst_dist_value"])) {
+      // Get the configuration values.
+      $config = \Drupal::config('millboard_common.settings');
+      $key_distributor = $config->get('key_distributor');
+      $approved_installer = $config->get('approved_installer');
+      $premier_distributor = $config->get('premier_distributor');
+      // Add a description as suffix to the filter.
+      if (isset($variables["form"]["field_type_of_inst_dist_value"]["key_distributor"])) {
+        $variables["form"]["field_type_of_inst_dist_value"]["key_distributor"]['#suffix'] = "<p class='coh-style-paragraph-small'>" . $key_distributor . '</p>';
+      }
+      if (isset($variables["form"]["field_type_of_inst_dist_value"]["approved_installer"])) {
+        $variables["form"]["field_type_of_inst_dist_value"]["approved_installer"]['#suffix'] = "<p class='coh-style-paragraph-small'>" . $approved_installer . '</p>';
+      }
+      if (isset($variables["form"]["field_type_of_inst_dist_value"]["premier_distributor"])) {
+        $variables["form"]["field_type_of_inst_dist_value"]["premier_distributor"]['#suffix'] = "<p class='coh-style-paragraph-small'>" . $premier_distributor . '</p>';
+      }
+    }
+  }
+}
+
+/**
+ * Removes tags and new line from string.
+ *
+ * @param string $string
+ *   The string.
+ *
+ * @return string
+ *   The formatted string.
+ */
+function remove_tags_and_newlines(string $string): string {
+  $stringWithoutTags = strip_tags($string);
+  return str_replace("\n", "", $stringWithoutTags);
+}
+
+/**
+ * Gets the url from markup.
+ *
+ * @param string $markup
+ *   The Markup.
+ *
+ * @return array
+ *   The Url.
+ */
+function get_href($markup) {
+  $pattern = '/<a\s[^>]*\bhref\s*=\s*[\'"]([^\'"]*)[\'"]/i';
+  preg_match_all($pattern, $markup, $matches);
+  return $matches[1];
+}
+
+/**
+ * Removes extension and - from the file name.
+ *
+ * @param string $fileName
+ *   The File Name.
+ *
+ * @return string
+ *   The File Name.
+ */
+function get_title_from_filename($fileName) :string {
+  preg_match_all('/[\p{L}\d]+/', $fileName, $matches);
+  $words = $matches[0];
+  array_pop($words);
+  $title = (string) implode(' ', $words);
+  return $title;
+}
+
+/**
+ * Convert the Bytes to Megabytes.
+ *
+ * @param string $bytes
+ *   The File Name.
+ *
+ * @return float
+ *   The Megabyte value.
+ */
+function bytes_to_megabytes($bytes) {
+  return round((float) $bytes / (1024 * 1024), 1) . 'MB';
+}
+
+/**
+ * Implements hook_preprocess_commerce_product_variation().
+ */
+function millboard_preprocess_commerce_product_variation(array &$variables) {
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  // Get the product variation entity from the variables.
+  $product_variation = $variables['elements']['#commerce_product_variation'];
+  $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  // Check if the product variation has a product type associated with it.
+  if ($product_variation->get('field_product_type')->target_id) {
+    $term = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->load($product_variation->get('field_product_type')->target_id);
+    /** @var Drupal\taxonomy\Entity\Term $term */
+    $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $langcode);
+    $variation_product_type = $term->get('name')->value;
+    $variables['variation_product_type'] = $variation_product_type;
+  }
+  // Check if the product variation has a product associated with it.
+  if ($product_variation->hasField('product_id') && !$product_variation->get('product_id')->isEmpty()) {
+    // Load the product using the product ID.
+    $product_id = $product_variation->get('product_id')->target_id;
+    $product = Product::load($product_id);
+    // Add the product title to the variables.
+    $variables['product_title'] = $product->getTitle();
+  }
+
+  // Check if the product variation has an attribute color associated with it.
+  if ($product_variation->getAttributeValue('attribute_colour')) {
+    // Add the attribute_colour to the variables.
+    if ($langcode == 'fr-fr') {
+      $variables['attribute_colour'] = $product_variation->getAttributeValue('attribute_color_fr')->getName();
+    }
+    else {
+      $variables['attribute_colour'] = $product_variation->getAttributeValue('attribute_colour')->getName();
+    }
+  }
+  // Check if the product variation has an attribute width associated with it.
+  if ($product_variation->getAttributeValue('attribute_width')) {
+
+    // Add the attribute_width to the variables.
+    $variables['attribute_width'] = $product_variation->getAttributeValue('attribute_width')->getName();
+    $variables['attribute_width_inches'] = $product_variation->getAttributeValue('attribute_width_inches')->getName();
+  }
+  $properties = [];
+  $properties['name'] = 'Cladding';
+  $terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadByProperties($properties);
+  $term = reset($terms);
+  /** @var Drupal\taxonomy\Entity\Term $term */
+  $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $langcode);
+  if ($variables['variation_product_type'] === $term->getName()) {
+    $variables['attribute_width'] = $product_variation->getAttributeValue('attribute_installed_width')->getName();
+    $variables['attribute_width_inches'] = $product_variation->getAttributeValue('attribute_installed_width_inches')->getName();
+  }
+  // Check if the product variation has a product images associated with it.
+  if ($product_variation->get('field_swatch')->target_id) {
+    $media = Media::load($product_variation->get('field_swatch')->target_id);
+    /** @var \Drupal\media\MediaInterface $source */
+    $source = $media->getSource();
+    if (isset($source) && 'acquia_dam_asset:image' == $source->getPluginId()) {
+      if (isset($source->getMetadata($media, 'thumbnails')['125px']['url'])) {
+        $variables['variation_image_thumbnail'] = $source->getMetadata($media, 'thumbnails')['125px']['url'];
+      }
+    }
+  }
+
+  if ($variables['elements']['#entity_type'] == 'commerce_product_variation' && $view_mode = $variables['elements']['#view_mode']) {
+    // Add custom variables based on the view mode.
+    switch ($view_mode) {
+      case 'composite_decking_collections':
+      case 'composite_cladding_collections':
+        $route_match = \Drupal::service('current_route_match');
+        $product_alias = $route_match->getParameter('arg_0');
+
+        $path_alias_manager = \Drupal::service('path_alias.manager');
+        $product_internal_path = $path_alias_manager->getPathByAlias('/' . $product_alias);
+
+        $params = Url::fromUserInput($product_internal_path)->getRouteParameters();
+        $product_id = $params['commerce_product'];
+
+        $product = Product::load($product_id);
+        $variables['product_title'] = $product->getTitle();
+
+        break;
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_alter().
+ */
+function millboard_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'field' &&
+    isset($variables['element']['0']) &&
+    isset($variables['element']['0']['#theme']) &&
+    $variables['element']['0']['#theme'] === 'media' &&
+    isset($variables['element']['0']['#view_mode']) &&
+    $variables['element']['0']['#view_mode'] === 'inspiration_gallery' &&
+    isset($variables['element']['0']['#media']) &&
+    ($variables['element']['0']['#media']->bundle() === 'acquia_dam_image_asset' ||
+    $variables['element']['0']['#media']->bundle() === 'image')
+  ) {
+    $suggestions[] = 'field__millboard_inspiration_gallery';
+  }
+
+  if ($hook == 'field' && $variables["element"]["#formatter"] === 'millboard_variation_colours'
+    ) {
+    $suggestions[] = 'field__millboard_variation_colours';
+  }
+  if ($hook == 'field' && $variables["element"]["#formatter"] === 'millboard_variation_width'
+    ) {
+    $suggestions[] = 'field__millboard_variation_width';
+  }
+  if ($hook == 'field' &&
+    isset($variables['element']['0']) &&
+    isset($variables['element']['0']['#theme']) &&
+    $variables['element']['0']['#theme'] === 'media' &&
+    isset($variables['element']['0']['#view_mode']) &&
+    $variables['element']['0']['#view_mode'] === 'hero_banner_grid_4_image' &&
+    isset($variables['element']['0']['#media']) &&
+    ($variables['element']['0']['#media']->bundle() === 'acquia_dam_image_asset' ||
+      $variables['element']['0']['#media']->bundle() === 'image')
+  ) {
+    $suggestions[] = 'field__hero_banner_grid_4_image';
+  }
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function millboard_preprocess_field(&$variables) {
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if (
+    isset($variables['element']['0']) &&
+    isset($variables['element']['0']['#theme']) &&
+    $variables['element']['0']['#theme'] === 'media' &&
+    isset($variables['element']['0']['#view_mode']) &&
+    $variables['element']['0']['#view_mode'] === 'inspiration_gallery' &&
+    isset($variables['element']['0']['#media']) &&
+    ($variables['element']['0']['#media']->bundle() === 'acquia_dam_image_asset' ||
+      $variables['element']['0']['#media']->bundle() === 'image')
+  ) {
+    $content_id = $variables['element']['#object']->id();
+    $content_types_id = $variables['element']['#object']->getEntityTypeId();
+    $field_name = $variables['field_name'];
+    // This code will only execute for the commerce product variation.
+    if ($content_types_id === 'commerce_product_variation') {
+      $variables['is_commerce_product_variation'] = TRUE;
+      $product_variation = $variables['element']['#object'];
+      // These values will be used for the order a sample button.
+      if (is_object($product_variation)) {
+        // Getting the Variation Product type.
+        if ($product_variation->hasField('field_product_type')) {
+          $variables['variation_product_type'] =
+            isset($product_variation->field_product_type->referencedEntities()[0]) ?
+            $product_variation->field_product_type->referencedEntities()[0]->getTranslation($variables['language'])->getName() :
+            NULL;
+        }
+        // Getting the product title for the variation.
+        if ($product_variation->hasField('product_id')) {
+          $variables['product_title'] = isset($product_variation->product_id->referencedEntities()[0]) ?
+            $product_variation->product_id->referencedEntities()[0]->getTitle() :
+            NULL;
+        }
+        // Getting attribute color.
+        if ($product_variation->getAttributeValue('attribute_colour')) {
+          // Add the attribute_colour to the variables.
+          if ($variables['language'] === 'fr-fr') {
+            $variables['attribute_colour'] = $product_variation->getAttributeValue('attribute_color_fr')->getName();
+          }
+          else {
+            $variables['attribute_colour'] = $product_variation->getAttributeValue('attribute_colour')->getName();
+          }
+        }
+        $variables['attribute_colour_class'] = $product_variation->getAttributeValue('attribute_colour')->getName();
+        // Getting the thumbnail image for the variation.
+        if ($product_variation->hasField('field_swatch')) {
+          $variables['variation_image_thumbnail'] =
+            isset($product_variation->field_swatch->referencedEntities()[0]) ?
+            $product_variation->field_swatch->referencedEntities()[0]->getSource()
+              ->getMetadata($product_variation->field_swatch->referencedEntities()[0], 'thumbnails')['125px']['url'] :
+            NULL;
+        }
+        // Getting the width of the product variation.
+        if ($product_variation->getAttributeValue('attribute_width')) {
+          // Add the attribute_width to the variables.
+          $variables['attribute_width'] = $product_variation->getAttributeValue('attribute_width')->getName();
+          $variables['attribute_width_inches'] = $product_variation->getAttributeValue('attribute_width_inches')->getName();
+        }
+        if ($variables['variation_product_type'] === 'Cladding') {
+          $variables['attribute_width'] = $product_variation->getAttributeValue('attribute_installed_width')->getName();
+          $variables['attribute_width_inches'] = $product_variation->getAttributeValue('attribute_installed_width_inches')->getName();
+        }
+      }
+      $view = Views::getView('inspiration_gallery');
+      $view->setDisplay('inspiration_image_block');
+      $view->setArguments([$content_id]);
+      $view->execute();
+      $result = $view->buildRenderable('inspiration_image_block', $view->args);
+      $output = \Drupal::service('renderer')->render($result);
+      $variables['view_content'] = $output;
+    }
+    else {
+      foreach ($variables['items'] as $item_key => $item) {
+        $media_id = $item['content']['#media']->id();
+        $popup_url = '/popup/' . $content_types_id . '/' . $field_name . '/' . $content_id . '/' . $media_id;
+        $variables['items'][$item_key]['popup_url'] = $popup_url;
+      }
+    }
+  }
+}
+
+/**
+ * Adds js library for order sample listing view.
+ */
+function millboard_preprocess_views_view_unformatted__order_sample_listing(&$variables) {
+  $variables['#attached']['library'][] = 'millboard_pim_integration/millboard_pim_integration.basket';
+}
+
+/**
+ * Adds js library for order sample listing view.
+ */
+function millboard_preprocess_views_view_unformatted__touch_up_coating(&$variables) {
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['size'] = ($variables['language'] == 'en-us') ?
+    (string) $variables['view']->field['field_size_ounce']->original_value :
+    (string) $variables['view']->field['field_size']->original_value;
+}
+
+/**
+ * Implements hook_preprocess().
+ */
+function millboard_preprocess(&$variables, $hook) {
+  $variables['base_path'] = base_path();
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function millboard_preprocess_node(&$variables) {
+  if ($variables['node']->bundle() === 'installers_distributors') {
+    if ($variables['node']->field_display_centre->getValue()[0]['value'] == 0) {
+      unset($variables['node']->field_display_centre);
+    }
+    $items = [];
+    if ($variables['node']->field_type_of_inst_dist->getValue()) {
+      foreach ($variables['node']->field_type_of_inst_dist->getValue() as $item) {
+        if ($item['value'] != 'key_distributor') {
+          $items[] = $item;
+        }
+      }
+      $variables['node']->set('field_type_of_inst_dist', $items);
+    }
+
+  }
+}
+
+/**
+ * Implements templates_preprocess_views_view().
+ */
+function millboard_preprocess_views_view(&$variables) {
+  // Added js for case study listing view.
+  if ($variables['view']->id() == 'case_studies_listing') {
+    $variables['#attached']['library'][] = 'millboard_common/millboard_common.case_study_filters';
+  }
+
+  // Added js for blog listing view.
+  if ($variables['view']->id() == 'blog_listing') {
+    $variables['#attached']['library'][] = 'millboard_common/millboard_common.blog_listing_filters';
+  }
+
+  // Added js for gallery listing view.
+  if ($variables['view']->id() == 'millboard_image_gallery') {
+    $variables['#attached']['library'][] = 'millboard_common/millboard_common.gallery_listing_filters';
+  }
+
+  // Added js for resources listing view.
+  if ($variables['view']->id() == 'video_listing') {
+    $variables['#attached']['library'][] = 'millboard_common/millboard_common.resources_listing_filters';
+  }
+
+  // Added js for sample listing view.
+  if ($variables['view']->id() == 'order_sample_listing') {
+    $variables['#attached']['library'][] = 'millboard_common/millboard_common.order_sample_listing';
+    $hide_price = \Drupal::config('millboard_common.settings')->get('hide_price');
+    $variables['#attached']['drupalSettings']['hide_price'] = $hide_price ? 1 : 0;
+  }
+}
+
+/**
+ * Template_preprocess_media().
+ */
+function millboard_preprocess_media(&$variables) {
+  $variables['media_type'] = $variables['media']->bundle();
+  if ($variables['view_mode'] == 'pdf_card' && ($variables['media']->bundle() == 'acquia_dam_pdf_asset' || $variables['media']->bundle() == 'acquia_dam_documents_asset')) {
+    $source = $variables['media']->getSource();
+    $embeds = NULL;
+    if ($source instanceof Asset) {
+      $embeds = $source->getMetadata($variables['media'], 'embeds');
+    }
+    $size = remove_tags_and_newlines($variables['media']->get('field_file_size')->value);
+    $name = remove_tags_and_newlines($variables['media']->get('name')->value);
+    $variables['file_size'] = bytes_to_megabytes($size);
+    $variables['file_name'] = get_title_from_filename($name);
+    $variables['file_url'] = $embeds ? $embeds['original']['url'] : '';
+    $variables['view_url'] = $embeds ? $embeds["document_viewer"]["url"] : '';
+    
+    // dump($source->getMetadata($variables['media'], 'embeds'));
+  }
+  if ($variables['media']->bundle() === 'compressed_zip') {
+    $name = remove_tags_and_newlines($variables['media']->get('name')->value);
+    $variables['file_name'] = get_title_from_filename($name);
+    $file_target_id = $variables['media']->field_media_file->target_id;
+    $file = \Drupal::service('entity_type.manager')->getStorage('file')->load($file_target_id);
+    $variables['file_size'] = bytes_to_megabytes((string) $file->getSize());
+    $variables['file_url'] = \Drupal::service('file_url_generator')->generate($file->getFileUri())->toString();
+  }
+}

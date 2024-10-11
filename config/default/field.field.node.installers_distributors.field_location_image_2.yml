@@ -1,0 +1,29 @@
+uuid: 896f04f1-d726-4828-a7bd-84133bacdfa2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_image_2
+    - media.type.acquia_dam_image_asset
+    - node.type.installers_distributors
+id: node.installers_distributors.field_location_image_2
+field_name: field_location_image_2
+entity_type: node
+bundle: installers_distributors
+label: 'Location Image 2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

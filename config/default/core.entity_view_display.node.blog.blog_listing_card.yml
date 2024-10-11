@@ -1,0 +1,64 @@
+uuid: 94577587-336a-46a6-9254-30ecd84327d0
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blog_listing_card
+    - field.field.node.blog.field_blog_builder
+    - field.field.node.blog.field_blog_category
+    - field.field.node.blog.field_blog_image
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_product_type
+    - field.field.node.blog.field_publish_date
+    - field.field.node.blog.field_subtitle
+    - field.field.node.blog.field_title_override
+    - node.type.blog
+  module:
+    - datetime
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.blog.blog_listing_card
+targetEntityType: node
+bundle: blog
+mode: blog_listing_card
+content:
+  field_blog_category:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_blog_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: blogher
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: publish_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  content_moderation_control: true
+  field_blog_builder: true
+  field_metatag: true
+  field_product_type: true
+  field_subtitle: true
+  field_title_override: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

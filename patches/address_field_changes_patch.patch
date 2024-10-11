@@ -1,0 +1,71 @@
+patches/address_field_changes_patch.patchdiff --git a/src/Element/LoqatePcaAddress.php b/src/Element/LoqatePcaAddress.php
+index f3ed077f..f47af5cd 100644
+--- a/src/Element/LoqatePcaAddress.php
++++ b/src/Element/LoqatePcaAddress.php
+@@ -68,7 +68,7 @@ public function getInfo() {
+    * Process the address fields.
+    */
+   public static function processAddress(array &$element, FormStateInterface $form_state, array &$complete_form) {
+-
++    $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+     // Ensure tree structure in output.
+     $element['#tree'] = TRUE;
+
+@@ -77,20 +77,34 @@ public static function processAddress(array &$element, FormStateInterface $form_
+       '#title' => new TranslatableMarkup('Address Line 1'),
+       '#default_value' => $element['#default_value'][PcaAddressElement::LINE1] ?? NULL,
+       '#required' => TRUE,
++      '#weight' => 1,
+     ];
+
+     $element[PcaAddressElement::LINE2] = [
+       '#type' => 'textfield',
+       '#title' => new TranslatableMarkup('Address Line 2'),
+       '#default_value' => $element['#default_value'][PcaAddressElement::LINE2] ?? NULL,
++      '#weight' => 2,
+     ];
+
++    if (!in_array($lang_code, ['en-gb', 'en-ie'])) {
++      $element[PcaAddressElement::ADMINISTRATIVE_AREA] = [
++        '#type' => 'textfield',
++        '#title' => new TranslatableMarkup('State/Province'),
++        '#required' => TRUE,
++        '#default_value' => $element['#default_value'][PcaAddressElement::ADMINISTRATIVE_AREA] ?? NULL,
++        '#size' => 30,
++        '#weight' => 3,
++      ];
++    }
++
+     $element[PcaAddressElement::POSTAL_CODE] = [
+       '#type' => 'textfield',
+       '#title' => new TranslatableMarkup('ZIP/Postal Code'),
+       '#default_value' => $element['#default_value'][PcaAddressElement::POSTAL_CODE] ?? NULL,
+       '#required' => TRUE,
+       '#size' => 10,
++      '#weight' => 4,
+     ];
+
+     $element[PcaAddressElement::LOCALITY] = [
+@@ -99,19 +113,15 @@ public static function processAddress(array &$element, FormStateInterface $form_
+       '#default_value' => $element['#default_value'][PcaAddressElement::LOCALITY] ?? NULL,
+       '#required' => TRUE,
+       '#size' => 30,
+-    ];
+-
+-    $element[PcaAddressElement::ADMINISTRATIVE_AREA] = [
+-      '#type' => 'textfield',
+-      '#title' => new TranslatableMarkup('State/Province'),
+-      '#default_value' => $element['#default_value'][PcaAddressElement::ADMINISTRATIVE_AREA] ?? NULL,
+-      '#size' => 30,
++      '#weight' => 5,
+     ];
+
+     $element[PcaAddressElement::COUNTRY_CODE] = [
+       '#type' => 'textfield',
+       '#title' => new TranslatableMarkup('Country'),
++      '#required' => TRUE,
+       '#default_value' => $element['#default_value'][PcaAddressElement::COUNTRY_CODE] ?? NULL,
++      '#weight' => 6,
+     ];
+
+     return $element;

@@ -1,0 +1,34 @@
+uuid: 245cdcd6-7fd5-42d0-b77e-24e40c1628d6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.order_sample_listing
+  module:
+    - cohesion
+    - collapsiblock
+    - views
+  theme:
+    - millboard
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+id: millboard_views_block__order_sample_listing_order_sample_decking
+theme: millboard
+region: dx8_hidden
+weight: 0
+provider: null
+plugin: 'views_block:order_sample_listing-order_sample_decking'
+settings:
+  id: 'views_block:order_sample_listing-order_sample_decking'
+  label: ''
+  label_display: '0'
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0

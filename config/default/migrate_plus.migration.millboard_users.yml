@@ -1,0 +1,70 @@
+uuid: 4f4e6955-ab5c-4de1-b7f1-66bfe176a007
+langcode: en-gb
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: UuKsWAW_YCIbsOM0ZFDtn51VSrFNVG66tXf9S_JPzmM
+id: millboard_users
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - users
+migration_group: millboard_users
+label: 'Import Millboard Users'
+source:
+  plugin: csv
+  path: modules/custom/millboard_users/assets/millboard_users.csv
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - ID
+process:
+  field_first_name: FirstName
+  field_last_name: LastName
+  field_friendly_name: FriendlyName
+  field_craft_cms_user_id: ID
+  name:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: Username
+      message: 'Username is missing'
+  mail:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: Email
+      message: 'Email is missing'
+    -
+      plugin: validate_email
+      source: Email
+  status:
+    plugin: static_map
+    source: Status
+    default_value: 0
+    map:
+      active: 1
+      pending: 0
+  roles:
+    plugin: explode
+    delimiter: ','
+    source: Roles
+  changed:
+    plugin: format_date
+    source: DateUpdated
+    from_format: 'Y-m-d\TH:i:sP'
+    to_format: U
+    from_timezone: GMT
+    to_timezone: GMT
+  created:
+    plugin: format_date
+    source: DateCreated
+    from_format: 'Y-m-d\TH:i:sP'
+    to_format: U
+    from_timezone: GMT
+    to_timezone: GMT
+destination:
+  plugin: 'entity:user'
+migration_dependencies: {  }

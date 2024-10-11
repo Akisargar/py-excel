@@ -1,0 +1,22 @@
+uuid: 012d3cef-0d05-4db3-ad43-0327d452bfbe
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product
+label: 'Commerce Product'
+type: 'canonical_entities:commerce_product'
+pattern: '[commerce_product:title]'
+selection_criteria:
+  f1d1c49c-e556-42c8-9e5c-ef39e593b6ed:
+    id: 'entity_bundle:commerce_product'
+    negate: false
+    uuid: f1d1c49c-e556-42c8-9e5c-ef39e593b6ed
+    context_mapping:
+      commerce_product: commerce_product
+    bundles:
+      millboard_products: millboard_products
+selection_logic: and
+weight: -5
+relationships: {  }

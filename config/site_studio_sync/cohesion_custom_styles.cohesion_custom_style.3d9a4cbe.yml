@@ -1,0 +1,296 @@
+uuid: 74c3619e-b8a3-4ed0-8e4b-d94e38e61b61
+langcode: en-gb
+status: true
+dependencies: {  }
+label: 'Inner Container Padding'
+id: 3d9a4cbe
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for 'Generic'.<\/div>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div"
+          },
+          "styles": {
+              "xs": {
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  },
+                  "custom-css": [
+                      {
+                          "customCss": {
+                              "value": "24px !important"
+                          },
+                          "customCssProperty": {
+                              "value": "padding-right"
+                          }
+                      },
+                      {
+                          "customCss": {
+                              "value": "24px !important"
+                          },
+                          "customCssProperty": {
+                              "value": "padding-left"
+                          }
+                      }
+                  ]
+              },
+              "lg": {
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "padding-right"
+                          },
+                          "customCss": {
+                              "value": "clamp(24px, -28.2585rem + 38.6473vw, 104px) !important"
+                          }
+                      },
+                      {
+                          "customCssProperty": {
+                              "value": "padding-left"
+                          },
+                          "customCss": {
+                              "value": "clamp(24px, -28.2585rem + 38.6473vw, 104px) !important"
+                          }
+                      }
+                  ],
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "xl": {
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  },
+                  "custom-css": [
+                      {
+                          "customCss": {
+                              "value": "0 !important"
+                          },
+                          "customCssProperty": {
+                              "value": "padding-right"
+                          }
+                      },
+                      {
+                          "customCss": {
+                              "value": "0 !important"
+                          },
+                          "customCssProperty": {
+                              "value": "padding-left"
+                          }
+                      }
+                  ]
+              }
+          },
+          "f095fba2-305c-46d9-a3f4-84598ff7f4e6": {
+              "styles": {
+                  "xs": {
+                      "padding": {
+                          "padding-left": {},
+                          "padding-right": {}
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-right"
+                              },
+                              "customCss": {
+                                  "value": "0 !important"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-left"
+                              },
+                              "customCss": {
+                                  "value": "0 !important"
+                              }
+                          }
+                      ]
+                  },
+                  "xl": {
+                      "padding": {
+                          "padding-left": {},
+                          "padding-right": {}
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-right"
+                              },
+                              "customCss": {
+                                  "value": "0 !important"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-left"
+                              },
+                              "customCss": {
+                                  "value": "0 !important"
+                              }
+                          }
+                      ]
+                  },
+                  "lg": {
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-right"
+                              },
+                              "customCss": {
+                                  "value": "clamp(24px, -28.2585rem + 38.6473vw, 104px) !important"
+                              }
+                          },
+                          {
+                              "customCss": {
+                                  "value": "clamp(24px, -28.2585rem + 38.6473vw, 104px) !important"
+                              },
+                              "customCssProperty": {
+                                  "value": "padding-left"
+                              }
+                          }
+                      ]
+                  },
+                  "md": {
+                      "padding": {
+                          "padding-left": {},
+                          "padding-right": {}
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-right"
+                              },
+                              "customCss": {
+                                  "value": "24px !important"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-left"
+                              },
+                              "customCss": {
+                                  "value": "24px !important"
+                              }
+                          }
+                      ]
+                  }
+              },
+              "settings": {
+                  "class": ".container-padding--desktop-only"
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "custom-css",
+                  "children": [
+                      {
+                          "formKey": "css-property-and-css-value",
+                          "activeFields": [
+                              {
+                                  "name": "customCssProperty",
+                                  "active": true
+                              },
+                              {
+                                  "name": "customCss",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "desktop",
+                                  "name": "lg"
+                              },
+                              {
+                                  "name": "xs"
+                              },
+                              {
+                                  "name": "xl"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": [
+              {
+                  "title": ".container-padding--desktop-only",
+                  "type": "container",
+                  "items": [],
+                  "selectorType": "modifier",
+                  "uuid": "f095fba2-305c-46d9-a3f4-84598ff7f4e6",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "custom-css",
+                          "children": [
+                              {
+                                  "formKey": "css-property-and-css-value",
+                                  "activeFields": [
+                                      {
+                                          "name": "customCssProperty",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customCss",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "desktop",
+                                          "name": "lg"
+                                      },
+                                      {
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "xl"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-inner-container-padding
+custom_style_type: generic
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 6

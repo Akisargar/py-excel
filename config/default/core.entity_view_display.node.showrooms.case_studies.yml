@@ -1,0 +1,46 @@
+uuid: a05567df-6301-428b-b251-9bf0d6b36181
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.case_studies
+    - field.field.node.showrooms.body
+    - field.field.node.showrooms.field_is_distributor
+    - field.field.node.showrooms.field_layout_canvas
+    - field.field.node.showrooms.field_showroom_address
+    - field.field.node.showrooms.field_showroom_location
+    - field.field.node.showrooms.field_showroom_thumbnail
+    - field.field.node.showrooms.field_showroom_type
+    - node.type.showrooms
+  module:
+    - cohesion_elements
+    - user
+id: node.showrooms.case_studies
+targetEntityType: node
+bundle: showrooms
+mode: case_studies
+content:
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_is_distributor: true
+  field_showroom_address: true
+  field_showroom_location: true
+  field_showroom_thumbnail: true
+  field_showroom_type: true
+  langcode: true
+  search_api_excerpt: true

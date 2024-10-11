@@ -1,0 +1,45 @@
+uuid: 67ae9a00-fbcd-4b6a-a27b-06d538ead0cf
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.showrooms.body
+    - field.field.node.showrooms.field_is_distributor
+    - field.field.node.showrooms.field_layout_canvas
+    - field.field.node.showrooms.field_showroom_address
+    - field.field.node.showrooms.field_showroom_location
+    - field.field.node.showrooms.field_showroom_thumbnail
+    - field.field.node.showrooms.field_showroom_type
+    - node.type.showrooms
+  module:
+    - text
+    - user
+id: node.showrooms.teaser
+targetEntityType: node
+bundle: showrooms
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  content_moderation_control: true
+  field_is_distributor: true
+  field_layout_canvas: true
+  field_showroom_address: true
+  field_showroom_location: true
+  field_showroom_thumbnail: true
+  field_showroom_type: true
+  langcode: true
+  search_api_excerpt: true

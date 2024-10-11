@@ -1,0 +1,23 @@
+uuid: 7680dcdb-0d28-44ff-a497-b85b3653af2f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource_type
+    - node.type.resources
+  module:
+    - options
+id: node.resources.field_resource_type
+field_name: field_resource_type
+entity_type: node
+bundle: resources
+label: 'Resource Type'
+description: 'Select the resources type you want to add. Example: Images, Videos and Documents.'
+required: true
+translatable: true
+default_value:
+  -
+    value: images
+default_value_callback: ''
+settings: {  }
+field_type: list_string

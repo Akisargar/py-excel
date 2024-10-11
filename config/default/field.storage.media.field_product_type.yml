@@ -1,0 +1,27 @@
+uuid: 47161483-9d55-4b0d-839c-f0c7249d5bd6
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_product_type
+field_name: field_product_type
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Cladding
+      label: Cladding
+    -
+      value: Decking
+      label: Decking
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

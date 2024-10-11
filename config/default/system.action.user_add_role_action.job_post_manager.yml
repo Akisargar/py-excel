@@ -1,0 +1,14 @@
+uuid: ac261b8f-eddc-4662-b6f1-2b89f4a16f7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.job_post_manager
+  module:
+    - user
+id: user_add_role_action.job_post_manager
+label: 'Add the Job Post Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: job_post_manager

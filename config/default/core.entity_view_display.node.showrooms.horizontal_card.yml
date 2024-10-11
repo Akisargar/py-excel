@@ -1,0 +1,46 @@
+uuid: c4793885-fa5f-4f74-8b84-2988d3d5b828
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.horizontal_card
+    - field.field.node.showrooms.body
+    - field.field.node.showrooms.field_is_distributor
+    - field.field.node.showrooms.field_layout_canvas
+    - field.field.node.showrooms.field_showroom_address
+    - field.field.node.showrooms.field_showroom_location
+    - field.field.node.showrooms.field_showroom_thumbnail
+    - field.field.node.showrooms.field_showroom_type
+    - node.type.showrooms
+  module:
+    - cohesion_elements
+    - user
+id: node.showrooms.horizontal_card
+targetEntityType: node
+bundle: showrooms
+mode: horizontal_card
+content:
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_is_distributor: true
+  field_showroom_address: true
+  field_showroom_location: true
+  field_showroom_thumbnail: true
+  field_showroom_type: true
+  langcode: true
+  search_api_excerpt: true

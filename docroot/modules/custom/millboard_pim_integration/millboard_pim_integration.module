@@ -1,0 +1,310 @@
+<?php
+
+/**
+ * @file
+ * Millboard pim integration.
+ */
+
+use Drupal\commerce_product\Entity\Product;
+use Drupal\commerce_product\Entity\ProductInterface;
+use Drupal\commerce_product\Entity\ProductVariation;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\media\Entity\Media;
+use Drupal\views\ViewEntityInterface;
+use Drupal\webform\WebformSubmissionInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function millboard_pim_integration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Added readonly attribute for product type id field.
+  if ($form_id == 'taxonomy_term_product_type_form') {
+    $form['field_product_type_id']['widget'][0]['value']['#attributes'] = ['readonly' => 'readonly'];
+  }
+
+  // Added readonly attribute for product category id field.
+  if ($form_id == 'taxonomy_term_product_category_form') {
+    $form['field_product_category_id']['widget'][0]['value']['#attributes'] = ['readonly' => 'readonly'];
+  }
+
+  // Added readonly attribute for product id field.
+  if ($form_id == 'commerce_product_millboard_products_edit_form' || $form_id == 'commerce_product_variation_millboard_products_edit_form') {
+    $form['field_product_id']['widget'][0]['value']['#attributes'] = ['readonly' => 'readonly'];
+    $form['title']['#disabled'] = TRUE;
+    $form['sku']['#disabled'] = TRUE;
+    $form['price']['#disabled'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_webform_submission_presave().
+ */
+function millboard_pim_integration_webform_submission_presave(WebformSubmissionInterface $webform_submission) {
+  $website_order_code = \Drupal::state()->get('website_order_id');
+  $webform_submission->setElementData('website_order_code', $website_order_code);
+  \Drupal::state()->set('website_order_id', $website_order_code + 1);
+}
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ */
+function millboard_pim_integration_entity_base_field_info_alter(&$fields, EntityTypeInterface $entity_type) {
+
+  if ($entity_type->id() == 'commerce_product_variation' && $fields['sku']) {
+    $fields['sku']['description'] = t('Product Code');
+
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function millboard_pim_integration_views_pre_view($view, $display_id, &$args) {
+  if ($view->id() == 'composite_cladding_collections' || $view->id() == 'composite_decking_collections') {
+    // Parse the URL from the arguments.
+    $parsed_url = UrlHelper::parse($args[0]);
+
+    // Get the path alias manager service.
+    $path_alias_manager = \Drupal::service('path_alias.manager');
+
+    // Get the internal path using the path alias.
+    $path = $path_alias_manager->getPathByAlias('/' . $parsed_url['path']);
+
+    try {
+      // Get the route parameters from the URL.
+      $route_parameters = Url::fromUserInput($path)->getRouteParameters();
+
+      // Update the argument with the commerce product ID.
+      $args[0] = $route_parameters['commerce_product'];
+
+      $args[1] = str_replace('-', ' ', $args[1]);
+    }
+    catch (\Exception $e) {
+      // Handle the exception, e.g., log it or provide a default behavior.
+      // For now, we'll just print a message to the error log.
+      \Drupal::logger('millboard_pim_integration')->error('Error getting route parameters: @message', ['@message' => $e->getMessage()]);
+    }
+  }
+}
+
+/**
+ * Implements hook_views_data_alter().
+ */
+function millboard_pim_integration_views_data_alter(array &$data) {
+  // Field Plugin.
+  $data['commerce_product_variation_field_data']['assets_url'] = [
+    'title' => t('DAM Asset Thumbnail URL.'),
+    'field' => [
+      'help' => t('DAM Asset Thumbnail URL.'),
+      'id' => 'dam_asset_field_plugin',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_metatags_alter().
+ */
+function millboard_pim_integration_metatags_alter(array &$metatags, array &$context): void {
+  $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  if (!$context['entity'] instanceof ViewEntityInterface) {
+    return;
+  }
+  $view = $context['entity']->getExecutable();
+  // Alter metatags for particular views.
+  $productViews = [
+    'composite_cladding_collections' => [
+      'display_id' => [
+        'en-gb' => 'page_1',
+        'en-us' => 'page_2',
+        'en-ie' => 'page_1',
+        'fr-fr' => 'page_3',
+        'de-de' => 'page_4',
+      ],
+      'color_attr_name' => 'colour',
+      'color_attr_name_fr' => 'color_fr',
+      'sku' => 'sku',
+    ],
+    'composite_decking_collections' => [
+      'display_id' => [
+        'en-gb' => 'page_1',
+        'en-us' => 'page_1',
+        'en-ie' => 'page_1',
+        'fr-fr' => 'page_2',
+        'de-de' => 'page_3',
+      ],
+      'color_attr_name' => 'colour',
+      'color_attr_name_fr' => 'color_fr',
+      'sku' => 'sku',
+    ],
+  ];
+
+  if (array_key_exists($view->id(), $productViews) && $view->current_display == $productViews[$view->id()]['display_id'][$langcode]) {
+    // Get arguments of view.
+    $route_match = \Drupal::routeMatch();
+    $args = millboard_pim_integration_get_arr($route_match);
+    if (count($args) >= 3) {
+      // Get product id from product alias.
+      $productAlias = \Drupal::service('path_alias.manager')->getPathByAlias('/' . $args[0]);
+
+      // Check if the product exists and is of type "commerce_product".
+      if (preg_match('|^/product/(\d+)$|', $productAlias, $productMatches)) {
+        // Get the commerce product entity.
+        $productId = $productMatches[1];
+        $product = Product::load($productId);
+
+        // Check if the loaded entity is a valid commerce product.
+        if (!($product instanceof ProductInterface)) {
+          return;
+        }
+      }
+      else {
+        return;
+      }
+      $product = $product->getTranslation($langcode);
+      $params = Url::fromUri("internal:" . $productAlias)->getRouteParameters();
+      $productId = $params['commerce_product'] ? $params['commerce_product'] : 0;
+      /** @var \Drupal\commerce_product\Entity\ProductVariation $productVariation */
+      $productVariation = \Drupal::entityTypeManager()->getStorage('commerce_product_variation')
+        ->loadByProperties([
+          'sku' => $args[2],
+        ]);
+      // Create metadata from product variation.
+      $productVariation = reset($productVariation);
+      $productVariation = $productVariation->getTranslation($langcode);
+      if ($productVariation instanceof ProductVariation) {
+        $tags = millboard_pim_integration_get_product_page_metadata($productVariation);
+        // Apply metadata on view page.
+        if (!empty($tags)) {
+          $metatags = array_merge($metatags, $tags);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Getting the attribute id.
+ *
+ * @param string $attribute_name
+ *   Attribute name.
+ * @param string $attribute_value
+ *   Attribute actual value from URL.
+ *
+ * @return int
+ *   Attribute ID.
+ */
+function millboard_pim_integration_get_attribute_id(string $attribute_name, string $attribute_value): int {
+  $productAttrStorage = \Drupal::service('entity_type.manager')->getStorage('commerce_product_attribute_value');
+  $attribute = $productAttrStorage->loadByProperties([
+    'attribute' => $attribute_name,
+    'name' => str_replace('-', ' ', $attribute_value),
+  ]);
+
+  return $attribute ? reset($attribute)->id() : 0;
+}
+
+/**
+ * Get Route Arguments.
+ *
+ * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
+ *   The Route Match object.
+ *
+ * @return array
+ *   The route Arguments.
+ */
+function millboard_pim_integration_get_arr(RouteMatchInterface $route_match): array {
+  $args = [];
+  $route = $route_match->getRouteObject();
+  $map = $route->hasOption('_view_argument_map') ? $route->getOption('_view_argument_map') : [];
+  foreach ($map as $attribute => $parameter_name) {
+    if (isset($parameter_name)) {
+      $attribute = $parameter_name;
+    }
+    if (!$arg = $route_match->getRawParameter($attribute)) {
+      $arg = $route_match->getParameter($attribute);
+    }
+    if (isset($arg)) {
+      $args[] = $arg;
+    }
+  }
+  return $args;
+}
+
+/**
+ * Getting the metatags for the product variation page.
+ *
+ * @param \Drupal\commerce_product\Entity\ProductVariation $productVariation
+ *   The Variation object.
+ *
+ * @return array
+ *   The tag array.
+ */
+function millboard_pim_integration_get_product_page_metadata(ProductVariation $productVariation): array {
+  $variationMetatag = json_decode($productVariation->field_meta_tags->value ?? '', TRUE) ?? [];
+  $tags = [];
+  foreach ($variationMetatag as $key => $value) {
+    $tags[$key] = $value;
+  }
+  if ($productVariation->hasField('field_pdp_product_images') && !$productVariation->get('field_pdp_product_images')->isEmpty()) {
+    $media = Media::load($productVariation->get('field_pdp_product_images')->getValue()[0]['target_id']);
+    /** @var Drupal\acquia_dam\Plugin\media\Source\Asset  $source */
+    $source = $media->getSource();
+    if (is_object($source) && 'acquia_dam_asset:image' == $source->getPluginId()) {
+      if (isset($source->getMetadata($media, 'thumbnails')['125px']['url'])) {
+        $thumbUrl = $source->getMetadata($media, 'thumbnails')['125px']['url'];
+        $tags['og_image'] = $thumbUrl;
+        $tags['twitter_cards_image'] = $thumbUrl;
+      }
+    }
+    if ($media->hasField('acquia_dam_alt_text') && !$media->get('acquia_dam_alt_text')->isEmpty()) {
+      $tags['og_image_alt'] = $media->get('acquia_dam_alt_text')->value;
+      $tags['twitter_cards_image_alt'] = $media->get('acquia_dam_alt_text')->value;
+    }
+  }
+  $currUrl = Url::fromRoute('<current>', [], ['absolute' => TRUE])->toString();
+  $tags['og_url'] = $currUrl;
+  return $tags;
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function millboard_pim_integration_page_attachments(array &$attachments) {
+  $attachments['#attached']['drupalSettings']['decking_translation'] =
+    millboard_pim_integration_decking_cladding_translation('Decking') ?
+      millboard_pim_integration_decking_cladding_translation('Decking') :
+      'Decking';
+
+  $attachments['#attached']['drupalSettings']['cladding_translation'] = millboard_pim_integration_decking_cladding_translation('Cladding') ?
+    millboard_pim_integration_decking_cladding_translation('Cladding') :
+    'Cladding';
+}
+
+/**
+ * Get the decking and cladding translation terms.
+ *
+ * @param string $term_name
+ *   The name (Decking or Cladding).
+ *
+ * @return string|null
+ *   The translated terms for Decking and Cladding.
+ */
+function millboard_pim_integration_decking_cladding_translation($term_name): string|null {
+  $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  $properties = [];
+  $properties['name'] = $term_name;
+  $terms = \Drupal::service('entity_type.manager')->getStorage('taxonomy_term')->loadByProperties($properties);
+  $term = reset($terms);
+  if (!empty($term)) {
+    /** @var Drupal\taxonomy\Entity\Term $term */
+    $term = \Drupal::service('entity.repository')->getTranslationFromContext($term, $langcode);
+    return $term->getName();
+  }
+  else {
+    return NULL;
+  }
+}

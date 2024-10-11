@@ -1,0 +1,83 @@
+{#
+/**
+ * @file
+ *
+ * Default template for product variations.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product_variation: The rendered product variation fields.
+ *   Use 'product_variation' to print them all, or print a subset such as
+ *   'product_variation.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product_variation|without('title') }}
+ *   @endcode
+ * - product_variation_entity: The product variation entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+{% set product_type = product_variation.field_product_type|render|striptags|spaceless %}
+<div{{ attributes.addClass('coh-style-millboard-product-page') }}>
+  <div class="product-hero coh-style-container-small coh-style-inner-container-padding container-padding--desktop-only">
+    <div class="product-gallery">
+      <div class="product-description-mobile">
+        {{ product_variation.field_product_type }}
+        <h1 class="product-title">{{ product_title }}</h1>
+        {{ product_variation.field_body_copy }}
+      </div>
+      {{ product_variation.field_pdp_product_images }}
+    </div>
+    <div class="product-details">
+      <div class="product-details--sticky">
+        <div class="product-description-desktop">
+          {{ product_variation.field_product_type }}
+          <h1 class="product-title">{{ product_title }}</h1>
+          {{ product_variation.field_body_copy }}
+        </div>
+        {% if language and language == 'fr-fr' %}
+          {{ product_variation.attribute_color_fr }}
+        {% else %}
+          {{ product_variation.attribute_colour }}
+        {% endif %}
+        {{ product_variation.attribute_width }}
+
+        {% if (hide_price() == 0) and ((product_variation.field_rrp_per_m2[0]['#context'].value is not empty) or (product_variation.field_rrp_per_unit[0]['#context'].value is not empty)) %}
+          <div class="millboard-product-prices-wrapper">
+            {{ product_variation.field_rrp_per_m2 }}
+            {{ product_variation.field_rrp_per_unit }}
+          </div>
+        {% endif %}
+        {% if (hide_price() == 0) and ((product_variation.field_rrp_per_m2_eu[0]['#context'].value is not empty) or (product_variation.field_rrp_per_unit_eu[0]['#context'].value is not empty)) %}
+          <div class="millboard-product-prices-wrapper">
+            {{ product_variation.field_rrp_per_m2_eu }}
+            {{ product_variation.field_rrp_per_unit_eu }}
+          </div>
+        {% endif %}
+        {% if (hide_price() == 0) and ((product_variation.field_msrp_per_ft2_usd[0]['#context'].value is not empty) or (product_variation.field_msrp_per_unit_usd[0]['#context'].value is not empty)) %}
+          <div class="millboard-product-prices-wrapper">
+            {{ product_variation.field_msrp_per_ft2_usd }}
+            {{ product_variation.field_msrp_per_unit_usd }}
+          </div>
+        {% endif %}
+        {% if language and language == 'en-us' %}
+          <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button product-details-cta" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb= "{{ variation_image_thumbnail }}" data-product-type = "{{ variation_product_type }}" data-attribute-width="{{ attribute_width_inches }}">{{ 'Add free sample'|t }}</button>
+        {% else %}
+          <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button product-details-cta" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb= "{{ variation_image_thumbnail }}" data-product-type = "{{ variation_product_type }}" data-attribute-width="{{ attribute_width }}">{{ 'Add free sample'|t }}</button>
+        {% endif %}
+        {% if product_type == 'Decking' %}
+          <a href="https://deckplanner.millboard.com" target="_blank">
+            <button class="coh-link link--cta coh-style-primary-button calculator-btn">{{ 'Decking Configurator'|t }}</button>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {{ product_variation.field_product_usp }}
+  {{ product_variation.field_pdp_inspiration }}
+  {{ product_variation.group_specifications }}
+  {{ product_variation.field_content_builder }}
+</div>
+{{ attach_library('millboard_pim_integration/millboard_pim_integration.basket') }}

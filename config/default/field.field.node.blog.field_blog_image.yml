@@ -1,0 +1,31 @@
+uuid: bb580fc8-4e5d-47ee-8405-33f40f95a06e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_image
+    - media.type.acquia_dam_image_asset
+    - media.type.image
+    - node.type.blog
+id: node.blog.field_blog_image
+field_name: field_blog_image
+entity_type: node
+bundle: blog
+label: 'Blog Image'
+description: 'This is blog image.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_image_asset
+field_type: entity_reference

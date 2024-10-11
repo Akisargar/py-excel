@@ -1,0 +1,92 @@
+uuid: 8c0ceab0-a976-4f5c-933c-d64725a3005a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.installers_distributors.body
+    - field.field.node.installers_distributors.field_about
+    - field.field.node.installers_distributors.field_craft_cms_canonical_id
+    - field.field.node.installers_distributors.field_craft_cms_content_id
+    - field.field.node.installers_distributors.field_craft_cms_original_id
+    - field.field.node.installers_distributors.field_display_centre
+    - field.field.node.installers_distributors.field_distributor_email_subject
+    - field.field.node.installers_distributors.field_email_address
+    - field.field.node.installers_distributors.field_featured_image
+    - field.field.node.installers_distributors.field_gallery
+    - field.field.node.installers_distributors.field_gallery_caption
+    - field.field.node.installers_distributors.field_grading
+    - field.field.node.installers_distributors.field_is_a_showroom
+    - field.field.node.installers_distributors.field_layout_canvas
+    - field.field.node.installers_distributors.field_location_image_1
+    - field.field.node.installers_distributors.field_location_image_2
+    - field.field.node.installers_distributors.field_location_image_3
+    - field.field.node.installers_distributors.field_meta_tags
+    - field.field.node.installers_distributors.field_product_range
+    - field.field.node.installers_distributors.field_publish_date
+    - field.field.node.installers_distributors.field_sells_cladding
+    - field.field.node.installers_distributors.field_sells_decking
+    - field.field.node.installers_distributors.field_showroom_type
+    - field.field.node.installers_distributors.field_store_address
+    - field.field.node.installers_distributors.field_store_location
+    - field.field.node.installers_distributors.field_telephone_number
+    - field.field.node.installers_distributors.field_telephone_number_2
+    - field.field.node.installers_distributors.field_type_of_inst_dist
+    - field.field.node.installers_distributors.field_website
+    - node.type.installers_distributors
+  module:
+    - text
+    - user
+id: node.installers_distributors.teaser
+targetEntityType: node
+bundle: installers_distributors
+mode: teaser
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_about:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_craft_cms_canonical_id: true
+  field_craft_cms_content_id: true
+  field_craft_cms_original_id: true
+  field_display_centre: true
+  field_distributor_email_subject: true
+  field_email_address: true
+  field_featured_image: true
+  field_gallery: true
+  field_gallery_caption: true
+  field_grading: true
+  field_is_a_showroom: true
+  field_layout_canvas: true
+  field_location_image_1: true
+  field_location_image_2: true
+  field_location_image_3: true
+  field_meta_tags: true
+  field_product_range: true
+  field_publish_date: true
+  field_sells_cladding: true
+  field_sells_decking: true
+  field_showroom_type: true
+  field_store_address: true
+  field_store_location: true
+  field_telephone_number: true
+  field_telephone_number_2: true
+  field_type_of_inst_dist: true
+  field_website: true
+  langcode: true
+  search_api_excerpt: true

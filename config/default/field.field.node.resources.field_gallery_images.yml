@@ -1,0 +1,29 @@
+uuid: c360b693-1757-47a4-941c-705ebdee8cc4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_gallery_images
+    - media.type.acquia_dam_image_asset
+    - node.type.resources
+id: node.resources.field_gallery_images
+field_name: field_gallery_images
+entity_type: node
+bundle: resources
+label: 'Gallery Images'
+description: 'Upload the Image resources here. You can add multiple resources in this field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_image_asset
+field_type: entity_reference

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function millboard_sap_configuration_uninstall() {
+  \Drupal::configFactory()->getEditable('millboard_sap_configuration\.settings')->delete();
+}

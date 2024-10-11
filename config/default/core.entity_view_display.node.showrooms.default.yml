@@ -1,0 +1,103 @@
+uuid: 048863a2-df6d-4eec-91b9-4df6f16da099
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.showrooms.body
+    - field.field.node.showrooms.field_is_distributor
+    - field.field.node.showrooms.field_layout_canvas
+    - field.field.node.showrooms.field_showroom_address
+    - field.field.node.showrooms.field_showroom_location
+    - field.field.node.showrooms.field_showroom_thumbnail
+    - field.field.node.showrooms.field_showroom_type
+    - filter.format.plain_text
+    - node.type.showrooms
+  module:
+    - address
+    - cohesion_elements
+    - geolocation
+    - user
+id: node.showrooms.default
+targetEntityType: node
+bundle: showrooms
+mode: default
+content:
+  field_is_distributor:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_showroom_address:
+    type: address_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_showroom_location:
+    type: geolocation_map
+    label: hidden
+    settings:
+      set_marker: true
+      show_label: false
+      common_map: true
+      show_delta_label: false
+      use_overridden_map_settings: false
+      title: ''
+      info_text:
+        value: ''
+        format: plain_text
+      centre:
+        fit_bounds:
+          enable: true
+          weight: -101
+          settings:
+            reset_zoom: true
+          map_center_id: fit_bounds
+      map_provider_id: google_maps
+      map_provider_settings: {  }
+      data_provider_settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_showroom_thumbnail:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_showroom_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  langcode: true
+  search_api_excerpt: true

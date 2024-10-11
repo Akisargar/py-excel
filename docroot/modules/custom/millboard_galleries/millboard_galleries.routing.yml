@@ -1,0 +1,20 @@
+millboard_galleries.popup:
+  path: '/popup/{project_target_id}/{collection}/{colour}/{location_target_id}/{sort_by}/{sort_order}/{media_id}'
+  defaults:
+    _controller: '\Drupal\millboard_galleries\Controller\GalleryPopup::millboardGalleryPopup'
+  requirements:
+    _permission: 'access content'
+
+millboard_galleries.inspiration_popup_view:
+  path: '/popup/{content_id}/{media_id}/{language_id}'
+  defaults:
+    _controller: '\Drupal\millboard_galleries\Controller\GalleryPopup::inspirationGalleryPopupView'
+  requirements:
+    _permission: 'access content'
+
+millboard_galleries.inspiration_popup_field:
+  path: '/popup/{entity_type}/{field_name}/{content_id}/{media_id}'
+  defaults:
+    _controller: '\Drupal\millboard_galleries\Controller\GalleryPopup::inspirationGalleryPopupField'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,377 @@
+uuid: 3c39fc5c-3204-47c3-bed8-286c6edd549b
+langcode: en-gb
+status: true
+dependencies: {  }
+label: 'Container Wrapper'
+id: 18b151f1
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for 'Layout'.<\/div>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div"
+          },
+          "styles": {
+              "xs": {
+                  "padding": {
+                      "padding-left": {
+                          "value": "24px"
+                      },
+                      "padding-right": {
+                          "value": "24px"
+                      },
+                      "padding-top": {},
+                      "padding-bottom": {}
+                  },
+                  "display": {},
+                  "flex-container": {
+                      "justify-content": {},
+                      "align-items": {},
+                      "flex-direction": {}
+                  },
+                  "max-width": {
+                      "value": "100%"
+                  },
+                  "width": {
+                      "value": "100%"
+                  },
+                  "margin": {
+                      "margin-left": {
+                          "value": "auto"
+                      },
+                      "margin-right": {
+                          "value": "auto"
+                      }
+                  }
+              },
+              "lg": {
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {},
+                      "padding-top": {},
+                      "padding-bottom": {}
+                  },
+                  "width": {
+                      "value": "100%"
+                  },
+                  "max-width": {
+                      "value": "1440px"
+                  }
+              },
+              "sm": {
+                  "flex-container": {
+                      "flex-direction": {},
+                      "justify-content": {},
+                      "align-items": {}
+                  },
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "padding-left"
+                          },
+                          "customCss": {
+                              "value": "clamp(24px, -4.2228rem + 11.9225vw, 104px)"
+                          }
+                      },
+                      {
+                          "customCssProperty": {
+                              "value": "padding-right"
+                          },
+                          "customCss": {
+                              "value": "clamp(24px, -4.2228rem + 11.9225vw, 104px)"
+                          }
+                      }
+                  ]
+              },
+              "xl": {
+                  "padding": {
+                      "padding-left": {
+                          "value": "104px"
+                      },
+                      "padding-right": {
+                          "value": "104px"
+                      }
+                  }
+              },
+              "md": {}
+          },
+          "06303485-d48b-4154-9a01-15f4e6a7c790": {
+              "styles": {
+                  "xs": {
+                      "margin": {
+                          "margin-top": {
+                              "value": "48px"
+                          },
+                          "margin-bottom": {
+                              "value": "0"
+                          }
+                      }
+                  },
+                  "sm": {
+                      "margin": {
+                          "margin-top": {
+                              "value": "24px"
+                          },
+                          "margin-bottom": {
+                              "value": "24px"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": "> *"
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "padding",
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              },
+                              {
+                                  "name": "xl"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "padding-equal",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-top",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-bottom",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-left",
+                                  "active": true
+                              },
+                              {
+                                  "name": "padding-right",
+                                  "active": true
+                              },
+                              {
+                                  "name": "padding-block-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-block-end",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-inline-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-inline-end",
+                                  "active": false
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "width",
+                          "activeFields": [
+                              {
+                                  "name": "min-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-width",
+                                  "active": true
+                              },
+                              {
+                                  "name": "width",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              },
+                              {
+                                  "name": "lg"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "margin",
+                          "activeFields": [
+                              {
+                                  "name": "margin-equal",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-top",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-bottom",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-left",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-right",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-block-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-block-end",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-inline-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-inline-end",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "custom-css",
+                  "children": [
+                      {
+                          "formKey": "css-property-and-css-value",
+                          "activeFields": [
+                              {
+                                  "name": "customCssProperty",
+                                  "active": true
+                              },
+                              {
+                                  "name": "customCss",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "sm"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": [
+              {
+                  "title": "> *",
+                  "type": "container",
+                  "items": [],
+                  "selectorType": "child",
+                  "uuid": "06303485-d48b-4154-9a01-15f4e6a7c790",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "sm"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": "> *"
+              }
+          ]
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-container-wrapper
+custom_style_type: layout
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 180

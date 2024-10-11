@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Millboard pim integration install.
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function millboard_pim_integration_update_9001() {
+  \Drupal::state()->set('website_order_id', '100000');
+}

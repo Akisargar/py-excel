@@ -1,0 +1,105 @@
+uuid: 56042c3b-9718-4a53-87ec-8ceaf5c243ff
+langcode: en-gb
+status: true
+dependencies: {  }
+label: 'Responsive Image Style'
+id: 8666c45e
+json_values: |
+  {
+      "styles": {
+          "settings": {
+              "element": "img"
+          },
+          "styles": {
+              "xs": {
+                  "height": {
+                      "value": "auto"
+                  },
+                  "max-width": {
+                      "value": "100%"
+                  },
+                  "width": {
+                      "value": "100%"
+                  }
+              }
+          }
+      },
+      "preview": {
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "width",
+                          "activeFields": [
+                              {
+                                  "name": "min-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-width",
+                                  "active": true
+                              },
+                              {
+                                  "name": "width",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "height",
+                          "activeFields": [
+                              {
+                                  "name": "min-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "height",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": []
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-responsive-image-style
+custom_style_type: image
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 38

@@ -1,0 +1,135 @@
+uuid: 031cc952-9372-455e-ad82-09457a6b25bd
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.6c4753c3
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_drupal_blocks
+    - cohesion_elements.cohesion_helper_category.hlp_cat_layout_helpers
+    - cohesion_website_settings.cohesion_color.millboard-mist
+label: 'Feefo Reviews'
+id: hlp_feefo_reviews
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "f1df50d9-731a-4817-ba93-99d266fd9f37",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "61b96af0-3ae0-434a-8889-eda88505c946",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_drupal_blocks",
+                              "type": "component",
+                              "title": "Drupal blocks",
+                              "enabled": true,
+                              "category": "category-3",
+                              "componentId": "cpt_drupal_blocks",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "38c969c4-100e-4e2b-8a5d-3a5cc782c2b4",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "38c969c4-100e-4e2b-8a5d-3a5cc782c2b4": {},
+          "f1df50d9-731a-4817-ba93-99d266fd9f37": {}
+      },
+      "model": {
+          "f1df50d9-731a-4817-ba93-99d266fd9f37": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#dedcd2",
+                      "rgba": "rgba(222, 220, 210, 1)"
+                  },
+                  "uid": "millboard-mist",
+                  "name": "Millboard Mist",
+                  "class": ".coh-color-millboard-mist",
+                  "variable": "$coh-color-millboard-mist",
+                  "tags": [
+                      "Millboard",
+                      "Text",
+                      "Accent",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "coh-style-feefo-rating-widget",
+              "settings": {
+                  "title": "Feefo Reviews"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "61b96af0-3ae0-434a-8889-eda88505c946": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "38c969c4-100e-4e2b-8a5d-3a5cc782c2b4": {
+              "33477453-ecf9-49b5-873b-67737b65fefe": "millboard_customerreviewblockusingfeefo",
+              "dda7054d-09f6-4fdc-82f6-138404466a96": "dark-title",
+              "609b5301-04bf-45ce-82af-509436f29597": null,
+              "settings": {
+                  "title": "Feefo Review Block"
+              }
+          }
+      },
+      "previewModel": {
+          "38c969c4-100e-4e2b-8a5d-3a5cc782c2b4": {},
+          "f1df50d9-731a-4817-ba93-99d266fd9f37": {}
+      },
+      "variableFields": {
+          "38c969c4-100e-4e2b-8a5d-3a5cc782c2b4": [],
+          "f1df50d9-731a-4817-ba93-99d266fd9f37": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_layout_helpers
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: 0

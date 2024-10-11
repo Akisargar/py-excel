@@ -1,0 +1,594 @@
+uuid: f3c36406-5ca8-4b97-868f-7ce18d10a5a7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.59942bd8
+    - cohesion_elements.cohesion_component_category.cpt_cat_accordion_components
+label: FAQ
+id: cpt_faq
+json_values: |
+  {
+      "canvas": [
+          {
+              "type": "container",
+              "uid": "container",
+              "title": "Container",
+              "status": {
+                  "collapsed": false
+              },
+              "iconColor": "layout",
+              "uuid": "dff293ee-bdeb-408a-8f5a-d3394076b24a",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "heading",
+                      "title": "Heading",
+                      "status": {
+                          "collapsed": true
+                      },
+                      "iconColor": "content",
+                      "uuid": "758a1b79-e49e-4599-be84-16bb0ede7c97",
+                      "parentUid": "container",
+                      "children": []
+                  },
+                  {
+                      "type": "container",
+                      "uid": "accordion-tabs-container",
+                      "title": "Accordion tabs container",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "iconColor": "interactive",
+                      "uuid": "f1d47ea4-4771-407b-984a-88763ff35d0e",
+                      "parentUid": "container",
+                      "children": [
+                          {
+                              "type": "container",
+                              "uid": "component-pattern-repeater",
+                              "title": "Pattern repeater",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "iconColor": "content",
+                              "uuid": "62e730aa-080b-4b9b-bfca-56c948180d9d",
+                              "parentUid": "accordion-tabs-container",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "accordion-tabs-item",
+                                      "title": "Accordion tabs item",
+                                      "status": {
+                                          "collapsed": false
+                                      },
+                                      "iconColor": "interactive",
+                                      "uuid": "3a39415a-2f99-4279-a774-4598b4bf56e5",
+                                      "parentUid": "component-pattern-repeater",
+                                      "children": [
+                                          {
+                                              "type": "container",
+                                              "uid": "paragraph",
+                                              "title": "Paragraph",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "iconColor": "content",
+                                              "uuid": "df0654ba-d8c6-4e92-b183-192d626ef1e4",
+                                              "parentUid": "accordion-tabs-item",
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "componentForm": [
+          {
+              "type": "form-container",
+              "uid": "form-accordion",
+              "title": "Group accordion",
+              "status": {
+                  "collapsed": false
+              },
+              "options": {
+                  "formBuilder": true
+              },
+              "iconColor": "formLayout",
+              "uuid": "65937272-2f99-4c3c-b74d-639cf9f5e406",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "form-field",
+                      "uid": "form-input",
+                      "title": "Input",
+                      "translate": true,
+                      "status": {
+                          "collapsed": false
+                      },
+                      "iconColor": "formField",
+                      "uuid": "1431bb25-02b6-4e83-a704-3c2cdafda3ac",
+                      "parentUid": "form-accordion",
+                      "children": []
+                  },
+                  {
+                      "type": "form-container",
+                      "uid": "form-section",
+                      "title": "Field group",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "options": {
+                          "formBuilder": true
+                      },
+                      "iconColor": "formLayoutAlt",
+                      "uuid": "89c97902-cd6a-4858-a22d-9b2bbef9bdc2",
+                      "parentUid": "form-accordion",
+                      "children": [
+                          {
+                              "type": "form-field-container",
+                              "uid": "form-field-repeater",
+                              "title": "Field repeater",
+                              "selected": false,
+                              "status": {
+                                  "collapsed": false,
+                                  "isopen": false
+                              },
+                              "options": {
+                                  "formBuilder": true
+                              },
+                              "iconColor": "formLayoutAlt",
+                              "uuid": "8683ae63-7b89-4ca2-bd2e-1f9ae5ebeb73",
+                              "parentUid": "form-section",
+                              "children": [
+                                  {
+                                      "type": "form-field",
+                                      "uid": "form-input",
+                                      "title": "Input",
+                                      "translate": true,
+                                      "status": {
+                                          "collapsed": false
+                                      },
+                                      "iconColor": "formField",
+                                      "uuid": "e339a74e-f33d-4480-ae99-355eacd31fe5",
+                                      "parentUid": "form-field-repeater",
+                                      "children": []
+                                  },
+                                  {
+                                      "type": "form-field",
+                                      "uid": "form-textarea",
+                                      "title": "Plain text area",
+                                      "translate": true,
+                                      "status": {
+                                          "collapsed": false
+                                      },
+                                      "iconColor": "formField",
+                                      "uuid": "364d1293-bd8a-444a-88dc-e25c09f2b7ba",
+                                      "parentUid": "form-field-repeater",
+                                      "children": []
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "e339a74e-f33d-4480-ae99-355eacd31fe5": {},
+          "364d1293-bd8a-444a-88dc-e25c09f2b7ba": {},
+          "8683ae63-7b89-4ca2-bd2e-1f9ae5ebeb73": {},
+          "65937272-2f99-4c3c-b74d-639cf9f5e406": {},
+          "dff293ee-bdeb-408a-8f5a-d3394076b24a": {},
+          "f1d47ea4-4771-407b-984a-88763ff35d0e": {},
+          "62e730aa-080b-4b9b-bfca-56c948180d9d": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "component-pattern-repeater-settings",
+                          "children": [
+                              {
+                                  "formKey": "component-pattern-repeater-token",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "token",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "3a39415a-2f99-4279-a774-4598b4bf56e5": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "accordion-tabs-item-settings",
+                          "children": [
+                              {
+                                  "formKey": "accordion-tabs-item-settings-label",
+                                  "breakpoints": [],
+                                  "activeFields": []
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "accordion-tabs-item-accordion-settings",
+                          "children": [
+                              {
+                                  "formKey": "accordion-tabs-item-accordion-html-element",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "accordionTabElement",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "accordion-tabs-item-accordion-settings-style",
+                                  "breakpoints": [],
+                                  "activeFields": []
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "accordion-tabs-item-tab-settings",
+                          "children": [
+                              {
+                                  "formKey": "accordion-tabs-item-tab-settings-tab-style",
+                                  "breakpoints": [],
+                                  "activeFields": []
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "df0654ba-d8c6-4e92-b183-192d626ef1e4": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "paragraph-settings",
+                          "children": [
+                              {
+                                  "formKey": "paragraph-paragraph",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "paragraph-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "1431bb25-02b6-4e83-a704-3c2cdafda3ac": {},
+          "758a1b79-e49e-4599-be84-16bb0ede7c97": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "heading-settings",
+                          "children": [
+                              {
+                                  "formKey": "heading-element",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "element",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "heading-heading",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "heading-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "89c97902-cd6a-4858-a22d-9b2bbef9bdc2": {}
+      },
+      "model": {
+          "dff293ee-bdeb-408a-8f5a-d3394076b24a": {
+              "settings": {
+                  "width": "fluid"
+              }
+          },
+          "758a1b79-e49e-4599-be84-16bb0ede7c97": {
+              "settings": {
+                  "element": "h1",
+                  "title": "Heading",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ],
+                  "content": "[field.1431bb25-02b6-4e83-a704-3c2cdafda3ac]"
+              }
+          },
+          "f1d47ea4-4771-407b-984a-88763ff35d0e": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "accordionOrTab": "accordion",
+                          "collapsible": true,
+                          "startCollapsed": false,
+                          "animation": "slide",
+                          "offsetPositionAgainst": "px",
+                          "duration": 700,
+                          "active": 1,
+                          "scrollToAccordionOffset": 0,
+                          "accordionTabWidth": -2,
+                          "accordionTabBleed": "retain_gutters"
+                      }
+                  },
+                  "scrollToAccordion": false,
+                  "setHash": false,
+                  "horizontalVertical": "horizontal_top",
+                  "HorizontalPosition": "left_aligned",
+                  "VerticalPosition": "left"
+              }
+          },
+          "62e730aa-080b-4b9b-bfca-56c948180d9d": {
+              "settings": {
+                  "title": "Pattern repeater",
+                  "token": "[field.8683ae63-7b89-4ca2-bd2e-1f9ae5ebeb73]"
+              }
+          },
+          "3a39415a-2f99-4279-a774-4598b4bf56e5": {
+              "settings": {
+                  "accordionTabElement": "div",
+                  "title": "Accordion tabs item",
+                  "accordionStyle": {
+                      "customStyle": "coh-style-accordion-tabs-solid"
+                  },
+                  "tabStyle": {
+                      "customStyle": ""
+                  },
+                  "settings": {
+                      "title": "[field.e339a74e-f33d-4480-ae99-355eacd31fe5]"
+                  }
+              }
+          },
+          "df0654ba-d8c6-4e92-b183-192d626ef1e4": {
+              "settings": {
+                  "title": "Paragraph",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ],
+                  "content": "[field.364d1293-bd8a-444a-88dc-e25c09f2b7ba]"
+              }
+          },
+          "65937272-2f99-4c3c-b74d-639cf9f5e406": {
+              "settings": {
+                  "type": "cohAccordion",
+                  "title": "FAQs",
+                  "noBleed": true,
+                  "isOpen": true
+              }
+          },
+          "1431bb25-02b6-4e83-a704-3c2cdafda3ac": {
+              "settings": {
+                  "type": "cohTextBox",
+                  "title": "Heading",
+                  "schema": {
+                      "type": "string",
+                      "escape": true
+                  },
+                  "machineName": "heading",
+                  "tooltipPlacement": "auto right",
+                  "placeholder": "",
+                  "tooltipText": "Enter the heading"
+              }
+          },
+          "89c97902-cd6a-4858-a22d-9b2bbef9bdc2": {
+              "settings": {
+                  "type": "cohSection",
+                  "title": "Question & Answer",
+                  "hideRowHeading": 0,
+                  "removePadding": 0,
+                  "columnCount": "1",
+                  "breakpointIcon": "",
+                  "breakpoints": false,
+                  "propertiesMenu": false,
+                  "disableScrollbar": true,
+                  "disableEllipsisMenu": true,
+                  "isOpen": true
+              }
+          },
+          "8683ae63-7b89-4ca2-bd2e-1f9ae5ebeb73": {
+              "settings": {
+                  "type": "cohArray",
+                  "title": "Question & Answer",
+                  "componentField": true,
+                  "noTitle": true,
+                  "disableScrollbar": true,
+                  "addText": "Add",
+                  "key": "field-repeater",
+                  "sortable": true,
+                  "sortableOptions": {
+                      "axis": "y",
+                      "handle": true
+                  },
+                  "schema": {
+                      "type": "array"
+                  },
+                  "machineName": "question--answer",
+                  "min": 1,
+                  "max": 100,
+                  "increment": 1,
+                  "tooltipPlacement": "auto right"
+              }
+          },
+          "e339a74e-f33d-4480-ae99-355eacd31fe5": {
+              "settings": {
+                  "type": "cohTextBox",
+                  "title": "Question",
+                  "schema": {
+                      "type": "string",
+                      "escape": true
+                  },
+                  "machineName": "question",
+                  "tooltipPlacement": "auto right",
+                  "tooltipText": "Enter the question."
+              },
+              "model": {
+                  "value": ""
+              }
+          },
+          "364d1293-bd8a-444a-88dc-e25c09f2b7ba": {
+              "settings": {
+                  "type": "cohTextarea",
+                  "title": "Answer",
+                  "schema": {
+                      "type": "string",
+                      "escape": true
+                  },
+                  "machineName": "answer",
+                  "tooltipPlacement": "auto right",
+                  "tooltipText": "Enter the answer."
+              }
+          }
+      },
+      "previewModel": {
+          "e339a74e-f33d-4480-ae99-355eacd31fe5": {},
+          "364d1293-bd8a-444a-88dc-e25c09f2b7ba": {},
+          "8683ae63-7b89-4ca2-bd2e-1f9ae5ebeb73": {},
+          "65937272-2f99-4c3c-b74d-639cf9f5e406": {},
+          "3a39415a-2f99-4279-a774-4598b4bf56e5": {
+              "settings": {
+                  "title": "Accordion tabs item",
+                  "accordionTabElement": "div"
+              }
+          },
+          "62e730aa-080b-4b9b-bfca-56c948180d9d": {
+              "settings": {
+                  "title": "Pattern repeater"
+              }
+          },
+          "df0654ba-d8c6-4e92-b183-192d626ef1e4": {
+              "settings": {
+                  "title": "Paragraph"
+              }
+          },
+          "1431bb25-02b6-4e83-a704-3c2cdafda3ac": {},
+          "758a1b79-e49e-4599-be84-16bb0ede7c97": {
+              "settings": {
+                  "title": "Heading",
+                  "element": "h1"
+              }
+          },
+          "89c97902-cd6a-4858-a22d-9b2bbef9bdc2": {}
+      },
+      "variableFields": {
+          "e339a74e-f33d-4480-ae99-355eacd31fe5": [],
+          "364d1293-bd8a-444a-88dc-e25c09f2b7ba": [],
+          "8683ae63-7b89-4ca2-bd2e-1f9ae5ebeb73": [],
+          "65937272-2f99-4c3c-b74d-639cf9f5e406": [],
+          "3a39415a-2f99-4279-a774-4598b4bf56e5": [
+              "settings.settings.title"
+          ],
+          "62e730aa-080b-4b9b-bfca-56c948180d9d": [
+              "settings.token"
+          ],
+          "df0654ba-d8c6-4e92-b183-192d626ef1e4": [
+              "settings.content"
+          ],
+          "1431bb25-02b6-4e83-a704-3c2cdafda3ac": [],
+          "758a1b79-e49e-4599-be84-16bb0ede7c97": [
+              "settings.content"
+          ],
+          "89c97902-cd6a-4858-a22d-9b2bbef9bdc2": []
+      },
+      "disabledNodes": [],
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: cpt_cat_accordion_components
+preview_image: ''
+has_quick_edit: null
+entity_type_access: {  }
+bundle_access: {  }
+twig_template: component--cohesion-cpt-faq
+weight: 0

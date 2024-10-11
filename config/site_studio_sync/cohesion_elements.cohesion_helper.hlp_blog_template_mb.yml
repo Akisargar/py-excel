@@ -1,0 +1,647 @@
+uuid: bb12e628-db1b-4d5c-9c45-267ea51577a9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_custom_styles.cohesion_custom_style.6d265e74
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_cross_link_cards
+    - cohesion_elements.cohesion_component.cpt_hero_banner
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_component.cpt_text_and_image
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.spring-wood
+label: 'Blog template MB'
+id: hlp_blog_template_mb
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "f4a130c6-cf38-464c-83e1-692a3f4a9725",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "61acffe9-fb3c-48e0-9455-a8c1e6a64a7d",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_hero_banner",
+                              "type": "component",
+                              "title": "Primary hero banner",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_hero_banner",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "d2f9f27f-54e0-4db5-9143-c9407efc8eb8",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "uuid": "39265607-059d-45b9-8012-3e9db86832a8",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "1536a195-3187-4510-8608-0ebf56b551d0",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_1_column_layout",
+                                              "type": "component",
+                                              "title": "1 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_1_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "8f647885-ff7e-4c80-8003-42ee47620bcf",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_1_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "00623390-e981-466a-9b06-6caa095307d4",
+                                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "060c2a7a-b33a-4a07-81b5-dc4abe32342c",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "fa032a1d-1dea-489f-b4a0-613c78352b63",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "27a23712-958a-48e2-adff-18a33e5a237b",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "e415bc51-f781-4491-a9f3-b4a5e0bfe35b",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "f03a40ec-7310-4aa9-9747-2083d5f03138",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "c415c726-1727-4693-978e-f8bac3568e56",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "c864196d-ede0-48b6-8d64-7a9d6de676b4",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_cross_link_cards",
+                              "type": "component",
+                              "title": "Cross Link Cards",
+                              "enabled": true,
+                              "category": "category-2",
+                              "componentId": "cpt_cross_link_cards",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "b53065dc-796c-495c-a5e8-e18781c56a59",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "f4a130c6-cf38-464c-83e1-692a3f4a9725": {},
+          "61acffe9-fb3c-48e0-9455-a8c1e6a64a7d": {},
+          "d2f9f27f-54e0-4db5-9143-c9407efc8eb8": {},
+          "39265607-059d-45b9-8012-3e9db86832a8": {},
+          "1536a195-3187-4510-8608-0ebf56b551d0": {},
+          "8f647885-ff7e-4c80-8003-42ee47620bcf": {},
+          "00623390-e981-466a-9b06-6caa095307d4": {},
+          "060c2a7a-b33a-4a07-81b5-dc4abe32342c": {},
+          "fa032a1d-1dea-489f-b4a0-613c78352b63": {},
+          "27a23712-958a-48e2-adff-18a33e5a237b": {},
+          "e415bc51-f781-4491-a9f3-b4a5e0bfe35b": {},
+          "f03a40ec-7310-4aa9-9747-2083d5f03138": {},
+          "c415c726-1727-4693-978e-f8bac3568e56": {},
+          "c864196d-ede0-48b6-8d64-7a9d6de676b4": {},
+          "b53065dc-796c-495c-a5e8-e18781c56a59": {}
+      },
+      "model": {
+          "f4a130c6-cf38-464c-83e1-692a3f4a9725": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "millboard",
+                      "background",
+                      "light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "settings": {
+                  "title": "Case Study Listing - Container"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px"
+          },
+          "61acffe9-fb3c-48e0-9455-a8c1e6a64a7d": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "d2f9f27f-54e0-4db5-9143-c9407efc8eb8": {
+              "86820958-8681-4fe3-a96c-7737da80104a": {
+                  "textFormat": "cohesion",
+                  "text": "<h1 class=\"coh-style-heading-1-size\">Five Alternative uses for Millboard Composite decking and cladding<\/h1>"
+              },
+              "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {
+                  "textFormat": "cohesion",
+                  "text": ""
+              },
+              "05701354-a064-44dd-82c9-e4c81aaf24e4": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "6c5be4d2-11e6-48a6-b3fd-4bcd76e5c8e4",
+                      "entityId": "6c5be4d2-11e6-48a6-b3fd-4bcd76e5c8e4"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "acquia_dam_documents_asset": false,
+                              "acquia_dam_image_asset": true,
+                              "image": true,
+                              "acquia_dam_video_asset": true,
+                              "video": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "title": "Primary hero banner"
+              }
+          },
+          "39265607-059d-45b9-8012-3e9db86832a8": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "80px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "64px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Body Text - Single Column"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "1536a195-3187-4510-8608-0ebf56b551d0": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "8f647885-ff7e-4c80-8003-42ee47620bcf": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "6",
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "40px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              }
+          },
+          "00623390-e981-466a-9b06-6caa095307d4": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "060c2a7a-b33a-4a07-81b5-dc4abe32342c": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>At Millboard, we're constantly pushing the boundaries of outdoor design, exploring new ways to enhance outdoor spaces and landscapes with our innovative composite decking and cladding. From transforming outdoor seating areas to creating captivating water features, our materials offer limitless possibilities for designers, architects, and homeowners alike. Here are five alternative uses that showcase the versatility and beauty of Millboard's resin mineral composite decking and cladding.<o:p><\/o:p><o:p><\/o:p><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": "",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "fa032a1d-1dea-489f-b4a0-613c78352b63": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "e4901b9d-3319-4e82-9189-6980f9bf7885",
+                      "entityId": "e4901b9d-3319-4e82-9189-6980f9bf7885"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p style=\"line-height:150%;\"><strong>1) Outdoor Seating and Furniture<\/strong><\/p><p style=\"line-height:150%;\">Millboard's decking and cladding materials, provide an ideal foundation for creating inviting outdoor seating areas and furniture pieces. The inherent resilience of these materials ensures longevity, while their natural appearance seamlessly integrates with surrounding greenery. From sleek benches to expansive loungers, designers can sculpt bespoke seating arrangements that blend seamlessly with the landscape, inviting relaxation and socialisation amidst nature.<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "27a23712-958a-48e2-adff-18a33e5a237b": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "d31a6dc9-bdc7-4cf9-91c7-a03c5be3de0f",
+                      "entityId": "d31a6dc9-bdc7-4cf9-91c7-a03c5be3de0f"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p>2) Enhance garden design by incorporating decking and cladding elements as architectural accents and features. Whether used to clad striking focal points like pergolas and arbours or to define spatial boundaries with eye-catching partitions and screens, these materials lend structural integrity and visual interest to outdoor environments.&nbsp;<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "settings": {
+                  "title": "Text and Image"
+              },
+              "b2599ce9-c069-4662-91f9-5686754ca22d": ""
+          },
+          "e415bc51-f781-4491-a9f3-b4a5e0bfe35b": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "d45697a0-5647-4d14-a811-10166491836a",
+                      "entityId": "d45697a0-5647-4d14-a811-10166491836a"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p style=\"line-height:150%;\"><strong>2). Bespoke Planters and Green Walls<o:p><\/o:p><\/strong><\/p><p style=\"line-height:150%;\">Transform ordinary planters into captivating focal points by encasing them in decking or cladding materials. By seamlessly integrating planters into decks or cladding walls mixed with lush foliage, designers can infuse landscapes with dynamic texture and colour. Moreover, the durability of these materials ensures resilience against the elements, providing a stable foundation for nurturing thriving greenery year-round.&nbsp;<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "f03a40ec-7310-4aa9-9747-2083d5f03138": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "eb705556-d538-48e4-a1ef-d3ee2bf6b6d7",
+                      "entityId": "eb705556-d538-48e4-a1ef-d3ee2bf6b6d7"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p style=\"line-height:150%;\"><strong>4) Captivating Water Features<\/strong><\/p><p style=\"line-height:150%;\">Create a sense of calm and peacefulness within outdoor spaces by incorporating decking and cladding into the design of water features. Whether creating bespoke ponds, cascading waterfalls, or sparkling streams, these materials offer unparalleled versatility and durability. Millboard's decking and cladding, in particular, boast high-performance attributes that withstand moisture and weathering, ensuring the longevity of water-centric installations. Coupled with strategic lighting and landscaping, these features can evoke a sense of Zen-like calm that enhances the overall ambiance of the garden.<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "settings": {
+                  "title": "Text and Image"
+              },
+              "b2599ce9-c069-4662-91f9-5686754ca22d": ""
+          },
+          "c415c726-1727-4693-978e-f8bac3568e56": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "f5c32d4e-4af5-4ed1-91a0-e018d8fc35cb",
+                      "entityId": "f5c32d4e-4af5-4ed1-91a0-e018d8fc35cb"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p><strong>5) Interactive Play Spaces<o:p><\/o:p><\/strong><\/p><p style=\"line-height:150%;\">Encourage creativity and exploration through interactive play spaces made from composite decking and cladding materials. From charming bridges traversing gentle streams to imaginative playhouses nestled amongst lush foliage, these materials offer a sturdy base for creating enchanting environments that ignite the imagination. Millboard's decking and cladding, celebrated for their aesthetic appeal and durability, provide peace of mind to designers seeking to create engaging outdoor spaces that withstand the rigours of play and exploration, in addition to weathering.<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "c864196d-ede0-48b6-8d64-7a9d6de676b4": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "a9551b50-eeb5-4402-b86a-65f23661ad5a",
+                      "entityId": "a9551b50-eeb5-4402-b86a-65f23661ad5a"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p style=\"line-height:150%;\">The use of resin mineral composite decking and cladding, like Millboard, in outdoor design presents exciting opportunities for designers. By considering alternative applications of these materials, designers can enhance their designs and create outdoor spaces that inspire, delight, and endure for years to come.<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "settings": {
+                  "title": "Text and Image"
+              },
+              "b2599ce9-c069-4662-91f9-5686754ca22d": ""
+          },
+          "b53065dc-796c-495c-a5e8-e18781c56a59": {
+              "2ea56031-facb-46cc-b908-69268d9151df": "For your next project",
+              "82f815de-b1bc-4359-b01e-fb451fbb8e8f": "Inspiration & ideas",
+              "09b16443-1435-45fa-ab6b-1738f1f30cf3": true,
+              "settings": {
+                  "title": "Cross Link Cards"
+              },
+              "95aee1be-eeff-4c1d-b9c5-9c27b4341b49": [
+                  {
+                      "f60e1126-7614-4331-918b-f5c486898e5d": {
+                          "entity_type": "node",
+                          "view_mode": "cross_link_cards",
+                          "entity": "1ff5ea92-ab41-42d4-8527-14b3a846b060"
+                      }
+                  },
+                  {
+                      "f60e1126-7614-4331-918b-f5c486898e5d": {
+                          "entity_type": "node",
+                          "view_mode": "cross_link_cards",
+                          "entity": "a240718c-1286-4dce-bfe6-c82de3216d89"
+                      }
+                  }
+              ]
+          }
+      },
+      "previewModel": {
+          "f4a130c6-cf38-464c-83e1-692a3f4a9725": {},
+          "d2f9f27f-54e0-4db5-9143-c9407efc8eb8": {},
+          "39265607-059d-45b9-8012-3e9db86832a8": {},
+          "8f647885-ff7e-4c80-8003-42ee47620bcf": {},
+          "060c2a7a-b33a-4a07-81b5-dc4abe32342c": {},
+          "fa032a1d-1dea-489f-b4a0-613c78352b63": {},
+          "27a23712-958a-48e2-adff-18a33e5a237b": {},
+          "e415bc51-f781-4491-a9f3-b4a5e0bfe35b": {},
+          "f03a40ec-7310-4aa9-9747-2083d5f03138": {},
+          "c415c726-1727-4693-978e-f8bac3568e56": {},
+          "c864196d-ede0-48b6-8d64-7a9d6de676b4": {},
+          "b53065dc-796c-495c-a5e8-e18781c56a59": {}
+      },
+      "variableFields": {
+          "f4a130c6-cf38-464c-83e1-692a3f4a9725": [],
+          "d2f9f27f-54e0-4db5-9143-c9407efc8eb8": [],
+          "39265607-059d-45b9-8012-3e9db86832a8": [],
+          "8f647885-ff7e-4c80-8003-42ee47620bcf": [],
+          "060c2a7a-b33a-4a07-81b5-dc4abe32342c": [],
+          "fa032a1d-1dea-489f-b4a0-613c78352b63": [],
+          "27a23712-958a-48e2-adff-18a33e5a237b": [],
+          "e415bc51-f781-4491-a9f3-b4a5e0bfe35b": [],
+          "f03a40ec-7310-4aa9-9747-2083d5f03138": [],
+          "c415c726-1727-4693-978e-f8bac3568e56": [],
+          "c864196d-ede0-48b6-8d64-7a9d6de676b4": [],
+          "b53065dc-796c-495c-a5e8-e18781c56a59": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

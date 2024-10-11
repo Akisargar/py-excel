@@ -1,0 +1,637 @@
+uuid: 360aaeaa-1c20-4c46-890e-a1911058a612
+langcode: en-ie
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.22059f50
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_custom_styles.cohesion_custom_style.63181883
+    - cohesion_custom_styles.cohesion_custom_style.6d265e74
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.dd48edd1
+    - cohesion_elements.cohesion_component.1dc117b7
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_case_study_detail_component
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_cross_link_cards
+    - cohesion_elements.cohesion_component.cpt_hero_banner
+    - cohesion_elements.cohesion_component.cpt_product_carousel
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_component.cpt_text_and_image
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.spring-wood
+label: 'Case study template MB'
+id: hlp_case_study_template_mb
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "00119cc3-7e46-4a2e-b228-aad0b2525105",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "92fd0938-a557-4a55-8111-e5e956d68cb9",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_hero_banner",
+                              "type": "component",
+                              "title": "Primary hero banner",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_hero_banner",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "ebb014a4-7efc-47ce-ae64-71b7142ba1b4",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_case_study_detail_component",
+                              "type": "component",
+                              "title": "Case Study Details",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_case_study_detail_component",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "d161ee2b-180a-4ba1-99d0-c6d017a93015",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_product_carousel",
+                              "type": "component",
+                              "title": "Product Carousel",
+                              "enabled": true,
+                              "category": "category-7",
+                              "componentId": "cpt_product_carousel",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "4a4cc12b-c1f9-4e99-bee1-9dd652457858",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "e3af764b-a16a-4b62-b19a-412aa41142fc",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "31ef94c8-ad4d-4734-aeab-febe1413cb17",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "bffece21-3ef0-4c61-9802-77d65b8657f6",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_1_column_layout",
+                                              "type": "component",
+                                              "title": "1 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_1_column_layout",
+                                              "componentType": "container",
+                                              "iconColor": "custom",
+                                              "uuid": "aa71ebab-9715-47e4-9090-3a253880fdbc",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_1_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "8c66ee65-101b-4c32-9346-7e42ad16ede8",
+                                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "iconColor": "custom",
+                                                              "uuid": "b6fc5d73-92e4-41ad-a4d4-9110f1e17b3b",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          },
+                                          {
+                                              "uid": "cpt_text_and_image",
+                                              "type": "component",
+                                              "title": "Text and Image",
+                                              "enabled": true,
+                                              "category": "category-5",
+                                              "componentId": "cpt_text_and_image",
+                                              "componentType": "container",
+                                              "iconColor": "custom",
+                                              "uuid": "a861f85f-9cdd-4489-af48-f5953dbd4bc9",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          },
+                                          {
+                                              "uid": "cpt_container",
+                                              "type": "component",
+                                              "title": "Container",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_container",
+                                              "componentType": "container",
+                                              "iconColor": "custom",
+                                              "uuid": "7eeb1722-8f7a-47f7-bbb8-c21a7bb0681a",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_container",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "3d2046bd-3e3a-449c-9892-fadfd8d61643",
+                                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "1dc117b7",
+                                                              "type": "component",
+                                                              "title": "Slide container",
+                                                              "enabled": true,
+                                                              "category": "category-7",
+                                                              "componentId": "1dc117b7",
+                                                              "componentType": "slider-container",
+                                                              "iconColor": "custom",
+                                                              "uuid": "6e04c250-3dee-4af9-b063-d9e010775717",
+                                                              "status": {
+                                                                  "collapsed": false
+                                                              },
+                                                              "parentUid": "component-drop-zone",
+                                                              "children": [
+                                                                  {
+                                                                      "type": "container",
+                                                                      "uid": "component-drop-zone",
+                                                                      "mimicParent": true,
+                                                                      "parentUid": "1dc117b7",
+                                                                      "title": "Component drop zone",
+                                                                      "selected": false,
+                                                                      "status": {
+                                                                          "collapsed": false,
+                                                                          "disabled": false
+                                                                      },
+                                                                      "uuid": "122b189c-0195-4cce-a6d8-67aa58ebe0ec",
+                                                                      "dropzoneId": "342bec96-01e9-43e0-b28b-4cfd21ea3ead",
+                                                                      "isContainer": true,
+                                                                      "children": []
+                                                                  }
+                                                              ]
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          },
+                                          {
+                                              "uid": "cpt_cross_link_cards",
+                                              "type": "component",
+                                              "title": "Cross Link Cards",
+                                              "enabled": true,
+                                              "category": "category-2",
+                                              "componentId": "cpt_cross_link_cards",
+                                              "componentType": "container",
+                                              "iconColor": "custom",
+                                              "uuid": "92afed98-ce0f-4a81-b368-4130f6ab121e",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "00119cc3-7e46-4a2e-b228-aad0b2525105": {},
+          "92fd0938-a557-4a55-8111-e5e956d68cb9": {},
+          "ebb014a4-7efc-47ce-ae64-71b7142ba1b4": {},
+          "d161ee2b-180a-4ba1-99d0-c6d017a93015": {},
+          "4a4cc12b-c1f9-4e99-bee1-9dd652457858": {},
+          "e3af764b-a16a-4b62-b19a-412aa41142fc": {},
+          "31ef94c8-ad4d-4734-aeab-febe1413cb17": {},
+          "bffece21-3ef0-4c61-9802-77d65b8657f6": {},
+          "aa71ebab-9715-47e4-9090-3a253880fdbc": {},
+          "8c66ee65-101b-4c32-9346-7e42ad16ede8": {},
+          "b6fc5d73-92e4-41ad-a4d4-9110f1e17b3b": {},
+          "a861f85f-9cdd-4489-af48-f5953dbd4bc9": {},
+          "7eeb1722-8f7a-47f7-bbb8-c21a7bb0681a": {},
+          "3d2046bd-3e3a-449c-9892-fadfd8d61643": {},
+          "6e04c250-3dee-4af9-b063-d9e010775717": {},
+          "122b189c-0195-4cce-a6d8-67aa58ebe0ec": {},
+          "92afed98-ce0f-4a81-b368-4130f6ab121e": {}
+      },
+      "model": {
+          "00119cc3-7e46-4a2e-b228-aad0b2525105": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "millboard",
+                      "background",
+                      "light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "settings": {
+                  "title": "Case Study Listing - Container"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px"
+          },
+          "92fd0938-a557-4a55-8111-e5e956d68cb9": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "ebb014a4-7efc-47ce-ae64-71b7142ba1b4": {
+              "86820958-8681-4fe3-a96c-7737da80104a": {
+                  "textFormat": "cohesion",
+                  "text": "<h1 class=\"coh-style-heading-1-size\">the waterbank luxury development<\/h1>"
+              },
+              "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {
+                  "textFormat": "cohesion",
+                  "text": ""
+              },
+              "05701354-a064-44dd-82c9-e4c81aaf24e4": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "d2b12fdb-c4e2-41fd-af81-2dbfe6436a4b",
+                      "entityId": "d2b12fdb-c4e2-41fd-af81-2dbfe6436a4b"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "acquia_dam_documents_asset": false,
+                              "acquia_dam_image_asset": true,
+                              "image": true,
+                              "acquia_dam_video_asset": true,
+                              "video": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "title": "Primary hero banner"
+              }
+          },
+          "d161ee2b-180a-4ba1-99d0-c6d017a93015": {
+              "49f5ebd2-7e56-4883-9f57-3b3daace2f08": {
+                  "textFormat": "full_html",
+                  "text": "<p>The Waterbank luxury development, spearheaded by South Manchester based property developer, Altin Homes, is a quintessential representation of opulence and architectural finesse. The project comprises a collection of five lavish properties, each designed to meet the high expectations of its future residents with unparalleled elegance and sophistication.<o:p><\/o:p><\/p>"
+              },
+              "4da09d21-154d-4ad7-bf77-4bdb8f34b424": "Project Location",
+              "0a12302f-13da-425d-b317-1e85c73f5bdf": "Designer",
+              "settings": {
+                  "title": "Case Study Details"
+              },
+              "2f9e9f86-804a-41ef-80ec-0a1b5e23765b": "The Project",
+              "faf2be81-62da-41e9-b22b-a7971e4a6b86": "Prestbury, Cheshire",
+              "54907ac2-c434-43ee-a62d-83491ee2f872": "Altin Homes"
+          },
+          "4a4cc12b-c1f9-4e99-bee1-9dd652457858": {
+              "b53e8a04-36a1-4a6f-93fd-da753aad90d0": "coh-style-carousel-2-images",
+              "e6771664-8d9d-4b58-b829-2e374e31a38f": [
+                  {
+                      "e19c6536-0957-4d03-9608-61fdb4ac9294": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "521862ae-e156-4041-b98e-d83f8a914cad",
+                              "entityId": "521862ae-e156-4041-b98e-d83f8a914cad"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "180fbbf5-5e4c-4bc8-8a1b-a56b8ccd886b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "682aadc8-b245-46dc-89b8-63604969a04c",
+                              "entityId": "682aadc8-b245-46dc-89b8-63604969a04c"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "85ff4d80-9ce1-4638-af75-10187ebfd729": {
+                          "entity": {},
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "99787036-d3ec-4f9b-9b1d-9dafc90aa537": {
+                          "textFormat": "filtered_html",
+                          "text": "<p>The Envello Shadow Line+ cladding board has been moulded from real oak masters and designed to perfectly replicate smooth timber with a flat grained finish, giving a clean authentic look. The increased width of the Shadow Line+ board compared to standard timber boards means there is larger grain detail. This gives an enhanced visual impact, without risk of the board twisting or warping over time.<br>Tested to the rigorous demands of BS EN 13501-1, the Shadow Line+ system achieves a classification of Euroclass D.<\/p>"
+                      },
+                      "b642258a-43eb-4452-b043-3c07e849a3ca": "Shadow Line+",
+                      "a3c0797d-9a83-4a64-a590-07812c97a70a": "Golden Oak and Burnt Cedar",
+                      "fb6a221b-3272-4864-a0da-bf19da7cfea6": "\/en-gb\/composite-cladding-collections\/shadow-line\/golden-oak\/MCL360G"
+                  }
+              ],
+              "settings": {
+                  "title": "Product Carousel"
+              }
+          },
+          "e3af764b-a16a-4b62-b19a-412aa41142fc": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "24a92279-3ad1-4238-846a-e45f70971993",
+                      "entityId": "24a92279-3ad1-4238-846a-e45f70971993"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p><strong>Project Challenge<o:p><\/o:p><\/strong><\/p><p>The primary challenge was to blend luxury with environmental sustainability, creating homes that are not only aesthetically pleasing but also energy-efficient and environmentally friendly. The project aimed to set a benchmark in luxury living while minimising its ecological footprint in a picturesque yet ecologically sensitive locale.<o:p><\/o:p><\/p><p>&nbsp;<\/p><p><strong>Solution by Millboard<o:p><\/o:p><\/strong><\/p><p>To help address these challenges, Altin Homes selected Millboard\u2019s Envello Shadow Line+ resin mineral composite cladding in Golden Oak and Burnt Cedar. This decision was driven by the cladding's exceptional quality, sustainability, and durability, coupled with its undeniable visual appeal. Pairing Envello Shadow Line+ cladding with tastefully selected Facing Bricks at the ground level not only enhanced the project's aesthetic but also contributed to its sustainability goals.<o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "31ef94c8-ad4d-4734-aeab-febe1413cb17": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": []
+          },
+          "bffece21-3ef0-4c61-9802-77d65b8657f6": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "aa71ebab-9715-47e4-9090-3a253880fdbc": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "flex-start",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "flex-start",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": 12,
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": 12,
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12
+          },
+          "8c66ee65-101b-4c32-9346-7e42ad16ede8": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "b6fc5d73-92e4-41ad-a4d4-9110f1e17b3b": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p class=\"text-align-center coh-style-text-statements\">\"<span class=\"coh-color-olive\">Millboards cladding<\/span> has made a remarkable different to this upscale project. Its combination of aesthetics, durability, sustainability, and quality ensures these properties will be symbols of luxury and elegance for years to come.\"&nbsp;<\/p><p class=\"text-align-center coh-style-text-statements\">&nbsp;<\/p><p class=\"text-align-center\">Ali Mostoufi<\/p><p class=\"text-align-center\">Director at Altin Homes<\/p><p class=\"text-align-center coh-style-paragraph-large\"><o:p><\/o:p><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "a861f85f-9cdd-4489-af48-f5953dbd4bc9": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "bdb1d1ab-c777-4fb8-aa43-f954d939ce25",
+                      "entityId": "bdb1d1ab-c777-4fb8-aa43-f954d939ce25"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.text_and_image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p><strong>Results<o:p><\/o:p><\/strong><\/p><p>The use of Millboard\u2019s products ensured that each property not only stood out for its stunning design but also its robustness and longevity. The cladding solutions provided by Millboard are celebrated for their low maintenance needs and weather resistance, making them an ideal choice for the luxury homes at Waterbank.<o:p><\/o:p><\/p><p>&nbsp;<\/p><p><strong>Conclusion<o:p><\/o:p><\/strong><\/p><p>The Waterbank development showcases a seamless blend of luxury and sustainability in residential construction. Millboard's resin mineral composite cladding has not only enhanced the architectural charm of the Waterbank homes but has also perfectly complemented the project's environmental goals. This project serves as a model for sustainable luxury living in picturesque Prestbury, establishing a new benchmark for future developments in the region.<o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "b2599ce9-c069-4662-91f9-5686754ca22d": "",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "7eeb1722-8f7a-47f7-bbb8-c21a7bb0681a": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": []
+          },
+          "3d2046bd-3e3a-449c-9892-fadfd8d61643": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "6e04c250-3dee-4af9-b063-d9e010775717": {
+              "effdbd65-c5f8-4040-bda9-83449e60856b": "1",
+              "dd77c3ab-c83a-4e9e-95c8-5aa9f9ecdf9a": "1",
+              "f5d96f8a-8fa1-4019-ad89-2138b5ec4ffc": "1",
+              "d884c4c6-b64f-470c-bf51-6506f41f9bec": "1",
+              "ac8248d6-90fa-4542-800c-b50f6c2a3e56": "1",
+              "8cf8d876-62d4-4d1f-9a42-09310f961b15": "1",
+              "c3c4130e-a32e-46ba-8bb3-ca9b78daab4c": "move-pagination-up",
+              "c14ec3c8-a858-4cb5-9434-8ebafdb5b823": "retain",
+              "ba83a10a-812d-4e1d-8918-30441ed5c940": "coh-style-margin-bottom-small"
+          },
+          "122b189c-0195-4cce-a6d8-67aa58ebe0ec": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Drop 'Slide' components here"
+              }
+          },
+          "92afed98-ce0f-4a81-b368-4130f6ab121e": {
+              "settings": {
+                  "title": "Cross Link Cards"
+              },
+              "09b16443-1435-45fa-ab6b-1738f1f30cf3": true,
+              "2ea56031-facb-46cc-b908-69268d9151df": "For your next project",
+              "82f815de-b1bc-4359-b01e-fb451fbb8e8f": "Inspiration & ideas",
+              "95aee1be-eeff-4c1d-b9c5-9c27b4341b49": [
+                  {
+                      "f60e1126-7614-4331-918b-f5c486898e5d": {
+                          "entity_type": "node",
+                          "view_mode": "cross_link_cards",
+                          "entity": "8b79618a-2e99-41d8-8a48-94205d14110d"
+                      }
+                  },
+                  {
+                      "f60e1126-7614-4331-918b-f5c486898e5d": {
+                          "entity_type": "node",
+                          "view_mode": "cross_link_cards",
+                          "entity": "ad281b99-d7c7-451d-b5e4-ed76a53ecc69"
+                      }
+                  }
+              ]
+          }
+      },
+      "previewModel": {
+          "00119cc3-7e46-4a2e-b228-aad0b2525105": {},
+          "ebb014a4-7efc-47ce-ae64-71b7142ba1b4": {},
+          "d161ee2b-180a-4ba1-99d0-c6d017a93015": {},
+          "4a4cc12b-c1f9-4e99-bee1-9dd652457858": {},
+          "e3af764b-a16a-4b62-b19a-412aa41142fc": {},
+          "b6fc5d73-92e4-41ad-a4d4-9110f1e17b3b": {},
+          "a861f85f-9cdd-4489-af48-f5953dbd4bc9": {},
+          "92afed98-ce0f-4a81-b368-4130f6ab121e": {}
+      },
+      "variableFields": {
+          "00119cc3-7e46-4a2e-b228-aad0b2525105": [],
+          "ebb014a4-7efc-47ce-ae64-71b7142ba1b4": [],
+          "d161ee2b-180a-4ba1-99d0-c6d017a93015": [],
+          "4a4cc12b-c1f9-4e99-bee1-9dd652457858": [],
+          "e3af764b-a16a-4b62-b19a-412aa41142fc": [],
+          "b6fc5d73-92e4-41ad-a4d4-9110f1e17b3b": [],
+          "a861f85f-9cdd-4489-af48-f5953dbd4bc9": [],
+          "92afed98-ce0f-4a81-b368-4130f6ab121e": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

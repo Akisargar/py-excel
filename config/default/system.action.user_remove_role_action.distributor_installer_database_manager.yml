@@ -1,0 +1,14 @@
+uuid: 41dcde61-7899-4939-8e7e-a18f5aada4d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.distributor_installer_database_manager
+  module:
+    - user
+id: user_remove_role_action.distributor_installer_database_manager
+label: 'Remove the Distributor / Installer Database Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: distributor_installer_database_manager

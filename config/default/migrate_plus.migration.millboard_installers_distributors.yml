@@ -1,0 +1,111 @@
+uuid: 5839dbff-58d7-4f3b-be39-baf4b49f0a7b
+langcode: en-gb
+status: true
+dependencies: {  }
+id: millboard_installers_distributors
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - node
+migration_group: millboard_installers_and_distributors
+label: 'Import Millboard Installers & Distributors'
+source:
+  plugin: csv
+  path: modules/custom/millboard_installers_distributors/assets/millboard_updated_july_2024.csv
+  delimiter: ','
+  enclosure: '"'
+  header_offset: 0
+  ids:
+    - id
+process:
+  title:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: title
+      message: 'Title is missing'
+  field_type_of_inst_dist:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: 'Type of Installer'
+      value_key: name
+    -
+      plugin: explode
+      delimiter: ','
+      source: 'Type of Installer'
+    -
+      plugin: multiple_values
+    -
+      plugin: callback
+      callable: trim
+  field_about/value: About
+  field_about/format:
+    plugin: default_value
+    default_value: filtered_html
+  field_product_range/value: 'Product Range'
+  field_product_range/format:
+    plugin: default_value
+    default_value: filtered_html
+  field_display_centre:
+    plugin: static_map
+    source: 'Display Center'
+    default_value: 0
+    map:
+      'Display Center': 1
+      'Off': 0
+  field_sells_cladding:
+    plugin: static_map
+    source: 'Sells Cladding'
+    default_value: 0
+    map:
+      'On': 1
+      'Off': 0
+  field_sells_decking:
+    plugin: static_map
+    source: 'Sells Decking'
+    default_value: 0
+    map:
+      'On': 1
+      'Off': 0
+  field_telephone_number: 'Telephone Number'
+  field_telephone_number_2: 'Telephone Number 2'
+  field_website: Website
+  field_email_address: 'Email Address'
+  field_store_address/country_code:
+    plugin: static_map
+    source: Country
+    default_value: GB
+    map:
+      Ireland: IE
+      'United Kingdom': GB
+      'United States': US
+  field_store_address/organization: Number
+  field_store_address/address_line1: Address
+  field_store_address/locality: City
+  field_store_address/postal_code: Postcode
+  field_store_location/lat: Lat
+  field_store_location/lng: Lng
+  moderation_state: published
+  path/pathauto:
+    plugin: default_value
+    default_value: false
+  path/alias:
+    source: uri
+    plugin: callback
+    callable: htmlspecialchars_decode
+  field_grading:
+    plugin: entity_generate
+    source: Grading
+    entity_type: taxonomy_term
+    bundle_key: vid
+    bundle: gradings
+    value_key: name
+  langcode:
+    plugin: default_value
+    default_value: en-gb
+destination:
+  plugin: 'entity:node'
+  default_bundle: installers_distributors
+migration_dependencies: null

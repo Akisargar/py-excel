@@ -1,0 +1,23 @@
+uuid: c7a0d3da-078a-4af6-8c7a-16a5e6e510a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sells_decking
+    - node.type.installers_distributors
+id: node.installers_distributors.field_sells_decking
+field_name: field_sells_decking
+entity_type: node
+bundle: installers_distributors
+label: 'Sells Decking'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

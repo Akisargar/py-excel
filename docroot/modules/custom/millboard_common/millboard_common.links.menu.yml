@@ -1,0 +1,19 @@
+millboard_common.settings:
+  title: 'Millboard Settings'
+  description: 'Configure Millboard settings.'
+  parent: system.admin_config
+  route_name: millboard_common.config_form
+  weight: 100
+
+millboard_common.custom_links:
+  title: 'Millboard Custom Links'
+  description: 'This are the custom links that is being used in the website'
+  parent: system.admin_config_services
+  route_name: millboard_common.custom_links
+
+millboard_common.distributor_export:
+  title: 'Export Distributors'
+  parent: system.admin_content
+  description: 'Export Installers & Distributors In CSV Format'
+  route_name: millboard_common.distributor_export
+  weight: 100

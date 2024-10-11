@@ -1,0 +1,20 @@
+uuid: fda021eb-2f83-42f4-a57c-a5a496d7affe
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - media
+id: commerce_product_variation.field_lifestyle_images
+field_name: field_lifestyle_images
+entity_type: commerce_product_variation
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

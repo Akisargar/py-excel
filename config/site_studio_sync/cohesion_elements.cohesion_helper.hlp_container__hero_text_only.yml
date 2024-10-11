@@ -1,0 +1,302 @@
+uuid: cfbee4cb-cda5-46df-9e3a-79bbfa43fcdf
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.22c77a50
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_custom_styles.cohesion_custom_style.dd48edd1
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_heading
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.light-mist
+label: 'Container - Hero Text Only'
+id: hlp_container__hero_text_only
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "3c714371-ea33-482e-87f4-9e289a78442d",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "6a8f0cc0-3c4d-42f8-96b5-06fca53d6460",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "18ec645f-90ae-43a5-9aca-472f3b657d40",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "6d0e6100-d159-4159-ba5a-315107a95498",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_heading",
+                                              "type": "component",
+                                              "title": "Heading",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_heading",
+                                              "componentType": "heading",
+                                              "iconColor": "custom",
+                                              "uuid": "87847d75-1027-4958-949d-fd3541c2198f",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "dd04114d-7ce4-454d-9064-208498788707",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "a04cc85d-7296-4d6b-880f-721bdd7e7963",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_text",
+                                              "type": "component",
+                                              "title": "Text",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_text",
+                                              "componentType": "wysiwyg",
+                                              "iconColor": "custom",
+                                              "uuid": "be1d7b19-1db9-4e53-8256-f3cfb5d57c7b",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "3c714371-ea33-482e-87f4-9e289a78442d": {},
+          "6a8f0cc0-3c4d-42f8-96b5-06fca53d6460": {},
+          "18ec645f-90ae-43a5-9aca-472f3b657d40": {},
+          "6d0e6100-d159-4159-ba5a-315107a95498": {},
+          "87847d75-1027-4958-949d-fd3541c2198f": {},
+          "dd04114d-7ce4-454d-9064-208498788707": {},
+          "a04cc85d-7296-4d6b-880f-721bdd7e7963": {},
+          "be1d7b19-1db9-4e53-8256-f3cfb5d57c7b": {}
+      },
+      "model": {
+          "3c714371-ea33-482e-87f4-9e289a78442d": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#fcfbf8",
+                      "rgba": "rgba(252, 251, 248, 1)"
+                  },
+                  "uid": "light-mist",
+                  "name": "Light Mist",
+                  "class": ".coh-color-light-mist",
+                  "variable": "$coh-color-light-mist",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Text",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Container - Hero Text Only"
+              },
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "coh-style-hero-text-only",
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "6a8f0cc0-3c4d-42f8-96b5-06fca53d6460": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "18ec645f-90ae-43a5-9aca-472f3b657d40": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "8",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "10",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              },
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "0px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px"
+          },
+          "6d0e6100-d159-4159-ba5a-315107a95498": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "87847d75-1027-4958-949d-fd3541c2198f": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h1",
+              "77d003da-6145-481e-95c8-2f6017361e26": "",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-center",
+              "settings": {
+                  "title": "Heading"
+              },
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Take a look around"
+          },
+          "dd04114d-7ce4-454d-9064-208498788707": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "4",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              },
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "0px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px"
+          },
+          "a04cc85d-7296-4d6b-880f-721bdd7e7963": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "be1d7b19-1db9-4e53-8256-f3cfb5d57c7b": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p class=\"coh-style-paragraph-large\">Join BBC One Morning Live's gardening expert and multi-award-winning designer, Mark Lane, along with celebrated garden designer Lucy Bravington, and proud garden owner Julie, as they showcase the breath taking beauty of this Stratford-upon-Avon garden in our latest video.&nbsp;<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": "",
+              "settings": {
+                  "title": "Text"
+              }
+          }
+      },
+      "previewModel": {
+          "3c714371-ea33-482e-87f4-9e289a78442d": {},
+          "18ec645f-90ae-43a5-9aca-472f3b657d40": {},
+          "87847d75-1027-4958-949d-fd3541c2198f": {},
+          "dd04114d-7ce4-454d-9064-208498788707": {},
+          "be1d7b19-1db9-4e53-8256-f3cfb5d57c7b": {}
+      },
+      "variableFields": {
+          "3c714371-ea33-482e-87f4-9e289a78442d": [],
+          "18ec645f-90ae-43a5-9aca-472f3b657d40": [],
+          "87847d75-1027-4958-949d-fd3541c2198f": [],
+          "dd04114d-7ce4-454d-9064-208498788707": [],
+          "be1d7b19-1db9-4e53-8256-f3cfb5d57c7b": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

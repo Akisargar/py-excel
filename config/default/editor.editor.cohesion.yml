@@ -1,0 +1,402 @@
+uuid: null
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - filter.format.cohesion
+  module:
+    - ckeditor5
+    - cohesion
+third_party_settings:
+  cohesion:
+    ssa_enabled: true
+format: cohesion
+editor: ckeditor5
+settings:
+  toolbar:
+    items:
+      - bold
+      - italic
+      - underline
+      - removeFormat
+      - '|'
+      - alignment
+      - '|'
+      - link
+      - '|'
+      - bulletedList
+      - numberedList
+      - '|'
+      - drupalMedia
+      - blockQuote
+      - '|'
+      - sourceEditing
+      - '|'
+      - heading
+      - style
+  plugins:
+    ckeditor5_alignment:
+      enabled_alignments:
+        - center
+        - justify
+        - left
+        - right
+    ckeditor5_heading:
+      enabled_headings:
+        - heading1
+        - heading2
+        - heading3
+        - heading4
+        - heading5
+    ckeditor5_list:
+      properties:
+        reversed: true
+        startIndex: true
+      multiBlock: true
+    ckeditor5_sourceEditing:
+      allowed_tags: {  }
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Paragraph small'
+          element: '<p class="coh-style-paragraph-small">'
+        -
+          label: 'Paragraph Default'
+          element: '<p class="coh-style-paragraph-default">'
+        -
+          label: 'Paragraph Regular'
+          element: '<p class="coh-style-paragraph-regular">'
+        -
+          label: 'Paragraph large'
+          element: '<p class="coh-style-paragraph-large">'
+        -
+          label: 'Text Statements'
+          element: '<p class="coh-style-text-statements">'
+        -
+          label: 'Link Default'
+          element: '<a class="coh-style-link-default">'
+        -
+          label: 'Link Hover'
+          element: '<a class="coh-style-link-hover">'
+        -
+          label: 'Small CTA/Text Link'
+          element: '<a class="coh-style-small-cta-text-link">'
+        -
+          label: 'Primary Button'
+          element: '<a class="coh-style-primary-button">'
+        -
+          label: 'Primary Button with icon'
+          element: '<a class="coh-style-primary-button-with-icon">'
+        -
+          label: 'Primary Button with Background'
+          element: '<a class="coh-style-primary-button-with-background">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="coh-style-secondary-button">'
+        -
+          label: 'Tertiary Button'
+          element: '<a class="coh-style-tertiary-button">'
+        -
+          label: 'Tertiary Button with underline'
+          element: '<a class="coh-style-tertiary-button-with-underline">'
+        -
+          label: 'Heading 1 Default [h1]'
+          element: '<h1 class="coh-style-heading-1-size">'
+        -
+          label: 'Heading 1 Default [h2]'
+          element: '<h2 class="coh-style-heading-1-size">'
+        -
+          label: 'Heading 1 Default [h3]'
+          element: '<h3 class="coh-style-heading-1-size">'
+        -
+          label: 'Heading 1 Default [h4]'
+          element: '<h4 class="coh-style-heading-1-size">'
+        -
+          label: 'Heading 1 Default [h5]'
+          element: '<h5 class="coh-style-heading-1-size">'
+        -
+          label: 'Heading 1 Default [h6]'
+          element: '<h6 class="coh-style-heading-1-size">'
+        -
+          label: 'Heading 1 Regular [h1]'
+          element: '<h1 class="coh-style-heading-1-regular">'
+        -
+          label: 'Heading 1 Regular [h2]'
+          element: '<h2 class="coh-style-heading-1-regular">'
+        -
+          label: 'Heading 1 Regular [h3]'
+          element: '<h3 class="coh-style-heading-1-regular">'
+        -
+          label: 'Heading 1 Regular [h4]'
+          element: '<h4 class="coh-style-heading-1-regular">'
+        -
+          label: 'Heading 1 Regular [h5]'
+          element: '<h5 class="coh-style-heading-1-regular">'
+        -
+          label: 'Heading 1 Regular [h6]'
+          element: '<h6 class="coh-style-heading-1-regular">'
+        -
+          label: 'Heading 2 Default [h1]'
+          element: '<h1 class="coh-style-heading-2-size">'
+        -
+          label: 'Heading 2 Default [h2]'
+          element: '<h2 class="coh-style-heading-2-size">'
+        -
+          label: 'Heading 2 Default [h3]'
+          element: '<h3 class="coh-style-heading-2-size">'
+        -
+          label: 'Heading 2 Default [h4]'
+          element: '<h4 class="coh-style-heading-2-size">'
+        -
+          label: 'Heading 2 Default [h5]'
+          element: '<h5 class="coh-style-heading-2-size">'
+        -
+          label: 'Heading 2 Default [h6]'
+          element: '<h6 class="coh-style-heading-2-size">'
+        -
+          label: 'Heading 2 Regular [h1]'
+          element: '<h1 class="coh-style-heading-2-size-regular">'
+        -
+          label: 'Heading 2 Regular [h2]'
+          element: '<h2 class="coh-style-heading-2-size-regular">'
+        -
+          label: 'Heading 2 Regular [h3]'
+          element: '<h3 class="coh-style-heading-2-size-regular">'
+        -
+          label: 'Heading 2 Regular [h4]'
+          element: '<h4 class="coh-style-heading-2-size-regular">'
+        -
+          label: 'Heading 2 Regular [h5]'
+          element: '<h5 class="coh-style-heading-2-size-regular">'
+        -
+          label: 'Heading 2 Regular [h6]'
+          element: '<h6 class="coh-style-heading-2-size-regular">'
+        -
+          label: 'Heading 3 Default [h1]'
+          element: '<h1 class="coh-style-heading-3-size">'
+        -
+          label: 'Heading 3 Default [h2]'
+          element: '<h2 class="coh-style-heading-3-size">'
+        -
+          label: 'Heading 3 Default [h3]'
+          element: '<h3 class="coh-style-heading-3-size">'
+        -
+          label: 'Heading 3 Default [h4]'
+          element: '<h4 class="coh-style-heading-3-size">'
+        -
+          label: 'Heading 3 Default [h5]'
+          element: '<h5 class="coh-style-heading-3-size">'
+        -
+          label: 'Heading 3 Default [h6]'
+          element: '<h6 class="coh-style-heading-3-size">'
+        -
+          label: 'Heading 3 Regular [h1]'
+          element: '<h1 class="coh-style-heading-3-size-regular">'
+        -
+          label: 'Heading 3 Regular [h2]'
+          element: '<h2 class="coh-style-heading-3-size-regular">'
+        -
+          label: 'Heading 3 Regular [h3]'
+          element: '<h3 class="coh-style-heading-3-size-regular">'
+        -
+          label: 'Heading 3 Regular [h4]'
+          element: '<h4 class="coh-style-heading-3-size-regular">'
+        -
+          label: 'Heading 3 Regular [h5]'
+          element: '<h5 class="coh-style-heading-3-size-regular">'
+        -
+          label: 'Heading 3 Regular [h6]'
+          element: '<h6 class="coh-style-heading-3-size-regular">'
+        -
+          label: 'Heading 4 Default / Statements Default [h1]'
+          element: '<h1 class="coh-style-heading-4-size">'
+        -
+          label: 'Heading 4 Default / Statements Default [h2]'
+          element: '<h2 class="coh-style-heading-4-size">'
+        -
+          label: 'Heading 4 Default / Statements Default [h3]'
+          element: '<h3 class="coh-style-heading-4-size">'
+        -
+          label: 'Heading 4 Default / Statements Default [h4]'
+          element: '<h4 class="coh-style-heading-4-size">'
+        -
+          label: 'Heading 4 Default / Statements Default [h5]'
+          element: '<h5 class="coh-style-heading-4-size">'
+        -
+          label: 'Heading 4 Default / Statements Default [h6]'
+          element: '<h6 class="coh-style-heading-4-size">'
+        -
+          label: 'Heading 4 Regular / Statements Regular [h1]'
+          element: '<h1 class="coh-style-heading-4-size-statements-regular">'
+        -
+          label: 'Heading 4 Regular / Statements Regular [h2]'
+          element: '<h2 class="coh-style-heading-4-size-statements-regular">'
+        -
+          label: 'Heading 4 Regular / Statements Regular [h3]'
+          element: '<h3 class="coh-style-heading-4-size-statements-regular">'
+        -
+          label: 'Heading 4 Regular / Statements Regular [h4]'
+          element: '<h4 class="coh-style-heading-4-size-statements-regular">'
+        -
+          label: 'Heading 4 Regular / Statements Regular [h5]'
+          element: '<h5 class="coh-style-heading-4-size-statements-regular">'
+        -
+          label: 'Heading 4 Regular / Statements Regular [h6]'
+          element: '<h6 class="coh-style-heading-4-size-statements-regular">'
+        -
+          label: 'Heading 5 Default [h1]'
+          element: '<h1 class="coh-style-heading-5-size">'
+        -
+          label: 'Heading 5 Default [h2]'
+          element: '<h2 class="coh-style-heading-5-size">'
+        -
+          label: 'Heading 5 Default [h3]'
+          element: '<h3 class="coh-style-heading-5-size">'
+        -
+          label: 'Heading 5 Default [h4]'
+          element: '<h4 class="coh-style-heading-5-size">'
+        -
+          label: 'Heading 5 Default [h5]'
+          element: '<h5 class="coh-style-heading-5-size">'
+        -
+          label: 'Heading 5 Default [h6]'
+          element: '<h6 class="coh-style-heading-5-size">'
+        -
+          label: 'Heading 5 Regular [h1]'
+          element: '<h1 class="coh-style-heading-5-size-regular">'
+        -
+          label: 'Heading 5 Regular [h2]'
+          element: '<h2 class="coh-style-heading-5-size-regular">'
+        -
+          label: 'Heading 5 Regular [h3]'
+          element: '<h3 class="coh-style-heading-5-size-regular">'
+        -
+          label: 'Heading 5 Regular [h4]'
+          element: '<h4 class="coh-style-heading-5-size-regular">'
+        -
+          label: 'Heading 5 Regular [h5]'
+          element: '<h5 class="coh-style-heading-5-size-regular">'
+        -
+          label: 'Heading 5 Regular [h6]'
+          element: '<h6 class="coh-style-heading-5-size-regular">'
+        -
+          label: 'Right Tick [inline]'
+          element: '<span class="coh-style-green-right-tick">'
+        -
+          label: 'Dash [inline]'
+          element: '<span class="coh-style-not-ticked">'
+        -
+          label: 'Millboard Green'
+          element: '<span class="coh-color-millboard-green">'
+        -
+          label: Olive
+          element: '<span class="coh-color-olive">'
+        -
+          label: 'Light Mist'
+          element: '<span class="coh-color-light-mist">'
+        -
+          label: 'Spring Wood'
+          element: '<span class="coh-color-spring-wood">'
+        -
+          label: 'Millboard Mist'
+          element: '<span class="coh-color-millboard-mist">'
+        -
+          label: 'Millboard Wenge'
+          element: '<span class="coh-color-millboard-wenge">'
+        -
+          label: 'Millboard Davy Grey'
+          element: '<span class="coh-color-millboard-davy-grey">'
+        -
+          label: 'Millboard Charcoal'
+          element: '<span class="coh-color-millboard-charcoal">'
+        -
+          label: 'Charcoal Black'
+          element: '<span class="coh-color-charcoal-black">'
+        -
+          label: Error
+          element: '<span class="coh-color-error">'
+        -
+          label: 'Antique Oak'
+          element: '<span class="coh-color-antique-oak">'
+        -
+          label: 'Brushed Basalt'
+          element: '<span class="coh-color-brushed-basalt">'
+        -
+          label: 'Burnt Cedar - Embered'
+          element: '<span class="coh-color-burnt-cedar---embered">'
+        -
+          label: 'Coppered Oak'
+          element: '<span class="coh-color-coppered-oak">'
+        -
+          label: 'Golden Oak'
+          element: '<span class="coh-color-golden-oak">'
+        -
+          label: Jarrah
+          element: '<span class="coh-color-jarrah">'
+        -
+          label: 'Limed Oak'
+          element: '<span class="coh-color-limed-oak">'
+        -
+          label: 'Smoked Oak - Driftwood'
+          element: '<span class="coh-color-smoked-oak---driftwood">'
+        -
+          label: 'Sustainability Green'
+          element: '<span class="coh-color-sustainability-green">'
+        -
+          label: 'F37 Ginger Regular [inline]'
+          element: '<span class="coh-style-f37-ginger-regular">'
+        -
+          label: 'F37 Ginger Italic [inline]'
+          element: '<span class="coh-style-f37-ginger-italic">'
+        -
+          label: 'F37 Ginger Bold [inline]'
+          element: '<span class="coh-style-f37-ginger-bold">'
+        -
+          label: 'F37 Ginger Bold Italic [inline]'
+          element: '<span class="coh-style-f37-ginger-bold-italic">'
+        -
+          label: 'F37 Ginger Light [inline]'
+          element: '<span class="coh-style-f37-ginger-light">'
+        -
+          label: 'F37 Ginger Light Italic [inline]'
+          element: '<span class="coh-style-f37-ginger-light-italic">'
+        -
+          label: 'F37 Ginger Thin [inline]'
+          element: '<span class="coh-style-f37-ginger-thin">'
+        -
+          label: 'F37 Ginger Thin Italic [inline]'
+          element: '<span class="coh-style-f37-ginger-thin-italic">'
+        -
+          label: 'Primary Button with Transparent Background'
+          element: '<a class="coh-style-primary-button-with-transparent-background">'
+        -
+          label: Ashwood
+          element: '<span class="coh-color-ashwood">'
+        -
+          label: 'Ebony Grey'
+          element: '<span class="coh-color-ebony-grey">'
+        -
+          label: Vintage-Carbon
+          element: '<span class="coh-color-vintagecarbon">'
+        -
+          label: Gold
+          element: '<span class="coh-color-gold">'
+        -
+          label: Bronze
+          element: '<span class="coh-color-bronze">'
+        -
+          label: Sage-green
+          element: '<span class="coh-color-sagegreen">'
+        -
+          label: Salt-Blue
+          element: '<span class="coh-color-saltblue">'
+    media_media:
+      allow_view_mode_override: true
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: null
+  max_dimensions:
+    width: null
+    height: null

@@ -1,0 +1,1560 @@
+uuid: 394c0ca0-08f0-47ec-b56c-1539a2ab8bec
+langcode: en
+status: true
+dependencies:
+  config:
+    - cohesion_website_settings.cohesion_color.light-mist
+    - cohesion_website_settings.cohesion_color.millboard-charcoal
+    - cohesion_website_settings.cohesion_color.millboard-wenge
+    - cohesion_website_settings.cohesion_color.olive
+  enforced:
+    module:
+      - acquia_cms_site_studio
+label: Breadcrumbs
+id: 48e09c60
+json_values: |
+  {
+      "preview": {
+          "text": "<ul class=\"coh-preview\">\n\t<li><a>List item 1<\/a><\/li>\n\t<li><a>List item 2<\/a><\/li>\n\t<li><a>List item 3<\/a><\/li>\n\t<li><a>List item 1<\/a><\/li>\n\t<li>List item 1<\/li>\n<\/ul>\n\n<h1>This is a heading below the breadcrumbs<\/h1>\n",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "ul,ol,dl",
+              "class": "",
+              "combinator": "",
+              "pseudo": ""
+          },
+          "styles": {
+              "xl": {
+                  "margin": {
+                      "margin-bottom": {}
+                  },
+                  "font-weight": {},
+                  "padding": {
+                      "padding-top": {},
+                      "padding-bottom": {},
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "md": {
+                  "padding": {
+                      "padding-top": {},
+                      "padding-bottom": {},
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "sm": {
+                  "padding": {
+                      "padding-top": {},
+                      "padding-bottom": {},
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "xs": {
+                  "padding": {
+                      "padding-top": {},
+                      "padding-bottom": {},
+                      "padding-left": {},
+                      "padding-right": {}
+                  },
+                  "display": {
+                      "value": "flex"
+                  },
+                  "background-color": {
+                      "value": {
+                          "link": true,
+                          "value": {
+                              "hex": "#fcfbf8",
+                              "rgba": "rgba(252, 251, 248, 1)"
+                          },
+                          "uid": "light-mist",
+                          "name": "Light Mist",
+                          "class": ".coh-color-light-mist",
+                          "variable": "$coh-color-light-mist",
+                          "tags": [
+                              "Millboard",
+                              "Background",
+                              "Text",
+                              "Light"
+                          ],
+                          "inuse": true,
+                          "wysiwyg": true
+                      }
+                  }
+              },
+              "lg": {
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              }
+          },
+          "c2c0de1c-fef7-4537-9e3d-886ddeebf143": {
+              "settings": {
+                  "element": "a",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ""
+              },
+              "styles": {
+                  "xl": {
+                      "padding": {
+                          "padding-right": {}
+                      }
+                  },
+                  "lg": {
+                      "font-size": {}
+                  },
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "value": {
+                                  "hex": "#62554d",
+                                  "rgba": "rgba(98, 85, 77, 0.7)"
+                              }
+                          }
+                      },
+                      "text-transform": {
+                          "value": "capitalize"
+                      },
+                      "line-height": {
+                          "value": "24px"
+                      },
+                      "font-size": {
+                          "value": "14px"
+                      }
+                  }
+              }
+          },
+          "75b7c52f-494b-4804-a549-7fe4ec7f6fcb": {
+              "settings": {
+                  "element": "",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ":before"
+              },
+              "styles": {
+                  "xl": {
+                      "content-string": {
+                          "contentType": {},
+                          "contentString": {},
+                          "customString": {}
+                      }
+                  },
+                  "xs": {
+                      "padding": {
+                          "padding-equal": {},
+                          "padding-left": {
+                              "value": "8px"
+                          },
+                          "padding-right": {
+                              "value": "8px"
+                          }
+                      },
+                      "content-string": {
+                          "contentType": {
+                              "value": "custom"
+                          },
+                          "customString": {
+                              "value": "\"\/\""
+                          }
+                      },
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#62554d",
+                                  "rgba": "rgba(98, 85, 77, 1)"
+                              },
+                              "uid": "millboard-wenge",
+                              "name": "Millboard Wenge",
+                              "class": ".coh-color-millboard-wenge",
+                              "variable": "$coh-color-millboard-wenge",
+                              "tags": [
+                                  "Millboard",
+                                  "Text",
+                                  "Accent"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      }
+                  }
+              }
+          },
+          "270baefa-27c5-4589-a7a2-7a30becd847d": {
+              "settings": {
+                  "element": "li",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ""
+              },
+              "styles": {
+                  "xl": {
+                      "display": {},
+                      "content-string": {
+                          "contentType": {}
+                      },
+                      "margin": {
+                          "margin-left": {},
+                          "margin-bottom": {},
+                          "margin-top": {}
+                      },
+                      "font-size": {}
+                  },
+                  "md": {
+                      "font-size": {},
+                      "display": {
+                          "value": "flex"
+                      }
+                  },
+                  "ps": {
+                      "font-size": {}
+                  },
+                  "xs": {
+                      "display": {
+                          "value": "none"
+                      },
+                      "color": {
+                          "value": {
+                              "value": {
+                                  "hex": "#62554d",
+                                  "rgba": "rgba(98, 85, 77, 0.7)"
+                              }
+                          }
+                      },
+                      "text-transform": {},
+                      "font-size": {
+                          "value": "14px"
+                      },
+                      "line-height": {
+                          "value": "24px"
+                      }
+                  }
+              }
+          },
+          "544752a4-f7bf-44b4-804f-71ad4462b230": {
+              "settings": {
+                  "element": "",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ":last-child"
+              },
+              "styles": {
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#414042",
+                                  "rgba": "rgba(65, 64, 66, 1)"
+                              },
+                              "uid": "millboard-charcoal",
+                              "name": "Millboard Charcoal",
+                              "class": ".coh-color-millboard-charcoal",
+                              "variable": "$coh-color-millboard-charcoal",
+                              "tags": [
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      },
+                      "display": {}
+                  },
+                  "md": {
+                      "display": {}
+                  }
+              }
+          },
+          "3a2a7ceb-8c6b-4c1a-b8e2-2ab8a2d3bbae": {
+              "styles": {
+                  "xs": {
+                      "content-string": {
+                          "contentType": {},
+                          "contentString": {},
+                          "customString": {}
+                      },
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      },
+                      "padding": {
+                          "padding-left": {
+                              "value": "0"
+                          }
+                      }
+                  },
+                  "md": {
+                      "content-string": {
+                          "contentType": {}
+                      },
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#62554d",
+                                  "rgba": "rgba(98, 85, 77, 1)"
+                              },
+                              "uid": "millboard-wenge",
+                              "name": "Millboard Wenge",
+                              "class": ".coh-color-millboard-wenge",
+                              "variable": "$coh-color-millboard-wenge",
+                              "tags": [
+                                  "Millboard",
+                                  "Text",
+                                  "Accent"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      },
+                      "padding": {
+                          "padding-left": {
+                              "value": "8px"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":before"
+              }
+          },
+          "b081371b-85a4-4ea1-afdd-91aed44356d2": {
+              "styles": {
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#414042",
+                                  "rgba": "rgba(65, 64, 66, 1)"
+                              },
+                              "uid": "millboard-charcoal",
+                              "name": "Millboard Charcoal",
+                              "class": ".coh-color-millboard-charcoal",
+                              "variable": "$coh-color-millboard-charcoal",
+                              "tags": [
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": "a"
+              }
+          },
+          "b79ca138-9fd5-4b2b-a818-1de88aa71f05": {
+              "styles": {
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":before"
+              }
+          },
+          "95c45121-2cb6-466f-9871-4d2db27d6ad7": {
+              "styles": {
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#414042",
+                                  "rgba": "rgba(65, 64, 66, 1)"
+                              },
+                              "uid": "millboard-charcoal",
+                              "name": "Millboard Charcoal",
+                              "class": ".coh-color-millboard-charcoal",
+                              "variable": "$coh-color-millboard-charcoal",
+                              "tags": [
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      }
+                  },
+                  "md": {
+                      "color": {
+                          "value": {
+                              "value": {
+                                  "hex": "#62554d",
+                                  "rgba": "rgba(98, 85, 77, 0.7)"
+                              }
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": "a"
+              }
+          },
+          "07b0b49a-dfa2-44e7-9d4a-d874a3320b93": {
+              "styles": {},
+              "settings": {
+                  "pseudo": ":first-child"
+              }
+          },
+          "603ad5ef-6358-4cc0-bf05-afc090a3c5ce": {
+              "styles": {
+                  "xs": {
+                      "content-string": {
+                          "contentType": {}
+                      },
+                      "display": {}
+                  },
+                  "md": {
+                      "display": {
+                          "value": "none"
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":before"
+              }
+          },
+          "22d7cb52-ec4d-4d55-ac17-c3536bde246c": {
+              "styles": {
+                  "xs": {
+                      "width": {
+                          "value": "100%"
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":after"
+              }
+          },
+          "3f8d4a3f-86f9-4cc4-b1e5-f7f66b129ad3": {
+              "styles": {
+                  "xs": {
+                      "display": {
+                          "value": "flex"
+                      },
+                      "padding": {
+                          "padding-top": {
+                              "value": "8px"
+                          },
+                          "padding-bottom": {
+                              "value": "8px"
+                          },
+                          "padding-left": {
+                              "value": "24px"
+                          },
+                          "padding-right": {
+                              "value": "24px"
+                          }
+                      }
+                  },
+                  "md": {
+                      "padding": {
+                          "padding-left": {
+                              "value": "32px"
+                          },
+                          "padding-right": {
+                              "value": "32px"
+                          }
+                      }
+                  },
+                  "lg": {
+                      "padding": {
+                          "padding-left": {
+                              "value": "48px"
+                          },
+                          "padding-right": {
+                              "value": "48px"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": "ul"
+              }
+          },
+          "f80c8bd2-118f-4723-9bf2-c5ac40eef6a7": {
+              "styles": {
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#414042",
+                                  "rgba": "rgba(65, 64, 66, 1)"
+                              },
+                              "uid": "millboard-charcoal",
+                              "name": "Millboard Charcoal",
+                              "class": ".coh-color-millboard-charcoal",
+                              "variable": "$coh-color-millboard-charcoal",
+                              "tags": [
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      },
+                      "display": {
+                          "value": "flex"
+                      }
+                  },
+                  "md": {
+                      "color": {
+                          "value": {
+                              "value": {
+                                  "hex": "#62554d",
+                                  "rgba": "rgba(98, 85, 77, 0.7)"
+                              }
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "class": ".breadcrumb-last-link"
+              }
+          }
+      },
+      "variableFields": [],
+      "previewModel": {}
+  }
+json_mapper: |
+  {
+      "styles": {
+          "selectorType": "topLevel",
+          "items": [
+              {
+                  "title": "ul",
+                  "type": "container",
+                  "selectorType": "child",
+                  "uuid": "3f8d4a3f-86f9-4cc4-b1e5-f7f66b129ad3",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "display",
+                                  "activeFields": [
+                                      {
+                                          "name": "display",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "visibility",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "overflow",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "overflow-x",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "overflow-y",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "padding",
+                                  "activeFields": [
+                                      {
+                                          "name": "padding-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "iconName": "laptop",
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": "ul",
+                  "items": [
+                      {
+                          "title": "li",
+                          "type": "container",
+                          "selectorType": "child",
+                          "model": "li",
+                          "originalLabel": "Child selector",
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "display",
+                                          "breakpoints": [
+                                              {
+                                                  "iconName": "mobile",
+                                                  "name": "xs"
+                                              },
+                                              {
+                                                  "name": "md"
+                                              }
+                                          ],
+                                          "activeFields": [
+                                              {
+                                                  "name": "display",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "visibility",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "overflow",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "overflow-x",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "overflow-y",
+                                                  "active": false
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "font",
+                                  "children": [
+                                      {
+                                          "formKey": "font-and-color",
+                                          "activeFields": [
+                                              {
+                                                  "name": "font-family",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "font-weight",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "color",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "font-style-and-wrapping",
+                                          "activeFields": [
+                                              {
+                                                  "name": "font-style",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "text-transform",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "text-decoration",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "word-wrap",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "direction",
+                                                  "active": false
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "font-sizing-and-alignment",
+                                          "activeFields": [
+                                              {
+                                                  "name": "font-size",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "line-height",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "text-align",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "letter-spacing",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "word-spacing",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "text-indent",
+                                                  "active": false
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "uuid": "270baefa-27c5-4589-a7a2-7a30becd847d",
+                          "form": null,
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "expanded": true,
+                          "items": [
+                              {
+                                  "title": ":first-child",
+                                  "type": "container",
+                                  "selectorType": "pseudo",
+                                  "uuid": "07b0b49a-dfa2-44e7-9d4a-d874a3320b93",
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo"
+                                  ],
+                                  "formDefinition": [],
+                                  "expanded": true,
+                                  "items": [
+                                      {
+                                          "title": ":before",
+                                          "type": "container",
+                                          "selectorType": "pseudo",
+                                          "uuid": "603ad5ef-6358-4cc0-bf05-afc090a3c5ce",
+                                          "allowedTypes": [
+                                              "child",
+                                              "pseudo"
+                                          ],
+                                          "formDefinition": [
+                                              {
+                                                  "formKey": "layout",
+                                                  "children": [
+                                                      {
+                                                          "formKey": "display",
+                                                          "activeFields": [
+                                                              {
+                                                                  "name": "display",
+                                                                  "active": true
+                                                              },
+                                                              {
+                                                                  "name": "visibility",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "overflow",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "overflow-x",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "overflow-y",
+                                                                  "active": false
+                                                              }
+                                                          ],
+                                                          "breakpoints": [
+                                                              {
+                                                                  "name": "md"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ],
+                                          "expanded": true,
+                                          "items": []
+                                      }
+                                  ]
+                              },
+                              {
+                                  "title": ".breadcrumb-last-link",
+                                  "type": "container",
+                                  "selectorType": "modifier",
+                                  "uuid": "f80c8bd2-118f-4723-9bf2-c5ac40eef6a7",
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo",
+                                      "modifier"
+                                  ],
+                                  "formDefinition": [
+                                      {
+                                          "formKey": "font",
+                                          "children": [
+                                              {
+                                                  "formKey": "font-and-color",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-family",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "font-weight",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "color",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "iconName": "mobile",
+                                                          "name": "xs"
+                                                      },
+                                                      {
+                                                          "name": "md"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "layout",
+                                          "children": [
+                                              {
+                                                  "formKey": "display",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "display",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "visibility",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "overflow",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "overflow-x",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "overflow-y",
+                                                          "active": false
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ],
+                                  "expanded": true,
+                                  "items": [
+                                      {
+                                          "title": ":before",
+                                          "type": "container",
+                                          "selectorType": "pseudo",
+                                          "uuid": "3a2a7ceb-8c6b-4c1a-b8e2-2ab8a2d3bbae",
+                                          "allowedTypes": [
+                                              "child",
+                                              "pseudo"
+                                          ],
+                                          "formDefinition": [
+                                              {
+                                                  "formKey": "font",
+                                                  "children": [
+                                                      {
+                                                          "formKey": "font-and-color",
+                                                          "activeFields": [
+                                                              {
+                                                                  "name": "font-family",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "font-weight",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "color",
+                                                                  "active": true
+                                                              }
+                                                          ],
+                                                          "breakpoints": [
+                                                              {
+                                                                  "iconName": "mobile",
+                                                                  "name": "xs"
+                                                              },
+                                                              {
+                                                                  "name": "md"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              },
+                                              {
+                                                  "formKey": "layout",
+                                                  "children": [
+                                                      {
+                                                          "formKey": "padding",
+                                                          "activeFields": [
+                                                              {
+                                                                  "name": "padding-equal",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "padding-top",
+                                                                  "active": true
+                                                              },
+                                                              {
+                                                                  "name": "padding-bottom",
+                                                                  "active": true
+                                                              },
+                                                              {
+                                                                  "name": "padding-left",
+                                                                  "active": true
+                                                              },
+                                                              {
+                                                                  "name": "padding-right",
+                                                                  "active": true
+                                                              },
+                                                              {
+                                                                  "name": "padding-block-start",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "padding-block-end",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "padding-inline-start",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "padding-inline-end",
+                                                                  "active": false
+                                                              }
+                                                          ],
+                                                          "breakpoints": [
+                                                              {
+                                                                  "iconName": "mobile",
+                                                                  "name": "xs"
+                                                              },
+                                                              {
+                                                                  "name": "md"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ],
+                                          "expanded": true,
+                                          "items": []
+                                      },
+                                      {
+                                          "title": "a",
+                                          "type": "container",
+                                          "selectorType": "child",
+                                          "uuid": "95c45121-2cb6-466f-9871-4d2db27d6ad7",
+                                          "allowedTypes": [
+                                              "child",
+                                              "pseudo",
+                                              "modifier"
+                                          ],
+                                          "formDefinition": [
+                                              {
+                                                  "formKey": "font",
+                                                  "children": [
+                                                      {
+                                                          "formKey": "font-and-color",
+                                                          "activeFields": [
+                                                              {
+                                                                  "name": "font-family",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "font-weight",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "color",
+                                                                  "active": true
+                                                              }
+                                                          ],
+                                                          "breakpoints": [
+                                                              {
+                                                                  "iconName": "mobile",
+                                                                  "name": "xs"
+                                                              },
+                                                              {
+                                                                  "name": "md"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ],
+                                          "model": "a",
+                                          "expanded": true,
+                                          "items": []
+                                      }
+                                  ]
+                              },
+                              {
+                                  "title": "a",
+                                  "type": "container",
+                                  "selectorType": "child",
+                                  "model": "a",
+                                  "originalLabel": "Child selector",
+                                  "formDefinition": [
+                                      {
+                                          "formKey": "font",
+                                          "children": [
+                                              {
+                                                  "formKey": "font-and-color",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-family",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "font-weight",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "color",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              },
+                                              {
+                                                  "formKey": "font-style-and-wrapping",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-style",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "text-transform",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "text-decoration",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "word-wrap",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "direction",
+                                                          "active": false
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              },
+                                              {
+                                                  "formKey": "font-sizing-and-alignment",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-size",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "line-height",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "text-align",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "letter-spacing",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "word-spacing",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "text-indent",
+                                                          "active": false
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ],
+                                  "uuid": "c2c0de1c-fef7-4537-9e3d-886ddeebf143",
+                                  "form": null,
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo",
+                                      "modifier"
+                                  ],
+                                  "expanded": true,
+                                  "items": []
+                              },
+                              {
+                                  "title": ":before",
+                                  "type": "container",
+                                  "selectorType": "pseudo",
+                                  "formDefinition": [
+                                      {
+                                          "formKey": "content",
+                                          "children": [
+                                              {
+                                                  "formKey": "strings-counters-quotes-urls-and-attributes",
+                                                  "breakpoints": [
+                                                      {
+                                                          "iconName": "mobile",
+                                                          "name": "xs"
+                                                      }
+                                                  ],
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "contentType",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "contentString",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "counterString",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "customString",
+                                                          "active": true
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "layout",
+                                          "children": [
+                                              {
+                                                  "formKey": "padding",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "padding-equal",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "padding-top",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "padding-bottom",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "padding-left",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "padding-right",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "padding-block-start",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "padding-block-end",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "padding-inline-start",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "padding-inline-end",
+                                                          "active": false
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "font",
+                                          "children": [
+                                              {
+                                                  "formKey": "font-and-color",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-family",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "font-weight",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "color",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ],
+                                  "uuid": "75b7c52f-494b-4804-a549-7fe4ec7f6fcb",
+                                  "form": null,
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo"
+                                  ],
+                                  "expanded": true,
+                                  "items": []
+                              },
+                              {
+                                  "title": ":last-child",
+                                  "type": "container",
+                                  "form": null,
+                                  "selectorType": "pseudo",
+                                  "uuid": "544752a4-f7bf-44b4-804f-71ad4462b230",
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo"
+                                  ],
+                                  "formDefinition": [
+                                      {
+                                          "formKey": "font",
+                                          "children": [
+                                              {
+                                                  "formKey": "font-and-color",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-family",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "font-weight",
+                                                          "active": false
+                                                      },
+                                                      {
+                                                          "name": "color",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ],
+                                  "expanded": true,
+                                  "items": [
+                                      {
+                                          "title": "a",
+                                          "type": "container",
+                                          "selectorType": "child",
+                                          "uuid": "b081371b-85a4-4ea1-afdd-91aed44356d2",
+                                          "allowedTypes": [
+                                              "child",
+                                              "pseudo",
+                                              "modifier"
+                                          ],
+                                          "formDefinition": [
+                                              {
+                                                  "formKey": "font",
+                                                  "children": [
+                                                      {
+                                                          "formKey": "font-and-color",
+                                                          "activeFields": [
+                                                              {
+                                                                  "name": "font-family",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "font-weight",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "color",
+                                                                  "active": true
+                                                              }
+                                                          ],
+                                                          "breakpoints": [
+                                                              {
+                                                                  "name": "xs"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ],
+                                          "model": "a",
+                                          "expanded": true,
+                                          "items": []
+                                      },
+                                      {
+                                          "title": ":before",
+                                          "type": "container",
+                                          "selectorType": "pseudo",
+                                          "uuid": "b79ca138-9fd5-4b2b-a818-1de88aa71f05",
+                                          "allowedTypes": [
+                                              "child",
+                                              "pseudo"
+                                          ],
+                                          "formDefinition": [
+                                              {
+                                                  "formKey": "font",
+                                                  "children": [
+                                                      {
+                                                          "formKey": "font-and-color",
+                                                          "activeFields": [
+                                                              {
+                                                                  "name": "font-family",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "font-weight",
+                                                                  "active": false
+                                                              },
+                                                              {
+                                                                  "name": "color",
+                                                                  "active": true
+                                                              }
+                                                          ],
+                                                          "breakpoints": [
+                                                              {
+                                                                  "name": "xs"
+                                                              }
+                                                          ]
+                                                      }
+                                                  ]
+                                              }
+                                          ],
+                                          "expanded": true,
+                                          "items": []
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "collapsed": false
+              }
+          ],
+          "title": "List",
+          "formDefinition": [
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "display",
+                          "activeFields": [
+                              {
+                                  "name": "display",
+                                  "active": true
+                              },
+                              {
+                                  "name": "visibility",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow-x",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow-y",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "background",
+                  "children": [
+                      {
+                          "formKey": "background-color",
+                          "activeFields": [
+                              {
+                                  "name": "background-color",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "form": null
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-breadcrumbs
+custom_style_type: list
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 189

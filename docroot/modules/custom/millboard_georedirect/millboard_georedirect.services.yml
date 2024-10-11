@@ -1,0 +1,24 @@
+services:
+  millboard_georedirect.geo_detection:
+    class: '\Drupal\millboard_georedirect\GeoDetection'
+    arguments: ['@request_stack', '@cache.default', '@millboard_georedirect.region_language_manager']
+    tags:
+      - { name: service }
+
+  millboard_georedirect.cookie_manager:
+    class: '\Drupal\millboard_georedirect\CookieManager'
+    arguments: ['@request_stack']
+    tags:
+      - { name: service }
+
+  millboard_georedirect.region_language_manager:
+    class: '\Drupal\millboard_georedirect\RegionLanguageManager'
+    arguments: ['@request_stack', '@language_manager']
+    tags:
+      - { name: service }
+
+  millboard_georedirect.cache_subscriber:
+    class: Drupal\millboard_georedirect\EventSubscriber\CacheSubscriber
+    arguments: ['@page_cache_kill_switch']
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,20 @@
+uuid: 09e805d3-6408-46c5-8ff2-c5e3e2a86d38
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - system.menu.footer-compliance
+  module:
+    - metatag
+id: menu_link_content.footer-compliance.metatag
+field_name: metatag
+entity_type: menu_link_content
+bundle: footer-compliance
+label: 'Metatags (Hidden field for JSON support)'
+description: 'The computed meta tags for the entity.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag_computed

@@ -1,0 +1,19 @@
+{
+  "root": true,
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "extends": ["plugin:@typescript-eslint/recommended"],
+  "rules": {
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-var-requires": [
+      "off",
+      { "devDependencies": ["gulpfile.js"] }
+    ],
+    "@typescript-eslint/explicit-function-return-type": [
+      "off",
+      {
+        "devDependencies": ["gulpfile.js", "gulp-tasks/*.js"]
+      }
+    ]
+  }
+}

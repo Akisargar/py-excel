@@ -1,0 +1,15 @@
+name: 'Millboard Georedirect'
+type: module
+description: 'Handles geolocation redirection based on IP and cookies.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - drupal:language
+
+libraries:
+  - millboard_georedirect/millboard-georedirect-ajax
+
+regions:
+  - content
+
+plugin: block

@@ -1,0 +1,24 @@
+uuid: 83d004d9-f01a-479f-8683-0573ba6f26c9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.modal_card_desktop_1444x816_
+    - image.style.modal_card_mobile_751x751_
+  theme:
+    - millboard
+id: gallery_image_responsive_image_style
+label: 'Gallery Image Responsive Image Style'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: modal_card_desktop_1444x816_
+    breakpoint_id: millboard.desktop
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: modal_card_mobile_751x751_
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: modal_card_desktop_1444x816_

@@ -1,0 +1,123 @@
+uuid: e9fb6645-ddd9-4645-a3ee-dca907474ecf
+langcode: en
+status: true
+dependencies: {  }
+label: Paragraph
+id: paragraph
+json_values: |
+  {
+      "preview": {
+          "text": "<h1>Heading 1 here<\/h1>\n\n<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.<\/p>\n\n<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.<\/p>\n",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "p",
+              "class": "",
+              "combinator": "",
+              "pseudo": ""
+          },
+          "styles": {
+              "xl": {
+                  "font-size": {},
+                  "margin": {
+                      "margin-bottom": {},
+                      "margin-top": {}
+                  },
+                  "line-height": {},
+                  "font-weight": {},
+                  "color": {}
+              },
+              "lg": {
+                  "font-size": {},
+                  "line-height": {},
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              },
+              "ps": {
+                  "margin": {
+                      "margin-bottom": {}
+                  },
+                  "line-height": {}
+              },
+              "md": {
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              },
+              "xs": {
+                  "font-family": {},
+                  "color": {},
+                  "font-size": {
+                      "value": "14px"
+                  },
+                  "line-height": {
+                      "value": "24px"
+                  }
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "selectorType": "topLevel",
+          "items": [],
+          "title": "Paragraph",
+          "formDefinition": [
+              {
+                  "formKey": "font",
+                  "children": [
+                      {
+                          "formKey": "font-sizing-and-alignment",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "font-size",
+                                  "active": true
+                              },
+                              {
+                                  "name": "line-height",
+                                  "active": true
+                              },
+                              {
+                                  "name": "text-align",
+                                  "active": false
+                              },
+                              {
+                                  "name": "letter-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "word-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "text-indent",
+                                  "active": false
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "form": null
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: false
+custom: null

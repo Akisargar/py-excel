@@ -1,0 +1,24 @@
+uuid: 81d6a25e-f2d2-4d3f-aa8a-2f4ded5d6e57
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_builder
+    - node.type.blog
+  module:
+    - cohesion_elements
+id: node.blog.field_blog_builder
+field_name: field_blog_builder
+entity_type: node
+bundle: blog
+label: 'Blog Builder'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

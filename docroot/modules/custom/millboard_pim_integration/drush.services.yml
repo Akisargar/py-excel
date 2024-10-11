@@ -1,0 +1,24 @@
+services:
+  millboard_pim_integration_product_types.command:
+    class: Drupal\millboard_pim_integration\Commands\MillboardProductTypeCommand
+    arguments: ['@http_client', '@logger.factory']
+    tags:
+      - { name: drush.command }
+
+  millboard_pim_integration_product_category.command:
+    class: Drupal\millboard_pim_integration\Commands\MillboardProductCategoryCommand
+    arguments: ['@http_client', '@logger.factory']
+    tags:
+      - { name: drush.command }
+
+  millboard_pim_integration_product.command:
+    class: Drupal\millboard_pim_integration\Commands\MillboardProductCommand
+    arguments: ['@http_client', '@entity_type.manager', '@database', '@logger.factory', '@language_manager']
+    tags:
+      - { name: drush.command }
+
+  millboard_pim_integration_product_variation.command:
+    class: Drupal\millboard_pim_integration\Commands\MillboardProductVariationCommand
+    arguments: ['@http_client', '@entity_type.manager', '@database', '@logger.factory', '@language_manager']
+    tags:
+      - { name: drush.command }

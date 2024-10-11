@@ -1,0 +1,30 @@
+uuid: f89cc827-f438-420e-acdb-866218153830
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - scheduler
+third_party_settings:
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: null
+    publish_touch: true
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: null
+id: millboard_products
+label: 'Millboard Products'
+traits: {  }
+locked: false
+description: 'Create all Millboard products using this product entity. Following product types can be created - Decking, Cladding, Edging, Fascia, Corner profiles, Subframe, Fixing, Touch Up Coating, Trim.'
+variationType: millboard_products
+variationTypes:
+  - millboard_products
+multipleVariations: true
+injectVariationFields: true

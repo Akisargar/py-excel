@@ -1,0 +1,36 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+      pager:
+        options:
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
+      fields:
+        taxonomy_term_bulk_form:
+          action_title: Action
+        vid:
+          label: Vocabulary
+        status:
+          label: Status
+          settings:
+            format_custom_true: Published
+        operations:
+          label: Operations
+      filters:
+        vid:
+          expose:
+            label: Vocabulary
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Published

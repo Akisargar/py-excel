@@ -1,0 +1,180 @@
+uuid: edf59d4b-736f-4686-ab18-3a9f402919aa
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.6d265e74
+    - cohesion_custom_styles.cohesion_custom_style.dd48edd1
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_drupal_blocks
+    - cohesion_elements.cohesion_component.cpt_hero_banner
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+label: 'Where to buy page'
+id: hlp_where_to_buy_page
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "uuid": "a129fec7-de01-42e6-ad26-7e8bc929ae83",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "4f33d285-0bf9-460c-abfc-525d606741f9",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_hero_banner",
+                              "type": "component",
+                              "title": "Primary hero banner",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_hero_banner",
+                              "componentType": "container",
+                              "uuid": "1a8fcbcb-f9a2-4777-a998-f49aad4b45cb",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_drupal_blocks",
+                              "type": "component",
+                              "title": "Drupal blocks",
+                              "enabled": true,
+                              "category": "category-3",
+                              "componentId": "cpt_drupal_blocks",
+                              "componentType": "container",
+                              "uuid": "73688a8d-1569-4bfc-b2a9-18bed88bb1b9",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_drupal_blocks",
+                              "type": "component",
+                              "title": "Drupal blocks",
+                              "enabled": true,
+                              "category": "category-3",
+                              "componentId": "cpt_drupal_blocks",
+                              "componentType": "container",
+                              "uuid": "2d8d35d0-e3f8-479d-ac79-aef7a11ee313",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "a129fec7-de01-42e6-ad26-7e8bc929ae83": {},
+          "4f33d285-0bf9-460c-abfc-525d606741f9": {},
+          "1a8fcbcb-f9a2-4777-a998-f49aad4b45cb": {},
+          "73688a8d-1569-4bfc-b2a9-18bed88bb1b9": {},
+          "2d8d35d0-e3f8-479d-ac79-aef7a11ee313": {}
+      },
+      "model": {
+          "a129fec7-de01-42e6-ad26-7e8bc929ae83": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "settings": {
+                  "title": "Container - Where to buy page"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px"
+          },
+          "4f33d285-0bf9-460c-abfc-525d606741f9": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "1a8fcbcb-f9a2-4777-a998-f49aad4b45cb": {
+              "86820958-8681-4fe3-a96c-7737da80104a": {
+                  "textFormat": "cohesion",
+                  "text": "<h1 class=\"coh-style-heading-1-size\">Discover Where to Buy Millboard Products<\/h1><p class=\"coh-style-paragraph-large\">At Millboard, we're committed to making it easy for you to access our premium outdoor living solutions. Whether you're a homeowner looking to enhance your outdoor space or a professional in search of innovative materials, you'll find Millboard products at a network of authorized retailers and distributors near you.<\/p><p class=\"coh-style-paragraph-large\"><strong>Use our convenient store locator to discover the authorised Millboard retailers and distributors in your region.<\/strong><\/p>"
+              },
+              "05701354-a064-44dd-82c9-e4c81aaf24e4": {
+                  "entity": "",
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "acquia_dam_documents_asset": false,
+                              "acquia_dam_image_asset": true,
+                              "image": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "title": "Where to buy banner"
+              },
+              "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {
+                  "text": "<p>The world\u2019s finest hand-moulded<\/p><p><strong>composite decking &amp; composite cladding<\/strong><\/p>",
+                  "textFormat": "filtered_html"
+              }
+          },
+          "73688a8d-1569-4bfc-b2a9-18bed88bb1b9": {
+              "33477453-ecf9-49b5-873b-67737b65fefe": "millboard_findinstallerformblock",
+              "dda7054d-09f6-4fdc-82f6-138404466a96": "dark-title",
+              "609b5301-04bf-45ce-82af-509436f29597": null,
+              "settings": {
+                  "title": "Where to buy - Form"
+              }
+          },
+          "2d8d35d0-e3f8-479d-ac79-aef7a11ee313": {
+              "33477453-ecf9-49b5-873b-67737b65fefe": "millboard_views_block__millboard_find_installers_where_to_buy",
+              "dda7054d-09f6-4fdc-82f6-138404466a96": "dark-title",
+              "609b5301-04bf-45ce-82af-509436f29597": null,
+              "settings": {
+                  "title": "Where to buy - List"
+              }
+          }
+      },
+      "previewModel": {
+          "a129fec7-de01-42e6-ad26-7e8bc929ae83": {},
+          "1a8fcbcb-f9a2-4777-a998-f49aad4b45cb": {},
+          "73688a8d-1569-4bfc-b2a9-18bed88bb1b9": {},
+          "2d8d35d0-e3f8-479d-ac79-aef7a11ee313": {}
+      },
+      "variableFields": {
+          "a129fec7-de01-42e6-ad26-7e8bc929ae83": [],
+          "1a8fcbcb-f9a2-4777-a998-f49aad4b45cb": [],
+          "73688a8d-1569-4bfc-b2a9-18bed88bb1b9": [],
+          "2d8d35d0-e3f8-479d-ac79-aef7a11ee313": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: 0

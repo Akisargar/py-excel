@@ -1,0 +1,74 @@
+# Ignore paths that contain user-generated content.
+docroot/files
+docroot/sites/*/files
+docroot/sites/*/private
+
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+#
+# follows official upstream conventions:
+# https://www.drupal.org/docs/develop/using-composer
+
+# Ignore configuration files that may contain sensitive information
+/docroot/sites/*/default.settings.php
+/docroot/sites/*/settings.ddev.php
+/docroot/sites/*/settings.local.php
+/docroot/sites/*/*services*.yml
+
+# Ignore paths that may contain user-generated content
+/docroot/sites/*/files
+/docroot/sites/*/public
+/docroot/sites/*/private
+/docroot/sites/*/files-public
+/docroot/sites/*/files-private
+
+# Ignore paths that may contain temporary files
+/docroot/sites/*/translations
+/docroot/sites/*/tmp
+/docroot/sites/*/cache
+
+# Ignore drupal core (if not versioning drupal sources)
+/docroot/vendor
+/docroot/core
+/docroot/modules/README.txt
+/docroot/modules/contrib
+/docroot/libraries/
+/docroot/themes/contrib
+/docroot/profiles/README.txt
+/docroot/profiles
+/docroot/sites/development.services.yml
+/docroot/sites/example.settings.local.php
+/docroot/sites/example.sites.php
+/docroot/sites/README.txt
+/docroot/themes/README.txt
+/docroot/.csslintrc
+/docroot/.editorconfig
+/docroot/.eslintignore
+/docroot/.eslintrc.json
+/docroot/.gitattributes
+/docroot/.ht.router.php
+/docroot/autoload.php
+/docroot/composer.json
+/docroot/composer.lock
+/docroot/example.gitignore
+/docroot/index.php
+/docroot/INSTALL.txt
+/docroot/LICENSE.txt
+/docroot/README.txt
+/docroot/update.php
+/docroot/web.config
+
+# Ignore vendor dependencies and scripts
+/vendor
+/composer.phar
+/composer
+/robo.phar
+/robo
+/drush.phar
+/drush
+/drupal.phar
+/drupal
+
+# Ignore the editor configuration files
+.editorconfig

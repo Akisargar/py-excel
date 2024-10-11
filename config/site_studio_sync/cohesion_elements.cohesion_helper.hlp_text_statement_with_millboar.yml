@@ -1,0 +1,207 @@
+uuid: f2e30a0f-bfc3-467f-bbfe-d539900a103f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.22059f50
+    - cohesion_custom_styles.cohesion_custom_style.2c087e6c
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_text_sections
+    - cohesion_website_settings.cohesion_color.millboard-mist
+label: 'Text Statement with Millboard Mist Background'
+id: hlp_text_statement_with_millboar
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "uuid": "18364a10-d943-4948-9267-6ccd872ef634",
+              "status": {
+                  "collapsed": true
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "fc4cc650-397f-4790-807c-29884c137e52",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "uuid": "c279aaea-021c-4cb0-8c63-7d04f3f92459",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "562a8e96-94e4-4620-90e0-588c46637dc7",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_text",
+                                              "type": "component",
+                                              "title": "Text",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_text",
+                                              "componentType": "wysiwyg",
+                                              "uuid": "fe995650-7f28-4334-8d9e-1432050bb060",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "18364a10-d943-4948-9267-6ccd872ef634": {},
+          "fc4cc650-397f-4790-807c-29884c137e52": {},
+          "c279aaea-021c-4cb0-8c63-7d04f3f92459": {},
+          "562a8e96-94e4-4620-90e0-588c46637dc7": {},
+          "fe995650-7f28-4334-8d9e-1432050bb060": {}
+      },
+      "model": {
+          "18364a10-d943-4948-9267-6ccd872ef634": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#dedcd2",
+                      "rgba": "rgba(222, 220, 210, 1)"
+                  },
+                  "uid": "millboard-mist",
+                  "name": "Millboard Mist",
+                  "class": ".coh-color-millboard-mist",
+                  "variable": "$coh-color-millboard-mist",
+                  "tags": [
+                      "Millboard",
+                      "Text",
+                      "Accent",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "80px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "64px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Text Statement with Millboard Mist Background"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "fc4cc650-397f-4790-807c-29884c137e52": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "c279aaea-021c-4cb0-8c63-7d04f3f92459": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "6",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "40px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              },
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px"
+          },
+          "562a8e96-94e4-4620-90e0-588c46637dc7": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "fe995650-7f28-4334-8d9e-1432050bb060": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p class=\"coh-style-text-statements\">This is a <span class=\"coh-style-f37-ginger-regular\">millboard statement<\/span> component that uses different font weightings to <span class=\"coh-style-f37-ginger-regular\">emphasise specific callouts<\/span>. The module flexes height dependant on the length of the copy.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          }
+      },
+      "previewModel": {
+          "18364a10-d943-4948-9267-6ccd872ef634": {},
+          "c279aaea-021c-4cb0-8c63-7d04f3f92459": {},
+          "fe995650-7f28-4334-8d9e-1432050bb060": {}
+      },
+      "variableFields": {
+          "18364a10-d943-4948-9267-6ccd872ef634": [],
+          "c279aaea-021c-4cb0-8c63-7d04f3f92459": [],
+          "fe995650-7f28-4334-8d9e-1432050bb060": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_text_sections
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

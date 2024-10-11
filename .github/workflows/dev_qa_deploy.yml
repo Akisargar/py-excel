@@ -1,0 +1,170 @@
+name: Deploy to Acquia Cloud and Run Drush Commands
+
+on:
+  push:
+    branches:
+      - dev-dpl
+jobs:
+  acquia_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.1"
+      # Setup Node
+      # - name: Setup Node
+      #   uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 16
+      # We use Acquia CLI to deploy, let's setup that first!
+      - name: Setup Acquia CLI
+        run: |
+          curl -OL https://github.com/acquia/cli/releases/latest/download/acli.phar
+          chmod +x acli.phar
+          mv acli.phar /usr/local/bin/acli
+          acli --version
+          acli auth:login --key $ACQUIA_ACLI_KEY --secret $ACQUIA_ACLI_SECRET
+        env:
+          ACQUIA_ACLI_KEY: ${{ secrets.ACQUIA_ACLI_KEY }}
+          ACQUIA_ACLI_SECRET: ${{ secrets.ACQUIA_ACLI_SECRET }}  
+      # Post acli setup, do the necessary configurations!
+      - name: Setup git & other required configs
+        run: |
+          eval $(ssh-agent -s)
+          echo "$ACQUIA_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          echo "$ACQUIA_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+          ssh-keyscan -t rsa svn-41605.prod.hosting.acquia.com >> ~/.ssh/known_hosts
+          chmod 644 ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/id_rsa
+          git pull origin dev-dpl --rebase
+          composer install --ansi -o --ignore-platform-reqs
+          git checkout docroot/.htaccess composer.lock
+          git config --global user.email "panshul.khurana@axelerant.com"
+          git config --global user.name "panshulk"
+        env:
+          ACQUIA_SSH_PRIVATE_KEY: ${{ secrets.ACQUIA_SSH_PRIVATE_KEY }}
+          ACQUIA_SSH_KNOWN_HOSTS: ${{ secrets.ACQUIA_DEV_SSH_HOST }}
+      # Run Artifact deployment on DEV environment
+      - name: Deploy to Acquia Cloud (Dev) using ACLI
+        run: |
+          acli push:artifact --destination-git-branch=develop
+      # Run Artifact deployment on QA environment 
+      - name: Deploy to Acquia Cloud (QA) using ACLI
+        run: |
+          acli push:artifact --destination-git-branch=test
+      # @TODO - To be removed once multiple deployments are running without issues!
+      # - name: Run Frontend builds
+      #   run: |
+      #     cd docroot/themes/custom/millboard/
+      #     npm install
+      #     gulp
+      # - name: Copy the build files to server
+      #   uses: burnett01/rsync-deployments@6.0.0
+      #   with:
+      #     switches: -avzr
+      #     path: docroot/themes/custom/millboard/dist
+      #     remote_path: /var/www/html/docroot/themes/custom/millboard/
+      #     remote_host: ${{ secrets.ACQUIA_DEV_SSH_HOST }}
+      #     remote_user: ${{ secrets.ACQUIA_DEV_SSH_USERNAME }}
+      #     remote_key: ${{ secrets.ACQUIA_SSH_PRIVATE_KEY }}
+      - name: Debug SSH
+        run: ssh -vvv -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.ACQUIA_DEV_SSH_USERNAME }}@${{ secrets.ACQUIA_DEV_SSH_HOST }}
+      # We need to wait for sometime for Acquia commit to complete!
+      - name: Sleep for 120 seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '120s'
+      # Deployment done, now run the drush commands (Dev)!
+      - name: SSH into Acquia Cloud (Dev) and Run Drush Commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ACQUIA_DEV_SSH_HOST }}
+          username: ${{ secrets.ACQUIA_DEV_SSH_USERNAME }}
+          key: ${{ secrets.ACQUIA_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.ACQUIA_SSH_PORT }}
+          script: |
+            cd /var/www/html
+            drush cim --yes
+            drush updb --yes
+            drush sitestudio:package:multi-import --path=config/site_studio_sync/site_studio.packages.yml
+            drush cr
+      # Deployment done, now run the drush commands (QA)!
+      - name: SSH into Acquia Cloud (QA) and Run Drush Commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ACQUIA_QA_SSH_HOST }}
+          username: ${{ secrets.ACQUIA_QA_SSH_USERNAME }}
+          key: ${{ secrets.ACQUIA_SSH_PRIVATE_KEY }}
+          port: ${{ secrets.ACQUIA_SSH_PORT }}
+          script: |
+            cd /var/www/html/millboard.ode3
+            drush cim --yes
+            drush updb --yes
+            drush sitestudio:package:multi-import --path=config/site_studio_sync/site_studio.packages.yml
+            drush cr
+        # run: |
+        #   eval $(ssh-agent -s)
+        #   echo "$ACQUIA_SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+        #   mkdir -p ~/.ssh
+        #   chmod 700 ~/.ssh
+        #   echo "$ACQUIA_SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        #   echo "$ACQUIA_SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        #   echo "$ACQUIA_SSH_HOST_KEY" > ~/.ssh/known_hosts
+        #   echo "$ACQUIA_GIT_URL" > ~/.ssh/known_hosts
+        #   ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+        #   chmod 644 ~/.ssh/known_hosts
+        #   composer install --ansi -o --ignore-platform-reqs
+        #   git remote add acquia "millboard@svn-41605.prod.hosting.acquia.com:millboard.git"
+        #   git remote -v
+        #   git fetch acquia
+        #   git show-ref
+        # env:
+        #   ACQUIA_GIT_URL: ${{ secrets.ACQUIA_GIT_URL }}
+        #   ACQUIA_API_TOKEN: ${{ secrets.ACQUIA_API_TOKEN }}
+        #   ACQUIA_SSH_PRIVATE_KEY: ${{ secrets.ACQUIA_SSH_PRIVATE_KEY }}
+        #   ACQUIA_SSH_HOST_KEY: ${{ secrets.ACQUIA_SSH_HOST_KEY }}
+        #   ACQUIA_SSH_KNOWN_HOSTS: ${{ secrets.ACQUIA_SSH_HOST }}
+        #   ACQUIA_ACLI_KEY: ${{ secrets.ACQUIA_ACLI_KEY }}
+        #   ACQUIA_ACLI_SECRET: ${{ secrets.ACQUIA_ACLI_SECRET }}
+    # if: contains(fromJSON('["refs/heads/dev-replica"]'), github.ref)
+    # needs:
+    #   - drupal_codequality
+
+# jobs:
+#   deploy_and_run_drush:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout Code
+#         uses: actions/checkout@v2
+
+#       - name: Set up PHP
+#         uses: shivammathur/setup-php@v2
+#         with:
+#           php-version: 8.1  # Adjust to your PHP version
+
+#       - name: Install Dependencies
+#         run: |
+#           composer install
+
+#       - name: Add Acquia Cloud Host to Known Hosts
+#         run: ssh-keyscan -H -p ${{ secrets.ACQUIA_SSH_PORT }} ${{ secrets.ACQUIA_SSH_HOST }} >> ~/.ssh/known_hosts
+
+#       - name: Deploy to Acquia Cloud
+#         run: |
+#           # Set up Acquia Cloud repository URL
+#           git remote add acquia millboard@svn-41605.prod.hosting.acquia.com:millboard.git
+
+#           # Authenticate with Acquia Cloud using API token.
+#           echo "machine cloud.acquia.com login panshul.khurana@axelerant.com password $ACQUIA_API_TOKEN" > ~/.netrc
+
+#           # Push code to Acquia Cloud Dev environment
+#           git push acquia dev
+#         env:
+#           ACQUIA_API_TOKEN: ${{ secrets.ACQUIA_API_TOKEN }}

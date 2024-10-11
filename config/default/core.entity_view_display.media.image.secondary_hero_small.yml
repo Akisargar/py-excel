@@ -1,0 +1,48 @@
+uuid: 766fb743-cace-496a-98c5-0e55d473b5b3
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.secondary_hero_small
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - media.type.image
+    - responsive_image.styles.secondary_hero_small
+  module:
+    - layout_builder
+    - responsive_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.secondary_hero_small
+targetEntityType: media
+bundle: image
+mode: secondary_hero_small
+content:
+  image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: secondary_hero_small
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

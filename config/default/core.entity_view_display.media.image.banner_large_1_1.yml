@@ -1,0 +1,52 @@
+uuid: c496ed9b-a79e-40c8-95e0-d644dab064d9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.banner_large_1_1
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - image.style.coh_large_super_landscape
+    - media.type.image
+  module:
+    - layout_builder
+    - svg_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.banner_large_1_1
+targetEntityType: media
+bundle: image
+mode: banner_large_1_1
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: coh_large_super_landscape
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  image: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

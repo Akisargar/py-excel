@@ -1,0 +1,14 @@
+uuid: 8d82ca5e-b9ed-45d1-9843-3c38bc5efb59
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.distributor_installer_database_manager
+  module:
+    - user
+id: user_add_role_action.distributor_installer_database_manager
+label: 'Add the Distributor / Installer Database Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: distributor_installer_database_manager

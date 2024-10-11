@@ -1,0 +1,40 @@
+uuid: e832b75b-3e49-46b2-b146-1dbfdba2c268
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - webform.webform.sample_order_form
+  module:
+    - cohesion
+    - collapsiblock
+    - system
+    - webform
+  theme:
+    - millboard
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+id: millboard_webform
+theme: millboard
+region: content
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: visible
+  provider: webform
+  webform_id: sample_order_form
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0
+  request_path:
+    id: request_path
+    negate: false
+    pages: /abcd

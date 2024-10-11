@@ -1,0 +1,41 @@
+uuid: 59c7aed5-f1ac-4ef1-8534-1044ab46d688
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_preview_image
+    - media.type.acquia_dam_documents_asset
+    - media.type.acquia_dam_image_asset
+    - media.type.acquia_dam_pdf_asset
+    - media.type.acquia_dam_spinset_asset
+    - media.type.acquia_dam_video_asset
+    - media.type.image
+    - media.type.video
+    - node.type.project
+id: node.project.field_preview_image
+field_name: field_preview_image
+entity_type: node
+bundle: project
+label: 'Preview Image'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_documents_asset: acquia_dam_documents_asset
+      acquia_dam_image_asset: acquia_dam_image_asset
+      acquia_dam_pdf_asset: acquia_dam_pdf_asset
+      acquia_dam_spinset_asset: acquia_dam_spinset_asset
+      acquia_dam_video_asset: acquia_dam_video_asset
+      image: image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_documents_asset
+field_type: entity_reference

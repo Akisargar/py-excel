@@ -1,0 +1,35 @@
+uuid: 60d87e94-131e-4f91-9870-d47dda8026d8
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.pdf_card
+    - field.field.media.compressed_zip.field_media_file
+    - media.type.compressed_zip
+  module:
+    - file
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: media.compressed_zip.pdf_card
+targetEntityType: media
+bundle: compressed_zip
+mode: pdf_card
+content:
+  field_media_file:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

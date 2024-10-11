@@ -1,0 +1,24 @@
+uuid: 94162d97-1e17-4e4c-ba1a-0e88566db170
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layout_canvas
+    - node.type.resources
+  module:
+    - cohesion_elements
+id: node.resources.field_layout_canvas
+field_name: field_layout_canvas
+entity_type: node
+bundle: resources
+label: 'Content Builder'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

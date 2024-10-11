@@ -1,0 +1,41 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+      pager:
+        options:
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
+      fields:
+        media_bulk_form:
+          action_title: Action
+        uid:
+          label: Author
+        status:
+          label: Status
+          settings:
+            format_custom_true: Published
+        operations:
+          label: Operations
+      filters:
+        bundle:
+          expose:
+            label: Type
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Published
+        langcode:
+          expose:
+            label: Language
+  user_page:
+    display_title: User

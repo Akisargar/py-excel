@@ -1,0 +1,26 @@
+uuid: 46beb04c-79e4-4368-ab2c-05a0e2526e0f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - workflows.workflow.editorial
+_core:
+  default_config_hash: DDgK4RS0cfj9UAcCRT23lcxEYkheM_N69Xa2xN3RXYU
+id: transition_to_review
+label: 'Transition to Review'
+format: plain_text
+subject: '[node:title] State Changed'
+recipient_types:
+  role:
+    id: role
+    provider: workbench_email
+    status: true
+    settings:
+      roles: {  }
+bundles: {  }
+body:
+  value: '[node:title] needs review.'
+  format: plain_text
+replyTo: ''
+transitions:
+  editorial: {  }

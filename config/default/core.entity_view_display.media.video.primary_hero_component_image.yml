@@ -1,0 +1,44 @@
+uuid: 224c62e5-4b31-4688-85b1-8ab59de3c550
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.primary_hero_component_image
+    - field.field.media.video.field_categories
+    - field.field.media.video.field_media_oembed_video
+    - field.field.media.video.field_tags
+    - media.type.video
+  module:
+    - layout_builder
+    - media
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: ELVuY2CoNx9y6XjRxLcSytsWxSBXrPVaEsOxeo5fGYU
+id: media.video.primary_hero_component_image
+targetEntityType: media
+bundle: video
+mode: primary_hero_component_image
+content:
+  field_media_oembed_video:
+    type: oembed
+    label: hidden
+    settings:
+      max_width: 0
+      max_height: 0
+      loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

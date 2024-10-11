@@ -1,0 +1,251 @@
+uuid: 12d5a264-06bb-4a96-9172-4e43c86c3df6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_custom_styles.cohesion_custom_style.bfbac797
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_component.cpt_text_and_image
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.spring-wood
+label: 'Sample request'
+id: hlp_sample_request
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "uuid": "bf4e477d-ae98-4f86-9aff-32f47030f1b5",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "34141be5-2440-4e99-b85a-c0f5ab1ffc02",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "children": [
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "uuid": "d56f10b7-3d50-457a-8aba-b942413e396b",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "bf70775a-15a1-4915-8156-900090627099",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_text",
+                                              "type": "component",
+                                              "title": "Text",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_text",
+                                              "componentType": "wysiwyg",
+                                              "uuid": "761240f4-8dc3-49a0-8646-9cef1eec6b72",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "af47da47-8213-4a57-8429-327b00c27f7b",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "bf4e477d-ae98-4f86-9aff-32f47030f1b5": {},
+          "34141be5-2440-4e99-b85a-c0f5ab1ffc02": {},
+          "d56f10b7-3d50-457a-8aba-b942413e396b": {},
+          "bf70775a-15a1-4915-8156-900090627099": {},
+          "761240f4-8dc3-49a0-8646-9cef1eec6b72": {},
+          "af47da47-8213-4a57-8429-327b00c27f7b": {}
+      },
+      "model": {
+          "bf4e477d-ae98-4f86-9aff-32f47030f1b5": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "80px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "64px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Body Text - Single Column"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "34141be5-2440-4e99-b85a-c0f5ab1ffc02": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "d56f10b7-3d50-457a-8aba-b942413e396b": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "6",
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "40px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              }
+          },
+          "bf70775a-15a1-4915-8156-900090627099": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "761240f4-8dc3-49a0-8646-9cef1eec6b72": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p class=\"coh-style-paragraph-regular\">Your Millboard deck offers endless opportunities for enjoying the nice weather and making the most of your outdoor space. Whether you prefer quiet relaxation or lively gatherings, there's something for everyone to enjoy on your deck. So, make the most of the sunshine, breathe in the fresh air, and let your deck become your favourite place to unwind and connect with the great outdoors.<o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": "",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "af47da47-8213-4a57-8429-327b00c27f7b": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "bdd5d6d6-c964-43b8-8079-0a7efd20e233",
+                      "entityId": "bdd5d6d6-c964-43b8-8079-0a7efd20e233"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<p class=\"coh-style-paragraph-regular\"><strong>Considering a Millboard Deck?<\/strong><\/p><p class=\"coh-style-paragraph-regular\">Why not order some free samples of your favourite colours to experience the beauty and quality of Millboard first-hand?<\/p><p class=\"coh-style-paragraph-regular\">&nbsp;<\/p><p class=\"coh-style-paragraph-regular\"><a href=\"https:\/\/www.millboard.com\/en-gb\/order-a-sample?__hstc=176344314.746671b4487835d247d94e1f01c88be4.1699633605778.1715256643324.1715261133039.111&amp;__hssc=176344314.10.1715261133039&amp;__hsfp=941485171\"><strong>Order your free samples<\/strong><\/a><o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><o:p><\/o:p><\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "settings": {
+                  "title": "Text and Image"
+              },
+              "b2599ce9-c069-4662-91f9-5686754ca22d": ""
+          }
+      },
+      "previewModel": {
+          "bf4e477d-ae98-4f86-9aff-32f47030f1b5": {},
+          "d56f10b7-3d50-457a-8aba-b942413e396b": {},
+          "761240f4-8dc3-49a0-8646-9cef1eec6b72": {},
+          "af47da47-8213-4a57-8429-327b00c27f7b": {}
+      },
+      "variableFields": {
+          "bf4e477d-ae98-4f86-9aff-32f47030f1b5": [],
+          "d56f10b7-3d50-457a-8aba-b942413e396b": [],
+          "761240f4-8dc3-49a0-8646-9cef1eec6b72": [],
+          "af47da47-8213-4a57-8429-327b00c27f7b": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

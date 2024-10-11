@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+<div class="colorbox-wrapper">
+  {% set totalrows = rows|length %}
+  {% set row1 = 0 %}
+  {% set row2 = 0 %}
+  {% set row3 = 0 %}
+  {% if totalrows >= 1 %}
+    <div class="views-row-wrapper row-wrapper-1">
+      <div class="row-inner-col row-inner-1-col-1 coh-col-lg-4">
+        {% for row in rows|slice(0, 2) %}
+        {%
+          set row_classes = [
+          default_row_class ? 'views-row',
+        ]
+        %}
+        <div{{ row.attributes.addClass(row_classes, 'row-inner-1') }}>
+          {{- row.content -}}
+        </div>
+        {% set row1 = loop.index %}
+      {% endfor %}
+      </div>
+      <div class="row-inner-col row-inner-1-col-2 coh-col-lg-8">
+      {% for row in rows|slice(2, 1) %}
+      {%
+        set row_classes = [
+        default_row_class ? 'views-row',
+      ]
+      %}
+        <div{{ row.attributes.addClass(row_classes, 'row-inner-1') }}>
+          {{- row.content -}}
+        </div>
+        {% set row1 = loop.index + row1 %}
+      {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  {% set totalrows = totalrows - row1 %}
+  {% if totalrows >= 1 %}
+    <div class="views-row-wrapper row-wrapper-2">
+    {% for row in rows|slice(3, 2) %}
+    {%
+      set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+    %}
+      <div{{ row.attributes.addClass(row_classes, 'coh-col-lg-6 row-inner-2') }}>
+        {{- row.content -}}
+      </div>
+      {% set row2 = loop.index %}
+    {% endfor %}
+    </div>
+  {% endif %}
+  {% set totalrows = totalrows - row2 %}
+  {% if totalrows >= 1 %}
+    <div class="views-row-wrapper row-wrapper-3">
+    {% for row in rows|slice(5, 3) %}
+    {%
+      set row_classes = [
+      default_row_class ? 'views-row',
+    ]
+    %}
+      <div{{ row.attributes.addClass(row_classes, 'coh-col-xl-4 row-inner-3') }}>
+        {{- row.content -}}
+      </div>
+      {% set row3 = loop.index %}
+    {% endfor %}
+    </div>
+  {% endif %}
+  {% set totalrows = totalrows - row3 %}
+  {% if totalrows >= 1 %}
+    <div class="views-row-wrapper row-wrapper-4">
+      <div class="row-inner-col row-inner-4-col-1 coh-col-lg-8">
+      {% for row in rows|slice(8, 1) %}
+      {%
+        set row_classes = [
+        default_row_class ? 'views-row',
+      ]
+      %}
+        <div{{ row.attributes.addClass(row_classes, 'row-inner-4') }}>
+          {{- row.content -}}
+        </div>
+      {% endfor %}
+      </div>
+      <div class="row-inner-col row-inner-4-col-2 coh-col-lg-4">
+      {% for row in rows|slice(9, 2) %}
+      {%
+        set row_classes = [
+        default_row_class ? 'views-row',
+      ]
+      %}
+        <div{{ row.attributes.addClass(row_classes, 'row-inner-4') }}>
+          {{- row.content -}}
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>

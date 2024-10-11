@@ -1,0 +1,27 @@
+uuid: 773ce6ae-ff32-4db6-8eca-c9c186273380
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_case_study_or_project_type
+field_name: field_case_study_or_project_type
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Commercial
+      label: Commercial
+    -
+      value: Residential
+      label: Residential
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

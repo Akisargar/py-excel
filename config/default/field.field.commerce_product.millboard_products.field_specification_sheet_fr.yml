@@ -1,0 +1,37 @@
+uuid: 40e208d7-62bb-4b5e-9476-899770bbb1d1
+langcode: fr-fr
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_specification_sheet_fr
+    - media.type.acquia_dam_documents_asset
+    - media.type.acquia_dam_pdf_asset
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: commerce_product.millboard_products.field_specification_sheet_fr
+field_name: field_specification_sheet_fr
+entity_type: commerce_product
+bundle: millboard_products
+label: 'Specification Sheet (FR)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_documents_asset: acquia_dam_documents_asset
+      acquia_dam_pdf_asset: acquia_dam_pdf_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

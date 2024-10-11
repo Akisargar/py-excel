@@ -1,0 +1,60 @@
+uuid: 72fa2e6b-360e-4026-80ae-0bca1c8b73e6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.horizontal_card
+    - field.field.node.resources.field_categories
+    - field.field.node.resources.field_collection
+    - field.field.node.resources.field_colour
+    - field.field.node.resources.field_documents
+    - field.field.node.resources.field_gallery_images
+    - field.field.node.resources.field_layout_canvas
+    - field.field.node.resources.field_location
+    - field.field.node.resources.field_metatag
+    - field.field.node.resources.field_publish_date
+    - field.field.node.resources.field_resource_type
+    - field.field.node.resources.field_type_of_project
+    - field.field.node.resources.field_videos
+    - node.type.resources
+  module:
+    - cohesion_elements
+    - user
+id: node.resources.horizontal_card
+targetEntityType: node
+bundle: resources
+mode: horizontal_card
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_categories: true
+  field_collection: true
+  field_colour: true
+  field_documents: true
+  field_gallery_images: true
+  field_location: true
+  field_metatag: true
+  field_publish_date: true
+  field_resource_type: true
+  field_type_of_project: true
+  field_videos: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,25 @@
+uuid: 0db604d5-4285-4640-9852-fbd0d8b68b87
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.storage.commerce_product_variation.field_style
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product_variation.millboard_products.field_style
+field_name: field_style
+entity_type: commerce_product_variation
+bundle: millboard_products
+label: Style
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

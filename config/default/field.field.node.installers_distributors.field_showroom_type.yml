@@ -1,0 +1,35 @@
+uuid: ff9e0bc8-107c-4445-b188-ee7365905a4d
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_showroom_type
+    - node.type.installers_distributors
+    - taxonomy.vocabulary.showroom_type
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.installers_distributors.field_showroom_type
+field_name: field_showroom_type
+entity_type: node
+bundle: installers_distributors
+label: 'Showroom Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      showroom_type: showroom_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

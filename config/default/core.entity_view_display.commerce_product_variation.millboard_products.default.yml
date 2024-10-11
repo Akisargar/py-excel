@@ -1,0 +1,509 @@
+uuid: 866ac86e-52d0-4dde-b5ce-1c9c1cc593c9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.field.commerce_product_variation.millboard_products.attribute_color_fr
+    - field.field.commerce_product_variation.millboard_products.attribute_colour
+    - field.field.commerce_product_variation.millboard_products.attribute_installed_width
+    - field.field.commerce_product_variation.millboard_products.attribute_installed_width_inches
+    - field.field.commerce_product_variation.millboard_products.attribute_visual_width
+    - field.field.commerce_product_variation.millboard_products.attribute_width
+    - field.field.commerce_product_variation.millboard_products.attribute_width_inches
+    - field.field.commerce_product_variation.millboard_products.field_boards_per_ft2
+    - field.field.commerce_product_variation.millboard_products.field_boards_per_m2
+    - field.field.commerce_product_variation.millboard_products.field_body_copy
+    - field.field.commerce_product_variation.millboard_products.field_cad_file_downloads
+    - field.field.commerce_product_variation.millboard_products.field_certification_documents
+    - field.field.commerce_product_variation.millboard_products.field_commercial_warranty
+    - field.field.commerce_product_variation.millboard_products.field_content_builder
+    - field.field.commerce_product_variation.millboard_products.field_country_of_origin
+    - field.field.commerce_product_variation.millboard_products.field_dimensions
+    - field.field.commerce_product_variation.millboard_products.field_dimensions_inches
+    - field.field.commerce_product_variation.millboard_products.field_ean
+    - field.field.commerce_product_variation.millboard_products.field_fire_rating
+    - field.field.commerce_product_variation.millboard_products.field_fixings_per_board
+    - field.field.commerce_product_variation.millboard_products.field_installation_guide
+    - field.field.commerce_product_variation.millboard_products.field_installation_guide_fr
+    - field.field.commerce_product_variation.millboard_products.field_intro_copy
+    - field.field.commerce_product_variation.millboard_products.field_lifestyle_images
+    - field.field.commerce_product_variation.millboard_products.field_lifestyle_videos
+    - field.field.commerce_product_variation.millboard_products.field_material
+    - field.field.commerce_product_variation.millboard_products.field_meta_tags
+    - field.field.commerce_product_variation.millboard_products.field_msrp_per_ft2_usd
+    - field.field.commerce_product_variation.millboard_products.field_msrp_per_unit_usd
+    - field.field.commerce_product_variation.millboard_products.field_pack_size
+    - field.field.commerce_product_variation.millboard_products.field_pdp_inspiration
+    - field.field.commerce_product_variation.millboard_products.field_pdp_product_images
+    - field.field.commerce_product_variation.millboard_products.field_product_category
+    - field.field.commerce_product_variation.millboard_products.field_product_id
+    - field.field.commerce_product_variation.millboard_products.field_product_images
+    - field.field.commerce_product_variation.millboard_products.field_product_type
+    - field.field.commerce_product_variation.millboard_products.field_product_usp
+    - field.field.commerce_product_variation.millboard_products.field_recycled_content
+    - field.field.commerce_product_variation.millboard_products.field_residential_warranty
+    - field.field.commerce_product_variation.millboard_products.field_rrp_per_m2
+    - field.field.commerce_product_variation.millboard_products.field_rrp_per_m2_eu
+    - field.field.commerce_product_variation.millboard_products.field_rrp_per_unit
+    - field.field.commerce_product_variation.millboard_products.field_rrp_per_unit_eu
+    - field.field.commerce_product_variation.millboard_products.field_sample_sku
+    - field.field.commerce_product_variation.millboard_products.field_size
+    - field.field.commerce_product_variation.millboard_products.field_size_ounce
+    - field.field.commerce_product_variation.millboard_products.field_specification_sheet
+    - field.field.commerce_product_variation.millboard_products.field_specification_sheet_fr
+    - field.field.commerce_product_variation.millboard_products.field_studio_imagery
+    - field.field.commerce_product_variation.millboard_products.field_style
+    - field.field.commerce_product_variation.millboard_products.field_swatch
+    - field.field.commerce_product_variation.millboard_products.field_training_videos
+    - field.field.commerce_product_variation.millboard_products.field_weight
+    - field.field.commerce_product_variation.millboard_products.field_weight_lb
+    - field.field.commerce_product_variation.millboard_products.field_weight_per_board
+    - field.field.commerce_product_variation.millboard_products.field_weight_per_ft2_lb
+    - field.field.commerce_product_variation.millboard_products.field_weight_per_m2_kg
+  module:
+    - commerce_price
+    - entity_reference_revisions
+    - text
+id: commerce_product_variation.millboard_products.default
+targetEntityType: commerce_product_variation
+bundle: millboard_products
+mode: default
+content:
+  field_boards_per_ft2:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 42
+    region: content
+  field_boards_per_m2:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_body_copy:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_cad_file_downloads:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_certification_documents:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_commercial_warranty:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 29
+    region: content
+  field_country_of_origin:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 21
+    region: content
+  field_dimensions:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_dimensions_inches:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_ean:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 26
+    region: content
+  field_fire_rating:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_fixings_per_board:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 23
+    region: content
+  field_installation_guide:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_installation_guide_fr:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 48
+    region: content
+  field_intro_copy:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_lifestyle_images:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_lifestyle_videos:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_material:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_msrp_per_ft2_usd:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 44
+    region: content
+  field_msrp_per_unit_usd:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 45
+    region: content
+  field_pack_size:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 35
+    region: content
+  field_pdp_inspiration:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 30
+    region: content
+  field_pdp_product_images:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 32
+    region: content
+  field_product_category:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_product_id:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_product_images:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_product_type:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_product_usp:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field_recycled_content:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 27
+    region: content
+  field_residential_warranty:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 28
+    region: content
+  field_rrp_per_m2:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 39
+    region: content
+  field_rrp_per_m2_eu:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 46
+    region: content
+  field_rrp_per_unit:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 40
+    region: content
+  field_rrp_per_unit_eu:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 47
+    region: content
+  field_sample_sku:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 41
+    region: content
+  field_size:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 36
+    region: content
+  field_size_ounce:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 37
+    region: content
+  field_specification_sheet:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_specification_sheet_fr:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 49
+    region: content
+  field_studio_imagery:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_style:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_swatch:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 33
+    region: content
+  field_training_videos:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_weight:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 25
+    region: content
+  field_weight_lb:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 34
+    region: content
+  field_weight_per_board:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 24
+    region: content
+  field_weight_per_ft2_lb:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 43
+    region: content
+  field_weight_per_m2_kg:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 38
+    region: content
+  list_price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  price:
+    type: commerce_price_default
+    label: above
+    settings:
+      strip_trailing_zeroes: false
+      currency_display: symbol
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  attribute_color_fr: true
+  attribute_colour: true
+  attribute_installed_width: true
+  attribute_installed_width_inches: true
+  attribute_visual_width: true
+  attribute_width: true
+  attribute_width_inches: true
+  field_content_builder: true
+  field_meta_tags: true
+  langcode: true
+  product_id: true
+  search_api_excerpt: true
+  sku: true
+  title: true

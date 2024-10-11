@@ -1,0 +1,255 @@
+uuid: 1e26b752-4f4b-4e9c-bb5b-c2447e26ac6c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_templates.cohesion_master_templates.master_template
+label: 'Full content (Node, Resources)'
+id: node_resources_full
+json_values: |
+  {
+      "canvas": [
+          {
+              "type": "container",
+              "uid": "container",
+              "title": "Container",
+              "status": {
+                  "collapsed": false
+              },
+              "uuid": "1ee00ea4-bb4a-4548-82d4-b66db12669f0",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "uid": "cpt_container",
+                      "type": "component",
+                      "title": "Container",
+                      "enabled": true,
+                      "category": "category-1",
+                      "componentId": "cpt_container",
+                      "componentType": "container",
+                      "uuid": "3612c172-21da-4e98-93b3-5ff88c3fbbd6",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "parentUid": "container",
+                      "children": [
+                          {
+                              "type": "container",
+                              "uid": "component-drop-zone",
+                              "mimicParent": true,
+                              "parentUid": "cpt_container",
+                              "title": "Component drop zone",
+                              "selected": false,
+                              "status": {
+                                  "collapsed": false,
+                                  "disabled": false
+                              },
+                              "uuid": "4a6f44ac-8724-410b-a126-e7abd32f61e6",
+                              "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                              "isContainer": true,
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "drupal-field",
+                                      "title": "Field",
+                                      "status": {
+                                          "collapsed": true
+                                      },
+                                      "uuid": "9a58d33d-9e75-4fb6-94ba-7e4da29b2416",
+                                      "parentUid": "component-drop-zone",
+                                      "children": []
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "1ee00ea4-bb4a-4548-82d4-b66db12669f0": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "container-settings",
+                          "children": [
+                              {
+                                  "formKey": "container-width",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "container-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              },
+              "styles": {
+                  "formDefinition": [],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "items": []
+              },
+              "markup": {
+                  "formDefinition": [
+                      {
+                          "formKey": "tab-markup-classes-and-ids",
+                          "children": [
+                              {
+                                  "formKey": "tab-markup-add-classes",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "classes",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": []
+              }
+          },
+          "3612c172-21da-4e98-93b3-5ff88c3fbbd6": {},
+          "9a58d33d-9e75-4fb6-94ba-7e4da29b2416": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "drupal-field-settings",
+                          "children": [
+                              {
+                                  "formKey": "drupal-field-field",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          }
+      },
+      "model": {
+          "1ee00ea4-bb4a-4548-82d4-b66db12669f0": {
+              "settings": {
+                  "width": "fluid",
+                  "title": "Resources Page Container Fluid",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ]
+              },
+              "styles": {
+                  "settings": {
+                      "class": "Default"
+                  }
+              },
+              "markup": {
+                  "classes": "page-resources-landing"
+              }
+          },
+          "3612c172-21da-4e98-93b3-5ff88c3fbbd6": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "0px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Resources Page Container"
+              }
+          },
+          "4a6f44ac-8724-410b-a126-e7abd32f61e6": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "9a58d33d-9e75-4fb6-94ba-7e4da29b2416": {
+              "settings": {
+                  "title": "Field - Layout canvas",
+                  "drupalField": "content.field_layout_canvas"
+              }
+          }
+      },
+      "previewModel": {
+          "1ee00ea4-bb4a-4548-82d4-b66db12669f0": {},
+          "3612c172-21da-4e98-93b3-5ff88c3fbbd6": {},
+          "9a58d33d-9e75-4fb6-94ba-7e4da29b2416": {}
+      },
+      "variableFields": {
+          "1ee00ea4-bb4a-4548-82d4-b66db12669f0": [],
+          "3612c172-21da-4e98-93b3-5ff88c3fbbd6": [],
+          "9a58d33d-9e75-4fb6-94ba-7e4da29b2416": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+modified: true
+selectable: true
+custom: false
+twig_template: node--cohesion--node-resources-full
+default: true
+entity_type: node
+bundle: resources
+view_mode: full
+master_template: master_template

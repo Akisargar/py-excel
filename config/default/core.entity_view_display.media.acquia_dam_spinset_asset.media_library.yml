@@ -1,0 +1,31 @@
+uuid: 0a8a2105-4fbd-4d10-900b-7228146cdedb
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - media.type.acquia_dam_spinset_asset
+  module:
+    - acquia_dam
+_core:
+  default_config_hash: wpnEtnqpqiqtzKY-3FT-FLEsSSjoSXzd1lsFxK4dz4w
+id: media.acquia_dam_spinset_asset.media_library
+targetEntityType: media
+bundle: acquia_dam_spinset_asset
+mode: media_library
+content:
+  thumbnail:
+    type: acquia_dam_thumbnail
+    label: hidden
+    settings:
+      thumbnail_size: 300px
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  acquia_dam_asset_id: true
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

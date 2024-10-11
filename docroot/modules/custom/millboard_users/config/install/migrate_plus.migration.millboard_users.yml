@@ -1,0 +1,70 @@
+id: millboard_users
+label: Import Millboard Users
+migration_group: millboard_users
+migration_tags:
+  - users
+
+source:
+  plugin: 'csv'
+  # Full path to the file.
+  path: 'modules/custom/millboard_users/assets/millboard_users.csv'
+  # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The row to be used as the CSV header (indexed from 0),
+  # or null if there is no header row.
+  header_offset: 0
+  # The column(s) to use as a key. Each column specified will
+  # create an index in the migration table and too many columns
+  # may throw an index size error.
+  ids:
+    - ID
+process:
+  field_first_name: FirstName
+  field_last_name: LastName
+  field_friendly_name: FriendlyName
+  field_craft_cms_user_id: ID
+  name:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: Username
+      message: 'Username is missing'
+  mail:
+    -
+      plugin: skip_on_empty
+      method: row
+      source: Email
+      message: 'Email is missing'
+    -
+      plugin: validate_email
+      source: Email
+  status:
+    plugin: static_map
+    source: Status
+    default_value: 0
+    map:
+      'active': 1
+      'pending': 0
+  roles:
+    plugin: explode
+    delimiter: ','
+    source: Roles
+  changed:
+    plugin: format_date
+    source: DateUpdated
+    from_format: 'Y-m-d\TH:i:sP'
+    to_format: 'U'
+    from_timezone: 'GMT'
+    to_timezone: 'GMT'
+  created:
+    plugin: format_date
+    source: DateCreated
+    from_format: 'Y-m-d\TH:i:sP'
+    to_format: 'U'
+    from_timezone: 'GMT'
+    to_timezone: 'GMT'
+destination:
+  plugin: entity:user
+migration_dependencies: { }

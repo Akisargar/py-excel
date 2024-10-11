@@ -1,0 +1,29 @@
+uuid: 4ad12ab3-0713-4294-ae1b-896fa1ca81d4
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_is_a_showroom
+    - node.type.installers_distributors
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.installers_distributors.field_is_a_showroom
+field_name: field_is_a_showroom
+entity_type: node
+bundle: installers_distributors
+label: 'Is a showroom'
+description: 'Check this box if the content you are creating is a showroom content'
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

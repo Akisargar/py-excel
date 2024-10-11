@@ -1,0 +1,29 @@
+uuid: 0b856997-36de-4bdc-aa10-ccdf8fa74039
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_showroom_type
+    - node.type.showrooms
+    - taxonomy.vocabulary.showroom_type
+id: node.showrooms.field_showroom_type
+field_name: field_showroom_type
+entity_type: node
+bundle: showrooms
+label: 'Showroom Type'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      showroom_type: showroom_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

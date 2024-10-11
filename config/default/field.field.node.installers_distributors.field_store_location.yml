@@ -1,0 +1,21 @@
+uuid: 4b8e54f8-7044-4eed-a401-5ab4bb2661a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_location
+    - node.type.installers_distributors
+  module:
+    - geolocation
+id: node.installers_distributors.field_store_location
+field_name: field_store_location
+entity_type: node
+bundle: installers_distributors
+label: 'Store Location'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

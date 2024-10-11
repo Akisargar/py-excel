@@ -1,0 +1,168 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_form_alter().
+ */
+function millboard_installers_distributors_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form_ids_with_address_field = [
+    'node_installers_distributors_form',
+    'node_installers_distributors_edit_form',
+  ];
+
+  // Add an after_build to rename address field labels.
+  if (in_array($form_id, $form_ids_with_address_field) && isset($form['field_store_address'])) {
+    $form['field_store_address']['widget']['#after_build'][] = 'millboard_installers_distributors_address_rename_company';
+  }
+
+  if ($form_id == 'millboard_installers_distributors_find_installer') {
+    $form['#attributes']['class'][] = 'coh-style-map-and-locate-custom-style';
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function millboard_installers_distributors_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() == 'millboard_find_installers' && ($view->current_display == 'where_to_buy' || $view->current_display == 'block_1')) {
+    if (isset($query->where[0]["conditions"][0]["value"][":node__field_store_location_field_store_location_proximity"]) && isset($view->exposed_data["field_store_location_proximity"])) {
+      // Convert kilometer to miles.
+      $query->where[0]["conditions"][0]["value"][":node__field_store_location_field_store_location_proximity"] = (1.60934) * $view->exposed_data["field_store_location_proximity"];
+    }
+  }
+}
+
+/**
+ * After build callback to rename company field label in address field.
+ */
+function millboard_installers_distributors_address_rename_company($element, FormStateInterface $form_state) {
+  $element[0]['address']['organization']['#title'] = t('Name / Number');
+  $element[0]['address']['address_line1']['#title'] = t('Street Address');
+  return $element;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function millboard_installers_distributors_theme() {
+  return [
+    'find_installers' => [
+      'variables' => [
+        'view' => [],
+        'form' => [],
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function millboard_installers_distributors_token_info() {
+  $info = [];
+
+  $info['tokens']['node']['installers_distributors_title'] = [
+    'name' => t('Installers/Distributors Title'),
+    'description' => t('The transformed title for installers_distributors content type.'),
+  ];
+
+  $info['tokens']['current-page']['default_language_code'] = [
+    'name' => t('Default lang code'),
+    'description' => t('Sites default language code'),
+  ];
+
+  $info['types']['millboard_installers_distributors'] = [
+    'name' => t('Distributor Email'),
+    'description' => t('Tokens making the distributor email address available to forms'),
+  ];
+
+  $info['tokens']['millboard_installers_distributors']['distributorEmail'] = [
+    'name' => t("Distributor email address"),
+    'description' => t('Distributor email address'),
+  ];
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function millboard_installers_distributors_tokens($type, $tokens, array $data = [], array $options = []) {
+  $replacements = [];
+
+  if ($type == 'node' && isset($data['node']) && $data['node']->getType() == 'installers_distributors') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'installers_distributors_title':
+          // Get the raw title from the node.
+          $rawTitle = $data['node']->getTitle();
+
+          // Check if the title contains a '-' character.
+          if (strpos($rawTitle, '-') !== FALSE) {
+            // If it does, extract the part before the '-' and
+            // trim any extra spaces.
+            $transformedTitle = trim(explode('-', $rawTitle)[0]);
+          }
+          else {
+            // If there is no '-', use the raw title as is.
+            $transformedTitle = $rawTitle;
+          }
+
+          // Provide the transformed title as replacement.
+          $replacements[$original] = $transformedTitle;
+          break;
+      }
+    }
+  }
+
+  $route_match = \Drupal::routeMatch();
+  $node = $route_match->getParameter('node');
+
+  if ($type == 'millboard_installers_distributors' && !empty($node)) {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'distributorEmail':
+          $distributorEmail = $node->get('field_email_address')->value;
+          if ($distributorEmail) {
+            $replacements[$original] = $distributorEmail;
+          }
+          else {
+            $replacements[$original] = NULL;
+          }
+          break;
+      }
+    }
+  }
+
+  // Check if the token type is 'current-page'.
+  if ($type == 'current-page') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'default_language_code':
+          // Get the default language code.
+          $language = \Drupal::service('language.default')->get();
+          $default_language_code = $language->getId();
+          $replacements[$original] = $default_language_code;
+          break;
+      }
+    }
+  }
+  return $replacements;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function millboard_installers_distributors_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'showrooms_listing')) {
+    $view->element['#attached']['library'][] = 'millboard_installers_distributors/user_location';
+  }
+}

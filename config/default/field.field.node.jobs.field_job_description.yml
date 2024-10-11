@@ -1,0 +1,26 @@
+uuid: 31377ef0-dbb6-480a-b796-eb0744ed1cc7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_description
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - node.type.jobs
+  module:
+    - text
+id: node.jobs.field_job_description
+field_name: field_job_description
+entity_type: node
+bundle: jobs
+label: 'Job description'
+description: 'Please enter the job description here.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - filtered_html
+    - full_html
+field_type: text_long

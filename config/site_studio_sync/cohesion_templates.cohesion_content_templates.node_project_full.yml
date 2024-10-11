@@ -1,0 +1,255 @@
+uuid: a76a2084-72ab-4f80-90db-c6199c160f85
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_templates.cohesion_master_templates.master_template
+label: 'Full content (Node, Project (Case Studies))'
+id: node_project_full
+json_values: |
+  {
+      "canvas": [
+          {
+              "type": "container",
+              "uid": "container",
+              "title": "Container",
+              "status": {
+                  "collapsed": false
+              },
+              "uuid": "de729f40-b251-438a-890a-cc2b3f517010",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "uid": "cpt_container",
+                      "type": "component",
+                      "title": "Container",
+                      "enabled": true,
+                      "category": "category-1",
+                      "componentId": "cpt_container",
+                      "componentType": "container",
+                      "uuid": "f6173e54-a9ac-46a9-a2ec-fd93e513348d",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "parentUid": "container",
+                      "children": [
+                          {
+                              "type": "container",
+                              "uid": "component-drop-zone",
+                              "mimicParent": true,
+                              "parentUid": "cpt_container",
+                              "title": "Component drop zone",
+                              "selected": false,
+                              "status": {
+                                  "collapsed": false,
+                                  "disabled": false
+                              },
+                              "uuid": "83b6fe34-6249-42a3-a193-fc2827ed8062",
+                              "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                              "isContainer": true,
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "drupal-field",
+                                      "title": "Field",
+                                      "status": {
+                                          "collapsed": true
+                                      },
+                                      "uuid": "0490bd77-681f-417e-b888-1ae409f7f37c",
+                                      "parentUid": "component-drop-zone",
+                                      "children": []
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "de729f40-b251-438a-890a-cc2b3f517010": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "container-settings",
+                          "children": [
+                              {
+                                  "formKey": "container-width",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "container-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              },
+              "markup": {
+                  "formDefinition": [
+                      {
+                          "formKey": "tab-markup-classes-and-ids",
+                          "children": [
+                              {
+                                  "formKey": "tab-markup-add-classes",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "classes",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": []
+              },
+              "styles": {
+                  "formDefinition": [],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "items": []
+              }
+          },
+          "f6173e54-a9ac-46a9-a2ec-fd93e513348d": {},
+          "0490bd77-681f-417e-b888-1ae409f7f37c": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "drupal-field-settings",
+                          "children": [
+                              {
+                                  "formKey": "drupal-field-field",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          }
+      },
+      "model": {
+          "de729f40-b251-438a-890a-cc2b3f517010": {
+              "settings": {
+                  "width": "fluid",
+                  "title": "Case Study Container Fluid",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ]
+              },
+              "markup": {
+                  "classes": "page-casestudy-landing"
+              },
+              "styles": {
+                  "settings": {
+                      "class": "Default"
+                  }
+              }
+          },
+          "f6173e54-a9ac-46a9-a2ec-fd93e513348d": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "0px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Case Study Container"
+              }
+          },
+          "83b6fe34-6249-42a3-a193-fc2827ed8062": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "0490bd77-681f-417e-b888-1ae409f7f37c": {
+              "settings": {
+                  "title": "Field - Layout canvas",
+                  "drupalField": "content.field_content_builder"
+              }
+          }
+      },
+      "previewModel": {
+          "de729f40-b251-438a-890a-cc2b3f517010": {},
+          "f6173e54-a9ac-46a9-a2ec-fd93e513348d": {},
+          "0490bd77-681f-417e-b888-1ae409f7f37c": {}
+      },
+      "variableFields": {
+          "de729f40-b251-438a-890a-cc2b3f517010": [],
+          "f6173e54-a9ac-46a9-a2ec-fd93e513348d": [],
+          "0490bd77-681f-417e-b888-1ae409f7f37c": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+modified: true
+selectable: true
+custom: false
+twig_template: node--cohesion--node-project-full
+default: true
+entity_type: node
+bundle: project
+view_mode: full
+master_template: __none__

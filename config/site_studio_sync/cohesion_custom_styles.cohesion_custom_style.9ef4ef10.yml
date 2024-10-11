@@ -1,0 +1,261 @@
+uuid: a879a4d3-ad03-4f2e-8dca-0952cacb123c
+langcode: en
+status: true
+dependencies:
+  config:
+    - cohesion_website_settings.cohesion_color.millboard-charcoal
+label: 'Header Menu Link'
+id: 9ef4ef10
+json_values: |
+  {
+      "preview": {
+          "text": "<a href=\"#\" class=\"coh-preview\">Default content for 'Link'.<\/a>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "a"
+          },
+          "styles": {
+              "xs": {
+                  "color": {
+                      "value": {
+                          "link": true,
+                          "value": {
+                              "hex": "#414042",
+                              "rgba": "rgba(65, 64, 66, 1)"
+                          },
+                          "uid": "millboard-charcoal",
+                          "name": "Millboard Charcoal",
+                          "class": ".coh-color-millboard-charcoal",
+                          "variable": "$coh-color-millboard-charcoal",
+                          "tags": [
+                              "Millboard",
+                              "Text",
+                              "Background"
+                          ],
+                          "inuse": false,
+                          "wysiwyg": true
+                      }
+                  },
+                  "font-size": {
+                      "value": "14px"
+                  },
+                  "line-height": {
+                      "value": "24px"
+                  },
+                  "display": {
+                      "value": "inline-block"
+                  },
+                  "background-color": {},
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              }
+          },
+          "4df103c4-4e3b-4a0a-9a58-76590e23fe64": {
+              "styles": {
+                  "xs": {
+                      "text-decoration": {},
+                      "border-top-width": {},
+                      "border-top-style": {},
+                      "border-top-color": {}
+                  }
+              },
+              "settings": {
+                  "pseudo": ":hover"
+              }
+          },
+          "d33ed7e9-882c-440c-8fee-ee0e2f83a2b2": {
+              "styles": {
+                  "xs": {
+                      "width": {
+                          "value": "100%"
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":after"
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "font",
+                  "children": [
+                      {
+                          "formKey": "font-and-color",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "font-family",
+                                  "active": false
+                              },
+                              {
+                                  "name": "font-weight",
+                                  "active": false
+                              },
+                              {
+                                  "name": "color",
+                                  "active": true
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "font-sizing-and-alignment",
+                          "activeFields": [
+                              {
+                                  "name": "font-size",
+                                  "active": true
+                              },
+                              {
+                                  "name": "line-height",
+                                  "active": true
+                              },
+                              {
+                                  "name": "text-align",
+                                  "active": false
+                              },
+                              {
+                                  "name": "letter-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "word-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "text-indent",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "display",
+                          "activeFields": [
+                              {
+                                  "name": "display",
+                                  "active": true
+                              },
+                              {
+                                  "name": "visibility",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow-x",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow-y",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": [
+              {
+                  "title": ":hover",
+                  "type": "container",
+                  "selectorType": "pseudo",
+                  "uuid": "4df103c4-4e3b-4a0a-9a58-76590e23fe64",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo"
+                  ],
+                  "formDefinition": [],
+                  "items": [
+                      {
+                          "title": ":after",
+                          "type": "container",
+                          "selectorType": "pseudo",
+                          "uuid": "d33ed7e9-882c-440c-8fee-ee0e2f83a2b2",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "width",
+                                          "activeFields": [
+                                              {
+                                                  "name": "min-width",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "max-width",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "width",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "expanded": true,
+                          "items": []
+                      }
+                  ],
+                  "collapsed": false
+              }
+          ]
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-header-menu-link
+custom_style_type: link
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 114

@@ -1,0 +1,6 @@
+services:
+  millboard_send_order_sample_mail.command:
+    class: Drupal\millboard_sap_configuration\Commands\MillboardSendMail
+    arguments: ['@plugin.manager.mail', '@config.factory', '@language_manager', '@logger.factory', '@file_system']
+    tags:
+      - { name: drush.command }

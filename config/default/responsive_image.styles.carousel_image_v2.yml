@@ -1,0 +1,25 @@
+uuid: ff4f46df-e597-41b3-9349-651f5f76a2e2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.carousel_image_v1_desktop_920x518_
+    - image.style.carousel_image_v2_desktop_920x605_
+    - image.style.carousel_image_v2_mobile
+  theme:
+    - millboard
+id: carousel_image_v2
+label: 'Carousel Image v2'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_image_v2_desktop_920x605_
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: carousel_image_v2_mobile
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: carousel_image_v1_desktop_920x518_

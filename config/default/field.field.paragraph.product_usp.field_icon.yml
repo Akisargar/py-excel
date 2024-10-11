@@ -1,0 +1,31 @@
+uuid: 914562d9-1140-4f91-8895-a4550f578744
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icon
+    - media.type.acquia_dam_image_asset
+    - media.type.image
+    - paragraphs.paragraphs_type.product_usp
+id: paragraph.product_usp.field_icon
+field_name: field_icon
+entity_type: paragraph
+bundle: product_usp
+label: Icon
+description: 'Upload an icon that represents the product. Icons are small, visual elements that can help users quickly identify and associate the product with a specific product variation. It will be displayed prominently on product USP block.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_image_asset
+field_type: entity_reference

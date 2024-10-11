@@ -1,0 +1,54 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Filter
+          reset_button_label: Reset
+      pager:
+        options:
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« first'
+            last: 'last »'
+      fields:
+        node_bulk_form:
+          action_title: Action
+        title:
+          label: Title
+        name:
+          label: Author
+        status:
+          label: Status
+          settings:
+            format_custom_true: Published
+        operations:
+          label: Operations
+      filters:
+        title:
+          expose:
+            label: Title
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Published
+        langcode:
+          expose:
+            label: Language
+  overview:
+    display_options:
+      tab_options:
+        title: Content
+  user_page:
+    display_options:
+      tab_options:
+        title: Content
+      arguments:
+        uid:
+          exception:
+            title: All
+    display_title: User

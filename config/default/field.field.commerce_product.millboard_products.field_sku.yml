@@ -1,0 +1,25 @@
+uuid: b7dff619-363b-4b6f-b96e-f784677301c9
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_sku
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_sku
+field_name: field_sku
+entity_type: commerce_product
+bundle: millboard_products
+label: SKU
+description: 'Product Code'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

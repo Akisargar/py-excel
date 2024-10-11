@@ -1,0 +1,22 @@
+uuid: 18430609-e678-47b6-8715-bba87f8dec46
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.installers_distributors
+id: node.installers_distributors.promote
+field_name: promote
+entity_type: node
+bundle: installers_distributors
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,64 @@
+parameters:
+  git_dir: .
+  bin_dir: vendor/bin
+grumphp:
+  ascii:
+    failed: vendor/axelerant/drupal-quality-checker/resources/grumpy.txt
+    succeeded: vendor/axelerant/drupal-quality-checker/resources/happy.txt
+  tasks:
+    git_branch_name:
+      whitelist:
+        - "/xigen-/"
+        - main
+        - develop
+        - master
+        - stage
+        - prod
+      additional_modifiers: ''
+      allow_detached_head: true
+    git_commit_message:
+      matchers:
+        Must contain Xigen: /xigen-/
+    phplint: ~
+    yamllint: ~
+    composer: ~
+    jsonlint: ~
+    twigcs:
+      path: 'web'
+      ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
+      exclude:
+        - core
+        - modules/contrib
+        - themes/contrib
+        - profiles/contrib
+#    phpcpd:
+#      directory: ['./docroot/modules/custom']
+    phpcs:
+      standard:
+        - Drupal
+      ignore_patterns:
+        - .github
+        - .gitlab
+        - /config/
+        - /drush/
+        - docroot/robots.txt
+        - docroot/sites/default/
+        - bower_components
+        - node_modules
+        - /vendor
+      triggered_by:
+        - php
+        - module
+        - inc
+        - install
+        - test
+        - profile
+        - theme
+        - css
+        - info
+        - txt
+    phpmd:
+      whitelist_patterns:
+        - /^docroot\/modules\/custom\/(.*)/
+      ruleset: ['phpmd']
+      triggered_by: ['php']

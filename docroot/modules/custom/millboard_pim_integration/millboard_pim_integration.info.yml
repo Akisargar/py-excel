@@ -1,0 +1,10 @@
+name: 'Millboard PIM Integration'
+type: module
+description: 'Module for importing product information from Widen (Entries) to Drupal commerce'
+package: Custom
+core_version_requirement: ^10
+configure: millboard_pim_integration.settings
+dependencies:
+  - drupal:config
+  - commerce:commerce_store
+  - acquia_dam:acquia_dam

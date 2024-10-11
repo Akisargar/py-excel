@@ -1,0 +1,58 @@
+uuid: 5a4bb168-02af-439a-80fa-7bc046920c7b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.field_blog_builder
+    - field.field.node.blog.field_blog_category
+    - field.field.node.blog.field_blog_image
+    - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_product_type
+    - field.field.node.blog.field_publish_date
+    - field.field.node.blog.field_subtitle
+    - field.field.node.blog.field_title_override
+    - node.type.blog
+  module:
+    - cohesion_elements
+    - user
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_blog_builder:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subtitle:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_blog_category: true
+  field_blog_image: true
+  field_metatag: true
+  field_product_type: true
+  field_publish_date: true
+  field_title_override: true
+  langcode: true
+  search_api_excerpt: true

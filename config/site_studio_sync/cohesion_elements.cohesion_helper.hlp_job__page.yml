@@ -1,0 +1,301 @@
+uuid: 12b0607d-a77e-4f98-bf46-bd9674ef0f5f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.22c77a50
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_heading
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.light-mist
+label: 'Job - Page'
+id: hlp_job__page
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "4aaf253f-5cff-4f45-8663-31f3f130fa0c",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "a6a62749-7478-432b-9b10-405c87fbac78",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "2dab3ccd-91ec-44b0-878e-8a2105755be6",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "39b76f5b-501d-4a83-bb03-9c3db7bc7359",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_heading",
+                                              "type": "component",
+                                              "title": "Heading",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_heading",
+                                              "componentType": "heading",
+                                              "iconColor": "custom",
+                                              "uuid": "a978d162-6d43-4642-ba72-e5740afc3a89",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "4b6a04ce-f8be-4e69-b888-71ab31804e78",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "7d1c8172-d9b4-4a4c-9012-ae69faa838db",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_text",
+                                              "type": "component",
+                                              "title": "Text",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_text",
+                                              "componentType": "wysiwyg",
+                                              "iconColor": "custom",
+                                              "uuid": "9f07b79d-1bc1-4343-bac8-4e2884a19136",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "4aaf253f-5cff-4f45-8663-31f3f130fa0c": {},
+          "a6a62749-7478-432b-9b10-405c87fbac78": {},
+          "2dab3ccd-91ec-44b0-878e-8a2105755be6": {},
+          "39b76f5b-501d-4a83-bb03-9c3db7bc7359": {},
+          "a978d162-6d43-4642-ba72-e5740afc3a89": {},
+          "4b6a04ce-f8be-4e69-b888-71ab31804e78": {},
+          "7d1c8172-d9b4-4a4c-9012-ae69faa838db": {},
+          "9f07b79d-1bc1-4343-bac8-4e2884a19136": {}
+      },
+      "model": {
+          "4aaf253f-5cff-4f45-8663-31f3f130fa0c": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#fcfbf8",
+                      "rgba": "rgba(252, 251, 248, 1)"
+                  },
+                  "uid": "light-mist",
+                  "name": "Light Mist",
+                  "class": ".coh-color-light-mist",
+                  "variable": "$coh-color-light-mist",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Text",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Container - Hero Text Only"
+              },
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "coh-style-hero-text-only",
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "a6a62749-7478-432b-9b10-405c87fbac78": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "2dab3ccd-91ec-44b0-878e-8a2105755be6": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "8",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "10",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              },
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "0px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px"
+          },
+          "39b76f5b-501d-4a83-bb03-9c3db7bc7359": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "a978d162-6d43-4642-ba72-e5740afc3a89": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h2",
+              "77d003da-6145-481e-95c8-2f6017361e26": "",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-center",
+              "settings": {
+                  "title": "Heading"
+              },
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Business Development Manager"
+          },
+          "4b6a04ce-f8be-4e69-b888-71ab31804e78": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "4",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              },
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "0px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px"
+          },
+          "7d1c8172-d9b4-4a4c-9012-ae69faa838db": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "9f07b79d-1bc1-4343-bac8-4e2884a19136": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span class=\"coh-color-millboard-wenge\" style=\"white-space:pre-wrap;\">Field Sales \u00b7 Atlanta, Georgia (Remote)<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": "",
+              "settings": {
+                  "title": "Text"
+              }
+          }
+      },
+      "previewModel": {
+          "4aaf253f-5cff-4f45-8663-31f3f130fa0c": {},
+          "2dab3ccd-91ec-44b0-878e-8a2105755be6": {},
+          "a978d162-6d43-4642-ba72-e5740afc3a89": {},
+          "4b6a04ce-f8be-4e69-b888-71ab31804e78": {},
+          "9f07b79d-1bc1-4343-bac8-4e2884a19136": {}
+      },
+      "variableFields": {
+          "4aaf253f-5cff-4f45-8663-31f3f130fa0c": [],
+          "2dab3ccd-91ec-44b0-878e-8a2105755be6": [],
+          "a978d162-6d43-4642-ba72-e5740afc3a89": [],
+          "4b6a04ce-f8be-4e69-b888-71ab31804e78": [],
+          "9f07b79d-1bc1-4343-bac8-4e2884a19136": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

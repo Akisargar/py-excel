@@ -1,0 +1,39 @@
+uuid: 833b4e1b-4566-4b0a-b32c-6678e314d24a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_grading
+    - node.type.installers_distributors
+    - taxonomy.vocabulary.gradings
+  content:
+    - 'taxonomy_term:gradings:1e7c7d31-2ca1-4808-9c85-f0ac7c7e0965'
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.installers_distributors.field_grading
+field_name: field_grading
+entity_type: node
+bundle: installers_distributors
+label: Grading
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    target_uuid: 1e7c7d31-2ca1-4808-9c85-f0ac7c7e0965
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gradings: gradings
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

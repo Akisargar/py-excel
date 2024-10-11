@@ -1,0 +1,25 @@
+uuid: 5ff3c231-0006-4072-b815-5f1ba49c2592
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_rrp_per_m2
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_rrp_per_m2
+field_name: field_rrp_per_m2
+entity_type: commerce_product
+bundle: millboard_products
+label: 'RRP per m2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

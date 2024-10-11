@@ -1,0 +1,69 @@
+uuid: 0b0d591d-a3b3-4982-aa1b-cf4370ffe824
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.case_study_cards
+    - field.field.node.project.body
+    - field.field.node.project.field_collection
+    - field.field.node.project.field_colour
+    - field.field.node.project.field_commercial_project
+    - field.field.node.project.field_content_builder
+    - field.field.node.project.field_location
+    - field.field.node.project.field_metatag
+    - field.field.node.project.field_preview_image
+    - field.field.node.project.field_publish_date
+    - field.field.node.project.field_subtitle
+    - field.field.node.project.field_type_of_project
+    - node.type.project
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.project.case_study_cards
+targetEntityType: node
+bundle: project
+mode: case_study_cards
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_preview_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: large_super_landscape
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  body: true
+  field_collection: true
+  field_colour: true
+  field_commercial_project: true
+  field_content_builder: true
+  field_location: true
+  field_metatag: true
+  field_publish_date: true
+  field_type_of_project: true
+  langcode: true
+  search_api_excerpt: true

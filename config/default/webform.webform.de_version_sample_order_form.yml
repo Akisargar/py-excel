@@ -1,0 +1,639 @@
+uuid: d67a01c4-7031-454b-8d63-59826b1b4ff0
+langcode: en-us
+status: open
+dependencies:
+  module:
+    - hubspot
+weight: 0
+open: null
+close: null
+uid: 1
+template: false
+archive: false
+id: de_version_sample_order_form
+title: 'DE Version Sample Order Form'
+description: '<p>This form is for the sample order for the DE site</p>'
+categories: {  }
+elements: |-
+  sample_names:
+    '#type': webform_entity_checkboxes
+    '#title': 'Sample Names'
+    '#required': true
+    '#attributes':
+      class:
+        - sample-name-checkbox
+    '#target_type': commerce_product_variation
+    '#selection_handler': views
+    '#selection_settings':
+      view:
+        view_name: product_variation_sample_order_form
+        display_name: entity_reference_1
+        arguments: {  }
+  sample_names_hubspot:
+    '#type': textfield
+    '#title': 'Sample Names Hubspot'
+    '#title_display': none
+    '#attributes':
+      class:
+        - sample-names-hubspot
+  first_name:
+    '#type': textfield
+    '#title': Vorname
+    '#required': true
+    '#required_error': 'Vorname ist erforderlich'
+  last_name:
+    '#type': textfield
+    '#title': Nachname
+    '#required': true
+    '#required_error': 'Nachname ist erforderlich'
+  email_address:
+    '#type': email
+    '#title': Email
+    '#required': true
+    '#required_error': 'E-Mailadresse wird benötigt'
+  telephone_number:
+    '#type': tel
+    '#title': Telefon
+    '#required': true
+    '#required_error': 'Telefonnummer ist erforderlich'
+  company:
+    '#type': textfield
+    '#title': Firma
+  address_line_1:
+    '#type': textfield
+    '#title': 'Anschrift Zeile 1'
+    '#required': true
+  address_line_2:
+    '#type': textfield
+    '#title': 'Adresszeile 2'
+  city_town:
+    '#type': textfield
+    '#title': Stadt
+    '#required': true
+  zip_postal_code:
+    '#type': textfield
+    '#title': Postleitzahl
+    '#required': true
+  country:
+    '#type': select
+    '#title': Land/Region
+    '#options':
+      'United Kingdom': 'United Kingdom'
+      'United States': 'United States'
+      Afghanistan: Afghanistan
+      'Åland Islands': 'Åland Islands'
+      Albania: Albania
+      Algeria: Algeria
+      'American Samoa': 'American Samoa'
+      Andorra: Andorra
+      Angola: Angola
+      Anguilla: Anguilla
+      Antarctica: Antarctica
+      'Antigua and Barbuda': 'Antigua and Barbuda'
+      Argentina: Argentina
+      Armenia: Armenia
+      Aruba: Aruba
+      'Asia/Pacific Region': 'Asia/Pacific Region'
+      Australia: Australia
+      Austria: Austria
+      Azerbaijan: Azerbaijan
+      Bahamas: Bahamas
+      Bahrain: Bahrain
+      Bangladesh: Bangladesh
+      Barbados: Barbados
+      Belarus: Belarus
+      Belgium: Belgium
+      Belize: Belize
+      Benin: Benin
+      Bermuda: Bermuda
+      Bhutan: Bhutan
+      Bolivia: Bolivia
+      'Bosnia and Herzegovina': 'Bosnia and Herzegovina'
+      Botswana: Botswana
+      'Bouvet Island': 'Bouvet Island'
+      Brazil: Brazil
+      'British Indian Ocean Territory': 'British Indian Ocean Territory'
+      'British Virgin Islands': 'British Virgin Islands'
+      Brunei: Brunei
+      Bulgaria: Bulgaria
+      'Burkina Faso': 'Burkina Faso'
+      Burundi: Burundi
+      Cambodia: Cambodia
+      Cameroon: Cameroon
+      Canada: Canada
+      'Canary Islands': 'Canary Islands'
+      'Cape Verde': 'Cape Verde'
+      'Caribbean Netherlands': 'Caribbean Netherlands'
+      'Cayman Islands': 'Cayman Islands'
+      'Central African Republic': 'Central African Republic'
+      Chad: Chad
+      Chile: Chile
+      China: China
+      'Christmas Island': 'Christmas Island'
+      'Cocos (Keeling) Islands': 'Cocos (Keeling) Islands'
+      Colombia: Colombia
+      Comoros: Comoros
+      Congo: Congo
+      'Cook Islands': 'Cook Islands'
+      'Costa Rica': 'Costa Rica'
+      "Cote d'Ivoire": "Cote d'Ivoire"
+      Croatia: Croatia
+      Cuba: Cuba
+      Curaçao: Curaçao
+      Cyprus: Cyprus
+      'Czech Republic': 'Czech Republic'
+      'Democratic Republic of the Congo': 'Democratic Republic of the Congo'
+      Denmark: Denmark
+      Djibouti: Djibouti
+      Dominica: Dominica
+      'Dominican Republic': 'Dominican Republic'
+      'East Timor': 'East Timor'
+      Ecuador: Ecuador
+      Egypt: Egypt
+      'El Salvador': 'El Salvador'
+      'Equatorial Guinea': 'Equatorial Guinea'
+      Eritrea: Eritrea
+      Estonia: Estonia
+      Ethiopia: Ethiopia
+      Europe: Europe
+      'Falkland Islands': 'Falkland Islands'
+      'Faroe Islands': 'Faroe Islands'
+      Fiji: Fiji
+      Finland: Finland
+      France: France
+      'French Guiana': 'French Guiana'
+      'French Polynesia': 'French Polynesia'
+      'French Southern and Antarctic Lands': 'French Southern and Antarctic Lands'
+      Gabon: Gabon
+      Gambia: Gambia
+      Georgia: Georgia
+      Germany: Germany
+      Ghana: Ghana
+      Gibraltar: Gibraltar
+      Greece: Greece
+      Greenland: Greenland
+      Grenada: Grenada
+      Guadeloupe: Guadeloupe
+      Guam: Guam
+      Guatemala: Guatemala
+      Guernsey: Guernsey
+      Guinea: Guinea
+      Guinea-Bissau: Guinea-Bissau
+      Guyana: Guyana
+      Haiti: Haiti
+      'Heard Island and McDonald Islands': 'Heard Island and McDonald Islands'
+      Honduras: Honduras
+      'Hong Kong': 'Hong Kong'
+      Hungary: Hungary
+      Iceland: Iceland
+      India: India
+      Indonesia: Indonesia
+      Iran: Iran
+      Iraq: Iraq
+      Ireland: Ireland
+      'Isle of Man': 'Isle of Man'
+      Israel: Israel
+      Italy: Italy
+      Jamaica: Jamaica
+      Japan: Japan
+      Jersey: Jersey
+      Jordan: Jordan
+      Kazakhstan: Kazakhstan
+      Kenya: Kenya
+      Kiribati: Kiribati
+      Kosovo: Kosovo
+      Kuwait: Kuwait
+      Kyrgyzstan: Kyrgyzstan
+      Laos: Laos
+      Latvia: Latvia
+      Lebanon: Lebanon
+      Lesotho: Lesotho
+      Liberia: Liberia
+      Libya: Libya
+      Liechtenstein: Liechtenstein
+      Lithuania: Lithuania
+      Luxembourg: Luxembourg
+      Macau: Macau
+      'Macedonia (FYROM)': 'Macedonia (FYROM)'
+      Madagascar: Madagascar
+      Malawi: Malawi
+      Malaysia: Malaysia
+      Maldives: Maldives
+      Mali: Mali
+      Malta: Malta
+      'Marshall Islands': 'Marshall Islands'
+      Martinique: Martinique
+      Mauritania: Mauritania
+      Mauritius: Mauritius
+      Mayotte: Mayotte
+      Mexico: Mexico
+      Micronesia: Micronesia
+      Moldova: Moldova
+      Monaco: Monaco
+      Mongolia: Mongolia
+      Montenegro: Montenegro
+      Montserrat: Montserrat
+      Morocco: Morocco
+      Mozambique: Mozambique
+      'Myanmar (Burma)': 'Myanmar (Burma)'
+      Namibia: Namibia
+      Nauru: Nauru
+      Nepal: Nepal
+      Netherlands: Netherlands
+      'Netherlands Antilles': 'Netherlands Antilles'
+      'New Caledonia': 'New Caledonia'
+      'New Zealand': 'New Zealand'
+      Nicaragua: Nicaragua
+      Niger: Niger
+      Nigeria: Nigeria
+      Niue: Niue
+      'Norfolk Island': 'Norfolk Island'
+      'North Korea': 'North Korea'
+      'Northern Mariana Islands': 'Northern Mariana Islands'
+      Norway: Norway
+      Oman: Oman
+      Pakistan: Pakistan
+      Palau: Palau
+      Palestine: Palestine
+      Panama: Panama
+      'Papua New Guinea': 'Papua New Guinea'
+      Paraguay: Paraguay
+      Peru: Peru
+      Philippines: Philippines
+      'Pitcairn Islands': 'Pitcairn Islands'
+      Poland: Poland
+      Portugal: Portugal
+      'Puerto Rico': 'Puerto Rico'
+      Qatar: Qatar
+      Réunion: Réunion
+      Romania: Romania
+      Russia: Russia
+      Rwanda: Rwanda
+      'Saint Barthélemy': 'Saint Barthélemy'
+      'Saint Helena': 'Saint Helena'
+      'Saint Kitts and Nevis': 'Saint Kitts and Nevis'
+      'Saint Lucia': 'Saint Lucia'
+      'Saint Martin': 'Saint Martin'
+      'Saint Pierre and Miquelon': 'Saint Pierre and Miquelon'
+      'Saint Vincent and the Grenadines': 'Saint Vincent and the Grenadines'
+      Samoa: Samoa
+      'San Marino': 'San Marino'
+      'Sao Tome and Principe': 'Sao Tome and Principe'
+      'Saudi Arabia': 'Saudi Arabia'
+      Senegal: Senegal
+      Serbia: Serbia
+      Seychelles: Seychelles
+      'Sierra Leone': 'Sierra Leone'
+      Singapore: Singapore
+      'Sint Maarten': 'Sint Maarten'
+      Slovakia: Slovakia
+      Slovenia: Slovenia
+      'Solomon Islands': 'Solomon Islands'
+      Somalia: Somalia
+      'South Africa': 'South Africa'
+      'South Georgia and the South Sandwich Islands': 'South Georgia and the South Sandwich Islands'
+      'South Korea': 'South Korea'
+      'South Sudan': 'South Sudan'
+      Spain: Spain
+      'Sri Lanka': 'Sri Lanka'
+      Sudan: Sudan
+      Suriname: Suriname
+      'Svalbard and Jan Mayen': 'Svalbard and Jan Mayen'
+      Swaziland: Swaziland
+      Sweden: Sweden
+      Switzerland: Switzerland
+      Syria: Syria
+      Taiwan: Taiwan
+      Tajikistan: Tajikistan
+      Tanzania: Tanzania
+      Thailand: Thailand
+      Togo: Togo
+      Tokelau: Tokelau
+      Tonga: Tonga
+      'Trinidad and Tobago': 'Trinidad and Tobago'
+      Tunisia: Tunisia
+      Turkey: Turkey
+      Turkmenistan: Turkmenistan
+      'Turks and Caicos Islands': 'Turks and Caicos Islands'
+      Tuvalu: Tuvalu
+      'U.S. Virgin Islands': 'U.S. Virgin Islands'
+      Uganda: Uganda
+      Ukraine: Ukraine
+      'United Arab Emirates': 'United Arab Emirates'
+      'United States Minor Outlying Islands': 'United States Minor Outlying Islands'
+      Uruguay: Uruguay
+      Uzbekistan: Uzbekistan
+      Vanuatu: Vanuatu
+      'Vatican City': 'Vatican City'
+      Venezuela: Venezuela
+      Vietnam: Vietnam
+      'Wallis and Futuna': 'Wallis and Futuna'
+      'Western Sahara': 'Western Sahara'
+      Yemen: Yemen
+      Zambia: Zambia
+      Zimbabwe: Zimbabwe
+    '#select2': true
+    '#required': true
+  dieses_projekt_soll_installiert_werden_bei:
+    '#type': select
+    '#title': 'Dieses Projekt soll installiert werden bei'
+    '#options':
+      'My Home': 'Mein Zuhause'
+      "My Client's Home": 'Das Zuhause meines Kunden'
+      'A Commercial Project': 'Ein kommerzielles Projekt'
+    '#select2': true
+  projekttyp:
+    '#type': checkboxes
+    '#title': Projekttyp
+    '#options':
+      Decking: Millboard-Terrassendielen
+      Envello: Envello-Verkleidung
+  which_of_the_following_are_you:
+    '#type': select
+    '#title': 'Sind Sie ein Hausbesitzer oder ein Fachmann?'
+    '#options':
+      Homeowner: Hausbesitzer
+      Contractor: Auftragnehmer
+      Builder: Installateur
+      Architect/Designer: Architekt
+    '#select2': true
+    '#required': true
+    '#required_error': 'This field is required'
+  project_size:
+    '#type': select
+    '#title': 'Ihre Projektgröße'
+    '#options':
+      Less_than_20_m2: Less_than_20_m2
+      Between_21-100_m2: 'Zwischen 21-100 m²'
+      More_than_101_m2: 'Mehr als 101 m²'
+      unknown_project_size: 'Ich weiß es nicht'
+    '#select2': true
+    '#required': true
+    '#required_error': 'Projektgröße ist erforderlich'
+  when_will_you_start_your_project_:
+    '#type': select
+    '#title': Projektstartzeit
+    '#options':
+      '3-6 Months': '3-6 Monate'
+      '1-3 Months': '1-3 Monate'
+      '6+ Motnhs': '6+ Monate'
+      'Withing 1 Month': 'Innerhalb eines Monats'
+    '#select2': true
+    '#required': true
+    '#required_error': 'When will you start your project is required'
+  millboard_is_committed_to_protecting_and_respecting_your_privacy:
+    '#type': label
+    '#title': 'Millboard verpflichtet sich, Ihre Privatsphäre zu schützen und zu respektieren. Wir nutzen Ihre personenbezogenen Daten nur zur Verwaltung Ihres Kontos und zur Bereitstellung der von Ihnen angeforderten Produkte und Dienstleistungen. Von Zeit zu Zeit möchten wir Sie über unsere Produkte und Dienstleistungen sowie andere Inhalte, die für Sie von Interesse sein könnten, informieren. Wenn Sie damit einverstanden sind, dass wir Sie zu diesem Zweck kontaktieren, geben Sie bitte unten an, wie Sie von uns kontaktiert werden möchten:'
+  i_agree_to_receive_other_communications_from_millboard_:
+    '#type': checkbox
+    '#title': 'Ich stimme zu, andere Benachrichtigungen von Millboard zu erhalten.'
+    '#wrapper_attributes':
+      class:
+        - sample-order-form-agreement-checkbox
+  in_order_to_provide_you_the_content_requested_we_need_to_store_a:
+    '#type': label
+    '#title': 'Um Ihnen die gewünschten Inhalte bereitzustellen, müssen wir Ihre personenbezogenen Daten speichern und verarbeiten. Wenn Sie damit einverstanden sind, dass wir Ihre personenbezogenen Daten für diesen Zweck speichern, aktivieren Sie bitte das folgende Kontrollkästchen.'
+  i_agree_to_allow_millboard_to_store_and_process_my_personal_data:
+    '#type': checkbox
+    '#title': 'Ich stimme der Speicherung und Verarbeitung meiner personenbezogenen Daten durch Millboard zu.'
+    '#required': true
+    '#wrapper_attributes':
+      class:
+        - sample-order-form-agreement-checkbox
+  you_can_unsubscribe_from_these_communications_at_any_time_for_mo:
+    '#type': label
+    '#title': 'Sie können diese Benachrichtigungen jederzeit abbestellen. Weitere Informationen zum Abbestellen, zu unseren Datenschutzverfahren und dazu, wie wir Ihre Privatsphäre schützen und respektieren, finden Sie in unserer Datenschutzrichtlinie.'
+  actions:
+    '#type': webform_actions
+    '#title': 'Submit button(s)'
+    '#attributes':
+      class:
+        - order-a-sample-submit
+    '#submit__label': Senden
+    '#submit__attributes':
+      class:
+        - coh-style-primary-button
+  website_order_code:
+    '#type': textfield
+    '#title': 'Website Order Code'
+    '#title_display': none
+    '#wrapper_attributes':
+      class:
+        - website-order-code
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  ajax_scroll_top: form
+  ajax_progress_type: ''
+  ajax_effect: ''
+  ajax_speed: null
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  page_theme_name: ''
+  form_title: source_entity_webform
+  form_submit_once: false
+  form_open_message: ''
+  form_close_message: ''
+  form_exception_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_disable_remote_addr: false
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_disable_inline_errors: false
+  form_required: false
+  form_autofocus: false
+  form_details_toggle: false
+  form_reset: false
+  form_access_denied: default
+  form_access_denied_title: ''
+  form_access_denied_message: ''
+  form_access_denied_attributes: {  }
+  form_file_limit: ''
+  form_attributes:
+    class:
+      - coh-style-checkout-form-style
+  form_method: ''
+  form_action: ''
+  share: false
+  share_node: false
+  share_theme_name: ''
+  share_title: true
+  share_page_body_attributes: {  }
+  submission_label: ''
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_log: false
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
+  submission_views: {  }
+  submission_views_replace: {  }
+  submission_user_columns: {  }
+  submission_user_duplicate: false
+  submission_access_denied: default
+  submission_access_denied_title: ''
+  submission_access_denied_message: ''
+  submission_access_denied_attributes: {  }
+  previous_submission_message: ''
+  previous_submissions_message: ''
+  autofill: false
+  autofill_message: ''
+  autofill_excluded_elements: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_progress_link: false
+  wizard_progress_states: false
+  wizard_start_label: ''
+  wizard_preview_link: false
+  wizard_confirmation: true
+  wizard_confirmation_label: ''
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
+  wizard_track: ''
+  wizard_prev_button_label: ''
+  wizard_next_button_label: ''
+  wizard_toggle: false
+  wizard_toggle_show_label: ''
+  wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  preview_exclude_empty: true
+  preview_exclude_empty_checkbox: false
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  draft_pending_single_message: ''
+  draft_pending_multiple_message: ''
+  confirmation_type: url
+  confirmation_url: '/[language:langcode]/thank-you'
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  confirmation_exclude_query: false
+  confirmation_exclude_token: false
+  confirmation_update: false
+  limit_total: null
+  limit_total_interval: null
+  limit_total_message: ''
+  limit_total_unique: false
+  limit_user: null
+  limit_user_interval: null
+  limit_user_message: ''
+  limit_user_unique: false
+  entity_limit_total: null
+  entity_limit_total_interval: null
+  entity_limit_user: null
+  entity_limit_user_interval: null
+  purge: none
+  purge_days: null
+  results_disabled: false
+  results_disabled_ignore: false
+  results_customize: false
+  token_view: false
+  token_update: false
+  token_delete: false
+  serial_disabled: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+    permissions: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  administer:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  test:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+  configuration:
+    roles: {  }
+    users: {  }
+    permissions: {  }
+handlers:
+  hubspot_webform_handler:
+    id: hubspot_webform_handler
+    handler_id: hubspot_webform_handler
+    label: 'HubSpot Webform Handler'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      form_guid: cd2080f0-6c23-4164-965a-6be1931af277
+      field_mapping:
+        sample_names: sample_names_hubspot
+        firstname: first_name
+        lastname: last_name
+        email: email_address
+        phone: telephone_number
+        company: company
+        address: address_line_1
+        city: city_town
+        zip: zip_postal_code
+        country: country
+        this_project_is_to_be_installed_at: dieses_projekt_soll_installiert_werden_bei
+        latest_project_category: projekttyp
+        project_start_time_dropdown: when_will_you_start_your_project_
+        project_size_dropdown: project_size
+        latest_sample_order_id: website_order_code
+        us_persona: which_of_the_following_are_you
+      legal_consent:
+        include: never
+      subscriptions: null
+variants: {  }

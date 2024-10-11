@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using theme hook suggestions.
+ * For example, here are some theme hook suggestions that can be used for a
+ * field_foo field on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+
+{% set title_classes = [
+  label_display == 'visually_hidden' ? 'visually-hidden',
+] %}
+
+{% set totalrows = items|length %}
+{% set row1 = 0 %}
+{% set row2 = 0 %}
+
+{% if is_commerce_product_variation %}
+  <div class="inspiration-top-bar product-attributes-wrapper coh-style-container-wide">
+    <div class="product-attributes">
+      <span class="product-colour {{ attribute_colour_class|replace({' ': '_'})|lower }}"></span>
+      <div class="product-attributes-text">
+        <span class="product-colour-name coh-style-paragraph-regular">{{ attribute_colour }}</span>
+        {% if language and language == 'en-us' %}
+          <span class="product-width">{{ attribute_width_inches }}</span>
+        {% else %}
+          <span class="product-width">{{ attribute_width }}</span>
+        {% endif %}
+      </div>
+    </div>
+    {% if language and language == 'en-us' %}
+      <button class="add-to-basket-btn pdp add-to-basket-btn--sticky coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ attribute_width_inches }}">{{ 'Add sample'|t }}</button>
+    {% else %}
+      <button class="add-to-basket-btn pdp add-to-basket-btn--sticky coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ attribute_width }}">{{ 'Add sample'|t }}</button>
+    {% endif %}
+  </div>
+  {{ view_content }}
+{% else %}
+  <div class="colorbox-wrapper coh-style-gallery-image">
+  <p class="gallery-title">{{ label|t }}</p>
+    {% if totalrows >= 1 %}
+      <div class="views-row-wrapper row-wrapper-1">
+        <div class="row-inner-col row-inner-1-col-1 coh-col-lg-4">
+          {% for item in items|slice(0, 2) %}
+            <div class='row-inner-1 views-row'>
+              <a href='{{ item.popup_url }}' class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:840, &quot;dialogClass&quot;: &quot;gallery-popup&quot;}">
+                {{ item.content }}
+              </a>
+            </div>
+            {% set row1 = loop.index %}
+          {% endfor %}
+        </div>
+        <div class="row-inner-col row-inner-1-col-2 coh-col-lg-8">
+          {% for item in items|slice(2, 1) %}
+            <div class='row-inner-1 views-row'>
+              <a href='{{ item.popup_url }}' class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:840, &quot;dialogClass&quot;: &quot;gallery-popup&quot;}">
+                {{ item.content }}
+              </a>
+            </div>
+            {% set row1 = loop.index + row1 %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% set totalrows = totalrows - row1 %}
+
+    {% if totalrows >= 1 %}
+      <div class="views-row-wrapper row-wrapper-2">
+        {% for item in items|slice(3, 2) %}
+          <div class='views-row coh-col-lg-6 row-inner-2'>
+            <a href='{{ item.popup_url }}' class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:840, &quot;dialogClass&quot;: &quot;gallery-popup&quot;}">
+              {{ item.content }}
+            </a>
+          </div>
+          {% set row2 = loop.index %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% set totalrows = totalrows - row2 %}
+
+    {% if totalrows >= 1 %}
+      <div class="views-row-wrapper row-wrapper-3">
+        {% for item in items|slice(5, 3) %}
+          <div class='views-row coh-col-xl-4 row-inner-3'>
+            <a href='{{ item.popup_url }}' class="use-ajax" data-dialog-type="modal" data-dialog-options="{&quot;width&quot;:840, &quot;dialogClass&quot;: &quot;gallery-popup&quot;}">
+              {{ item.content }}
+            </a>
+          </div>
+          {% set row3 = loop.index %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

@@ -1,0 +1,24 @@
+uuid: d124fc1d-21e1-4cb1-bfa7-ed06d6ea3385
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.product_card_locked_mobile_381x381
+    - image.style.product_card_locked_small_504x378_
+  theme:
+    - millboard
+id: product_card_locked_small
+label: 'Product Card Locked Small'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: product_card_locked_small_504x378_
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: product_card_locked_mobile_381x381
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: product_card_locked_small_504x378_

@@ -1,0 +1,41 @@
+<div class="coh-style-gallery-modal gallery-popup-slider">
+  <div class='millboard-carousel-wrapper'>
+    {% if classes == 'inspiration-gallery-popup' %}
+      <div class="inspiration-gallery-popup__content">
+        <div>
+          {% if variation_product_type == 'Decking' %}
+            <img src="../../../../themes/custom/millboard/images/Millboard_Collections.svg" alt="Millboard Collections Logo" width="112" height="32">
+          {% elseif variation_product_type == 'Cladding' %}
+            <img src="../../../../themes/custom/millboard/images/Envello_by_Millboard.svg" alt="Envello by Millboard Logo" width="112" height="32">
+          {% endif %}
+        </div>
+        {% if is_commerce_product %}
+          <div class="product-detail">
+            <p class="product-detail__title">{{ product_title }}</p>
+            <a href="{{ variation_url }}" class="product-detail__variation">{{ attribute_colour }}</a>
+          </div>
+          <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ width }}">{{ 'Add sample'|t }}</button>
+       {% endif %}
+      </div>
+    {% endif %}
+    <div id="popup_image_items" class="{{ classes }}">
+      {% for image in image_urls %}
+        {% if image.is_active %}
+          <div class="active-image">
+        {% else %}
+          <div>
+        {% endif %}
+          <img src="{{ image.url }}" alt="gallery_popup_images"/>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="coh-carousel-inner-wrapper">
+      <div class="progress" role="progressbar" aria-label="progress">
+        <span class="progress__bar"></span>
+        <span class="slider__label"></span>
+      </div>
+      <p class="page-count"></p>
+    </div>
+</div>
+</div>
+</div>

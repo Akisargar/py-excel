@@ -1,0 +1,48 @@
+uuid: 0d3f638e-0c50-40e6-a239-7c8b12b4f3a5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.product_card_locked_small_504x378_
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - media.type.image
+    - responsive_image.styles.product_card_locked_small
+  module:
+    - layout_builder
+    - responsive_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.product_card_locked_small_504x378_
+targetEntityType: media
+bundle: image
+mode: product_card_locked_small_504x378_
+content:
+  image:
+    type: responsive_image
+    label: visually_hidden
+    settings:
+      responsive_image_style: product_card_locked_small
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

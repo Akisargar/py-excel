@@ -1,0 +1,16 @@
+uuid: dddbe49f-c8c7-45cc-86a1-a9b590dc94b3
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: commerce_product_variation.millboard_products
+target_entity_type_id: commerce_product_variation
+target_bundle: millboard_products
+default_langcode: site_default
+language_alterable: true

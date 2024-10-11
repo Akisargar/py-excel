@@ -1,0 +1,83 @@
+uuid: 925915ab-fb25-44f8-8d7f-d0344b2bb4cb
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.resources.field_categories
+    - field.field.node.resources.field_collection
+    - field.field.node.resources.field_colour
+    - field.field.node.resources.field_documents
+    - field.field.node.resources.field_gallery_images
+    - field.field.node.resources.field_layout_canvas
+    - field.field.node.resources.field_location
+    - field.field.node.resources.field_metatag
+    - field.field.node.resources.field_publish_date
+    - field.field.node.resources.field_resource_type
+    - field.field.node.resources.field_type_of_project
+    - field.field.node.resources.field_videos
+    - node.type.resources
+  module:
+    - cohesion_elements
+    - user
+id: node.resources.default
+targetEntityType: node
+bundle: resources
+mode: default
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_documents:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_gallery_images:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_videos:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_categories: true
+  field_collection: true
+  field_colour: true
+  field_location: true
+  field_metatag: true
+  field_publish_date: true
+  field_resource_type: true
+  field_type_of_project: true
+  langcode: true
+  search_api_excerpt: true

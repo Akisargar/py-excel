@@ -1,0 +1,224 @@
+uuid: 9550b7ab-246e-49b3-aa19-b12ccff8507b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.097f31b2
+    - cohesion_custom_styles.cohesion_custom_style.63181883
+    - cohesion_custom_styles.cohesion_custom_style.659a270e
+    - cohesion_elements.cohesion_component.cpt_accordion_container
+    - cohesion_elements.cohesion_component.cpt_accordion_item
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_drupal_blocks
+    - cohesion_elements.cohesion_helper_category.hlp_cat_dynamic_helpers
+label: 'PDF Resources'
+id: hlp_pdf_resources
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "4adcd6bf-7f85-43d9-9230-22ba682a7b1e",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "7ac86f01-b5e5-49e2-9424-99cd6db10345",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_accordion_container",
+                              "type": "component",
+                              "title": "Accordion container",
+                              "enabled": true,
+                              "category": "category-8",
+                              "componentId": "cpt_accordion_container",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "647f0886-a26f-4019-92a9-6ef90adc8919",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_accordion_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "de6e9890-eb62-47f9-bc61-101c66915deb",
+                                      "dropzoneId": "11ce65d2-cbf6-48cb-a84b-64fac6f6ab36",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_accordion_item",
+                                              "type": "component",
+                                              "title": "Accordion item",
+                                              "enabled": true,
+                                              "category": "category-8",
+                                              "componentId": "cpt_accordion_item",
+                                              "componentType": "accordion-tabs-item",
+                                              "iconColor": "custom",
+                                              "uuid": "8aa5d95e-81ac-47d1-a913-a74da029fdb9",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_accordion_item",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "7008d454-0440-4d30-8e4a-44298aae46fa",
+                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_drupal_blocks",
+                                                              "type": "component",
+                                                              "title": "Drupal blocks",
+                                                              "enabled": true,
+                                                              "category": "category-3",
+                                                              "componentId": "cpt_drupal_blocks",
+                                                              "componentType": "container",
+                                                              "iconColor": "custom",
+                                                              "uuid": "b22061f0-8410-428c-8f17-ba494d3068c5",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "4adcd6bf-7f85-43d9-9230-22ba682a7b1e": {},
+          "7ac86f01-b5e5-49e2-9424-99cd6db10345": {},
+          "647f0886-a26f-4019-92a9-6ef90adc8919": {},
+          "de6e9890-eb62-47f9-bc61-101c66915deb": {},
+          "8aa5d95e-81ac-47d1-a913-a74da029fdb9": {},
+          "7008d454-0440-4d30-8e4a-44298aae46fa": {},
+          "b22061f0-8410-428c-8f17-ba494d3068c5": {}
+      },
+      "model": {
+          "4adcd6bf-7f85-43d9-9230-22ba682a7b1e": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "settings": {
+                  "title": "Container - PDF Resources"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "0px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "0px",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": []
+          },
+          "7ac86f01-b5e5-49e2-9424-99cd6db10345": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "647f0886-a26f-4019-92a9-6ef90adc8919": {
+              "f246e51e-b638-4b41-ab84-f5c02e6fa857": "coh-style-accordion-with-dropdown-icon",
+              "d57c2f0c-539a-4380-ba40-b72ecadc258c": null,
+              "settings": {
+                  "title": "Accordion container"
+              }
+          },
+          "de6e9890-eb62-47f9-bc61-101c66915deb": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Drop 'Accordion item' here."
+              }
+          },
+          "8aa5d95e-81ac-47d1-a913-a74da029fdb9": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Decking Installation Guides",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Decking Installation Guides"
+              }
+          },
+          "7008d454-0440-4d30-8e4a-44298aae46fa": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "b22061f0-8410-428c-8f17-ba494d3068c5": {
+              "33477453-ecf9-49b5-873b-67737b65fefe": "millboard_views_block__pdf_listing_view_millboard_pdf_listing",
+              "dda7054d-09f6-4fdc-82f6-138404466a96": "dark-title",
+              "609b5301-04bf-45ce-82af-509436f29597": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Millboard PDF Resources"
+              }
+          }
+      },
+      "previewModel": {
+          "4adcd6bf-7f85-43d9-9230-22ba682a7b1e": {},
+          "8aa5d95e-81ac-47d1-a913-a74da029fdb9": {},
+          "b22061f0-8410-428c-8f17-ba494d3068c5": {},
+          "647f0886-a26f-4019-92a9-6ef90adc8919": {}
+      },
+      "variableFields": {
+          "4adcd6bf-7f85-43d9-9230-22ba682a7b1e": [],
+          "8aa5d95e-81ac-47d1-a913-a74da029fdb9": [],
+          "b22061f0-8410-428c-8f17-ba494d3068c5": [],
+          "647f0886-a26f-4019-92a9-6ef90adc8919": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_dynamic_helpers
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: 0

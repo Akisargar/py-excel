@@ -1,0 +1,30 @@
+uuid: 90211d2a-b9ce-4ce5-b6cb-28a3db8741c7
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - media
+    - options
+id: media.field_corporate
+field_name: field_corporate
+entity_type: media
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: 'Factory & Production'
+      label: 'Factory & Production'
+    -
+      value: Offices
+      label: Offices
+    -
+      value: Showrooms
+      label: Showrooms
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

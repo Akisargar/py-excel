@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Provides main module functions.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function millboard_galleries_theme() {
+  return [
+    'gallery_popup' => [
+      'variables' => [
+        'image_urls' => [],
+        'variation_product_type' => [],
+        'product_title' => [],
+        'attribute_colour' => [],
+        'attribute_width' => [],
+        'variation_image_thumbnail' => [],
+        'variation_url' => [],
+        'is_commerce_product' => [],
+        'classes' => [],
+        'language' => [],
+        'width' => [],
+      ],
+    ],
+  ];
+}

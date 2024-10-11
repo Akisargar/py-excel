@@ -1,0 +1,35 @@
+name: PR Checks
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: DrupalQA
+        uses: hussainweb/drupalqa-action@v1.4.1
+        with:
+          php-version: 8.1
+          checks: |
+            phplint:
+              exclude: vendor,docroot/core,docroot/modules/contrib
+              extensions: php,module,theme,engine,inc,install
+              verbose: ''
+              path: ''
+            phpcs:
+              path: docroot/modules/custom
+              standard: Drupal,DrupalPractice
+              extensions: php,module,inc,install,test,profile,theme
+#            phpmd:
+#              path: docroot/modules/custom
+#              format: text
+#              ruleset: codesize,naming,unusedcode
+#              suffixes: php,module,theme,engine,inc
+#              exclude: ''

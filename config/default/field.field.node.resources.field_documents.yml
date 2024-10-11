@@ -1,0 +1,39 @@
+uuid: e34ced52-6d94-4014-bab4-1fee96e3ba60
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documents
+    - media.type.acquia_dam_documents_asset
+    - media.type.acquia_dam_pdf_asset
+    - media.type.compressed_zip
+    - node.type.resources
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.resources.field_documents
+field_name: field_documents
+entity_type: node
+bundle: resources
+label: Documents
+description: 'Upload the Document resources here. You can add multiple resources in this field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      compressed_zip: compressed_zip
+      acquia_dam_documents_asset: acquia_dam_documents_asset
+      acquia_dam_pdf_asset: acquia_dam_pdf_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_documents_asset
+field_type: entity_reference

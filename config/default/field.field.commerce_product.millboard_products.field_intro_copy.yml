@@ -1,0 +1,29 @@
+uuid: 7b0c14bb-1c2e-40ab-8801-603766066c22
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_intro_copy
+    - filter.format.filtered_html
+  module:
+    - disable_field
+    - text
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_intro_copy
+field_name: field_intro_copy
+entity_type: commerce_product
+bundle: millboard_products
+label: 'Intro Copy'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - filtered_html
+field_type: text_long

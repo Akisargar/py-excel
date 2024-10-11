@@ -1,0 +1,19 @@
+services:
+  millboard_pim_integration.product_manager:
+    class: Drupal\millboard_pim_integration\MillboardProductManager
+    arguments:
+      $entityTypeManager: '@entity_type.manager'
+  millboard_pim_integration.redirect_subscriber:
+    class: Drupal\millboard_pim_integration\EventSubscriber\MillboardPimIntegrationRedirectSubscriber
+    arguments:
+      $pathAliasManager: '@path_alias.manager'
+    tags:
+      - { name: event_subscriber }
+  millboard_pim_integration.product_redirect_subscriber:
+    class: Drupal\millboard_pim_integration\EventSubscriber\MillboardProductRedirectSubscriber
+    arguments:
+      $entityTypeManager: '@entity_type.manager'
+      $pathAliasManager: '@path_alias.manager'
+      $languageManager: '@language_manager'
+    tags:
+      - { name: event_subscriber }

@@ -1,0 +1,14 @@
+uuid: dd9d9fb6-d1db-4ee9-9b23-fb23e348c077
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.agency_freelancer
+  module:
+    - user
+id: user_remove_role_action.agency_freelancer
+label: 'Remove the Agency / Freelancer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: agency_freelancer

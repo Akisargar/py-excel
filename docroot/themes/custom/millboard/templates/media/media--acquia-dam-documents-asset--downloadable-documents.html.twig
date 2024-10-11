@@ -1,0 +1,16 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ */
+#}
+{{ attach_library('millboard/download-document') }}
+{% if content %}
+  <a target="_blank" class='downloadable-media' href="{{ content['acquia_dam_asset_id']['0']['embed']['#url'].uri }}" download></a>
+{% endif %}

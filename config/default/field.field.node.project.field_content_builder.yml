@@ -1,0 +1,24 @@
+uuid: 62d580db-3dd2-4f9d-bf74-3821b7a5bb9b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_builder
+    - node.type.project
+  module:
+    - cohesion_elements
+id: node.project.field_content_builder
+field_name: field_content_builder
+entity_type: node
+bundle: project
+label: 'Content Builder'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override to display a media item.
+ *
+ * Available variables:
+ * - name: Name of the media.
+ * - content: Media content.
+ *
+ * @see template_preprocess_media()
+ */
+#}
+
+{% if content %}
+<div class="pdf-resources__card">
+  <div class="pdf-resources__card-details">
+    {% if file_name %}
+      <h4 class="pdf-resources__card-details--title">{{ file_name|t }}</h4>
+    {% endif %}
+    {% if file_size %}
+      <p class="pdf-resources__card-details--size">{{ file_size|replace({'MB': ' MB'}) }}</p>
+    {% endif %}
+    {% if file_url %}
+      {% if media_type == 'compressed_zip' %}
+        <a href="{{ file_url }}" class="pdf-resources__card-details--download">{{ 'Download Zip'|t }}</a>
+      {% else %}
+        <a href="{{ file_url }}" class="pdf-resources__card-details--download">{{ 'Download PDF'|t }}</a>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+{% endif %}

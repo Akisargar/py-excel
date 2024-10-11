@@ -1,0 +1,24 @@
+uuid: 8eb7dab2-884c-426c-9d34-4bf6175adbed
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.coh_x_large_super_landscape
+    - image.style.full_width_image_v2_mobile_751x504_
+  theme:
+    - millboard
+id: full_width_image_v2
+label: 'Full Width Image V2'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: coh_x_large_super_landscape
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_image_v2_mobile_751x504_
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: coh_x_large_super_landscape

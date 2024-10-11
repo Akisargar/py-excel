@@ -1,0 +1,52 @@
+uuid: 6dba5940-0fe2-4944-a991-5b6c4a649229
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.image_card_4_3
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - image.style.image_card_4_3_608x456_
+    - media.type.image
+  module:
+    - layout_builder
+    - svg_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.image_card_4_3
+targetEntityType: media
+bundle: image
+mode: image_card_4_3
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: image_card_4_3_608x456_
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  image: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

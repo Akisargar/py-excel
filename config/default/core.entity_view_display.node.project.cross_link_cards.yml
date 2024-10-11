@@ -1,0 +1,54 @@
+uuid: 2d6e4214-d01b-4128-9e24-f539e2390794
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.cross_link_cards
+    - field.field.node.project.body
+    - field.field.node.project.field_collection
+    - field.field.node.project.field_colour
+    - field.field.node.project.field_commercial_project
+    - field.field.node.project.field_content_builder
+    - field.field.node.project.field_location
+    - field.field.node.project.field_metatag
+    - field.field.node.project.field_preview_image
+    - field.field.node.project.field_publish_date
+    - field.field.node.project.field_subtitle
+    - field.field.node.project.field_type_of_project
+    - node.type.project
+  module:
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.project.cross_link_cards
+targetEntityType: node
+bundle: project
+mode: cross_link_cards
+content:
+  field_preview_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: cross_link_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  content_moderation_control: true
+  field_collection: true
+  field_colour: true
+  field_commercial_project: true
+  field_content_builder: true
+  field_location: true
+  field_metatag: true
+  field_publish_date: true
+  field_subtitle: true
+  field_type_of_project: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

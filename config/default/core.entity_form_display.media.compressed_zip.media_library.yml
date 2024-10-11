@@ -1,0 +1,26 @@
+uuid: 899df4f7-2f8a-4ad5-b263-f2d9adc18b44
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.compressed_zip.field_media_file
+    - media.type.compressed_zip
+id: media.compressed_zip.media_library
+targetEntityType: media
+bundle: compressed_zip
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_media_file: true
+  langcode: true
+  name: true
+  path: true
+  publish_on: true
+  publish_state: true
+  scheduler_settings: true
+  status: true
+  uid: true
+  unpublish_on: true
+  unpublish_state: true

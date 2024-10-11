@@ -1,0 +1,18 @@
+uuid: 0d2d5656-79b1-4099-b480-d62966d73176
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - acquia_dam
+_core:
+  default_config_hash: eDQp2c61xXq8PR-jQMuv48PgZukKSBEScQ7KIMKcIPs
+id: acquia_dam_spinset_asset
+label: 'DAM - Spinset'
+description: 'DAM sourced Spinset'
+source: 'acquia_dam_asset:spinset'
+queue_thumbnail_downloads: true
+new_revision: false
+source_configuration:
+  source_field: acquia_dam_asset_id
+field_map:
+  filename: name

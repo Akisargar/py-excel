@@ -1,0 +1,85 @@
+uuid: e7d8b791-4cbc-4e3e-89c3-73ab5c512fb6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.embedded
+    - core.entity_view_mode.media.full
+  module:
+    - editor
+    - media
+_core:
+  default_config_hash: 8xhg9jMH83LcL5sDmXm6abxacWX83kmjviY0GO7AcGU
+name: 'Full HTML'
+format: full_html
+weight: -9
+filters:
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: -50
+    settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: -49
+    settings: {  }
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: -48
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: -47
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -45
+    settings:
+      allowed_html: '<cite> <dl> <dt> <dd> <img data-align data-caption> <a hreflang class="coh-style-link-default coh-style-link-hover coh-style-primary-button coh-style-primary-button-with-icon coh-style-primary-button-with-background coh-style-secondary-button coh-style-tertiary-button coh-style-tertiary-button-with-underline"> <blockquote cite> <ul type> <ol type> <h2 id class="coh-style-heading-1-size coh-style-heading-1-regular coh-style-heading-2-size coh-style-heading-2-size-regular coh-style-heading-3-size coh-style-heading-3-size-regular coh-style-heading-4-size coh-style-heading-4-size-statements-regular coh-style-heading-5-size coh-style-heading-5-size-regular"> <h3 id class="coh-style-heading-1-size coh-style-heading-1-regular coh-style-heading-2-size coh-style-heading-2-size-regular coh-style-heading-3-size coh-style-heading-3-size-regular coh-style-heading-4-size coh-style-heading-4-size-statements-regular coh-style-heading-5-size coh-style-heading-5-size-regular"> <h4 id class="coh-style-heading-1-size coh-style-heading-1-regular coh-style-heading-2-size coh-style-heading-2-size-regular coh-style-heading-3-size coh-style-heading-3-size-regular coh-style-heading-4-size coh-style-heading-4-size-statements-regular coh-style-heading-5-size coh-style-heading-5-size-regular"> <h5 id class="coh-style-heading-1-size coh-style-heading-1-regular coh-style-heading-2-size coh-style-heading-2-size-regular coh-style-heading-3-size coh-style-heading-3-size-regular coh-style-heading-4-size coh-style-heading-4-size-statements-regular coh-style-heading-5-size coh-style-heading-5-size-regular"> <h6 id class="coh-style-heading-1-size coh-style-heading-1-regular coh-style-heading-2-size coh-style-heading-2-size-regular coh-style-heading-3-size coh-style-heading-3-size-regular coh-style-heading-4-size coh-style-heading-4-size-statements-regular coh-style-heading-5-size coh-style-heading-5-size-regular"> <drupal-media data-align data-caption title> <p class="coh-style-paragraph-small coh-style-paragraph-default coh-style-paragraph-regular coh-style-paragraph-large coh-style-text-statements"> <h1 class="coh-style-heading-1-size coh-style-heading-1-regular coh-style-heading-2-size coh-style-heading-2-size-regular coh-style-heading-3-size coh-style-heading-3-size-regular coh-style-heading-4-size coh-style-heading-4-size-statements-regular coh-style-heading-5-size coh-style-heading-5-size-regular"> <span class="coh-color-millboard-green coh-color-olive coh-color-light-mist coh-color-spring-wood coh-color-millboard-mist coh-color-millboard-wenge coh-color-millboard-davy-grey coh-color-millboard-charcoal coh-color-charcoal-black coh-color-error coh-color-antique-oak coh-color-brushed-basalt coh-color-burnt-cedar---embered coh-color-coppered-oak coh-color-golden-oak coh-color-jarrah coh-color-limed-oak coh-color-smoked-oak---driftwood coh-color-sustainability-green coh-style-f37-ginger-regular coh-style-f37-ginger-italic coh-style-f37-ginger-bold coh-style-f37-ginger-bold-italic coh-style-f37-ginger-light coh-style-f37-ginger-light-italic coh-style-f37-ginger-thin coh-style-f37-ginger-thin-italic">'
+      filter_html_help: true
+      filter_html_nofollow: false
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: -44
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -46
+    settings:
+      filter_url_length: 72
+  media_embed:
+    id: media_embed
+    provider: media
+    status: true
+    weight: -43
+    settings:
+      default_view_mode: embedded
+      allowed_view_modes:
+        default: default
+        full: full
+      allowed_media_types: {  }

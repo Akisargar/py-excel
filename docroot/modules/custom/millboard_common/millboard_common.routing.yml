@@ -1,0 +1,31 @@
+millboard_common.config_form:
+  path: '/admin/config/millboard_common/settings'
+  defaults:
+    _form: '\Drupal\millboard_common\Form\MillboardConfigForm'
+    _title: 'Millboard Common Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+millboard_common.custom_links:
+  path: '/admin/config/millboard_common/custom_links'
+  defaults:
+    _form: '\Drupal\millboard_common\Form\CustomLinks'
+    _title: 'Millboard Custom Link setting'
+  requirements:
+    _permission: 'administer site configuration'
+
+millboard_common.entity_results_count:
+  path: '/entity-results/count'
+  defaults:
+    _controller: 'Drupal\millboard_common\Controller\ViewEntityResultsController::getEntityResultsCount'
+  methods: [POST]
+  requirements:
+    _permission: 'access content'
+    _format: JSON
+
+millboard_common.distributor_export:
+  path: '/installers-and-distributors-csv-export'
+  defaults:
+    _title: 'Distributor CSV export'
+  requirements:
+    _permission: 'administer site configuration'

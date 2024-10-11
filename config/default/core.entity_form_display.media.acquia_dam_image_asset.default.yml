@@ -1,0 +1,304 @@
+uuid: 55603853-498d-4dda-8d9b-e420f77e6b51
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.media.acquia_dam_image_asset.field_asset_type
+    - field.field.media.acquia_dam_image_asset.field_case_study_or_project_type
+    - field.field.media.acquia_dam_image_asset.field_case_study_project_image_p
+    - field.field.media.acquia_dam_image_asset.field_cladding_product_range
+    - field.field.media.acquia_dam_image_asset.field_commercial_project_sectors
+    - field.field.media.acquia_dam_image_asset.field_corporate
+    - field.field.media.acquia_dam_image_asset.field_corporate_location
+    - field.field.media.acquia_dam_image_asset.field_created_date
+    - field.field.media.acquia_dam_image_asset.field_decking_product_range
+    - field.field.media.acquia_dam_image_asset.field_decor
+    - field.field.media.acquia_dam_image_asset.field_deleted_date
+    - field.field.media.acquia_dam_image_asset.field_description
+    - field.field.media.acquia_dam_image_asset.field_event_sector
+    - field.field.media.acquia_dam_image_asset.field_event_type
+    - field.field.media.acquia_dam_image_asset.field_expiration_date
+    - field.field.media.acquia_dam_image_asset.field_file_size
+    - field.field.media.acquia_dam_image_asset.field_file_upload_date
+    - field.field.media.acquia_dam_image_asset.field_last_updated_date
+    - field.field.media.acquia_dam_image_asset.field_marketing_assets
+    - field.field.media.acquia_dam_image_asset.field_original_filepath
+    - field.field.media.acquia_dam_image_asset.field_product_application
+    - field.field.media.acquia_dam_image_asset.field_product_type
+    - field.field.media.acquia_dam_image_asset.field_production_method
+    - field.field.media.acquia_dam_image_asset.field_region
+    - field.field.media.acquia_dam_image_asset.field_release_date
+    - field.field.media.acquia_dam_image_asset.field_supplier
+    - field.field.media.acquia_dam_image_asset.field_usage_rights
+    - field.field.media.acquia_dam_image_asset.field_year
+    - media.type.acquia_dam_image_asset
+  module:
+    - path
+id: media.acquia_dam_image_asset.default
+targetEntityType: media
+bundle: acquia_dam_image_asset
+mode: default
+content:
+  acquia_dam_alt_text:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_asset_type:
+    type: options_select
+    weight: 26
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_case_study_or_project_type:
+    type: options_buttons
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_case_study_project_image_p:
+    type: string_textfield
+    weight: 115
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_cladding_product_range:
+    type: string_textfield
+    weight: 29
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_commercial_project_sectors:
+    type: string_textfield
+    weight: 38
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_corporate:
+    type: options_buttons
+    weight: 102
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_corporate_location:
+    type: string_textfield
+    weight: 103
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_created_date:
+    type: datetime_timestamp
+    weight: 104
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_decking_product_range:
+    type: string_textfield
+    weight: 31
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_decor:
+    type: string_textfield
+    weight: 32
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_deleted_date:
+    type: datetime_timestamp
+    weight: 105
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 30
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_sector:
+    type: string_textfield
+    weight: 106
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_event_type:
+    type: string_textfield
+    weight: 107
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_expiration_date:
+    type: datetime_timestamp
+    weight: 108
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_file_size:
+    type: string_textfield
+    weight: 101
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_file_upload_date:
+    type: datetime_timestamp
+    weight: 109
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_last_updated_date:
+    type: datetime_timestamp
+    weight: 111
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_marketing_assets:
+    type: string_textfield
+    weight: 112
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_original_filepath:
+    type: string_textfield
+    weight: 114
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_application:
+    type: string_textfield
+    weight: 33
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_product_type:
+    type: options_buttons
+    weight: 28
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_production_method:
+    type: string_textfield
+    weight: 27
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_region:
+    type: string_textfield
+    weight: 37
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_release_date:
+    type: datetime_timestamp
+    weight: 110
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_supplier:
+    type: string_textfield
+    weight: 36
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_usage_rights:
+    type: string_textfield
+    weight: 34
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_year:
+    type: string_textfield
+    weight: 35
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  acquia_dam_asset_id: true
+  acquia_dam_expiry_date: true
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true

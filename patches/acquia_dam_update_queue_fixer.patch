@@ -1,0 +1,15 @@
+diff --git a/src/Plugin/QueueWorker/AssetUpdateChecker.php b/src/Plugin/QueueWorker/AssetUpdateChecker.php
+index 1adc809..4adb0c5 100644
+--- a/src/Plugin/QueueWorker/AssetUpdateChecker.php
++++ b/src/Plugin/QueueWorker/AssetUpdateChecker.php
+@@ -118,7 +118,9 @@ class AssetUpdateChecker extends AssetQueueWorkerBase implements ContainerFactor
+           '%message' => $exception->getMessage(),
+         ]
+       );
+-      $this->processException($exception);
++      // Commented this exception code because it was causing issue in syncing pending queues.
++      // $this->processException($exception);
++      return TRUE;
+     }
+ 
+     $media_storage = $this->entityTypeManager->getStorage('media');

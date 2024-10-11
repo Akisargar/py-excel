@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+<div class="touch-up-coating__content">
+
+  <div class="touch-up-coating__title">
+    {% if title %}
+      {{ title }}
+    {% endif %}
+  </div>
+  <div class="touch-up-coating__cards coh-style-three-column-grid-layout">
+    {% for row in rows %}
+      {%
+        set row_classes = [
+          default_row_class ? 'views-row',
+        ]
+      %}
+      <div class="touch_up_coating_card coh-style-touch-up-coating-card-styles">
+        <div class="touch_up_coating_card_image">{{ row.content }} </div>
+        <div class="touch_up_coating_card_content">
+          <h3 class="touch_up_coating_card_title">{{ row.content['#row']._entity.title.value }}</h3>
+          <div class="touch_up_coating_size_sku_wrapper">
+              <div class="touch_up_coating_card_size">{{ size }}</div>
+            <div class="touch_up_coating_card_sku">{{ row.content['#row']._entity.sku.value }}</div>
+          </div>
+        </div> 
+      </div>
+    {% endfor %}
+  </div>
+</div>

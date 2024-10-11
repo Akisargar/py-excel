@@ -1,0 +1,33 @@
+uuid: f6898f21-0cbb-4cd9-bd14-9b7957e88334
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_body_copy
+    - filter.format.filtered_html
+    - filter.format.full_html
+  module:
+    - disable_field
+    - text
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_body_copy
+field_name: field_body_copy
+entity_type: commerce_product
+bundle: millboard_products
+label: 'Body Copy'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats:
+    - filtered_html
+    - full_html
+field_type: text_with_summary

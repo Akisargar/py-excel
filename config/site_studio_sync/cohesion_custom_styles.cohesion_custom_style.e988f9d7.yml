@@ -1,0 +1,138 @@
+uuid: ffbdfa11-2fb5-437a-85e7-b6c969ae0949
+langcode: en-gb
+status: true
+dependencies: {  }
+label: 'Three column grid layout'
+id: e988f9d7
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for 'Layout'.<\/div>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div"
+          },
+          "styles": {
+              "xs": {
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "display"
+                          },
+                          "customCss": {
+                              "value": "grid"
+                          }
+                      },
+                      {
+                          "customCssProperty": {
+                              "value": "grid-template-columns"
+                          },
+                          "customCss": {
+                              "value": "repeat(2, minmax(0, 1fr))"
+                          }
+                      },
+                      {
+                          "customCssProperty": {
+                              "value": "grid-column-gap"
+                          },
+                          "customCss": {
+                              "value": "16px"
+                          }
+                      },
+                      {
+                          "customCssProperty": {
+                              "value": "grid-row-gap"
+                          },
+                          "customCss": {
+                              "value": "16px"
+                          }
+                      }
+                  ]
+              },
+              "md": {
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "grid-template-columns"
+                          },
+                          "customCss": {
+                              "value": "repeat(3, minmax(0, 1fr))"
+                          }
+                      }
+                  ]
+              },
+              "sm": {
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "grid-template-columns"
+                          },
+                          "customCss": {
+                              "value": "repeat(3, minmax(0, 1fr))"
+                          }
+                      }
+                  ]
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "custom-css",
+                  "children": [
+                      {
+                          "formKey": "css-property-and-css-value",
+                          "activeFields": [
+                              {
+                                  "name": "customCssProperty",
+                                  "active": true
+                              },
+                              {
+                                  "name": "customCss",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              },
+                              {
+                                  "iconName": "laptop",
+                                  "name": "md"
+                              },
+                              {
+                                  "name": "sm"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": []
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-three-column-grid-layout
+custom_style_type: layout
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 56

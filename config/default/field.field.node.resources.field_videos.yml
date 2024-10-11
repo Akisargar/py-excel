@@ -1,0 +1,29 @@
+uuid: 936867b1-1727-416c-8223-d5aba2e9f151
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_videos
+    - media.type.acquia_dam_video_asset
+    - node.type.resources
+id: node.resources.field_videos
+field_name: field_videos
+entity_type: node
+bundle: resources
+label: Videos
+description: 'Upload the Video resources here. You can add multiple resources in this field.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_video_asset: acquia_dam_video_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_video_asset
+field_type: entity_reference

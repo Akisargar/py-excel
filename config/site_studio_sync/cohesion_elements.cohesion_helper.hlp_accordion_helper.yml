@@ -1,0 +1,685 @@
+uuid: 7e3ccb3e-e7a5-4108-91f8-cf914d4a62dd
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.097f31b2
+    - cohesion_custom_styles.cohesion_custom_style.63181883
+    - cohesion_custom_styles.cohesion_custom_style.659a270e
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.e5559653
+    - cohesion_elements.cohesion_component.cpt_3_column_layout
+    - cohesion_elements.cohesion_component.cpt_accordion_container
+    - cohesion_elements.cohesion_component.cpt_accordion_item
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_component.cpt_video_media
+    - cohesion_elements.cohesion_helper_category.accordion_sections
+label: 'Accordion Helper'
+id: hlp_accordion_helper
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "ea85be50-0e38-4d76-a33f-f29377ddbf55",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "c7ea63f8-8cd8-43ae-9c17-20d6057ed122",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_accordion_container",
+                              "type": "component",
+                              "title": "Accordion container",
+                              "enabled": true,
+                              "category": "category-8",
+                              "componentId": "cpt_accordion_container",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "472cf942-6026-4ea3-b2e1-11b6dc469978",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_accordion_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "d2c8475a-ab3b-4198-b58f-e23e685b0cc7",
+                                      "dropzoneId": "11ce65d2-cbf6-48cb-a84b-64fac6f6ab36",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_accordion_item",
+                                              "type": "component",
+                                              "title": "Accordion item",
+                                              "enabled": true,
+                                              "category": "category-8",
+                                              "componentId": "cpt_accordion_item",
+                                              "componentType": "accordion-tabs-item",
+                                              "iconColor": "custom",
+                                              "uuid": "8669c0b2-95db-4e81-8e82-1d4b6df1a0c9",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_accordion_item",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "a95a783b-d219-4410-878f-890b5ec3e15d",
+                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "iconColor": "custom",
+                                                              "uuid": "5653546d-7b77-44cb-a618-219f21b89631",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          },
+                                          {
+                                              "uid": "cpt_accordion_item",
+                                              "type": "component",
+                                              "title": "Accordion item",
+                                              "enabled": true,
+                                              "category": "category-8",
+                                              "componentId": "cpt_accordion_item",
+                                              "componentType": "accordion-tabs-item",
+                                              "iconColor": "custom",
+                                              "uuid": "411dd47e-f221-4b46-b7bd-54a57d757ef5",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_accordion_item",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "b9f13ca1-8251-427e-8859-c6de8dbae187",
+                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "iconColor": "custom",
+                                                              "uuid": "2a6fd9c6-8400-4615-bff0-efbf350927eb",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_accordion_container",
+                              "type": "component",
+                              "title": "Accordion container",
+                              "enabled": true,
+                              "category": "category-8",
+                              "componentId": "cpt_accordion_container",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "8ba8cdf0-cd51-423b-80d5-7ee1e4aab0ba",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_accordion_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "c6f45703-487c-4eb8-8ca7-8c2fc06b4b22",
+                                      "dropzoneId": "11ce65d2-cbf6-48cb-a84b-64fac6f6ab36",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_accordion_item",
+                                              "type": "component",
+                                              "title": "Accordion item",
+                                              "enabled": true,
+                                              "category": "category-8",
+                                              "componentId": "cpt_accordion_item",
+                                              "componentType": "accordion-tabs-item",
+                                              "iconColor": "custom",
+                                              "uuid": "5bebfd07-a36f-48a1-abfd-ce3898b07e34",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_accordion_item",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "252620f2-4c89-46d2-83cf-d82eda101458",
+                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_3_column_layout",
+                                                              "type": "component",
+                                                              "title": "3 column layout",
+                                                              "enabled": true,
+                                                              "category": "category-1",
+                                                              "componentId": "cpt_3_column_layout",
+                                                              "componentType": "container",
+                                                              "iconColor": "custom",
+                                                              "uuid": "c8d36733-d731-4961-ad53-5dbd2289937c",
+                                                              "status": {
+                                                                  "collapsed": false
+                                                              },
+                                                              "parentUid": "component-drop-zone",
+                                                              "children": [
+                                                                  {
+                                                                      "type": "container",
+                                                                      "uid": "component-drop-zone",
+                                                                      "mimicParent": true,
+                                                                      "parentUid": "cpt_3_column_layout",
+                                                                      "title": "Component drop zone",
+                                                                      "selected": false,
+                                                                      "status": {
+                                                                          "collapsed": false,
+                                                                          "disabled": false
+                                                                      },
+                                                                      "uuid": "d0bfde32-2555-47f7-b7ca-135789e85771",
+                                                                      "dropzoneId": "b9c76516-ebb6-4689-956c-62ad9994ffb8",
+                                                                      "isContainer": true,
+                                                                      "children": [
+                                                                          {
+                                                                              "uid": "cpt_video_media",
+                                                                              "type": "component",
+                                                                              "title": "Video",
+                                                                              "enabled": true,
+                                                                              "category": "category-4",
+                                                                              "componentId": "cpt_video_media",
+                                                                              "componentType": "container",
+                                                                              "iconColor": "custom",
+                                                                              "uuid": "e74421bb-ed5e-4bfc-8b85-cc5f40c0cb03",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {},
+                                                                              "children": []
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  {
+                                                                      "type": "container",
+                                                                      "uid": "component-drop-zone",
+                                                                      "mimicParent": true,
+                                                                      "parentUid": "cpt_3_column_layout",
+                                                                      "title": "Component drop zone",
+                                                                      "selected": false,
+                                                                      "status": {
+                                                                          "collapsed": false,
+                                                                          "disabled": false
+                                                                      },
+                                                                      "uuid": "8646f33b-4cf5-4a47-9b98-12f251587a95",
+                                                                      "dropzoneId": "970fdbba-b933-4a2d-a4e6-ef5f6be011bf",
+                                                                      "isContainer": true,
+                                                                      "children": [
+                                                                          {
+                                                                              "uid": "cpt_video_media",
+                                                                              "type": "component",
+                                                                              "title": "Video",
+                                                                              "enabled": true,
+                                                                              "category": "category-4",
+                                                                              "componentId": "cpt_video_media",
+                                                                              "componentType": "container",
+                                                                              "iconColor": "custom",
+                                                                              "uuid": "a7fb60a1-6345-4f3d-824d-f0e52dbab240",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {},
+                                                                              "children": []
+                                                                          }
+                                                                      ]
+                                                                  },
+                                                                  {
+                                                                      "type": "container",
+                                                                      "uid": "component-drop-zone",
+                                                                      "mimicParent": true,
+                                                                      "parentUid": "cpt_3_column_layout",
+                                                                      "title": "Component drop zone",
+                                                                      "selected": false,
+                                                                      "status": {
+                                                                          "collapsed": false,
+                                                                          "disabled": false
+                                                                      },
+                                                                      "uuid": "2dae67ba-598f-4946-9ac9-39eed18dfa29",
+                                                                      "dropzoneId": "efa7a1d3-fb2f-4e96-942e-4c14f544c3f4",
+                                                                      "isContainer": true,
+                                                                      "children": [
+                                                                          {
+                                                                              "uid": "cpt_video_media",
+                                                                              "type": "component",
+                                                                              "title": "Video",
+                                                                              "enabled": true,
+                                                                              "category": "category-4",
+                                                                              "componentId": "cpt_video_media",
+                                                                              "componentType": "container",
+                                                                              "iconColor": "custom",
+                                                                              "uuid": "0e201232-8b70-4262-a855-a9ce24a2b0f6",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {},
+                                                                              "children": []
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              ]
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "ea85be50-0e38-4d76-a33f-f29377ddbf55": {},
+          "c7ea63f8-8cd8-43ae-9c17-20d6057ed122": {},
+          "472cf942-6026-4ea3-b2e1-11b6dc469978": {},
+          "d2c8475a-ab3b-4198-b58f-e23e685b0cc7": {},
+          "8669c0b2-95db-4e81-8e82-1d4b6df1a0c9": {},
+          "a95a783b-d219-4410-878f-890b5ec3e15d": {},
+          "5653546d-7b77-44cb-a618-219f21b89631": {},
+          "411dd47e-f221-4b46-b7bd-54a57d757ef5": {},
+          "b9f13ca1-8251-427e-8859-c6de8dbae187": {},
+          "2a6fd9c6-8400-4615-bff0-efbf350927eb": {},
+          "8ba8cdf0-cd51-423b-80d5-7ee1e4aab0ba": {},
+          "c6f45703-487c-4eb8-8ca7-8c2fc06b4b22": {},
+          "5bebfd07-a36f-48a1-abfd-ce3898b07e34": {},
+          "252620f2-4c89-46d2-83cf-d82eda101458": {},
+          "c8d36733-d731-4961-ad53-5dbd2289937c": {},
+          "d0bfde32-2555-47f7-b7ca-135789e85771": {},
+          "e74421bb-ed5e-4bfc-8b85-cc5f40c0cb03": {},
+          "8646f33b-4cf5-4a47-9b98-12f251587a95": {},
+          "a7fb60a1-6345-4f3d-824d-f0e52dbab240": {},
+          "2dae67ba-598f-4946-9ac9-39eed18dfa29": {},
+          "0e201232-8b70-4262-a855-a9ce24a2b0f6": {}
+      },
+      "model": {
+          "ea85be50-0e38-4d76-a33f-f29377ddbf55": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "boxed",
+              "settings": {
+                  "title": "Accordion Container"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px"
+          },
+          "c7ea63f8-8cd8-43ae-9c17-20d6057ed122": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "472cf942-6026-4ea3-b2e1-11b6dc469978": {
+              "f246e51e-b638-4b41-ab84-f5c02e6fa857": "coh-style-accordion-with-plus-icon",
+              "d57c2f0c-539a-4380-ba40-b72ecadc258c": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Accordion container"
+              }
+          },
+          "d2c8475a-ab3b-4198-b58f-e23e685b0cc7": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Drop 'Accordion item' here."
+              }
+          },
+          "8669c0b2-95db-4e81-8e82-1d4b6df1a0c9": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Accordion Item",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "a95a783b-d219-4410-878f-890b5ec3e15d": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "5653546d-7b77-44cb-a618-219f21b89631": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on. This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on. This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on. This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on.<\/p>\n",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0"
+          },
+          "411dd47e-f221-4b46-b7bd-54a57d757ef5": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Accordion Item",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "b9f13ca1-8251-427e-8859-c6de8dbae187": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "2a6fd9c6-8400-4615-bff0-efbf350927eb": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on. This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on. This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on. This is placeholder text. If you are reading this, it is here by mistake and we would appreciate it if you could email us with a link to the page you found it on.<\/p>\n",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0"
+          },
+          "8ba8cdf0-cd51-423b-80d5-7ee1e4aab0ba": {
+              "f246e51e-b638-4b41-ab84-f5c02e6fa857": "coh-style-accordion-with-dropdown-icon",
+              "d57c2f0c-539a-4380-ba40-b72ecadc258c": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Accordion container"
+              }
+          },
+          "c6f45703-487c-4eb8-8ca7-8c2fc06b4b22": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Drop 'Accordion item' here."
+              }
+          },
+          "5bebfd07-a36f-48a1-abfd-ce3898b07e34": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Accordion Item",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "252620f2-4c89-46d2-83cf-d82eda101458": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "c8d36733-d731-4961-ad53-5dbd2289937c": {
+              "8aa2e024-830b-438b-a161-928c5da2fe98": "coh-style-container-small",
+              "3774372b-7a2e-4c1f-af0a-c2ee5fde0cd3": "space-between",
+              "93623539-1faa-4b11-9c6f-2478faf8910f": "retain",
+              "64a8586d-a93d-4881-b2ec-3aa6880b2d80": "4",
+              "326f150e-2db0-4fe2-9382-42d3439487d3": "0",
+              "a94dbacb-5a9b-4fd7-a2bf-d2669ba04876": "flex-start",
+              "5be7ab53-3b58-4709-b5d2-5a634bbc42ab": 4,
+              "1e002fa3-b5b6-425c-a1f6-4cf7f15f98d7": "1",
+              "d566f78e-c832-444b-b736-a0d5128c7d08": "flex-start",
+              "89b47bb4-e5ba-4764-99ef-494b3458584a": 4,
+              "0ebaf284-605e-4f1f-890c-b1a721c65210": "2",
+              "cbe27317-3d27-4ad0-b1b5-27a2e4468cf0": "flex-start",
+              "937db819-6a96-482d-873d-d31c906c2b77": "24px",
+              "85017793-dfbd-44df-9263-694766aa6ec3": 12,
+              "992a086f-192f-4dc2-8d52-d43771b475e5": "0",
+              "7efdeaf0-b457-4687-bf6c-03d89bd3f082": "flex-start",
+              "933fc7b6-0770-4e7b-976c-d21eebb960f3": 12,
+              "ebe5c781-e614-4d52-a541-878b79986fd1": "1",
+              "79206749-2a7e-411c-9bc8-f607b4016444": "flex-start",
+              "de372c9e-e576-4eeb-86de-53fe6cef7fb5": 12,
+              "360f16a1-a8ad-478c-a7fe-3fb15e2963a8": "2",
+              "18fae0be-900c-4a88-8631-ea467f998c7e": "flex-start",
+              "612c08c2-a37b-4ba5-a454-bd6ccab2bf2e": "24px",
+              "b2feeb03-a9ab-49e1-9fdd-49352289e69c": 12,
+              "2376c5aa-ad8c-46dd-bcbd-3df637f35966": "0",
+              "e162e6e5-4dd1-4e20-8512-8a5ad1f8bf81": "flex-start",
+              "7e35b061-3c8b-408c-8192-3646192a6673": 12,
+              "6fdcf187-68f6-44ea-a64b-7bd48919a53d": "1",
+              "7c6f6b12-e03e-4108-b362-d6c5b7d06090": "flex-start",
+              "97bfbc85-acdf-41b2-bf52-149351291a64": 12,
+              "3a03a95e-3670-429a-9da5-568ab67b14e1": "2",
+              "2950f6a5-924c-48bf-9613-406666a247c7": "flex-start",
+              "cc73d86c-ecbc-4a95-bc32-1f070f4bb5d9": "24px",
+              "settings": {
+                  "title": "3 column layout"
+              }
+          },
+          "d0bfde32-2555-47f7-b7ca-135789e85771": {
+              "settings": {
+                  "title": "Column 1 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 4
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "e74421bb-ed5e-4bfc-8b85-cc5f40c0cb03": {
+              "2c955081-e282-415f-b279-d334c1f2cca4": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "5e654c0b-6034-4840-bd0b-d92588dbd279",
+                      "entityId": "5e654c0b-6034-4840-bd0b-d92588dbd279"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "audio_file": false,
+                              "document": false,
+                              "image": false,
+                              "instagram": false,
+                              "tweet": false,
+                              "video": true,
+                              "video_file": true,
+                              "acquia_dam_video_asset": true
+                          }
+                      }
+                  }
+              },
+              "eb2f5e7c-aa7d-4490-87c8-84c810f24dc4": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Video"
+              }
+          },
+          "8646f33b-4cf5-4a47-9b98-12f251587a95": {
+              "settings": {
+                  "title": "Column 2 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 4
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "a7fb60a1-6345-4f3d-824d-f0e52dbab240": {
+              "2c955081-e282-415f-b279-d334c1f2cca4": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "0f381c6a-a252-4fed-ae37-ab4c2fb0e252",
+                      "entityId": "0f381c6a-a252-4fed-ae37-ab4c2fb0e252"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "audio_file": false,
+                              "document": false,
+                              "image": false,
+                              "instagram": false,
+                              "tweet": false,
+                              "video": true,
+                              "video_file": true,
+                              "acquia_dam_video_asset": true
+                          }
+                      }
+                  }
+              },
+              "eb2f5e7c-aa7d-4490-87c8-84c810f24dc4": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Video"
+              }
+          },
+          "2dae67ba-598f-4946-9ac9-39eed18dfa29": {
+              "settings": {
+                  "title": "Column 3 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 4
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "0e201232-8b70-4262-a855-a9ce24a2b0f6": {
+              "2c955081-e282-415f-b279-d334c1f2cca4": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "4853b581-4b92-4ebe-8a20-cc8fc9695508",
+                      "entityId": "4853b581-4b92-4ebe-8a20-cc8fc9695508"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "audio_file": false,
+                              "document": false,
+                              "image": false,
+                              "instagram": false,
+                              "tweet": false,
+                              "video": true,
+                              "video_file": true,
+                              "acquia_dam_video_asset": true
+                          }
+                      }
+                  }
+              },
+              "eb2f5e7c-aa7d-4490-87c8-84c810f24dc4": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Video"
+              }
+          }
+      },
+      "previewModel": {
+          "ea85be50-0e38-4d76-a33f-f29377ddbf55": {},
+          "472cf942-6026-4ea3-b2e1-11b6dc469978": {},
+          "8669c0b2-95db-4e81-8e82-1d4b6df1a0c9": {},
+          "411dd47e-f221-4b46-b7bd-54a57d757ef5": {},
+          "8ba8cdf0-cd51-423b-80d5-7ee1e4aab0ba": {},
+          "5bebfd07-a36f-48a1-abfd-ce3898b07e34": {},
+          "c8d36733-d731-4961-ad53-5dbd2289937c": {},
+          "e74421bb-ed5e-4bfc-8b85-cc5f40c0cb03": {},
+          "a7fb60a1-6345-4f3d-824d-f0e52dbab240": {},
+          "0e201232-8b70-4262-a855-a9ce24a2b0f6": {}
+      },
+      "variableFields": {
+          "ea85be50-0e38-4d76-a33f-f29377ddbf55": [],
+          "472cf942-6026-4ea3-b2e1-11b6dc469978": [],
+          "8669c0b2-95db-4e81-8e82-1d4b6df1a0c9": [],
+          "411dd47e-f221-4b46-b7bd-54a57d757ef5": [],
+          "8ba8cdf0-cd51-423b-80d5-7ee1e4aab0ba": [],
+          "5bebfd07-a36f-48a1-abfd-ce3898b07e34": [],
+          "c8d36733-d731-4961-ad53-5dbd2289937c": [],
+          "e74421bb-ed5e-4bfc-8b85-cc5f40c0cb03": [],
+          "a7fb60a1-6345-4f3d-824d-f0e52dbab240": [],
+          "0e201232-8b70-4262-a855-a9ce24a2b0f6": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: accordion_sections
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

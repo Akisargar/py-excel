@@ -1,0 +1,29 @@
+uuid: 296b1dda-d287-4d22-8da1-a9bbfcab4407
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.storage.node.field_colour
+    - node.type.resources
+id: node.resources.field_colour
+field_name: field_colour
+entity_type: node
+bundle: resources
+label: Colour
+description: 'Select the colour of the product for this resource.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:commerce_product_variation'
+  handler_settings:
+    target_bundles:
+      millboard_products: millboard_products
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

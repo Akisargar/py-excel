@@ -1,0 +1,48 @@
+uuid: 05ac1f32-6a2e-40c0-8d68-895a07a6d48c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.decking_cladding_logo_on_homepage_view_mode
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - media.type.image
+    - responsive_image.styles.decking_cladding_logo_on_homepage_responsive_image_style
+  module:
+    - layout_builder
+    - responsive_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.decking_cladding_logo_on_homepage_view_mode
+targetEntityType: media
+bundle: image
+mode: decking_cladding_logo_on_homepage_view_mode
+content:
+  thumbnail:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: decking_cladding_logo_on_homepage_responsive_image_style
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  image: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  uid: true

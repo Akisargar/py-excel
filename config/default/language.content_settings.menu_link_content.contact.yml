@@ -1,0 +1,18 @@
+uuid: 5790fcb2-70d2-4c64-889f-0b3682c65e80
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - system.menu.contact
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: menu_link_content.contact
+target_entity_type_id: menu_link_content
+target_bundle: contact
+default_langcode: site_default
+language_alterable: true

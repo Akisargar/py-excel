@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * This is module file for the Millboard menu module.
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+
+/**
+ * Implements hook_token_info_alter().
+ */
+function millboard_menu_token_info_alter(&$data): array {
+  $data['tokens']['menu-link']['menu-image-link'] = [
+    'name' => t('Menu Image link'),
+    'description' => t('The link of image that can be used as image src.'),
+  ];
+  return $data;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function millboard_menu_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata): array {
+  $replacements = [];
+  if ($type != 'menu-link' || empty($data['menu-link'])) {
+    return $replacements;
+  }
+  $menu_dam_image_media = $data['menu-link']->get('field_menu_media_image')->referencedEntities();
+  $dam_image_url = NULL;
+  if (!empty($menu_dam_image_media)) {
+    $menu_dam_image_media = reset($menu_dam_image_media);
+    $media_source = $menu_dam_image_media->getSource();
+    $url = $media_source->getMetadata($menu_dam_image_media, 'embeds');
+    if (isset($url['OriginalSizewithDownload'])) {
+      $dam_image_url = $url['OriginalSizewithDownload']['url'];
+    }
+  }
+  if (!is_null($dam_image_url)) {
+    $replacements['[menu-link:menu-image-link]'] = $dam_image_url;
+  }
+  return $replacements;
+}

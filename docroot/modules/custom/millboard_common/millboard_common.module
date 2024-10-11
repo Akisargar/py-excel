@@ -1,0 +1,551 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+use Drupal\commerce_product\Entity\Product;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+use Drupal\simple_sitemap\Entity\SimpleSitemapInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\views\ViewExecutable;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function millboard_common_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Blog list view expose form.
+  if (isset($form['#id']) && $form['#id'] == 'views-exposed-form-blog-listing-block-1') {
+    $form['year'] = [
+      '#title' => t('Year'),
+      '#type' => 'select',
+      '#options' => _millboard_common_get_year_options(),
+      '#size' => NULL,
+      '#default_value' => 'all',
+      '#weight' => 1,
+    ];
+    $form['sort_by']['#weight'] = 2;
+    $form['sort_order']['#weight'] = 3;
+  }
+
+  if (isset($form['#id']) && ($form['#id'] == 'views-exposed-form-millboard-find-installers-block-1' || $form['#id'] == 'views-exposed-form-millboard-find-installers-where-to-buy')) {
+    $form['title'] = [
+      '#markup' => '<span class="coh-style-exposed-filter-title">' . t('Filter by') . '</span>',
+      '#weight' => -10,
+    ];
+    if ($form['#id'] == 'views-exposed-form-millboard-find-installers-where-to-buy') {
+      unset($form['field_type_of_inst_dist_value']['#options']['key_distributor']);
+    }
+  }
+
+  $form['actions']['submit']['#attributes']['class'][] = 'coh-style-primary-button';
+  $form['actions']['reset']['#attributes']['class'][] = 'coh-style-secondary-button';
+
+  // Show selected filters count.
+  $form['#attached']['library'][] = 'millboard_common/millboard_common.filter_count';
+
+}
+
+/**
+ * Publish date year options of blog.
+ *
+ * @return array
+ *   The publish date years.
+ */
+function _millboard_common_get_year_options(): array {
+  // All option.
+  $options['all'] = t('- All -');
+  // Publish date of blog.
+  $query = \Drupal::database()->select('node_field_data', 'n');
+  $query->join('node__field_publish_date', 'pd', 'pd.entity_id = n.nid');
+  $query->fields('pd', ['field_publish_date_value']);
+  $query->condition('n.type', 'blog');
+  $query->condition('n.status', NodeInterface::PUBLISHED);
+  $query->orderBy('pd.field_publish_date_value', 'DESC');
+  $query->distinct();
+  $result = $query->execute()->fetchAll();
+  // If result is empty.
+  if (empty($result)) {
+    return $options;
+  }
+  // Create year options.
+  foreach ($result as $value) {
+    if ($value->field_publish_date_value) {
+      $year = date('Y', strtotime($value->field_publish_date_value));
+      if (!isset($options[$year])) {
+        $options[$year] = $year;
+      }
+    }
+  }
+  return $options;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function millboard_common_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Altered field colour options on collection field value change.
+  $form_ids = [
+    'node_project_form',
+    'node_project_edit_form',
+    'node_resources_form',
+    'node_resources_edit_form',
+  ];
+  if (in_array($form_id, $form_ids)) {
+    $form['field_colour']['widget']['#options'] = ['_none' => t('- None -')];
+    $form['field_colour']['widget']['#prefix'] = '<div id="edit-output-field-colour">';
+    $form['field_colour']['widget']['#suffix'] = '</div>';
+    $form['field_collection']['widget']['#ajax'] = [
+      'callback' => '_millboard_common_colour_options_callback',
+      'wrapper' => 'edit-output-field-colour',
+    ];
+    $edit_form_ids = ['node_project_edit_form', 'node_resources_edit_form'];
+    if (in_array($form_id, $edit_form_ids)) {
+      if ($form['field_collection']['widget']['#default_value']) {
+        // Displyed options depending upon collection field.
+        $form['field_colour']['widget']['#options'] = _millboard_common_product_variation_options($form['field_collection']['widget']['#default_value'][0]);
+      }
+    }
+    // Check if collection is selected.
+    $trigger_elm = $form_state->getTriggeringElement();
+    if ($trigger_elm) {
+      if ($trigger_elm['#value'] != '_none' && $trigger_elm['#field_name'] == 'field_collection') {
+        // Displyed options depending upon collection field.
+        $form['field_colour']['widget']['#options'] = _millboard_common_product_variation_options($form_state->getTriggeringElement()['#value']);
+      }
+    }
+  }
+  $installers_distributors = [
+    'node_installers_distributors_form',
+    'node_installers_distributors_edit_form',
+  ];
+
+  if (in_array($form_id, $installers_distributors)) {
+    $form['field_type_of_inst_dist']['widget']['#options']['key_distributor'] = t('Distributor');
+  }
+
+  // Check if the form ID matches the desired pattern.
+  if (preg_match('/^webform_submission_us_sample_order_form_/', $form_id)) {
+    // Unset the "address" field.
+    // We cannot delete the old address field to preserve the submission data
+    // and hence will need to unset it from the form.
+    unset($form['elements']['address']);
+  }
+
+}
+
+/**
+ * Ajax call back function.
+ *
+ * @param array $form
+ *   The form.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ *
+ * @return array
+ *   Form field.
+ */
+function _millboard_common_colour_options_callback(array &$form, FormStateInterface $form_state) : array {
+  return $form['field_colour'];
+}
+
+/**
+ * Product variations options.
+ *
+ * @param int $pid
+ *   Product id.
+ * @param bool $fillers
+ *   True|False.
+ *
+ * @return array
+ *   Options variations.
+ */
+function _millboard_common_product_variation_options(int $pid, bool $fillers = FALSE) : array {
+  $langcode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  $options = [];
+  // Default option.
+  if ($fillers) {
+    $options['all'] = t('- All -');
+  }
+  else {
+    $options['_none'] = t('- None -');
+  }
+  $product = Product::load($pid);
+  $variations = $product->getVariations();
+  // If empty.
+  if (empty($variations)) {
+    return $options;
+  }
+  foreach ($variations as $value) {
+    if ($value->getAttributeValue('attribute_colour')) {
+      if (($langcode === 'fr-fr') && $value->getAttributeValue('attribute_color_fr')) {
+        $options[$value->id()] = $value->getAttributeValue('attribute_color_fr')->getName();
+      }
+      else {
+        $options[$value->id()] = $value->getAttributeValue('attribute_colour')->getName();
+      }
+    }
+  }
+  return array_unique($options);
+}
+
+/**
+ * Products options.
+ *
+ * @param array $tids
+ *   Product types.
+ *
+ * @return array
+ *   Products.
+ */
+function _millboard_common_products_options(array $tids = []): array {
+  $options = [];
+  // All option.
+  $options['all'] = t('- All -');
+  $pids = \Drupal::entityQuery('commerce_product');
+  $pids->accessCheck(FALSE);
+  $pids->condition('type', 'millboard_products');
+  if ($tids) {
+    $pids->condition('field_product_type', $tids, 'IN');
+  }
+  $pids->condition('status', TRUE);
+  $pids->sort('title', 'ASC');
+  $result = $pids->execute();
+  $products = Product::loadMultiple($result);
+  // If empty.
+  if (empty($products)) {
+    return $options;
+  }
+  // Create options.
+  foreach ($products as $product) {
+    $options[$product->id()] = $product->get('title')->getString();
+  }
+  return $options;
+}
+
+/**
+ * Term options.
+ *
+ * @param string $vid
+ *   Vocabulary id.
+ *
+ * @return array
+ *   Term options.
+ */
+function _millboard_common_term_options($vid): array {
+  $lancode = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  // Option.
+  $options = [];
+  $tids = \Drupal::entityQuery('taxonomy_term')
+    ->accessCheck(FALSE)
+    ->condition('vid', $vid)
+    ->sort('name', 'ASC')
+    ->execute();
+  $terms = Term::loadMultiple($tids);
+  // If empty.
+  if (empty($terms)) {
+    return $options;
+  }
+  // Create options.
+  foreach ($terms as $term) {
+    if ($term->hasTranslation($lancode)) {
+      $options[$term->id()] = $term->getTranslation($lancode)->get('name')->getString();
+    }
+    else {
+      $options[$term->id()] = $term->get('name')->getString();
+    }
+  }
+  return $options;
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function millboard_common_entity_insert(EntityInterface $entity) {
+  if ($entity instanceof NodeInterface) {
+    if ($entity->getType() === 'resources') {
+      $response = new RedirectResponse('/admin/content');
+      $response->send();
+    }
+  }
+}
+
+/**
+ * Helper function to load taxonomy terms by name.
+ *
+ * @param string $vocabulary
+ *   The name of the vocabulary.
+ * @param array $term_names
+ *   An array of term names to load.
+ *
+ * @return array
+ *   An array of loaded term objects.
+ */
+function _millboard_common_load_taxonomy_terms_by_name(string $vocabulary, array $term_names) {
+  $query = \Drupal::entityQuery('taxonomy_term');
+  $query->condition('vid', $vocabulary);
+  $query->condition('name', $term_names, 'IN');
+  // Set access checking to FALSE to bypass access control.
+  $query->accessCheck(FALSE);
+  $tids = $query->execute();
+  $terms = Term::loadMultiple($tids);
+
+  return $terms;
+}
+
+/**
+ * Helper function to get options for a select list.
+ *
+ * @param string $vocabulary
+ *   The name of the vocabulary.
+ * @param array $term_names
+ *   An array of term names to load.
+ *
+ * @return array
+ *   An array of options for a select list.
+ */
+function _millboard_common_get_taxonomy_term_options(string $vocabulary, array $term_names) {
+  $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $terms = _millboard_common_load_taxonomy_terms_by_name($vocabulary, $term_names);
+  $options = [];
+  // All option.
+  $options['all'] = t('- All -');
+  foreach ($terms as $term) {
+    $options[$term->id()] = $term->label();
+    if ($term->hasTranslation($langcode)) {
+      $name = $term->getTranslation($langcode)->name->value;
+      $options[$term->id()] = $name;
+    }
+  }
+
+  return $options;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for views_view_unformatted.
+ */
+function millboard_common_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  // Check if this is the desired view block (order_sample_listing).
+  $view_id = $variables['view']->id();
+  if ($view_id === 'order_sample_listing') {
+    // Add a template suggestion based on the view ID.
+    $suggestions[] = 'views_view_unformatted__' . $view_id;
+  }
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function millboard_common_entity_presave(EntityInterface $entity) {
+  // Check if enity is type of node.
+  if (!empty($entity) && !$entity instanceof NodeInterface) {
+    return;
+  }
+  // Content types.
+  $content_types = [
+    'resources',
+    'blog',
+    'page',
+    'project',
+    'installers_distributors',
+  ];
+  // Check if content types is existing.
+  if (in_array($entity->getType(), $content_types)) {
+    $publish_date_timestamp = $entity->field_publish_date->value ? $entity->field_publish_date->date->getTimestamp() : NULL;
+    $created = $entity->created->value;
+    $current_state = $entity->hasField('moderation_state') ? $entity->moderation_state->getValue()[0]['value'] : NULL;
+    // Set publish date if current state is published.
+    if ($current_state == 'published' && empty($publish_date_timestamp)) {
+      if ($entity->isNew()) {
+        $entity->set('field_publish_date', date('Y-m-d\TH:i:s', $created));
+      }
+      else {
+        // Set publish date on edit content.
+        $entity->set('field_publish_date', date('Y-m-d\TH:i:s'));
+      }
+    }
+  }
+}
+
+/**
+ * Hook__field_widget_single_element_form_alter().
+ */
+function millboard_common_field_widget_single_element_form_alter(array &$element, FormStateInterface $form_state, array $context) {
+  // If empty context.
+  if (empty($context['items'])) {
+    return;
+  }
+  // Restrict future date for publish date.
+  if ($context['items']->getName() == 'field_publish_date') {
+    $element['value']['#attributes']['max'] = date('Y-m-d');
+  }
+}
+
+/**
+ * Hook_form_node_form_alter().
+ */
+function millboard_common_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Attach custom js file with node forms.
+  $form_object = $form_state->getFormObject();
+  $latLongTypes = [
+    'installers_distributors',
+  ];
+  if (in_array($form_object->getEntity()->bundle(), $latLongTypes)) {
+    $form['#attached']['library'][] = 'millboard_common/millboard_common.lat_long_alter';
+  }
+}
+
+/**
+ * Hook_preprocess_views_view().
+ */
+function millboard_common_preprocess_views_view(&$variables) {
+  if (isset($variables['view']) && !empty($variables['view'])) {
+    $view = $variables['view'];
+
+    $currLang = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $viewExtraConditions = [
+      'case_studies_listing' => [
+        'entity_type' => 'node',
+        'default_fields' => [
+          'status' => [
+            'value' => 1,
+          ],
+          'langcode' => [
+            'value' => $currLang,
+          ],
+          'type' => [
+            'value' => 'project',
+          ],
+        ],
+      ],
+      'millboard_image_gallery' => [
+        'entity_type' => 'node',
+        'default_fields' => [
+          'status' => [
+            'value' => 1,
+          ],
+          'langcode' => [
+            'value' => $currLang,
+          ],
+          'type' => [
+            'value' => 'resources',
+          ],
+          'field_resource_type' => [
+            'value' => 'images',
+          ],
+        ],
+      ],
+      'video_listing' => [
+        'entity_type' => 'node',
+        'default_fields' => [
+          'status' => [
+            'value' => 1,
+          ],
+          'langcode' => [
+            'value' => $currLang,
+          ],
+          'type' => [
+            'value' => 'resources',
+          ],
+          'field_resource_type' => [
+            'value' => ['videos', 'documents'],
+          ],
+        ],
+      ],
+    ];
+
+    if (array_key_exists($view->id(), $viewExtraConditions)) {
+      $variables['#attached']['library'][] = 'millboard_common/millboard_common.hide_filter_options';
+      $variables['#attached']['drupalSettings']['view_name'] = $view->id();
+      $variables['#attached']['drupalSettings']['view_extra_conditions'] = $viewExtraConditions[$view->id()];
+    }
+  }
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ */
+function millboard_common_commerce_product_variation_view_alter(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display) {
+  // Check if the entity is a product variation.
+  if ($entity->getEntityTypeId() === 'commerce_product_variation') {
+    // Get the current language.
+    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    // Check if the current language is not "en-us".
+    if ($current_language !== 'en-us') {
+      // Unset the fields for the specified view modes.
+      if (in_array($display->getMode(), [
+        'composite_cladding_collections',
+        'composite_decking_collections',
+      ])) {
+        unset($build['field_boards_per_ft2']);
+        unset($build['field_weight_per_ft2_lb']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function millboard_common_views_pre_view(ViewExecutable $view, $display_id) {
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $fields = $view->display_handler->getOption('fields');
+  if ($view->id() == "order_sample_listing" && $display_id == "order_sample_decking") {
+    // Display attribute width inches if language is US.
+    if ($current_language === 'en-us') {
+      $fields["nothing_2"]['alter']['alter_text'] = TRUE;
+      $fields["nothing_2"]['alter']['text'] = '{{attribute_width_inches}}';
+      $fields["attribute_width"]['exclude'] = TRUE;
+
+      // Display inches for grouping field.
+      $fields["attribute_width_1"]['alter']['alter_text'] = TRUE;
+      $fields["attribute_width_1"]['alter']['text'] = '<h5 class="coh-style-heading-5-size"><span>Board Widths - </span><span>{{ attribute_width_inches }}</span></h5>';
+    }
+    else {
+      // Exclude width inches when not needed.
+      $fields["attribute_width_inches"]['exclude'] = TRUE;
+    }
+    $view->display_handler->overrideOption('fields', $fields);
+  }
+  elseif ($view->id() === "order_sample_listing" && $display_id === "order_sample_cladding") {
+    if ($current_language === 'en-us') {
+      $fields["nothing_2"]['alter']['alter_text'] = TRUE;
+      $fields["nothing_2"]['alter']['text'] = '{{attribute_installed_width_inches}}';
+      $fields["attribute_installed_width"]['exclude'] = TRUE;
+      // Display inches for grouping field.
+      $fields["attribute_installed_width"]['alter']['alter_text'] = TRUE;
+      $fields["attribute_installed_width"]['alter']['text'] = '<h5 class="coh-style-heading-5-size"><span>Board Widths - </span><span>{{ attribute_installed_width_inches }}</span></h5>';
+    }
+    else {
+      // Exclude width inches when not needed.
+      $fields["attribute_installed_width_inches"]['exclude'] = TRUE;
+    }
+    $view->display_handler->overrideOption('fields', $fields);
+  }
+}
+
+/**
+ * Alter the generated link data before a sitemap is saved.
+ *
+ * This hook gets invoked for every sitemap chunk generated.
+ *
+ * @param array &$links
+ *   Array containing multilingual links generated for each path to be indexed.
+ * @param \Drupal\simple_sitemap\Entity\SimpleSitemapInterface $sitemap
+ *   Sitemap entity.
+ */
+function millboard_common_simple_sitemap_links_alter(array &$links, SimpleSitemapInterface $sitemap) {
+  // Remove hreflang URLs.
+  foreach ($links as $key => $link) {
+    if (isset($links[$key]['alternate_urls'])) {
+      unset($links[$key]['alternate_urls']);
+    }
+  }
+}

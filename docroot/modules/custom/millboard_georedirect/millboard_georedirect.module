@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Provides main module functions.
+ */
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function millboard_georedirect_page_attachments_alter(array &$attachments) {
+  if (!\Drupal::service('router.admin_context')->isAdminRoute() && !\Drupal::service('path.matcher')->isFrontPage()) {
+    $attachments['#attached']['library'][] = 'millboard_georedirect/millboard-georedirect-ajax';
+  }
+}

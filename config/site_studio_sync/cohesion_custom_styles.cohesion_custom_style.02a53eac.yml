@@ -1,0 +1,652 @@
+uuid: 3845279d-c5ec-4dfb-8b90-7ff3c4d08403
+langcode: en-gb
+status: true
+dependencies: {  }
+label: 'Checkout Form Style'
+id: 02a53eac
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for 'Layout'.<\/div>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div"
+          },
+          "styles": {
+              "xs": {
+                  "margin": {
+                      "margin-bottom": {
+                          "value": "48px"
+                      },
+                      "margin-left": {
+                          "value": "24px"
+                      },
+                      "margin-right": {
+                          "value": "24px"
+                      }
+                  },
+                  "width": {},
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "md": {
+                  "margin": {
+                      "margin-bottom": {
+                          "value": "152px"
+                      },
+                      "margin-left": {},
+                      "margin-right": {}
+                  },
+                  "width": {
+                      "value": "400px"
+                  },
+                  "padding": {
+                      "padding-left": {},
+                      "padding-right": {}
+                  }
+              },
+              "sm": {
+                  "width": {
+                      "value": "400px"
+                  }
+              },
+              "xl": {
+                  "padding": {
+                      "padding-left": {}
+                  },
+                  "margin": {
+                      "margin-left": {
+                          "value": "104px"
+                      },
+                      "margin-right": {
+                          "value": "0px"
+                      }
+                  }
+              },
+              "lg": {
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "margin-left"
+                          },
+                          "customCss": {
+                              "value": "clamp(24px,-28.2585rem + 38.6473vw,104px)"
+                          }
+                      },
+                      {
+                          "customCssProperty": {
+                              "value": "margin-right"
+                          },
+                          "customCss": {
+                              "value": "clamp(24px,-28.2585rem + 38.6473vw,104px)"
+                          }
+                      }
+                  ]
+              }
+          },
+          "d87e8038-82c0-4391-8b5e-260c98f65719": {
+              "styles": {
+                  "xs": {
+                      "margin": {
+                          "margin-top": {
+                              "value": "0"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": ".form-type-select .select2-container--default .select2-selection--single"
+              }
+          },
+          "1d34c706-4bc4-4a73-bd5c-da851ad23e02": {
+              "styles": {
+                  "xs": {
+                      "margin": {
+                          "margin-top": {
+                              "value": "24px"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": ".sample-order-form-agreement-checkbox"
+              }
+          },
+          "8978850a-d339-4e16-90a2-51e4339ba23e": {
+              "styles": {
+                  "xs": {
+                      "margin": {
+                          "margin-top": {
+                              "value": "40px"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": ".webform-actions"
+              }
+          },
+          "6ac53551-64c2-4f43-ae4f-4dbcf0c5272c": {
+              "styles": {
+                  "md": {
+                      "max-width": {
+                          "value": "100%"
+                      },
+                      "width": {
+                          "value": "100%"
+                      }
+                  },
+                  "xs": {
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "max-width"
+                              },
+                              "customCss": {
+                                  "value": "100%"
+                              }
+                          }
+                      ],
+                      "max-width": {
+                          "value": "100%"
+                      },
+                      "width": {
+                          "value": "100%"
+                      }
+                  }
+              },
+              "settings": {
+                  "element": "input[type=submit]"
+              }
+          },
+          "bd726b5d-0469-4711-b32b-89915d405873": {
+              "styles": {},
+              "settings": {
+                  "element": ".form-type-select label"
+              }
+          },
+          "8ced26a7-226c-4ecd-9b9d-3d7a8896e671": {
+              "styles": {
+                  "xs": {
+                      "display": {
+                          "value": "none"
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":after"
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "margin",
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              },
+                              {
+                                  "iconName": "laptop",
+                                  "name": "md"
+                              },
+                              {
+                                  "name": "xl"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "margin-equal",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-top",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-bottom",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-left",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-right",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-block-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-block-end",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-inline-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-inline-end",
+                                  "active": false
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "width",
+                          "activeFields": [
+                              {
+                                  "name": "min-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-width",
+                                  "active": true
+                              },
+                              {
+                                  "name": "width",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "laptop",
+                                  "name": "md"
+                              },
+                              {
+                                  "name": "sm"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "custom-css",
+                  "children": [
+                      {
+                          "formKey": "css-property-and-css-value",
+                          "activeFields": [
+                              {
+                                  "name": "customCssProperty",
+                                  "active": true
+                              },
+                              {
+                                  "name": "customCss",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "lg"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": [
+              {
+                  "title": ".form-type-select .select2-container--default .select2-selection--single",
+                  "type": "container",
+                  "items": [],
+                  "selectorType": "child",
+                  "uuid": "d87e8038-82c0-4391-8b5e-260c98f65719",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": ".form-type-select .select2-container--default .select2-selection--single"
+              },
+              {
+                  "title": ".sample-order-form-agreement-checkbox",
+                  "type": "container",
+                  "items": [],
+                  "selectorType": "child",
+                  "uuid": "1d34c706-4bc4-4a73-bd5c-da851ad23e02",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": ".sample-order-form-agreement-checkbox"
+              },
+              {
+                  "title": ".webform-actions",
+                  "type": "container",
+                  "items": [
+                      {
+                          "title": "input[type=submit]",
+                          "type": "container",
+                          "items": [],
+                          "selectorType": "child",
+                          "uuid": "6ac53551-64c2-4f43-ae4f-4dbcf0c5272c",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "width",
+                                          "activeFields": [
+                                              {
+                                                  "name": "min-width",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "max-width",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "width",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "iconName": "mobile",
+                                                  "name": "xs"
+                                              },
+                                              {
+                                                  "name": "md"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "custom-css",
+                                  "children": [
+                                      {
+                                          "formKey": "css-property-and-css-value",
+                                          "activeFields": [
+                                              {
+                                                  "name": "customCssProperty",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "customCss",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "model": "input[type=submit]"
+                      }
+                  ],
+                  "selectorType": "child",
+                  "uuid": "8978850a-d339-4e16-90a2-51e4339ba23e",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": ".webform-actions"
+              },
+              {
+                  "title": ".form-type-select label",
+                  "type": "container",
+                  "items": [
+                      {
+                          "title": ":after",
+                          "type": "container",
+                          "items": [],
+                          "selectorType": "pseudo",
+                          "uuid": "8ced26a7-226c-4ecd-9b9d-3d7a8896e671",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "display",
+                                          "activeFields": [
+                                              {
+                                                  "name": "display",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "visibility",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "overflow",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "overflow-x",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "overflow-y",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "child",
+                  "uuid": "bd726b5d-0469-4711-b32b-89915d405873",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [],
+                  "model": ".form-type-select label"
+              }
+          ]
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-checkout-form-style
+custom_style_type: layout
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 71

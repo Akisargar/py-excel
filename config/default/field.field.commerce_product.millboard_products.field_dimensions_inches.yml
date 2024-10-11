@@ -1,0 +1,25 @@
+uuid: f3a4b038-3d49-4b2a-a408-df8a62710ae2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_dimensions_inches
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_dimensions_inches
+field_name: field_dimensions_inches
+entity_type: commerce_product
+bundle: millboard_products
+label: 'Dimensions (inches)'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

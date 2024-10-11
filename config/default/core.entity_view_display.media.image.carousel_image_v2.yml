@@ -1,0 +1,48 @@
+uuid: 3a636cf3-fde9-4bd7-9260-496d98e03804
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.carousel_image_v2
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - media.type.image
+    - responsive_image.styles.carousel_image_v2
+  module:
+    - layout_builder
+    - responsive_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.carousel_image_v2
+targetEntityType: media
+bundle: image
+mode: carousel_image_v2
+content:
+  image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: carousel_image_v2
+      image_link: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

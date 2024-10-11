@@ -1,0 +1,23 @@
+uuid: 362e09f5-80cb-4aef-93e5-c84209c9eb52
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.storage.commerce_product_variation.field_content_builder
+  module:
+    - entity_reference_revisions
+id: commerce_product_variation.millboard_products.field_content_builder
+field_name: field_content_builder
+entity_type: commerce_product_variation
+bundle: millboard_products
+label: 'Content Builder'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+field_type: entity_reference_revisions

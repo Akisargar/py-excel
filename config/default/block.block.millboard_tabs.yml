@@ -1,0 +1,30 @@
+uuid: 412e2cc4-4ea3-4431-841d-35b144729367
+langcode: en
+status: true
+dependencies:
+  module:
+    - cohesion
+    - collapsiblock
+  theme:
+    - millboard
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+id: millboard_tabs
+theme: millboard
+region: content
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 1
+    negate: false

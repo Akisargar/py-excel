@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: Appliquer
+          exposed_sorts_label: 'Par date'
+          sort_asc_label: croissante
+          sort_desc_label: décroissante
+          bef:
+            sort:
+              advanced:
+                collapsible_label: 'Trier par'
+      filters:
+        field_blog_category_target_id:
+          expose:
+            label: Sujet
+        field_product_type_target_id:
+          expose:
+            label: 'Type de produit'
+      sorts:
+        field_publish_date_value:
+          expose:
+            label: 'Par date'

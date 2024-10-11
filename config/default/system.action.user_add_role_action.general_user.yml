@@ -1,0 +1,14 @@
+uuid: 392aad25-2aef-4e99-aa21-654c59fa6366
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.general_user
+  module:
+    - user
+id: user_add_role_action.general_user
+label: 'Add the General User role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: general_user

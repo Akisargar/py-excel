@@ -1,0 +1,64 @@
+uuid: 1bf7fa39-e125-4c58-a742-ae67cc40874b
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_store_address
+    - node.type.installers_distributors
+  module:
+    - address
+id: node.installers_distributors.field_store_address
+field_name: field_store_address
+entity_type: node
+bundle: installers_distributors
+label: 'Store Address'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    langcode: null
+    country_code: GB
+    administrative_area: null
+    locality: ''
+    dependent_locality: null
+    postal_code: ''
+    sorting_code: null
+    address_line1: ''
+    address_line2: ''
+    organization: ''
+    given_name: ''
+    additional_name: null
+    family_name: ''
+default_value_callback: ''
+settings:
+  available_countries:
+    IE: IE
+    GB: GB
+    US: US
+  langcode_override: ''
+  field_overrides:
+    givenName:
+      override: optional
+    additionalName:
+      override: optional
+    familyName:
+      override: optional
+    organization:
+      override: optional
+    addressLine1:
+      override: optional
+    addressLine2:
+      override: optional
+    postalCode:
+      override: optional
+    sortingCode:
+      override: optional
+    dependentLocality:
+      override: optional
+    locality:
+      override: optional
+    administrativeArea:
+      override: optional
+  fields: {  }
+field_type: address

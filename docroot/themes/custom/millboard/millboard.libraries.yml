@@ -1,0 +1,79 @@
+global:
+  css:
+    theme:
+      dist/css/global.css: {}
+      css/style.css: {}
+  js:
+    dist/js/carousel.js: {}
+    dist/js/global.js: {}
+    dist/js/webforms.js: {}
+    dist/js/select2.js: {}
+    dist/js/nicescrolls.js: {}
+    dist/js/hubspotforms.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupal.dialog.ajax
+
+AOS:
+  css:
+    theme:
+      css/aos.css: {}
+  js:
+    js/lib/aos.js: {}
+  dependencies:
+    - core/jquery
+
+Scrollmagic:
+  js:
+    js/lib/scrollmagic/ScrollMagic.min.js: {}
+  dependencies:
+    - core/jquery
+
+download-document:
+  js:
+    dist/js/download-document.js: {}
+
+videoaccordion:
+  js:
+    dist/js/videoaccordion.js: {}
+
+select2:
+  version: VERSION
+  css:
+    theme:
+      /libraries/select2/dist/css/select2.min.css: {}
+  js:
+    /libraries/select2/dist/js/select2.min.js: {}
+  dependencies:
+    - core/jquery
+
+nicescroll:
+  js:
+    js/lib/jquery.nicescroll.min.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+
+slick:
+  js:
+    /libraries/slick/slick/slick.min.js: {}
+  css:
+    theme:
+      /libraries/slick/slick/slick.css: {}
+  dependencies:
+    - core/jquery
+
+linked_tabs:
+  js:
+    dist/js/linked-tabs.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+
+millboard_popup_modal:
+  js:
+    jquery_modal/jquery.modal.min.js: {}
+  css:
+    theme:
+      jquery_modal/jquery.modal.min.css: {}

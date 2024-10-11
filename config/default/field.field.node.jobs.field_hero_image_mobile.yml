@@ -1,0 +1,31 @@
+uuid: 7f4403b3-fc32-45a2-ae1d-7fe9e349efe8
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_image_mobile
+    - media.type.acquia_dam_image_asset
+    - media.type.image
+    - node.type.jobs
+id: node.jobs.field_hero_image_mobile
+field_name: field_hero_image_mobile
+entity_type: node
+bundle: jobs
+label: 'Hero Image Mobile'
+description: 'This is the hero image for the mobile devices.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_image_asset
+field_type: entity_reference

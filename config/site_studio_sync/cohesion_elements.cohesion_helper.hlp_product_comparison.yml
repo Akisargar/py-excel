@@ -1,0 +1,154 @@
+uuid: cf6c1c8f-cdd0-4bf2-81e1-e764172b7029
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.24a676c7
+    - cohesion_custom_styles.cohesion_custom_style.2c087e6c
+    - cohesion_custom_styles.cohesion_custom_style.6e041fb8
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.9917d792
+    - cohesion_custom_styles.cohesion_custom_style.dd48edd1
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_text_sections
+  content:
+    - 'file:file:41cfb2f4-339d-4a15-989a-3759d35c84ad'
+label: 'Product Comparison Table'
+id: hlp_product_comparison
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "61ece9eb-9540-4e45-8278-3d6a56cb10f5",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "6130dec0-093a-4424-9abb-5c57956b1e1b",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_text",
+                              "type": "component",
+                              "title": "Text",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_text",
+                              "componentType": "wysiwyg",
+                              "uuid": "535aea82-4b53-4b68-84b8-59c87e1facb4",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text",
+                              "type": "component",
+                              "title": "Text",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_text",
+                              "componentType": "wysiwyg",
+                              "iconColor": "custom",
+                              "uuid": "170ea1ff-6a61-46de-b571-6d899a68ae4d",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "61ece9eb-9540-4e45-8278-3d6a56cb10f5": {},
+          "6130dec0-093a-4424-9abb-5c57956b1e1b": {},
+          "535aea82-4b53-4b68-84b8-59c87e1facb4": {},
+          "170ea1ff-6a61-46de-b571-6d899a68ae4d": {}
+      },
+      "model": {
+          "61ece9eb-9540-4e45-8278-3d6a56cb10f5": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-small",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "104px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Product comparison"
+              },
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "80px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "coh-style-comparison-table coh-style-inner-container-padding"
+          },
+          "6130dec0-093a-4424-9abb-5c57956b1e1b": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "535aea82-4b53-4b68-84b8-59c87e1facb4": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<h2 class=\"text-align-center\">Compare our<br><span class=\"coh-style-f37-ginger-regular\">decking collections<\/span><\/h2>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Comparison Heading"
+              }
+          },
+          "170ea1ff-6a61-46de-b571-6d899a68ae4d": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<table><thead><tr><th>&nbsp;<\/th><th>Heritage<\/th><th>Enhanced &nbsp;Grain<\/th><th>Weathered\u2028Oak<\/th><th>Lasta-grip<\/th><\/tr><\/thead><tbody><tr><th><p class=\"coh-style-paragraph-large\">Lorem ipsum dolor sit amet, consectetur adipiscin<\/p><\/th><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><\/tr><tr><th><p class=\"coh-style-paragraph-large\">Lorem ipsum dolor sit amet, consectetur adipiscin<\/p><\/th><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-not-ticked\">No<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><\/tr><tr><th><p class=\"coh-style-paragraph-large\">Lorem ipsum dolor sit amet, consectetur adipiscin<\/p><\/th><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><\/tr><tr><th><p class=\"coh-style-paragraph-large\">Lorem ipsum dolor sit amet, consectetur adipiscin<\/p><\/th><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-not-ticked\">No<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><\/tr><tr><th><p class=\"coh-style-paragraph-large\">Lorem ipsum dolor sit amet, consectetur adipiscin<\/p><\/th><td><span class=\"coh-style-not-ticked\">No<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><td><span class=\"coh-style-green-right-tick\">Yes<\/span><\/td><\/tr><\/tbody><\/table>",
+                  "textFormat": "product_comparision"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Comparison Table"
+              },
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          }
+      },
+      "previewModel": {
+          "61ece9eb-9540-4e45-8278-3d6a56cb10f5": {},
+          "535aea82-4b53-4b68-84b8-59c87e1facb4": {},
+          "170ea1ff-6a61-46de-b571-6d899a68ae4d": {}
+      },
+      "variableFields": {
+          "61ece9eb-9540-4e45-8278-3d6a56cb10f5": [],
+          "535aea82-4b53-4b68-84b8-59c87e1facb4": [],
+          "170ea1ff-6a61-46de-b571-6d899a68ae4d": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_text_sections
+preview_image: 'public://element-preview-images/Product_comparison_table_0_0.png'
+entity_type_access: {  }
+bundle_access: {  }
+weight: 0

@@ -1,0 +1,24 @@
+uuid: b2acca09-ebf7-4024-8bed-1cad3ca88f64
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.coh_x_large_landscape
+    - image.style.full_width_image_v2_mobile_751x504_
+  theme:
+    - millboard
+id: decking_cladding_content_banner_responsive_image_style
+label: 'Decking & Cladding Content Banner Responsive Image Style'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: coh_x_large_landscape
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: full_width_image_v2_mobile_751x504_
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: coh_x_large_landscape

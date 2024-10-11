@@ -1,0 +1,20 @@
+label.js-form-required.form-required {
+    display: flex;
+}
+
+label.js-form-required.form-required::after {
+    content: '*';
+    display: block;
+    background: no-repeat;
+    color: #ea0000;
+    position: relative;
+    top: 0;
+    font-weight: 700;
+    height: auto;
+    font-size: 14px;
+    font-family: 'f37_gingerregular',Helvetica,Arial,sans-serif;
+}
+
+label.js-form-required.form-required::before {
+    display: none;
+}

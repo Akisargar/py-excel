@@ -1,0 +1,31 @@
+uuid: 1f6a216f-0b1f-43ac-902f-2d5f6cf3fccb
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_menu_media_image
+    - media.type.acquia_dam_image_asset
+    - media.type.image
+    - system.menu.main
+id: menu_link_content.main.field_menu_media_image
+field_name: field_menu_media_image
+entity_type: menu_link_content
+bundle: main
+label: 'Menu Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_image_asset
+field_type: entity_reference

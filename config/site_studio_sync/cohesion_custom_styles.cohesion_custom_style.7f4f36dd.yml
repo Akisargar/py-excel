@@ -1,0 +1,134 @@
+uuid: bee7e258-5f45-4d27-baf9-807902bcefc0
+langcode: en
+status: true
+dependencies:
+  config:
+    - cohesion_website_settings.cohesion_color.light-mist
+  enforced:
+    module:
+      - acquia_cms_site_studio
+label: 'Text color on dark background'
+id: 7f4f36dd
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for light text theme. This is a <a>link.<\/a><\/div>\n",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(0,0,0,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div",
+              "class": "",
+              "combinator": "",
+              "pseudo": ""
+          },
+          "styles": {
+              "xl": {
+                  "color": {}
+              },
+              "xs": {
+                  "color": {}
+              }
+          },
+          "bf27f279-1575-4a9f-aa86-5630d1bb2d53": {
+              "styles": {
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#fcfbf8",
+                                  "rgba": "rgba(252, 251, 248, 1)"
+                              },
+                              "uid": "light-mist",
+                              "name": "Light Mist",
+                              "class": ".coh-color-light-mist",
+                              "variable": "$coh-color-light-mist",
+                              "tags": [
+                                  "Millboard",
+                                  "Background",
+                                  "Text",
+                                  "Light"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "element": ".coh-wysiwyg"
+              }
+          }
+      },
+      "variableFields": [],
+      "previewModel": {}
+  }
+json_mapper: |
+  {
+      "styles": {
+          "selectorType": "topLevel",
+          "items": [
+              {
+                  "title": ".coh-wysiwyg",
+                  "type": "container",
+                  "items": [],
+                  "selectorType": "child",
+                  "uuid": "bf27f279-1575-4a9f-aa86-5630d1bb2d53",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "font",
+                          "children": [
+                              {
+                                  "formKey": "font-and-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "font-family",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "font-weight",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "color",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": ".coh-wysiwyg"
+              }
+          ],
+          "title": "Layout",
+          "formDefinition": [],
+          "form": null
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-text-color-dark-background
+custom_style_type: generic
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 100

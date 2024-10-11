@@ -1,0 +1,48 @@
+uuid: 2a631202-b5c1-4a47-9a11-db8847771e60
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.history_scroller
+    - field.field.media.image.field_categories
+    - field.field.media.image.field_tags
+    - field.field.media.image.image
+    - media.type.image
+    - responsive_image.styles.history_scroller_responsive_image_style
+  module:
+    - layout_builder
+    - responsive_image
+  enforced:
+    module:
+      - acquia_cms_image
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: GFGiZsK-WZouyGlKh9mgidDKmU_HbDtoEwc2U_7wvbM
+id: media.image.history_scroller
+targetEntityType: media
+bundle: image
+mode: history_scroller
+content:
+  image:
+    type: responsive_image
+    label: hidden
+    settings:
+      responsive_image_style: history_scroller_responsive_image_style
+      image_link: ''
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  field_categories: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

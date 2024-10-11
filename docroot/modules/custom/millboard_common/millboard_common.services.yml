@@ -1,0 +1,11 @@
+services:
+  path_processor.millboard_common:
+    class: Drupal\millboard_common\PathProcessor\PathProcessorMillboardCommon
+    arguments: ['@entity_type.manager', '@database', '@language_manager', '@path_alias.manager']
+    tags:
+      - { name: path_processor_outbound }
+  millboard_common.hide_price:
+    class: Drupal\millboard_common\Twig\Extension\HidePriceTwigExtension
+    arguments: ['@config.factory']
+    tags:
+      - { name: twig.extension }

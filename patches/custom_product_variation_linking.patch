@@ -1,0 +1,55 @@
+diff --git a/src/Controller/CohesionDrupalEndpointController.php b/src/Controller/CohesionDrupalEndpointController.php
+index c7c1716..0c51256 100644
+--- a/src/Controller/CohesionDrupalEndpointController.php
++++ b/src/Controller/CohesionDrupalEndpointController.php
+@@ -39,6 +39,7 @@ class CohesionDrupalEndpointController extends ControllerBase {
+     'user',
+     'media',
+     'file',
++    'commerce_product_variation',
+   ];
+ 
+   const ALLOWED_CONTENT_ENTITY_TYPES = [
+@@ -47,6 +48,7 @@ class CohesionDrupalEndpointController extends ControllerBase {
+     'user',
+     'media',
+     'file',
++    'commerce_product_variation',
+   ];
+ 
+   /**
+@@ -520,7 +522,7 @@ class CohesionDrupalEndpointController extends ControllerBase {
+         $entity_storage = $this->entityTypeManager->getStorage($content_entity_type->id());
+ 
+         try {
+-          if ((!$entity_types || is_array($entity_types) && in_array($content_entity_type->id(), $entity_types)) && $content_entity_type->hasLinkTemplate('canonical')) {
++          if ((!$entity_types || is_array($entity_types) && in_array($content_entity_type->id(), $entity_types)) && ($content_entity_type->hasLinkTemplate('canonical') || $content_entity_type->id() == 'commerce_product_variation')) {
+             $matches = $this->matcher->getMatches($content_entity_type->id(), 'default', $selection_settings, $typed_string);
+ 
+             foreach ($matches as $match) {
+@@ -529,12 +531,23 @@ class CohesionDrupalEndpointController extends ControllerBase {
+ 
+               /** @var \Drupal\Core\Entity\ContentEntityInterface $entity */
+               $entity = $entity_storage->load($var[1]);
+-              if ($entity && $entity->access('view', $this->currentUser()) && $entity->hasLinkTemplate('canonical')) {
++              if ($entity && $entity->access('view', $this->currentUser()) && ($entity->hasLinkTemplate('canonical') || $content_entity_type->id() == 'commerce_product_variation')) {
+                 if (!isset($grouped_data[$content_entity_type->id()])) {
+                   $grouped_data[$content_entity_type->id()] = [];
+                 }
++
++                $name = $match['label'];
++
++                // Update Variation label.
++                if ($content_entity_type->id() == 'commerce_product_variation') {
++                  if ($entity->hasField('field_product_type') && !$entity->get('field_product_type')->isEmpty()) {
++                    $name = preg_replace('/' . preg_quote(':', '/') . '/', ' > ', $name, 1);
++                    $name = $entity->get('field_product_type')->first()->entity->getName() . ' > ' . $name;
++                  }
++                }
++
+                 $grouped_data[$content_entity_type->id()][] = [
+-                  'name' => $match['label'],
++                  'name' => $name,
+                   'id' => $content_entity_type->id() . '::' . $entity->id(),
+                   'group' => $content_entity_type->getLabel(),
+                 ];

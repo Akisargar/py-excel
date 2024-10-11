@@ -1,0 +1,311 @@
+uuid: a18bed8c-4849-4d83-a960-a163b210604d
+langcode: en-gb
+status: true
+dependencies:
+  content:
+    - 'file:file:cced4d54-968e-4aef-b0bc-719b37c321bc'
+label: Dash
+id: 9917d792
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for 'Generic'.<\/div>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div"
+          },
+          "styles": {
+              "xs": {
+                  "text-indent": {
+                      "value": "-9999px"
+                  },
+                  "height": {
+                      "value": "24px"
+                  },
+                  "width": {
+                      "value": "24px"
+                  },
+                  "display": {
+                      "value": "inline-block"
+                  },
+                  "content-string": {
+                      "contentType": {},
+                      "contentString": {}
+                  },
+                  "background-image-settings": [
+                      {
+                          "backgroundLayerType": {
+                              "value": "image"
+                          },
+                          "backgroundImageSize": {
+                              "value": "numeric"
+                          },
+                          "backgroundImageRepeat": {
+                              "value": "no-repeat"
+                          },
+                          "backgroundImageAttachment": {
+                              "value": "scroll"
+                          },
+                          "backgroundImagePositionX": {
+                              "value": "center"
+                          },
+                          "backgroundImagePositionY": {
+                              "value": "center"
+                          },
+                          "backgroundImageOrigin": {},
+                          "backgroundImageClip": {},
+                          "backgroundImage": {
+                              "value": "[media-reference:file:cced4d54-968e-4aef-b0bc-719b37c321bc]",
+                              "imageStyle": ""
+                          },
+                          "backgroundImageWidth": {
+                              "value": "20px"
+                          },
+                          "backgroundImageHeight": {
+                              "value": "2px"
+                          }
+                      }
+                  ]
+              },
+              "lg": {
+                  "width": {
+                      "value": "40px"
+                  },
+                  "height": {
+                      "value": "40px"
+                  }
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "font",
+                  "children": [
+                      {
+                          "formKey": "font-sizing-and-alignment",
+                          "activeFields": [
+                              {
+                                  "name": "font-size",
+                                  "active": false
+                              },
+                              {
+                                  "name": "line-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "text-align",
+                                  "active": false
+                              },
+                              {
+                                  "name": "letter-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "word-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "text-indent",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "height",
+                          "activeFields": [
+                              {
+                                  "name": "min-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "height",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              },
+                              {
+                                  "name": "lg"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "width",
+                          "activeFields": [
+                              {
+                                  "name": "min-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "width",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              },
+                              {
+                                  "name": "lg"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "display",
+                          "activeFields": [
+                              {
+                                  "name": "display",
+                                  "active": true
+                              },
+                              {
+                                  "name": "visibility",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow-x",
+                                  "active": false
+                              },
+                              {
+                                  "name": "overflow-y",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "background",
+                  "children": [
+                      {
+                          "formKey": "background-image-and-gradient",
+                          "activeFields": [
+                              {
+                                  "name": "backgroundLayerType",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImage",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageGradient",
+                                  "active": true
+                              },
+                              {
+                                  "name": "imageStyle",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageSize",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageWidth",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageHeight",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageRepeat",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageAttachment",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionX",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionXOffset",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionY",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionYOffset",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageOrigin",
+                                  "active": false
+                              },
+                              {
+                                  "name": "backgroundImageClip",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "iconName": "mobile",
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": []
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-not-ticked
+custom_style_type: generic
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: true
+parent: null
+weight: 28

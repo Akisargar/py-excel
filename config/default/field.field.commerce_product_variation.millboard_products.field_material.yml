@@ -1,0 +1,35 @@
+uuid: e68a0eac-3236-4cdf-85f7-37e66fa6f06e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.storage.commerce_product_variation.field_material
+    - taxonomy.vocabulary.material
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product_variation.millboard_products.field_material
+field_name: field_material
+entity_type: commerce_product_variation
+bundle: millboard_products
+label: Material
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      material: material
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

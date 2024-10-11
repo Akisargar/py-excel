@@ -1,0 +1,63 @@
+uuid: 03590c7b-225d-4aa1-9835-aec110a9ae23
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.project.body
+    - field.field.node.project.field_collection
+    - field.field.node.project.field_colour
+    - field.field.node.project.field_commercial_project
+    - field.field.node.project.field_content_builder
+    - field.field.node.project.field_location
+    - field.field.node.project.field_metatag
+    - field.field.node.project.field_preview_image
+    - field.field.node.project.field_publish_date
+    - field.field.node.project.field_subtitle
+    - field.field.node.project.field_type_of_project
+    - node.type.project
+  module:
+    - cohesion_elements
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.project.full
+targetEntityType: node
+bundle: project
+mode: full
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_content_builder:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  body: true
+  field_collection: true
+  field_colour: true
+  field_commercial_project: true
+  field_location: true
+  field_metatag: true
+  field_preview_image: true
+  field_publish_date: true
+  field_subtitle: true
+  field_type_of_project: true
+  langcode: true
+  search_api_excerpt: true

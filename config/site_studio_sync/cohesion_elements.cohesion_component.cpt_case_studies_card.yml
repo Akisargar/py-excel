@@ -1,0 +1,305 @@
+uuid: e408f22e-e2a7-4e95-9861-5b675fa040dd
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_custom_styles.cohesion_custom_style.dc3ea51a
+    - cohesion_elements.cohesion_component_category.cpt_cat_card_components
+label: 'Case Studies Card'
+id: cpt_case_studies_card
+json_values: |
+  {
+      "canvas": [
+          {
+              "type": "container",
+              "uid": "container",
+              "title": "Container",
+              "status": {
+                  "collapsed": true
+              },
+              "iconColor": "layout",
+              "uuid": "147cd5b3-90c8-41bc-b362-ba0bf70f3e93",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "item",
+                      "uid": "entity-reference",
+                      "title": "Entity reference",
+                      "status": {
+                          "collapsed": true
+                      },
+                      "iconColor": "drupal",
+                      "uuid": "b00b0450-2469-455f-a70c-8a7a50d127cd",
+                      "parentUid": "container",
+                      "children": []
+                  }
+              ]
+          }
+      ],
+      "componentForm": [
+          {
+              "type": "form-container",
+              "uid": "form-tab-container",
+              "title": "Tab container",
+              "status": {
+                  "collapsed": true
+              },
+              "options": {
+                  "formBuilder": true
+              },
+              "iconColor": "formLayout",
+              "uuid": "81547e88-7b4d-4e42-a91a-eabec3f573c5",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "form-container",
+                      "uid": "form-tab-item",
+                      "title": "Tab item",
+                      "status": {
+                          "collapsed": true
+                      },
+                      "options": {
+                          "formBuilder": true
+                      },
+                      "iconColor": "formLayout",
+                      "uuid": "2914d016-4254-4ccb-8432-35547976afc4",
+                      "parentUid": "form-tab-container",
+                      "children": [
+                          {
+                              "type": "form-field",
+                              "uid": "form-entity-reference",
+                              "title": "Entity reference",
+                              "selected": false,
+                              "status": {
+                                  "collapsed": false,
+                                  "isopen": false
+                              },
+                              "iconColor": "formField",
+                              "uuid": "973b9783-3548-455d-927b-f1d34b833f90",
+                              "parentUid": "form-tab-item",
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "973b9783-3548-455d-927b-f1d34b833f90": {},
+          "b00b0450-2469-455f-a70c-8a7a50d127cd": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "entity-reference-settings",
+                          "children": [
+                              {
+                                  "formKey": "entity-reference",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "entity_type",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "view_mode",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "entity",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "81547e88-7b4d-4e42-a91a-eabec3f573c5": {},
+          "2914d016-4254-4ccb-8432-35547976afc4": {},
+          "147cd5b3-90c8-41bc-b362-ba0bf70f3e93": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "container-settings",
+                          "children": [
+                              {
+                                  "formKey": "container-width",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "container-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              },
+              "markup": {
+                  "formDefinition": [
+                      {
+                          "formKey": "tab-markup-classes-and-ids",
+                          "children": [
+                              {
+                                  "formKey": "tab-markup-add-classes",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "classes",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": []
+              }
+          }
+      },
+      "model": {
+          "147cd5b3-90c8-41bc-b362-ba0bf70f3e93": {
+              "settings": {
+                  "width": "fluid",
+                  "title": "Case Studies Component Container",
+                  "customStyle": [
+                      {
+                          "customStyle": "coh-style-container-wide"
+                      }
+                  ]
+              },
+              "markup": {
+                  "classes": "coh-style-case-studies-card"
+              }
+          },
+          "b00b0450-2469-455f-a70c-8a7a50d127cd": {
+              "settings": {
+                  "title": "Case Studies Card View",
+                  "entityReference": "[field.973b9783-3548-455d-927b-f1d34b833f90]"
+              }
+          },
+          "81547e88-7b4d-4e42-a91a-eabec3f573c5": {
+              "settings": {
+                  "type": "cohTabContainer",
+                  "title": "Case Studies Card Form Conatiner",
+                  "responsiveMode": true
+              }
+          },
+          "2914d016-4254-4ccb-8432-35547976afc4": {
+              "settings": {
+                  "type": "cohTabItem",
+                  "title": "Content",
+                  "breakpointIcon": ""
+              }
+          },
+          "973b9783-3548-455d-927b-f1d34b833f90": {
+              "settings": {
+                  "title": "Case Studies Entity Selection",
+                  "type": "cohEntityPicker",
+                  "schema": {
+                      "type": "object"
+                  },
+                  "machineName": "case-studies-entity-reference",
+                  "entityTypeTooltipPlacement": "right",
+                  "viewModeTooltipPlacement": "right",
+                  "entityTooltipPlacement": "right",
+                  "options": {
+                      "entity_type_disabled": true,
+                      "view_mode_disabled": true
+                  },
+                  "entityTooltipText": "Please start typing the title of the case study content to populate suggestions"
+              },
+              "model": {
+                  "value": {
+                      "entity_type": "node",
+                      "view_mode": "case_study_cards"
+                  }
+              }
+          }
+      },
+      "previewModel": {
+          "973b9783-3548-455d-927b-f1d34b833f90": {},
+          "b00b0450-2469-455f-a70c-8a7a50d127cd": {
+              "settings": {
+                  "entityReference": {
+                      "entity_type": "node",
+                      "view_mode": "case_study_cards"
+                  }
+              }
+          },
+          "81547e88-7b4d-4e42-a91a-eabec3f573c5": {},
+          "2914d016-4254-4ccb-8432-35547976afc4": {},
+          "147cd5b3-90c8-41bc-b362-ba0bf70f3e93": {}
+      },
+      "variableFields": {
+          "973b9783-3548-455d-927b-f1d34b833f90": [],
+          "b00b0450-2469-455f-a70c-8a7a50d127cd": [
+              "settings.entityReference"
+          ],
+          "81547e88-7b4d-4e42-a91a-eabec3f573c5": [],
+          "2914d016-4254-4ccb-8432-35547976afc4": [],
+          "147cd5b3-90c8-41bc-b362-ba0bf70f3e93": []
+      },
+      "disabledNodes": [],
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: cpt_cat_card_components
+preview_image: ''
+has_quick_edit: null
+entity_type_access: {  }
+bundle_access: {  }
+twig_template: component--cohesion-cpt-case-studies-card
+weight: 0

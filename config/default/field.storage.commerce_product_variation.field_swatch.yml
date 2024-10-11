@@ -1,0 +1,20 @@
+uuid: f7d00bed-d92b-41a7-ba97-04f006983cc9
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - media
+id: commerce_product_variation.field_swatch
+field_name: field_swatch
+entity_type: commerce_product_variation
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: 8dd998e3-6c15-4266-a121-640cff75e067
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_project
+    - node.type.resources
+    - taxonomy.vocabulary.projects
+id: node.resources.field_type_of_project
+field_name: field_type_of_project
+entity_type: node
+bundle: resources
+label: 'Type of Project'
+description: 'Select the type of project of the resource.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      projects: projects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

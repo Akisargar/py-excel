@@ -1,0 +1,1772 @@
+uuid: 5ef6286e-4382-4642-8b5d-91a4476e9f70
+langcode: en-ie
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_custom_styles.cohesion_custom_style.5f5e8fba
+    - cohesion_custom_styles.cohesion_custom_style.6c4753c3
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_4_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_cross_link_cards
+    - cohesion_elements.cohesion_component.cpt_divider
+    - cohesion_elements.cohesion_component.cpt_drupal_blocks
+    - cohesion_elements.cohesion_component.cpt_heading
+    - cohesion_elements.cohesion_component.cpt_icon_uploader
+    - cohesion_elements.cohesion_component.cpt_spacer
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_miscellaneous
+    - cohesion_website_settings.cohesion_color.millboard-mist
+label: Sample
+id: hlp_sample
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "uuid": "aa0c5ac2-d12f-4f87-9022-74f7fe13d8fd",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "b76bbc12-83af-40de-b596-9ff4fae5fbbd",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "children": [
+                          {
+                              "uid": "cpt_divider",
+                              "type": "component",
+                              "title": "Divider line",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_divider",
+                              "componentType": "container",
+                              "uuid": "4cf7f6c9-efd7-4fe3-bee5-45c2e064542c",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "uuid": "63e6a5ac-cf8b-4d44-98a6-8c7297957cc6",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "13387a2e-90a3-41e5-b0d0-f03d22b80772",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_spacer",
+                                              "type": "component",
+                                              "title": "Spacer",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_spacer",
+                                              "componentType": "container",
+                                              "iconColor": "custom",
+                                              "uuid": "b109aa33-9849-49bf-8197-a89262e6a6cd",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          },
+                                          {
+                                              "uid": "cpt_4_column_layout",
+                                              "type": "component",
+                                              "title": "4 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_4_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "5404755a-ceee-4839-9dc0-9b00005c362c",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "87a4cbd4-beaa-4c24-abc1-c5290bad5461",
+                                                      "dropzoneId": "edd169b1-216f-4fe4-acc5-bc49aee26aea",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "be517173-dfd0-42ec-a742-0ca1652c09f9",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "42a5ffed-d4f4-4b92-aaad-203ddf19436c",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "13669b03-21d4-47a9-a99e-c5605629b498",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "67eeeca9-3095-4653-9f87-6d8e8ec53a34",
+                                                      "dropzoneId": "848b18e6-7791-4e8a-a94d-7be1f15ed5ad",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "6d531356-5e92-450c-9bf6-4cfcc25b7f61",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "312b1b03-611e-4237-8e94-e7632268949b",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "0417c665-ec06-4d3f-81fc-ab3f1f3150d2",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "bb3b5806-8e4e-40f1-8feb-171619e6b4b6",
+                                                      "dropzoneId": "ab2e107c-f229-4776-829e-02a8854af3c6",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "b24e50e3-ba01-44fa-aff9-3f87554773fa",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "22a998d8-d77d-4f49-9fe9-804b9572a75d",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "afd31205-5096-4ea7-aed1-0b77a619af40",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "487d2337-534a-4d33-bb61-2c56652b4d62",
+                                                      "dropzoneId": "1fd065a6-bb9a-4589-8058-04cd0ae40fc5",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "09dfcbc6-1355-4027-90f6-cc803699cb47",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "cb00c238-4a06-4b1a-9be3-4103b7e75de6",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "fff8d3e8-fb8c-4794-a306-34fefe7b9998",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          },
+                                          {
+                                              "uid": "cpt_4_column_layout",
+                                              "type": "component",
+                                              "title": "4 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_4_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "7aa5f5c3-e2cf-4ece-b6b0-66b43faddcad",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "dcb60ae4-2840-4160-9089-b378c21f186f",
+                                                      "dropzoneId": "edd169b1-216f-4fe4-acc5-bc49aee26aea",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "159acaf8-0f84-43e2-87bd-59d12eaa64bb",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "d39c9e74-ba84-41b6-8297-b423f0bac727",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "948fc4c3-be4b-41fc-9239-babf1f2431a8",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "a2b503f3-146c-4315-a758-61811ccab86c",
+                                                      "dropzoneId": "848b18e6-7791-4e8a-a94d-7be1f15ed5ad",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "4aae38c8-f543-4ecc-9c9f-0f7f5f0c1b06",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "c40fb7fa-11d5-4724-a8f2-60420d76aa8c",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "3a9c6300-42d7-4f9f-ab88-8918c0ee682f",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "d791ac88-16f1-4311-910d-a71cb0ee4c61",
+                                                      "dropzoneId": "ab2e107c-f229-4776-829e-02a8854af3c6",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "efef1514-f130-4b9f-9903-aba820514cc6",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "59c9eda3-0f1f-463a-9285-472dd178be04",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "0c344714-f314-4fd2-9de2-89dac1b4bace",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "caf9eefd-f738-4e1f-b8ff-9e4329d57053",
+                                                      "dropzoneId": "1fd065a6-bb9a-4589-8058-04cd0ae40fc5",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "4786b35b-143d-4328-9b2d-24bad0d1dc0f",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "12f3f121-fdfa-4277-bf10-6cd86461f37f",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "15d66c38-2463-4d17-a84e-7d8b5ce97b78",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          },
+                                          {
+                                              "uid": "cpt_4_column_layout",
+                                              "type": "component",
+                                              "title": "4 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_4_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "5db608f4-4a42-485f-a344-45baf4c4b6f5",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "305bb495-8c71-4575-9f53-55c600f13ba0",
+                                                      "dropzoneId": "edd169b1-216f-4fe4-acc5-bc49aee26aea",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_icon_uploader",
+                                                              "type": "component",
+                                                              "title": "Icon Uploader",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_icon_uploader",
+                                                              "componentType": "container",
+                                                              "uuid": "c113de3f-7311-4da7-a1cf-30a9659e13f4",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "ef692c0f-1b60-41f2-ba9e-1d7b0cf1e1da",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "uuid": "809028cb-333c-4b2c-8213-a99e8cb38755",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "7e2cae4e-54c6-4c07-9892-4b90ecd778db",
+                                                      "dropzoneId": "848b18e6-7791-4e8a-a94d-7be1f15ed5ad",
+                                                      "children": []
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "a61048b6-f7c8-4221-bdc1-634d06141b14",
+                                                      "dropzoneId": "ab2e107c-f229-4776-829e-02a8854af3c6",
+                                                      "children": []
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_4_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "15605da5-07b3-486a-bb5b-cdfbcfddbc8b",
+                                                      "dropzoneId": "1fd065a6-bb9a-4589-8058-04cd0ae40fc5",
+                                                      "children": []
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_divider",
+                              "type": "component",
+                              "title": "Divider line",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_divider",
+                              "componentType": "container",
+                              "uuid": "3596199c-d815-4890-a533-bb6b6ee598c1",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "4967524c-0119-4bd9-9a9b-49dfc3dd0d06",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "dc033779-c1e8-466c-909c-9125cedd27c0",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_drupal_blocks",
+                                              "type": "component",
+                                              "title": "Drupal blocks",
+                                              "enabled": true,
+                                              "category": "category-3",
+                                              "componentId": "cpt_drupal_blocks",
+                                              "componentType": "container",
+                                              "iconColor": "custom",
+                                              "uuid": "ae12fbb2-0c82-4592-8b19-8ea7aacc8d1d",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_cross_link_cards",
+                              "type": "component",
+                              "title": "Cross Link Cards",
+                              "enabled": true,
+                              "category": "category-2",
+                              "componentId": "cpt_cross_link_cards",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "68c482d7-49fc-4b3e-a612-4097156873e4",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "aa0c5ac2-d12f-4f87-9022-74f7fe13d8fd": {},
+          "b76bbc12-83af-40de-b596-9ff4fae5fbbd": {},
+          "4cf7f6c9-efd7-4fe3-bee5-45c2e064542c": {},
+          "63e6a5ac-cf8b-4d44-98a6-8c7297957cc6": {},
+          "13387a2e-90a3-41e5-b0d0-f03d22b80772": {},
+          "b109aa33-9849-49bf-8197-a89262e6a6cd": {},
+          "5404755a-ceee-4839-9dc0-9b00005c362c": {},
+          "87a4cbd4-beaa-4c24-abc1-c5290bad5461": {},
+          "be517173-dfd0-42ec-a742-0ca1652c09f9": {},
+          "42a5ffed-d4f4-4b92-aaad-203ddf19436c": {},
+          "13669b03-21d4-47a9-a99e-c5605629b498": {},
+          "67eeeca9-3095-4653-9f87-6d8e8ec53a34": {},
+          "6d531356-5e92-450c-9bf6-4cfcc25b7f61": {},
+          "312b1b03-611e-4237-8e94-e7632268949b": {},
+          "0417c665-ec06-4d3f-81fc-ab3f1f3150d2": {},
+          "bb3b5806-8e4e-40f1-8feb-171619e6b4b6": {},
+          "b24e50e3-ba01-44fa-aff9-3f87554773fa": {},
+          "22a998d8-d77d-4f49-9fe9-804b9572a75d": {},
+          "afd31205-5096-4ea7-aed1-0b77a619af40": {},
+          "487d2337-534a-4d33-bb61-2c56652b4d62": {},
+          "09dfcbc6-1355-4027-90f6-cc803699cb47": {},
+          "cb00c238-4a06-4b1a-9be3-4103b7e75de6": {},
+          "fff8d3e8-fb8c-4794-a306-34fefe7b9998": {},
+          "7aa5f5c3-e2cf-4ece-b6b0-66b43faddcad": {},
+          "dcb60ae4-2840-4160-9089-b378c21f186f": {},
+          "159acaf8-0f84-43e2-87bd-59d12eaa64bb": {},
+          "d39c9e74-ba84-41b6-8297-b423f0bac727": {},
+          "948fc4c3-be4b-41fc-9239-babf1f2431a8": {},
+          "a2b503f3-146c-4315-a758-61811ccab86c": {},
+          "4aae38c8-f543-4ecc-9c9f-0f7f5f0c1b06": {},
+          "c40fb7fa-11d5-4724-a8f2-60420d76aa8c": {},
+          "3a9c6300-42d7-4f9f-ab88-8918c0ee682f": {},
+          "d791ac88-16f1-4311-910d-a71cb0ee4c61": {},
+          "efef1514-f130-4b9f-9903-aba820514cc6": {},
+          "59c9eda3-0f1f-463a-9285-472dd178be04": {},
+          "0c344714-f314-4fd2-9de2-89dac1b4bace": {},
+          "caf9eefd-f738-4e1f-b8ff-9e4329d57053": {},
+          "4786b35b-143d-4328-9b2d-24bad0d1dc0f": {},
+          "12f3f121-fdfa-4277-bf10-6cd86461f37f": {},
+          "15d66c38-2463-4d17-a84e-7d8b5ce97b78": {},
+          "5db608f4-4a42-485f-a344-45baf4c4b6f5": {},
+          "305bb495-8c71-4575-9f53-55c600f13ba0": {},
+          "c113de3f-7311-4da7-a1cf-30a9659e13f4": {},
+          "ef692c0f-1b60-41f2-ba9e-1d7b0cf1e1da": {},
+          "809028cb-333c-4b2c-8213-a99e8cb38755": {},
+          "7e2cae4e-54c6-4c07-9892-4b90ecd778db": {},
+          "a61048b6-f7c8-4221-bdc1-634d06141b14": {},
+          "15605da5-07b3-486a-bb5b-cdfbcfddbc8b": {},
+          "3596199c-d815-4890-a533-bb6b6ee598c1": {},
+          "4967524c-0119-4bd9-9a9b-49dfc3dd0d06": {},
+          "dc033779-c1e8-466c-909c-9125cedd27c0": {},
+          "ae12fbb2-0c82-4592-8b19-8ea7aacc8d1d": {},
+          "68c482d7-49fc-4b3e-a612-4097156873e4": {}
+      },
+      "model": {
+          "aa0c5ac2-d12f-4f87-9022-74f7fe13d8fd": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Product USP Outer Wrapper"
+              }
+          },
+          "b76bbc12-83af-40de-b596-9ff4fae5fbbd": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "4cf7f6c9-efd7-4fe3-bee5-45c2e064542c": {
+              "3da69e03-5ddc-475b-9aef-3a330460d660": "1px",
+              "4254577c-7cd7-4ccc-bb29-0f9b0ecb975d": "0px",
+              "8e55c388-af2d-4bac-b03f-0125a0172b8d": "0px",
+              "3f541f4d-212b-4064-ae57-5d4362ca8ff2": {
+                  "link": true,
+                  "value": {
+                      "hex": "#dedcd2",
+                      "rgba": "rgba(222, 220, 210, 1)"
+                  },
+                  "uid": "millboard-mist",
+                  "name": "Millboard Mist",
+                  "class": ".coh-color-millboard-mist",
+                  "variable": "$coh-color-millboard-mist",
+                  "tags": [
+                      "Millboard",
+                      "Text",
+                      "Accent",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "settings": {
+                  "title": "Divider line"
+              }
+          },
+          "63e6a5ac-cf8b-4d44-98a6-8c7297957cc6": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#dedcd2",
+                      "rgba": "rgba(222, 220, 210, 1)"
+                  },
+                  "uid": "millboard-mist",
+                  "name": "Millboard Mist",
+                  "class": ".coh-color-millboard-mist",
+                  "variable": "$coh-color-millboard-mist",
+                  "tags": [
+                      "Millboard",
+                      "Text",
+                      "Accent",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "104px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "32px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Product USP Wrapper"
+              },
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "48px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "32px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "24px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "13387a2e-90a3-41e5-b0d0-f03d22b80772": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "b109aa33-9849-49bf-8197-a89262e6a6cd": {
+              "72f8059c-7ab7-417f-a980-4efa330b97a1": "80px",
+              "470a86f1-ea1b-4491-8d21-a3c8ca8aa8dd": "80px",
+              "f0e200c8-bd2b-4864-819a-ab0da895ce9d": "80px"
+          },
+          "5404755a-ceee-4839-9dc0-9b00005c362c": {
+              "c8e8ad0b-bf8c-4e35-a411-a7a0bc930666": "coh-style-container-small",
+              "91837ed6-c3a6-4dbd-a638-16bc3565dd9c": "space-between",
+              "87497e8f-9e82-4a35-910a-de7aa0bbd9fe": "retain",
+              "aa8d634d-187b-480c-83e3-3651ba58949c": 3,
+              "5544549e-c784-4f2e-b390-b5cb420417bc": "0",
+              "b745167a-cf1e-4e1c-aedd-c5bd83c81267": "flex-start",
+              "b5fb5a18-4e0d-4e40-81e0-5fa0377422bb": 3,
+              "74d9a7c5-ce24-4b96-b0eb-4cb380d48406": "1",
+              "6f22f34c-d030-4f52-a878-d55621fb3028": "flex-start",
+              "70a89823-cca6-4032-9265-f8f68c7c64bd": 3,
+              "20a655db-626f-44c7-9039-46f2fe4c944b": "2",
+              "a2cd05e8-95f6-4a78-b171-e1b42b163b3a": "flex-start",
+              "6e05b8e1-e1a7-4591-88dd-2d660aad3692": 3,
+              "d5125bc6-d059-4e76-b310-eec235df4995": "3",
+              "6b6ea996-d0b0-4fdc-b40a-5f908d7b6943": "flex-start",
+              "a66d660b-1db4-476f-a101-f8e066fb5706": 6,
+              "5d13ac9d-9e51-4f85-835a-d27c896ade8a": "0",
+              "19de54be-4a19-4023-960d-3002a83b3db7": "flex-start",
+              "876e5c8c-f65e-42dc-ace0-a18a857772bf": 6,
+              "c9fba716-0998-44c4-a6f0-9b7d0f2b3041": "1",
+              "527948fa-60e0-4cdc-86ab-984994b2217d": "flex-start",
+              "3091b76e-d751-4be4-ad35-9f681ecf4875": 6,
+              "fdfd1965-a0ac-4e3d-a1af-217bb3f32713": "2",
+              "e1cfa7f9-d265-43c2-af8d-826c2e33ca28": "flex-start",
+              "6cd93b8f-6a89-4008-83c8-fb68b1742526": 6,
+              "7ab1bf68-4815-4d22-a79e-6b2773cd4b15": "3",
+              "e370c646-c188-4c03-bfd3-a175e442ba6f": "flex-start",
+              "a58f3693-933a-4c57-b68c-e2b5794a15a1": "6",
+              "22bfafa6-4125-4d39-b149-8a5237b690fb": "0",
+              "9f3915da-cc7a-4986-811e-b6943efac87f": "flex-start",
+              "3306a50f-985b-4d58-b035-2f35984ca751": "6",
+              "17bad372-9c34-446e-98d2-9f90014e400a": "1",
+              "b93c4a6e-5161-4f0a-9caf-f3e52b036c19": "flex-start",
+              "4355f0c0-28f9-4963-9ea0-94c02007be58": "6",
+              "6a475b8d-f762-44da-8ad5-aeab81c71322": "2",
+              "eac28d03-8243-43dc-ba51-80de2ea4ace0": "flex-start",
+              "90aff730-74b8-44da-960b-e7c663d90845": "6",
+              "eeae3392-2272-4da2-b1de-391f024c4e2a": "3",
+              "960c0768-8b1c-48d9-b92b-48e8fb45d90d": "flex-start",
+              "settings": {
+                  "title": "Product USP 4 col Content"
+              },
+              "e812b3f0-e76c-4061-afe8-36009a281acf": "40px",
+              "648fb9ce-3743-42ad-84bb-9c840f1f0a59": "32px",
+              "02c585d1-4984-4290-9b87-2c8c40adc30e": "32px"
+          },
+          "87a4cbd4-beaa-4c24-abc1-c5290bad5461": {
+              "settings": {
+                  "title": "Column 1 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "be517173-dfd0-42ec-a742-0ca1652c09f9": {
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:131346aa-6e16-442c-93d5-b3b558a53764]",
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px"
+          },
+          "42a5ffed-d4f4-4b92-aaad-203ddf19436c": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Moulded from real oak",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "13669b03-21d4-47a9-a99e-c5605629b498": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"white-space:pre-wrap;\">Not extruded like most composites. Millboard decking looks just like the real thing.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              },
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "67eeeca9-3095-4653-9f87-6d8e8ec53a34": {
+              "settings": {
+                  "title": "Column 2 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "6d531356-5e92-450c-9bf6-4cfcc25b7f61": {
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:f77b1d35-a9d4-4d58-a059-0399135b97f4]",
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px"
+          },
+          "312b1b03-611e-4237-8e94-e7632268949b": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Highly slip-resistant",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "0417c665-ec06-4d3f-81fc-ab3f1f3150d2": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>High grip surface, much safer than wood, especially in the wet.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "bb3b5806-8e4e-40f1-8feb-171619e6b4b6": {
+              "settings": {
+                  "title": "Column 3 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "b24e50e3-ba01-44fa-aff9-3f87554773fa": {
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:18aecb06-06f6-4a57-9704-3495bddb302c]",
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px"
+          },
+          "22a998d8-d77d-4f49-9fe9-804b9572a75d": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Recycled materials",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "afd31205-5096-4ea7-aed1-0b77a619af40": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>Base materials have low impact on global warming and ozone depletion.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "487d2337-534a-4d33-bb61-2c56652b4d62": {
+              "settings": {
+                  "title": "Column 4 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "09dfcbc6-1355-4027-90f6-cc803699cb47": {
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:d858ed4c-3b7f-40d9-b1a1-c8ec73574df4]",
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px"
+          },
+          "cb00c238-4a06-4b1a-9be3-4103b7e75de6": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Rot & split resistant",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "fff8d3e8-fb8c-4794-a306-34fefe7b9998": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"font-family:Arial;font-size:10pt;font-style:normal;\" data-sheets-root=\"1\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Unlike wood, there is no protein content to assist algal growth within the boards.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:4777,&quot;3&quot;:{&quot;1&quot;:0},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0,&quot;15&quot;:&quot;Arial&quot;}\">Unlike wood, there is no protein content to assist algal growth within the boards.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "7aa5f5c3-e2cf-4ece-b6b0-66b43faddcad": {
+              "c8e8ad0b-bf8c-4e35-a411-a7a0bc930666": "coh-style-container-small",
+              "91837ed6-c3a6-4dbd-a638-16bc3565dd9c": "space-between",
+              "87497e8f-9e82-4a35-910a-de7aa0bbd9fe": "retain",
+              "aa8d634d-187b-480c-83e3-3651ba58949c": 3,
+              "5544549e-c784-4f2e-b390-b5cb420417bc": "0",
+              "b745167a-cf1e-4e1c-aedd-c5bd83c81267": "flex-start",
+              "b5fb5a18-4e0d-4e40-81e0-5fa0377422bb": 3,
+              "74d9a7c5-ce24-4b96-b0eb-4cb380d48406": "1",
+              "6f22f34c-d030-4f52-a878-d55621fb3028": "flex-start",
+              "70a89823-cca6-4032-9265-f8f68c7c64bd": 3,
+              "20a655db-626f-44c7-9039-46f2fe4c944b": "2",
+              "a2cd05e8-95f6-4a78-b171-e1b42b163b3a": "flex-start",
+              "6e05b8e1-e1a7-4591-88dd-2d660aad3692": 3,
+              "d5125bc6-d059-4e76-b310-eec235df4995": "3",
+              "6b6ea996-d0b0-4fdc-b40a-5f908d7b6943": "flex-start",
+              "a66d660b-1db4-476f-a101-f8e066fb5706": 6,
+              "5d13ac9d-9e51-4f85-835a-d27c896ade8a": "0",
+              "19de54be-4a19-4023-960d-3002a83b3db7": "flex-start",
+              "876e5c8c-f65e-42dc-ace0-a18a857772bf": 6,
+              "c9fba716-0998-44c4-a6f0-9b7d0f2b3041": "1",
+              "527948fa-60e0-4cdc-86ab-984994b2217d": "flex-start",
+              "3091b76e-d751-4be4-ad35-9f681ecf4875": 6,
+              "fdfd1965-a0ac-4e3d-a1af-217bb3f32713": "2",
+              "e1cfa7f9-d265-43c2-af8d-826c2e33ca28": "flex-start",
+              "6cd93b8f-6a89-4008-83c8-fb68b1742526": 6,
+              "7ab1bf68-4815-4d22-a79e-6b2773cd4b15": "3",
+              "e370c646-c188-4c03-bfd3-a175e442ba6f": "flex-start",
+              "a58f3693-933a-4c57-b68c-e2b5794a15a1": "6",
+              "22bfafa6-4125-4d39-b149-8a5237b690fb": "0",
+              "9f3915da-cc7a-4986-811e-b6943efac87f": "flex-start",
+              "3306a50f-985b-4d58-b035-2f35984ca751": "6",
+              "17bad372-9c34-446e-98d2-9f90014e400a": "1",
+              "b93c4a6e-5161-4f0a-9caf-f3e52b036c19": "flex-start",
+              "4355f0c0-28f9-4963-9ea0-94c02007be58": "6",
+              "6a475b8d-f762-44da-8ad5-aeab81c71322": "2",
+              "eac28d03-8243-43dc-ba51-80de2ea4ace0": "flex-start",
+              "90aff730-74b8-44da-960b-e7c663d90845": "6",
+              "eeae3392-2272-4da2-b1de-391f024c4e2a": "3",
+              "960c0768-8b1c-48d9-b92b-48e8fb45d90d": "flex-start",
+              "settings": {
+                  "title": "Product USP 4 col Content"
+              },
+              "e812b3f0-e76c-4061-afe8-36009a281acf": "40px",
+              "648fb9ce-3743-42ad-84bb-9c840f1f0a59": "32px",
+              "02c585d1-4984-4290-9b87-2c8c40adc30e": "32px"
+          },
+          "dcb60ae4-2840-4160-9089-b378c21f186f": {
+              "settings": {
+                  "title": "Column 1 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "159acaf8-0f84-43e2-87bd-59d12eaa64bb": {
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:c5f1fd3c-954f-43f3-a38c-6e6fc764b28e]",
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px"
+          },
+          "d39c9e74-ba84-41b6-8297-b423f0bac727": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Lost-head fixing",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "948fc4c3-be4b-41fc-9239-babf1f2431a8": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"font-family:Arial;font-size:10pt;font-style:normal;\" data-sheets-root=\"1\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Durafix\u00ae fixings are virtually hidden beneath the unique Lastane\u00ae surface.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:4777,&quot;3&quot;:{&quot;1&quot;:0},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0,&quot;15&quot;:&quot;Arial&quot;}\">Durafix\u00ae fixings are virtually hidden beneath the unique Lastane\u00ae surface.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              },
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "a2b503f3-146c-4315-a758-61811ccab86c": {
+              "settings": {
+                  "title": "Column 2 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "4aae38c8-f543-4ecc-9c9f-0f7f5f0c1b06": {
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px",
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:93138120-8b3a-4218-bf96-b00fad889acb]"
+          },
+          "c40fb7fa-11d5-4724-a8f2-60420d76aa8c": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Low maintenance",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "3a9c6300-42d7-4f9f-ab88-8918c0ee682f": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"font-family:Arial;font-size:10pt;font-style:normal;\" data-sheets-root=\"1\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Unlike timber, no oilingor staining is required.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:4777,&quot;3&quot;:{&quot;1&quot;:0},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0,&quot;15&quot;:&quot;Arial&quot;}\">Unlike timber, no oilingor staining is required.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "d791ac88-16f1-4311-910d-a71cb0ee4c61": {
+              "settings": {
+                  "title": "Column 3 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "efef1514-f130-4b9f-9903-aba820514cc6": {
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px",
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:81fc8b81-3e56-4c3a-b1b5-0b04aa0fd96d]"
+          },
+          "59c9eda3-0f1f-463a-9285-472dd178be04": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Made in Great Britain",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "0c344714-f314-4fd2-9de2-89dac1b4bace": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"font-family:Arial;font-size:10pt;font-style:normal;\" data-sheets-root=\"1\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Designed and made in Great Britian.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:4777,&quot;3&quot;:{&quot;1&quot;:0},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0,&quot;15&quot;:&quot;Arial&quot;}\">Designed and made in Great Britian.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "caf9eefd-f738-4e1f-b8ff-9e4329d57053": {
+              "settings": {
+                  "title": "Column 4 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "4786b35b-143d-4328-9b2d-24bad0d1dc0f": {
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px",
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:ad3dfabe-721f-444c-af0e-f910f6aa590f]"
+          },
+          "12f3f121-fdfa-4277-bf10-6cd86461f37f": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "25 Year UK warranty",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "15d66c38-2463-4d17-a84e-7d8b5ce97b78": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"font-family:Arial;font-size:10pt;font-style:normal;\" data-sheets-root=\"1\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;25 year UK warranty on residential and 10(12) years on commercial.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:4777,&quot;3&quot;:{&quot;1&quot;:0},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0,&quot;15&quot;:&quot;Arial&quot;}\">25 year UK warranty on residential and 10(12) years on commercial.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "5db608f4-4a42-485f-a344-45baf4c4b6f5": {
+              "c8e8ad0b-bf8c-4e35-a411-a7a0bc930666": "coh-style-container-small",
+              "91837ed6-c3a6-4dbd-a638-16bc3565dd9c": "space-between",
+              "87497e8f-9e82-4a35-910a-de7aa0bbd9fe": "retain",
+              "aa8d634d-187b-480c-83e3-3651ba58949c": 3,
+              "5544549e-c784-4f2e-b390-b5cb420417bc": "0",
+              "b745167a-cf1e-4e1c-aedd-c5bd83c81267": "flex-start",
+              "b5fb5a18-4e0d-4e40-81e0-5fa0377422bb": 3,
+              "74d9a7c5-ce24-4b96-b0eb-4cb380d48406": "1",
+              "6f22f34c-d030-4f52-a878-d55621fb3028": "flex-start",
+              "70a89823-cca6-4032-9265-f8f68c7c64bd": 3,
+              "20a655db-626f-44c7-9039-46f2fe4c944b": "2",
+              "a2cd05e8-95f6-4a78-b171-e1b42b163b3a": "flex-start",
+              "6e05b8e1-e1a7-4591-88dd-2d660aad3692": 3,
+              "d5125bc6-d059-4e76-b310-eec235df4995": "3",
+              "6b6ea996-d0b0-4fdc-b40a-5f908d7b6943": "flex-start",
+              "a66d660b-1db4-476f-a101-f8e066fb5706": 6,
+              "5d13ac9d-9e51-4f85-835a-d27c896ade8a": "0",
+              "19de54be-4a19-4023-960d-3002a83b3db7": "flex-start",
+              "876e5c8c-f65e-42dc-ace0-a18a857772bf": 6,
+              "c9fba716-0998-44c4-a6f0-9b7d0f2b3041": "1",
+              "527948fa-60e0-4cdc-86ab-984994b2217d": "flex-start",
+              "3091b76e-d751-4be4-ad35-9f681ecf4875": 6,
+              "fdfd1965-a0ac-4e3d-a1af-217bb3f32713": "2",
+              "e1cfa7f9-d265-43c2-af8d-826c2e33ca28": "flex-start",
+              "6cd93b8f-6a89-4008-83c8-fb68b1742526": 6,
+              "7ab1bf68-4815-4d22-a79e-6b2773cd4b15": "3",
+              "e370c646-c188-4c03-bfd3-a175e442ba6f": "flex-start",
+              "a58f3693-933a-4c57-b68c-e2b5794a15a1": "6",
+              "22bfafa6-4125-4d39-b149-8a5237b690fb": "0",
+              "9f3915da-cc7a-4986-811e-b6943efac87f": "flex-start",
+              "3306a50f-985b-4d58-b035-2f35984ca751": "6",
+              "17bad372-9c34-446e-98d2-9f90014e400a": "1",
+              "b93c4a6e-5161-4f0a-9caf-f3e52b036c19": "flex-start",
+              "4355f0c0-28f9-4963-9ea0-94c02007be58": "6",
+              "6a475b8d-f762-44da-8ad5-aeab81c71322": "2",
+              "eac28d03-8243-43dc-ba51-80de2ea4ace0": "flex-start",
+              "90aff730-74b8-44da-960b-e7c663d90845": "6",
+              "eeae3392-2272-4da2-b1de-391f024c4e2a": "3",
+              "960c0768-8b1c-48d9-b92b-48e8fb45d90d": "flex-start",
+              "settings": {
+                  "title": "Product USP 4 col Content"
+              },
+              "e812b3f0-e76c-4061-afe8-36009a281acf": "40px",
+              "648fb9ce-3743-42ad-84bb-9c840f1f0a59": "32px",
+              "02c585d1-4984-4290-9b87-2c8c40adc30e": "32px"
+          },
+          "305bb495-8c71-4575-9f53-55c600f13ba0": {
+              "settings": {
+                  "title": "Column 1 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "c113de3f-7311-4da7-a1cf-30a9659e13f4": {
+              "62c6b7cc-7900-463d-8ee9-5ac6418affbf": "Pen Icon",
+              "89b6f911-1481-4464-80fe-7d863317aea9": false,
+              "1ef17b76-6e54-4656-b270-c017eea0a188": "40px",
+              "fe85be94-625f-4894-922d-61808b27ab8b": "40px",
+              "settings": {
+                  "title": "Icon Uploader"
+              },
+              "7543c97c-8de8-4699-b81d-8f5593e82f3b": "8px",
+              "8ab3b9dc-5f1c-4b12-a557-aa7bbf96d980": "8px",
+              "1d2fc025-29e3-4654-a7e2-27a426cc1403": "[media-reference:media:c7668c0a-bec5-4f9a-9c25-b77d1655d065]"
+          },
+          "ef692c0f-1b60-41f2-ba9e-1d7b0cf1e1da": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Unparalled customer service",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h5",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-5-size",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "8px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px",
+              "settings": {
+                  "title": "Heading"
+              },
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": true,
+              "defb50d6-9af7-4b75-9b48-a19a4783f565": "0"
+          },
+          "809028cb-333c-4b2c-8213-a99e8cb38755": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><span style=\"font-family:Arial;font-size:10pt;font-style:normal;\" data-sheets-root=\"1\" data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Durafix\u00ae fixings are virtually hidden beneath the unique Lastane\u00ae surface.&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:4777,&quot;3&quot;:{&quot;1&quot;:0},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0,&quot;15&quot;:&quot;Arial&quot;}\">Dedicated UK team and UK number to help with any queries.<\/span><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              },
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "7e2cae4e-54c6-4c07-9892-4b90ecd778db": {
+              "settings": {
+                  "title": "Column 2 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "a61048b6-f7c8-4221-bdc1-634d06141b14": {
+              "settings": {
+                  "title": "Column 3 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "15605da5-07b3-486a-bb5b-cdfbcfddbc8b": {
+              "settings": {
+                  "title": "Column 4 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": {
+                          "col": 3
+                      },
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "3596199c-d815-4890-a533-bb6b6ee598c1": {
+              "3da69e03-5ddc-475b-9aef-3a330460d660": "1px",
+              "4254577c-7cd7-4ccc-bb29-0f9b0ecb975d": "0px",
+              "8e55c388-af2d-4bac-b03f-0125a0172b8d": "0px",
+              "3f541f4d-212b-4064-ae57-5d4362ca8ff2": {
+                  "link": true,
+                  "value": {
+                      "hex": "#dedcd2",
+                      "rgba": "rgba(222, 220, 210, 1)"
+                  },
+                  "uid": "millboard-mist",
+                  "name": "Millboard Mist",
+                  "class": ".coh-color-millboard-mist",
+                  "variable": "$coh-color-millboard-mist",
+                  "tags": [
+                      "Millboard",
+                      "Text",
+                      "Accent",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "settings": {
+                  "title": "Divider line"
+              }
+          },
+          "4967524c-0119-4bd9-9a9b-49dfc3dd0d06": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#dedcd2",
+                      "rgba": "rgba(222, 220, 210, 1)"
+                  },
+                  "uid": "millboard-mist",
+                  "name": "Millboard Mist",
+                  "class": ".coh-color-millboard-mist",
+                  "variable": "$coh-color-millboard-mist",
+                  "tags": [
+                      "Millboard",
+                      "Text",
+                      "Accent",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "coh-style-feefo-rating-widget",
+              "settings": {
+                  "title": "Feefo Reviews"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "dc033779-c1e8-466c-909c-9125cedd27c0": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "ae12fbb2-0c82-4592-8b19-8ea7aacc8d1d": {
+              "33477453-ecf9-49b5-873b-67737b65fefe": "millboard_customerreviewblockusingfeefo",
+              "dda7054d-09f6-4fdc-82f6-138404466a96": "dark-title",
+              "609b5301-04bf-45ce-82af-509436f29597": null,
+              "settings": {
+                  "title": "Feefo Review Block"
+              }
+          },
+          "68c482d7-49fc-4b3e-a612-4097156873e4": {
+              "2ea56031-facb-46cc-b908-69268d9151df": "Start your project",
+              "09b16443-1435-45fa-ab6b-1738f1f30cf3": false,
+              "settings": {
+                  "title": "Cross Link Cards"
+              },
+              "505a638d-d980-40cc-b3a2-511bb2300a9b": [
+                  {
+                      "6cfe938c-c116-4c29-bb69-15eb9f9ba78b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "a2189eb8-2c29-412b-88c6-09ac59076c07",
+                              "entityId": "a2189eb8-2c29-412b-88c6-09ac59076c07"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "fcb46ea3-c5c3-4d8c-a807-fcde960c7021": "Find a Decking Installer",
+                      "d56aadfc-55bd-4cf2-aef8-c7f5600b5581": "node::5246"
+                  },
+                  {
+                      "6cfe938c-c116-4c29-bb69-15eb9f9ba78b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "dd214105-098d-46f8-a484-d08e89de54c2",
+                              "entityId": "dd214105-098d-46f8-a484-d08e89de54c2"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "fcb46ea3-c5c3-4d8c-a807-fcde960c7021": "Where to Buy",
+                      "d56aadfc-55bd-4cf2-aef8-c7f5600b5581": "node::5251"
+                  }
+              ]
+          }
+      },
+      "previewModel": {
+          "aa0c5ac2-d12f-4f87-9022-74f7fe13d8fd": {},
+          "4cf7f6c9-efd7-4fe3-bee5-45c2e064542c": {},
+          "63e6a5ac-cf8b-4d44-98a6-8c7297957cc6": {},
+          "5404755a-ceee-4839-9dc0-9b00005c362c": {},
+          "be517173-dfd0-42ec-a742-0ca1652c09f9": {},
+          "42a5ffed-d4f4-4b92-aaad-203ddf19436c": {},
+          "13669b03-21d4-47a9-a99e-c5605629b498": {},
+          "6d531356-5e92-450c-9bf6-4cfcc25b7f61": {},
+          "312b1b03-611e-4237-8e94-e7632268949b": {},
+          "0417c665-ec06-4d3f-81fc-ab3f1f3150d2": {},
+          "b24e50e3-ba01-44fa-aff9-3f87554773fa": {},
+          "22a998d8-d77d-4f49-9fe9-804b9572a75d": {},
+          "afd31205-5096-4ea7-aed1-0b77a619af40": {},
+          "09dfcbc6-1355-4027-90f6-cc803699cb47": {},
+          "cb00c238-4a06-4b1a-9be3-4103b7e75de6": {},
+          "fff8d3e8-fb8c-4794-a306-34fefe7b9998": {},
+          "7aa5f5c3-e2cf-4ece-b6b0-66b43faddcad": {},
+          "159acaf8-0f84-43e2-87bd-59d12eaa64bb": {},
+          "d39c9e74-ba84-41b6-8297-b423f0bac727": {},
+          "948fc4c3-be4b-41fc-9239-babf1f2431a8": {},
+          "4aae38c8-f543-4ecc-9c9f-0f7f5f0c1b06": {},
+          "c40fb7fa-11d5-4724-a8f2-60420d76aa8c": {},
+          "3a9c6300-42d7-4f9f-ab88-8918c0ee682f": {},
+          "efef1514-f130-4b9f-9903-aba820514cc6": {},
+          "59c9eda3-0f1f-463a-9285-472dd178be04": {},
+          "0c344714-f314-4fd2-9de2-89dac1b4bace": {},
+          "4786b35b-143d-4328-9b2d-24bad0d1dc0f": {},
+          "12f3f121-fdfa-4277-bf10-6cd86461f37f": {},
+          "15d66c38-2463-4d17-a84e-7d8b5ce97b78": {},
+          "5db608f4-4a42-485f-a344-45baf4c4b6f5": {},
+          "c113de3f-7311-4da7-a1cf-30a9659e13f4": {},
+          "ef692c0f-1b60-41f2-ba9e-1d7b0cf1e1da": {},
+          "809028cb-333c-4b2c-8213-a99e8cb38755": {},
+          "3596199c-d815-4890-a533-bb6b6ee598c1": {},
+          "4967524c-0119-4bd9-9a9b-49dfc3dd0d06": {},
+          "ae12fbb2-0c82-4592-8b19-8ea7aacc8d1d": {},
+          "68c482d7-49fc-4b3e-a612-4097156873e4": {}
+      },
+      "variableFields": {
+          "aa0c5ac2-d12f-4f87-9022-74f7fe13d8fd": [],
+          "4cf7f6c9-efd7-4fe3-bee5-45c2e064542c": [],
+          "63e6a5ac-cf8b-4d44-98a6-8c7297957cc6": [],
+          "5404755a-ceee-4839-9dc0-9b00005c362c": [],
+          "be517173-dfd0-42ec-a742-0ca1652c09f9": [],
+          "42a5ffed-d4f4-4b92-aaad-203ddf19436c": [],
+          "13669b03-21d4-47a9-a99e-c5605629b498": [],
+          "6d531356-5e92-450c-9bf6-4cfcc25b7f61": [],
+          "312b1b03-611e-4237-8e94-e7632268949b": [],
+          "0417c665-ec06-4d3f-81fc-ab3f1f3150d2": [],
+          "b24e50e3-ba01-44fa-aff9-3f87554773fa": [],
+          "22a998d8-d77d-4f49-9fe9-804b9572a75d": [],
+          "afd31205-5096-4ea7-aed1-0b77a619af40": [],
+          "09dfcbc6-1355-4027-90f6-cc803699cb47": [],
+          "cb00c238-4a06-4b1a-9be3-4103b7e75de6": [],
+          "fff8d3e8-fb8c-4794-a306-34fefe7b9998": [],
+          "7aa5f5c3-e2cf-4ece-b6b0-66b43faddcad": [],
+          "159acaf8-0f84-43e2-87bd-59d12eaa64bb": [],
+          "d39c9e74-ba84-41b6-8297-b423f0bac727": [],
+          "948fc4c3-be4b-41fc-9239-babf1f2431a8": [],
+          "4aae38c8-f543-4ecc-9c9f-0f7f5f0c1b06": [],
+          "c40fb7fa-11d5-4724-a8f2-60420d76aa8c": [],
+          "3a9c6300-42d7-4f9f-ab88-8918c0ee682f": [],
+          "efef1514-f130-4b9f-9903-aba820514cc6": [],
+          "59c9eda3-0f1f-463a-9285-472dd178be04": [],
+          "0c344714-f314-4fd2-9de2-89dac1b4bace": [],
+          "4786b35b-143d-4328-9b2d-24bad0d1dc0f": [],
+          "12f3f121-fdfa-4277-bf10-6cd86461f37f": [],
+          "15d66c38-2463-4d17-a84e-7d8b5ce97b78": [],
+          "5db608f4-4a42-485f-a344-45baf4c4b6f5": [],
+          "c113de3f-7311-4da7-a1cf-30a9659e13f4": [],
+          "ef692c0f-1b60-41f2-ba9e-1d7b0cf1e1da": [],
+          "809028cb-333c-4b2c-8213-a99e8cb38755": [],
+          "3596199c-d815-4890-a533-bb6b6ee598c1": [],
+          "4967524c-0119-4bd9-9a9b-49dfc3dd0d06": [],
+          "ae12fbb2-0c82-4592-8b19-8ea7aacc8d1d": [],
+          "68c482d7-49fc-4b3e-a612-4097156873e4": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_miscellaneous
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

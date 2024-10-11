@@ -1,0 +1,32 @@
+uuid: 1c98ea87-5f25-4cd3-aa63-8c2e82dbfc5e
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.compressed_zip
+  module:
+    - disable_field
+    - file
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: media.compressed_zip.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: compressed_zip
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]/compressed-zip'
+  file_extensions: zip
+  max_filesize: ''
+  description_field: false
+field_type: file

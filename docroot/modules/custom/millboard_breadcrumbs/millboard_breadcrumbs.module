@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+/**
+ * Implements hook_preprocess_breadcrumb().
+ */
+function millboard_breadcrumbs_preprocess_breadcrumb(&$variables) {
+  $language_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  $basket_page_path = '/' . $language_code . '/basket';
+  $parameters = \Drupal::routeMatch()->getParameters()->all();
+  $breadcrumb = $variables['breadcrumb'];
+  $path = \Drupal::request()->getpathInfo();
+  $arg = explode('/', $path);
+  $language = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+  $result = \Drupal::service('path_alias.manager')->getAliasByPath('/' . $arg[2], $language);
+  $path_alias_repository = \Drupal::service('path_alias.repository');
+  $alias = NULL;
+  if ($path_alias_repository->lookupByAlias($result, $language)) {
+    $alias = $result;
+  }
+  $last_link_key = 0;
+  if (isset($parameters['view_id']) &&
+    in_array($parameters['view_id'], [
+      'composite_cladding_collections',
+      'composite_decking_collections',
+    ])) {
+    $variation_title = str_replace('-', ' ', $parameters['arg_0']);
+    unset($breadcrumb);
+    $breadcrumb[0] = [
+      "text" => t("Home"),
+      "url" => "/",
+    ];
+    switch ($parameters['view_id']) {
+      case 'composite_decking_collections':
+        $breadcrumb[1] = [
+          "text" => t("Millboard Collections"),
+          "url" => $alias ? '/' . $language . $alias : '',
+        ];
+        $breadcrumb[2] = [
+          "text" => $variation_title,
+          "url" => '',
+        ];
+        break;
+
+      case 'composite_cladding_collections':
+        $breadcrumb[1] = [
+          "text" => t("Envello Collections"),
+          "url" => empty($alias) ? '/' . $language . '/envello-composite-cladding' : '/' . $language . $alias,
+        ];
+        if ($variation_title == 'shadow line') {
+          $variation_title = t('Shadow Line+');
+        }
+        elseif ($variation_title == 'board batten') {
+          $variation_title = t('Board & Batten+');
+        }
+        $breadcrumb[2] = [
+          "text" => $variation_title,
+          "url" => '',
+        ];
+        break;
+    }
+  }
+  foreach ($breadcrumb as $key => $value) {
+    if (!empty($value['url'])) {
+      $last_link_key = $key;
+    }
+  }
+  $breadcrumb[$last_link_key]['class'] = 'breadcrumb-last-link';
+  if ($path === $basket_page_path) {
+    if (isset($breadcrumb[1])) {
+      $breadcrumb[1]['text'] = t('Order a Sample');
+    }
+  }
+  $variables['breadcrumb'] = $breadcrumb;
+}

@@ -1,0 +1,266 @@
+uuid: f1fe8c58-5a1d-4805-b47a-50855ea975c1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:398fe01e-3c9d-461f-960c-a8b16e13f90e'
+  enforced:
+    module:
+      - acquia_cms_site_studio
+label: 'Modal close button light'
+id: da97307a
+json_values: |
+  {
+      "preview": {
+          "text": "<p><button class=\"coh-preview\" type=\"button\"><\/button><\/p>\n",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "button",
+              "class": "",
+              "combinator": "",
+              "pseudo": ""
+          },
+          "styles": {
+              "xl": {
+                  "height": {},
+                  "width": {},
+                  "display": {},
+                  "flex-container": {
+                      "justify-content": {},
+                      "align-items": {}
+                  },
+                  "color": {},
+                  "font-size": {},
+                  "background-color": {}
+              },
+              "xs": {
+                  "position": {},
+                  "top": {},
+                  "right": {},
+                  "height": {
+                      "value": "20px"
+                  },
+                  "width": {
+                      "value": "20px"
+                  },
+                  "font-size": {},
+                  "background-color": {
+                      "value": {
+                          "value": {
+                              "hex": "transparent",
+                              "rgba": "rgba(0, 0, 0, 0)"
+                          },
+                          "name": "Transparent",
+                          "wysiwyg": true,
+                          "uid": "dx8-transparent",
+                          "class": ".dx8-transparent",
+                          "variable": "$ssa-dx8-transparent",
+                          "inuse": true
+                      }
+                  },
+                  "color": {},
+                  "display": {},
+                  "flex-container": {
+                      "justify-content": {},
+                      "align-items": {}
+                  },
+                  "background-image-settings": [
+                      {
+                          "backgroundLayerType": {
+                              "value": "image"
+                          },
+                          "backgroundImageSize": {
+                              "value": "cover"
+                          },
+                          "backgroundImageRepeat": {
+                              "value": "no-repeat"
+                          },
+                          "backgroundImageAttachment": {
+                              "value": "scroll"
+                          },
+                          "backgroundImagePositionX": {
+                              "value": "left"
+                          },
+                          "backgroundImagePositionY": {
+                              "value": "top"
+                          },
+                          "backgroundImageOrigin": {},
+                          "backgroundImageClip": {},
+                          "backgroundImage": {
+                              "value": "[media-reference:file:398fe01e-3c9d-461f-960c-a8b16e13f90e]",
+                              "imageStyle": ""
+                          }
+                      }
+                  ]
+              }
+          }
+      },
+      "variableFields": [],
+      "previewModel": {}
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Button",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "width",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "min-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-width",
+                                  "active": false
+                              },
+                              {
+                                  "name": "width",
+                                  "active": true
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "height",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "min-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "max-height",
+                                  "active": false
+                              },
+                              {
+                                  "name": "height",
+                                  "active": true
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "background",
+                  "children": [
+                      {
+                          "formKey": "background-color",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "background-color",
+                                  "active": true
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "background-image-and-gradient",
+                          "activeFields": [
+                              {
+                                  "name": "backgroundLayerType",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImage",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageGradient",
+                                  "active": true
+                              },
+                              {
+                                  "name": "imageStyle",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageSize",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageWidth",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageHeight",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageRepeat",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageAttachment",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionX",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionXOffset",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionY",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImagePositionYOffset",
+                                  "active": true
+                              },
+                              {
+                                  "name": "backgroundImageOrigin",
+                                  "active": false
+                              },
+                              {
+                                  "name": "backgroundImageClip",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": [],
+          "form": null
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-modal-close-button-light
+custom_style_type: button
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 123

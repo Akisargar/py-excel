@@ -1,0 +1,22 @@
+uuid: 74fab27a-8b54-4aa8-939f-15dc552c9f27
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: installers_distributors
+label: 'Installers & Distributors'
+type: 'canonical_entities:node'
+pattern: '/location/[node:title]'
+selection_criteria:
+  3fe0a867-ad76-4c06-b4e7-71726fc1b57c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 3fe0a867-ad76-4c06-b4e7-71726fc1b57c
+    context_mapping:
+      node: node
+    bundles:
+      installers_distributors: installers_distributors
+selection_logic: and
+weight: -5
+relationships: {  }

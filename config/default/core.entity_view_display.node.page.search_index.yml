@@ -1,0 +1,46 @@
+uuid: 43daf061-f0e3-4e38-969a-80026af4c772
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.page.body
+    - field.field.node.page.field_categories
+    - field.field.node.page.field_layout_canvas
+    - field.field.node.page.field_metatag
+    - field.field.node.page.field_page_image
+    - field.field.node.page.field_publish_date
+    - field.field.node.page.field_tags
+    - node.type.page
+  module:
+    - user
+  enforced:
+    module:
+      - acquia_cms_page
+_core:
+  default_config_hash: dAYJXBA3oXDFB5kkW35WKLxA2qk_Rd4_yEr2FpzXjQ0
+id: node.page.search_index
+targetEntityType: node
+bundle: page
+mode: search_index
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_categories: true
+  field_layout_canvas: true
+  field_metatag: true
+  field_page_image: true
+  field_publish_date: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

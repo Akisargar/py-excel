@@ -1,0 +1,24 @@
+uuid: 31e9a5d3-dab9-4b88-a04f-8bf3c9e90dbf
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.secondary_hero_small_desktop_560x691_
+    - image.style.secondary_hero_small_mobile_311x512_
+  theme:
+    - millboard
+id: secondary_hero_small
+label: 'Secondary Hero Small'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: secondary_hero_small_desktop_560x691_
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: secondary_hero_small_mobile_311x512_
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: secondary_hero_small_mobile_311x512_

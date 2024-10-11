@@ -1,0 +1,23 @@
+uuid: b1fa7915-1193-4bc9-b2c5-1b36c14ae7e3
+langcode: en-gb
+status: false
+dependencies: {  }
+id: production
+label: Production
+description: 'These configuration will only be active in production environment.'
+weight: 0
+stackable: false
+no_patching: false
+storage: folder
+folder: ../config/prod
+module:
+  raven: 0
+  akamai: 0
+  autologout: 0
+  google_analytics: 0
+  google_tag: 0
+  millboard_google_analytics: 0
+theme: {  }
+complete_list: {  }
+partial_list:
+  - webform.webform.sample_order_form

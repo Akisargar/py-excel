@@ -1,0 +1,88 @@
+uuid: 4dd0af42-f1c0-4802-9d48-cb35098ea414
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.node.jobs.field_closing_date
+    - field.field.node.jobs.field_hero_image
+    - field.field.node.jobs.field_hero_image_mobile
+    - field.field.node.jobs.field_job_description
+    - field.field.node.jobs.field_job_location
+    - field.field.node.jobs.field_metatag
+    - field.field.node.jobs.field_sub_heading
+    - node.type.jobs
+  module:
+    - datetime
+    - metatag
+    - text
+    - user
+id: node.jobs.default
+targetEntityType: node
+bundle: jobs
+mode: default
+content:
+  field_closing_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_hero_image:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_hero_image_mobile:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_job_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_job_location:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_metatag:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_sub_heading:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

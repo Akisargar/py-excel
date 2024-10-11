@@ -1,0 +1,64 @@
+uuid: c89939c4-7881-44b0-93b7-417afca666d5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.field.media.video.field_categories
+    - field.field.media.video.field_media_oembed_video
+    - field.field.media.video.field_tags
+    - image.style.thumbnail
+    - media.type.video
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: ELVuY2CoNx9y6XjRxLcSytsWxSBXrPVaEsOxeo5fGYU
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  created:
+    type: timestamp
+    label: hidden
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: thumbnail
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  uid:
+    type: author
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_categories: true
+  field_media_oembed_video: true
+  field_tags: true
+  langcode: true
+  name: true
+  search_api_excerpt: true

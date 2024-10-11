@@ -1,0 +1,35 @@
+uuid: 05e8ea46-c6b0-4e50-bc3a-42dc9286ab45
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - webform.webform.ie_sample_order_form
+  module:
+    - cohesion
+    - collapsiblock
+    - webform
+  theme:
+    - millboard
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+id: millboard_checkout_ie
+theme: millboard
+region: dx8_hidden
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: 'Checkout (IE)'
+  label_display: '0'
+  provider: webform
+  webform_id: ie_sample_order_form
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0

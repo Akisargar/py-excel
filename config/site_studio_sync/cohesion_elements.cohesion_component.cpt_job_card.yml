@@ -1,0 +1,1086 @@
+uuid: 5d99234d-be88-4399-9555-94098fb172fc
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.4ee1c6f2
+    - cohesion_custom_styles.cohesion_custom_style.f3000c2b
+    - cohesion_elements.cohesion_component_category.cpt_cat_card_components
+  content:
+    - 'file:file:1e584330-7fbb-43d9-b229-81a666bd8909'
+label: 'Job card'
+id: cpt_job_card
+json_values: |
+  {
+      "canvas": [
+          {
+              "type": "container",
+              "uid": "container",
+              "title": "Container",
+              "status": {
+                  "collapsed": false
+              },
+              "uuid": "86c8efc7-4e67-4be9-9fb1-6247da723d59",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "row-for-columns",
+                      "title": "Row for columns",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "uuid": "47ec9ca5-e73e-44b3-a75a-722097a3b524",
+                      "parentUid": "container",
+                      "children": [
+                          {
+                              "type": "container",
+                              "uid": "component-pattern-repeater",
+                              "title": "Pattern repeater",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "uuid": "ad80cbe3-777a-42e6-810f-dd750b0fdd7a",
+                              "parentUid": "row-for-columns",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "column",
+                                      "title": "Column",
+                                      "status": {
+                                          "collapsed": false
+                                      },
+                                      "uuid": "1f977e30-e8d3-4cd1-bafd-714c2b76ae01",
+                                      "parentUid": "component-pattern-repeater",
+                                      "children": [
+                                          {
+                                              "type": "container",
+                                              "uid": "heading",
+                                              "title": "Heading",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "uuid": "a9e0bbaf-b3fc-4a87-a6b7-88d6d738f02f",
+                                              "parentUid": "column",
+                                              "children": []
+                                          },
+                                          {
+                                              "type": "container",
+                                              "uid": "row-for-columns",
+                                              "title": "Row for columns",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "uuid": "11e90bdf-896f-4ca9-a721-f2f43ae23e54",
+                                              "parentUid": "column",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "column",
+                                                      "title": "Column",
+                                                      "status": {
+                                                          "collapsed": false
+                                                      },
+                                                      "uuid": "794c0b6e-3639-4ab7-9947-22ea050dba0d",
+                                                      "parentUid": "row-for-columns",
+                                                      "children": [
+                                                          {
+                                                              "type": "item",
+                                                              "uid": "image",
+                                                              "title": "Image",
+                                                              "status": {
+                                                                  "collapsed": true
+                                                              },
+                                                              "uuid": "90767ed0-65a9-41f7-996d-0ebe58822ff2",
+                                                              "parentUid": "column",
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "column",
+                                                      "title": "Column",
+                                                      "status": {
+                                                          "collapsed": false
+                                                      },
+                                                      "uuid": "4d84a521-cbb1-49f6-a038-028630a2a39e",
+                                                      "parentUid": "row-for-columns",
+                                                      "children": [
+                                                          {
+                                                              "type": "container",
+                                                              "uid": "heading",
+                                                              "title": "Heading",
+                                                              "status": {
+                                                                  "collapsed": true
+                                                              },
+                                                              "uuid": "68bbaeab-32bf-4c0d-81f9-19e05c56672f",
+                                                              "parentUid": "column",
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  },
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "column",
+                                                      "title": "Column",
+                                                      "status": {
+                                                          "collapsed": false
+                                                      },
+                                                      "uuid": "1654e092-33f1-4c02-ac1c-ec2ab8184213",
+                                                      "parentUid": "row-for-columns",
+                                                      "children": [
+                                                          {
+                                                              "type": "container",
+                                                              "uid": "link",
+                                                              "title": "Link",
+                                                              "status": {
+                                                                  "collapsed": true
+                                                              },
+                                                              "uuid": "bc6168bc-dd04-479f-b586-1eb8296d736b",
+                                                              "parentUid": "column",
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "componentForm": [
+          {
+              "type": "form-field-container",
+              "uid": "form-field-repeater",
+              "title": "Field repeater",
+              "selected": false,
+              "status": {
+                  "collapsed": false,
+                  "isopen": false
+              },
+              "options": {
+                  "formBuilder": true
+              },
+              "uuid": "1ef3c310-a33b-488d-9d5a-f4bb1baebe78",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "form-field",
+                      "uid": "form-input",
+                      "title": "Input",
+                      "translate": true,
+                      "status": {
+                          "collapsed": false
+                      },
+                      "uuid": "81ec7243-d13e-4f6e-876f-6543d8121fef",
+                      "parentUid": "form-field-repeater",
+                      "children": []
+                  },
+                  {
+                      "type": "form-field",
+                      "uid": "form-image",
+                      "title": "Image uploader",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "uuid": "92cf983d-a909-46e3-b2a6-84062f15ddf0",
+                      "parentUid": "form-field-repeater",
+                      "children": []
+                  },
+                  {
+                      "type": "form-field",
+                      "uid": "form-input",
+                      "title": "Input",
+                      "translate": true,
+                      "status": {
+                          "collapsed": false
+                      },
+                      "uuid": "c028cd53-c778-470f-ae28-6e36523ca1f0",
+                      "parentUid": "form-field-repeater",
+                      "children": []
+                  },
+                  {
+                      "type": "form-field",
+                      "uid": "form-link",
+                      "title": "Link to page",
+                      "translate": true,
+                      "status": {
+                          "collapsed": false
+                      },
+                      "uuid": "f3d66a49-7a1a-4fdb-8790-a5d6c0cb74b6",
+                      "parentUid": "form-field-repeater",
+                      "children": []
+                  },
+                  {
+                      "type": "form-field",
+                      "uid": "form-input",
+                      "title": "Input",
+                      "translate": true,
+                      "status": {
+                          "collapsed": false
+                      },
+                      "uuid": "a15783e8-316e-4441-ac4c-bd570e36f776",
+                      "parentUid": "form-field-repeater",
+                      "children": []
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "86c8efc7-4e67-4be9-9fb1-6247da723d59": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "container-settings",
+                          "children": [
+                              {
+                                  "formKey": "container-width",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "container-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "47ec9ca5-e73e-44b3-a75a-722097a3b524": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "row-for-columns-settings",
+                          "children": [
+                              {
+                                  "formKey": "row-for-columns-bleed",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "bleed",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "overflow",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "row-for-columns-markup-style-target",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "targetContainer",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "row-for-columns-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "row-for-columns-js-settings",
+                          "children": [
+                              {
+                                  "formKey": "row-for-columns-match-height",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "targetElement",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "class",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "targetLevel",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "1f977e30-e8d3-4cd1-bafd-714c2b76ae01": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "column-settings",
+                          "children": [
+                              {
+                                  "formKey": "column-width-and-position",
+                                  "activeFields": [
+                                      {
+                                          "name": "col",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "pull",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "push",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "offset",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": []
+              }
+          },
+          "ad80cbe3-777a-42e6-810f-dd750b0fdd7a": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "component-pattern-repeater-settings",
+                          "children": [
+                              {
+                                  "formKey": "component-pattern-repeater-token",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "token",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "a9e0bbaf-b3fc-4a87-a6b7-88d6d738f02f": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "heading-settings",
+                          "children": [
+                              {
+                                  "formKey": "heading-element",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "element",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "heading-heading",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "heading-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "90767ed0-65a9-41f7-996d-0ebe58822ff2": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "image-settings",
+                          "children": [
+                              {
+                                  "formKey": "image-image",
+                                  "activeFields": [
+                                      {
+                                          "name": "image",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "title",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "alt",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "lazyload",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "image-size",
+                                  "activeFields": [
+                                      {
+                                          "name": "displaySize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageAlignment",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "image-style",
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "68bbaeab-32bf-4c0d-81f9-19e05c56672f": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "heading-settings",
+                          "children": [
+                              {
+                                  "formKey": "heading-element",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "element",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "heading-heading",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "heading-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "bc6168bc-dd04-479f-b586-1eb8296d736b": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "link-settings",
+                          "children": [
+                              {
+                                  "formKey": "link-link",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "titleAttribute",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "link-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          },
+          "1ef3c310-a33b-488d-9d5a-f4bb1baebe78": {},
+          "81ec7243-d13e-4f6e-876f-6543d8121fef": {},
+          "92cf983d-a909-46e3-b2a6-84062f15ddf0": {},
+          "c028cd53-c778-470f-ae28-6e36523ca1f0": {},
+          "f3d66a49-7a1a-4fdb-8790-a5d6c0cb74b6": {},
+          "a15783e8-316e-4441-ac4c-bd570e36f776": {},
+          "11e90bdf-896f-4ca9-a721-f2f43ae23e54": {},
+          "794c0b6e-3639-4ab7-9947-22ea050dba0d": {},
+          "4d84a521-cbb1-49f6-a038-028630a2a39e": {},
+          "1654e092-33f1-4c02-ac1c-ec2ab8184213": {}
+      },
+      "model": {
+          "86c8efc7-4e67-4be9-9fb1-6247da723d59": {
+              "settings": {
+                  "width": "fluid",
+                  "title": "Job Card Container",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ]
+              }
+          },
+          "47ec9ca5-e73e-44b3-a75a-722097a3b524": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "bleed": "retain",
+                          "targetContainer": "inner",
+                          "overflow": "visible",
+                          "jsSettings": {
+                              "matchHeightRow": {
+                                  "targetElement": "none"
+                              }
+                          }
+                      }
+                  },
+                  "title": "Job Card row",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ],
+                  "targetContainer": "inner"
+              }
+          },
+          "ad80cbe3-777a-42e6-810f-dd750b0fdd7a": {
+              "settings": {
+                  "title": "Job Card repeater",
+                  "token": "[field.1ef3c310-a33b-488d-9d5a-f4bb1baebe78]"
+              }
+          },
+          "1f977e30-e8d3-4cd1-bafd-714c2b76ae01": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "col": "4",
+                          "pull": -1,
+                          "push": -1,
+                          "offset": -1
+                      }
+                  },
+                  "title": "Job Card"
+              }
+          },
+          "a9e0bbaf-b3fc-4a87-a6b7-88d6d738f02f": {
+              "settings": {
+                  "element": "h4",
+                  "title": "Designation",
+                  "customStyle": [
+                      {
+                          "customStyle": "coh-style-f37-ginger-bold"
+                      }
+                  ],
+                  "content": "[field.81ec7243-d13e-4f6e-876f-6543d8121fef]"
+              }
+          },
+          "11e90bdf-896f-4ca9-a721-f2f43ae23e54": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "bleed": "retain",
+                          "targetContainer": "inner",
+                          "overflow": "visible",
+                          "jsSettings": {
+                              "matchHeightRow": {
+                                  "targetElement": "none"
+                              }
+                          }
+                      }
+                  }
+              }
+          },
+          "794c0b6e-3639-4ab7-9947-22ea050dba0d": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "col": -2,
+                          "pull": -1,
+                          "push": -1,
+                          "offset": -1
+                      }
+                  }
+              }
+          },
+          "90767ed0-65a9-41f7-996d-0ebe58822ff2": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "displaySize": "coh-image-responsive",
+                          "imageAlignment": "coh-image-align-left"
+                      }
+                  },
+                  "title": "Location icon",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ],
+                  "image": "[field.92cf983d-a909-46e3-b2a6-84062f15ddf0]",
+                  "lazyload": false,
+                  "imageStyle": null,
+                  "attributes": {
+                      "title": "[field.c028cd53-c778-470f-ae28-6e36523ca1f0]"
+                  }
+              }
+          },
+          "4d84a521-cbb1-49f6-a038-028630a2a39e": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "col": -2,
+                          "pull": -1,
+                          "push": -1,
+                          "offset": -1
+                      }
+                  }
+              }
+          },
+          "68bbaeab-32bf-4c0d-81f9-19e05c56672f": {
+              "settings": {
+                  "element": "h5",
+                  "title": "Location",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ],
+                  "content": "[field.c028cd53-c778-470f-ae28-6e36523ca1f0]"
+              }
+          },
+          "1654e092-33f1-4c02-ac1c-ec2ab8184213": {
+              "settings": {
+                  "styles": {
+                      "xs": {
+                          "col": -2,
+                          "pull": -1,
+                          "push": -1,
+                          "offset": -1
+                      }
+                  }
+              }
+          },
+          "bc6168bc-dd04-479f-b586-1eb8296d736b": {
+              "settings": {
+                  "title": "Link CTA",
+                  "customStyle": [
+                      {
+                          "customStyle": "coh-style-tertiary-button"
+                      }
+                  ],
+                  "type": "internal-page",
+                  "target": "_self",
+                  "linkText": "[field.a15783e8-316e-4441-ac4c-bd570e36f776]",
+                  "linkToPage": "[field.f3d66a49-7a1a-4fdb-8790-a5d6c0cb74b6]"
+              }
+          },
+          "1ef3c310-a33b-488d-9d5a-f4bb1baebe78": {
+              "settings": {
+                  "type": "cohArray",
+                  "title": "Job Card repeater",
+                  "componentField": true,
+                  "noTitle": true,
+                  "disableScrollbar": true,
+                  "addText": "Add",
+                  "key": "field-repeater",
+                  "sortable": true,
+                  "sortableOptions": {
+                      "axis": "y",
+                      "handle": true
+                  },
+                  "schema": {
+                      "type": "array"
+                  },
+                  "machineName": "job-card-repeater",
+                  "min": 1,
+                  "max": 100,
+                  "increment": 1,
+                  "tooltipPlacement": "auto right"
+              }
+          },
+          "81ec7243-d13e-4f6e-876f-6543d8121fef": {
+              "settings": {
+                  "type": "cohTextBox",
+                  "title": "Designation",
+                  "schema": {
+                      "type": "string",
+                      "escape": true
+                  },
+                  "machineName": "designation",
+                  "tooltipPlacement": "auto right",
+                  "required": true
+              }
+          },
+          "92cf983d-a909-46e3-b2a6-84062f15ddf0": {
+              "settings": {
+                  "type": "cohFileBrowser",
+                  "options": {
+                      "buttonText": "Select image",
+                      "imageUploader": "false",
+                      "allowedDescription": "Allowed: png, gif, jpg, jpeg \nMax file size: 2MB",
+                      "removeLabel": "Remove"
+                  },
+                  "title": "Job location Icon",
+                  "isStyle": true,
+                  "defaultActive": true,
+                  "schema": {
+                      "type": "string"
+                  },
+                  "machineName": "job-location-icon",
+                  "tooltipPlacement": "auto right"
+              },
+              "model": {
+                  "value": ""
+              }
+          },
+          "c028cd53-c778-470f-ae28-6e36523ca1f0": {
+              "settings": {
+                  "type": "cohTextBox",
+                  "title": "Location",
+                  "schema": {
+                      "type": "string",
+                      "escape": false
+                  },
+                  "machineName": "location",
+                  "tooltipPlacement": "auto right",
+                  "required": true
+              }
+          },
+          "f3d66a49-7a1a-4fdb-8790-a5d6c0cb74b6": {
+              "settings": {
+                  "isStyle": true,
+                  "type": "cohTypeahead",
+                  "key": "linkToPage",
+                  "title": "CTA Link",
+                  "placeholder": "Type page name",
+                  "labelProperty": "name",
+                  "valueProperty": "id",
+                  "endpoint": "\/cohesionapi\/link-autocomplete?q=",
+                  "schema": {
+                      "type": "string"
+                  },
+                  "machineName": "link-cta",
+                  "tooltipPlacement": "auto right",
+                  "entityTypes": false,
+                  "required": true
+              }
+          },
+          "a15783e8-316e-4441-ac4c-bd570e36f776": {
+              "settings": {
+                  "type": "cohTextBox",
+                  "title": "CTA Text",
+                  "schema": {
+                      "type": "string",
+                      "escape": true
+                  },
+                  "machineName": "cta-text",
+                  "tooltipPlacement": "auto right"
+              }
+          }
+      },
+      "previewModel": {
+          "1f977e30-e8d3-4cd1-bafd-714c2b76ae01": {},
+          "86c8efc7-4e67-4be9-9fb1-6247da723d59": {},
+          "47ec9ca5-e73e-44b3-a75a-722097a3b524": {},
+          "ad80cbe3-777a-42e6-810f-dd750b0fdd7a": {
+              "settings": {
+                  "title": "Job Card repeater"
+              }
+          },
+          "a9e0bbaf-b3fc-4a87-a6b7-88d6d738f02f": {
+              "settings": {
+                  "title": "Designation",
+                  "element": "h2"
+              }
+          },
+          "90767ed0-65a9-41f7-996d-0ebe58822ff2": {
+              "settings": {
+                  "title": "Location icon",
+                  "lazyload": false,
+                  "styles": {
+                      "xs": {
+                          "displaySize": "coh-image-responsive"
+                      }
+                  }
+              }
+          },
+          "68bbaeab-32bf-4c0d-81f9-19e05c56672f": {
+              "settings": {
+                  "title": "Location",
+                  "element": "h3"
+              }
+          },
+          "bc6168bc-dd04-479f-b586-1eb8296d736b": {
+              "settings": {
+                  "title": "Link CTA",
+                  "type": "internal-page",
+                  "target": "_self"
+              }
+          },
+          "1ef3c310-a33b-488d-9d5a-f4bb1baebe78": {},
+          "81ec7243-d13e-4f6e-876f-6543d8121fef": {},
+          "92cf983d-a909-46e3-b2a6-84062f15ddf0": {},
+          "c028cd53-c778-470f-ae28-6e36523ca1f0": {},
+          "f3d66a49-7a1a-4fdb-8790-a5d6c0cb74b6": {},
+          "a15783e8-316e-4441-ac4c-bd570e36f776": {}
+      },
+      "variableFields": {
+          "1f977e30-e8d3-4cd1-bafd-714c2b76ae01": [],
+          "86c8efc7-4e67-4be9-9fb1-6247da723d59": [],
+          "47ec9ca5-e73e-44b3-a75a-722097a3b524": [],
+          "ad80cbe3-777a-42e6-810f-dd750b0fdd7a": [
+              "settings.token"
+          ],
+          "a9e0bbaf-b3fc-4a87-a6b7-88d6d738f02f": [
+              "settings.content"
+          ],
+          "90767ed0-65a9-41f7-996d-0ebe58822ff2": [
+              "settings.image",
+              "settings.attributes.title"
+          ],
+          "68bbaeab-32bf-4c0d-81f9-19e05c56672f": [
+              "settings.content"
+          ],
+          "bc6168bc-dd04-479f-b586-1eb8296d736b": [
+              "settings.linkText",
+              "settings.linkToPage"
+          ],
+          "1ef3c310-a33b-488d-9d5a-f4bb1baebe78": [],
+          "81ec7243-d13e-4f6e-876f-6543d8121fef": [],
+          "92cf983d-a909-46e3-b2a6-84062f15ddf0": [],
+          "c028cd53-c778-470f-ae28-6e36523ca1f0": [],
+          "f3d66a49-7a1a-4fdb-8790-a5d6c0cb74b6": [],
+          "a15783e8-316e-4441-ac4c-bd570e36f776": []
+      },
+      "disabledNodes": [],
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: cpt_cat_card_components
+preview_image: 'public://element-preview-images/job card.png'
+has_quick_edit: null
+entity_type_access: {  }
+bundle_access: {  }
+twig_template: component--cohesion-cpt-job-card
+weight: 0

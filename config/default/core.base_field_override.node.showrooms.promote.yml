@@ -1,0 +1,22 @@
+uuid: ced7bdda-3c06-47b3-a657-7d3771f364ac
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - node.type.showrooms
+id: node.showrooms.promote
+field_name: promote
+entity_type: node
+bundle: showrooms
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

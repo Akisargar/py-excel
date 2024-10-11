@@ -1,0 +1,65 @@
+uuid: 53fd6686-f3df-4847-b892-3bf07440817c
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - acquia_dam
+    - crop
+    - scheduler
+third_party_settings:
+  crop:
+    image_field: null
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+_core:
+  default_config_hash: 8h5DgYko5SomQwIFf_Sl07c2horRgHA-7HUR9W1jO3w
+id: acquia_dam_documents_asset
+label: 'DAM - Documents'
+description: 'DAM sourced Documents'
+source: 'acquia_dam_asset:documents'
+queue_thumbnail_downloads: true
+new_revision: false
+source_configuration:
+  source_field: acquia_dam_asset_id
+field_map:
+  assetType_: field_case_study_project_image_p
+  asset_type: field_asset_type
+  caseStudySectors: field_commercial_project_sectors
+  caseStudyapplication: field_product_application
+  caseStudyorProjectType: field_case_study_or_project_type
+  claddingProductRange: field_cladding_product_range
+  corporate: field_corporate
+  corporateLocation: field_corporate_location
+  created_date: field_created_date
+  deckingProductrange: field_decking_product_range
+  decor: field_decor
+  deleted_date: field_deleted_date
+  description: field_description
+  eventSector: field_event_sector
+  eventType: field_event_type
+  expiration_date: acquia_dam_expiry_date
+  file_upload_date: field_file_upload_date
+  filename: name
+  keywords: field_keywords
+  last_update_date: field_last_updated_date
+  marketingAssets: field_marketing_assets
+  productType: field_product_type
+  productionMethod: field_production_method
+  region: field_region
+  release_date: field_release_date
+  size: field_file_size
+  supplier: field_supplier
+  usage_rights: field_usage_rights
+  widen_original_filepath: field_original_filepath
+  year: field_year

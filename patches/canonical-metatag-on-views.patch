@@ -1,0 +1,30 @@
+From 804225dd04c761d9f85dfe06ad8d68099b1e50cc Mon Sep 17 00:00:00 2001
+From: Cristina Bujita <cristina.bujita@ninjacoders-nc.com>
+Date: Wed, 22 Feb 2023 21:09:30 +0100
+Subject: [PATCH] Issue #3302453. Exclude views config object from current
+ language detection.
+
+---
+ src/MetatagManager.php | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/src/MetatagManager.php b/src/MetatagManager.php
+index 875b338c..9e75465e 100644
+--- a/src/MetatagManager.php
++++ b/src/MetatagManager.php
+@@ -587,9 +587,10 @@ class MetatagManager implements MetatagManagerInterface {
+     $rawTags = [];
+     $metatag_tags = $this->tagPluginManager->getDefinitions();
+ 
+-    // Use the entity's language code, if one is defined.
++    // Use the entity's language code, if one is defined. Views should probably
++    // get the current language instead of the configuration object language.
+     $langcode = NULL;
+-    if ($entity) {
++    if ($entity && !$entity instanceof ViewEntityInterface) {
+       $langcode = $entity->language()->getId();
+     }
+ 
+-- 
+GitLab
+

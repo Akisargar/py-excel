@@ -1,0 +1,40 @@
+uuid: f02d851c-94b0-4966-81ae-7cf95e5d9b03
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - cohesion
+id: G-CDWNWLM5LZ.65c31978192e92.33183041
+label: G-CDWNWLM5LZ
+weight: 0
+tag_container_ids:
+  - G-CDWNWLM5LZ
+  - GTM-TBPW5F2
+advanced_settings:
+  gtm:
+    data_layer: dataLayer
+    include_classes: false
+    allowlist_classes: ''
+    blocklist_classes: ''
+    include_environment: false
+    environment_id: ''
+    environment_token: ''
+dimensions_metrics: {  }
+conditions:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: false
+events:
+  search: {  }
+  webform_purchase: {  }
+  sign_up:
+    method: CMS
+  login:
+    method: CMS
+  custom: {  }
+  commerce_view_item: {  }
+  commerce_view_item_list: {  }
+  generate_lead:
+    value: ''
+    currency: ''

@@ -1,0 +1,174 @@
+<?php
+
+/**
+ * @file
+ * This file holds the update and uninstall hooks.
+ */
+
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Vocabulary;
+
+/**
+ * Implements hook_update_n().
+ */
+function millboard_common_update_9001() {
+  $config = \Drupal::service('config.factory')->getEditable('millboard_common.settings');
+  $languages = \Drupal::service('language_manager')->getLanguages();
+  foreach ($languages as $language) {
+    $config->set('hubspot.' . $language->getName() . '.region', 'eu1');
+    $config->set('hubspot.' . $language->getName() . '.portalId', '26853518');
+    $config->set('hubspot.' . $language->getName() . '.formId', 'ecbcb9b1-71a3-45ae-b9a4-a5c871fae484');
+  }
+  $config->save();
+}
+
+/**
+ * Implements hook_update_N().
+ */
+function millboard_common_update_9002() {
+  // Load all nodes of type "installers_distributors".
+  $query = \Drupal::entityQuery('node')
+    ->accessCheck(FALSE)
+    ->condition('type', 'installers_distributors');
+  $nids = $query->execute();
+
+  // Check if "en-ie" language exists.
+  $language = \Drupal::languageManager()->getLanguage('en-ie');
+  if (!$language) {
+    // Language doesn't exist. Log an error.
+    \Drupal::logger('custom_translation_updater')->error('Language "en-ie" does not exist.');
+    return;
+  }
+
+  // Load or create translation for each node.
+  foreach ($nids as $nid) {
+    $node = Node::load($nid);
+    // Check if translation exists.
+    if (!$node->hasTranslation('en-ie')) {
+      // Create translation.
+      $translated_node = $node->addTranslation('en-ie', $node->toArray());
+      $translated_node->save();
+      \Drupal::logger('custom_translation_updater')->info('Translation created for node with ID: @nid',
+            ['@nid' => $nid]);
+    }
+    else {
+      \Drupal::logger('custom_translation_updater')->info('Translation already exists for node with ID: @nid',
+            ['@nid' => $nid]);
+    }
+  }
+
+  // Log completion message.
+  \Drupal::logger('custom_translation_updater')->info('Update hook custom_translation_updater_update_9002 executed successfully.');
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update specific taxonomy terms from en-gb to en-us.
+ */
+function millboard_common_update_9003() {
+  // Array of term names to translate.
+  $terms_to_translate = ['Cladding', 'Decking'];
+
+  // Load the vocabulary by machine name.
+  $vocabulary = Vocabulary::load('product_type');
+
+  // Loop through each term name to translate.
+  foreach ($terms_to_translate as $term_name) {
+    // Load the term entity.
+    $term_entity = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $term_name, 'vid' => $vocabulary->id()]);
+
+    // Check if the term exists.
+    if (!empty($term_entity)) {
+      // Get the first item from the array.
+      $term_entity = reset($term_entity);
+      $product_type_id = $term_entity->get('field_product_type_id')->value;
+
+      // Add translations.
+      if ($term_name === "Cladding") {
+        $term_entity->addTranslation('en-us', ['name' => "Siding", 'field_product_type_id' => $product_type_id]);
+      }
+      else {
+        $term_entity->addTranslation('en-us', ['name' => $term_name, 'field_product_type_id' => $product_type_id]);
+      }
+      $term_entity->addTranslation('en-ie', ['name' => $term_name, 'field_product_type_id' => $product_type_id]);
+      $term_entity->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update specific taxonomy terms from en-gb to fr-fr.
+ */
+function millboard_common_update_9004() {
+  // Array of term names to translate.
+  $terms_to_translate = ['Cladding', 'Decking'];
+
+  // Load the vocabulary by machine name.
+  $vocabulary = Vocabulary::load('product_type');
+
+  // Loop through each term name to translate.
+  foreach ($terms_to_translate as $term_name) {
+    // Load the term entity.
+    $term_entity = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $term_name, 'vid' => $vocabulary->id()]);
+
+    // Check if the term exists.
+    if (!empty($term_entity)) {
+      // Get the first item from the array.
+      $term_entity = reset($term_entity);
+      $product_type_id = $term_entity->get('field_product_type_id')->value;
+
+      // Add translations.
+      if ($term_name === "Cladding") {
+        $term_entity->addTranslation('fr-fr', ['name' => "Bardage", 'field_product_type_id' => $product_type_id]);
+      }
+      elseif ($term_name === "Decking") {
+        $term_entity->addTranslation('fr-fr', ['name' => "Terrasse", 'field_product_type_id' => $product_type_id]);
+      }
+      $term_entity->save();
+    }
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update specific taxonomy terms from en-gb to de-de.
+ */
+function millboard_common_update_10001() {
+  // Array of term names to translate.
+  $terms_to_translate = ['Cladding', 'Decking'];
+
+  // Load the vocabulary by machine name.
+  $vocabulary = Vocabulary::load('product_type');
+
+  // Loop through each term name to translate.
+  foreach ($terms_to_translate as $term_name) {
+    // Load the term entity.
+    $term_entity = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_term')
+      ->loadByProperties(['name' => $term_name, 'vid' => $vocabulary->id()]);
+
+    // Check if the term exists.
+    if (!empty($term_entity)) {
+      // Get the first item from the array.
+      $term_entity = reset($term_entity);
+      $product_type_id = $term_entity->get('field_product_type_id')->value;
+
+      // Add translations.
+      if ($term_name === "Cladding") {
+        $term_entity->addTranslation('de-de', ['name' => "Verkleidung", 'field_product_type_id' => $product_type_id]);
+      }
+      elseif ($term_name === "Decking") {
+        $term_entity->addTranslation('de-de', ['name' => "Terrassendielen", 'field_product_type_id' => $product_type_id]);
+      }
+      $term_entity->save();
+    }
+  }
+}

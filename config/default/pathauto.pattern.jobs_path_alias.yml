@@ -1,0 +1,35 @@
+uuid: 175e6c9a-9d76-4a9f-9a18-ad40eedc00b4
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - language
+    - node
+id: jobs_path_alias
+label: 'Jobs path alias'
+type: 'canonical_entities:node'
+pattern: '/work-with-us/[node:title]'
+selection_criteria:
+  195fbe71-f93c-4038-9e13-52fdc6748384:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 195fbe71-f93c-4038-9e13-52fdc6748384
+    context_mapping:
+      node: node
+    bundles:
+      jobs: jobs
+  26eddb60-73b1-451d-8897-71890fea6740:
+    id: language
+    negate: false
+    uuid: 26eddb60-73b1-451d-8897-71890fea6740
+    context_mapping:
+      language: 'node:langcode:language'
+    langcodes:
+      en-gb: en-gb
+      en-us: en-us
+      en-ie: en-ie
+selection_logic: and
+weight: -10
+relationships:
+  'node:langcode:language':
+    label: Language

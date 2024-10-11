@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains hook implementations.
+ */
+
+/**
+ * Implements hook_mail().
+ */
+function millboard_sap_configuration_mail($key, &$message, $params) {
+  $message['subject'] = $params['subject'];
+  $message['body'][] = $params['message'];
+  $message['params']['attachment'][] = $params['attachments'];
+  $message['params']['files'] = $params['attachments'];
+}

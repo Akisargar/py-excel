@@ -1,0 +1,406 @@
+uuid: 010aef9a-4314-4694-b0fc-cccdd6b83a6f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.45c87197
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_2_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_heading
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_text_sections
+    - cohesion_website_settings.cohesion_color.spring-wood
+label: 'Body Text With Title - Two Column'
+id: hlp_body_text_with_title__two_co
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "uuid": "126e31a7-00cb-420b-99f4-9a6d137c6ee1",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "41216c53-f8b7-41eb-9184-e3f044c4529c",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "children": [
+                          {
+                              "uid": "cpt_1_column_layout",
+                              "type": "component",
+                              "title": "1 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_1_column_layout",
+                              "componentType": "container",
+                              "uuid": "d371d997-9785-4b03-90a7-5b517941829b",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_1_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "c48be4d8-fc1b-4c4c-8879-1b009dbe5b8a",
+                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_heading",
+                                              "type": "component",
+                                              "title": "Heading",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_heading",
+                                              "componentType": "heading",
+                                              "uuid": "1893790a-3f7d-4d54-bb43-f7d5dc51ca5b",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          },
+                                          {
+                                              "uid": "cpt_heading",
+                                              "type": "component",
+                                              "title": "Heading",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_heading",
+                                              "componentType": "heading",
+                                              "uuid": "4d81d979-e915-4c9b-a1b4-c5a4049ceb74",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_2_column_layout",
+                              "type": "component",
+                              "title": "2 column layout",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_2_column_layout",
+                              "componentType": "container",
+                              "uuid": "f16eeaee-3253-4c84-9a04-dbaccd26b4be",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_2_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "312684a6-2543-46c7-bc1e-454fdb438973",
+                                      "dropzoneId": "09e94e16-165c-4854-b690-c747dc66d40b",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_text",
+                                              "type": "component",
+                                              "title": "Text",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_text",
+                                              "componentType": "wysiwyg",
+                                              "uuid": "6c011f58-0ed2-4db5-8259-6148ba501fe5",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  },
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_2_column_layout",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "e4fc7ecb-6b48-4f68-921d-04f82ed99c85",
+                                      "dropzoneId": "ecc6e692-b486-4e74-ad24-a1ffeb01fc91",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_text",
+                                              "type": "component",
+                                              "title": "Text",
+                                              "enabled": true,
+                                              "category": "category-4",
+                                              "componentId": "cpt_text",
+                                              "componentType": "wysiwyg",
+                                              "uuid": "9af1b3ca-f6d8-45f6-ba3f-8786a7f115ae",
+                                              "parentUid": "component-drop-zone",
+                                              "status": {},
+                                              "children": []
+                                          }
+                                      ]
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "126e31a7-00cb-420b-99f4-9a6d137c6ee1": {},
+          "41216c53-f8b7-41eb-9184-e3f044c4529c": {},
+          "d371d997-9785-4b03-90a7-5b517941829b": {},
+          "c48be4d8-fc1b-4c4c-8879-1b009dbe5b8a": {},
+          "1893790a-3f7d-4d54-bb43-f7d5dc51ca5b": {},
+          "4d81d979-e915-4c9b-a1b4-c5a4049ceb74": {},
+          "f16eeaee-3253-4c84-9a04-dbaccd26b4be": {},
+          "312684a6-2543-46c7-bc1e-454fdb438973": {},
+          "6c011f58-0ed2-4db5-8259-6148ba501fe5": {},
+          "e4fc7ecb-6b48-4f68-921d-04f82ed99c85": {},
+          "9af1b3ca-f6d8-45f6-ba3f-8786a7f115ae": {}
+      },
+      "model": {
+          "126e31a7-00cb-420b-99f4-9a6d137c6ee1": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "fluid",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "80px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "64px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "56px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Body Text With Title - Two Column"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "41216c53-f8b7-41eb-9184-e3f044c4529c": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "d371d997-9785-4b03-90a7-5b517941829b": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "flex-start",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "flex-start",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "64px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": 12,
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": 12,
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "Title"
+              },
+              "b75137ab-91db-4482-8944-749b854aed32": "32px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "24px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px"
+          },
+          "c48be4d8-fc1b-4c4c-8879-1b009dbe5b8a": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "1893790a-3f7d-4d54-bb43-f7d5dc51ca5b": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Main title of body",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h2",
+              "77d003da-6145-481e-95c8-2f6017361e26": "",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "settings": {
+                  "title": "Heading"
+              },
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "16px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px"
+          },
+          "4d81d979-e915-4c9b-a1b4-c5a4049ceb74": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Section specific title",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h4",
+              "77d003da-6145-481e-95c8-2f6017361e26": "coh-style-heading-4-size-statements-regular",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "settings": {
+                  "title": "Sub Heading"
+              },
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "16px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "8px"
+          },
+          "f16eeaee-3253-4c84-9a04-dbaccd26b4be": {
+              "57838df3-8666-4152-ad7a-414846c7e158": "coh-style-container-small",
+              "b4f8d2f4-1f92-4ac0-b110-33fda0639848": "space-between",
+              "e9963ab0-7260-41bd-bbd7-a5c767ea2253": "retain",
+              "4fdc3cf3-fcab-4640-86e9-4666bef482f6": 6,
+              "8125dec1-a483-460a-91a4-1cf0dfa61df6": "0",
+              "3b36842f-5f40-4f03-8ad9-27435adbf045": "flex-start",
+              "82aff96a-ce57-4ac9-b4cd-df0e03a332e7": "center",
+              "a902bd3d-a6a0-4967-89f5-dece3ebd0d4f": 6,
+              "7208592b-bc03-476a-9eb2-13133fc84024": "1",
+              "10c02b13-6e7f-4839-960a-f71e78d4bb0b": "flex-start",
+              "40c50db1-a94d-4a51-890e-d0bc21083696": "center",
+              "b3aa67bb-79bf-400c-a0e9-16133da55363": "0",
+              "47f3455a-f1ba-430a-8b0c-38c56d452858": 6,
+              "310159f8-767f-4242-9bd2-0bf9a8d368ea": "0",
+              "16a69134-d141-4f7f-9575-eb95d3d914c8": "flex-start",
+              "3032687f-fa2a-483b-baf1-37a1f12367d7": "flex-start",
+              "49a843a4-9375-4791-8a25-e712623bb4e7": 6,
+              "fbbaafea-23b7-4ee6-b344-5ece9a2bc504": "1",
+              "4af6d020-88c1-4345-9342-f80ac30d7e7b": "flex-start",
+              "98ba7099-3f7a-4d59-bd32-39b79b09a252": "flex-start",
+              "040969db-6346-4349-9a02-752b54f99d34": "0",
+              "6590fce1-9fc8-44d0-bf3c-56fec86619b2": "0",
+              "ba93aa7e-3abe-4113-90c6-bc7e3ed76825": "flex-start",
+              "ef94e9e1-4316-4fba-94b1-90ce1b5c914c": "flex-start",
+              "0e4279a2-04f3-41ac-9f91-c696a7df6ee7": "1",
+              "47420006-7cf8-4301-b430-46be60130a6f": "flex-start",
+              "d01692d1-b283-4b54-a0b6-c06d417956ba": "flex-start",
+              "32273ac0-88a0-48fc-a0a1-2d84dd14a865": "24px",
+              "settings": {
+                  "title": "Body text"
+              },
+              "a9365c1d-715b-421f-94bf-2e2a4f7a7364": "64px",
+              "9f368feb-fe46-4afc-ac33-64794d7139ae": "64px",
+              "83837bcf-1aa0-4f1a-b538-3c6ee1076cfd": "32px",
+              "d7eb9074-5c19-429d-a05a-910062c1ae83": "32px",
+              "5b90dd88-c860-45dd-80a4-371190d8ef76": "12",
+              "40857baa-56bb-4728-b08d-8c88e3d1dee7": "12",
+              "12925a4e-a50d-435f-aef3-d4b52e4afaaa": "24px",
+              "69a013bb-2285-44e2-bc57-33dcd8cdaf53": "24px"
+          },
+          "312684a6-2543-46c7-bc1e-454fdb438973": {
+              "settings": {
+                  "title": "Column 1 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": [],
+                      "sm": {
+                          "col": "6"
+                      },
+                      "xs": []
+                  }
+              }
+          },
+          "6c011f58-0ed2-4db5-8259-6148ba501fe5": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus ornare suspendisse sed nisi lacus sed. Morbi enim nunc faucibus a pellentesque sit amet porttitor eget. Sit amet est placerat in egestas erat. Odio ut enim blandit volutpat maecenas volutpat blandit. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Diam in arcu cursus euismod quis viverra. Semper feugiat nibh sed pulvinar proin. Massa ultricies mi quis hendrerit dolor magna. Eget sit amet tellus cras. Cras sed felis eget velit aliquet sagittis id. Fames ac turpis egestas sed tempus urna et pharetra pharetra. Suspendisse potenti nullam ac tortor vitae purus faucibus. In vitae turpis massa sed. Metus aliquam eleifend mi in nulla. Semper viverra nam libero justo laoreet sit. In nulla posuere sollicitudin aliquam.&nbsp;<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "e4fc7ecb-6b48-4f68-921d-04f82ed99c85": {
+              "settings": {
+                  "title": "Column 2 drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "xl": [],
+                      "sm": {
+                          "col": "6"
+                      }
+                  }
+              }
+          },
+          "9af1b3ca-f6d8-45f6-ba3f-8786a7f115ae": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus ornare suspendisse sed nisi lacus sed. Morbi enim nunc faucibus a pellentesque sit amet porttitor eget. Sit amet est placerat in egestas erat. Odio ut enim blandit volutpat maecenas volutpat blandit. Pharetra et ultrices neque ornare aenean euismod elementum nisi quis. Diam in arcu cursus euismod quis viverra. Semper feugiat nibh sed pulvinar proin. Massa ultricies mi quis hendrerit dolor magna. Eget sit amet tellus cras. Cras sed felis eget velit aliquet sagittis id. Fames ac turpis egestas sed tempus urna et pharetra pharetra. Suspendisse potenti nullam ac tortor vitae purus faucibus. In vitae turpis massa sed. Metus aliquam eleifend mi in nulla. Semper viverra nam libero justo laoreet sit. In nulla posuere sollicitudin aliquam.&nbsp;<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          }
+      },
+      "previewModel": {
+          "126e31a7-00cb-420b-99f4-9a6d137c6ee1": {},
+          "d371d997-9785-4b03-90a7-5b517941829b": {},
+          "1893790a-3f7d-4d54-bb43-f7d5dc51ca5b": {},
+          "4d81d979-e915-4c9b-a1b4-c5a4049ceb74": {},
+          "f16eeaee-3253-4c84-9a04-dbaccd26b4be": {},
+          "6c011f58-0ed2-4db5-8259-6148ba501fe5": {},
+          "9af1b3ca-f6d8-45f6-ba3f-8786a7f115ae": {}
+      },
+      "variableFields": {
+          "126e31a7-00cb-420b-99f4-9a6d137c6ee1": [],
+          "d371d997-9785-4b03-90a7-5b517941829b": [],
+          "1893790a-3f7d-4d54-bb43-f7d5dc51ca5b": [],
+          "4d81d979-e915-4c9b-a1b4-c5a4049ceb74": [],
+          "f16eeaee-3253-4c84-9a04-dbaccd26b4be": [],
+          "6c011f58-0ed2-4db5-8259-6148ba501fe5": [],
+          "9af1b3ca-f6d8-45f6-ba3f-8786a7f115ae": []
+      },
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_text_sections
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: 0

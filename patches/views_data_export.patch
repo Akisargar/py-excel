@@ -1,0 +1,13 @@
+diff --git a/src/Plugin/views/display/DataExport.php b/src/Plugin/views/display/DataExport.php
+index 18c00a0..088ec8a 100644
+--- a/src/Plugin/views/display/DataExport.php
++++ b/src/Plugin/views/display/DataExport.php
+@@ -1053,7 +1053,7 @@ protected static function getTempFile(ViewExecutable $view, $view_id, $display_i
+     }
+
+     if ($store_in_public_file_directory === TRUE) {
+-      $directory = "public://views_data_export/$view_dir/$user_dir/";
++      $directory = "public://views_data_export/$view_dir/";
+     }
+     else {
+       $directory = "private://views_data_export/$view_dir/$user_dir/";

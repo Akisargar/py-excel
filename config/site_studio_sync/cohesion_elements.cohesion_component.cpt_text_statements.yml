@@ -1,0 +1,255 @@
+uuid: b6c327e1-5161-4432-afed-38e57babe6ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - cohesion_elements.cohesion_component_category.cpt_cat_text_components
+  content:
+    - 'file:file:fce06bb5-21b4-496d-baa4-ed52687dcc42'
+label: 'Text Statements'
+id: cpt_text_statements
+json_values: |
+  {
+      "canvas": [
+          {
+              "type": "container",
+              "uid": "container",
+              "title": "Container",
+              "status": {
+                  "collapsed": false
+              },
+              "iconColor": "layout",
+              "uuid": "3970238a-aa2a-47a9-a2a5-538f3734a97a",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "item",
+                      "uid": "wysiwyg",
+                      "title": "WYSIWYG",
+                      "status": {
+                          "collapsed": true
+                      },
+                      "iconColor": "content",
+                      "uuid": "99651d10-87c9-4a2e-a534-606d14988b3d",
+                      "parentUid": "container",
+                      "children": []
+                  }
+              ]
+          }
+      ],
+      "componentForm": [
+          {
+              "type": "form-container",
+              "uid": "form-tab-container",
+              "title": "Tab container",
+              "status": {
+                  "collapsed": false
+              },
+              "options": {
+                  "formBuilder": true
+              },
+              "iconColor": "formLayout",
+              "uuid": "5dd43cdc-8a2f-4258-9c84-c7bcf5eb456f",
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "form-container",
+                      "uid": "form-tab-item",
+                      "title": "Tab item",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "options": {
+                          "formBuilder": true
+                      },
+                      "iconColor": "formLayout",
+                      "uuid": "786e0579-5480-4dc1-8f61-73c2160bd9f4",
+                      "parentUid": "form-tab-container",
+                      "children": [
+                          {
+                              "type": "form-container",
+                              "uid": "form-section",
+                              "title": "Field group",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "options": {
+                                  "formBuilder": true
+                              },
+                              "iconColor": "formLayoutAlt",
+                              "uuid": "3e38d915-dd53-4be8-91d6-4a53260c275b",
+                              "parentUid": "form-tab-item",
+                              "children": [
+                                  {
+                                      "type": "form-field",
+                                      "uid": "form-wysiwyg",
+                                      "title": "WYSIWYG",
+                                      "translate": true,
+                                      "status": {
+                                          "collapsed": false
+                                      },
+                                      "iconColor": "formField",
+                                      "uuid": "d8bfd324-23b2-4040-b7ce-4996504a68d1",
+                                      "parentUid": "form-section",
+                                      "children": []
+                                  },
+                                  {
+                                      "type": "form-help",
+                                      "uid": "form-helptext",
+                                      "title": "Help text",
+                                      "status": {
+                                          "collapsed": false
+                                      },
+                                      "iconColor": "formHelp",
+                                      "uuid": "f0240e90-a394-402e-9128-572f338c770d",
+                                      "parentUid": "form-section",
+                                      "children": []
+                                  }
+                              ]
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "786e0579-5480-4dc1-8f61-73c2160bd9f4": {},
+          "d8bfd324-23b2-4040-b7ce-4996504a68d1": {},
+          "3e38d915-dd53-4be8-91d6-4a53260c275b": {},
+          "f0240e90-a394-402e-9128-572f338c770d": {},
+          "3970238a-aa2a-47a9-a2a5-538f3734a97a": {},
+          "99651d10-87c9-4a2e-a534-606d14988b3d": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "wysiwyg-settings",
+                          "children": [
+                              {
+                                  "formKey": "wysiwyg-editor",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "content",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              }
+          }
+      },
+      "model": {
+          "3970238a-aa2a-47a9-a2a5-538f3734a97a": {
+              "settings": {
+                  "width": "fluid"
+              }
+          },
+          "99651d10-87c9-4a2e-a534-606d14988b3d": {
+              "settings": {
+                  "title": "WYSIWYG",
+                  "content": "[field.d8bfd324-23b2-4040-b7ce-4996504a68d1]"
+              }
+          },
+          "5dd43cdc-8a2f-4258-9c84-c7bcf5eb456f": {
+              "settings": {
+                  "type": "cohTabContainer",
+                  "title": "Tab container",
+                  "responsiveMode": true
+              }
+          },
+          "786e0579-5480-4dc1-8f61-73c2160bd9f4": {
+              "settings": {
+                  "type": "cohTabItem",
+                  "title": "Content",
+                  "breakpointIcon": ""
+              }
+          },
+          "3e38d915-dd53-4be8-91d6-4a53260c275b": {
+              "settings": {
+                  "type": "cohSection",
+                  "title": "Statement Text",
+                  "hideRowHeading": 0,
+                  "removePadding": 0,
+                  "columnCount": "1",
+                  "breakpointIcon": "",
+                  "breakpoints": false,
+                  "propertiesMenu": false,
+                  "disableScrollbar": true,
+                  "disableEllipsisMenu": true,
+                  "isOpen": true
+              }
+          },
+          "d8bfd324-23b2-4040-b7ce-4996504a68d1": {
+              "settings": {
+                  "type": "cohWysiwyg",
+                  "title": "Text",
+                  "schema": {
+                      "type": "object"
+                  },
+                  "machineName": "text",
+                  "tooltipPlacement": "auto right"
+              },
+              "model": {
+                  "value": {
+                      "textFormat": "cohesion",
+                      "text": ""
+                  }
+              }
+          },
+          "f0240e90-a394-402e-9128-572f338c770d": {
+              "settings": {
+                  "title": "Help text",
+                  "type": "cohHelpText",
+                  "options": {
+                      "showClose": false,
+                      "helpType": "help",
+                      "helpText": "There are three styles to be select from, for this block. Two in light and other in dark. You will be able to italicize certain section of the text using the toolbar provided in the text field, these italicize text will automatically turn into green colour. "
+                  }
+              }
+          }
+      },
+      "previewModel": {
+          "786e0579-5480-4dc1-8f61-73c2160bd9f4": {},
+          "d8bfd324-23b2-4040-b7ce-4996504a68d1": {},
+          "3e38d915-dd53-4be8-91d6-4a53260c275b": {},
+          "f0240e90-a394-402e-9128-572f338c770d": {},
+          "99651d10-87c9-4a2e-a534-606d14988b3d": {
+              "settings": {
+                  "title": "WYSIWYG",
+                  "content": {
+                      "textFormat": "filtered_html",
+                      "text": ""
+                  }
+              }
+          }
+      },
+      "variableFields": {
+          "786e0579-5480-4dc1-8f61-73c2160bd9f4": [],
+          "d8bfd324-23b2-4040-b7ce-4996504a68d1": [],
+          "3e38d915-dd53-4be8-91d6-4a53260c275b": [],
+          "f0240e90-a394-402e-9128-572f338c770d": [],
+          "99651d10-87c9-4a2e-a534-606d14988b3d": [
+              "settings.content"
+          ]
+      },
+      "disabledNodes": [],
+      "meta": {}
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: cpt_cat_text_components
+preview_image: 'public://element-preview-images/text_statements_demo.png'
+has_quick_edit: null
+entity_type_access: {  }
+bundle_access: {  }
+twig_template: component--cohesion-cpt-text-statements
+weight: 0

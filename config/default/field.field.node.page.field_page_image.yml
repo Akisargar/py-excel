@@ -1,0 +1,41 @@
+uuid: f30871c3-0c51-4ddf-8b54-446b113d621a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_image
+    - media.type.acquia_dam_image_asset
+    - media.type.image
+    - node.type.page
+  content:
+    - 'media:acquia_dam_image_asset:9aca32c0-6b67-4f0d-a020-8717ebcd3b13'
+  enforced:
+    module:
+      - acquia_cms_page
+_core:
+  default_config_hash: QB9V4p2_hS450hguAHJVLTXJ2bk4apSv0VqA4N6Z3Zc
+id: node.page.field_page_image
+field_name: field_page_image
+entity_type: node
+bundle: page
+label: Image
+description: 'An image which will be displayed in search results.'
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 9aca32c0-6b67-4f0d-a020-8717ebcd3b13
+    weight: 0
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: acquia_dam_image_asset
+field_type: entity_reference

@@ -1,0 +1,29 @@
+uuid: d7b6c26d-98ff-494f-a485-5593c429e1d5
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.storage.commerce_product_variation.field_boards_per_ft2
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product_variation.millboard_products.field_boards_per_ft2
+field_name: field_boards_per_ft2
+entity_type: commerce_product_variation
+bundle: millboard_products
+label: 'Boards per ft2'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

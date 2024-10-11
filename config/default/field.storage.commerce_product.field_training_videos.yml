@@ -1,0 +1,20 @@
+uuid: b5a5d2d2-435f-4064-8ddb-5195a207835a
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - media
+id: commerce_product.field_training_videos
+field_name: field_training_videos
+entity_type: commerce_product
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,29 @@
+uuid: f5f495a4-7b14-4b7d-bd08-689a45150919
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_showroom_thumbnail
+    - media.type.acquia_dam_image_asset
+    - node.type.showrooms
+id: node.showrooms.field_showroom_thumbnail
+field_name: field_showroom_thumbnail
+entity_type: node
+bundle: showrooms
+label: 'Showroom Thumbnail'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_image_asset: acquia_dam_image_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

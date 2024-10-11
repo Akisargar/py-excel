@@ -1,0 +1,25 @@
+uuid: b30c4e62-1581-40e9-a366-1c73f3b7ecc1
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - workflows.workflow.editorial
+_core:
+  default_config_hash: 78uuP8X4UwdxKeR-500q-a1HBgfFQ_MPaE5g6kb-BfU
+id: to_published
+label: 'To Published'
+format: plain_text
+subject: '[node:title] State Changed'
+recipient_types:
+  author:
+    id: author
+    provider: workbench_email
+    status: true
+    settings: {  }
+bundles: {  }
+body:
+  value: '[node:title] is published now'
+  format: plain_text
+replyTo: ''
+transitions:
+  editorial: {  }

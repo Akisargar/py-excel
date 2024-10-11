@@ -1,0 +1,24 @@
+uuid: eca7e506-32f5-4940-a73e-a8bdc429f14c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - image.style.history_scroller_desktop_384x572_
+    - image.style.history_scroller_mobile
+  theme:
+    - millboard
+id: history_scroller_responsive_image_style
+label: 'History Scroller Responsive Image Style'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: history_scroller_desktop_384x572_
+    breakpoint_id: millboard.tabletonwards
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: history_scroller_mobile
+    breakpoint_id: millboard.mobile
+    multiplier: 1x
+breakpoint_group: millboard
+fallback_image_style: history_scroller_desktop_384x572_

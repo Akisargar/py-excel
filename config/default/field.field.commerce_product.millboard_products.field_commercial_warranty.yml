@@ -1,0 +1,25 @@
+uuid: 415b3f6c-f3cb-481b-8173-c9ba3e09e35f
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_commercial_warranty
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_commercial_warranty
+field_name: field_commercial_warranty
+entity_type: commerce_product
+bundle: millboard_products
+label: 'Commercial Warranty'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

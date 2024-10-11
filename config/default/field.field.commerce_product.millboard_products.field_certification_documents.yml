@@ -1,0 +1,35 @@
+uuid: ec0d0e0a-f485-4d96-a4a1-d06c4340c5c7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.millboard_products
+    - field.storage.commerce_product.field_certification_documents
+    - media.type.acquia_dam_documents_asset
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: all
+id: commerce_product.millboard_products.field_certification_documents
+field_name: field_certification_documents
+entity_type: commerce_product
+bundle: millboard_products
+label: 'Certification Documents'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      acquia_dam_documents_asset: acquia_dam_documents_asset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

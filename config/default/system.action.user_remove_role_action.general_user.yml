@@ -1,0 +1,14 @@
+uuid: 9bd6b69a-a955-496a-8631-d24b98531b89
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.general_user
+  module:
+    - user
+id: user_remove_role_action.general_user
+label: 'Remove the General User role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: general_user

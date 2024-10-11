@@ -1,0 +1,190 @@
+uuid: fbbb7ed7-ea60-4ea0-9067-ff206b2e3e57
+langcode: en
+status: true
+dependencies:
+  config:
+    - cohesion_website_settings.cohesion_color.millboard-wenge
+label: 'Ordered list'
+id: ordered_list
+json_values: |
+  {
+      "preview": {
+          "text": "<p>Text above ordered list<\/p>\n\n<ol>\n\t<li>List item 1\n\t<ol>\n\t\t<li>Nested list item 1<\/li>\n\t\t<li>Nested ltem 2<\/li>\n\t\t<li>Nested ltem 3<\/li>\n\t<\/ol>\n\t<\/li>\n\t<li>List item 2<\/li>\n\t<li>List item 3<\/li>\n<\/ol>\n\n<p>Text below ordered list<\/p>\n",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "ol",
+              "class": "",
+              "combinator": "",
+              "pseudo": ""
+          },
+          "styles": {
+              "xl": {
+                  "font-weight": {},
+                  "margin": {
+                      "margin-bottom": {}
+                  }
+              },
+              "xs": {
+                  "font-family": {
+                      "value": "$coh-font-f37 ginger regular"
+                  },
+                  "font-weight": {},
+                  "color": {
+                      "value": {
+                          "link": true,
+                          "value": {
+                              "hex": "#62554d",
+                              "rgba": "rgba(98, 85, 77, 1)"
+                          },
+                          "uid": "millboard-wenge",
+                          "name": "Millboard Wenge",
+                          "class": ".coh-color-millboard-wenge",
+                          "variable": "$coh-color-millboard-wenge",
+                          "tags": [
+                              "Millboard",
+                              "Text",
+                              "Accent"
+                          ],
+                          "inuse": false,
+                          "wysiwyg": true
+                      }
+                  },
+                  "font-size": {
+                      "value": "14px"
+                  },
+                  "line-height": {
+                      "value": "24px"
+                  }
+              }
+          },
+          "3e4e583a-8cb9-4fca-b5e8-a09de2a0073d": {
+              "settings": {
+                  "element": "li",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ""
+              },
+              "styles": {
+                  "xl": {
+                      "margin": {
+                          "margin-left": {
+                              "value": "24"
+                          }
+                      }
+                  }
+              }
+          },
+          "6d99db19-3769-462c-b273-687c931e5985": {
+              "settings": {
+                  "element": "ol",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ""
+              },
+              "styles": {
+                  "xl": {
+                      "margin": {
+                          "margin-top": {
+                              "value": "24"
+                          },
+                          "margin-bottom": {
+                              "value": "24"
+                          }
+                      }
+                  },
+                  "lg": {
+                      "margin": {
+                          "margin-top": {},
+                          "margin-bottom": {}
+                      }
+                  }
+              }
+          }
+      },
+      "variableFields": [],
+      "previewModel": {}
+  }
+json_mapper: |
+  {
+      "styles": {
+          "selectorType": "topLevel",
+          "items": [],
+          "title": "Ordered list",
+          "formDefinition": [
+              {
+                  "formKey": "font",
+                  "children": [
+                      {
+                          "formKey": "font-and-color",
+                          "activeFields": [
+                              {
+                                  "name": "font-family",
+                                  "active": true
+                              },
+                              {
+                                  "name": "font-weight",
+                                  "active": false
+                              },
+                              {
+                                  "name": "color",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "font-sizing-and-alignment",
+                          "activeFields": [
+                              {
+                                  "name": "font-size",
+                                  "active": true
+                              },
+                              {
+                                  "name": "line-height",
+                                  "active": true
+                              },
+                              {
+                                  "name": "text-align",
+                                  "active": false
+                              },
+                              {
+                                  "name": "letter-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "word-spacing",
+                                  "active": false
+                              },
+                              {
+                                  "name": "text-indent",
+                                  "active": false
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "form": null
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: false
+custom: null
