@@ -36,7 +36,7 @@ json_values: |
                       "value": "normal"
                   },
                   "min-width": {
-                      "value": "240px"
+                      "value": "100px"
                   },
                   "padding": {
                       "padding-top": {
@@ -155,6 +155,11 @@ json_values: |
                   "max-width": {},
                   "min-height": {
                       "value": "48px"
+                  }
+              },
+              "md": {
+                  "min-width": {
+                      "value": "240px"
                   }
               }
           },
@@ -623,6 +628,10 @@ json_mapper: |
                               }
                           ],
                           "breakpoints": [
+                              {
+                                  "iconName": "laptop",
+                                  "name": "md"
+                              },
                               {
                                   "name": "xs"
                               }

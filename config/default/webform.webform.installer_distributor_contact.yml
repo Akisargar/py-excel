@@ -41,6 +41,10 @@ elements: |-
     '#type': hidden
     '#title': 'Distributor Email'
     '#default_value': '[millboard_installers_distributors:distributorEmail]'
+  type:
+    '#type': hidden
+    '#title': Type
+    '#default_value': '[millboard_installers_distributors:distributorType]'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -261,7 +265,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'installers@millboard.co.uk,[webform_submission:values:distributor_email]'
+      to_mail: '[millboard_installers_distributors:distributorType]@millboard.co.uk,[webform_submission:values:distributor_email]'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }

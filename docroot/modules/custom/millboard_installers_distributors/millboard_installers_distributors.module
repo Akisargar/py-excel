@@ -89,6 +89,11 @@ function millboard_installers_distributors_token_info() {
     'description' => t('Distributor email address'),
   ];
 
+  $info['tokens']['millboard_installers_distributors']['distributorType'] = [
+    'name' => t("Distributor type"),
+    'description' => t('Distributor Type'),
+  ];
+
   return $info;
 }
 
@@ -136,6 +141,16 @@ function millboard_installers_distributors_tokens($type, $tokens, array $data = 
           }
           else {
             $replacements[$original] = NULL;
+          }
+          break;
+
+        case 'distributorType':
+          $distributorType = $node->get('field_type_of_inst_dist')->value;
+          if ($distributorType == 'approved_installer') {
+            $replacements[$original] = 'installers';
+          }
+          else {
+            $replacements[$original] = 'distributors';
           }
           break;
       }

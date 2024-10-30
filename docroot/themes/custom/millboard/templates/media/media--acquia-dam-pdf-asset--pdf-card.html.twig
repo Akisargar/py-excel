@@ -20,13 +20,6 @@
     {% if file_size %}
       <p class="pdf-resources__card-details--size">{{ file_size|replace({'MB': ' MB'}) }}</p>
     {% endif %}
-      <span link-url="{{ view_url }}" class="pdf-resources__card-details--copy" id="copyLink">{{ 'Copy Link'|t }}</span>
-      <a class="use-ajax" 
-      data-dialog-options="{&quot;width&quot;:400}" 
-      data-dialog-type="modal" 
-      href="{{ view_url }}">
-      View
-      </a>
     {% if file_url %}
       <a href="{{ file_url }}" class="pdf-resources__card-details--download">{{ 'Download PDF'|t }}</a>
     {% endif %}

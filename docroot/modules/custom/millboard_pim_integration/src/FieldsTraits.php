@@ -53,9 +53,6 @@ trait FieldsTraits {
 
     foreach ($item['attributes'] as $attribute) {
       $pimAttributes = $this->pimAttributes();
-      if (array_key_exists('kzrqvtzgzg9x', $pimAttributes) && $attribute['attribute_id'] == 'kzrqvtzgzg9x') {
-          $temp = $attribute['values'];
-      }
       if (array_key_exists($attribute['attribute_id'], $pimAttributes) && $attribute['values']) {
         $pimAttribute = $pimAttributes[$attribute['attribute_id']];
         if ($pimAttributes[$attribute['attribute_id']]['import'] == TRUE && empty($pimAttribute['commerce_attribute']) && empty($pimAttribute['asset_type']) && empty($pimAttribute['vocabulary']) && empty($pimAttribute['lang_code']) && $pimAttribute['field'] != 'status') {
@@ -88,11 +85,6 @@ trait FieldsTraits {
         if ($pimAttributes[$attribute['attribute_id']]['import'] && isset($pimAttribute['asset_type'])) {
           $fieldArr[$pimAttribute['field']] = $this->getMediaIds($attribute['values'], $pimAttribute['asset_type']);
         }
-
-       if($pimAttributes[$attribute['attribute_id']] == 'kzrqvtzgzg9x') {
-         $che = $pimAttributes[$attribute['attribute_id']];
-        }
-   
         // RRP Fields.
         if ($pimAttributes[$attribute['attribute_id']]['import'] && isset($pimAttribute['lang_code'])) {
           if ($langcode == $pimAttribute['lang_code'] && $pimAttribute['field'] != 'status') {
@@ -102,10 +94,6 @@ trait FieldsTraits {
               $fieldArr[$pimAttribute['field']]['value'] = $attribute['values'][0];
               $fieldArr[$pimAttribute['field']]['format'] = $pimAttribute['format'];
             }
-            else {
-              $fieldArr[$pimAttribute['field']] = [];
-              $fieldArr[$pimAttribute['field']]['value'] = $attribute['values'][0];
-            }
           }
           if ($langcode == $pimAttribute['lang_code'] && $pimAttribute['field'] == 'status' && strtolower($attribute['values'][0]) == 'no') {
             $fieldArr[$pimAttribute['field']] = FALSE;
@@ -113,11 +101,6 @@ trait FieldsTraits {
         }
       }
     }
-
-    if($item["product_id"] == 'qmkrq6mlzprb'){
-      $fieldArr = $fieldArr;
-    }
-
     return $fieldArr;
   }
 
@@ -266,6 +249,12 @@ trait FieldsTraits {
         'field' => 'field_boards_per_ft2',
         'import' => TRUE,
       ],
+      "kzrqvtzgzg9x" => [
+        "name" => "Body Copy",
+        'field' => 'field_body_copy',
+        'import' => TRUE,
+        'lang_code' => 'en-gb',
+      ],
       "hbvfrpbmtblz" => [
         "name" => "Body Copy (US)",
         'field' => 'field_body_copy',
@@ -279,11 +268,6 @@ trait FieldsTraits {
         'import' => TRUE,
         'lang_code' => 'fr-fr',
         'format' => 'filtered_html',
-      ],
-      "kzrqvtzgzg9x" => [
-        "name" => "Body Copy",
-        'field' => 'field_body_copy',
-        'import' => TRUE,
       ],
       "slcwgjxttrhk" => [
         "name" => "CAD File Downloads",
@@ -377,6 +361,12 @@ trait FieldsTraits {
       "qljspvmnxb2r" => [
         "name" => "Intro Copy",
         'field' => 'field_intro_copy',
+        'import' => TRUE,
+        'lang_code' => 'en-ie',
+      ],
+      "kzrqvtzgzg9x" => [
+        "name" => "Body Copy",
+        'field' => 'field_body_copy',
         'import' => TRUE,
         'lang_code' => 'en-ie',
       ],

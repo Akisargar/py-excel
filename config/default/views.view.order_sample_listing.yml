@@ -823,7 +823,7 @@ display:
           relationship: reverse__commerce_product__field_product_type
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: all
@@ -852,7 +852,6 @@ display:
           validate_options: {  }
           break_phrase: true
           not: false
-          target_entity_type_id: taxonomy_term
         product_id:
           id: product_id
           table: commerce_product_field_data
@@ -3102,7 +3101,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<span class="total-cladding-elements hidden">[view:total-rows] [view:title] Samples</span>'
+            value: '<span class="total-cladding-elements hidden">[view:total-rows]</span>'
             format: full_html
           tokenize: false
       display_extenders:
@@ -4978,7 +4977,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<span class="total-decking-elements hidden">[view:total-rows] [view:title] Samples</div>'
+            value: '<span class="total-decking-elements hidden">[view:total-rows]</div>'
             format: full_html
           tokenize: false
       exposed_block: false

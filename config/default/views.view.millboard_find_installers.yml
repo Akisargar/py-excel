@@ -3571,7 +3571,6 @@ display:
                 advanced:
                   collapsible: false
                   is_secondary: false
-                  collapsible_disable_automatic_open: false
                 min: '0'
                 max: '100'
                 step: '5'
@@ -4610,7 +4609,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div\r\n  class=\"coh-container installer-distributor-card coh-style-installers-distributors-card-custom-style\" data-location=\"{{ field_store_location }} \"\r\ntitle=\"{{ title }}\"\r\n>\r\n  <h5\r\n    class=\"coh-heading installer-distributor-card-heading coh-style-heading-5-size-regular\"\r\n  >\r\n    {{ title }}\r\n  </h5>\r\n  <div\r\n    class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a\"\r\n  >\r\n\r\n{% if field_type_of_inst_dist_1 != \"approved_installer\" %}\r\n    {{ field_type_of_inst_dist }}\r\n{% endif %}\r\n  </div>\r\n{% if field_grading|default() %}\r\n    {% if field_grading != \"Ungraded\" %}\r\n      {% if field_grading == \"Gold\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading gold-installer\">\r\n      {% elseif field_grading == \"Silver\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading silver-installer\">\r\n      {% elseif field_grading == \"Platinum\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading platinum-installer\">\r\n      {% elseif field_grading == \"Retail\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading retail-installer\">\r\n      {% endif %}\r\n\r\n      {% if field_grading == \"Retail\" %}\r\n        <b>{{ field_grading }}</b> Sales Only\r\n      {% else %}\r\n        <b>{{ field_grading }}</b> Distributor\r\n      {% endif %}\r\n      </div>\r\n\r\n\r\n    {% endif %}\r\n  {% endif %}\r\n  <div\r\n    class=\"coh-container coh-style-paragraph-regular installer-distributor-card-location\"\r\n  >\r\n    {{ field_store_location_proximity }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-adress coh-style-f37-ginger-light coh-style-paragraph-default\"\r\n  >\r\n    {{ field_store_address }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-telephone coh-style-paragraph-regular\"\r\n  >\r\n    <ul>\r\n      <li>{{ field_telephone_number }}</li>\r\n      <li>{{ field_telephone_number_2 }}</li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"coh-container installer-distributor-card-link\">\r\n    {{ view_node }}\r\n  </div>\r\n</div>\r\n"
+            text: "<div\r\n  class=\"coh-container installer-distributor-card coh-style-installers-distributors-card-custom-style\" data-location=\"{{ field_store_location }} \"\r\ntitle=\"{{ title }}\"\r\n>\r\n  <h5\r\n    class=\"coh-heading installer-distributor-card-heading coh-style-heading-5-size-regular\"\r\n  >\r\n    {{ title }}\r\n  </h5>\r\n{% if field_grading|default() %}\r\n    {% if field_grading != \"Ungraded\" %}\r\n      {% if field_grading == \"Gold\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading gold-installer\">\r\n      {% elseif field_grading == \"Silver\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading silver-installer\">\r\n      {% elseif field_grading == \"Platinum\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading platinum-installer\">\r\n      {% elseif field_grading == \"Retail\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading retail-installer\">\r\n      {% endif %}\r\n\r\n      {% if field_grading == \"Retail\" %}\r\n        <b>{{ field_grading }}</b> Sales Only\r\n      {% else %}\r\n        <b>{{ field_grading }}</b> Distributor\r\n      {% endif %}\r\n      </div>\r\n\r\n\r\n    {% endif %}\r\n  {% endif %}\r\n  <div\r\n    class=\"coh-container coh-style-paragraph-regular installer-distributor-card-location\"\r\n  >\r\n    {{ field_store_location_proximity }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-adress coh-style-f37-ginger-light coh-style-paragraph-default\"\r\n  >\r\n    {{ field_store_address }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-telephone coh-style-paragraph-regular\"\r\n  >\r\n    <ul>\r\n      <li>{{ field_telephone_number }}</li>\r\n      <li>{{ field_telephone_number_2 }}</li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"coh-container installer-distributor-card-link\">\r\n    {{ view_node }}\r\n  </div>\r\n</div>\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -4680,7 +4679,6 @@ display:
                 advanced:
                   collapsible: false
                   is_secondary: false
-                  collapsible_disable_automatic_open: false
                 min: '5'
                 max: '100'
                 step: '5'
@@ -4693,20 +4691,16 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
                   collapsible: false
                   is_secondary: false
-                  collapsible_disable_automatic_open: false
               field_sells_cladding_value:
                 plugin_id: bef_single
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
                   collapsible: false
                   is_secondary: false
-                  collapsible_disable_automatic_open: false
       empty:
         area_text_custom:
           id: area_text_custom

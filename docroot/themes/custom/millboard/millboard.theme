@@ -9,6 +9,7 @@ use Drupal\acquia_dam\Plugin\media\Source\Asset;
 use Drupal\commerce_product\Entity\Product;
 use Drupal\Core\Url;
 use Drupal\media\Entity\Media;
+use Drupal\node\NodeInterface;
 use Drupal\views\Views;
 
 /**
@@ -454,9 +455,6 @@ function millboard_preprocess_media(&$variables) {
     $variables['file_size'] = bytes_to_megabytes($size);
     $variables['file_name'] = get_title_from_filename($name);
     $variables['file_url'] = $embeds ? $embeds['original']['url'] : '';
-    $variables['view_url'] = $embeds ? $embeds["document_viewer"]["url"] : '';
-    
-    // dump($source->getMetadata($variables['media'], 'embeds'));
   }
   if ($variables['media']->bundle() === 'compressed_zip') {
     $name = remove_tags_and_newlines($variables['media']->get('name')->value);
@@ -465,5 +463,21 @@ function millboard_preprocess_media(&$variables) {
     $file = \Drupal::service('entity_type.manager')->getStorage('file')->load($file_target_id);
     $variables['file_size'] = bytes_to_megabytes((string) $file->getSize());
     $variables['file_url'] = \Drupal::service('file_url_generator')->generate($file->getFileUri())->toString();
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for html.
+ */
+function millboard_preprocess_html(array &$variables) {
+  $route_match = \Drupal::routeMatch();
+  if ($node = $route_match->getParameter('node')) {
+    if ($node instanceof NodeInterface && $route_match->getRouteName() == 'entity.node.canonical') {
+      $default_langcode = $node->getUntranslated()->language()->getId();
+      $title_in_default_language = $node->getTranslation($default_langcode)->getTitle();
+      if ($title_in_default_language == 'Order a sample') {
+        $variables['attributes']['class'][] = 'coh-style-order-sample-page';
+      }
+    }
   }
 }

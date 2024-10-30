@@ -264,30 +264,59 @@
     }
   };
 
-  Drupal.behaviors.copyLinkToClipboard = {
-    attach: function (context, settings) {
-      console.log("here i am");
-      $("#copyLink").off('click').on("click", function() {
-        console.log($(this).attr("link-url"));
-        alert("clicked");
-      })
+  Drupal.behaviors.disableRightClick = {
+    attach: function (context, setting) {
+      console.log('check');
+      document.addEventListener('contextmenu', function (event) {
+        if (event.target.tagName === 'IMG') {
+          // Log the event to Google Tag Manager or Analytics
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'imageRightClick',
+            'imageUrl': event.target.src,
+          });
+        }
 
-      // // Ensure the behavior only runs once per element.
-      // $('.copy-link-button', context).once('copyLinkToClipboard').on('click', function () {
-      //   // Get the link input field
-      //   var copyText = $('#copyLinkInput', context);
-
-      //   // Select the text field
-      //   copyText.select();
-      //   copyText[0].setSelectionRange(0, 99999); // For mobile devices
-
-      //   // Copy the text inside the text field
-      //   document.execCommand("copy");
-
-      //   // Optional: Display an alert or notification
-      //   alert("Link copied to clipboard: " + copyText.val());
-      // });
+        // Disable right-click on the entire page
+        event.preventDefault();
+      });
     }
+  }
+
+  Drupal.behaviors.searchFilters = {
+    attach: function (context, setting) {
+      if ($(".coh-style-clear-facets-block").length) {
+        if ($("#block-search-content-type").length) {
+          var activeItems = $(".facet-item .is-active");  
+          activeItems.each(function() {
+            console.log($(this).attr("data-drupal-facet-item-value"));
+            if ($(".coh-style-clear-facets-block").find(`[data-drupal-facet-item-value='${$(this).attr('data-drupal-facet-item-value')}']`).length === 0) {
+              $(".coh-style-clear-facets-block").prepend($(this).parent().clone());
+            }
+          });
+        }
+      }
+
+      if ($("#block-search-content-type").length > 0) {
+        var facetItems = $("#block-search-content-type .facet-item a:not(.is-active)");
+        var currentPageUrl = window.location.pathname;
+        var checkFacetFilter = currentPageUrl.split('/').slice(-2);
+      
+        if (facetItems.length > 0) {
+          facetItems.each(function() {
+            var facetUrl = $(this).attr("href").split('/').slice(-2);
+      
+            if (checkFacetFilter[0] === facetUrl[0]) {
+              var newUrl = window.location.origin + currentPageUrl;
+              if (!currentPageUrl.endsWith(facetUrl.join('/'))) {
+                newUrl += '/' + facetUrl.join('/');
+              }
+              $(this).attr("href", newUrl);
+            }
+          });
+        }
+      }
+    },
   };
 
 })(jQuery, Drupal);

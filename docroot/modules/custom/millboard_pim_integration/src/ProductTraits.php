@@ -20,11 +20,6 @@ trait ProductTraits {
    *   The product.
    */
   protected function getProduct(string $product_id) : array {
-
-    if($product_id == 'dqcxnvpxzpsf'){
-      $temp = $product_id;
-    }
-    
     $client = \Drupal::httpClient();
     $url = $this->apiUrl() . '/products/' . $product_id;
     try {
@@ -36,7 +31,7 @@ trait ProductTraits {
       }
       // Decode the JSON response.
       $result = Json::decode($response->getBody());
-      return $result ? $result : [];// kzrqvtzgzg9x
+      return $result ? $result : [];
     }
     catch (\Exception $e) {
       \Drupal::logger('millboard_pim_integration')->error('An exception occurred: ' . $e->getMessage());

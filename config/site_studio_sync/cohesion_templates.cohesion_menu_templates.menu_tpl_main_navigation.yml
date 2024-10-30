@@ -141,7 +141,7 @@ json_values: |
                                                                                       "uid": "menu-link",
                                                                                       "title": "Menu link",
                                                                                       "status": {
-                                                                                          "collapsed": false
+                                                                                          "collapsed": true
                                                                                       },
                                                                                       "uuid": "90f90a3c-63f6-43fd-90f9-eb2268ba22c4",
                                                                                       "parentUid": "menu-list-item",
@@ -1984,11 +1984,7 @@ json_values: |
                                                                           "name": "md"
                                                                       },
                                                                       {
-                                                                          "iconName": "desktop",
                                                                           "name": "lg"
-                                                                      },
-                                                                      {
-                                                                          "name": "xl"
                                                                       }
                                                                   ]
                                                               }
@@ -2634,11 +2630,7 @@ json_values: |
                                                                                   "name": "md"
                                                                               },
                                                                               {
-                                                                                  "iconName": "desktop",
                                                                                   "name": "lg"
-                                                                              },
-                                                                              {
-                                                                                  "name": "xl"
                                                                               }
                                                                           ]
                                                                       }
@@ -3716,28 +3708,6 @@ json_values: |
                                                                                                   "name": "md"
                                                                                               }
                                                                                           ]
-                                                                                      },
-                                                                                      {
-                                                                                          "formKey": "width",
-                                                                                          "activeFields": [
-                                                                                              {
-                                                                                                  "name": "min-width",
-                                                                                                  "active": true
-                                                                                              },
-                                                                                              {
-                                                                                                  "name": "max-width",
-                                                                                                  "active": true
-                                                                                              },
-                                                                                              {
-                                                                                                  "name": "width",
-                                                                                                  "active": true
-                                                                                              }
-                                                                                          ],
-                                                                                          "breakpoints": [
-                                                                                              {
-                                                                                                  "name": "xs"
-                                                                                              }
-                                                                                          ]
                                                                                       }
                                                                                   ]
                                                                               },
@@ -3775,29 +3745,6 @@ json_values: |
                                                                                           "breakpoints": [
                                                                                               {
                                                                                                   "name": "md"
-                                                                                              }
-                                                                                          ]
-                                                                                      }
-                                                                                  ]
-                                                                              },
-                                                                              {
-                                                                                  "formKey": "custom-css",
-                                                                                  "children": [
-                                                                                      {
-                                                                                          "formKey": "css-property-and-css-value",
-                                                                                          "activeFields": [
-                                                                                              {
-                                                                                                  "name": "customCssProperty",
-                                                                                                  "active": true
-                                                                                              },
-                                                                                              {
-                                                                                                  "name": "customCss",
-                                                                                                  "active": true
-                                                                                              }
-                                                                                          ],
-                                                                                          "breakpoints": [
-                                                                                              {
-                                                                                                  "name": "xs"
                                                                                               }
                                                                                           ]
                                                                                       }
@@ -4076,60 +4023,7 @@ json_values: |
                                                                                   "name": "md"
                                                                               },
                                                                               {
-                                                                                  "iconName": "desktop",
                                                                                   "name": "lg"
-                                                                              }
-                                                                          ]
-                                                                      },
-                                                                      {
-                                                                          "formKey": "width",
-                                                                          "activeFields": [
-                                                                              {
-                                                                                  "name": "min-width",
-                                                                                  "active": true
-                                                                              },
-                                                                              {
-                                                                                  "name": "max-width",
-                                                                                  "active": true
-                                                                              },
-                                                                              {
-                                                                                  "name": "width",
-                                                                                  "active": true
-                                                                              }
-                                                                          ],
-                                                                          "breakpoints": [
-                                                                              {
-                                                                                  "iconName": "desktop",
-                                                                                  "name": "lg"
-                                                                              },
-                                                                              {
-                                                                                  "name": "xl"
-                                                                              }
-                                                                          ]
-                                                                      },
-                                                                      {
-                                                                          "formKey": "height",
-                                                                          "activeFields": [
-                                                                              {
-                                                                                  "name": "min-height",
-                                                                                  "active": true
-                                                                              },
-                                                                              {
-                                                                                  "name": "max-height",
-                                                                                  "active": true
-                                                                              },
-                                                                              {
-                                                                                  "name": "height",
-                                                                                  "active": true
-                                                                              }
-                                                                          ],
-                                                                          "breakpoints": [
-                                                                              {
-                                                                                  "iconName": "desktop",
-                                                                                  "name": "lg"
-                                                                              },
-                                                                              {
-                                                                                  "name": "xl"
                                                                               }
                                                                           ]
                                                                       }
@@ -13203,11 +13097,7 @@ json_values: |
                                           "name": "xs"
                                       },
                                       {
-                                          "iconName": "laptop",
                                           "name": "md"
-                                      },
-                                      {
-                                          "name": "xl"
                                       }
                                   ]
                               },
@@ -13233,11 +13123,7 @@ json_values: |
                                           "name": "xs"
                                       },
                                       {
-                                          "iconName": "laptop",
                                           "name": "md"
-                                      },
-                                      {
-                                          "name": "xl"
                                       }
                                   ]
                               },
@@ -14455,20 +14341,7 @@ json_values: |
                               },
                               "margin": {
                                   "margin-bottom": {}
-                              },
-                              "max-width": {
-                                  "value": "200px"
-                              },
-                              "custom-css": [
-                                  {
-                                      "customCssProperty": {
-                                          "value": "white-space"
-                                      },
-                                      "customCss": {
-                                          "value": "normal"
-                                      }
-                                  }
-                              ]
+                              }
                           },
                           "md": {
                               "padding": {
@@ -14630,11 +14503,11 @@ json_values: |
                                       "class": ".coh-color-millboard-mist",
                                       "variable": "$coh-color-millboard-mist",
                                       "tags": [
-                                          "millboard",
-                                          "text",
-                                          "accent",
-                                          "background",
-                                          "light"
+                                          "Millboard",
+                                          "Text",
+                                          "Accent",
+                                          "Background",
+                                          "Light"
                                       ],
                                       "inuse": true,
                                       "wysiwyg": true
@@ -14644,7 +14517,7 @@ json_values: |
                           "xl": {
                               "padding": {
                                   "padding-left": {
-                                      "value": "45px"
+                                      "value": "64px"
                                   }
                               }
                           }
@@ -15744,28 +15617,7 @@ json_values: |
                           },
                           "lg": {
                               "right": {
-                                  "value": "60px"
-                              },
-                              "bottom": {
-                                  "value": "60px"
-                              },
-                              "min-width": {
-                                  "value": "240px"
-                              },
-                              "width": {
-                                  "value": "240px"
-                              },
-                              "height": {
-                                  "value": "auto"
-                              }
-                          },
-                          "xl": {
-                              "right": {},
-                              "height": {
-                                  "value": "224px"
-                              },
-                              "width": {
-                                  "value": "320px"
+                                  "value": "104px"
                               }
                           }
                       },
@@ -15781,7 +15633,7 @@ json_values: |
                                   "value": "absolute"
                               },
                               "bottom": {
-                                  "value": "100px"
+                                  "value": "44px"
                               },
                               "right": {
                                   "value": "32px"
@@ -15796,14 +15648,6 @@ json_values: |
                               }
                           },
                           "lg": {
-                              "right": {
-                                  "value": "60px"
-                              },
-                              "bottom": {
-                                  "value": "60px"
-                              }
-                          },
-                          "xl": {
                               "right": {
                                   "value": "104px"
                               }
@@ -16327,14 +16171,6 @@ json_values: |
                                       "customCss": {
                                           "value": "64px !important"
                                       }
-                                  },
-                                  {
-                                      "customCssProperty": {
-                                          "value": "left"
-                                      },
-                                      "customCss": {
-                                          "value": "104px !important"
-                                      }
                                   }
                               ]
                           },
@@ -16345,7 +16181,7 @@ json_values: |
                                           "value": "left"
                                       },
                                       "customCss": {
-                                          "value": "60px !important"
+                                          "value": "104px !important"
                                       }
                                   }
                               ]
@@ -16454,19 +16290,7 @@ json_values: |
                                           "value": "padding-left"
                                       },
                                       "customCss": {
-                                          "value": "60px !important"
-                                      }
-                                  }
-                              ]
-                          },
-                          "xl": {
-                              "custom-css": [
-                                  {
-                                      "customCss": {
                                           "value": "104px !important"
-                                      },
-                                      "customCssProperty": {
-                                          "value": "padding-left"
                                       }
                                   }
                               ]
@@ -19118,27 +18942,16 @@ json_values: |
                       },
                       "md": {
                           "height": {
-                              "value": "auto"
+                              "value": "224px"
                           },
                           "width": {
-                              "value": "240px"
+                              "value": "398px"
                           },
                           "display": {},
                           "margin": {
                               "margin-bottom": {
                                   "value": "0"
                               }
-                          },
-                          "min-width": {
-                              "value": "240px"
-                          }
-                      },
-                      "xl": {
-                          "width": {
-                              "value": "398px"
-                          },
-                          "height": {
-                              "value": "224px"
                           }
                       }
                   }

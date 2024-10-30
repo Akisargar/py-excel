@@ -45,7 +45,7 @@
         "composer/installers": "^2.0",
         "drupal/acquia_analytics_redirects": "^1.0",
         "drupal/acquia_claro": "^1.3",
-        "drupal/acquia_cms_dam": "^1.0",
+        "drupal/acquia_cms_dam": "^1.1",
         "drupal/acquia_cms_page": "^1.5",
         "drupal/acquia_cms_search": "^1.4",
         "drupal/acquia_cms_site_studio": "^1.5",
@@ -62,6 +62,7 @@
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.2.4",
         "drupal/devel_entity_updates": "^4.1",
+        "drupal/devel_php": "^1.6",
         "drupal/disable_field": "^3.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/eu_cookie_compliance": "^1.24",
@@ -72,7 +73,7 @@
         "drupal/google_analytics": "^4.0",
         "drupal/google_tag": "^2.0",
         "drupal/hidden_language": "^2.0@beta",
-        "drupal/honeypot": "^2.2",
+        "drupal/honeypot": "^2.1",
         "drupal/hreflang": "^1.14",
         "drupal/http_cache_control": "^2.1",
         "drupal/hubspot": "^3.0@alpha",
@@ -131,8 +132,7 @@
             "phpro/grumphp-shim": true,
             "mnsami/composer-custom-directory-installer": true,
             "cweagans/composer-patches": true,
-            "wikimedia/composer-merge-plugin": true,
-            "axelerant/drupal-quality-checker": true
+            "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true
     },
@@ -200,6 +200,9 @@
             "drupal/views_data_export": {
                 "drush command support": "https://www.drupal.org/files/issues/2023-09-28/2887450-89.views_data_export.Support-views-data-export-using-drush_0.patch",
                 "Update export path": "patches/views_data_export.patch"
+            },
+            "drupal/acquia_cms_dam": { 
+                "Update acquia_dam version": "patches/acquia_cms_dam_update_version_fix.patch"
             },
             "drupal/acquia_dam": {
                 "Queue processing issue because of Exception": "patches/acquia_dam_update_queue_fixer.patch",

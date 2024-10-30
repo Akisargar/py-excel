@@ -249,20 +249,16 @@ display:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
                   collapsible: false
                   is_secondary: false
-                  collapsible_disable_automatic_open: false
               field_location_target_id:
                 plugin_id: default
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
-                    filter_rewrite_values_key: false
                   collapsible: false
                   is_secondary: false
-                  collapsible_disable_automatic_open: false
       access:
         type: perm
         options:
@@ -294,7 +290,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: all
@@ -323,7 +319,6 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: commerce_product
         field_colour_target_id:
           id: field_colour_target_id
           table: node__field_colour
@@ -331,7 +326,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: default
           exception:
             value: all
@@ -360,7 +355,6 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: commerce_product_variation
       filters:
         status:
           id: status

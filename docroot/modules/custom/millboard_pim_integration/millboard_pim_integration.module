@@ -172,14 +172,17 @@ function millboard_pim_integration_metatags_alter(array &$metatags, array &$cont
         ->loadByProperties([
           'sku' => $args[2],
         ]);
-      // Create metadata from product variation.
-      $productVariation = reset($productVariation);
-      $productVariation = $productVariation->getTranslation($langcode);
-      if ($productVariation instanceof ProductVariation) {
-        $tags = millboard_pim_integration_get_product_page_metadata($productVariation);
-        // Apply metadata on view page.
-        if (!empty($tags)) {
-          $metatags = array_merge($metatags, $tags);
+
+      if (!empty($productVariation)) {
+        // Create metadata from product variation.
+        $productVariation = reset($productVariation);
+        $productVariation = $productVariation->getTranslation($langcode);
+        if ($productVariation instanceof ProductVariation) {
+          $tags = millboard_pim_integration_get_product_page_metadata($productVariation);
+          // Apply metadata on view page.
+          if (!empty($tags)) {
+            $metatags = array_merge($metatags, $tags);
+          }
         }
       }
     }

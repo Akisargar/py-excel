@@ -195,8 +195,7 @@ class MillboardProductCommand extends DrushCommands {
         /** @var \Drupal\commerce_product\Entity\Product $product **/
         $product = $this->entityTypeManager->getStorage('commerce_product')->load($this->checkExistingProduct($item['product_id']));
         foreach ($langcodes as $langcode) {
-          $product_values = $this->fieldsArray($this->getProduct($item['product_id']), 'product', $langcode);
-          foreach ($product_values as $field => $values) {
+          foreach ($this->fieldsArray($this->getProduct($item['product_id']), 'product', $langcode) as $field => $values) {
             if ($product->hasTranslation($langcode)) {
               $product = $product->getTranslation($langcode);
               $product->set($field, $values);

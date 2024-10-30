@@ -56,6 +56,8 @@ elements: |-
     '#title': 'Numéro de téléphone'
     '#required': true
     '#required_error': 'Le numéro de téléphone est requis.'
+    '#pattern': '^[+]?[0-9]+$'
+    '#pattern_error': ' Veuillez insérer un numéro de téléphone valide.'
   company:
     '#type': textfield
     '#title': "Nom de l'entreprise"
