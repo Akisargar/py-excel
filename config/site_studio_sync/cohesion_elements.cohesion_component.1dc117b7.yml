@@ -553,7 +553,11 @@ json_values: |
                                   "formKey": "slider-container-navigation-visibility",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -601,7 +605,11 @@ json_values: |
                                   "formKey": "slider-container-pagination-visibility",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -641,7 +649,11 @@ json_values: |
                                   "formKey": "slider-container-drag-and-swipe",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -664,7 +676,11 @@ json_values: |
                                   "formKey": "slider-container-transition",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -690,7 +706,11 @@ json_values: |
                                   "formKey": "slider-container-easing",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -716,7 +736,11 @@ json_values: |
                                   "formKey": "slider-container-autoplay",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1519,15 +1543,17 @@ json_values: |
                           "transitionLoop": "loop",
                           "transitionSpeed": 400,
                           "easing": "ease",
-                          "autoplay": false,
+                          "autoplay": true,
                           "easingStepsTiming": "start",
-                          "autoplayPauseOnHover": "slide-and-pagination",
+                          "autoplayPauseOnHover": "none",
                           "slidesToShow": "[field.effdbd65-c5f8-4040-bda9-83449e60856b]",
                           "slidesToScroll": "[field.dd77c3ab-c83a-4e9e-95c8-5aa9f9ecdf9a]",
                           "navigationPositionOutside": true,
                           "paginationPositionOutside": true,
                           "paginationPositionOutsideClass": "coh-slider-container-pager-outside-bottom-middle",
-                          "navigationPositionOutsideClass": "coh-slider-container-nav-outside-middle-left-right"
+                          "navigationPositionOutsideClass": "coh-slider-container-nav-outside-middle-left-right",
+                          "showPlaypause": false,
+                          "autoplaySpeed": 2000
                       },
                       "sm": {
                           "slidesToShow": "[field.f5d96f8a-8fa1-4019-ad89-2138b5ec4ffc]",
@@ -1536,6 +1562,24 @@ json_values: |
                       "ps": {
                           "slidesToShow": "[field.ac8248d6-90fa-4542-800c-b50f6c2a3e56]",
                           "slidesToScroll": "[field.8cf8d876-62d4-4d1f-9a42-09310f961b15]"
+                      },
+                      "xs": {
+                          "showNavigation": true,
+                          "navigationPositionOutside": true,
+                          "navigationPositionOutsideClass": "coh-slider-container-nav-outside-middle-left-right",
+                          "showPagination": true,
+                          "paginationPositionOutside": true,
+                          "paginationPositionOutsideClass": "coh-slider-container-pager-outside-bottom-middle",
+                          "enableDrag": true,
+                          "enableSwipe": true,
+                          "transitionDirection": "leftRight",
+                          "transitionLoop": "loop",
+                          "transitionSpeed": 700,
+                          "easing": "ease",
+                          "autoplay": true,
+                          "autoplayPauseOnHover": "none",
+                          "showPlaypause": false,
+                          "autoplaySpeed": 2000
                       }
                   },
                   "paginationNumbers": false,
@@ -2116,7 +2160,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2160,7 +2208,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2222,7 +2274,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2258,7 +2314,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2312,7 +2372,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2340,7 +2404,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2386,7 +2454,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2440,7 +2512,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2486,7 +2562,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "tooltipPlacement": "auto right",
                   "options": [
@@ -2532,7 +2612,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2578,7 +2662,11 @@ json_values: |
                   "type": "cohSelect",
                   "selectType": "custom",
                   "schema": {
-                      "type": "string"
+                      "type": [
+                          "string",
+                          "number",
+                          "boolean"
+                      ]
                   },
                   "options": [
                       {
@@ -2632,18 +2720,10 @@ json_values: |
           "e5d235cd-e848-46d4-adc5-11f880bc1ed6": {
               "settings": {
                   "customStyle": [
-                      {
-                          "customStyle": ""
-                      },
-                      {
-                          "customStyle": ""
-                      },
-                      {
-                          "customStyle": ""
-                      },
-                      {
-                          "customStyle": ""
-                      }
+                      {},
+                      {},
+                      {},
+                      {}
                   ],
                   "styles": {
                       "xl": {
@@ -2677,14 +2757,14 @@ json_values: |
       },
       "variableFields": {
           "e5d235cd-e848-46d4-adc5-11f880bc1ed6": [
-              "settings.styles.xl.slidesToShow",
-              "settings.styles.xl.slidesToScroll",
-              "settings.styles.sm.slidesToShow",
-              "settings.styles.sm.slidesToScroll",
+              "settings.styles.xl.bleed",
               "settings.styles.ps.slidesToShow",
               "settings.styles.ps.slidesToScroll",
+              "settings.styles.sm.slidesToShow",
+              "settings.styles.sm.slidesToScroll",
+              "settings.styles.xl.slidesToShow",
+              "settings.styles.xl.slidesToScroll",
               "settings.customStyle.0.customStyle",
-              "settings.styles.xl.bleed",
               "settings.customStyle.1.customStyle",
               "settings.customStyle.2.customStyle",
               "settings.customStyle.3.customStyle"
@@ -2712,6 +2792,7 @@ json_values: |
           "c8a98892-8e08-4b87-9f86-1923daa7186b": [],
           "ff5cf2cd-d6c2-4b29-a8a5-f4be0fe15c86": []
       },
+      "disabledNodes": [],
       "meta": {
           "fieldHistory": [
               {

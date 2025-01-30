@@ -53,13 +53,40 @@ json_values: |
                           "wysiwyg": true
                       }
                   },
-                  "width": {},
-                  "height": {},
+                  "width": {
+                      "value": "80%"
+                  },
+                  "height": {
+                      "value": "100%"
+                  },
                   "padding": {
                       "padding-top": {},
                       "padding-bottom": {},
                       "padding-left": {},
                       "padding-right": {}
+                  },
+                  "position": {
+                      "value": "fixed"
+                  },
+                  "top": {
+                      "value": "0"
+                  },
+                  "right": {
+                      "value": "0"
+                  },
+                  "z-index": {
+                      "value": "100"
+                  },
+                  "custom-css": [
+                      {
+                          "customCssProperty": {},
+                          "customCss": {}
+                      }
+                  ]
+              },
+              "md": {
+                  "width": {
+                      "value": "30%"
                   },
                   "position": {},
                   "top": {
@@ -71,29 +98,13 @@ json_values: |
                   "z-index": {
                       "value": "10"
                   },
-                  "custom-css": [
-                      {
-                          "customCssProperty": {},
-                          "customCss": {}
-                      }
-                  ]
-              },
-              "md": {
-                  "width": {},
-                  "position": {},
-                  "top": {
-                      "value": "0"
-                  },
-                  "right": {
-                      "value": "0"
-                  },
-                  "z-index": {
-                      "value": "2"
-                  },
                   "height": {},
                   "padding": {
                       "padding-bottom": {}
                   }
+              },
+              "sm": {
+                  "width": {}
               }
           },
           "433e8bed-5eca-4906-8b99-a85457ac8477": {
@@ -1360,7 +1371,7 @@ json_mapper: |
                               },
                               {
                                   "name": "width",
-                                  "active": false
+                                  "active": true
                               }
                           ],
                           "breakpoints": [
@@ -1369,6 +1380,7 @@ json_mapper: |
                                   "name": "xs"
                               },
                               {
+                                  "iconName": "laptop",
                                   "name": "md"
                               }
                           ]
@@ -1386,12 +1398,12 @@ json_mapper: |
                               },
                               {
                                   "name": "height",
-                                  "active": false
+                                  "active": true
                               }
                           ],
                           "breakpoints": [
                               {
-                                  "name": "md"
+                                  "name": "xs"
                               }
                           ]
                       },
@@ -1400,7 +1412,7 @@ json_mapper: |
                           "activeFields": [
                               {
                                   "name": "position",
-                                  "active": false
+                                  "active": true
                               },
                               {
                                   "name": "top",
@@ -5812,4 +5824,4 @@ custom_style_type: generic
 available_in_wysiwyg: false
 available_in_wysiwyg_inline: false
 parent: null
-weight: 30
+weight: 0

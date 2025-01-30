@@ -73,7 +73,6 @@
                 localStorage.setItem('basket', JSON.stringify(basket));
                 // remove the error msg if any.
                 $('.error-message').remove();
-                console.log('pressed once');
               });
             });
           }
@@ -279,20 +278,49 @@
       $(document).ready(function() {
         var deckerText = $('.total-decking-elements').text();
         var claddingText = $('.total-cladding-elements').text();
-
-        if($('.total-decking-elements').length && $('.total-cladding-elements').length) {
-          $('.product-view-filter-header').text('Showing '+ deckerText + ' and ' + claddingText);
-          $('.product-view-filter-header').append('<h4>Select 3 samples</h4>');
+        var currentLang = drupalSettings.path.currentLanguage;
+  
+        if ($('.total-decking-elements').length && $('.total-cladding-elements').length) {
+          if (currentLang == 'de-de') {
+            $('.product-view-filter-header').text(
+              'Es werden ' + deckerText + ' Terrassenoptioen sowie ' + claddingText + ' Fassadenoptionen angezeigt'
+            );
+          } else if (currentLang == 'fr-fr') {
+            $('.product-view-filter-header').text(
+              'Affichage de ' + deckerText + ' échantillons de terrasses et de ' + claddingText + ' échantillons de bardage'
+            );
+          } else {
+            $('.product-view-filter-header').text(
+              'Showing ' + deckerText + ' Decking Samples and ' + claddingText + ' Cladding Samples'
+            );
+          }
+        } else {
+          if ($('.total-decking-elements').length) {
+            if (currentLang == 'de-de') {
+              $('.product-view-filter-header').text('Es werden ' + deckerText + ' Terrassenoptioen');
+            } else if (currentLang == 'fr-fr') {
+              $('.product-view-filter-header').text('Affichage de ' + deckerText + ' échantillons de terrasses');
+            } else {
+              $('.product-view-filter-header').text('Showing ' + deckerText + ' Decking Samples');
+            }
+          }
+          if ($('.total-cladding-elements').length) {
+            if (currentLang == 'de-de') {
+              $('.product-view-filter-header').text('Es werden ' + claddingText + ' Fassadenoptionen angezeigt');
+            } else if (currentLang == 'fr-fr') {
+              $('.product-view-filter-header').text('Affichage de ' + claddingText + ' échantillons de bardage');
+            } else {
+              $('.product-view-filter-header').text('Showing ' + claddingText + ' Cladding Samples');
+            }
+          }
         }
-        else {
-          if($('.total-decking-elements').length) {
-            $('.product-view-filter-header').text('Showing '+ deckerText );
-            $('.product-view-filter-header').append('<h4>Select 3 samples</h4>');
-          }
-          if($('.total-cladding-elements').length){
-            $('.product-view-filter-header').text('Showing '+ claddingText );
-            $('.product-view-filter-header').append('<h4>Select 3 samples</h4>');
-          }
+  
+        if (currentLang == 'de-de') {
+          $('.product-view-filter-header').append('<h4>Selektieren Sie 3 Muster indem Sie die Farben anklicken</h4>');
+        } else if (currentLang == 'fr-fr') {
+          $('.product-view-filter-header').append('<h4>Sélectionnez 3 échantillons en cliquant sur les couleurs</h4>');
+        } else {
+          $('.product-view-filter-header').append('<h4>Select 3 samples</h4>');
         }
       });
 

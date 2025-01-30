@@ -1,0 +1,852 @@
+uuid: 43431035-a749-4383-8eb5-68f47372a977
+langcode: en-us
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.097f31b2
+    - cohesion_custom_styles.cohesion_custom_style.1d63f60f
+    - cohesion_custom_styles.cohesion_custom_style.2f9a0ff2
+    - cohesion_custom_styles.cohesion_custom_style.63181883
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_custom_styles.cohesion_custom_style.e5559653
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_accordion_container
+    - cohesion_elements.cohesion_component.cpt_accordion_item
+    - cohesion_elements.cohesion_component.cpt_case_studies_card
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_cross_link_cards
+    - cohesion_elements.cohesion_component.cpt_document_download
+    - cohesion_elements.cohesion_component.cpt_heading
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.light-mist
+label: 'product template shadow line US'
+id: hlp_product_template_shadow_line
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "uuid": "af7b77a7-7fe5-43b1-a703-0c774f56f277",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "8206383e-e378-4e44-bd9b-3a3403eafc75",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "isContainer": true,
+                      "children": [
+                          {
+                              "uid": "cpt_document_download",
+                              "type": "component",
+                              "title": "Document Download",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_document_download",
+                              "componentType": "container",
+                              "uuid": "b7739e70-4f50-4862-8592-fc3e9757d666",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "uuid": "8a7c777a-2ad0-46f7-8390-ecae3795d092",
+                              "status": {
+                                  "collapsed": true
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "d1f09af8-9a0d-40d2-aa45-56f5d6592eec",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "isContainer": true,
+                                      "children": [
+                                          {
+                                              "uid": "cpt_1_column_layout",
+                                              "type": "component",
+                                              "title": "1 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_1_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "2657b2aa-5170-4674-b1ad-54fe94e75ad6",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_1_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "04bdcfde-dadb-480a-b95c-466cf08f633e",
+                                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                                      "isContainer": true,
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_heading",
+                                                              "type": "component",
+                                                              "title": "Heading",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_heading",
+                                                              "componentType": "heading",
+                                                              "uuid": "660dac04-03bd-4e65-8b10-fe59bfdc7fd8",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_accordion_container",
+                                                              "type": "component",
+                                                              "title": "Accordion container",
+                                                              "enabled": true,
+                                                              "category": "category-8",
+                                                              "componentId": "cpt_accordion_container",
+                                                              "componentType": "container",
+                                                              "uuid": "6ae97f33-796f-4765-8e50-9c41d61576aa",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {
+                                                                  "collapsed": false
+                                                              },
+                                                              "children": [
+                                                                  {
+                                                                      "type": "container",
+                                                                      "uid": "component-drop-zone",
+                                                                      "mimicParent": true,
+                                                                      "parentUid": "cpt_accordion_container",
+                                                                      "title": "Component drop zone",
+                                                                      "selected": false,
+                                                                      "status": {
+                                                                          "collapsed": false,
+                                                                          "disabled": false
+                                                                      },
+                                                                      "uuid": "09e4f20d-5677-4553-ab80-32bc5afead36",
+                                                                      "dropzoneId": "11ce65d2-cbf6-48cb-a84b-64fac6f6ab36",
+                                                                      "children": [
+                                                                          {
+                                                                              "uid": "cpt_accordion_item",
+                                                                              "type": "component",
+                                                                              "title": "Accordion item",
+                                                                              "enabled": true,
+                                                                              "category": "category-8",
+                                                                              "componentId": "cpt_accordion_item",
+                                                                              "componentType": "accordion-tabs-item",
+                                                                              "uuid": "a44540e6-54b0-4634-8965-c7fd0dae3b3a",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {
+                                                                                  "collapsed": false
+                                                                              },
+                                                                              "children": [
+                                                                                  {
+                                                                                      "type": "container",
+                                                                                      "uid": "component-drop-zone",
+                                                                                      "mimicParent": true,
+                                                                                      "parentUid": "cpt_accordion_item",
+                                                                                      "title": "Component drop zone",
+                                                                                      "selected": false,
+                                                                                      "status": {
+                                                                                          "collapsed": false,
+                                                                                          "disabled": false
+                                                                                      },
+                                                                                      "uuid": "60928094-d01c-4b23-899e-d9b92668a615",
+                                                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                                                      "children": [
+                                                                                          {
+                                                                                              "uid": "cpt_text",
+                                                                                              "type": "component",
+                                                                                              "title": "Text",
+                                                                                              "enabled": true,
+                                                                                              "category": "category-4",
+                                                                                              "componentId": "cpt_text",
+                                                                                              "componentType": "wysiwyg",
+                                                                                              "uuid": "616ddeb3-c824-4bbe-8e6b-b04851d29fae",
+                                                                                              "parentUid": "component-drop-zone",
+                                                                                              "status": {
+                                                                                                  "collapsedParents": [
+                                                                                                      "aedad2ae-77fc-4f2d-b4b7-075ff41cbbfa"
+                                                                                                  ]
+                                                                                              },
+                                                                                              "children": []
+                                                                                          }
+                                                                                      ]
+                                                                                  }
+                                                                              ]
+                                                                          },
+                                                                          {
+                                                                              "uid": "cpt_accordion_item",
+                                                                              "type": "component",
+                                                                              "title": "Accordion item",
+                                                                              "enabled": true,
+                                                                              "category": "category-8",
+                                                                              "componentId": "cpt_accordion_item",
+                                                                              "componentType": "accordion-tabs-item",
+                                                                              "uuid": "e838b3d3-a3f1-46d1-95d4-f23221b70eda",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {
+                                                                                  "collapsed": false
+                                                                              },
+                                                                              "children": [
+                                                                                  {
+                                                                                      "type": "container",
+                                                                                      "uid": "component-drop-zone",
+                                                                                      "mimicParent": true,
+                                                                                      "parentUid": "cpt_accordion_item",
+                                                                                      "title": "Component drop zone",
+                                                                                      "selected": false,
+                                                                                      "status": {
+                                                                                          "collapsed": false,
+                                                                                          "disabled": false
+                                                                                      },
+                                                                                      "uuid": "aab92843-889a-4840-94be-b050d962fffe",
+                                                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                                                      "children": [
+                                                                                          {
+                                                                                              "uid": "cpt_text",
+                                                                                              "type": "component",
+                                                                                              "title": "Text",
+                                                                                              "enabled": true,
+                                                                                              "category": "category-4",
+                                                                                              "componentId": "cpt_text",
+                                                                                              "componentType": "wysiwyg",
+                                                                                              "uuid": "774a2f08-9d64-47ef-901e-9424a49fece6",
+                                                                                              "parentUid": "component-drop-zone",
+                                                                                              "status": {
+                                                                                                  "collapsedParents": [
+                                                                                                      "aedad2ae-77fc-4f2d-b4b7-075ff41cbbfa"
+                                                                                                  ]
+                                                                                              },
+                                                                                              "children": []
+                                                                                          }
+                                                                                      ]
+                                                                                  }
+                                                                              ]
+                                                                          },
+                                                                          {
+                                                                              "uid": "cpt_accordion_item",
+                                                                              "type": "component",
+                                                                              "title": "Accordion item",
+                                                                              "enabled": true,
+                                                                              "category": "category-8",
+                                                                              "componentId": "cpt_accordion_item",
+                                                                              "componentType": "accordion-tabs-item",
+                                                                              "uuid": "0f4f3d44-a626-4bc2-b2c9-435fa0b1b02f",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {
+                                                                                  "collapsed": false
+                                                                              },
+                                                                              "children": [
+                                                                                  {
+                                                                                      "type": "container",
+                                                                                      "uid": "component-drop-zone",
+                                                                                      "mimicParent": true,
+                                                                                      "parentUid": "cpt_accordion_item",
+                                                                                      "title": "Component drop zone",
+                                                                                      "selected": false,
+                                                                                      "status": {
+                                                                                          "collapsed": false,
+                                                                                          "disabled": false
+                                                                                      },
+                                                                                      "uuid": "50e6a6d9-5948-4d67-a2a5-cc0e87303499",
+                                                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                                                      "children": [
+                                                                                          {
+                                                                                              "uid": "cpt_text",
+                                                                                              "type": "component",
+                                                                                              "title": "Text",
+                                                                                              "enabled": true,
+                                                                                              "category": "category-4",
+                                                                                              "componentId": "cpt_text",
+                                                                                              "componentType": "wysiwyg",
+                                                                                              "uuid": "5a65fb3c-01da-4b93-a4c5-10e757ce3082",
+                                                                                              "parentUid": "component-drop-zone",
+                                                                                              "status": {
+                                                                                                  "collapsedParents": [
+                                                                                                      "aedad2ae-77fc-4f2d-b4b7-075ff41cbbfa"
+                                                                                                  ]
+                                                                                              },
+                                                                                              "children": []
+                                                                                          }
+                                                                                      ]
+                                                                                  }
+                                                                              ]
+                                                                          },
+                                                                          {
+                                                                              "uid": "cpt_accordion_item",
+                                                                              "type": "component",
+                                                                              "title": "Accordion item",
+                                                                              "enabled": true,
+                                                                              "category": "category-8",
+                                                                              "componentId": "cpt_accordion_item",
+                                                                              "componentType": "accordion-tabs-item",
+                                                                              "uuid": "db2ee6b0-eb82-4353-8212-ef02527d501f",
+                                                                              "parentUid": "component-drop-zone",
+                                                                              "status": {
+                                                                                  "collapsed": false
+                                                                              },
+                                                                              "children": [
+                                                                                  {
+                                                                                      "type": "container",
+                                                                                      "uid": "component-drop-zone",
+                                                                                      "mimicParent": true,
+                                                                                      "parentUid": "cpt_accordion_item",
+                                                                                      "title": "Component drop zone",
+                                                                                      "selected": false,
+                                                                                      "status": {
+                                                                                          "collapsed": false,
+                                                                                          "disabled": false
+                                                                                      },
+                                                                                      "uuid": "4169c189-7e0a-4399-a4a2-b9c169ba68ee",
+                                                                                      "dropzoneId": "5451957e-ef07-4b7a-b259-2f2765a854d2",
+                                                                                      "children": [
+                                                                                          {
+                                                                                              "uid": "cpt_text",
+                                                                                              "type": "component",
+                                                                                              "title": "Text",
+                                                                                              "enabled": true,
+                                                                                              "category": "category-4",
+                                                                                              "componentId": "cpt_text",
+                                                                                              "componentType": "wysiwyg",
+                                                                                              "uuid": "94cc9da5-a3c2-4882-a276-605b34bd62e5",
+                                                                                              "parentUid": "component-drop-zone",
+                                                                                              "status": {
+                                                                                                  "collapsedParents": [
+                                                                                                      "aedad2ae-77fc-4f2d-b4b7-075ff41cbbfa"
+                                                                                                  ]
+                                                                                              },
+                                                                                              "children": []
+                                                                                          }
+                                                                                      ]
+                                                                                  }
+                                                                              ]
+                                                                          }
+                                                                      ]
+                                                                  }
+                                                              ]
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_cross_link_cards",
+                              "type": "component",
+                              "title": "Cross Link Cards",
+                              "enabled": true,
+                              "category": "category-2",
+                              "componentId": "cpt_cross_link_cards",
+                              "componentType": "container",
+                              "uuid": "090e566d-50c0-4959-a4cb-561b7fac2e07",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_case_studies_card",
+                              "type": "component",
+                              "title": "Case Studies Card",
+                              "enabled": true,
+                              "category": "category-2",
+                              "componentId": "cpt_case_studies_card",
+                              "componentType": "container",
+                              "uuid": "7b4becb1-49b5-43c3-a4ac-1acc55dd31be",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "af7b77a7-7fe5-43b1-a703-0c774f56f277": {},
+          "8206383e-e378-4e44-bd9b-3a3403eafc75": {},
+          "b7739e70-4f50-4862-8592-fc3e9757d666": {},
+          "8a7c777a-2ad0-46f7-8390-ecae3795d092": {},
+          "d1f09af8-9a0d-40d2-aa45-56f5d6592eec": {},
+          "2657b2aa-5170-4674-b1ad-54fe94e75ad6": {},
+          "04bdcfde-dadb-480a-b95c-466cf08f633e": {},
+          "660dac04-03bd-4e65-8b10-fe59bfdc7fd8": {},
+          "6ae97f33-796f-4765-8e50-9c41d61576aa": {},
+          "09e4f20d-5677-4553-ab80-32bc5afead36": {},
+          "a44540e6-54b0-4634-8965-c7fd0dae3b3a": {},
+          "60928094-d01c-4b23-899e-d9b92668a615": {},
+          "616ddeb3-c824-4bbe-8e6b-b04851d29fae": {},
+          "e838b3d3-a3f1-46d1-95d4-f23221b70eda": {},
+          "aab92843-889a-4840-94be-b050d962fffe": {},
+          "774a2f08-9d64-47ef-901e-9424a49fece6": {},
+          "0f4f3d44-a626-4bc2-b2c9-435fa0b1b02f": {},
+          "50e6a6d9-5948-4d67-a2a5-cc0e87303499": {},
+          "5a65fb3c-01da-4b93-a4c5-10e757ce3082": {},
+          "db2ee6b0-eb82-4353-8212-ef02527d501f": {},
+          "4169c189-7e0a-4399-a4a2-b9c169ba68ee": {},
+          "94cc9da5-a3c2-4882-a276-605b34bd62e5": {},
+          "090e566d-50c0-4959-a4cb-561b7fac2e07": {},
+          "7b4becb1-49b5-43c3-a4ac-1acc55dd31be": {}
+      },
+      "model": {
+          "af7b77a7-7fe5-43b1-a703-0c774f56f277": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-large",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "settings": {
+                  "title": "Container"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px"
+          },
+          "8206383e-e378-4e44-bd9b-3a3403eafc75": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "b7739e70-4f50-4862-8592-fc3e9757d666": {
+              "97340763-7af1-44a7-a2fc-67e4adfc19be": [
+                  {
+                      "833912c0-98de-48bf-8296-02525e6cbefb": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "ef25ea07-47fb-43fd-8864-0416c436c8c0",
+                              "entityId": "ef25ea07-47fb-43fd-8864-0416c436c8c0"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_pdf_asset": true
+                                  }
+                              }
+                          }
+                      },
+                      "04679dc8-94a5-4eb0-baae-8c2c3cefbe8d": "Download full specification"
+                  },
+                  {
+                      "04679dc8-94a5-4eb0-baae-8c2c3cefbe8d": "Download vertical install guide",
+                      "833912c0-98de-48bf-8296-02525e6cbefb": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "9bb946b1-a0ca-46e5-809c-60745a9d62a1",
+                              "entityId": "9bb946b1-a0ca-46e5-809c-60745a9d62a1"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_pdf_asset": true
+                                  }
+                              }
+                          }
+                      }
+                  },
+                  {
+                      "833912c0-98de-48bf-8296-02525e6cbefb": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "9909e47f-6deb-4604-9e38-bf1b5b0667f8",
+                              "entityId": "9909e47f-6deb-4604-9e38-bf1b5b0667f8"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_pdf_asset": true
+                                  }
+                              }
+                          }
+                      },
+                      "04679dc8-94a5-4eb0-baae-8c2c3cefbe8d": "Download horizontal install guide"
+                  },
+                  {
+                      "833912c0-98de-48bf-8296-02525e6cbefb": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "8e4cc940-21d6-445e-9692-52bbf125f04b",
+                              "entityId": "8e4cc940-21d6-445e-9692-52bbf125f04b"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_pdf_asset": true
+                                  }
+                              }
+                          }
+                      },
+                      "04679dc8-94a5-4eb0-baae-8c2c3cefbe8d": "Download Envello brochure"
+                  },
+                  {
+                      "833912c0-98de-48bf-8296-02525e6cbefb": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "6f312187-3891-4b7c-8e28-eacdc220bf98",
+                              "entityId": "6f312187-3891-4b7c-8e28-eacdc220bf98"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_pdf_asset": true
+                                  }
+                              }
+                          }
+                      },
+                      "04679dc8-94a5-4eb0-baae-8c2c3cefbe8d": "Download fire rating report"
+                  }
+              ],
+              "settings": {
+                  "title": "Document Download"
+              }
+          },
+          "8a7c777a-2ad0-46f7-8390-ecae3795d092": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-large",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#fcfbf8",
+                      "rgba": "rgba(252, 251, 248, 1)"
+                  },
+                  "uid": "light-mist",
+                  "name": "Light Mist",
+                  "class": ".coh-color-light-mist",
+                  "variable": "$coh-color-light-mist",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Text",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "ccdd7078-f35f-43c9-b3f3-a3bfc030bce3": "faq-accordion coh-style-faq-accordion",
+              "settings": {
+                  "title": "FAQ Outer Container"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "0px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "0px"
+          },
+          "d1f09af8-9a0d-40d2-aa45-56f5d6592eec": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "2657b2aa-5170-4674-b1ad-54fe94e75ad6": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "flex-start",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "80px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "10",
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "64px",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "10",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "24px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "56px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "FAQ inner container"
+              }
+          },
+          "04bdcfde-dadb-480a-b95c-466cf08f633e": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "660dac04-03bd-4e65-8b10-fe59bfdc7fd8": {
+              "ad025039-96c5-4cce-a27b-48778043471c": false,
+              "50bae73f-99e4-446b-a738-9939a3dade60": "Frequently asked questions",
+              "e8f77e4e-3de9-47cc-b229-7040a4f78719": "h3",
+              "77d003da-6145-481e-95c8-2f6017361e26": "",
+              "42c2324a-e7ee-45b6-ab1e-f5dfba48bfb2": "align-text-left",
+              "f3172ee4-e56d-4a85-8a9d-d5ca3ec4642c": false,
+              "66bd55cf-cbd7-4331-a52c-01f625e68459": "40px",
+              "b23dda35-cb8f-473b-9ae4-029d5479880b": "16px",
+              "settings": {
+                  "title": "FAQ Heading"
+              }
+          },
+          "6ae97f33-796f-4765-8e50-9c41d61576aa": {
+              "f246e51e-b638-4b41-ab84-f5c02e6fa857": "coh-style-accordion-with-plus-icon",
+              "d57c2f0c-539a-4380-ba40-b72ecadc258c": "coh-style-margin-bottom-small",
+              "settings": {
+                  "title": "Accordion container"
+              }
+          },
+          "09e4f20d-5677-4553-ab80-32bc5afead36": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Drop 'Accordion item' here."
+              }
+          },
+          "a44540e6-54b0-4634-8965-c7fd0dae3b3a": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Where can I use Envello siding?",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "60928094-d01c-4b23-899e-d9b92668a615": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "616ddeb3-c824-4bbe-8e6b-b04851d29fae": {
+              "settings": {
+                  "title": "Text"
+              },
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>Envello siding is extremely versatile and can be used for most low-level siding areas (subject to building control). It can be used for siding on low-level residential and commercial buildings, garden rooms, home offices, furniture, soffits and fascia, outdoor kitchens and more. Envello can be used as the decorative face for most outdoor designs, as long as it is fixed to a structural element. <strong>All areas subject to the relevant government or state codes\/regulations\/building standards.<\/strong><\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "e838b3d3-a3f1-46d1-95d4-f23221b70eda": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Are the Envello siding boards fire rated?",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "aab92843-889a-4840-94be-b050d962fffe": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "774a2f08-9d64-47ef-901e-9424a49fece6": {
+              "settings": {
+                  "title": "Text"
+              },
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>Our Shadow Line+ and Board &amp; Batten+ siding boards have been tested to BS EN 13501-1 and have a classification of D-s3, d0.<br><br>The responsibility for the siding\u2019s suitability in the required location is to be determined by a certified building professional (code official, building insurance, fire officer, etc). Millboard will not be held responsible for incorrect specification, application, or product installation in areas not in accordance with government and state guidance. Current guidance should be gained from the government or state website relating to the geographical project location.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "0f4f3d44-a626-4bc2-b2c9-435fa0b1b02f": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "Why is there a slight variation in board dimensions?",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "50e6a6d9-5948-4d67-a2a5-cc0e87303499": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "5a65fb3c-01da-4b93-a4c5-10e757ce3082": {
+              "settings": {
+                  "title": "Text"
+              },
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>There will always be a slight variance in the board\u2019s dimensions due to the fact that we mold from natural oak, and due to the pressure of the molding process. Despite this, we calibrate the boards to maintain as consistent a profile as possible. The manufacturing tolerances are: Width: \u00b1 1\/8\"\" (3mm). Length: \u00b1 3\/16\"\" (5mm). Thickness: \u00b1 1\/16\"\" (2mm).&nbsp;<br>When working with the boards, a level may be required to help keep the boards running upright or level. In order to achieve straight and consistent 1\/4\"\" (5-6mm) gapping between the shadow Line+ boards, it may be necessary to use our Millboard Multi-Spacers during the installation process.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "db2ee6b0-eb82-4353-8212-ef02527d501f": {
+              "188518d0-e7b1-42a4-bc9f-4c4327775265": "More frequently asked questions",
+              "09c87ea3-016f-4fd8-adaf-43a9452435a8": "coh-style-padding-small",
+              "settings": {
+                  "title": "Accordion item"
+              }
+          },
+          "4169c189-7e0a-4399-a4a2-b9c169ba68ee": {
+              "settings": {
+                  "dropzoneHideSelector": "",
+                  "title": "Content drop zone"
+              }
+          },
+          "94cc9da5-a3c2-4882-a276-605b34bd62e5": {
+              "settings": {
+                  "title": "Text"
+              },
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p>From what to expect when you first unpack your Millboard, to aftercare tips and answers to all of your most common questions. Visit our FAQs page now for all of your Millboard related queries.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "6dc6b921-8b08-4047-b4b5-2d838ccbd734": ""
+          },
+          "090e566d-50c0-4959-a4cb-561b7fac2e07": {
+              "2ea56031-facb-46cc-b908-69268d9151df": "For your next project",
+              "82f815de-b1bc-4359-b01e-fb451fbb8e8f": "Inspiration & ideas",
+              "09b16443-1435-45fa-ab6b-1738f1f30cf3": false,
+              "settings": {
+                  "title": "Cross Link Cards"
+              },
+              "505a638d-d980-40cc-b3a2-511bb2300a9b": [
+                  {
+                      "6cfe938c-c116-4c29-bb69-15eb9f9ba78b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "099eb2d6-c531-4f53-864c-eca39e66157d",
+                              "entityId": "099eb2d6-c531-4f53-864c-eca39e66157d"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "fcb46ea3-c5c3-4d8c-a807-fcde960c7021": "Discover Envello D\u00e9cor",
+                      "d56aadfc-55bd-4cf2-aef8-c7f5600b5581": "node::5846"
+                  },
+                  {
+                      "6cfe938c-c116-4c29-bb69-15eb9f9ba78b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "834c565e-7d65-46e7-b2ff-c5039c01b52a",
+                              "entityId": "834c565e-7d65-46e7-b2ff-c5039c01b52a"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "fcb46ea3-c5c3-4d8c-a807-fcde960c7021": "Get inspired for your project",
+                      "d56aadfc-55bd-4cf2-aef8-c7f5600b5581": "node::5746"
+                  }
+              ]
+          },
+          "7b4becb1-49b5-43c3-a4ac-1acc55dd31be": {
+              "973b9783-3548-455d-927b-f1d34b833f90": {
+                  "entity_type": "node",
+                  "view_mode": "case_study_cards",
+                  "entity": "90e9e0ab-ef0d-4ea5-9cf6-2a19659ec057"
+              },
+              "settings": {
+                  "title": "Case Studies Card"
+              }
+          }
+      },
+      "previewModel": {
+          "af7b77a7-7fe5-43b1-a703-0c774f56f277": {},
+          "b7739e70-4f50-4862-8592-fc3e9757d666": {},
+          "8a7c777a-2ad0-46f7-8390-ecae3795d092": {},
+          "2657b2aa-5170-4674-b1ad-54fe94e75ad6": {},
+          "660dac04-03bd-4e65-8b10-fe59bfdc7fd8": {},
+          "6ae97f33-796f-4765-8e50-9c41d61576aa": {},
+          "a44540e6-54b0-4634-8965-c7fd0dae3b3a": {},
+          "616ddeb3-c824-4bbe-8e6b-b04851d29fae": {},
+          "e838b3d3-a3f1-46d1-95d4-f23221b70eda": {},
+          "774a2f08-9d64-47ef-901e-9424a49fece6": {},
+          "0f4f3d44-a626-4bc2-b2c9-435fa0b1b02f": {},
+          "5a65fb3c-01da-4b93-a4c5-10e757ce3082": {},
+          "db2ee6b0-eb82-4353-8212-ef02527d501f": {},
+          "94cc9da5-a3c2-4882-a276-605b34bd62e5": {},
+          "090e566d-50c0-4959-a4cb-561b7fac2e07": {},
+          "7b4becb1-49b5-43c3-a4ac-1acc55dd31be": {}
+      },
+      "variableFields": {
+          "af7b77a7-7fe5-43b1-a703-0c774f56f277": [],
+          "b7739e70-4f50-4862-8592-fc3e9757d666": [],
+          "8a7c777a-2ad0-46f7-8390-ecae3795d092": [],
+          "2657b2aa-5170-4674-b1ad-54fe94e75ad6": [],
+          "660dac04-03bd-4e65-8b10-fe59bfdc7fd8": [],
+          "6ae97f33-796f-4765-8e50-9c41d61576aa": [],
+          "a44540e6-54b0-4634-8965-c7fd0dae3b3a": [],
+          "616ddeb3-c824-4bbe-8e6b-b04851d29fae": [],
+          "e838b3d3-a3f1-46d1-95d4-f23221b70eda": [],
+          "774a2f08-9d64-47ef-901e-9424a49fece6": [],
+          "0f4f3d44-a626-4bc2-b2c9-435fa0b1b02f": [],
+          "5a65fb3c-01da-4b93-a4c5-10e757ce3082": [],
+          "db2ee6b0-eb82-4353-8212-ef02527d501f": [],
+          "94cc9da5-a3c2-4882-a276-605b34bd62e5": [],
+          "090e566d-50c0-4959-a4cb-561b7fac2e07": [],
+          "7b4becb1-49b5-43c3-a4ac-1acc55dd31be": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

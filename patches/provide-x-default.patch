@@ -1,0 +1,185 @@
+diff --git a/config/schema/simple_sitemap.schema.yml b/config/schema/simple_sitemap.schema.yml
+index 1885b41..f66f495 100644
+--- a/config/schema/simple_sitemap.schema.yml
++++ b/config/schema/simple_sitemap.schema.yml
+@@ -22,6 +22,9 @@ simple_sitemap.settings:
+     skip_untranslated:
+       label: 'Skip untranslated'
+       type: boolean
++    x_default:
++      label: 'Add X-Default'
++      type: boolean
+     xsl:
+       label: 'Include a stylesheet in the sitemaps for humans'
+       type: boolean
+diff --git a/simple_sitemap.post_update.php b/simple_sitemap.post_update.php
+index a65e43b..615d12a 100644
+--- a/simple_sitemap.post_update.php
++++ b/simple_sitemap.post_update.php
+@@ -26,6 +26,15 @@ function simple_sitemap_post_update_8403(&$sandbox) {
+   }
+ }
+ 
++/**
++ * Upgrade path for x_default setting.
++ */
++function simple_sitemap_post_update_x_default_upgrade_path(&$sandbox) {
++  $config_factory = \Drupal::configFactory();
++  $config = $config_factory->getEditable('simple_sitemap.settings');
++  $config->set('x_default', FALSE);
++  $config->save();
++}
+ 
+ /**
+  * Clear cache as service definitions changed.
+diff --git a/src/Form/SettingsForm.php b/src/Form/SettingsForm.php
+index ab27d30..7c64b93 100644
+--- a/src/Form/SettingsForm.php
++++ b/src/Form/SettingsForm.php
+@@ -142,6 +142,13 @@ class SettingsForm extends SimpleSitemapFormBase {
+       '#default_value' => $this->settings->getEditable('skip_untranslated', FALSE),
+     ];
+ 
++    $form['settings']['languages']['x_default'] = [
++      '#type' => 'checkbox',
++      '#title' => $this->t('Add X-Default'),
++      '#description' => $this->t('Introduces a default link for international users. Recommended for multilingual sites. For more info <a href="https://developers.google.com/search/docs/specialty/international/localized-versions#xdefault" target="_blank">see here</a>'),
++      '#default_value' => $this->settings->getEditable('x_default', FALSE),
++    ];
++
+     $language_options = [];
+     foreach ($this->languageManager->getLanguages() as $language) {
+       if (!$language->isDefault()) {
+@@ -244,6 +251,7 @@ class SettingsForm extends SimpleSitemapFormBase {
+       'cron_generate_interval',
+       'remove_duplicates',
+       'skip_untranslated',
++      'x_default',
+       'xsl',
+       'hide_branding',
+       'base_url',
+diff --git a/src/Plugin/simple_sitemap/SitemapGenerator/DefaultSitemapGenerator.php b/src/Plugin/simple_sitemap/SitemapGenerator/DefaultSitemapGenerator.php
+index bacaaba..a4a3b59 100755
+--- a/src/Plugin/simple_sitemap/SitemapGenerator/DefaultSitemapGenerator.php
++++ b/src/Plugin/simple_sitemap/SitemapGenerator/DefaultSitemapGenerator.php
+@@ -89,7 +89,7 @@ class DefaultSitemapGenerator extends SitemapGeneratorBase {
+     // as alternate links to this link turning the sitemap into a hreflang
+     // sitemap.
+     if (isset($url_data['alternate_urls']) && $this->sitemap->isMultilingual()) {
+-      $this->addAlternateUrls($url_data['alternate_urls']);
++      $this->addAlternateUrls($url_data['alternate_urls'], $url_data['default_langcode'] ?? NULL);
+     }
+ 
+     if (isset($url_data['lastmod'])) {
+@@ -124,8 +124,34 @@ class DefaultSitemapGenerator extends SitemapGeneratorBase {
+    *
+    * @param array $alternate_urls
+    *   An array of alternate URLs.
++   * @param string|null $default_langcode
++   *   The default url language ID.
+    */
+-  protected function addAlternateUrls(array $alternate_urls): void {
++  protected function addAlternateUrls(array $alternate_urls, ?string $default_langcode = NULL): void {
++    // Add X-Default if the option is enabled.
++    if ($this->settings->get('x_default', FALSE)) {
++      $default_language = $this->languageManager->getDefaultLanguage()->getId();
++
++      // Check if the default language is disabled.
++      // This is compatibility with disable_language module.
++      // phpcs:disable
++      if (\Drupal::hasService('disable_language.disable_language_manager')) {
++        /** @var \Drupal\disable_language\DisableLanguageManager $disabledLanguageManager */
++        $disabledLanguageManager = \Drupal::service('disable_language.disable_language_manager');
++        if (in_array($default_language, $disabledLanguageManager->getDisabledLanguages())) {
++          $default_language = $disabledLanguageManager->getFirstEnabledLanguage()->getId();
++        }
++      }
++      // phpcs:enable
++
++      // Add x-default for default language.
++      // To get the x-default url uses the following logic:
++      // 1. Check if the site default language exists in the list.
++      // 2. Check if the default url langcode exists in the list.
++      // 3. Get the first element in the list.
++      $alternate_urls['x-default'] = $alternate_urls[$default_language] ?? $alternate_urls[$default_langcode] ?? reset($alternate_urls);
++    }
++
+     foreach ($alternate_urls as $language_id => $alternate_url) {
+       $this->writer->startElement('xhtml:link');
+       $this->addAlternateUrl($language_id, $alternate_url);
+diff --git a/src/Plugin/simple_sitemap/SitemapGenerator/SitemapGeneratorBase.php b/src/Plugin/simple_sitemap/SitemapGenerator/SitemapGeneratorBase.php
+index 6e2ab06..96d07a5 100644
+--- a/src/Plugin/simple_sitemap/SitemapGenerator/SitemapGeneratorBase.php
++++ b/src/Plugin/simple_sitemap/SitemapGenerator/SitemapGeneratorBase.php
+@@ -3,6 +3,7 @@
+ namespace Drupal\simple_sitemap\Plugin\simple_sitemap\SitemapGenerator;
+ 
+ use Drupal\Core\Extension\ModuleExtensionList;
++use Drupal\Core\Language\LanguageManagerInterface;
+ use Drupal\Core\Extension\ModuleHandlerInterface;
+ use Drupal\simple_sitemap\Entity\SimpleSitemapInterface;
+ use Drupal\simple_sitemap\Plugin\simple_sitemap\SimpleSitemapPluginBase;
+@@ -51,6 +52,14 @@ abstract class SitemapGeneratorBase extends SimpleSitemapPluginBase implements S
+    */
+   protected $moduleList;
+ 
++  /**
++   * The language manager.
++   *
++   * @var \Drupal\Core\Language\LanguageManagerInterface
++   */
++  protected $languageManager;
++
++
+   /**
+    * An array of index attributes.
+    *
+@@ -86,12 +95,14 @@ abstract class SitemapGeneratorBase extends SimpleSitemapPluginBase implements S
+     SitemapWriter $sitemap_writer,
+     Settings $settings,
+     ModuleExtensionList $module_list,
++    LanguageManagerInterface $language_manager
+   ) {
+     parent::__construct($configuration, $plugin_id, $plugin_definition);
+     $this->moduleHandler = $module_handler;
+     $this->writer = $sitemap_writer;
+     $this->settings = $settings;
+     $this->moduleList = $module_list;
++    $this->languageManager = $language_manager;
+   }
+ 
+   /**
+@@ -105,7 +116,8 @@ abstract class SitemapGeneratorBase extends SimpleSitemapPluginBase implements S
+       $container->get('module_handler'),
+       $container->get('simple_sitemap.sitemap_writer'),
+       $container->get('simple_sitemap.settings'),
+-      $container->get('extension.list.module')
++      $container->get('extension.list.module'),
++      $container->get('language_manager')
+     );
+   }
+ 
+diff --git a/src/Plugin/simple_sitemap/UrlGenerator/EntityUrlGeneratorBase.php b/src/Plugin/simple_sitemap/UrlGenerator/EntityUrlGeneratorBase.php
+index 59733c1..fdeb45d 100644
+--- a/src/Plugin/simple_sitemap/UrlGenerator/EntityUrlGeneratorBase.php
++++ b/src/Plugin/simple_sitemap/UrlGenerator/EntityUrlGeneratorBase.php
+@@ -129,6 +129,11 @@ abstract class EntityUrlGeneratorBase extends UrlGeneratorBase {
+    */
+   protected function getUrlVariants(array $path_data, Url $url_object): array {
+     $url_variants = [];
++    $default_langcode = $this->defaultLanguageId;
++    $entity = $this->entityHelper->getEntityFromUrlObject($url_object);
++    if ($entity instanceof ContentEntityInterface) {
++      $default_langcode = $entity->language()->getId();
++    }
+ 
+     if (!$this->sitemap->isMultilingual() || !$url_object->isRouted()) {
+ 
+@@ -160,6 +165,7 @@ abstract class EntityUrlGeneratorBase extends UrlGeneratorBase {
+     foreach ($alternate_urls as $langcode => $url) {
+       $url_variants[] = $path_data + [
+         'langcode' => $langcode,
++        'default_langcode' => $default_langcode,
+         'url' => $url,
+         'alternate_urls' => $alternate_urls,
+       ];

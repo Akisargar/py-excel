@@ -1,0 +1,29 @@
+uuid: 422992df-c8fd-4973-ba0f-9686545ba94c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_content_builder
+    - node.type.archive_of_videos
+  module:
+    - cohesion_elements
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.archive_of_videos.field_content_builder
+field_name: field_content_builder
+entity_type: node
+bundle: archive_of_videos
+label: 'Content Builder'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

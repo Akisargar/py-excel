@@ -4,11 +4,12 @@ status: true
 dependencies:
   config:
     - cohesion_custom_styles.cohesion_custom_style.135c1c73
-    - cohesion_custom_styles.cohesion_custom_style.3d9a4cbe
     - cohesion_custom_styles.cohesion_custom_style.6d265e74
     - cohesion_custom_styles.cohesion_custom_style.dd48edd1
-    - cohesion_elements.cohesion_component.cpt_1_column_layout
     - cohesion_elements.cohesion_component_category.cpt_cat_hero_components
+    - image.style.coh_medium_landscape
+    - image.style.coh_small_landscape
+    - image.style.coh_xx_large_landscape
   content:
     - 'file:file:0b157031-a59e-484f-ac76-8c4baecb74fc'
 label: 'Primary hero banner'
@@ -38,96 +39,16 @@ json_values: |
                       "parentUid": "container",
                       "children": [
                           {
-                              "uid": "cpt_1_column_layout",
-                              "type": "component",
-                              "title": "1 column layout",
-                              "enabled": true,
-                              "category": "category-1",
-                              "componentId": "cpt_1_column_layout",
-                              "componentType": "container",
-                              "iconColor": "custom",
-                              "uuid": "712b3336-31b6-488b-a7e0-c96230d5db1c",
+                              "type": "item",
+                              "uid": "wysiwyg",
+                              "title": "WYSIWYG",
                               "status": {
-                                  "collapsed": false
+                                  "collapsed": true
                               },
+                              "iconColor": "content",
+                              "uuid": "5d0079d4-7081-4f5d-9501-d0646686fa66",
                               "parentUid": "container",
-                              "children": [
-                                  {
-                                      "type": "container",
-                                      "uid": "component-drop-zone",
-                                      "mimicParent": true,
-                                      "parentUid": "cpt_1_column_layout",
-                                      "title": "Component drop zone",
-                                      "selected": false,
-                                      "status": {
-                                          "collapsed": false,
-                                          "disabled": false
-                                      },
-                                      "uuid": "ef64dc16-2cc4-4ba8-8cfb-929917122fa7",
-                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
-                                      "isContainer": true,
-                                      "children": [
-                                          {
-                                              "type": "item",
-                                              "uid": "wysiwyg",
-                                              "title": "WYSIWYG",
-                                              "status": {
-                                                  "collapsed": true
-                                              },
-                                              "iconColor": "content",
-                                              "uuid": "5d0079d4-7081-4f5d-9501-d0646686fa66",
-                                              "parentUid": "component-drop-zone",
-                                              "children": []
-                                          }
-                                      ]
-                                  }
-                              ]
-                          },
-                          {
-                              "uid": "cpt_1_column_layout",
-                              "type": "component",
-                              "title": "1 column layout",
-                              "enabled": true,
-                              "category": "category-1",
-                              "componentId": "cpt_1_column_layout",
-                              "componentType": "container",
-                              "iconColor": "custom",
-                              "uuid": "0c061edc-59c0-4ef0-8c5a-df0258bb9d7f",
-                              "status": {
-                                  "collapsed": false
-                              },
-                              "parentUid": "container",
-                              "children": [
-                                  {
-                                      "type": "container",
-                                      "uid": "component-drop-zone",
-                                      "mimicParent": true,
-                                      "parentUid": "cpt_1_column_layout",
-                                      "title": "Component drop zone",
-                                      "selected": false,
-                                      "status": {
-                                          "collapsed": false,
-                                          "disabled": false
-                                      },
-                                      "uuid": "23d1cb04-4250-47a1-a33f-1aae1154e74e",
-                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
-                                      "isContainer": true,
-                                      "children": [
-                                          {
-                                              "type": "item",
-                                              "uid": "wysiwyg",
-                                              "title": "WYSIWYG",
-                                              "status": {
-                                                  "collapsed": true
-                                              },
-                                              "iconColor": "content",
-                                              "uuid": "d61b3e0b-b3f1-4e61-8c9c-687bb1223655",
-                                              "parentUid": "component-drop-zone",
-                                              "children": []
-                                          }
-                                      ]
-                                  }
-                              ]
+                              "children": []
                           }
                       ]
                   },
@@ -223,19 +144,6 @@ json_values: |
                                       },
                                       "iconColor": "formField",
                                       "uuid": "86820958-8681-4fe3-a96c-7737da80104a",
-                                      "parentUid": "form-section",
-                                      "children": []
-                                  },
-                                  {
-                                      "type": "form-field",
-                                      "uid": "form-wysiwyg",
-                                      "title": "WYSIWYG",
-                                      "translate": true,
-                                      "status": {
-                                          "collapsed": false
-                                      },
-                                      "iconColor": "formField",
-                                      "uuid": "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368",
                                       "parentUid": "form-section",
                                       "children": []
                                   },
@@ -444,8 +352,452 @@ json_values: |
                   "form": null
               },
               "styles": {
-                  "items": [],
-                  "formDefinition": [],
+                  "items": [
+                      {
+                          "title": ".image-no-overlay",
+                          "type": "container",
+                          "items": [],
+                          "form": null,
+                          "selectorType": "modifier",
+                          "model": ".image-no-overlay",
+                          "uuid": "91d5dc1b-dfb2-41c5-9061-b60e4e1cee85",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "background",
+                                  "children": [
+                                      {
+                                          "formKey": "background-image-and-gradient",
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xl"
+                                              },
+                                              {
+                                                  "name": "sm"
+                                              },
+                                              {
+                                                  "name": "ps"
+                                              }
+                                          ],
+                                          "activeFields": [
+                                              {
+                                                  "name": "background-image-settings",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundLayerType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImage",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "title": ".image-dark-overlay",
+                          "type": "container",
+                          "items": [],
+                          "form": null,
+                          "selectorType": "modifier",
+                          "model": ".image-dark-overlay",
+                          "uuid": "7e973294-428b-49e9-a5a7-aa3739a1b8d6",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "background",
+                                  "children": [
+                                      {
+                                          "formKey": "background-image-and-gradient",
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xl"
+                                              },
+                                              {
+                                                  "name": "sm"
+                                              },
+                                              {
+                                                  "name": "ps"
+                                              }
+                                          ],
+                                          "activeFields": [
+                                              {
+                                                  "name": "background-image-settings",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundLayerType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImage",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundLayerType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImage",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "title": ".image-light-overlay",
+                          "type": "container",
+                          "items": [],
+                          "form": null,
+                          "selectorType": "modifier",
+                          "model": ".image-light-overlay",
+                          "uuid": "6ac370d8-3501-4b71-99e8-ee7ff5998767",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "background",
+                                  "children": [
+                                      {
+                                          "formKey": "background-image-and-gradient",
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xl"
+                                              },
+                                              {
+                                                  "name": "sm"
+                                              },
+                                              {
+                                                  "name": "ps"
+                                              }
+                                          ],
+                                          "activeFields": [
+                                              {
+                                                  "name": "background-image-settings",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundLayerType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImage",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundLayerType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImage",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "background",
+                          "children": [
+                              {
+                                  "formKey": "background-color",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xl"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "background-color",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
                   "selectorType": "topLevel",
                   "form": null
               }
@@ -697,11 +1049,6 @@ json_values: |
                                           "active": true
                                       }
                                   ]
-                              },
-                              {
-                                  "formKey": "tab-markup-add-id",
-                                  "activeFields": [],
-                                  "breakpoints": []
                               }
                           ]
                       }
@@ -802,6 +1149,9 @@ json_values: |
                                       {
                                           "iconName": "mobile",
                                           "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
                                       }
                                   ]
                               },
@@ -884,76 +1234,63 @@ json_values: |
                                           "name": "xs"
                                       }
                                   ]
-                              },
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "transform-and-transition",
+                          "children": [
                               {
-                                  "formKey": "height",
+                                  "formKey": "transform",
                                   "activeFields": [
                                       {
-                                          "name": "min-height",
+                                          "name": "transformRotateX",
                                           "active": true
                                       },
                                       {
-                                          "name": "max-height",
+                                          "name": "transformRotateY",
                                           "active": true
                                       },
                                       {
-                                          "name": "height",
+                                          "name": "transformRotateZ",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformTranslateX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformTranslateY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformScaleX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformScaleY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformSkewX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformSkewY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformOriginX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "transformOriginY",
                                           "active": true
                                       }
                                   ],
                                   "breakpoints": [
                                       {
-                                          "name": "md"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "formKey": "padding",
-                                  "activeFields": [
-                                      {
-                                          "name": "padding-equal",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "padding-top",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "padding-bottom",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "padding-left",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "padding-right",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "padding-block-start",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "padding-block-end",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "padding-inline-start",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "padding-inline-end",
-                                          "active": false
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "iconName": "mobile",
                                           "name": "xs"
-                                      },
-                                      {
-                                          "name": "sm"
                                       }
                                   ]
                               }
@@ -1016,6 +1353,19 @@ json_values: |
                                                   "active": true
                                               }
                                           ],
+                                          "breakpoints": [
+                                              {
+                                                  "iconName": "mobile",
+                                                  "name": "xs"
+                                              },
+                                              {
+                                                  "name": "sm"
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "css-property-and-css-value",
+                                          "activeFields": [],
                                           "breakpoints": [
                                               {
                                                   "name": "xs"
@@ -1240,24 +1590,60 @@ json_values: |
                                                   "name": "xs"
                                               },
                                               {
-                                                  "name": "md"
+                                                  "name": "lg"
                                               }
                                           ]
                                       }
                                   ]
                               },
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "transform-and-transition",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "transform",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "transformRotateX",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "transformRotateY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformRotateZ",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformTranslateX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformTranslateY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformScaleX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformScaleY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformSkewX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformSkewY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformOriginX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "transformOriginY",
                                                   "active": true
                                               }
                                           ],
@@ -1273,101 +1659,6 @@ json_values: |
                           "model": "img",
                           "items": [],
                           "collapsed": false
-                      },
-                      {
-                          "title": ".media-oembed-content",
-                          "type": "container",
-                          "items": [],
-                          "selectorType": "child",
-                          "uuid": "04c44df4-83ae-4dcb-912f-dc26a679b98e",
-                          "allowedTypes": [
-                              "child",
-                              "pseudo",
-                              "modifier"
-                          ],
-                          "formDefinition": [
-                              {
-                                  "formKey": "layout",
-                                  "children": [
-                                      {
-                                          "formKey": "height",
-                                          "activeFields": [
-                                              {
-                                                  "name": "min-height",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "max-height",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "height",
-                                                  "active": true
-                                              }
-                                          ],
-                                          "breakpoints": [
-                                              {
-                                                  "iconName": "mobile",
-                                                  "name": "xs"
-                                              },
-                                              {
-                                                  "name": "md"
-                                              }
-                                          ]
-                                      },
-                                      {
-                                          "formKey": "width",
-                                          "activeFields": [
-                                              {
-                                                  "name": "min-width",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "max-width",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "width",
-                                                  "active": true
-                                              }
-                                          ],
-                                          "breakpoints": [
-                                              {
-                                                  "name": "xs"
-                                              }
-                                          ]
-                                      }
-                                  ]
-                              },
-                              {
-                                  "formKey": "custom-css",
-                                  "children": [
-                                      {
-                                          "formKey": "css-property-and-css-value",
-                                          "activeFields": [
-                                              {
-                                                  "name": "customCssProperty",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "customCss",
-                                                  "active": true
-                                              }
-                                          ],
-                                          "breakpoints": [
-                                              {
-                                                  "iconName": "mobile",
-                                                  "name": "xs"
-                                              },
-                                              {
-                                                  "name": "md"
-                                              }
-                                          ]
-                                      }
-                                  ]
-                              }
-                          ],
-                          "model": ".media-oembed-content"
                       }
                   ]
               }
@@ -1490,131 +1781,8 @@ json_values: |
                   "selectorType": "topLevel",
                   "form": null,
                   "items": []
-              },
-              "hideNoData": {
-                  "formDefinition": [
-                      {
-                          "formKey": "tab-hide-data-settings",
-                          "children": [
-                              {
-                                  "formKey": "tab-hide-data-hide",
-                                  "breakpoints": [],
-                                  "activeFields": [
-                                      {
-                                          "name": "hideEnable",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "hideData",
-                                          "active": true
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ],
-                  "title": "Default",
-                  "selectorType": "topLevel",
-                  "form": null,
-                  "items": []
               }
-          },
-          "712b3336-31b6-488b-a7e0-c96230d5db1c": {},
-          "d61b3e0b-b3f1-4e61-8c9c-687bb1223655": {
-              "settings": {
-                  "formDefinition": [
-                      {
-                          "formKey": "wysiwyg-settings",
-                          "children": [
-                              {
-                                  "formKey": "wysiwyg-editor",
-                                  "breakpoints": [],
-                                  "activeFields": [
-                                      {
-                                          "name": "content",
-                                          "active": true
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ],
-                  "selectorType": "topLevel",
-                  "form": null,
-                  "items": [],
-                  "title": "Default"
-              },
-              "styles": {
-                  "formDefinition": [],
-                  "title": "Default",
-                  "selectorType": "topLevel",
-                  "items": [
-                      {
-                          "title": "h1.coh-style-heading-1-size",
-                          "type": "container",
-                          "items": [],
-                          "selectorType": "child",
-                          "uuid": "0003fb6f-36ce-408b-9e8b-2edc72b0d9c6",
-                          "allowedTypes": [
-                              "child",
-                              "pseudo",
-                              "modifier"
-                          ],
-                          "formDefinition": [],
-                          "model": "h1.coh-style-heading-1-size"
-                      },
-                      {
-                          "title": "p.coh-style-paragraph-large",
-                          "type": "container",
-                          "items": [],
-                          "selectorType": "child",
-                          "uuid": "65fab353-ce50-41a4-a1f6-425fb43914e0",
-                          "allowedTypes": [
-                              "child",
-                              "pseudo",
-                              "modifier"
-                          ],
-                          "formDefinition": [],
-                          "model": "p.coh-style-paragraph-large"
-                      }
-                  ]
-              },
-              "markup": {
-                  "formDefinition": [
-                      {
-                          "formKey": "tab-markup-classes-and-ids",
-                          "children": [
-                              {
-                                  "formKey": "tab-markup-add-classes",
-                                  "breakpoints": [],
-                                  "activeFields": [
-                                      {
-                                          "name": "classes",
-                                          "active": true
-                                      }
-                                  ]
-                              }
-                          ]
-                      },
-                      {
-                          "formKey": "tab-markup-attributes",
-                          "children": [
-                              {
-                                  "formKey": "tab-markup-add-attributes-values",
-                                  "activeFields": [],
-                                  "breakpoints": []
-                              }
-                          ]
-                      }
-                  ],
-                  "title": "Default",
-                  "selectorType": "topLevel",
-                  "form": null,
-                  "items": []
-              }
-          },
-          "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {},
-          "0c061edc-59c0-4ef0-8c5a-df0258bb9d7f": {}
+          }
       },
       "model": {
           "cc543c67-ada2-4b4d-9326-096b672faf5a": {
@@ -1623,7 +1791,7 @@ json_values: |
                   "width": "fluid",
                   "customStyle": [
                       {
-                          "customStyle": null
+                          "customStyle": ""
                       }
                   ]
               },
@@ -1778,100 +1946,461 @@ json_values: |
                           "background-color": {}
                       }
                   },
-                  "91d5dc1b-dfb2-41c5-9061-b60e4e1cee85": {
-                      "styles": {
-                          "xl": {
-                              "background-image-settings": [
-                                  {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
-                                      }
-                                  }
-                              ]
-                          },
-                          "sm": {
-                              "background-image-settings": [
-                                  {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
-                                      }
-                                  }
-                              ]
-                          },
-                          "ps": {
-                              "background-image-settings": [
-                                  {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
-                                      }
-                                  }
-                              ]
-                          }
-                      }
-                  },
                   "7e973294-428b-49e9-a5a7-aa3739a1b8d6": {
+                      "settings": {
+                          "element": "",
+                          "class": ".image-dark-overlay",
+                          "combinator": "",
+                          "pseudo": ""
+                      },
                       "styles": {
                           "xl": {
                               "background-image-settings": [
-                                  null,
                                   {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      "backgroundLayerType": {
+                                          "value": "gradient"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "auto"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImageGradient": {
+                                          "value": "linear-gradient(90deg , rgba(0, 0, 0, 0.2) 1% , rgba(0, 0, 0, 0.2) 100%)"
                                       }
+                                  },
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_xx_large_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
                                   }
                               ]
                           },
                           "sm": {
                               "background-image-settings": [
-                                  null,
                                   {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      "backgroundLayerType": {
+                                          "value": "gradient"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "auto"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImageGradient": {
+                                          "value": "linear-gradient(90deg , rgba(0, 0, 0, 0.2) 1% , rgba(0, 0, 0, 0.2) 100%)"
                                       }
+                                  },
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_medium_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
                                   }
                               ]
                           },
                           "ps": {
                               "background-image-settings": [
-                                  null,
                                   {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      "backgroundLayerType": {
+                                          "value": "gradient"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "auto"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImageGradient": {
+                                          "value": "linear-gradient(90deg , rgba(0, 0, 0, 0.2) 1% , rgba(0, 0, 0, 0.2) 100%)"
                                       }
+                                  },
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_small_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
                                   }
                               ]
                           }
                       }
                   },
                   "6ac370d8-3501-4b71-99e8-ee7ff5998767": {
+                      "settings": {
+                          "element": "",
+                          "class": ".image-light-overlay",
+                          "combinator": "",
+                          "pseudo": ""
+                      },
                       "styles": {
                           "xl": {
                               "background-image-settings": [
-                                  null,
                                   {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      "backgroundLayerType": {
+                                          "value": "gradient"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "auto"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImageGradient": {
+                                          "value": "linear-gradient(90deg , rgba(255, 255, 255, 0.3) 1% , rgba(255, 255, 255, 0.3) 100%)"
                                       }
+                                  },
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_xx_large_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "top"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
                                   }
                               ]
                           },
+                          "md": {},
                           "sm": {
                               "background-image-settings": [
-                                  null,
                                   {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      "backgroundLayerType": {
+                                          "value": "gradient"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "auto"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImageGradient": {
+                                          "value": "linear-gradient(90deg , rgba(255, 255, 255, 0.3) 1% , rgba(255, 255, 255, 0.3) 100%)"
                                       }
+                                  },
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_medium_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
                                   }
                               ]
                           },
                           "ps": {
                               "background-image-settings": [
-                                  null,
                                   {
-                                      "backgroundImage": {
-                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      "backgroundLayerType": {
+                                          "value": "gradient"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "auto"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImageGradient": {
+                                          "value": "linear-gradient(90deg , rgba(255, 255, 255, 0.3) 1% , rgba(255, 255, 255, 0.3) 100%)"
                                       }
+                                  },
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_small_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
+                                  }
+                              ]
+                          }
+                      }
+                  },
+                  "91d5dc1b-dfb2-41c5-9061-b60e4e1cee85": {
+                      "settings": {
+                          "element": "",
+                          "class": ".image-no-overlay",
+                          "combinator": "",
+                          "pseudo": ""
+                      },
+                      "styles": {
+                          "xl": {
+                              "background-image-settings": [
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_xx_large_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
+                                  }
+                              ]
+                          },
+                          "sm": {
+                              "background-image-settings": [
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_medium_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
+                                  }
+                              ]
+                          },
+                          "ps": {
+                              "background-image-settings": [
+                                  {
+                                      "backgroundLayerType": {
+                                          "value": "image"
+                                      },
+                                      "backgroundImage": {
+                                          "imageStyle": "coh_small_landscape",
+                                          "value": "[field.298f9e5d-49ed-428b-ac9c-5802cecb03fb]"
+                                      },
+                                      "backgroundImageSize": {
+                                          "value": "cover"
+                                      },
+                                      "backgroundImageRepeat": {
+                                          "value": "no-repeat"
+                                      },
+                                      "backgroundImageAttachment": {
+                                          "value": "scroll"
+                                      },
+                                      "backgroundImagePositionX": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImagePositionY": {
+                                          "value": "center"
+                                      },
+                                      "backgroundImageOrigin": {},
+                                      "backgroundImageClip": {},
+                                      "backgroundImagePositionXOffset": {}
                                   }
                               ]
                           }
@@ -1886,9 +2415,6 @@ json_values: |
                   "customStyle": [
                       {
                           "customStyle": "coh-style-title-intro-and-title-wrapper"
-                      },
-                      {
-                          "customStyle": "coh-style-inner-container-padding"
                       }
                   ]
               },
@@ -1896,38 +2422,9 @@ json_values: |
                   "classes": "primary__hero__caption-wrapper"
               }
           },
-          "712b3336-31b6-488b-a7e0-c96230d5db1c": {
-              "c469e24d-d155-46d5-a9ca-dc61028163c6": "fluid",
-              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
-              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
-              "89ccaa0d-3283-45de-986d-054080f18b88": "",
-              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
-              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
-              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "8",
-              "b75137ab-91db-4482-8944-749b854aed32": "0px",
-              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
-              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "10",
-              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "0px",
-              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
-              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
-              "settings": {
-                  "title": "Hero Title container"
-              }
-          },
-          "ef64dc16-2cc4-4ba8-8cfb-929917122fa7": {
-              "settings": {
-                  "title": "Column drop zone",
-                  "dropzoneHideSelector": "",
-                  "styles": {
-                      "sm": {
-                          "col": 12
-                      }
-                  }
-              }
-          },
           "5d0079d4-7081-4f5d-9501-d0646686fa66": {
               "settings": {
-                  "title": "Hero Title",
+                  "title": "WYSIWYG",
                   "content": "[field.86820958-8681-4fe3-a96c-7737da80104a]"
               },
               "styles": {
@@ -1955,79 +2452,7 @@ json_values: |
                       },
                       {
                           "attribute": "data-aos-delay",
-                          "value": "100"
-                      },
-                      {
-                          "attribute": "data-aos-easing",
-                          "value": "ease-in-out"
-                      },
-                      {
-                          "attribute": "data-aos-duration",
-                          "value": "500"
-                      }
-                  ]
-              }
-          },
-          "0c061edc-59c0-4ef0-8c5a-df0258bb9d7f": {
-              "c469e24d-d155-46d5-a9ca-dc61028163c6": "fluid",
-              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
-              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
-              "89ccaa0d-3283-45de-986d-054080f18b88": "",
-              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
-              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
-              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "4",
-              "b75137ab-91db-4482-8944-749b854aed32": "0px",
-              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
-              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
-              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "0px",
-              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
-              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
-              "settings": {
-                  "title": "Intro text container"
-              }
-          },
-          "23d1cb04-4250-47a1-a33f-1aae1154e74e": {
-              "settings": {
-                  "title": "Column drop zone",
-                  "dropzoneHideSelector": "",
-                  "styles": {
-                      "sm": {
-                          "col": 12
-                      }
-                  }
-              }
-          },
-          "d61b3e0b-b3f1-4e61-8c9c-687bb1223655": {
-              "settings": {
-                  "title": "Hero Description",
-                  "content": "[field.c0f327ef-3b4c-4e74-8a10-b2d54bb3b368]"
-              },
-              "styles": {
-                  "settings": {
-                      "class": "Default"
-                  },
-                  "0003fb6f-36ce-408b-9e8b-2edc72b0d9c6": {
-                      "styles": {},
-                      "settings": {
-                          "element": "h1.coh-style-heading-1-size"
-                      }
-                  },
-                  "65fab353-ce50-41a4-a1f6-425fb43914e0": {
-                      "styles": {},
-                      "settings": {
-                          "element": "p.coh-style-paragraph-large"
-                      }
-                  }
-              },
-              "markup": {
-                  "attributes": [
-                      {
-                          "attribute": "data-aos",
-                          "value": "fade-up"
-                      },
-                      {
-                          "attribute": "data-aos-delay",
-                          "value": "100"
+                          "value": "10"
                       },
                       {
                           "attribute": "data-aos-easing",
@@ -2069,10 +2494,6 @@ json_values: |
                           "value": "500"
                       }
                   ]
-              },
-              "hideNoData": {
-                  "hideEnable": true,
-                  "hideData": "[field.05701354-a064-44dd-82c9-e4c81aaf24e4]"
               }
           },
           "b6abdf8a-efc7-46de-9551-6ef8c02ec237": {
@@ -2105,18 +2526,18 @@ json_values: |
                               },
                               {
                                   "customCssProperty": {
-                                      "value": "box-shadow"
+                                      "value": "transition"
                                   },
                                   "customCss": {
-                                      "value": "0 0 1px rgba(0, 0, 0, 0.05)"
+                                      "value": "width 2s ease"
                                   }
                               },
                               {
                                   "customCssProperty": {
-                                      "value": "transition"
+                                      "value": "box-shadow"
                                   },
                                   "customCss": {
-                                      "value": "0.5s ease-out clip-path"
+                                      "value": "0 0 1px rgba(0, 0, 0, 0.05)"
                                   }
                               }
                           ],
@@ -2125,66 +2546,33 @@ json_values: |
                           },
                           "margin": {
                               "margin-left": {
-                                  "value": "auto"
-                              },
-                              "margin-right": {
-                                  "value": "auto"
-                              },
-                              "margin-top": {
-                                  "value": "0"
-                              },
-                              "margin-bottom": {
-                                  "value": "0"
+                                  "value": "50%"
                               }
                           },
                           "transform": {
-                              "transformTranslateX": {}
+                              "transformTranslateX": {
+                                  "value": "-50%"
+                              }
                           },
                           "position": {
                               "value": "relative"
-                          },
-                          "height": {},
-                          "max-width": {
-                              "value": "100%"
-                          },
-                          "padding": {
-                              "padding-left": {
-                                  "value": "24px"
-                              },
-                              "padding-right": {
-                                  "value": "24px"
-                              }
                           }
                       },
                       "sm": {
                           "custom-css": [
                               {
                                   "customCssProperty": {
-                                      "value": "clip-path"
+                                      "value": "width"
                                   },
                                   "customCss": {
-                                      "value": "polygon(14.5% 0%, 85.5% 0%, 85.5% 100%, 14.5% 100%)"
+                                      "value": "clamp(768px, 21.5172rem + 55.1724vw, 1024px)"
                                   }
                               }
-                          ],
-                          "padding": {
-                              "padding-left": {
-                                  "value": "0"
-                              },
-                              "padding-right": {
-                                  "value": "0"
-                              }
-                          }
+                          ]
                       },
                       "md": {
-                          "width": {},
-                          "min-width": {},
-                          "height": {
-                              "value": "100%"
-                          },
-                          "padding": {
-                              "padding-left": {},
-                              "padding-right": {}
+                          "width": {
+                              "value": "1024px"
                           }
                       }
                   },
@@ -2192,7 +2580,7 @@ json_values: |
                       "styles": {
                           "xs": {
                               "width": {
-                                  "value": "100%"
+                                  "value": ""
                               },
                               "custom-css": [
                                   {
@@ -2208,7 +2596,7 @@ json_values: |
                                           "value": "object-fit"
                                       },
                                       "customCss": {
-                                          "value": "contain"
+                                          "value": "cover"
                                       }
                                   },
                                   {
@@ -2221,7 +2609,18 @@ json_values: |
                                   }
                               ]
                           },
-                          "sm": {}
+                          "sm": {
+                              "custom-css": [
+                                  {
+                                      "customCss": {
+                                          "value": "100vw"
+                                      },
+                                      "customCssProperty": {
+                                          "value": "width"
+                                      }
+                                  }
+                              ]
+                          }
                       },
                       "settings": {
                           "class": ".zoomed-in"
@@ -2274,7 +2673,7 @@ json_values: |
                           },
                           "lg": {
                               "width": {
-                                  "value": "1232px"
+                                  "value": "1024px"
                               }
                           }
                       },
@@ -2292,8 +2691,12 @@ json_values: |
                                   "value": "100%"
                               },
                               "transform": {
-                                  "transformOriginX": {},
-                                  "transformOriginY": {}
+                                  "transformOriginX": {
+                                      "value": "center"
+                                  },
+                                  "transformOriginY": {
+                                      "value": "center"
+                                  }
                               },
                               "margin": {
                                   "margin-left": {},
@@ -2303,32 +2706,11 @@ json_values: |
                               },
                               "height": {
                                   "value": "auto"
-                              },
-                              "custom-css": [
-                                  {
-                                      "customCssProperty": {
-                                          "value": "transform-origin"
-                                      },
-                                      "customCss": {
-                                          "value": "center"
-                                      }
-                                  },
-                                  {
-                                      "customCssProperty": {
-                                          "value": "object-fit"
-                                      },
-                                      "customCss": {
-                                          "value": "cover"
-                                      }
-                                  }
-                              ]
+                              }
                           },
                           "lg": {
-                              "height": {}
-                          },
-                          "md": {
                               "height": {
-                                  "value": "100vh"
+                                  "value": "576px"
                               }
                           }
                       },
@@ -2389,51 +2771,10 @@ json_values: |
                       "settings": {
                           "element": "img"
                       }
-                  },
-                  "04c44df4-83ae-4dcb-912f-dc26a679b98e": {
-                      "styles": {
-                          "xs": {
-                              "width": {
-                                  "value": "100%"
-                              },
-                              "height": {
-                                  "value": "auto"
-                              },
-                              "custom-css": [
-                                  {
-                                      "customCssProperty": {
-                                          "value": "aspect-ratio"
-                                      },
-                                      "customCss": {
-                                          "value": "16\/9"
-                                      }
-                                  }
-                              ]
-                          },
-                          "md": {
-                              "height": {
-                                  "value": "100vh"
-                              },
-                              "custom-css": [
-                                  {
-                                      "customCssProperty": {
-                                          "value": "aspect-ratio"
-                                      },
-                                      "customCss": {
-                                          "value": "auto"
-                                      }
-                                  }
-                              ]
-                          }
-                      },
-                      "settings": {
-                          "element": ".media-oembed-content"
-                      }
                   }
               },
               "markup": {
-                  "classes": "primary__banner__media-wrapper",
-                  "id": "primary-hero-banner"
+                  "classes": "primary__banner__media-wrapper"
               }
           },
           "4dc46323-8195-47d4-9a2a-51b9083ebe8f": {
@@ -2445,9 +2786,7 @@ json_values: |
                       "entityType": "media",
                       "bundles": {
                           "acquia_dam_image_asset": true,
-                          "image": true,
-                          "acquia_dam_video_asset": true,
-                          "video": true
+                          "image": true
                       }
                   },
                   "entityViewMode": "media.primary_hero_component_image"
@@ -2485,34 +2824,17 @@ json_values: |
           "86820958-8681-4fe3-a96c-7737da80104a": {
               "settings": {
                   "type": "cohWysiwyg",
-                  "title": "Title",
+                  "title": "Title and Into text",
                   "schema": {
                       "type": "object"
                   },
-                  "machineName": "title",
+                  "machineName": "title-and-into-text",
                   "tooltipPlacement": "auto right"
               },
               "model": {
                   "value": {
                       "textFormat": "cohesion",
-                      "text": "<h1 class=\"coh-style-heading-1-size\">LIVE. LIFE. <span>OUTSIDE.<\/span><\/h1>"
-                  }
-              }
-          },
-          "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {
-              "settings": {
-                  "type": "cohWysiwyg",
-                  "title": "Into text",
-                  "schema": {
-                      "type": "object"
-                  },
-                  "machineName": "into-text",
-                  "tooltipPlacement": "auto right"
-              },
-              "model": {
-                  "value": {
-                      "textFormat": "cohesion",
-                      "text": "<p class=\"coh-style-paragraph-large\">The world\u2019s finest hand-moulded<\/p><p class=\"coh-style-paragraph-large\"><strong>composite decking &amp; composite cladding<\/strong><\/p>"
+                      "text": "<h1 class=\"coh-style-heading-1-size\">LIVE. LIFE. <span>OUTSIDE.<\/span><\/h1><p class=\"coh-style-paragraph-large\">The world\u2019s finest hand-moulded<\/p><p class=\"coh-style-paragraph-large\"><strong>composite decking &amp; composite cladding<\/strong><\/p>"
                   }
               }
           },
@@ -2523,7 +2845,7 @@ json_values: |
                   "options": {
                       "showClose": false,
                       "helpType": "help",
-                      "helpText": "These fields are for adding the heading title and the text below. It will appear above the hero banner."
+                      "helpText": "This field is for adding the heading title and the text below. It will appear above the hero banner."
                   }
               }
           },
@@ -2544,7 +2866,7 @@ json_values: |
           },
           "05701354-a064-44dd-82c9-e4c81aaf24e4": {
               "settings": {
-                  "title": "Hero Banner Media",
+                  "title": "Hero Banner Image",
                   "type": "cohEntityBrowser",
                   "showConfig": false,
                   "hideRowHeading": true,
@@ -2560,9 +2882,7 @@ json_values: |
                       "bundles": {
                           "acquia_dam_documents_asset": false,
                           "acquia_dam_image_asset": true,
-                          "image": true,
-                          "acquia_dam_video_asset": true,
-                          "video": true
+                          "image": true
                       }
                   },
                   "machineName": "hero-banner-image",
@@ -2778,21 +3098,7 @@ json_values: |
           "31e00b74-751c-4710-8c15-cb2a85e44262": {},
           "05701354-a064-44dd-82c9-e4c81aaf24e4": {},
           "24626ea2-1cd8-44b0-a0bd-0b665136ae6a": {},
-          "3b7eceb3-2f20-4278-8a66-c0da74b9b143": {
-              "hideNoData": {}
-          },
-          "712b3336-31b6-488b-a7e0-c96230d5db1c": {},
-          "d61b3e0b-b3f1-4e61-8c9c-687bb1223655": {
-              "settings": {
-                  "content": {
-                      "textFormat": "cohesion",
-                      "text": ""
-                  },
-                  "title": "Hero Description"
-              }
-          },
-          "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {},
-          "0c061edc-59c0-4ef0-8c5a-df0258bb9d7f": {}
+          "3b7eceb3-2f20-4278-8a66-c0da74b9b143": {}
       },
       "variableFields": {
           "cc543c67-ada2-4b4d-9326-096b672faf5a": [
@@ -2821,21 +3127,13 @@ json_values: |
           "31e00b74-751c-4710-8c15-cb2a85e44262": [],
           "05701354-a064-44dd-82c9-e4c81aaf24e4": [],
           "24626ea2-1cd8-44b0-a0bd-0b665136ae6a": [],
-          "3b7eceb3-2f20-4278-8a66-c0da74b9b143": [
-              "hideNoData.hideData"
-          ],
-          "712b3336-31b6-488b-a7e0-c96230d5db1c": [],
-          "d61b3e0b-b3f1-4e61-8c9c-687bb1223655": [
-              "settings.content"
-          ],
-          "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": [],
-          "0c061edc-59c0-4ef0-8c5a-df0258bb9d7f": []
+          "3b7eceb3-2f20-4278-8a66-c0da74b9b143": []
       },
       "disabledNodes": [],
       "meta": {}
   }
 json_mapper: '{}'
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true

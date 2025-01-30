@@ -264,30 +264,231 @@
     }
   };
 
-  Drupal.behaviors.copyLinkToClipboard = {
-    attach: function (context, settings) {
-      console.log("here i am");
-      $("#copyLink").off('click').on("click", function() {
-        console.log($(this).attr("link-url"));
-        alert("clicked");
-      })
+  Drupal.behaviors.disableRightClick = {
+    attach: function (context, setting) {
+      console.log('check');
+      document.addEventListener('contextmenu', function (event) {
+        if (event.target.tagName === 'IMG') {
+          // Log the event to Google Tag Manager or Analytics
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            'event': 'imageRightClick',
+            'imageUrl': event.target.src,
+          });
+        }
 
-      // // Ensure the behavior only runs once per element.
-      // $('.copy-link-button', context).once('copyLinkToClipboard').on('click', function () {
-      //   // Get the link input field
-      //   var copyText = $('#copyLinkInput', context);
-
-      //   // Select the text field
-      //   copyText.select();
-      //   copyText[0].setSelectionRange(0, 99999); // For mobile devices
-
-      //   // Copy the text inside the text field
-      //   document.execCommand("copy");
-
-      //   // Optional: Display an alert or notification
-      //   alert("Link copied to clipboard: " + copyText.val());
-      // });
+        // Disable right-click on the entire page
+        event.preventDefault();
+      });
     }
+  }
+
+  Drupal.behaviors.searchFilters = {
+    attach: function (context, setting) {
+      if ($(".coh-style-clear-facets-block").length) {
+        if ($("#block-search-content-type").length) {
+          var activeItems = $(".facet-item .is-active");  
+          activeItems.each(function() {
+            console.log($(this).attr("data-drupal-facet-item-value"));
+            if ($(".coh-style-clear-facets-block").find(`[data-drupal-facet-item-value='${$(this).attr('data-drupal-facet-item-value')}']`).length === 0) {
+              $(".coh-style-clear-facets-block").prepend($(this).parent().clone());
+            }
+          });
+        }
+      }
+
+      if ($("#block-search-content-type").length > 0) {
+        var facetItems = $("#block-search-content-type .facet-item a:not(.is-active)");
+        var currentPageUrl = window.location.pathname;
+        var checkFacetFilter = currentPageUrl.split('/').slice(-2);
+      
+        if (facetItems.length > 0) {
+          facetItems.each(function() {
+            var facetUrl = $(this).attr("href").split('/').slice(-2);
+      
+            if (checkFacetFilter[0] === facetUrl[0]) {
+              var newUrl = window.location.origin + currentPageUrl;
+              if (!currentPageUrl.endsWith(facetUrl.join('/'))) {
+                newUrl += '/' + facetUrl.join('/');
+              }
+              $(this).attr("href", newUrl);
+            }
+          });
+        }
+      }
+    },
   };
 
+  Drupal.behaviors.copyButton = {
+    attach: function (context, setting) {
+      $(document).ready(function() {
+        $(".copy-text").on("click", function() {
+            // Get the value of the button
+            const url = $(this).attr("url");
+            // Copy to clipboard using the Clipboard API
+            navigator.clipboard.writeText(url).then(function() {
+                console.log("URL copied to clipboard!");
+            }).catch(function(error) {
+                console.error("Failed to copy: ", error);
+            });
+        });
+      });
+    }
+  }
+  
+  Drupal.behaviors.addMapMarker = {
+    attach: function (context, settings) {
+      if ($('.map-with-marker .geolocation-map-wrapper').length) {
+        let mapId = $('.geolocation-map-wrapper').attr('id');
+        let interval = setInterval(function () {
+          let map = Drupal.geolocation.getMapById(mapId);
+    
+          if (map && map.googleMap) {
+            clearInterval(interval);
+            let location = {
+              lat: $('.map-with-marker').data('lat'),
+              lng: $('.map-with-marker').data('lng')
+            };
+    
+            let title = $('.map-with-marker').data('title') || 'Default Marker Title';
+
+            function addMarker(location, map, title) {
+              let newMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(parseFloat(location.lat), parseFloat(location.lng)),
+                icon: '/themes/custom/millboard/svg/map_marker.svg',
+                title: title
+              });
+                
+              newMarker.setMap(map.googleMap);
+              map.mapMarkers = map.mapMarkers || [];
+              map.mapMarkers.push(newMarker);
+
+              let bounds = new google.maps.LatLngBounds();
+              bounds.extend(newMarker.getPosition());
+              map.googleMap.fitBounds(bounds);
+            }
+            addMarker(location, map, title);
+          } else {
+            console.log("Waiting for map to be initialized...");
+          }
+        }, 500);
+      }
+    }
+  }
+
+  Drupal.behaviors.imageHotpointsBehaviour = {
+    attach: function (context, settings) {
+      let hotpoint = $('.hotpoint label.coh-inline-element');
+
+      if(hotpoint.length) {
+        hotpoint.on("click",function() {
+          var offset = $(this).offset();
+          var viewportWidth = $(window).width();
+          var distanceFromTopRight = {
+              top: offset.top,
+              right: viewportWidth - offset.left - $(this).outerWidth()
+          };
+          if(distanceFromTopRight.right < 190){
+            let hotpoint_content = $(this).siblings(".hotpoint-content");
+            hotpoint_content.css({
+              'position': 'absolute',
+              'right' : '100%',
+              'transform-origin' : 'right top'
+            })
+          }
+        })
+      }
+    }
+  }
+
+  Drupal.behaviors.whereToBuyFilterUpdate = {
+    attach: function (context, settings) {
+      var currentLanguage = drupalSettings.path.currentLanguage;
+      if(currentLanguage == "en-us") {
+        $(document).ready(function() {
+          var currentPageParams = window.location.search;
+          var distance = currentPageParams.split("%3C%3D")[1];
+          distance = distance.replace(/\D/g, "");
+          if($('#views-exposed-form-millboard-find-installers-where-to-buy').length && $('#edit-field-store-location-proximity').length) {
+            $('#edit-field-store-location-proximity').val(distance);
+            $('#views-exposed-form-millboard-find-installers-where-to-buy').trigger('change');
+          }
+        });
+      }
+    }
+  }
+
+  Drupal.behaviors.productManualHandler = {
+    attach: function (context, settings) {
+      const $productWrappers = $(context).find('.product-manual-wrapper');  
+      $productWrappers.each(function () {
+        const $wrapper = $(this);
+        const $products = $wrapper.find('.product-manual > .product-swatch');
+        const $realLifeImageContainer = $wrapper.find('.product-reallife-image');
+        if ($products.length > 0) {
+          const $firstProduct = $products.first();
+          $firstProduct.addClass('selected-product');
+          const $firstProductImage = $firstProduct.find('img.reallife-image');
+          if ($firstProductImage.length) {
+            const firstImageSrc = $firstProductImage.attr('src');
+            const link = $firstProductImage.data('link') || '#';
+            const text = $firstProductImage.data('sku') || 'No SKU available';
+            const linkElement = `<a href="${link}" target="_self">${text}</a>`;
+            const imgElement = `<img src="${firstImageSrc}" alt="${text}-Image">`;
+            $realLifeImageContainer.html(imgElement + " " + linkElement);
+          }
+        }
+        $products.on('click', function () {
+          const $clickedProduct = $(this);
+          $products.removeClass('selected-product');
+          $clickedProduct.addClass('selected-product');
+          const $selectedImage = $clickedProduct.find('img.reallife-image');
+          const link = $selectedImage.data('link') || '#';
+          const text = $selectedImage.data('sku') || 'No SKU available';
+          const imgSrc = $selectedImage.attr('src');
+          const imgElement = `<img src="${imgSrc}" alt="Selected Product Image">`;
+          $realLifeImageContainer.html(imgElement);
+          const linkElement = `<a href="${link}" target="_self">${text}</a>`;
+          $realLifeImageContainer.append(linkElement);
+        });
+      });
+    },
+  };
+
+  Drupal.behaviors.simpleTabSwitcher = {
+    attach: function (context, settings) {
+      // Select all tab links within the current context and ensure once per element.
+      const tabLinks = once('simple-tab-init', '.tab-links [id^="simple-tab-"]', context);
+
+      tabLinks.forEach((link) => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+
+          // Remove 'active' class from all tab links and containers.
+          tabLinks.forEach((l) => l.classList.remove('active'));
+          document.querySelectorAll('.tab-container [id^="simple-tab-container-"]').forEach((container) => {
+            container.classList.remove('active');
+          });
+
+          // Add 'active' class to the clicked link and corresponding container.
+          this.classList.add('active');
+          const containerId = this.id.replace('tab', 'tab-container');
+          const container = document.getElementById(containerId);
+          if (container) {
+            container.classList.add('active');
+          }
+        });
+      });
+
+      // Set the first tab and container as active by default.
+      if (tabLinks.length > 0) {
+        tabLinks[0].classList.add('active');
+        const firstContainer = document.getElementById('simple-tab-container-1');
+        if (firstContainer) {
+          firstContainer.classList.add('active');
+        }
+      }
+    },
+  };
+  
 })(jQuery, Drupal);

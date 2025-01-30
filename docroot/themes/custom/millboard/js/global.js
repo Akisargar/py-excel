@@ -318,4 +318,87 @@
       }
     },
   };
+     Drupal.behaviors.stackAdaptTracking = {
+    attach: function (context, settings) {
+      $('#edit-actions-submit', context).once('stackAdaptTracking').on('click', function (event) {
+        // StackAdapt script
+        !function (s, a, e, v, n, t, z) {
+          if (s.saq) return;
+          n = s.saq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!s._saq) s._saq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '1.0';
+          n.queue = [];
+          t = a.createElement(e);
+          t.async = !0;
+          t.src = v;
+          z = a.getElementsByTagName(e)[0];
+          z.parentNode.insertBefore(t, z);
+        }(window, document, 'script', 'https://tags.srv.stackadapt.com/events.js');
+
+        saq('conv', 'm6E9iqGcYXZM0E5CUVfInt');
+
+        // NoScript equivalent for tracking
+        $('<img>', {
+          src: 'https://tags.srv.stackadapt.com/conv?cid=m6E9iqGcYXZM0E5CUVfInt',
+          width: 1,
+          height: 1,
+          style: 'display:none;'
+        }).appendTo('body');
+      });
+    }
+  };
+
+  Drupal.behaviors.stackAdaptAddToBasket = {
+    attach: function (context, settings) {
+      $('.order_sample_card_image .add-to-basket-btn', context).once('stackAdaptAddToBasket').on('click', function (event) {
+        event.preventDefault(); // Prevents default action if necessary
+
+        // StackAdapt script
+        !function (s, a, e, v, n, t, z) {
+          if (s.saq) return;
+          n = s.saq = function () {
+            n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+          };
+          if (!s._saq) s._saq = n;
+          n.push = n;
+          n.loaded = !0;
+          n.version = '1.0';
+          n.queue = [];
+          t = a.createElement(e);
+          t.async = !0;
+          t.src = v;
+          z = a.getElementsByTagName(e)[0];
+          z.parentNode.insertBefore(t, z);
+        }(window, document, 'script', 'https://tags.srv.stackadapt.com/events.js');
+
+        saq('conv', '2sYLJs0Nc5guHcANqJqPiU');
+
+        // NoScript equivalent for tracking
+        $('<img>', {
+          src: 'https://tags.srv.stackadapt.com/conv?cid=2sYLJs0Nc5guHcANqJqPiU',
+          width: 1,
+          height: 1,
+          style: 'display:none;'
+        }).appendTo('body');
+      });
+    }
+  };
+
+  // Add the functionality for custom page title
+  document.addEventListener("DOMContentLoaded", function () {
+    // Check for the custom title in the product page div
+    const productPage = document.querySelector('.coh-style-millboard-product-page');
+
+    if (productPage && productPage.getAttribute('data-custom-title')) {
+      const customTitle = productPage.getAttribute('data-custom-title');
+
+      // Set the page <title> to custom title
+      document.title = customTitle;
+    }
+  });
+
 })(jQuery, Drupal);

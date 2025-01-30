@@ -1,0 +1,277 @@
+uuid: f57d166a-4bbe-4157-89b5-44cd3c9901be
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_website_settings.cohesion_color.millboard-green
+label: 'Green dash'
+id: 3537b7a4
+json_values: |
+  {
+      "preview": {
+          "text": "<div class=\"coh-preview\">Default content for 'Generic'.<\/div>",
+          "textFormat": "cohesion",
+          "background": {
+              "value": {
+                  "rgba": "rgba(255,255,255,1)"
+              }
+          }
+      },
+      "styles": {
+          "settings": {
+              "element": "div"
+          },
+          "styles": {
+              "xs": {
+                  "height": {
+                      "value": "7px"
+                  },
+                  "width": {
+                      "value": "30px"
+                  },
+                  "margin": {
+                      "margin-top": {
+                          "value": "20px"
+                      },
+                      "margin-bottom": {
+                          "value": "20px"
+                      }
+                  },
+                  "display": {
+                      "value": "block"
+                  },
+                  "background-color": {
+                      "value": {
+                          "link": true,
+                          "value": {
+                              "hex": "#aac93c",
+                              "rgba": "rgba(170, 201, 60, 1)"
+                          },
+                          "uid": "millboard-green",
+                          "wysiwyg": true,
+                          "name": "Millboard Green",
+                          "class": ".coh-color-millboard-green",
+                          "variable": "$coh-color-millboard-green",
+                          "tags": [
+                              "millboard",
+                              "text"
+                          ],
+                          "inuse": true
+                      }
+                  }
+              }
+          }
+      },
+      "previewModel": {},
+      "variableFields": []
+  }
+json_mapper: |
+  {
+      "styles": {
+          "title": "Default",
+          "selectorType": "topLevel",
+          "formDefinition": [
+              {
+                  "formKey": "layout",
+                  "children": [
+                      {
+                          "formKey": "margin",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "margin-equal",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-top",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-bottom",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-left",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-right",
+                                  "active": true
+                              },
+                              {
+                                  "name": "margin-block-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-block-end",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-inline-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "margin-inline-end",
+                                  "active": false
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "padding",
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ],
+                          "activeFields": [
+                              {
+                                  "name": "padding-equal",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-top",
+                                  "active": true
+                              },
+                              {
+                                  "name": "padding-bottom",
+                                  "active": true
+                              },
+                              {
+                                  "name": "padding-left",
+                                  "active": true
+                              },
+                              {
+                                  "name": "padding-right",
+                                  "active": true
+                              },
+                              {
+                                  "name": "padding-block-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-block-end",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-inline-start",
+                                  "active": false
+                              },
+                              {
+                                  "name": "padding-inline-end",
+                                  "active": false
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "width",
+                          "activeFields": [
+                              {
+                                  "name": "min-width",
+                                  "active": true
+                              },
+                              {
+                                  "name": "max-width",
+                                  "active": true
+                              },
+                              {
+                                  "name": "width",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "height",
+                          "activeFields": [
+                              {
+                                  "name": "min-height",
+                                  "active": true
+                              },
+                              {
+                                  "name": "max-height",
+                                  "active": true
+                              },
+                              {
+                                  "name": "height",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "display",
+                          "activeFields": [
+                              {
+                                  "name": "display",
+                                  "active": true
+                              },
+                              {
+                                  "name": "visibility",
+                                  "active": true
+                              },
+                              {
+                                  "name": "overflow",
+                                  "active": true
+                              },
+                              {
+                                  "name": "overflow-x",
+                                  "active": true
+                              },
+                              {
+                                  "name": "overflow-y",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "formKey": "background",
+                  "children": [
+                      {
+                          "formKey": "background-color",
+                          "activeFields": [
+                              {
+                                  "name": "background-color",
+                                  "active": true
+                              }
+                          ],
+                          "breakpoints": [
+                              {
+                                  "name": "xs"
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ],
+          "items": []
+      }
+  }
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+class_name: .coh-style-green-dash
+custom_style_type: generic
+available_in_wysiwyg: false
+available_in_wysiwyg_inline: false
+parent: null
+weight: 0

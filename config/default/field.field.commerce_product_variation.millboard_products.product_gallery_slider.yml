@@ -1,0 +1,29 @@
+uuid: a6cb65b0-1599-4ba3-80ee-a064c9108642
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.millboard_products
+    - field.storage.commerce_product_variation.product_gallery_slider
+  module:
+    - cohesion_elements
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: commerce_product_variation.millboard_products.product_gallery_slider
+field_name: product_gallery_slider
+entity_type: commerce_product_variation
+bundle: millboard_products
+label: 'Product Gallery slider'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

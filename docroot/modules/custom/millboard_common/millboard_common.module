@@ -523,6 +523,9 @@ function millboard_common_views_pre_view(ViewExecutable $view, $display_id) {
       $fields["attribute_installed_width"]['alter']['alter_text'] = TRUE;
       $fields["attribute_installed_width"]['alter']['text'] = '<h5 class="coh-style-heading-5-size"><span>Board Widths - </span><span>{{ attribute_installed_width_inches }}</span></h5>';
     }
+    elseif ($current_language === 'de-de') {
+      $fields["attribute_installed_width"]['alter']['text'] = '<h5 class="coh-style-heading-5-size"><span>Paneelbreite - </span><span>{{ attribute_installed_width }}</span></h5>';
+    }
     else {
       // Exclude width inches when not needed.
       $fields["attribute_installed_width_inches"]['exclude'] = TRUE;

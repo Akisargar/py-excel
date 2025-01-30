@@ -57,10 +57,12 @@
         {% endif %}
       </div>
     </div>
-    {% if language and language == 'en-us' %}
-      <button class="add-to-basket-btn pdp add-to-basket-btn--sticky coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ attribute_width_inches }}">{{ 'Add sample'|t }}</button>
-    {% else %}
-      <button class="add-to-basket-btn pdp add-to-basket-btn--sticky coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ attribute_width }}">{{ 'Add sample'|t }}</button>
+    {% if not is_modello %}
+      {% if language and language == 'en-us' %}
+        <button class="add-to-basket-btn pdp add-to-basket-btn--sticky coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ attribute_width_inches }}">{{ 'Add sample'|t }}</button>
+      {% else %}
+        <button class="add-to-basket-btn pdp add-to-basket-btn--sticky coh-link link--cta coh-style-primary-button" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb="{{ variation_image_thumbnail }}" data-product-type="{{ variation_product_type }}" data-attribute-width="{{ attribute_width }}">{{ 'Add sample'|t }}</button>
+      {% endif %}
     {% endif %}
   </div>
   {{ view_content }}

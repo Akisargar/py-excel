@@ -1,0 +1,35 @@
+uuid: 3245e26b-ea4c-4578-b94b-d6475bf8f022
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.archive_of_videos
+    - taxonomy.vocabulary.location
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.archive_of_videos.field_location
+field_name: field_location
+entity_type: node
+bundle: archive_of_videos
+label: Location
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      location: location
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

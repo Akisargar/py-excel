@@ -1,0 +1,33 @@
+uuid: 6c86f38c-d0d2-4dba-9022-f700421515e2
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - views.view.showrooms_listing
+  module:
+    - cohesion
+    - collapsiblock
+    - views
+  theme:
+    - millboard
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+id: millboard_views_block__showrooms_listing_block_1
+theme: millboard
+region: dx8_hidden
+weight: 6
+provider: null
+plugin: 'views_block:showrooms_listing-block_1'
+settings:
+  id: 'views_block:showrooms_listing-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0

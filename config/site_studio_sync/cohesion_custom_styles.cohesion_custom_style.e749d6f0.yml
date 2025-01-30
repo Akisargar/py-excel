@@ -2,8 +2,6 @@ uuid: c8ca1aec-000f-469a-b1b6-48cd0723ecac
 langcode: en
 status: true
 dependencies:
-  config:
-    - cohesion_website_settings.cohesion_color.olive
   enforced:
     module:
       - acquia_cms_site_studio
@@ -33,6 +31,45 @@ json_values: |
                   "class": "",
                   "combinator": "",
                   "pseudo": ""
+              }
+          },
+          "fe6bc432-48e2-414f-86bd-b002d9908172": {
+              "settings": {
+                  "element": "",
+                  "class": "",
+                  "combinator": "",
+                  "pseudo": ":focus"
+              },
+              "styles": {
+                  "xl": {
+                      "box-shadow": [
+                          {
+                              "boxshadowType": {
+                                  "value": "null"
+                              },
+                              "boxshadowHorizontal": {
+                                  "value": "0"
+                              },
+                              "boxshadowVertical": {
+                                  "value": "0"
+                              },
+                              "boxshadowBlur": {
+                                  "value": "0"
+                              },
+                              "boxshadowSpread": {
+                                  "value": "3"
+                              },
+                              "boxshadowColor": {
+                                  "value": {
+                                      "value": {
+                                          "hex": "#ffcc4e",
+                                          "rgba": "rgba(255, 204, 78, 1)"
+                                      }
+                                  }
+                              }
+                          }
+                      ]
+                  }
               }
           },
           "styles": {
@@ -118,9 +155,7 @@ json_values: |
                   "pseudo": ":focus"
               },
               "styles": {
-                  "xl": {},
-                  "xs": {},
-                  "md": {
+                  "xl": {
                       "box-shadow": [
                           {
                               "boxshadowType": {
@@ -139,9 +174,7 @@ json_values: |
                   "pseudo": ":after"
               },
               "styles": {
-                  "xl": {},
-                  "xs": {},
-                  "md": {
+                  "xl": {
                       "box-shadow": [
                           {
                               "boxshadowType": {
@@ -157,25 +190,14 @@ json_values: |
                                   "value": "0"
                               },
                               "boxshadowSpread": {
-                                  "value": "2"
+                                  "value": "3"
                               },
                               "boxshadowColor": {
                                   "value": {
-                                      "link": true,
                                       "value": {
-                                          "hex": "#799513",
-                                          "rgba": "rgba(121, 149, 19, 1)"
-                                      },
-                                      "uid": "olive",
-                                      "name": "Olive",
-                                      "class": ".coh-color-olive",
-                                      "variable": "$coh-color-olive",
-                                      "wysiwyg": true,
-                                      "tags": [
-                                          "Millboard",
-                                          "Text"
-                                      ],
-                                      "inuse": true
+                                          "hex": "#ffcc4e",
+                                          "rgba": "rgba(255, 204, 78, 1)"
+                                      }
                                   }
                               }
                           }
@@ -192,58 +214,14 @@ json_values: |
               },
               "styles": {
                   "xl": {
-                      "display": {}
-                  },
-                  "xs": {
-                      "display": {}
-                  },
-                  "md": {
                       "display": {
                           "value": "block"
                       }
                   }
               }
-          },
-          "80488f22-5f88-4732-99a2-b7d2e257b161": {
-              "styles": {
-                  "xs": {
-                      "outline-width": {
-                          "value": "2px"
-                      },
-                      "outline-offset": {
-                          "value": "1px"
-                      },
-                      "outline-color": {
-                          "value": {
-                              "link": true,
-                              "value": {
-                                  "hex": "#799513",
-                                  "rgba": "rgba(121, 149, 19, 1)"
-                              },
-                              "uid": "olive",
-                              "name": "Olive",
-                              "class": ".coh-color-olive",
-                              "variable": "$coh-color-olive",
-                              "wysiwyg": true,
-                              "tags": [
-                                  "Millboard",
-                                  "Text"
-                              ],
-                              "inuse": true
-                          }
-                      },
-                      "outline-style": {
-                          "value": "solid"
-                      }
-                  }
-              },
-              "settings": {
-                  "pseudo": ":focus-visible"
-              }
           }
       },
-      "variableFields": [],
-      "previewModel": {}
+      "variableFields": []
   }
 json_mapper: |
   {
@@ -257,43 +235,55 @@ json_mapper: |
                   "type": "container",
                   "items": [
                       {
-                          "title": ":focus-visible",
+                          "title": ":focus",
                           "type": "container",
                           "items": [],
+                          "form": null,
                           "selectorType": "pseudo",
-                          "subType": "custom-pseudo",
-                          "uuid": "80488f22-5f88-4732-99a2-b7d2e257b161",
+                          "uuid": "fe6bc432-48e2-414f-86bd-b002d9908172",
                           "allowedTypes": [
                               "child",
                               "pseudo"
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "border-and-outline",
+                                  "formKey": "layout",
                                   "children": [
                                       {
-                                          "formKey": "outline-width-style-and-color",
-                                          "activeFields": [
-                                              {
-                                                  "name": "outline-width",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "outline-offset",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "outline-color",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "outline-style",
-                                                  "active": true
-                                              }
-                                          ],
+                                          "formKey": "box-shadow",
                                           "breakpoints": [
                                               {
-                                                  "name": "xs"
+                                                  "name": "xl"
+                                              }
+                                          ],
+                                          "activeFields": [
+                                              {
+                                                  "name": "box-shadow",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowHorizontal",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowVertical",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowBlur",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowSpread",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowColor",
+                                                  "active": true
                                               }
                                           ]
                                       }
@@ -340,10 +330,14 @@ json_mapper: |
                                                   "formKey": "box-shadow",
                                                   "breakpoints": [
                                                       {
-                                                          "name": "md"
+                                                          "name": "xl"
                                                       }
                                                   ],
                                                   "activeFields": [
+                                                      {
+                                                          "name": "box-shadow",
+                                                          "active": true
+                                                      },
                                                       {
                                                           "name": "boxshadowType",
                                                           "active": true
@@ -390,10 +384,14 @@ json_mapper: |
                                           "formKey": "box-shadow",
                                           "breakpoints": [
                                               {
-                                                  "name": "md"
+                                                  "name": "xl"
                                               }
                                           ],
                                           "activeFields": [
+                                              {
+                                                  "name": "box-shadow",
+                                                  "active": true
+                                              },
                                               {
                                                   "name": "boxshadowType",
                                                   "active": true
@@ -457,7 +455,7 @@ json_mapper: |
                                   "formKey": "display",
                                   "breakpoints": [
                                       {
-                                          "name": "md"
+                                          "name": "xl"
                                       }
                                   ],
                                   "activeFields": [
@@ -491,7 +489,7 @@ json_mapper: |
           "form": null
       }
   }
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true
@@ -500,4 +498,4 @@ custom_style_type: generic
 available_in_wysiwyg: false
 available_in_wysiwyg_inline: false
 parent: null
-weight: 11
+weight: 0

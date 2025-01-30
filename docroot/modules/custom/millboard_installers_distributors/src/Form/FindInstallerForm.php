@@ -7,6 +7,7 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Path\CurrentPathStack;
 use Drupal\Core\Url;
 use Drupal\path_alias\AliasManagerInterface;
@@ -24,6 +25,13 @@ class FindInstallerForm extends FormBase {
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
   protected $entityTypeManager;
+
+  /**
+   * The Language Manager service.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  protected $languageManager;
 
   /**
    * The request service.
@@ -61,6 +69,8 @@ class FindInstallerForm extends FormBase {
    *   The config factory.
    * @param \Drupal\Component\Plugin\PluginManagerInterface $geocoderManager
    *   The geolocation geocoder manager.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $languageManager
+   *   The language manager.
    */
   public function __construct(
     EntityTypeManagerInterface $entity_type_manager,
@@ -69,6 +79,7 @@ class FindInstallerForm extends FormBase {
     protected AliasManagerInterface $aliasManager,
     ConfigFactoryInterface $config_factory,
     PluginManagerInterface $geocoderManager,
+    LanguageManagerInterface $languageManager,
   ) {
     $this->entityTypeManager = $entity_type_manager;
     $this->request = $request;
@@ -76,6 +87,7 @@ class FindInstallerForm extends FormBase {
     $this->aliasManager = $aliasManager;
     $this->configFactory = $config_factory;
     $this->geocoderManager = $geocoderManager;
+    $this->languageManager = $languageManager;
   }
 
   /**
@@ -90,7 +102,8 @@ class FindInstallerForm extends FormBase {
       $container->get('path.current'),
       $container->get('path_alias.manager'),
       $container->get('config.factory'),
-      $container->get('plugin.manager.geolocation.geocoder')
+      $container->get('plugin.manager.geolocation.geocoder'),
+      $container->get('language_manager'),
     );
   }
 
@@ -161,6 +174,10 @@ class FindInstallerForm extends FormBase {
     ];
 
     $default_distance = 30;
+    $current_language = $this->languageManager->getCurrentLanguage()->getId();
+    if ($current_language == "en-us") {
+      $default_distance = 500;
+    }
 
     $proximity = $request->query->get('proximity');
 

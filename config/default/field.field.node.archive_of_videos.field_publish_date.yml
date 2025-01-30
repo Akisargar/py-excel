@@ -1,0 +1,26 @@
+uuid: 93d8dc3f-373c-46af-bfc1-df427ee8a5eb
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publish_date
+    - node.type.archive_of_videos
+  module:
+    - datetime
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.archive_of_videos.field_publish_date
+field_name: field_publish_date
+entity_type: node
+bundle: archive_of_videos
+label: 'Publish Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

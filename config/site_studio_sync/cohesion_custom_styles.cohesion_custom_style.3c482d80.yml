@@ -39,10 +39,10 @@ json_values: |
                   },
                   "padding": {
                       "padding-top": {
-                          "value": "10px"
+                          "value": "16px"
                       },
                       "padding-bottom": {
-                          "value": "10px"
+                          "value": "16px"
                       },
                       "padding-left": {
                           "value": "16px"
@@ -58,9 +58,7 @@ json_values: |
                       "justify-content": {
                           "value": "center"
                       },
-                      "align-content": {
-                          "value": "center"
-                      },
+                      "align-content": {},
                       "align-items": {
                           "value": "center"
                       }
@@ -105,14 +103,6 @@ json_values: |
                           "customCss": {
                               "value": "none"
                           }
-                      },
-                      {
-                          "customCssProperty": {
-                              "value": "max-width"
-                          },
-                          "customCss": {
-                              "value": "fit-content"
-                          }
                       }
                   ],
                   "color": {
@@ -127,10 +117,10 @@ json_values: |
                           "class": ".coh-color-millboard-charcoal",
                           "variable": "$coh-color-millboard-charcoal",
                           "tags": [
-                              "millboard",
-                              "text",
-                              "background",
-                              "dark"
+                              "Millboard",
+                              "Text",
+                              "Background",
+                              "Dark"
                           ],
                           "inuse": true,
                           "wysiwyg": true
@@ -145,8 +135,7 @@ json_values: |
                   "margin": {
                       "margin-equal": {}
                   },
-                  "max-height": {},
-                  "min-height": {
+                  "max-height": {
                       "value": "48px"
                   }
               }
@@ -169,10 +158,10 @@ json_values: |
                               "class": ".coh-color-millboard-charcoal",
                               "variable": "$coh-color-millboard-charcoal",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "background",
-                                  "dark"
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
                               ],
                               "inuse": true,
                               "wysiwyg": true
@@ -190,11 +179,11 @@ json_values: |
                               "class": ".coh-color-millboard-mist",
                               "variable": "$coh-color-millboard-mist",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "accent",
-                                  "background",
-                                  "light"
+                                  "Millboard",
+                                  "Text",
+                                  "Accent",
+                                  "Background",
+                                  "Light"
                               ],
                               "inuse": true,
                               "wysiwyg": true
@@ -231,12 +220,11 @@ json_values: |
                               "class": ".coh-color-millboard-charcoal",
                               "variable": "$coh-color-millboard-charcoal",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "background",
-                                  "dark"
+                                  "Millboard",
+                                  "Text",
+                                  "Background"
                               ],
-                              "inuse": true,
+                              "inuse": false,
                               "wysiwyg": true
                           }
                       },
@@ -252,13 +240,12 @@ json_values: |
                               "class": ".coh-color-millboard-mist",
                               "variable": "$coh-color-millboard-mist",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "accent",
-                                  "background",
-                                  "light"
+                                  "Millboard",
+                                  "Text",
+                                  "Accent",
+                                  "Background"
                               ],
-                              "inuse": true,
+                              "inuse": false,
                               "wysiwyg": true
                           }
                       },
@@ -299,9 +286,31 @@ json_values: |
                               }
                           }
                       ],
-                      "border-width": {},
-                      "border-style": {},
-                      "border-color": {},
+                      "border-width": {
+                          "value": "1px"
+                      },
+                      "border-style": {
+                          "value": "solid"
+                      },
+                      "border-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      },
                       "transitions": [
                           {
                               "transitionProperty": {
@@ -402,8 +411,8 @@ json_values: |
                               "variable": "$coh-color-olive",
                               "wysiwyg": true,
                               "tags": [
-                                  "millboard",
-                                  "text"
+                                  "Millboard",
+                                  "Text"
                               ],
                               "inuse": true
                           }
@@ -435,40 +444,6 @@ json_values: |
               },
               "settings": {
                   "pseudo": ":focus"
-              }
-          },
-          "322c9c33-3fdb-47ff-9fd7-35b3670d776d": {
-              "styles": {
-                  "xs": {
-                      "outline-width": {
-                          "value": "1px"
-                      },
-                      "outline-style": {
-                          "value": "solid"
-                      },
-                      "outline-color": {
-                          "value": {
-                              "link": true,
-                              "value": {
-                                  "hex": "#799513",
-                                  "rgba": "rgba(121, 149, 19, 1)"
-                              },
-                              "uid": "olive",
-                              "name": "Olive",
-                              "class": ".coh-color-olive",
-                              "variable": "$coh-color-olive",
-                              "wysiwyg": true,
-                              "tags": [
-                                  "millboard",
-                                  "text"
-                              ],
-                              "inuse": true
-                          }
-                      }
-                  }
-              },
-              "settings": {
-                  "pseudo": ":focus-visible"
               }
           }
       },
@@ -736,7 +711,7 @@ json_mapper: |
                               },
                               {
                                   "name": "align-content",
-                                  "active": true
+                                  "active": false
                               },
                               {
                                   "name": "align-content-safety",
@@ -762,11 +737,11 @@ json_mapper: |
                           "activeFields": [
                               {
                                   "name": "min-height",
-                                  "active": true
+                                  "active": false
                               },
                               {
                                   "name": "max-height",
-                                  "active": false
+                                  "active": true
                               },
                               {
                                   "name": "height",
@@ -1459,6 +1434,149 @@ json_mapper: |
                           ]
                       },
                       {
+                          "formKey": "border-and-outline",
+                          "children": [
+                              {
+                                  "formKey": "border-width",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-bottom-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-left-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-right-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-start-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-width",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "border-style",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-bottom-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-left-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-right-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-start-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-style",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "border-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-bottom-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-left-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-right-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-start-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-color",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
                           "formKey": "transform-and-transition",
                           "children": [
                               {
@@ -1572,57 +1690,11 @@ json_mapper: |
                   ],
                   "items": [],
                   "collapsed": false
-              },
-              {
-                  "title": ":focus-visible",
-                  "type": "container",
-                  "selectorType": "pseudo",
-                  "subType": "custom-pseudo",
-                  "uuid": "322c9c33-3fdb-47ff-9fd7-35b3670d776d",
-                  "allowedTypes": [
-                      "child",
-                      "pseudo"
-                  ],
-                  "formDefinition": [
-                      {
-                          "formKey": "border-and-outline",
-                          "children": [
-                              {
-                                  "formKey": "outline-width-style-and-color",
-                                  "activeFields": [
-                                      {
-                                          "name": "outline-width",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-offset",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "outline-color",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-style",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ],
-                  "items": [],
-                  "collapsed": false
               }
           ]
       }
   }
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true
@@ -1631,4 +1703,4 @@ custom_style_type: link
 available_in_wysiwyg: true
 available_in_wysiwyg_inline: false
 parent: null
-weight: 154
+weight: 46

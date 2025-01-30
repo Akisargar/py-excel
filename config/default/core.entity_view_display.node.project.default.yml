@@ -4,69 +4,64 @@ status: true
 dependencies:
   config:
     - field.field.node.project.body
-    - field.field.node.project.field_collection
-    - field.field.node.project.field_colour
     - field.field.node.project.field_commercial_project
     - field.field.node.project.field_content_builder
-    - field.field.node.project.field_location
-    - field.field.node.project.field_metatag
     - field.field.node.project.field_preview_image
-    - field.field.node.project.field_publish_date
-    - field.field.node.project.field_subtitle
-    - field.field.node.project.field_type_of_project
     - node.type.project
   module:
     - cohesion_elements
+    - text
     - user
 id: node.project.default
 targetEntityType: node
 bundle: project
 mode: default
 content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: -20
+    region: content
+  field_commercial_project:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 103
     region: content
   field_content_builder:
     type: cohesion_entity_reference_revisions_entity_view
-    label: hidden
+    label: above
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 104
     region: content
   field_preview_image:
     type: entity_reference_entity_view
-    label: hidden
-    settings:
-      view_mode: large_super_landscape
-      link: false
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_subtitle:
-    type: string
     label: above
     settings:
-      link_to_entity: false
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 3
+    weight: 102
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 100
     region: content
 hidden:
-  body: true
-  field_collection: true
-  field_colour: true
-  field_commercial_project: true
-  field_location: true
-  field_metatag: true
-  field_publish_date: true
-  field_type_of_project: true
   langcode: true
   search_api_excerpt: true

@@ -117,6 +117,7 @@ class Banner extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $region = $this->cookieManager->getCookie("region");
+    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     // Add wrapper to Banner.
     $form['localization-banner-wrapper'] = [
@@ -125,18 +126,28 @@ class Banner extends FormBase {
       '#suffix' => '</div>',
     ];
 
+    $question = $this->t('Are you in the right place?');
+    $button_text = $this->t('Continue');
+
+    if ($current_language == 'en-au') {
+      $question = $this->t('Are you looking for our Australian distributor?');
+      $button_text = $this->t('Click here');
+    }
+
     // Display the message with the user's region.
     $form['localization-banner-wrapper']['text_markup'] = [
       '#type' => 'markup',
-      '#markup' => '<div class="coh-banner-heading">' . $this->t('Are you in the right place?') . '</div>',
+      '#markup' => '<div class="coh-banner-heading">' . $question . '</div>',
     ];
 
-    // Display the dropdown with supported countries.
-    $form['localization-banner-wrapper']['country'] = [
-      '#type' => 'select',
-      '#options' => $this->getCountryList(),
-      '#default_value' => $region,
-    ];
+    if (!$current_language == 'en-au') {
+      // Display the dropdown with supported countries.
+      $form['localization-banner-wrapper']['country'] = [
+        '#type' => 'select',
+        '#options' => $this->getCountryList(),
+        '#default_value' => $region,
+      ];
+    }
 
     $form['localization-banner-wrapper']['banner-button-wrapper'] = [
       '#type' => 'container',
@@ -147,7 +158,7 @@ class Banner extends FormBase {
     // "Continue" button to redirect to the user's region.
     $form['localization-banner-wrapper']['banner-button-wrapper']['continue'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Continue'),
+      '#value' => $button_text,
       '#attributes' => [
         'class' => ['coh-style-primary-button'],
       ],
@@ -174,7 +185,7 @@ class Banner extends FormBase {
 
     $form['banner-dropdown-wrapper-mobile']['continue'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Continue'),
+      '#value' => $button_text,
       '#attributes' => [
         'class' => ['coh-style-primary-button'],
       ],
@@ -193,6 +204,7 @@ class Banner extends FormBase {
     // Get Region and country code.
     $region = $form_state->getValue('country');
     $countryCodes = $this->regionLangManager->getCountryCodes();
+    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
 
     // Get current request from previous url.
     $previousUrl = $this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER');
@@ -208,6 +220,10 @@ class Banner extends FormBase {
 
     // Reconstruct the modified URL.
     $newUrl = $urlParts['scheme'] . '://' . $urlParts['host'] . $newPath;
+
+    if ($current_language == 'en-au') {
+      $newUrl = 'https://www.conceptmaterials.com.au/';
+    }
 
     // Create a TrustedRedirectResponse to redirect to the full URL.
     $response = new TrustedRedirectResponse($newUrl);
@@ -233,6 +249,7 @@ class Banner extends FormBase {
     $country_list = $this->countryManager->getList();
     foreach ($countryCodes as $key => $countryCode) {
       $options[$key] = $country_list[strtoupper($key)]->render();
+      $countryCode = $countryCode;
     }
     return $options;
   }
@@ -258,10 +275,9 @@ class Banner extends FormBase {
       $languageCode = $matches[1];
       return $languageCode;
     }
-    else {
-      // Language code not found in the URL.
-      return NULL;
-    }
+
+    // Language code not found in the URL.
+    return NULL;
   }
 
 }

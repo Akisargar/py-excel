@@ -178,6 +178,12 @@ class MillboardVariationWidthFormatter extends EntityReferenceFormatterBase {
       else {
         $width_inches_attribute_id = $variation->get('attribute_width_inches')->getValue()[0]['target_id'];
       }
+      if (empty($width_inches_attribute_id)) {
+        $width_inches_attribute_id = "141";
+      }
+      if (empty($attribute_id)) {
+        $attribute_id = '1';
+      }
       $productWidthInchesValue = $this->entityTypeManager->getStorage('commerce_product_attribute_value')
         ->loadByProperties(['attribute_value_id' => $width_inches_attribute_id]);
       // Load the product attribute value by properties.

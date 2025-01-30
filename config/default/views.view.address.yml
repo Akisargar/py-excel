@@ -537,7 +537,7 @@ display:
           exclude: true
           alter:
             alter_text: true
-            text: "{% if field_store_address__organization %}\r\n  {{ field_store_address__organization }}<br>\r\n{% endif %}\r\n{% if field_store_address__address_line1  %}\r\n  {{ field_store_address__address_line1 }}<br>\r\n{% endif %}\r\n{% if field_store_address__address_line2  %}\r\n  {{ field_store_address__address_line2 }}<br>\r\n{% endif %}\r\n{% if field_store_address__dependent_locality %}\r\n  {{ field_store_address__dependent_locality }},<br>\r\n{% endif %}\r\n{% if field_store_address__locality %}\r\n  {{ field_store_address__locality }},<br>\r\n{% endif %}\r\n{% if field_store_address__postal_code %}\r\n  {{ field_store_address__postal_code }},<br>\r\n{% endif %}\r\n "
+            text: "{% if field_store_address__organization %}\r\n  {{ field_store_address__organization | raw }},<br>\r\n{% endif %}\r\n{% if field_store_address__address_line1 %}\r\n  {{ field_store_address__address_line1 }},<br>\r\n{% endif %}\r\n{% if field_store_address__address_line2 %}\r\n  {{ field_store_address__address_line2 }},<br>\r\n{% endif %}\r\n{% if field_store_address__dependent_locality %}\r\n  {{ field_store_address__dependent_locality }},<br>\r\n{% endif %}\r\n{% if field_store_address__locality %}\r\n  {{ field_store_address__locality }},<br>\r\n{% endif %}\r\n{% if field_store_address__postal_code %}\r\n  {{ field_store_address__postal_code }},<br>\r\n{% endif %}\r\n "
             make_link: false
             path: ''
             absolute: false
@@ -729,7 +729,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"address-wrapper\">\r\n  <div class=\"address\">\r\n    <h4 class=\"address__title\"> {{ 'Get In Touch'|t }} </h4> \r\n    <a href=\"tel:{{ field_telephone_number }}\" class=\"address__phone\">{{ field_telephone_number }} </a>\r\n    <a href=\"mailto:{{ field_email_address }}\" class=\"address__email\"> {{ field_email_address }}</a>\r\n    <a href=\"{{ field_website }}\" target=\"_blank\" class=\"coh-style-link-hover address__email\">Visit Website</a>\r\n  </div> \r\n\r\n  <div class=\"map\">\r\n    <h4 class=\"map__title\">  {{ 'Address'|t }} </h4> \r\n    {{ field_store_location}}  \r\n    <address>{{ field_store_address }}</address>\r\n    <a href=\"https://www.google.com/maps/dir/Current+Location/{{ field_store_location_1 }}\" target=\"_blank\" class=\"map__get-directions coh-style-link-hover\">Get directions</a>\r\n  </div>\r\n</div>\r\n"
+            text: "<div class=\"address-wrapper\">\r\n  <div class=\"address\">\r\n    <h4 class=\"address__title\"> {{ 'Get In Touch'|t }} </h4> \r\n    <a href=\"tel:{{ field_telephone_number }}\" class=\"address__phone\">{{ field_telephone_number }} </a>\r\n    <a href=\"mailto:{{ field_email_address }}\" class=\"address__email\"> {{ field_email_address }}</a>\r\n    <a href=\"{{ field_website }}\" target=\"_blank\" class=\"coh-style-link-hover address__email\">Visit Website</a>\r\n  </div> \r\n\r\n  <div class=\"map\">\r\n    <h4 class=\"map__title\">  {{ 'Address'|t }} </h4> \r\n    {{ field_store_location}}  \r\n   <address> {{ field_store_address }} </address>\r\n    <a href=\"https://www.google.com/maps/dir/Current+Location/{{ field_store_location_1 }}\" target=\"_blank\" class=\"map__get-directions coh-style-link-hover\">Get directions</a>\r\n  </div>\r\n</div>\r\n"
             make_link: false
             path: ''
             absolute: false

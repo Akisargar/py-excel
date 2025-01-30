@@ -61,7 +61,9 @@ dependencies:
     - field.field.commerce_product_variation.millboard_products.field_weight_per_board
     - field.field.commerce_product_variation.millboard_products.field_weight_per_ft2_lb
     - field.field.commerce_product_variation.millboard_products.field_weight_per_m2_kg
+    - field.field.commerce_product_variation.millboard_products.product_gallery_slider
   module:
+    - cohesion_elements
     - commerce_price
     - entity_reference_revisions
     - text
@@ -491,6 +493,15 @@ content:
       currency_display: symbol
     third_party_settings: {  }
     weight: 1
+    region: content
+  product_gallery_slider:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 51
     region: content
 hidden:
   attribute_color_fr: true

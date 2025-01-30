@@ -13,3 +13,13 @@ function millboard_georedirect_page_attachments_alter(array &$attachments) {
     $attachments['#attached']['library'][] = 'millboard_georedirect/millboard-georedirect-ajax';
   }
 }
+
+/**
+ * Implements hook_page_attachments().
+ */
+function millboard_georedirect_page_attachments(array &$attachments) {
+  $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  if ($current_language === 'en-au') {
+    $attachments['#attached']['library'][] = 'millboard_georedirect/australian_banner';
+  }
+}

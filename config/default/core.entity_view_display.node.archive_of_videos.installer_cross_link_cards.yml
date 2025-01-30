@@ -1,0 +1,59 @@
+uuid: 5b503a45-f627-4b39-a381-00680bfea676
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.installer_cross_link_cards
+    - field.field.node.archive_of_videos.body
+    - field.field.node.archive_of_videos.field_collection
+    - field.field.node.archive_of_videos.field_colour
+    - field.field.node.archive_of_videos.field_commercial_project
+    - field.field.node.archive_of_videos.field_content_builder
+    - field.field.node.archive_of_videos.field_location
+    - field.field.node.archive_of_videos.field_metatag
+    - field.field.node.archive_of_videos.field_preview_image
+    - field.field.node.archive_of_videos.field_publish_date
+    - field.field.node.archive_of_videos.field_subtitle
+    - field.field.node.archive_of_videos.field_type_of_project
+    - node.type.archive_of_videos
+  module:
+    - user
+id: node.archive_of_videos.installer_cross_link_cards
+targetEntityType: node
+bundle: archive_of_videos
+mode: installer_cross_link_cards
+content:
+  field_preview_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: installer_cross_link_card_image
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_subtitle:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_collection: true
+  field_colour: true
+  field_commercial_project: true
+  field_content_builder: true
+  field_location: true
+  field_metatag: true
+  field_publish_date: true
+  field_type_of_project: true
+  langcode: true
+  search_api_excerpt: true

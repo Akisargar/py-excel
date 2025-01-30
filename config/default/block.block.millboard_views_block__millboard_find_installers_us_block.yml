@@ -1,0 +1,33 @@
+uuid: c49fe06e-b3ef-4a20-bb83-808ff6ee9b8f
+langcode: en-us
+status: true
+dependencies:
+  config:
+    - views.view.millboard_find_installers
+  module:
+    - cohesion
+    - collapsiblock
+    - views
+  theme:
+    - millboard
+third_party_settings:
+  collapsiblock:
+    collapse_action: 0
+id: millboard_views_block__millboard_find_installers_us_block
+theme: millboard
+region: dx8_hidden
+weight: -2
+provider: null
+plugin: 'views_block:millboard_find_installers-us_block'
+settings:
+  id: 'views_block:millboard_find_installers-us_block'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  cohesion_master_template:
+    id: cohesion_master_template
+    using_master_template: 0
+    negate: 0

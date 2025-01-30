@@ -532,7 +532,6 @@ display:
         type: full
         options:
           offset: 0
-          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0
@@ -1084,7 +1083,7 @@ display:
           admin_label: ''
           entity_type: node
           entity_field: uid
-          plugin_id: entity_target_id
+          plugin_id: numeric
           default_action: empty
           exception:
             value: all
@@ -1095,6 +1094,7 @@ display:
           default_argument_type: fixed
           default_argument_options:
             argument: ''
+          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -1116,7 +1116,6 @@ display:
             roles: {  }
           break_phrase: false
           not: false
-          target_entity_type_id: user
       defaults:
         empty: false
         access: false

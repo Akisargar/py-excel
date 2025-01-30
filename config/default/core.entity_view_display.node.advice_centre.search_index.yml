@@ -1,0 +1,46 @@
+uuid: 39b52b1a-4bf3-4883-80e8-2d221c554309
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.advice_centre.body
+    - field.field.node.advice_centre.field_categories
+    - field.field.node.advice_centre.field_layout_canvas
+    - field.field.node.advice_centre.field_metatag
+    - field.field.node.advice_centre.field_page_image
+    - field.field.node.advice_centre.field_publish_date
+    - field.field.node.advice_centre.field_tags
+    - node.type.advice_centre
+  module:
+    - user
+  enforced:
+    module:
+      - acquia_cms_page
+_core:
+  default_config_hash: dAYJXBA3oXDFB5kkW35WKLxA2qk_Rd4_yEr2FpzXjQ0
+id: node.advice_centre.search_index
+targetEntityType: node
+bundle: advice_centre
+mode: search_index
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  body: true
+  field_categories: true
+  field_layout_canvas: true
+  field_metatag: true
+  field_page_image: true
+  field_publish_date: true
+  field_tags: true
+  langcode: true
+  search_api_excerpt: true

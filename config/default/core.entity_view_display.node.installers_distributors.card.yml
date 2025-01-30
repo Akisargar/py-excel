@@ -12,21 +12,13 @@ dependencies:
     - field.field.node.installers_distributors.field_display_centre
     - field.field.node.installers_distributors.field_distributor_email_subject
     - field.field.node.installers_distributors.field_email_address
-    - field.field.node.installers_distributors.field_featured_image
-    - field.field.node.installers_distributors.field_gallery
-    - field.field.node.installers_distributors.field_gallery_caption
-    - field.field.node.installers_distributors.field_grading
-    - field.field.node.installers_distributors.field_is_a_showroom
-    - field.field.node.installers_distributors.field_layout_canvas
     - field.field.node.installers_distributors.field_location_image_1
     - field.field.node.installers_distributors.field_location_image_2
     - field.field.node.installers_distributors.field_location_image_3
     - field.field.node.installers_distributors.field_meta_tags
     - field.field.node.installers_distributors.field_product_range
-    - field.field.node.installers_distributors.field_publish_date
     - field.field.node.installers_distributors.field_sells_cladding
     - field.field.node.installers_distributors.field_sells_decking
-    - field.field.node.installers_distributors.field_showroom_type
     - field.field.node.installers_distributors.field_store_address
     - field.field.node.installers_distributors.field_store_location
     - field.field.node.installers_distributors.field_telephone_number
@@ -39,6 +31,7 @@ dependencies:
     - geolocation
     - layout_builder
     - options
+    - telephone
     - user
 third_party_settings:
   layout_builder:
@@ -56,36 +49,36 @@ content:
     region: content
   field_email_address:
     type: basic_string
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 4
     region: content
   field_store_address:
     type: address_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 3
     region: content
   field_store_location:
     type: geolocation_latlng
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 6
     region: content
   field_telephone_number:
-    type: string
-    label: hidden
+    type: telephone_link
+    label: above
     settings:
-      link_to_entity: false
+      title: ''
     third_party_settings: {  }
     weight: 5
     region: content
   field_type_of_inst_dist:
     type: list_default
-    label: hidden
+    label: above
     settings: {  }
     third_party_settings: {  }
     weight: 2
@@ -103,21 +96,13 @@ hidden:
   field_craft_cms_original_id: true
   field_display_centre: true
   field_distributor_email_subject: true
-  field_featured_image: true
-  field_gallery: true
-  field_gallery_caption: true
-  field_grading: true
-  field_is_a_showroom: true
-  field_layout_canvas: true
   field_location_image_1: true
   field_location_image_2: true
   field_location_image_3: true
   field_meta_tags: true
   field_product_range: true
-  field_publish_date: true
   field_sells_cladding: true
   field_sells_decking: true
-  field_showroom_type: true
   field_telephone_number_2: true
   field_website: true
   langcode: true

@@ -1,0 +1,53 @@
+uuid: 74b83bc3-27ea-4cdf-afaa-c5e550a72ac8
+langcode: en-gb
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.blog_listing_card
+    - field.field.node.archive_of_videos.body
+    - field.field.node.archive_of_videos.field_collection
+    - field.field.node.archive_of_videos.field_colour
+    - field.field.node.archive_of_videos.field_commercial_project
+    - field.field.node.archive_of_videos.field_content_builder
+    - field.field.node.archive_of_videos.field_location
+    - field.field.node.archive_of_videos.field_metatag
+    - field.field.node.archive_of_videos.field_preview_image
+    - field.field.node.archive_of_videos.field_publish_date
+    - field.field.node.archive_of_videos.field_subtitle
+    - field.field.node.archive_of_videos.field_type_of_project
+    - node.type.archive_of_videos
+  module:
+    - datetime
+    - user
+id: node.archive_of_videos.blog_listing_card
+targetEntityType: node
+bundle: archive_of_videos
+mode: blog_listing_card
+content:
+  field_publish_date:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: publish_date
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_collection: true
+  field_colour: true
+  field_commercial_project: true
+  field_content_builder: true
+  field_location: true
+  field_metatag: true
+  field_preview_image: true
+  field_subtitle: true
+  field_type_of_project: true
+  langcode: true
+  search_api_excerpt: true

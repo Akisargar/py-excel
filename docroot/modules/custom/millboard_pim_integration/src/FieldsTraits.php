@@ -53,9 +53,6 @@ trait FieldsTraits {
 
     foreach ($item['attributes'] as $attribute) {
       $pimAttributes = $this->pimAttributes();
-      if (array_key_exists('kzrqvtzgzg9x', $pimAttributes) && $attribute['attribute_id'] == 'kzrqvtzgzg9x') {
-          $temp = $attribute['values'];
-      }
       if (array_key_exists($attribute['attribute_id'], $pimAttributes) && $attribute['values']) {
         $pimAttribute = $pimAttributes[$attribute['attribute_id']];
         if ($pimAttributes[$attribute['attribute_id']]['import'] == TRUE && empty($pimAttribute['commerce_attribute']) && empty($pimAttribute['asset_type']) && empty($pimAttribute['vocabulary']) && empty($pimAttribute['lang_code']) && $pimAttribute['field'] != 'status') {
@@ -66,9 +63,19 @@ trait FieldsTraits {
             $fieldArr[$pimAttribute['field']]['format'] = $pimAttribute['format'];
           }
         }
+
+        if ($langcode == 'en-ie' && $attribute["attribute_id"] == "kzrqvtzgzg9x") {
+          if ($pimAttribute["field"] == "field_body_copy") {
+            $fieldArr["field_body_copy"] = $attribute['values'][0];
+          }
+        }
+
         // Drupal commerce attributes.
         if ($pimAttributes[$attribute['attribute_id']]['import'] && isset($pimAttribute['commerce_attribute']) && $type === 'variation') {
-          $fieldArr[$pimAttribute['field']] = $this->checkExistingAttributeId($attribute['values'][0], $pimAttribute['commerce_attribute']);
+          if (!empty($attribute['values'][0])) {
+            $fieldArr[$pimAttribute['field']] = $this->checkExistingAttributeId($attribute['values'][0], $pimAttribute['commerce_attribute']);
+          }
+
           if ($langcode === 'fr-fr') {
             if ($pimAttribute['commerce_attribute'] == 'color_fr') {
               $fieldArr['title'] = $attribute['values'][0];
@@ -88,11 +95,6 @@ trait FieldsTraits {
         if ($pimAttributes[$attribute['attribute_id']]['import'] && isset($pimAttribute['asset_type'])) {
           $fieldArr[$pimAttribute['field']] = $this->getMediaIds($attribute['values'], $pimAttribute['asset_type']);
         }
-
-       if($pimAttributes[$attribute['attribute_id']] == 'kzrqvtzgzg9x') {
-         $che = $pimAttributes[$attribute['attribute_id']];
-        }
-   
         // RRP Fields.
         if ($pimAttributes[$attribute['attribute_id']]['import'] && isset($pimAttribute['lang_code'])) {
           if ($langcode == $pimAttribute['lang_code'] && $pimAttribute['field'] != 'status') {
@@ -102,10 +104,6 @@ trait FieldsTraits {
               $fieldArr[$pimAttribute['field']]['value'] = $attribute['values'][0];
               $fieldArr[$pimAttribute['field']]['format'] = $pimAttribute['format'];
             }
-            else {
-              $fieldArr[$pimAttribute['field']] = [];
-              $fieldArr[$pimAttribute['field']]['value'] = $attribute['values'][0];
-            }
           }
           if ($langcode == $pimAttribute['lang_code'] && $pimAttribute['field'] == 'status' && strtolower($attribute['values'][0]) == 'no') {
             $fieldArr[$pimAttribute['field']] = FALSE;
@@ -113,11 +111,6 @@ trait FieldsTraits {
         }
       }
     }
-
-    if($item["product_id"] == 'qmkrq6mlzprb'){
-      $fieldArr = $fieldArr;
-    }
-
     return $fieldArr;
   }
 
@@ -266,6 +259,12 @@ trait FieldsTraits {
         'field' => 'field_boards_per_ft2',
         'import' => TRUE,
       ],
+      "kzrqvtzgzg9x" => [
+        "name" => "Body Copy",
+        'field' => 'field_body_copy',
+        'import' => TRUE,
+        'lang_code' => 'en-gb',
+      ],
       "hbvfrpbmtblz" => [
         "name" => "Body Copy (US)",
         'field' => 'field_body_copy',
@@ -280,10 +279,12 @@ trait FieldsTraits {
         'lang_code' => 'fr-fr',
         'format' => 'filtered_html',
       ],
-      "kzrqvtzgzg9x" => [
-        "name" => "Body Copy",
+      "twvbnn58srsd" => [
+        "name" => "Body Copy (DE)",
         'field' => 'field_body_copy',
         'import' => TRUE,
+        'lang_code' => 'de-de',
+        'format' => 'filtered_html',
       ],
       "slcwgjxttrhk" => [
         "name" => "CAD File Downloads",
@@ -356,6 +357,13 @@ trait FieldsTraits {
         "asset_type" => "acquia_dam_pdf_asset",
         'import' => TRUE,
       ],
+      "vx8h2v6t7lxq" => [
+        "name" => "Installation Guide",
+        'field' => 'field_installation_guide',
+        "asset_type" => "acquia_dam_pdf_asset",
+        'import' => TRUE,
+        'lang_code' => 'de-de',
+      ],
       "kqhsb5lg5vxd" => [
         "name" => "Installed Width (inches)",
         "field" => 'attribute_installed_width_inches',
@@ -391,6 +399,12 @@ trait FieldsTraits {
         "field" => "field_intro_copy",
         'import' => TRUE,
         'lang_code' => 'fr-fr',
+      ],
+      "zbpwhx6mff6b" => [
+        "name" => "Intro Copy",
+        "field" => "field_intro_copy",
+        'import' => TRUE,
+        'lang_code' => 'de-de',
       ],
       "xdztvqzcdvsq" => [
         "name" => "Lifestyle Images",
@@ -530,6 +544,13 @@ trait FieldsTraits {
         'import' => TRUE,
         "asset_type" => "acquia_dam_pdf_asset",
         "lang_code" => 'fr-fr',
+      ],
+      "c52jg9shk87v" => [
+        'name' => "Specification Sheet",
+        'field' => 'field_specification_sheet',
+        'import' => TRUE,
+        "asset_type" => "acquia_dam_pdf_asset",
+        "lang_code" => 'de-de',
       ],
       "j7vt5xqqzwmq" => [
         "name" => "Studio Imagery",

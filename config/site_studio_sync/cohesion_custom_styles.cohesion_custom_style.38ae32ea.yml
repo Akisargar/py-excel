@@ -124,14 +124,6 @@ json_values: |
                           "customCss": {
                               "value": "none"
                           }
-                      },
-                      {
-                          "customCssProperty": {
-                              "value": "max-width"
-                          },
-                          "customCss": {
-                              "value": "fit-content"
-                          }
                       }
                   ],
                   "color": {
@@ -303,14 +295,42 @@ json_values: |
           "cf159e32-2b06-49cf-9a20-5c74e4130e2d": {
               "styles": {
                   "xs": {
-                      "outline-width": {},
-                      "outline-offset": {},
-                      "outline-style": {},
-                      "outline-color": {},
-                      "margin": {
-                          "margin-equal": {}
+                      "outline-width": {
+                          "value": "2px"
                       },
-                      "max-height": {},
+                      "outline-offset": {
+                          "value": "1px"
+                      },
+                      "outline-style": {
+                          "value": "solid"
+                      },
+                      "outline-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#aac93c",
+                                  "rgba": "rgba(170, 201, 60, 1)"
+                              },
+                              "uid": "millboard-green",
+                              "wysiwyg": true,
+                              "name": "Millboard Green",
+                              "class": ".coh-color-millboard-green",
+                              "variable": "$coh-color-millboard-green",
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      },
+                      "margin": {
+                          "margin-equal": {
+                              "value": "3px"
+                          }
+                      },
+                      "max-height": {
+                          "value": "52px"
+                      },
                       "box-shadow": [
                           {
                               "boxshadowType": {
@@ -390,43 +410,6 @@ json_values: |
               },
               "settings": {
                   "pseudo": ":focus"
-              }
-          },
-          "28c6baf5-98fc-46e2-a875-c947e9f27f5f": {
-              "styles": {
-                  "xs": {
-                      "outline-width": {
-                          "value": "2px"
-                      },
-                      "outline-offset": {
-                          "value": "1px"
-                      },
-                      "outline-color": {
-                          "value": {
-                              "link": true,
-                              "value": {
-                                  "hex": "#aac93c",
-                                  "rgba": "rgba(170, 201, 60, 1)"
-                              },
-                              "uid": "millboard-green",
-                              "wysiwyg": true,
-                              "name": "Millboard Green",
-                              "class": ".coh-color-millboard-green",
-                              "variable": "$coh-color-millboard-green",
-                              "tags": [
-                                  "Millboard",
-                                  "Text"
-                              ],
-                              "inuse": true
-                          }
-                      },
-                      "outline-style": {
-                          "value": "solid"
-                      }
-                  }
-              },
-              "settings": {
-                  "pseudo": ":focus-visible"
               }
           }
       },
@@ -1156,8 +1139,107 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
+                          "formKey": "border-and-outline",
+                          "children": [
+                              {
+                                  "formKey": "outline-width-style-and-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "outline-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "outline-offset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "outline-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "outline-style",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
                           "formKey": "layout",
                           "children": [
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "height",
+                                  "activeFields": [
+                                      {
+                                          "name": "min-height",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "max-height",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "height",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
                               {
                                   "formKey": "box-shadow",
                                   "activeFields": [
@@ -1305,56 +1387,11 @@ json_mapper: |
                           ]
                       }
                   ]
-              },
-              {
-                  "title": ":focus-visible",
-                  "type": "container",
-                  "items": [],
-                  "selectorType": "pseudo",
-                  "subType": "custom-pseudo",
-                  "uuid": "28c6baf5-98fc-46e2-a875-c947e9f27f5f",
-                  "allowedTypes": [
-                      "child",
-                      "pseudo"
-                  ],
-                  "formDefinition": [
-                      {
-                          "formKey": "border-and-outline",
-                          "children": [
-                              {
-                                  "formKey": "outline-width-style-and-color",
-                                  "activeFields": [
-                                      {
-                                          "name": "outline-width",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-offset",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-color",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-style",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ]
               }
           ]
       }
   }
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true
@@ -1363,4 +1400,4 @@ custom_style_type: link
 available_in_wysiwyg: true
 available_in_wysiwyg_inline: false
 parent: null
-weight: 149
+weight: 42

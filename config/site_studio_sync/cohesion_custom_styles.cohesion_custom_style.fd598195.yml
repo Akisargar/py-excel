@@ -95,14 +95,6 @@ json_values: |
                           "customCss": {
                               "value": "16px"
                           }
-                      },
-                      {
-                          "customCssProperty": {
-                              "value": "max-width"
-                          },
-                          "customCss": {
-                              "value": "fit-content"
-                          }
                       }
                   ],
                   "color": {
@@ -279,9 +271,31 @@ json_values: |
                           "margin-equal": {}
                       },
                       "max-height": {},
-                      "border-width": {},
-                      "border-style": {},
-                      "border-color": {},
+                      "border-width": {
+                          "value": "1px"
+                      },
+                      "border-style": {
+                          "value": "solid"
+                      },
+                      "border-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      },
                       "transitions": [
                           {
                               "transitionProperty": {
@@ -439,40 +453,6 @@ json_values: |
               },
               "settings": {
                   "pseudo": ":focus"
-              }
-          },
-          "162bad31-aa9a-49ab-8adc-256e7bc2f116": {
-              "styles": {
-                  "xs": {
-                      "outline-width": {
-                          "value": "2px"
-                      },
-                      "outline-color": {
-                          "value": {
-                              "link": true,
-                              "value": {
-                                  "hex": "#799513",
-                                  "rgba": "rgba(121, 149, 19, 1)"
-                              },
-                              "uid": "olive",
-                              "name": "Olive",
-                              "class": ".coh-color-olive",
-                              "variable": "$coh-color-olive",
-                              "wysiwyg": true,
-                              "tags": [
-                                  "Millboard",
-                                  "Text"
-                              ],
-                              "inuse": true
-                          }
-                      },
-                      "outline-style": {
-                          "value": "solid"
-                      }
-                  }
-              },
-              "settings": {
-                  "pseudo": ":focus-visible"
               }
           }
       },
@@ -1364,6 +1344,149 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
+                          "formKey": "border-and-outline",
+                          "children": [
+                              {
+                                  "formKey": "border-width",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-bottom-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-left-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-right-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-start-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-width",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "border-style",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-bottom-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-left-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-right-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-start-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-style",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "border-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-bottom-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-left-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-right-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-start-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-color",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
                           "formKey": "transform-and-transition",
                           "children": [
                               {
@@ -1504,56 +1627,11 @@ json_mapper: |
                   ],
                   "items": [],
                   "collapsed": false
-              },
-              {
-                  "title": ":focus-visible",
-                  "type": "container",
-                  "items": [],
-                  "selectorType": "pseudo",
-                  "subType": "custom-pseudo",
-                  "uuid": "162bad31-aa9a-49ab-8adc-256e7bc2f116",
-                  "allowedTypes": [
-                      "child",
-                      "pseudo"
-                  ],
-                  "formDefinition": [
-                      {
-                          "formKey": "border-and-outline",
-                          "children": [
-                              {
-                                  "formKey": "outline-width-style-and-color",
-                                  "activeFields": [
-                                      {
-                                          "name": "outline-width",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-offset",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-color",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-style",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ]
               }
           ]
       }
   }
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true
@@ -1562,4 +1640,4 @@ custom_style_type: link
 available_in_wysiwyg: false
 available_in_wysiwyg_inline: false
 parent: null
-weight: 163
+weight: 50

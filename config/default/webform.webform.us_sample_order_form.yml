@@ -135,8 +135,6 @@ elements: |-
   zip_postal_code:
     '#type': textfield
     '#title': 'Zip/Postal Code'
-    '#maxlength': 9
-    '#input_mask': '999999999'
     '#required': true
   country:
     '#type': select
@@ -415,13 +413,6 @@ elements: |-
     '#select2': true
     '#required': true
     '#required_error': 'This field is required'
-  project_type:
-    '#type': checkboxes
-    '#title': 'Project Type'
-    '#options':
-      'Millboard Decking': 'Millboard Decking'
-      'Envello Cladding': 'Envello Cladding'
-    '#required': true
   project_size:
     '#type': select
     '#title': 'Your Project Size'

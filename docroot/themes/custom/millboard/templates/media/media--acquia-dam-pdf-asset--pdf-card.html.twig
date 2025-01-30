@@ -20,16 +20,26 @@
     {% if file_size %}
       <p class="pdf-resources__card-details--size">{{ file_size|replace({'MB': ' MB'}) }}</p>
     {% endif %}
-      <span link-url="{{ view_url }}" class="pdf-resources__card-details--copy" id="copyLink">{{ 'Copy Link'|t }}</span>
-      <a class="use-ajax" 
-      data-dialog-options="{&quot;width&quot;:400}" 
-      data-dialog-type="modal" 
-      href="{{ view_url }}">
-      View
-      </a>
-    {% if file_url %}
-      <a href="{{ file_url }}" class="pdf-resources__card-details--download">{{ 'Download PDF'|t }}</a>
-    {% endif %}
+    <div class="pdf-resources__card-details--action">
+      {% if view_url %}
+      <span class="pdf-resources__card-details--view action-link">
+        <a href="{{ view_url }}" >{{ 'Open'|t }}</a>
+      </span>
+      {% endif %}
+      {% if file_url %}
+        <span class="pdf-resources__card-details--download action-link">
+          <a href="{{ file_url }}" ><span>{{ 'Download PDF'|t }}</span></a>
+        </span>
+        <span class="pdf-resources__card-details--share action-link">
+          <a href="mailto:?subject={{ file_name|t }}&body=Download file:{{ file_url }}" >{{ 'Share'|t }}</a>
+        </span>
+      {% endif %}
+      {% if view_url %}
+        <span class="pdf-resources__card-details--copy-text action-link">
+          <span class="copy-text" url="{{ view_url }}">{{ 'Copy'|t }}</span>
+        </span>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% endif %}

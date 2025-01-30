@@ -36,17 +36,25 @@
  * @see template_preprocess_field()
  */
 #}
-{%
+ {%
   set title_classes = [
     label_display == 'visually_hidden' ? 'visually-hidden',
-  ]
-%}
+ ] 
+ %}
 {% set field_label = 'Board ' ~ label %}
-<div class="millboard-variation-width-wrapper">
+ <div class="millboard-variation-width-wrapper">
+  {% if is_modello %}
+    <span class="label coh-style-paragraph-regular">{{ 'Collection'|t }}</span>
+    <div class="other-variants-wrapper">
+      <a href= {{ contour_path }} class="coh-style-primary-button width {% if active_link == 'contour' %}selected {% endif %}">{{ 'Contour'|t }}</a>
+      <a href= {{ linear_path }} class="coh-style-primary-button width {% if active_link == 'linear' %}selected {% endif %}">{{ 'Linear'|t }}</a>
+    </div>
+  {% else %}
     <span class="label coh-style-paragraph-regular">{{ field_label|t }}</span>
     <div class="other-variants-wrapper">
         {% for item in items %}
             {{ item.content }}
         {% endfor %}
     </div>
+  {% endif %}
 </div>

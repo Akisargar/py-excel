@@ -13,6 +13,7 @@ dependencies:
     - cohesion_custom_styles.cohesion_custom_style.e95bd02c
     - cohesion_custom_styles.cohesion_custom_style.ee93d997
     - cohesion_website_settings.cohesion_color.gray-20
+    - cohesion_website_settings.cohesion_color.olive
     - views.view.search
   enforced:
     module:
@@ -38,10 +39,7 @@ json_values: |
                       "uid": "row-for-columns",
                       "title": "Row for columns",
                       "status": {
-                          "collapsed": true,
-                          "collapsedParents": [
-                              "1aeb45a8-7ef9-4c14-989c-b4058303792f"
-                          ]
+                          "collapsed": false
                       },
                       "uuid": "a11f97f7-91dc-421b-826f-298026799748",
                       "parentUid": "drupal-view",
@@ -80,10 +78,7 @@ json_values: |
                               "uid": "column",
                               "title": "Column",
                               "status": {
-                                  "collapsed": true,
-                                  "collapsedParents": [
-                                      "a11f97f7-91dc-421b-826f-298026799748"
-                                  ]
+                                  "collapsed": false
                               },
                               "uuid": "d5407664-34d7-401b-9d1e-68b257b1fea6",
                               "parentUid": "row-for-columns",
@@ -93,10 +88,7 @@ json_values: |
                                       "uid": "drupal-block",
                                       "title": "Block",
                                       "status": {
-                                          "collapsed": true,
-                                          "collapsedParents": [
-                                              "a11f97f7-91dc-421b-826f-298026799748"
-                                          ]
+                                          "collapsed": true
                                       },
                                       "uuid": "d72212dc-3429-45ef-af6e-08b542be714a",
                                       "parentUid": "column",
@@ -107,10 +99,7 @@ json_values: |
                                       "uid": "container",
                                       "title": "Container",
                                       "status": {
-                                          "collapsed": false,
-                                          "collapsedParents": [
-                                              "a11f97f7-91dc-421b-826f-298026799748"
-                                          ]
+                                          "collapsed": false
                                       },
                                       "uuid": "49556642-8538-4179-b977-8316dd99c28a",
                                       "parentUid": "column",
@@ -120,12 +109,23 @@ json_values: |
                                               "uid": "drupal-view-variable",
                                               "title": "View variable",
                                               "status": {
-                                                  "collapsed": true,
-                                                  "collapsedParents": [
-                                                      "a11f97f7-91dc-421b-826f-298026799748"
-                                                  ]
+                                                  "collapsed": true
                                               },
                                               "uuid": "cbc37e57-6acc-45ca-830e-68af0936e09c",
+                                              "parentUid": "container",
+                                              "children": []
+                                          },
+                                          {
+                                              "type": "item",
+                                              "uid": "drupal-view-variable",
+                                              "title": "View variable",
+                                              "status": {
+                                                  "collapsed": true,
+                                                  "collapsedParents": [
+                                                      "1aeb45a8-7ef9-4c14-989c-b4058303792f"
+                                                  ]
+                                              },
+                                              "uuid": "03bea87c-30b0-468f-985e-0df10f9c1e77",
                                               "parentUid": "container",
                                               "children": []
                                           }
@@ -134,20 +134,6 @@ json_values: |
                               ]
                           }
                       ]
-                  },
-                  {
-                      "type": "item",
-                      "uid": "drupal-view-variable",
-                      "title": "View variable",
-                      "status": {
-                          "collapsed": true,
-                          "collapsedParents": [
-                              "1aeb45a8-7ef9-4c14-989c-b4058303792f"
-                          ]
-                      },
-                      "uuid": "03bea87c-30b0-468f-985e-0df10f9c1e77",
-                      "parentUid": "drupal-view",
-                      "children": []
                   },
                   {
                       "type": "container",
@@ -167,10 +153,7 @@ json_values: |
                               "uid": "column",
                               "title": "Column",
                               "status": {
-                                  "collapsed": true,
-                                  "collapsedParents": [
-                                      "1aeb45a8-7ef9-4c14-989c-b4058303792f"
-                                  ]
+                                  "collapsed": false
                               },
                               "uuid": "66554845-9a54-4723-bf02-d948d045c7ba",
                               "parentUid": "row-for-columns",
@@ -193,10 +176,7 @@ json_values: |
                                               "uid": "accordion-tabs-item",
                                               "title": "Accordion tabs item",
                                               "status": {
-                                                  "collapsed": false,
-                                                  "collapsedParents": [
-                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                  ]
+                                                  "collapsed": false
                                               },
                                               "uuid": "92804c64-db54-48ba-9d15-235379acf428",
                                               "parentUid": "accordion-tabs-container",
@@ -206,10 +186,7 @@ json_values: |
                                                       "uid": "drupal-block",
                                                       "title": "Block",
                                                       "status": {
-                                                          "collapsed": true,
-                                                          "collapsedParents": [
-                                                              "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                          ]
+                                                          "collapsed": true
                                                       },
                                                       "uuid": "a7cfed07-e403-4452-8f6f-acdb614d338c",
                                                       "parentUid": "accordion-tabs-item",
@@ -220,10 +197,7 @@ json_values: |
                                                       "uid": "container",
                                                       "title": "Container",
                                                       "status": {
-                                                          "collapsed": false,
-                                                          "collapsedParents": [
-                                                              "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                          ]
+                                                          "collapsed": false
                                                       },
                                                       "uuid": "6ee74931-6233-48c3-874d-a085c9322f04",
                                                       "parentUid": "accordion-tabs-item",
@@ -233,10 +207,7 @@ json_values: |
                                                               "uid": "drupal-block",
                                                               "title": "Block",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": [
-                                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                                  ]
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "2a44699c-9ec2-47ba-8a59-33311e7b1132",
                                                               "parentUid": "container",
@@ -247,10 +218,7 @@ json_values: |
                                                               "uid": "drupal-block",
                                                               "title": "Block",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": [
-                                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                                  ]
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "fbe99a5e-1372-4ab4-a9a7-2e15faf6f982",
                                                               "parentUid": "container",
@@ -261,10 +229,7 @@ json_values: |
                                                               "uid": "drupal-block",
                                                               "title": "Block",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": [
-                                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                                  ]
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "8ae4522b-7226-4a36-945b-28e6aa2ce921",
                                                               "parentUid": "container",
@@ -275,10 +240,7 @@ json_values: |
                                                               "uid": "drupal-block",
                                                               "title": "Block",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": [
-                                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                                  ]
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "1bcfa5b3-822b-49d7-b261-13b3e47398f8",
                                                               "parentUid": "container",
@@ -289,10 +251,7 @@ json_values: |
                                                               "uid": "drupal-block",
                                                               "title": "Block",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": [
-                                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                                  ]
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "111196db-e970-40cc-9bc9-368246394862",
                                                               "parentUid": "container",
@@ -303,10 +262,7 @@ json_values: |
                                                               "uid": "drupal-block",
                                                               "title": "Block",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": [
-                                                                      "66554845-9a54-4723-bf02-d948d045c7ba"
-                                                                  ]
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "d42d81c6-4644-4266-a00c-72f8243f2ad4",
                                                               "parentUid": "container",
@@ -338,8 +294,7 @@ json_values: |
                                       "uid": "drupal-view-contents",
                                       "title": "View content",
                                       "status": {
-                                          "collapsed": true,
-                                          "collapsedParents": []
+                                          "collapsed": false
                                       },
                                       "parentUid": "column",
                                       "uuid": "bef84078-7d90-478e-b122-3abae9e2fcfc",
@@ -350,8 +305,7 @@ json_values: |
                                               "title": "Pattern repeater",
                                               "mimicParent": true,
                                               "status": {
-                                                  "collapsed": true,
-                                                  "collapsedParents": []
+                                                  "collapsed": false
                                               },
                                               "uuid": "2b5d0bd4-693b-43a0-a07f-3940451ceeed",
                                               "parentUid": "drupal-view-contents",
@@ -361,8 +315,7 @@ json_values: |
                                                       "uid": "container",
                                                       "title": "Container",
                                                       "status": {
-                                                          "collapsed": false,
-                                                          "collapsedParents": []
+                                                          "collapsed": false
                                                       },
                                                       "uuid": "5b4c2783-1a03-4cef-a21b-01978f88f725",
                                                       "parentUid": "pattern-repeater",
@@ -372,8 +325,7 @@ json_values: |
                                                               "uid": "drupal-view-item",
                                                               "title": "View item",
                                                               "status": {
-                                                                  "collapsed": true,
-                                                                  "collapsedParents": []
+                                                                  "collapsed": true
                                                               },
                                                               "uuid": "ed377386-2c4e-4b10-9602-31102b213eaf",
                                                               "parentUid": "container",
@@ -390,8 +342,7 @@ json_values: |
                                       "uid": "container",
                                       "title": "Container",
                                       "status": {
-                                          "collapsed": true,
-                                          "collapsedParents": []
+                                          "collapsed": false
                                       },
                                       "uuid": "639c0f1c-861d-4cce-a73d-a15fcfe7e7ca",
                                       "parentUid": "column",
@@ -522,7 +473,11 @@ json_values: |
                                   "formKey": "flex-container",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "md"
                                       }
                                   ],
                                   "activeFields": [
@@ -577,10 +532,15 @@ json_values: |
                                   "formKey": "column-width-and-position",
                                   "breakpoints": [
                                       {
+                                          "iconName": "tablet",
+                                          "name": "sm"
+                                      },
+                                      {
+                                          "iconName": "television",
                                           "name": "xl"
                                       },
                                       {
-                                          "name": "sm"
+                                          "name": "md"
                                       }
                                   ],
                                   "activeFields": [
@@ -717,6 +677,349 @@ json_values: |
                   "selectorType": "topLevel",
                   "form": null,
                   "items": []
+              },
+              "styles": {
+                  "selectorType": "topLevel",
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "flex-item",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "flex-basis",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "order",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "flex-grow",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "flex-shrink",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-self",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-self-safety",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "padding",
+                                  "activeFields": [
+                                      {
+                                          "name": "padding-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "flex-container",
+                                  "activeFields": [
+                                      {
+                                          "name": "flex-direction",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "flex-wrap",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "justify-content",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "justify-content-safety",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-content",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-content-safety",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-items",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-items-safety",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "formKey": "border-and-outline",
+                          "children": [
+                              {
+                                  "formKey": "border-width",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-bottom-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-left-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-right-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-block-start-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-width",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-width",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "border-style",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-bottom-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-left-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-right-style",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-block-start-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-style",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-style",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "border-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "border-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-top-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-bottom-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-left-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-right-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "border-block-start-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-block-end-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-start-color",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "border-inline-end-color",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "items": [],
+                  "title": "Default"
               }
           },
           "639c0f1c-861d-4cce-a73d-a15fcfe7e7ca": {
@@ -1223,7 +1526,11 @@ json_values: |
                                   "formKey": "border-width",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1269,7 +1576,11 @@ json_values: |
                                   "formKey": "border-style",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1315,7 +1626,11 @@ json_values: |
                                   "formKey": "border-color",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1358,10 +1673,174 @@ json_values: |
                                   ]
                               }
                           ]
+                      },
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "padding",
+                                  "activeFields": [
+                                      {
+                                          "name": "padding-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "padding-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "padding-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
                       }
                   ],
                   "selectorType": "topLevel",
-                  "items": [],
+                  "items": [
+                      {
+                          "title": "h2.views-field-title",
+                          "type": "container",
+                          "items": [],
+                          "selectorType": "child",
+                          "uuid": "c489af23-32ac-4e67-9ded-f09807fb9b2b",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "margin",
+                                          "activeFields": [
+                                              {
+                                                  "name": "margin-equal",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "margin-top",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "margin-bottom",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "margin-left",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "margin-right",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "margin-block-start",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "margin-block-end",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "margin-inline-start",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "margin-inline-end",
+                                                  "active": false
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "model": "h2.views-field-title"
+                      }
+                  ],
                   "form": null
               }
           },
@@ -1411,13 +1890,19 @@ json_values: |
                                   "formKey": "column-width-and-position",
                                   "breakpoints": [
                                       {
-                                          "name": "xl"
+                                          "iconName": "tablet",
+                                          "name": "sm"
                                       },
                                       {
+                                          "iconName": "laptop",
                                           "name": "md"
                                       },
                                       {
-                                          "name": "sm"
+                                          "iconName": "television",
+                                          "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1609,7 +2094,11 @@ json_values: |
                                   "formKey": "accordion-tabs-container-accordion-or-tab",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1627,7 +2116,11 @@ json_values: |
                                   "formKey": "accordion-tabs-container-transition",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1649,10 +2142,15 @@ json_values: |
                                   "formKey": "accordion-tabs-container-start-state",
                                   "breakpoints": [
                                       {
+                                          "iconName": "tablet",
+                                          "name": "sm"
+                                      },
+                                      {
+                                          "iconName": "television",
                                           "name": "xl"
                                       },
                                       {
-                                          "name": "sm"
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1703,7 +2201,11 @@ json_values: |
                                   "formKey": "accordion-tabs-container-offset-scroll-position",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1768,6 +2270,12 @@ json_values: |
                   "selectorType": "topLevel",
                   "form": null,
                   "items": []
+              },
+              "styles": {
+                  "formDefinition": [],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "items": []
               }
           },
           "92804c64-db54-48ba-9d15-235379acf428": {
@@ -1790,10 +2298,25 @@ json_values: |
                                   "formKey": "accordion-tabs-item-tab-settings-tab-visibility",
                                   "breakpoints": [
                                       {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "iconName": "tablet",
+                                          "name": "sm"
+                                      },
+                                      {
+                                          "iconName": "television",
                                           "name": "xl"
                                       },
                                       {
-                                          "name": "sm"
+                                          "name": "ps"
+                                      },
+                                      {
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
                                       }
                                   ],
                                   "activeFields": [
@@ -1848,6 +2371,12 @@ json_values: |
                   ],
                   "selectorType": "topLevel",
                   "form": null,
+                  "items": []
+              },
+              "styles": {
+                  "formDefinition": [],
+                  "title": "Default",
+                  "selectorType": "topLevel",
                   "items": []
               }
           },
@@ -2400,7 +2929,11 @@ json_values: |
                                   "formKey": "flex-container",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "md"
                                       }
                                   ],
                                   "activeFields": [
@@ -2435,6 +2968,50 @@ json_values: |
                                       {
                                           "name": "align-items-safety",
                                           "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "flex-item",
+                                  "activeFields": [
+                                      {
+                                          "name": "flex-basis",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "order",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "flex-grow",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "flex-shrink",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-self",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "align-self-safety",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
+                                      },
+                                      {
+                                          "name": "xl"
                                       }
                                   ]
                               }
@@ -3173,6 +3750,37 @@ json_values: |
                               "justify-content": {
                                   "value": "space-between"
                               }
+                          },
+                          "flex-item": {
+                              "flex-basis": {
+                                  "value": "90%"
+                              }
+                          }
+                      },
+                      "xs": {
+                          "flex-item": {
+                              "flex-basis": {
+                                  "value": "90%"
+                              }
+                          }
+                      },
+                      "md": {
+                          "flex-item": {
+                              "flex-basis": {
+                                  "value": "90%"
+                              }
+                          },
+                          "flex-container": {
+                              "justify-content": {
+                                  "value": "space-between"
+                              }
+                          }
+                      },
+                      "lg": {
+                          "flex-item": {
+                              "flex-basis": {
+                                  "value": "90%"
+                              }
                           }
                       }
                   }
@@ -3424,6 +4032,13 @@ json_values: |
                                   "value": "space-between"
                               }
                           }
+                      },
+                      "md": {
+                          "flex-container": {
+                              "justify-content": {
+                                  "value": "space-between"
+                              }
+                          }
                       }
                   }
               },
@@ -3436,13 +4051,16 @@ json_values: |
                   "title": "Column - Filters",
                   "styles": {
                       "xl": {
-                          "col": 3
+                          "col": "4"
                       },
                       "md": {
-                          "col": 4
+                          "col": "4"
                       },
                       "sm": {
                           "col": 12
+                      },
+                      "xs": {
+                          "col": "12"
                       }
                   },
                   "settings": {
@@ -3493,6 +4111,15 @@ json_values: |
                       },
                       "sm": {
                           "startCollapsed": true
+                      },
+                      "xs": {
+                          "accordionOrTab": "accordion",
+                          "collapsible": true,
+                          "startCollapsed": "true",
+                          "offsetPositionAgainst": "px",
+                          "scrollToAccordionOffset": 0,
+                          "animation": "slide",
+                          "duration": "400"
                       }
                   },
                   "scrollToAccordion": false,
@@ -3560,6 +4187,18 @@ json_values: |
                           "accordionTabVisibility": false
                       },
                       "sm": {
+                          "accordionTabVisibility": false
+                      },
+                      "xs": {
+                          "accordionTabVisibility": false
+                      },
+                      "ps": {
+                          "accordionTabVisibility": false
+                      },
+                      "md": {
+                          "accordionTabVisibility": false
+                      },
+                      "lg": {
                           "accordionTabVisibility": false
                       }
                   }
@@ -3822,10 +4461,13 @@ json_values: |
                   "title": "Column - View results",
                   "styles": {
                       "xl": {
-                          "col": 8
+                          "col": "7"
                       },
                       "sm": {
                           "col": 12
+                      },
+                      "md": {
+                          "col": "7"
                       }
                   },
                   "settings": {
@@ -3847,6 +4489,74 @@ json_values: |
               "styles": {
                   "settings": {
                       "element": "column"
+                  },
+                  "styles": {
+                      "xs": {
+                          "border-top-width": {
+                              "value": "2px"
+                          },
+                          "border-top-style": {
+                              "value": "solid"
+                          },
+                          "border-top-color": {
+                              "value": {
+                                  "link": true,
+                                  "value": {
+                                      "hex": "#799513",
+                                      "rgba": "rgba(121, 149, 19, 1)"
+                                  },
+                                  "uid": "olive",
+                                  "name": "Olive",
+                                  "class": ".coh-color-olive",
+                                  "variable": "$coh-color-olive",
+                                  "wysiwyg": true,
+                                  "tags": [
+                                      "millboard",
+                                      "text"
+                                  ],
+                                  "inuse": true
+                              }
+                          },
+                          "padding": {
+                              "padding-bottom": {
+                                  "value": ""
+                              },
+                              "padding-top": {
+                                  "value": "15px"
+                              }
+                          },
+                          "margin": {
+                              "margin-bottom": {
+                                  "value": ""
+                              },
+                              "margin-top": {
+                                  "value": "15px"
+                              }
+                          },
+                          "flex-container": {
+                              "justify-content": {
+                                  "value": "space-between"
+                              }
+                          }
+                      },
+                      "md": {
+                          "border-top-color": {
+                              "value": {}
+                          },
+                          "border-top-style": {
+                              "value": "none"
+                          },
+                          "margin": {
+                              "margin-top": {
+                                  "value": "0"
+                              }
+                          },
+                          "padding": {
+                              "padding-top": {
+                                  "value": "0"
+                              }
+                          }
+                      }
                   }
               }
           },
@@ -3897,12 +4607,62 @@ json_values: |
                                       "rgba": "rgba(219, 219, 220, 1)"
                                   },
                                   "inuse": true,
-                                  "wysiwyg": true,
+                                  "wysiwyg": false,
                                   "tags": [
-                                      "Light"
+                                      "light"
                                   ]
                               }
                           }
+                      },
+                      "xs": {
+                          "border-bottom-width": {
+                              "value": "1"
+                          },
+                          "border-bottom-style": {
+                              "value": "solid"
+                          },
+                          "border-bottom-color": {
+                              "value": {
+                                  "link": true,
+                                  "name": "Gray 20",
+                                  "uid": "gray-20",
+                                  "class": ".coh-color-gray-20",
+                                  "variable": "$coh-color-gray-20",
+                                  "value": {
+                                      "hex": "#dbdbdc",
+                                      "rgba": "rgba(219, 219, 220, 1)"
+                                  },
+                                  "inuse": true,
+                                  "wysiwyg": false,
+                                  "tags": [
+                                      "light"
+                                  ]
+                              }
+                          },
+                          "padding": {
+                              "padding-bottom": {
+                                  "value": "15px"
+                              }
+                          },
+                          "margin": {
+                              "margin-bottom": {
+                                  "value": "15px"
+                              }
+                          }
+                      }
+                  },
+                  "c489af23-32ac-4e67-9ded-f09807fb9b2b": {
+                      "styles": {
+                          "xs": {
+                              "margin": {
+                                  "margin-bottom": {
+                                      "value": "7px"
+                                  }
+                              }
+                          }
+                      },
+                      "settings": {
+                          "element": "h2.views-field-title"
                       }
                   }
               }
@@ -4014,17 +4774,17 @@ json_values: |
           }
       },
       "previewModel": {
-          "a11f97f7-91dc-421b-826f-298026799748": [],
+          "a11f97f7-91dc-421b-826f-298026799748": {},
           "310d082c-5022-4edc-9168-9c32ff2f091e": [],
           "046ac43a-5c18-4176-8419-9d18a426e0a1": [],
           "d5407664-34d7-401b-9d1e-68b257b1fea6": [],
           "d72212dc-3429-45ef-af6e-08b542be714a": [],
           "49556642-8538-4179-b977-8316dd99c28a": [],
           "cbc37e57-6acc-45ca-830e-68af0936e09c": [],
-          "c72dd163-b23a-4e9f-a649-f047c1854c59": [],
-          "66554845-9a54-4723-bf02-d948d045c7ba": [],
-          "f3eb99c0-f2f1-4e89-ace6-e355d2307c5f": [],
-          "92804c64-db54-48ba-9d15-235379acf428": [],
+          "c72dd163-b23a-4e9f-a649-f047c1854c59": {},
+          "66554845-9a54-4723-bf02-d948d045c7ba": {},
+          "f3eb99c0-f2f1-4e89-ace6-e355d2307c5f": {},
+          "92804c64-db54-48ba-9d15-235379acf428": {},
           "a7cfed07-e403-4452-8f6f-acdb614d338c": [],
           "2a44699c-9ec2-47ba-8a59-33311e7b1132": [],
           "fbe99a5e-1372-4ab4-a9a7-2e15faf6f982": [],
@@ -4032,9 +4792,9 @@ json_values: |
           "1bcfa5b3-822b-49d7-b261-13b3e47398f8": [],
           "111196db-e970-40cc-9bc9-368246394862": [],
           "d42d81c6-4644-4266-a00c-72f8243f2ad4": [],
-          "ad15499d-f53a-4a7b-be9b-a7f76668157c": [],
+          "ad15499d-f53a-4a7b-be9b-a7f76668157c": {},
           "03bea87c-30b0-468f-985e-0df10f9c1e77": [],
-          "5b4c2783-1a03-4cef-a21b-01978f88f725": [],
+          "5b4c2783-1a03-4cef-a21b-01978f88f725": {},
           "ed377386-2c4e-4b10-9602-31102b213eaf": [],
           "639c0f1c-861d-4cce-a73d-a15fcfe7e7ca": [],
           "30cd1ce0-f142-4d51-8c6f-ea04c2b89655": [],

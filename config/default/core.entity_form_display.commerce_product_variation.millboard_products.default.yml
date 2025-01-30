@@ -61,6 +61,7 @@ dependencies:
     - field.field.commerce_product_variation.millboard_products.field_weight_per_board
     - field.field.commerce_product_variation.millboard_products.field_weight_per_ft2_lb
     - field.field.commerce_product_variation.millboard_products.field_weight_per_m2_kg
+    - field.field.commerce_product_variation.millboard_products.product_gallery_slider
   module:
     - cohesion_elements
     - commerce_price
@@ -116,7 +117,7 @@ third_party_settings:
       label: 'Product Specifications'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: tab
       format_settings:
         classes: ''
@@ -136,7 +137,7 @@ third_party_settings:
       label: 'Images & Videos'
       region: content
       parent_name: ''
-      weight: 5
+      weight: 6
       format_type: tab
       format_settings:
         classes: ''
@@ -157,7 +158,7 @@ third_party_settings:
       label: Resources
       region: content
       parent_name: ''
-      weight: 6
+      weight: 7
       format_type: tab
       format_settings:
         classes: ''
@@ -173,7 +174,7 @@ third_party_settings:
       label: 'Language Settings'
       region: content
       parent_name: ''
-      weight: 8
+      weight: 9
       format_type: tab
       format_settings:
         classes: ''
@@ -276,7 +277,7 @@ content:
     third_party_settings: {  }
   field_boards_per_ft2:
     type: number
-    weight: 30
+    weight: 31
     region: content
     settings:
       placeholder: ''
@@ -328,7 +329,7 @@ content:
     third_party_settings: {  }
   field_country_of_origin:
     type: string_textfield
-    weight: 31
+    weight: 32
     region: content
     settings:
       size: 60
@@ -336,7 +337,7 @@ content:
     third_party_settings: {  }
   field_dimensions:
     type: string_textfield
-    weight: 33
+    weight: 34
     region: content
     settings:
       size: 60
@@ -344,7 +345,7 @@ content:
     third_party_settings: {  }
   field_dimensions_inches:
     type: string_textfield
-    weight: 32
+    weight: 33
     region: content
     settings:
       size: 60
@@ -368,7 +369,7 @@ content:
     third_party_settings: {  }
   field_fixings_per_board:
     type: number
-    weight: 34
+    weight: 35
     region: content
     settings:
       placeholder: ''
@@ -397,14 +398,14 @@ content:
     third_party_settings: {  }
   field_lifestyle_images:
     type: media_library_widget
-    weight: 10
+    weight: 13
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_lifestyle_videos:
     type: media_library_widget
-    weight: 11
+    weight: 14
     region: content
     settings:
       media_types: {  }
@@ -453,14 +454,14 @@ content:
     third_party_settings: {  }
   field_pdp_inspiration:
     type: media_library_widget
-    weight: 12
+    weight: 15
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_pdp_product_images:
     type: media_library_widget
-    weight: 14
+    weight: 16
     region: content
     settings:
       media_types: {  }
@@ -481,7 +482,7 @@ content:
     third_party_settings: {  }
   field_product_images:
     type: media_library_widget
-    weight: 15
+    weight: 17
     region: content
     settings:
       media_types: {  }
@@ -598,7 +599,7 @@ content:
     third_party_settings: {  }
   field_studio_imagery:
     type: media_library_widget
-    weight: 7
+    weight: 8
     region: content
     settings:
       media_types: {  }
@@ -613,7 +614,7 @@ content:
     third_party_settings: {  }
   field_swatch:
     type: media_library_widget
-    weight: 16
+    weight: 18
     region: content
     settings:
       media_types: {  }
@@ -692,6 +693,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  product_gallery_slider:
+    type: cohesion_layout_builder_widget
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   sku:
     type: string_textfield
     weight: 4
@@ -702,7 +709,7 @@ content:
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true

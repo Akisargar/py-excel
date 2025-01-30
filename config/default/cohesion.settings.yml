@@ -1,3 +1,4 @@
+langcode: en-gb
 _core:
   default_config_hash: gpIMmHdWGMtTf2ZJoO-QHF9bk9ZVESnX-4LD-r3YtTw
 api_build_status: NO_CONTENT
@@ -16,14 +17,20 @@ add_animation_classes: DISABLED
 sync_legacy_visibility: false
 image_browser:
   config:
-    type: medialib_imagebrowser
+    type: imce_imagebrowser
+    dx8_imce_stream_wrapper: public
+    dx8_entity_browser: media_browser
     cohesion_media_lib_types:
       - image
       - acquia_dam_image_asset
-    dx8_entity_browser: media_browser
   content:
     type: medialib_imagebrowser
-    cohesion_media_lib_types:
-      - image
-      - acquia_dam_image_asset
     dx8_entity_browser: media_browser
+    cohesion_media_lib_types:
+      - acquia_dam_image_asset
+      - image
+      - 0
+      - 0
+      - 0
+      - 0
+      - 0

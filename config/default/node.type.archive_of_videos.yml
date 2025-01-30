@@ -1,0 +1,32 @@
+uuid: a71d40d9-23eb-4921-88bc-41c646fb968f
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+name: 'Archive of videos'
+type: archive_of_videos
+description: 'Content type for creating archive of videos'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

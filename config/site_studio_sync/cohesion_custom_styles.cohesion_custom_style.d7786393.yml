@@ -4,6 +4,17 @@ status: true
 dependencies:
   config:
     - cohesion_website_settings.cohesion_color.olive
+  content:
+    - 'file:file:30c4041c-5407-4489-b4c6-4a4b5c1a8a06'
+    - 'file:file:38309203-7cb8-4c3c-a2e0-d187eaf0a3d2'
+    - 'file:file:72b47ad0-6686-4d1b-a143-c948f53e5359'
+    - 'file:file:796d8686-a2cf-43c8-bcb8-e2fe21888fc6'
+    - 'file:file:886a25fa-81c8-4d74-aeca-6e03bdf64438'
+    - 'file:file:af878b6c-c7a8-4596-8d43-a2a7da7c8142'
+    - 'file:file:b7dc2903-25bd-49db-b260-ef973ca41977'
+    - 'file:file:bb3e211e-c00c-4838-b650-46325c4a27c6'
+    - 'file:file:bee123f6-7754-4178-b86c-53cc0d589ddf'
+    - 'file:file:f723fa84-bdf0-4de3-9295-807c6f1de706'
   enforced:
     module:
       - acquia_cms_site_studio
@@ -50,10 +61,10 @@ json_values: |
                   "font-size": {},
                   "line-height": {},
                   "height": {
-                      "value": ""
+                      "value": "24px"
                   },
                   "width": {
-                      "value": ""
+                      "value": "24px"
                   }
               },
               "xs": {
@@ -67,39 +78,41 @@ json_values: |
               },
               "sm": {
                   "height": {
-                      "value": ""
+                      "value": "32px"
                   },
                   "width": {
-                      "value": ""
+                      "value": "32px"
                   }
               }
           },
           "76b2d337-c615-41a1-a660-8d11cbfcfd3d": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M21.9996 11.9998C21.9996 6.47711 17.5225 2 11.9998 2C6.47711 2 2 6.47711 2 11.9998C2 16.6893 5.22874 20.6244 9.58425 21.7052V15.0557H7.52229V11.9998H9.58425V10.683C9.58425 7.27949 11.1246 5.70193 14.4662 5.70193C15.0997 5.70193 16.1929 5.82632 16.6401 5.95032V8.72026C16.4041 8.69547 15.9941 8.68307 15.4849 8.68307C13.8454 8.68307 13.2118 9.30425 13.2118 10.919V11.9998H16.4781L15.9169 15.0557H13.2118V21.9264C18.1633 21.3284 22 17.1125 22 11.9998H21.9996Z\" fill=\"%2362554D\"\/><\/svg>');"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-size"
-                              },
-                              "customCss": {
+                              "backgroundImageSize": {
                                   "value": "cover"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-position"
                               },
-                              "customCss": {
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
                                   "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:f723fa84-bdf0-4de3-9295-807c6f1de706]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -112,29 +125,31 @@ json_values: |
           "8a4e6fa6-0306-4210-b8b2-984f4e976c65": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;charset=utf-8,%3Csvg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"%3E%3Cpath d=\"M13.3076 10.4686L20.3808 2H18.7046L12.563 9.3532L7.65769 2H2L9.41779 13.1193L2 22H3.67621L10.1619 14.2348L15.3423 22H21L13.3072 10.4686H13.3076ZM11.0118 13.2173L10.2602 12.1101L4.28017 3.29968H6.85474L11.6807 10.4099L12.4323 11.5172L18.7054 20.7594H16.1309L11.0118 13.2177V13.2173Z\" fill=\"%2362554D\"%3E%3C\/path%3E%3C\/svg%3E');"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-size"
-                              },
-                              "customCss": {
+                              "backgroundImageSize": {
                                   "value": "cover"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-position"
                               },
-                              "customCss": {
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
                                   "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:bee123f6-7754-4178-b86c-53cc0d589ddf]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -147,29 +162,31 @@ json_values: |
           "cd08c2c0-4ff7-4883-8e2d-780c0dcea970": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;charset=utf-8,%3Csvg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"%3E%3Cpath d=\"M21.5818 7.2C21.3523 6.33409 20.6739 5.65227 19.8136 5.42045C18.2534 5 12 5 12 5C12 5 5.74545 5 4.18636 5.42045C3.32614 5.65227 2.64773 6.33409 2.41818 7.2C2 8.76932 2 12.0455 2 12.0455C2 12.0455 2 15.3205 2.41818 16.8909C2.64773 17.7568 3.32614 18.4386 4.18636 18.6705C5.74659 19.0909 12 19.0909 12 19.0909C12 19.0909 18.2545 19.0909 19.8136 18.6705C20.6739 18.4386 21.3523 17.7568 21.5818 16.8909C22 15.3216 22 12.0455 22 12.0455C22 12.0455 22 8.77045 21.5818 7.2Z\" fill=\"%2362554D\"%3E%3C\/path%3E%3Cpath d=\"M9.95435 15.0193V9.07153L15.1816 12.0454L9.95435 15.0193Z\" fill=\"%23FCFBF8\"%3E%3C\/path%3E%3C\/svg%3E');"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-size"
-                              },
-                              "customCss": {
+                              "backgroundImageSize": {
                                   "value": "cover"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-position"
                               },
-                              "customCss": {
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
                                   "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:796d8686-a2cf-43c8-bcb8-e2fe21888fc6]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -182,29 +199,31 @@ json_values: |
           "2cb752ef-022e-45b7-b863-f7e93df09b05": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M7.85848 2.06994C6.79447 2.12014 6.06786 2.28994 5.43265 2.53954C4.77524 2.79574 4.21804 3.13954 3.66363 3.69594C3.10923 4.25235 2.76782 4.80995 2.51342 5.46835C2.26722 6.10495 2.10042 6.83215 2.05342 7.89676C2.00642 8.96136 1.99602 9.30356 2.00122 12.0192C2.00642 14.7348 2.01842 15.0752 2.07002 16.142C2.12082 17.2058 2.29002 17.9322 2.53962 18.5676C2.79622 19.225 3.13963 19.782 3.69623 20.3366C4.25284 20.8912 4.81004 21.2318 5.47005 21.4866C6.10606 21.7324 6.83347 21.9 7.89788 21.9466C8.96229 21.9932 9.30489 22.004 12.0197 21.9988C14.7345 21.9936 15.0763 21.9816 16.143 21.931C17.2096 21.8804 17.9322 21.71 18.5678 21.4616C19.2252 21.2044 19.7826 20.8616 20.3368 20.3048C20.891 19.748 21.2322 19.19 21.4864 18.5312C21.7328 17.8952 21.9002 17.1678 21.9464 16.1042C21.993 15.0368 22.004 14.696 21.9988 11.9808C21.9936 9.26556 21.9814 8.92516 21.9308 7.85876C21.8802 6.79235 21.7108 6.06815 21.4614 5.43235C21.2044 4.77495 20.8614 4.21835 20.305 3.66334C19.7486 3.10834 19.1902 2.76734 18.5316 2.51374C17.8952 2.26754 17.1682 2.09974 16.1038 2.05374C15.0393 2.00774 14.6967 1.99594 11.9809 2.00114C9.26509 2.00634 8.92509 2.01794 7.85848 2.06994ZM7.97528 20.1476C7.00027 20.1052 6.47086 19.9432 6.11806 19.8076C5.65085 19.6276 5.31805 19.41 4.96645 19.0618C4.61484 18.7136 4.39884 18.3796 4.21644 17.9134C4.07944 17.5606 3.91444 17.0318 3.86884 16.0568C3.81923 15.003 3.80883 14.6866 3.80303 12.0168C3.79723 9.34696 3.80743 9.03096 3.85363 7.97676C3.89524 7.00256 4.05824 6.47255 4.19364 6.11995C4.37364 5.65215 4.59044 5.31995 4.93945 4.96855C5.28845 4.61715 5.62145 4.40075 6.08806 4.21835C6.44046 4.08074 6.96927 3.91714 7.94388 3.87074C8.99849 3.82074 9.31449 3.81074 11.9839 3.80494C14.6533 3.79914 14.9701 3.80914 16.0252 3.85554C16.9994 3.89794 17.5296 4.05934 17.8818 4.19555C18.3492 4.37555 18.6818 4.59175 19.0332 4.94135C19.3846 5.29095 19.6012 5.62275 19.7836 6.09035C19.9214 6.44175 20.085 6.97036 20.131 7.94556C20.1812 9.00016 20.1926 9.31636 20.1974 11.9856C20.2022 14.6548 20.1928 14.9718 20.1466 16.0256C20.104 17.0006 19.9424 17.5302 19.8066 17.8834C19.6266 18.3504 19.4096 18.6834 19.0604 19.0346C18.7112 19.3858 18.3786 19.6022 17.9118 19.7846C17.5598 19.922 17.0304 20.086 16.0566 20.1324C15.0019 20.182 14.6859 20.1924 12.0155 20.1982C9.34509 20.204 9.03009 20.1932 7.97548 20.1476M16.1276 6.65535C16.128 6.89271 16.1987 7.12462 16.3309 7.32174C16.4631 7.51887 16.6508 7.67237 16.8703 7.76281C17.0897 7.85326 17.3311 7.8766 17.5638 7.82988C17.7965 7.78315 18.0101 7.66847 18.1777 7.50033C18.3452 7.33218 18.4591 7.11813 18.505 6.88525C18.5508 6.65237 18.5266 6.41112 18.4354 6.19201C18.3441 5.97289 18.1899 5.78576 17.9923 5.65428C17.7947 5.5228 17.5625 5.45288 17.3252 5.45335C17.007 5.45399 16.7021 5.58097 16.4775 5.80638C16.2529 6.03179 16.127 6.33716 16.1276 6.65535ZM6.86547 12.01C6.87107 14.846 9.17429 17.1398 12.0097 17.1344C14.8451 17.129 17.1406 14.826 17.1352 11.99C17.1298 9.15396 14.8259 6.85955 11.9901 6.86515C9.15429 6.87075 6.86007 9.17436 6.86547 12.01ZM8.66668 12.0064C8.66538 11.3471 8.85961 10.7022 9.2248 10.1533C9.59 9.60442 10.1098 9.17614 10.7184 8.92264C11.327 8.66914 11.9971 8.6018 12.644 8.72914C13.2908 8.85648 13.8854 9.17278 14.3525 9.63804C14.8196 10.1033 15.1383 10.6966 15.2682 11.343C15.3981 11.9894 15.3334 12.6597 15.0823 13.2693C14.8312 13.8789 14.405 14.4004 13.8576 14.7677C13.3101 15.1351 12.666 15.3319 12.0067 15.3332C11.5689 15.3341 11.1353 15.2488 10.7305 15.0821C10.3257 14.9154 9.95773 14.6706 9.64757 14.3616C9.33741 14.0527 9.09115 13.6857 8.92284 13.2816C8.75454 12.8775 8.6675 12.4441 8.66668 12.0064Z\" fill=\"%2362554D\"\/><\/svg>');"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-size"
-                              },
-                              "customCss": {
+                              "backgroundImageSize": {
                                   "value": "cover"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-position"
                               },
-                              "customCss": {
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
                                   "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:72b47ad0-6686-4d1b-a143-c948f53e5359]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -217,29 +236,31 @@ json_values: |
           "ab246bf8-8bb1-404c-ab9d-c7751bdab9f7": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M11.9959 2C6.4673 2 2 6.47552 2 11.9959C2 16.2328 4.63266 19.8527 8.3513 21.3089C8.2608 20.5191 8.18676 19.3015 8.3842 18.4377C8.5652 17.6561 9.55244 13.4685 9.55244 13.4685C9.55244 13.4685 9.25628 12.868 9.25628 11.9877C9.25628 10.5973 10.0625 9.56068 11.0662 9.56068C11.9218 9.56068 12.3332 10.2024 12.3332 10.9675C12.3332 11.8231 11.7902 13.1065 11.5023 14.2995C11.2637 15.2949 12.0041 16.1094 12.9831 16.1094C14.7602 16.1094 16.1259 14.2336 16.1259 11.5352C16.1259 9.1411 14.4064 7.471 11.9465 7.471C9.09996 7.471 7.42986 9.6018 7.42986 11.8067C7.42986 12.6623 7.75894 13.5837 8.1703 14.0856C8.25258 14.1843 8.2608 14.2748 8.23612 14.3735C8.16208 14.6861 7.9893 15.369 7.9564 15.5088C7.91526 15.6898 7.8083 15.731 7.61908 15.6405C6.38502 15.0481 5.61168 13.2217 5.61168 11.7573C5.61168 8.60634 7.8988 5.7104 12.218 5.7104C15.6816 5.7104 18.3801 8.17852 18.3801 11.4858C18.3801 14.9329 16.2081 17.7055 13.197 17.7055C12.1851 17.7055 11.2308 17.1789 10.9099 16.5537C10.9099 16.5537 10.4081 18.4624 10.2847 18.9313C10.0625 19.8034 9.45372 20.8893 9.04236 21.5557C9.98026 21.8437 10.9675 22 12.0041 22C17.5245 22 22 17.5245 22 12.0041C21.9918 6.47552 17.5162 2 11.9959 2Z\" fill=\"%2362554D\"\/><\/svg>');"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-size"
-                              },
-                              "customCss": {
+                              "backgroundImageSize": {
                                   "value": "cover"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-position"
                               },
-                              "customCss": {
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
                                   "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:bb3e211e-c00c-4838-b650-46325c4a27c6]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -252,17 +273,34 @@ json_values: |
           "47051beb-13a5-4873-b419-a9fa57542e44": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M21.9996 11.9998C21.9996 6.47711 17.5225 2 11.9998 2C6.47711 2 2 6.47711 2 11.9998C2 16.6893 5.22874 20.6244 9.58425 21.7052V15.0557H7.52229V11.9998H9.58425V10.683C9.58425 7.27949 11.1246 5.70193 14.4662 5.70193C15.0997 5.70193 16.1929 5.82632 16.6401 5.95032V8.72026C16.4041 8.69547 15.9941 8.68307 15.4849 8.68307C13.8454 8.68307 13.2118 9.30425 13.2118 10.919V11.9998H16.4781L15.9169 15.0557H13.2118V21.9264C18.1633 21.3284 22 17.1125 22 11.9998H21.9996Z\" fill=\"%23799513\"\/><\/svg>');"
+                              "backgroundImageSize": {
+                                  "value": "cover"
+                              },
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
+                                  "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:af878b6c-c7a8-4596-8d43-a2a7da7c8142]",
+                                  "imageStyle": ""
                               }
                           }
-                      ],
-                      "background-color": {}
+                      ]
                   }
               },
               "settings": {
@@ -272,13 +310,31 @@ json_values: |
           "2fc06b04-e850-49c8-84f2-de4be2b961fe": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;charset=utf-8,%3Csvg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"%3E%3Cpath d=\"M13.3076 10.4686L20.3808 2H18.7046L12.563 9.3532L7.65769 2H2L9.41779 13.1193L2 22H3.67621L10.1619 14.2348L15.3423 22H21L13.3072 10.4686H13.3076ZM11.0118 13.2173L10.2602 12.1101L4.28017 3.29968H6.85474L11.6807 10.4099L12.4323 11.5172L18.7054 20.7594H16.1309L11.0118 13.2177V13.2173Z\" fill=\"%23799513\"%3E%3C\/path%3E%3C\/svg%3E');"
+                              "backgroundImageSize": {
+                                  "value": "cover"
+                              },
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
+                                  "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:38309203-7cb8-4c3c-a2e0-d187eaf0a3d2]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -291,13 +347,31 @@ json_values: |
           "f2e7489d-5944-4700-bbaf-356b37d4f31b": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M21.5818 7.2C21.3523 6.33409 20.6739 5.65227 19.8136 5.42045C18.2534 5 12 5 12 5C12 5 5.74545 5 4.18636 5.42045C3.32614 5.65227 2.64773 6.33409 2.41818 7.2C2 8.76932 2 12.0455 2 12.0455C2 12.0455 2 15.3205 2.41818 16.8909C2.64773 17.7568 3.32614 18.4386 4.18636 18.6705C5.74659 19.0909 12 19.0909 12 19.0909C12 19.0909 18.2545 19.0909 19.8136 18.6705C20.6739 18.4386 21.3523 17.7568 21.5818 16.8909C22 15.3216 22 12.0455 22 12.0455C22 12.0455 22 8.77045 21.5818 7.2Z\" fill=\"%23799513\"\/><path d=\"M9.95435 15.0193V9.07153L15.1816 12.0454L9.95435 15.0193Z\" fill=\"%23FCFBF8\"\/><\/svg>');"
+                              "backgroundImageSize": {
+                                  "value": "cover"
+                              },
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
+                                  "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:30c4041c-5407-4489-b4c6-4a4b5c1a8a06]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -310,13 +384,31 @@ json_values: |
           "db236da7-5047-4827-8da1-dc56ea713f8c": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M7.85848 2.06994C6.79447 2.12014 6.06786 2.28994 5.43265 2.53954C4.77524 2.79574 4.21804 3.13954 3.66363 3.69594C3.10923 4.25235 2.76782 4.80995 2.51342 5.46835C2.26722 6.10495 2.10042 6.83215 2.05342 7.89676C2.00642 8.96136 1.99602 9.30356 2.00122 12.0192C2.00642 14.7348 2.01842 15.0752 2.07002 16.142C2.12082 17.2058 2.29002 17.9322 2.53962 18.5676C2.79622 19.225 3.13963 19.782 3.69623 20.3366C4.25284 20.8912 4.81004 21.2318 5.47005 21.4866C6.10606 21.7324 6.83347 21.9 7.89788 21.9466C8.96229 21.9932 9.30489 22.004 12.0197 21.9988C14.7345 21.9936 15.0763 21.9816 16.143 21.931C17.2096 21.8804 17.9322 21.71 18.5678 21.4616C19.2252 21.2044 19.7826 20.8616 20.3368 20.3048C20.891 19.748 21.2322 19.19 21.4864 18.5312C21.7328 17.8952 21.9002 17.1678 21.9464 16.1042C21.993 15.0368 22.004 14.696 21.9988 11.9808C21.9936 9.26556 21.9814 8.92516 21.9308 7.85876C21.8802 6.79235 21.7108 6.06815 21.4614 5.43235C21.2044 4.77495 20.8614 4.21835 20.305 3.66334C19.7486 3.10834 19.1902 2.76734 18.5316 2.51374C17.8952 2.26754 17.1682 2.09974 16.1038 2.05374C15.0393 2.00774 14.6967 1.99594 11.9809 2.00114C9.26509 2.00634 8.92509 2.01794 7.85848 2.06994ZM7.97528 20.1476C7.00027 20.1052 6.47086 19.9432 6.11806 19.8076C5.65085 19.6276 5.31805 19.41 4.96645 19.0618C4.61484 18.7136 4.39884 18.3796 4.21644 17.9134C4.07944 17.5606 3.91444 17.0318 3.86884 16.0568C3.81923 15.003 3.80883 14.6866 3.80303 12.0168C3.79723 9.34696 3.80743 9.03096 3.85363 7.97676C3.89524 7.00256 4.05824 6.47255 4.19364 6.11995C4.37364 5.65215 4.59044 5.31995 4.93945 4.96855C5.28845 4.61715 5.62145 4.40075 6.08806 4.21835C6.44046 4.08074 6.96927 3.91714 7.94388 3.87074C8.99849 3.82074 9.31449 3.81074 11.9839 3.80494C14.6533 3.79914 14.9701 3.80914 16.0252 3.85554C16.9994 3.89794 17.5296 4.05934 17.8818 4.19555C18.3492 4.37555 18.6818 4.59175 19.0332 4.94135C19.3846 5.29095 19.6012 5.62275 19.7836 6.09035C19.9214 6.44175 20.085 6.97036 20.131 7.94556C20.1812 9.00016 20.1926 9.31636 20.1974 11.9856C20.2022 14.6548 20.1928 14.9718 20.1466 16.0256C20.104 17.0006 19.9424 17.5302 19.8066 17.8834C19.6266 18.3504 19.4096 18.6834 19.0604 19.0346C18.7112 19.3858 18.3786 19.6022 17.9118 19.7846C17.5598 19.922 17.0304 20.086 16.0566 20.1324C15.0019 20.182 14.6859 20.1924 12.0155 20.1982C9.34509 20.204 9.03009 20.1932 7.97548 20.1476M16.1276 6.65535C16.128 6.89271 16.1987 7.12462 16.3309 7.32174C16.4631 7.51887 16.6508 7.67237 16.8703 7.76281C17.0897 7.85326 17.3311 7.8766 17.5638 7.82988C17.7965 7.78315 18.0101 7.66847 18.1777 7.50033C18.3452 7.33218 18.4591 7.11813 18.505 6.88525C18.5508 6.65237 18.5266 6.41112 18.4354 6.19201C18.3441 5.97289 18.1899 5.78576 17.9923 5.65428C17.7947 5.5228 17.5625 5.45288 17.3252 5.45335C17.007 5.45399 16.7021 5.58097 16.4775 5.80638C16.2529 6.03179 16.127 6.33716 16.1276 6.65535ZM6.86547 12.01C6.87107 14.846 9.17429 17.1398 12.0097 17.1344C14.8451 17.129 17.1406 14.826 17.1352 11.99C17.1298 9.15396 14.8259 6.85955 11.9901 6.86515C9.15429 6.87075 6.86007 9.17436 6.86547 12.01ZM8.66668 12.0064C8.66538 11.3471 8.85961 10.7022 9.2248 10.1533C9.59 9.60442 10.1098 9.17614 10.7184 8.92264C11.327 8.66914 11.9971 8.6018 12.644 8.72914C13.2908 8.85648 13.8854 9.17278 14.3525 9.63804C14.8196 10.1033 15.1383 10.6966 15.2682 11.343C15.3981 11.9894 15.3334 12.6597 15.0823 13.2693C14.8312 13.8789 14.405 14.4004 13.8576 14.7677C13.3101 15.1351 12.666 15.3319 12.0067 15.3332C11.5689 15.3341 11.1353 15.2488 10.7305 15.0821C10.3257 14.9154 9.95773 14.6706 9.64757 14.3616C9.33741 14.0527 9.09115 13.6857 8.92284 13.2816C8.75454 12.8775 8.6675 12.4441 8.66668 12.0064Z\" fill=\"%23799513\"\/><\/svg>');"
+                              "backgroundImageSize": {
+                                  "value": "cover"
+                              },
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
+                                  "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:b7dc2903-25bd-49db-b260-ef973ca41977]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -329,13 +421,31 @@ json_values: |
           "7b989667-65b5-44ec-aefd-4ae4ce55688b": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M11.9959 2C6.4673 2 2 6.47552 2 11.9959C2 16.2328 4.63266 19.8527 8.3513 21.3089C8.2608 20.5191 8.18676 19.3015 8.3842 18.4377C8.5652 17.6561 9.55244 13.4685 9.55244 13.4685C9.55244 13.4685 9.25628 12.868 9.25628 11.9877C9.25628 10.5973 10.0625 9.56068 11.0662 9.56068C11.9218 9.56068 12.3332 10.2024 12.3332 10.9675C12.3332 11.8231 11.7902 13.1065 11.5023 14.2995C11.2637 15.2949 12.0041 16.1094 12.9831 16.1094C14.7602 16.1094 16.1259 14.2336 16.1259 11.5352C16.1259 9.1411 14.4064 7.471 11.9465 7.471C9.09996 7.471 7.42986 9.6018 7.42986 11.8067C7.42986 12.6623 7.75894 13.5837 8.1703 14.0856C8.25258 14.1843 8.2608 14.2748 8.23612 14.3735C8.16208 14.6861 7.9893 15.369 7.9564 15.5088C7.91526 15.6898 7.8083 15.731 7.61908 15.6405C6.38502 15.0481 5.61168 13.2217 5.61168 11.7573C5.61168 8.60634 7.8988 5.7104 12.218 5.7104C15.6816 5.7104 18.3801 8.17852 18.3801 11.4858C18.3801 14.9329 16.2081 17.7055 13.197 17.7055C12.1851 17.7055 11.2308 17.1789 10.9099 16.5537C10.9099 16.5537 10.4081 18.4624 10.2847 18.9313C10.0625 19.8034 9.45372 20.8893 9.04236 21.5557C9.98026 21.8437 10.9675 22 12.0041 22C17.5245 22 22 17.5245 22 12.0041C21.9918 6.47552 17.5162 2 11.9959 2Z\" fill=\"%23799513\"\/><\/svg>');"
+                              "backgroundImageSize": {
+                                  "value": "cover"
+                              },
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
+                                  "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:886a25fa-81c8-4d74-aeca-6e03bdf64438]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -584,29 +694,31 @@ json_values: |
           "1b2c793f-8295-42df-9998-c689bc75bcca": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M21.9996 11.9998C21.9996 6.47711 17.5225 2 11.9998 2C6.47711 2 2 6.47711 2 11.9998C2 16.6893 5.22874 20.6244 9.58425 21.7052V15.0557H7.52229V11.9998H9.58425V10.683C9.58425 7.27949 11.1246 5.70193 14.4662 5.70193C15.0997 5.70193 16.1929 5.82632 16.6401 5.95032V8.72026C16.4041 8.69547 15.9941 8.68307 15.4849 8.68307C13.8454 8.68307 13.2118 9.30425 13.2118 10.919V11.9998H16.4781L15.9169 15.0557H13.2118V21.9264C18.1633 21.3284 22 17.1125 22 11.9998H21.9996Z\" fill=\"#799513\"\/><\/svg>');"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-size"
-                              },
-                              "customCss": {
+                              "backgroundImageSize": {
                                   "value": "cover"
-                              }
-                          },
-                          {
-                              "customCssProperty": {
-                                  "value": "background-position"
                               },
-                              "customCss": {
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
                                   "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:bee123f6-7754-4178-b86c-53cc0d589ddf]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -619,13 +731,31 @@ json_values: |
           "85b65876-fa3c-41c2-8878-832960481b24": {
               "styles": {
                   "xs": {
-                      "custom-css": [
+                      "background-image-settings": [
                           {
-                              "customCssProperty": {
-                                  "value": "background"
+                              "backgroundLayerType": {
+                                  "value": "image"
                               },
-                              "customCss": {
-                                  "value": "url('data:image\/svg+xml;utf-8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path d=\"M13.3076 10.4686L20.3808 2H18.7046L12.563 9.3532L7.65769 2H2L9.41779 13.1193L2 22H3.67621L10.1619 14.2348L15.3423 22H21L13.3072 10.4686H13.3076ZM11.0118 13.2173L10.2602 12.1101L4.28017 3.29968H6.85474L11.6807 10.4099L12.4323 11.5172L18.7054 20.7594H16.1309L11.0118 13.2177V13.2173Z\" fill=\"%23799513\"\/><\/svg>');"
+                              "backgroundImageSize": {
+                                  "value": "cover"
+                              },
+                              "backgroundImageRepeat": {
+                                  "value": "no-repeat"
+                              },
+                              "backgroundImageAttachment": {
+                                  "value": "scroll"
+                              },
+                              "backgroundImagePositionX": {
+                                  "value": "center"
+                              },
+                              "backgroundImagePositionY": {
+                                  "value": "center"
+                              },
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {
+                                  "value": "[media-reference:file:38309203-7cb8-4c3c-a2e0-d187eaf0a3d2]",
+                                  "imageStyle": ""
                               }
                           }
                       ]
@@ -668,18 +798,70 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
-                          "formKey": "custom-css",
+                          "formKey": "background",
                           "children": [
                               {
-                                  "formKey": "css-property-and-css-value",
+                                  "formKey": "background-image-and-gradient",
                                   "activeFields": [
                                       {
-                                          "name": "customCssProperty",
+                                          "name": "backgroundLayerType",
                                           "active": true
                                       },
                                       {
-                                          "name": "customCss",
+                                          "name": "backgroundImage",
                                           "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
                                       }
                                   ],
                                   "breakpoints": [
@@ -703,18 +885,70 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "background",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "background-image-and-gradient",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "backgroundLayerType",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "backgroundImage",
                                                   "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
                                               }
                                           ],
                                           "breakpoints": [
@@ -730,7 +964,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               },
               {
                   "title": ".twitter",
@@ -744,18 +978,70 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
-                          "formKey": "custom-css",
+                          "formKey": "background",
                           "children": [
                               {
-                                  "formKey": "css-property-and-css-value",
+                                  "formKey": "background-image-and-gradient",
                                   "activeFields": [
                                       {
-                                          "name": "customCssProperty",
+                                          "name": "backgroundLayerType",
                                           "active": true
                                       },
                                       {
-                                          "name": "customCss",
+                                          "name": "backgroundImage",
                                           "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
                                       }
                                   ],
                                   "breakpoints": [
@@ -779,18 +1065,70 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "background",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "background-image-and-gradient",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "backgroundLayerType",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "backgroundImage",
                                                   "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
                                               }
                                           ],
                                           "breakpoints": [
@@ -806,7 +1144,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               },
               {
                   "title": ".youtube",
@@ -820,18 +1158,70 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
-                          "formKey": "custom-css",
+                          "formKey": "background",
                           "children": [
                               {
-                                  "formKey": "css-property-and-css-value",
+                                  "formKey": "background-image-and-gradient",
                                   "activeFields": [
                                       {
-                                          "name": "customCssProperty",
+                                          "name": "backgroundLayerType",
                                           "active": true
                                       },
                                       {
-                                          "name": "customCss",
+                                          "name": "backgroundImage",
                                           "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
                                       }
                                   ],
                                   "breakpoints": [
@@ -855,18 +1245,70 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "background",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "background-image-and-gradient",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "backgroundLayerType",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "backgroundImage",
                                                   "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
                                               }
                                           ],
                                           "breakpoints": [
@@ -882,7 +1324,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               },
               {
                   "title": ".instagram",
@@ -900,24 +1342,66 @@ json_mapper: |
                           "children": [
                               {
                                   "formKey": "background-image-and-gradient",
-                                  "activeFields": [],
-                                  "breakpoints": []
-                              }
-                          ]
-                      },
-                      {
-                          "formKey": "custom-css",
-                          "children": [
-                              {
-                                  "formKey": "css-property-and-css-value",
                                   "activeFields": [
                                       {
-                                          "name": "customCssProperty",
+                                          "name": "backgroundLayerType",
                                           "active": true
                                       },
                                       {
-                                          "name": "customCss",
+                                          "name": "backgroundImage",
                                           "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
                                       }
                                   ],
                                   "breakpoints": [
@@ -941,18 +1425,70 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "background",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "background-image-and-gradient",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "backgroundLayerType",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "backgroundImage",
                                                   "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
                                               }
                                           ],
                                           "breakpoints": [
@@ -968,7 +1504,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               },
               {
                   "title": ".pinterest",
@@ -982,18 +1518,70 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
-                          "formKey": "custom-css",
+                          "formKey": "background",
                           "children": [
                               {
-                                  "formKey": "css-property-and-css-value",
+                                  "formKey": "background-image-and-gradient",
                                   "activeFields": [
                                       {
-                                          "name": "customCssProperty",
+                                          "name": "backgroundLayerType",
                                           "active": true
                                       },
                                       {
-                                          "name": "customCss",
+                                          "name": "backgroundImage",
                                           "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
                                       }
                                   ],
                                   "breakpoints": [
@@ -1017,18 +1605,70 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "background",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "background-image-and-gradient",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "backgroundLayerType",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "backgroundImage",
                                                   "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
                                               }
                                           ],
                                           "breakpoints": [
@@ -1044,7 +1684,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               },
               {
                   "title": ".x",
@@ -1058,18 +1698,70 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
-                          "formKey": "custom-css",
+                          "formKey": "background",
                           "children": [
                               {
-                                  "formKey": "css-property-and-css-value",
+                                  "formKey": "background-image-and-gradient",
                                   "activeFields": [
                                       {
-                                          "name": "customCssProperty",
+                                          "name": "backgroundLayerType",
                                           "active": true
                                       },
                                       {
-                                          "name": "customCss",
+                                          "name": "backgroundImage",
                                           "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
                                       }
                                   ],
                                   "breakpoints": [
@@ -1093,18 +1785,70 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "custom-css",
+                                  "formKey": "background",
                                   "children": [
                                       {
-                                          "formKey": "css-property-and-css-value",
+                                          "formKey": "background-image-and-gradient",
                                           "activeFields": [
                                               {
-                                                  "name": "customCssProperty",
+                                                  "name": "backgroundLayerType",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "customCss",
+                                                  "name": "backgroundImage",
                                                   "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageGradient",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "imageStyle",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageSize",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageWidth",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageHeight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageRepeat",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageAttachment",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionX",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionXOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionY",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImagePositionYOffset",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "backgroundImageOrigin",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "backgroundImageClip",
+                                                  "active": false
                                               }
                                           ],
                                           "breakpoints": [
@@ -1120,7 +1864,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               },
               {
                   "title": ":focus",
@@ -1379,7 +2123,7 @@ json_mapper: |
           "form": null
       }
   }
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true
@@ -1388,4 +2132,4 @@ custom_style_type: link
 available_in_wysiwyg: false
 available_in_wysiwyg_inline: false
 parent: null
-weight: 212
+weight: 118

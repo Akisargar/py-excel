@@ -89,6 +89,11 @@ function millboard_installers_distributors_token_info() {
     'description' => t('Distributor email address'),
   ];
 
+  $info['tokens']['millboard_installers_distributors']['distributorType'] = [
+    'name' => t("Distributor type"),
+    'description' => t('Distributor Type'),
+  ];
+
   return $info;
 }
 
@@ -138,6 +143,16 @@ function millboard_installers_distributors_tokens($type, $tokens, array $data = 
             $replacements[$original] = NULL;
           }
           break;
+
+        case 'distributorType':
+          $distributorType = $node->get('field_type_of_inst_dist')->value;
+          if ($distributorType == 'approved_installer') {
+            $replacements[$original] = 'installers';
+          }
+          else {
+            $replacements[$original] = 'distributors';
+          }
+          break;
       }
     }
   }
@@ -164,5 +179,21 @@ function millboard_installers_distributors_tokens($type, $tokens, array $data = 
 function millboard_installers_distributors_views_pre_render(ViewExecutable $view) {
   if (isset($view) && ($view->storage->id() == 'showrooms_listing')) {
     $view->element['#attached']['library'][] = 'millboard_installers_distributors/user_location';
+  }
+}
+
+/**
+ * Implements theme_name_form_views_exposed_form_alter().
+ */
+function millboard_installers_distributors_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $language_manager = \Drupal::service('language_manager');
+  $current_language = $language_manager->getCurrentLanguage()->getId();
+  if ($form['#id'] == 'views-exposed-form-millboard-find-installers-where-to-buy' && $current_language == "en-us") {
+    $form["field_store_location_proximity"]["#attached"]["drupalSettings"]["better_exposed_filters"]["slider_options"]["field_store_location_proximity"]['max'] = 3000;
+    $form["field_store_location_proximity"]["#attached"]["drupalSettings"]["better_exposed_filters"]["slider_options"]["field_store_location_proximity"]['step'] = 1;
+    $form["field_store_location_proximity"]["#size"] = 3000;
+    $form["field_store_location_proximity"]["#default_value"] = 500;
+    // $form["field_store_location_proximity"]["#min"] = 150;
+    $form = $form;
   }
 }

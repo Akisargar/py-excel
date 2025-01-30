@@ -1,0 +1,1005 @@
+uuid: 9dcfddcd-b554-4c4a-a32c-439e1805f64a
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - cohesion_custom_styles.cohesion_custom_style.1d63f60f
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
+    - cohesion_custom_styles.cohesion_custom_style.85178c48
+    - cohesion_custom_styles.cohesion_custom_style.b03f97e5
+    - cohesion_elements.cohesion_component.cpt_1_column_layout
+    - cohesion_elements.cohesion_component.cpt_container
+    - cohesion_elements.cohesion_component.cpt_cross_link_cards
+    - cohesion_elements.cohesion_component.cpt_hero_banner
+    - cohesion_elements.cohesion_component.cpt_spacer
+    - cohesion_elements.cohesion_component.cpt_testimonial_video_components
+    - cohesion_elements.cohesion_component.cpt_text
+    - cohesion_elements.cohesion_component.cpt_text_and_image
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_website_settings.cohesion_color.spring-wood
+label: 'AD-Blog Layout'
+id: hlp_adblog_layout
+json_values: |
+  {
+      "canvas": [
+          {
+              "uid": "cpt_container",
+              "type": "component",
+              "title": "Container",
+              "enabled": true,
+              "category": "category-1",
+              "componentId": "cpt_container",
+              "componentType": "container",
+              "iconColor": "custom",
+              "uuid": "ad74b266-7bb2-4e54-98d9-054bfa7d43c8",
+              "status": {
+                  "collapsed": false
+              },
+              "parentUid": "root",
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "component-drop-zone",
+                      "mimicParent": true,
+                      "parentUid": "cpt_container",
+                      "title": "Component drop zone",
+                      "selected": false,
+                      "status": {
+                          "collapsed": false,
+                          "disabled": false
+                      },
+                      "uuid": "f212761a-1846-4c8b-9358-d353eb256b56",
+                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                      "children": [
+                          {
+                              "uid": "cpt_hero_banner",
+                              "type": "component",
+                              "title": "Primary hero banner",
+                              "enabled": true,
+                              "category": "category-4",
+                              "componentId": "cpt_hero_banner",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "3504ae9d-d911-4568-9427-e428fb3d3b86",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "uuid": "24e0506f-8284-4f49-b7ef-e1892cbd65ba",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "a75de347-e454-4f03-8d3e-bd41803dea74",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_1_column_layout",
+                                              "type": "component",
+                                              "title": "1 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_1_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "abb508f3-4b13-438d-890a-68dd388ba252",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_1_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "30f4b588-6918-490c-b381-25b4d02228bb",
+                                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_spacer",
+                                                              "type": "component",
+                                                              "title": "Spacer",
+                                                              "enabled": true,
+                                                              "category": "category-1",
+                                                              "componentId": "cpt_spacer",
+                                                              "componentType": "container",
+                                                              "iconColor": "custom",
+                                                              "uuid": "feff0abe-40c4-4444-8c77-3c4ec8b28193",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          },
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "iconColor": "custom",
+                                                              "uuid": "c508fb18-b91f-4e40-a960-326f6eb656c6",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_testimonial_video_components",
+                              "type": "component",
+                              "title": "Testimonial Video Components",
+                              "enabled": true,
+                              "category": "category-6",
+                              "componentId": "cpt_testimonial_video_components",
+                              "componentType": "container",
+                              "uuid": "d673a435-847a-4441-9fe6-a9eebfc5e9a8",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "uuid": "1753a35b-a126-4352-8059-205b88bffda4",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "1fedb8ba-523e-4fce-81ce-414dfc1b804b",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_1_column_layout",
+                                              "type": "component",
+                                              "title": "1 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_1_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "d4a95b41-5a82-409b-b39c-1a0370c4dda6",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_1_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "7bb297c0-54b2-4fcc-af64-c96d2325a1f5",
+                                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "iconColor": "custom",
+                                                              "uuid": "64302c43-5aca-4578-b980-8dc1aa2e4cd5",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "bd23cc52-2ba3-423e-82c4-3a1d7c2702ae",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "3a38ca98-e22e-499e-8bb5-eaab594145f1",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "aeb67607-5d00-4696-8985-e075e27fa8d0",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "a0113b05-6111-47d4-b33c-30d8beb6ecec",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_text_and_image",
+                              "type": "component",
+                              "title": "Text and Image",
+                              "enabled": true,
+                              "category": "category-5",
+                              "componentId": "cpt_text_and_image",
+                              "componentType": "container",
+                              "iconColor": "custom",
+                              "uuid": "7639e7b9-580c-4059-ad4b-4aa8b9049aeb",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          },
+                          {
+                              "uid": "cpt_container",
+                              "type": "component",
+                              "title": "Container",
+                              "enabled": true,
+                              "category": "category-1",
+                              "componentId": "cpt_container",
+                              "componentType": "container",
+                              "uuid": "f4d4fc5b-ac16-4ffa-99fc-2542c71a0911",
+                              "status": {
+                                  "collapsed": false
+                              },
+                              "parentUid": "component-drop-zone",
+                              "children": [
+                                  {
+                                      "type": "container",
+                                      "uid": "component-drop-zone",
+                                      "mimicParent": true,
+                                      "parentUid": "cpt_container",
+                                      "title": "Component drop zone",
+                                      "selected": false,
+                                      "status": {
+                                          "collapsed": false,
+                                          "disabled": false
+                                      },
+                                      "uuid": "b2239889-3ffd-4ddf-b5b5-5663dab3baa1",
+                                      "dropzoneId": "607bea75-388b-4ee9-ad5d-dd5d23a695fd",
+                                      "children": [
+                                          {
+                                              "uid": "cpt_1_column_layout",
+                                              "type": "component",
+                                              "title": "1 column layout",
+                                              "enabled": true,
+                                              "category": "category-1",
+                                              "componentId": "cpt_1_column_layout",
+                                              "componentType": "container",
+                                              "uuid": "18cf27ab-998f-46d6-a549-372da136f81c",
+                                              "status": {
+                                                  "collapsed": false
+                                              },
+                                              "parentUid": "component-drop-zone",
+                                              "children": [
+                                                  {
+                                                      "type": "container",
+                                                      "uid": "component-drop-zone",
+                                                      "mimicParent": true,
+                                                      "parentUid": "cpt_1_column_layout",
+                                                      "title": "Component drop zone",
+                                                      "selected": false,
+                                                      "status": {
+                                                          "collapsed": false,
+                                                          "disabled": false
+                                                      },
+                                                      "uuid": "6ff69a9d-bc81-4d56-8136-ec7d9d4b9700",
+                                                      "dropzoneId": "c0116a84-e80c-428d-b6ff-ae43dda904f7",
+                                                      "children": [
+                                                          {
+                                                              "uid": "cpt_text",
+                                                              "type": "component",
+                                                              "title": "Text",
+                                                              "enabled": true,
+                                                              "category": "category-4",
+                                                              "componentId": "cpt_text",
+                                                              "componentType": "wysiwyg",
+                                                              "iconColor": "custom",
+                                                              "uuid": "d5b16647-0cc8-40f2-aa94-ea45bb397c19",
+                                                              "parentUid": "component-drop-zone",
+                                                              "status": {},
+                                                              "children": []
+                                                          }
+                                                      ]
+                                                  }
+                                              ]
+                                          }
+                                      ]
+                                  }
+                              ]
+                          },
+                          {
+                              "uid": "cpt_cross_link_cards",
+                              "type": "component",
+                              "title": "Cross Link Cards",
+                              "enabled": true,
+                              "category": "category-2",
+                              "componentId": "cpt_cross_link_cards",
+                              "componentType": "container",
+                              "uuid": "fe6b8c3e-3177-41a1-87a5-bba7d0ce2fa6",
+                              "parentUid": "component-drop-zone",
+                              "status": {},
+                              "children": []
+                          }
+                      ]
+                  }
+              ]
+          }
+      ],
+      "mapper": {
+          "ad74b266-7bb2-4e54-98d9-054bfa7d43c8": {},
+          "f212761a-1846-4c8b-9358-d353eb256b56": {},
+          "3504ae9d-d911-4568-9427-e428fb3d3b86": {},
+          "24e0506f-8284-4f49-b7ef-e1892cbd65ba": {},
+          "a75de347-e454-4f03-8d3e-bd41803dea74": {},
+          "abb508f3-4b13-438d-890a-68dd388ba252": {},
+          "30f4b588-6918-490c-b381-25b4d02228bb": {},
+          "feff0abe-40c4-4444-8c77-3c4ec8b28193": {},
+          "c508fb18-b91f-4e40-a960-326f6eb656c6": {},
+          "d673a435-847a-4441-9fe6-a9eebfc5e9a8": {},
+          "1753a35b-a126-4352-8059-205b88bffda4": {},
+          "1fedb8ba-523e-4fce-81ce-414dfc1b804b": {},
+          "d4a95b41-5a82-409b-b39c-1a0370c4dda6": {},
+          "7bb297c0-54b2-4fcc-af64-c96d2325a1f5": {},
+          "64302c43-5aca-4578-b980-8dc1aa2e4cd5": {},
+          "bd23cc52-2ba3-423e-82c4-3a1d7c2702ae": {},
+          "3a38ca98-e22e-499e-8bb5-eaab594145f1": {},
+          "aeb67607-5d00-4696-8985-e075e27fa8d0": {},
+          "a0113b05-6111-47d4-b33c-30d8beb6ecec": {},
+          "7639e7b9-580c-4059-ad4b-4aa8b9049aeb": {},
+          "f4d4fc5b-ac16-4ffa-99fc-2542c71a0911": {},
+          "b2239889-3ffd-4ddf-b5b5-5663dab3baa1": {},
+          "18cf27ab-998f-46d6-a549-372da136f81c": {},
+          "6ff69a9d-bc81-4d56-8136-ec7d9d4b9700": {},
+          "d5b16647-0cc8-40f2-aa94-ea45bb397c19": {},
+          "fe6b8c3e-3177-41a1-87a5-bba7d0ce2fa6": {}
+      },
+      "model": {
+          "ad74b266-7bb2-4e54-98d9-054bfa7d43c8": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-large",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": [],
+              "settings": {
+                  "title": "Case Study Details - Container"
+              },
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px"
+          },
+          "f212761a-1846-4c8b-9358-d353eb256b56": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "3504ae9d-d911-4568-9427-e428fb3d3b86": {
+              "86820958-8681-4fe3-a96c-7737da80104a": {
+                  "textFormat": "cohesion",
+                  "text": "<h1>Millboard Decking and Envello Cladding<\/h1><p><strong>Quality Products, Proudly Made in Britain<\/strong><\/p>"
+              },
+              "05701354-a064-44dd-82c9-e4c81aaf24e4": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "31963524-7197-4863-8da1-b01d9ffd90a5",
+                      "entityId": "31963524-7197-4863-8da1-b01d9ffd90a5"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "acquia_dam_documents_asset": false,
+                              "acquia_dam_image_asset": true,
+                              "image": true,
+                              "acquia_dam_video_asset": true,
+                              "video": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "title": "Primary hero banner"
+              },
+              "c0f327ef-3b4c-4e74-8a10-b2d54bb3b368": {
+                  "text": "",
+                  "textFormat": "filtered_html"
+              }
+          },
+          "24e0506f-8284-4f49-b7ef-e1892cbd65ba": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "0px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "0px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "0px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Body Text - Single Column"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "a75de347-e454-4f03-8d3e-bd41803dea74": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "abb508f3-4b13-438d-890a-68dd388ba252": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "6",
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "40px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              }
+          },
+          "30f4b588-6918-490c-b381-25b4d02228bb": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "feff0abe-40c4-4444-8c77-3c4ec8b28193": {
+              "72f8059c-7ab7-417f-a980-4efa330b97a1": "80px",
+              "470a86f1-ea1b-4491-8d21-a3c8ca8aa8dd": "80px",
+              "f0e200c8-bd2b-4864-819a-ab0da895ce9d": "80px"
+          },
+          "c508fb18-b91f-4e40-a960-326f6eb656c6": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<p><strong>Contents:<\/strong><\/p><ol><li><a href=\"#introduction\">Introduction to Millboard and Envello<\/a><\/li><li><a href=\"#british-craftsmanship\">British Craftsmanship and Local Manufacturing<\/a><\/li><li><a href=\"#customer-care\">Customer Care and Product Support<\/a><\/li><li><a href=\"#commitment\">Commitment to Community and Workforce<\/a><\/li><li><a href=\"#sustainability\">Sustainability and Responsibility at the Core<\/a><\/li><li><a href=\"#family\">Millboard\u2019s Family Legacy and Industry Recognition<\/a><\/li><li><a href=\"#faqs\">Frequently Asked Questions<\/a><\/li><\/ol>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "d673a435-847a-4441-9fe6-a9eebfc5e9a8": {
+              "568ab731-fe9c-48a9-ac98-353aa4e678f6": "",
+              "d8c3919d-e062-48b3-aeeb-07cc31410a19": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "2abcc7a3-c86b-41ed-9351-6058faf73246",
+                      "entityId": "2abcc7a3-c86b-41ed-9351-6058faf73246"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "acquia_dam_image_asset": false,
+                              "acquia_dam_video_asset": true,
+                              "video": true
+                          }
+                      }
+                  }
+              },
+              "fa566482-1f06-4d10-86d9-9b6112c4871f": "",
+              "8364d9a5-d092-453b-945b-756472ebc23e": "",
+              "settings": {
+                  "title": "Testimonial Video Components"
+              }
+          },
+          "1753a35b-a126-4352-8059-205b88bffda4": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "80px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "64px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Body Text - Single Column"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "1fedb8ba-523e-4fce-81ce-414dfc1b804b": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "d4a95b41-5a82-409b-b39c-1a0370c4dda6": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "6",
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "40px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              }
+          },
+          "7bb297c0-54b2-4fcc-af64-c96d2325a1f5": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "64302c43-5aca-4578-b980-8dc1aa2e4cd5": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<h3 id=\"introduction\"><strong>Introduction to Millboard and Envello<\/strong><\/h3><p>In a world where global supply chains are the norm, locally crafted products that champion quality, integrity, and craftsmanship hold a unique place of honour. Millboard embodies these values through its decking and <a href=\"https:\/\/www.millboard.com\/en-gb\/envello-composite-cladding\">Envello cladding collections<\/a>, which bring together British design, innovation, and dedication to create products of unmatched quality. Based in the heart of Warwickshire, every Millboard product is developed, manufactured, and perfected in the UK\u2014a testament to our commitment to British craftsmanship.<\/p><p>&nbsp;<\/p><p>Holding the <a href=\"https:\/\/www.madeinbritain.org\/members\/the-millboard-company-ltd\"><strong>Made in Britain accreditation<\/strong><\/a>, Millboard is more than just a decking and cladding brand; it is a proud symbol of British manufacturing at its finest. With a steadfast commitment to local sourcing, responsible production, and community support, Millboard products are crafted to bring timeless beauty, durability, and value to outdoor spaces.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "bd23cc52-2ba3-423e-82c4-3a1d7c2702ae": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "2e819296-9ecf-4238-99f7-e4a2fc6a7925",
+                      "entityId": "2e819296-9ecf-4238-99f7-e4a2fc6a7925"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.text_and_image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<h3 id=\"british-craftsmanship\"><strong>British Craftsmanship and Local Manufacturing<\/strong><\/h3><p>Every Millboard product is crafted with the philosophy that form and function should go hand-in-hand. At our Warwickshire facility, artisans and engineers work together to create boards that replicate the natural beauty of timber while offering enhanced durability and performance. Unlike many composite decking options, Millboard boards are <strong>hand-moulded from real timber<\/strong>, capturing the intricate wood grain and texture that make each board unique\u200b.<\/p><p>The combination of our patented <strong>Lastane\u00ae surface<\/strong> and fibre-reinforced resin core provides exceptional slip resistance, UV stability, and resilience against the elements. This meticulous attention to detail ensures that every Millboard board not only looks authentic but also performs exceptionally well over time. By choosing Millboard, customers receive a product that reflects British ingenuity and commitment to quality.<\/p><p>Our Warwickshire facility stocks ample product reserves, allowing us to dispatch orders quickly across the UK. This commitment to availability ensures that customers have timely access to Millboard products, minimising wait times and keeping projects on track\u200b.<\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50-4-3",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "b2599ce9-c069-4662-91f9-5686754ca22d": "",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "3a38ca98-e22e-499e-8bb5-eaab594145f1": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "7b0f6ac2-3a60-47e4-93f5-a713914be634",
+                      "entityId": "7b0f6ac2-3a60-47e4-93f5-a713914be634"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.text_and_image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<h3 id=\"customer-care\"><strong>Customer Care and Product Support<\/strong><\/h3><p>At Millboard, customer satisfaction goes beyond delivering quality products\u2014it extends to every aspect of the customer experience. Our UK-based support team in Warwickshire is dedicated to helping customers every step of the way, from product selection to installation advice. Whether you need guidance on choosing the perfect colour, understanding the difference between Enhanced Grain and Weathered Oak collections, or exploring installation techniques, our <a href=\"https:\/\/www.millboard.com\/en-gb\/why-millboard\/about-us\">knowledgeable team<\/a> is here to assist\u200b.<\/p><p>Millboard\u2019s comprehensive, UK-backed warranties are another cornerstone of our commitment to customer assurance. We stand behind the durability and craftsmanship of our decking and cladding products, offering warranties that provide long-term security and peace of mind. This approach ensures that when you invest in Millboard, you\u2019re not only purchasing a premium product but also gaining support from a brand that cares about your satisfaction.<\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50-4-3",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "b2599ce9-c069-4662-91f9-5686754ca22d": "",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "aeb67607-5d00-4696-8985-e075e27fa8d0": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "139f7290-a83a-4691-9af0-09637bcb7f9d",
+                      "entityId": "139f7290-a83a-4691-9af0-09637bcb7f9d"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.text_and_image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<h3 id=\"commitment\"><strong>Commitment to Community and Workforce<\/strong><\/h3><p>Supporting the community is a core value at Millboard. As a proud <a href=\"https:\/\/www.livingwage.org.uk\/accredited-living-wage-employers\"><strong>Living Wage employer<\/strong><\/a>, we prioritise fair treatment, compensation, and respect for every team member. This commitment reflects our broader dedication to creating a positive workplace environment that values every individual. By offering fair wages and opportunities for growth, Millboard fosters a culture where craftsmanship thrives, and employees are empowered\u200b.<\/p><p>Millboard\u2019s impact on the community extends to responsible business practices. We believe in transparency and integrity, which is why we pay our taxes on time and in full, directly contributing to community welfare and infrastructure. This commitment to ethical business practices reinforces Millboard\u2019s role as a socially responsible brand that values its community as much as it values its customers.<\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50-4-3",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "b2599ce9-c069-4662-91f9-5686754ca22d": "",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "a0113b05-6111-47d4-b33c-30d8beb6ecec": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "d1585b69-1fd2-464f-96b8-0e4f55d37ade",
+                      "entityId": "d1585b69-1fd2-464f-96b8-0e4f55d37ade"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.text_and_image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<h3 id=\"sustainability\"><strong>Sustainability and Responsibility at the Core<\/strong><\/h3><p>In a world increasingly focused on <a href=\"https:\/\/www.millboard.com\/en-gb\/why-millboard\/sustainability\">sustainability<\/a>, Millboard is committed to making a positive environmental impact. We believe that every step toward sustainability counts, and as such, we\u2019re dedicated to adopting practices that reduce our environmental footprint while producing high-quality products.<\/p><p>Our products incorporate <strong>recycled materials<\/strong> into the core, and we actively seek partnerships and innovations to reduce waste and improve recycling efforts. As part of our sustainability journey, we are certified to <strong>ISO 14001<\/strong>, a globally recognised environmental management standard. This commitment guides us in minimising waste, optimising energy use, and making continuous improvements in environmental responsibility\u200b.<\/p><p>Millboard is a member of the <a href=\"https:\/\/unglobalcompact.org\/what-is-gc\/participants\/145664-The-Millboard-Company-Ltd\"><strong>United Nations Global Compact<\/strong><\/a>, aligning our practices with Sustainable Development Goals related to responsible production, climate action, and ethical labour practices. Our efforts include reducing grid energy reliance, increasing the use of recycled materials, and actively exploring alternative sustainable materials. This responsible approach is aimed at creating a product that respects nature while offering unparalleled beauty and durability.<\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50-4-3",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-left",
+              "b2599ce9-c069-4662-91f9-5686754ca22d": "",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "7639e7b9-580c-4059-ad4b-4aa8b9049aeb": {
+              "410d9c12-5f48-4073-9a25-64360db0533e": {
+                  "entity": {
+                      "entityType": "media",
+                      "entityUUID": "cde27dd6-c859-443c-9fdc-4feeb5263207",
+                      "entityId": "cde27dd6-c859-443c-9fdc-4feeb5263207"
+                  },
+                  "settings": {
+                      "options": {
+                          "entityBrowserType": "media_library",
+                          "entityType": "media",
+                          "bundles": {
+                              "image": true,
+                              "acquia_dam_image_asset": true
+                          }
+                      }
+                  }
+              },
+              "31cc8cda-8925-402a-b1bc-91a89a403ae4": "media.text_and_image_card_4_3",
+              "41589954-e3d2-499a-97ad-bcab333498fe": {
+                  "textFormat": "cohesion",
+                  "text": "<h3 id=\"family\"><strong>Millboard\u2019s Family Legacy and Industry Recognition<\/strong><\/h3><p>Millboard\u2019s journey is rooted in family values and a deep commitment to quality. Founded as a family-run enterprise, Millboard now sees three generations actively involved in shaping its vision and growth. This legacy has built a brand grounded in passion, tradition, and respect for craftsmanship, ensuring that each Millboard product upholds the values upon which the company was founded\u200b.<\/p><p>Our dedication to excellence has been recognised in the <a href=\"https:\/\/www.londonstockexchange.com\/discover\/news-and-insights\/1000-companies-inspire-britain-2019-report-highlights-continued\"><strong>London Stock Exchange\u2019s top 1000 companies to inspire Britain<\/strong><\/a>, underscoring our role as an industry leader in decking and cladding solutions. The <strong>Made in Britain accreditation<\/strong> serves as a seal of our commitment to transparency, quality, and British craftsmanship, providing customers with confidence in their choice to invest in Millboard. Our focus remains on delivering products that combine innovation with authenticity, creating outdoor spaces that inspire and endure.<\/p>"
+              },
+              "cb6a023d-6150-46e2-96a8-1af3424b8103": "text-image-50-50-4-3",
+              "db35dd81-67e6-45c8-8585-63739aa874ec": "style-align-right",
+              "b2599ce9-c069-4662-91f9-5686754ca22d": "",
+              "settings": {
+                  "title": "Text and Image"
+              }
+          },
+          "f4d4fc5b-ac16-4ffa-99fc-2542c71a0911": {
+              "ce2f59d0-62c9-4e6a-b6aa-6efeadf19d02": "coh-style-container-wide",
+              "8bdf6712-e6a6-4113-b2c7-121be7d69e81": {
+                  "link": true,
+                  "value": {
+                      "hex": "#f9f7f1",
+                      "rgba": "rgba(249, 247, 241, 1)"
+                  },
+                  "uid": "spring-wood",
+                  "name": "Spring Wood",
+                  "class": ".coh-color-spring-wood",
+                  "variable": "$coh-color-spring-wood",
+                  "tags": [
+                      "Millboard",
+                      "Background",
+                      "Light"
+                  ],
+                  "inuse": true,
+                  "wysiwyg": true
+              },
+              "531fe114-854c-49e3-8198-f38b64b8f899": "0px",
+              "e33b8e6e-cd37-428c-b4a7-75666fea557c": "80px",
+              "cd9c76ff-78d1-4e30-9d5f-6df9e9d24e3d": "0px",
+              "a9da6221-2b3b-4bcc-b338-ec47db3b2d8d": "64px",
+              "602abdd8-c72b-4399-98c6-3ada549b3a96": "0px",
+              "e30f3419-78bd-46d2-a6c5-5ef9771e0baa": "40px",
+              "a359153a-d2f3-4674-80b7-54157a8312e9": "",
+              "settings": {
+                  "title": "Body Text - Single Column"
+              },
+              "f84a1db4-9c35-407c-a158-ba7a40a12fe6": "coh-style-text-color-light-background"
+          },
+          "b2239889-3ffd-4ddf-b5b5-5663dab3baa1": {
+              "settings": {
+                  "dropzoneHideSelector": ""
+              }
+          },
+          "18cf27ab-998f-46d6-a549-372da136f81c": {
+              "c469e24d-d155-46d5-a9ca-dc61028163c6": "coh-style-container-small",
+              "2647a498-53ac-4cf2-84d7-9a621dd838a0": "center",
+              "da494360-8595-43d4-8c79-f5d9b932c3d2": "center",
+              "89ccaa0d-3283-45de-986d-054080f18b88": "",
+              "e2ab349e-97c5-4da0-927a-99812c6a426a": "0px",
+              "fe93e55c-7458-4a11-ac70-ce8d2866ec47": "0px",
+              "6b754e7a-6c7c-4ed2-9399-b64496075e6b": "6",
+              "b75137ab-91db-4482-8944-749b854aed32": "0px",
+              "61f02f2c-af03-4918-9a3e-d7fc8bd82f2d": "0px",
+              "5dcf43ba-fc68-44d2-a27c-03a042c3158e": "6",
+              "f6fa688b-4d0e-4bca-8b45-11339cee50ac": "40px",
+              "e6c18acb-ecc8-4ffc-aa98-4629a57b14a7": "0px",
+              "09032d58-36ec-4b7d-93f0-ce4110e125c0": 12,
+              "settings": {
+                  "title": "1 column layout"
+              }
+          },
+          "6ff69a9d-bc81-4d56-8136-ec7d9d4b9700": {
+              "settings": {
+                  "title": "Column drop zone",
+                  "dropzoneHideSelector": "",
+                  "styles": {
+                      "sm": {
+                          "col": 12
+                      }
+                  }
+              }
+          },
+          "d5b16647-0cc8-40f2-aa94-ea45bb397c19": {
+              "5fc743c3-6b31-4a40-bd05-24acfb4ca9ba": {
+                  "text": "<script type=\"application\/ld+json\">\n{\n  \"@context\": \"https:\/\/schema.org\",\n  \"@type\": \"FAQPage\",\n  \"mainEntity\": [\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Is Millboard decking suitable for commercial use?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes, Millboard decking is highly durable and designed to withstand heavy foot traffic, making it suitable for both residential and commercial applications. Its slip-resistant surface and fibre-reinforced core offer excellent performance even in high-traffic areas.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"How long does Millboard decking last?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Millboard decking is built to last, with a typical lifespan of 25 to 30 years. Its non-porous surface and UV stabilisers ensure long-term resistance to the elements, maintaining its appearance and functionality for years with minimal maintenance.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Can Millboard be used in coastal areas?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Yes, Millboard\u2019s non-porous and rot-resistant material makes it ideal for coastal environments. Unlike traditional wood, it is highly resistant to moisture, salt, and algae, making it a durable choice for decking near the sea.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"Is Millboard cladding fire-resistant?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Millboard cladding is designed with safety in mind. While no material is completely fireproof, Millboard\u2019s fibre-reinforced core and composite construction provide improved fire resistance compared to standard timber cladding.\"\n      }\n    },\n    {\n      \"@type\": \"Question\",\n      \"name\": \"What makes Millboard\u2019s sustainability practices unique?\",\n      \"acceptedAnswer\": {\n        \"@type\": \"Answer\",\n        \"text\": \"Millboard\u2019s commitment to sustainability is guided by ISO 14001 certification and membership in the United Nations Global Compact. We prioritise recycled materials, reduced energy use, and responsible production practices, continually innovating to lessen our environmental impact.\"\n      }\n    }\n  ]\n}\n<\/script><h3 id=\"faqs\"><strong>Frequently Asked Questions<\/strong><\/h3><p><strong>Is Millboard decking suitable for commercial use?<\/strong><br>Yes, Millboard decking is highly durable and designed to withstand heavy foot traffic, making it suitable for both residential and commercial applications. Its slip-resistant surface and fibre-reinforced core offer excellent performance even in high-traffic areas\u200b.<\/p><p>&nbsp;<\/p><p><strong>How long does Millboard decking last?<\/strong><br>Millboard decking is built to last, with a typical lifespan of 25 to 30 years. Its non-porous surface and UV stabilisers ensure long-term resistance to the elements, maintaining its appearance and functionality for years with minimal maintenance.<\/p><p>&nbsp;<\/p><p><strong>Can Millboard be used in coastal areas?<\/strong><br>Yes, Millboard\u2019s non-porous and rot-resistant material makes it ideal for coastal environments. Unlike traditional wood, it is highly resistant to moisture, salt, and algae, making it a durable choice for decking near the sea\u200b.<\/p><p>&nbsp;<\/p><p><strong>Is Millboard cladding fire-resistant?<\/strong><br>Millboard cladding is designed with safety in mind. While no material is completely fireproof, Millboard\u2019s fibre-reinforced core and composite construction provide improved fire resistance compared to standard timber cladding\u200b.<\/p><p>&nbsp;<\/p><p><strong>What makes Millboard\u2019s sustainability practices unique?<\/strong><br>Millboard\u2019s commitment to sustainability is guided by ISO 14001 certification and membership in the United Nations Global Compact. We prioritise recycled materials, reduced energy use, and responsible production practices, continually innovating to lessen our environmental impact\u200b.<\/p>",
+                  "textFormat": "cohesion"
+              },
+              "8bac75a1-19a5-42af-99fa-5877541c6590": "0",
+              "settings": {
+                  "title": "Text"
+              }
+          },
+          "fe6b8c3e-3177-41a1-87a5-bba7d0ce2fa6": {
+              "2ea56031-facb-46cc-b908-69268d9151df": "Related Articles",
+              "09b16443-1435-45fa-ab6b-1738f1f30cf3": false,
+              "settings": {
+                  "title": "Cross Link Cards"
+              },
+              "505a638d-d980-40cc-b3a2-511bb2300a9b": [
+                  {
+                      "6cfe938c-c116-4c29-bb69-15eb9f9ba78b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "8830a3d3-ad6f-4bb5-b3f4-90649b36c4b1",
+                              "entityId": "8830a3d3-ad6f-4bb5-b3f4-90649b36c4b1"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "fcb46ea3-c5c3-4d8c-a807-fcde960c7021": "Millboard Expands Global Presence with Acquisition of Leading French Distributor",
+                      "d56aadfc-55bd-4cf2-aef8-c7f5600b5581": "node::5396"
+                  },
+                  {
+                      "6cfe938c-c116-4c29-bb69-15eb9f9ba78b": {
+                          "entity": {
+                              "entityType": "media",
+                              "entityUUID": "b3c0654a-383f-43a0-8cb3-472e2377b4fc",
+                              "entityId": "b3c0654a-383f-43a0-8cb3-472e2377b4fc"
+                          },
+                          "settings": {
+                              "options": {
+                                  "entityBrowserType": "media_library",
+                                  "entityType": "media",
+                                  "bundles": {
+                                      "acquia_dam_image_asset": true,
+                                      "image": true
+                                  }
+                              }
+                          }
+                      },
+                      "fcb46ea3-c5c3-4d8c-a807-fcde960c7021": "Millboard Enhanced Grain now in Ebony Grey and Ashwood",
+                      "d56aadfc-55bd-4cf2-aef8-c7f5600b5581": "node::5531"
+                  }
+              ]
+          }
+      },
+      "previewModel": {
+          "ad74b266-7bb2-4e54-98d9-054bfa7d43c8": {},
+          "3504ae9d-d911-4568-9427-e428fb3d3b86": {},
+          "24e0506f-8284-4f49-b7ef-e1892cbd65ba": {},
+          "abb508f3-4b13-438d-890a-68dd388ba252": {},
+          "c508fb18-b91f-4e40-a960-326f6eb656c6": {},
+          "d673a435-847a-4441-9fe6-a9eebfc5e9a8": {},
+          "1753a35b-a126-4352-8059-205b88bffda4": {},
+          "d4a95b41-5a82-409b-b39c-1a0370c4dda6": {},
+          "64302c43-5aca-4578-b980-8dc1aa2e4cd5": {},
+          "bd23cc52-2ba3-423e-82c4-3a1d7c2702ae": {},
+          "3a38ca98-e22e-499e-8bb5-eaab594145f1": {},
+          "aeb67607-5d00-4696-8985-e075e27fa8d0": {},
+          "a0113b05-6111-47d4-b33c-30d8beb6ecec": {},
+          "7639e7b9-580c-4059-ad4b-4aa8b9049aeb": {},
+          "f4d4fc5b-ac16-4ffa-99fc-2542c71a0911": {},
+          "18cf27ab-998f-46d6-a549-372da136f81c": {},
+          "d5b16647-0cc8-40f2-aa94-ea45bb397c19": {},
+          "fe6b8c3e-3177-41a1-87a5-bba7d0ce2fa6": {}
+      },
+      "variableFields": {
+          "ad74b266-7bb2-4e54-98d9-054bfa7d43c8": [],
+          "3504ae9d-d911-4568-9427-e428fb3d3b86": [],
+          "24e0506f-8284-4f49-b7ef-e1892cbd65ba": [],
+          "abb508f3-4b13-438d-890a-68dd388ba252": [],
+          "c508fb18-b91f-4e40-a960-326f6eb656c6": [],
+          "d673a435-847a-4441-9fe6-a9eebfc5e9a8": [],
+          "1753a35b-a126-4352-8059-205b88bffda4": [],
+          "d4a95b41-5a82-409b-b39c-1a0370c4dda6": [],
+          "64302c43-5aca-4578-b980-8dc1aa2e4cd5": [],
+          "bd23cc52-2ba3-423e-82c4-3a1d7c2702ae": [],
+          "3a38ca98-e22e-499e-8bb5-eaab594145f1": [],
+          "aeb67607-5d00-4696-8985-e075e27fa8d0": [],
+          "a0113b05-6111-47d4-b33c-30d8beb6ecec": [],
+          "7639e7b9-580c-4059-ad4b-4aa8b9049aeb": [],
+          "f4d4fc5b-ac16-4ffa-99fc-2542c71a0911": [],
+          "18cf27ab-998f-46d6-a549-372da136f81c": [],
+          "d5b16647-0cc8-40f2-aa94-ea45bb397c19": [],
+          "fe6b8c3e-3177-41a1-87a5-bba7d0ce2fa6": []
+      }
+  }
+json_mapper: '{}'
+last_entity_update: entityupdate_0043
+locked: false
+modified: true
+selectable: true
+category: hlp_cat_page_layouts
+preview_image: ''
+entity_type_access: {  }
+bundle_access: {  }
+weight: null

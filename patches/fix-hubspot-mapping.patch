@@ -1,0 +1,17 @@
+diff --git a/src/Plugin/WebformHandler/HubspotWebformHandler.php b/src/Plugin/WebformHandler/HubspotWebformHandler.php
+index d314691..c45a329 100644
+--- a/src/Plugin/WebformHandler/HubspotWebformHandler.php
++++ b/src/Plugin/WebformHandler/HubspotWebformHandler.php
+@@ -222,9 +222,9 @@ class HubspotWebformHandler extends WebformHandlerBase {
+               '#type' => 'select',
+               '#options' => $webform_fields_options,
+             ];
+-          }
+-          if (isset($settings['field_mapping'][$field->name])) {
+-            $form['mapping']['field_group']['fields'][$field->name]['#default_value'] = $settings['field_mapping'][$field->name];
++            if (isset($settings['field_mapping'][$field->name])) {
++              $form['mapping']['field_group']['fields'][$field->name]['#default_value'] = $settings['field_mapping'][$field->name];
++            }
+           }
+         }
+       }

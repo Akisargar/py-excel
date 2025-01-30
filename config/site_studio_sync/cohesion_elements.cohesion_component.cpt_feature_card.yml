@@ -11,7 +11,7 @@ dependencies:
     - cohesion_custom_styles.cohesion_custom_style.f3dc1bea
     - cohesion_elements.cohesion_component_category.cpt_cat_card_components
     - cohesion_website_settings.cohesion_color.gray-10
-    - image.style.coh_xx_small
+    - image.style.thumbnail
   content:
     - 'file:file:0afe34a6-58f6-4790-90bc-a40de84c6605'
     - 'file:file:df83e900-36da-4df4-afed-61d7950ac36b'
@@ -110,8 +110,7 @@ json_values: |
                       "title": "Tab item",
                       "parentIndex": "form-layout",
                       "status": {
-                          "collapsed": true,
-                          "collapsedParents": []
+                          "collapsed": false
                       },
                       "options": {
                           "formBuilder": true
@@ -124,10 +123,7 @@ json_values: |
                               "uid": "form-section",
                               "title": "Field group",
                               "status": {
-                                  "collapsed": true,
-                                  "collapsedParents": [
-                                      "72635522-547f-4521-b19b-9c0bd4e3d034"
-                                  ]
+                                  "collapsed": true
                               },
                               "options": {
                                   "formBuilder": true
@@ -140,10 +136,7 @@ json_values: |
                                       "uid": "form-image",
                                       "title": "Image uploader",
                                       "status": {
-                                          "collapsed": false,
-                                          "collapsedParents": [
-                                              "72635522-547f-4521-b19b-9c0bd4e3d034"
-                                          ]
+                                          "collapsed": false
                                       },
                                       "uuid": "5677def8-f2c1-43b1-b944-3959ccc9d789",
                                       "parentUid": "form-section",
@@ -154,10 +147,7 @@ json_values: |
                                       "uid": "form-input",
                                       "title": "Input",
                                       "status": {
-                                          "collapsed": false,
-                                          "collapsedParents": [
-                                              "72635522-547f-4521-b19b-9c0bd4e3d034"
-                                          ]
+                                          "collapsed": false
                                       },
                                       "uuid": "8ba7bc1a-967a-4f31-9b33-10853e66fbf8",
                                       "parentUid": "form-section",
@@ -1705,6 +1695,28 @@ json_values: |
                                                           "name": "xs"
                                                       }
                                                   ]
+                                              },
+                                              {
+                                                  "formKey": "height",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "min-height",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "max-height",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "height",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
                                               }
                                           ]
                                       }
@@ -2806,6 +2818,9 @@ json_values: |
                           "xs": {
                               "width": {
                                   "value": "95px"
+                              },
+                              "height": {
+                                  "value": "95px"
                               }
                           }
                       },
@@ -2970,7 +2985,7 @@ json_values: |
                           }
                       ]
                   },
-                  "imageStyle": "coh_xx_small",
+                  "imageStyle": "thumbnail",
                   "image": "[field.5677def8-f2c1-43b1-b944-3959ccc9d789]",
                   "attributes": {
                       "alt": "[field.8ba7bc1a-967a-4f31-9b33-10853e66fbf8]"
@@ -3799,9 +3814,7 @@ json_values: |
               }
           },
           "6bed1cfa-14a4-4cf2-84ec-f3d429149629": {
-              "settings": {
-                  "image": ""
-              }
+              "settings": {}
           },
           "a84a034e-e897-4319-b1a8-d39c078bae8f": {
               "settings": {
@@ -3868,8 +3881,8 @@ json_values: |
               "settings.content"
           ],
           "6bed1cfa-14a4-4cf2-84ec-f3d429149629": [
-              "settings.attributes.alt",
-              "settings.image"
+              "settings.image",
+              "settings.attributes.alt"
           ],
           "a84a034e-e897-4319-b1a8-d39c078bae8f": [
               "styles.styles.xl.flex-item.flex-grow.value"

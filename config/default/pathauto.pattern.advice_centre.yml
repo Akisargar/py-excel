@@ -1,0 +1,22 @@
+uuid: 1b894096-1c44-4605-9bd7-73b0081d4ba6
+langcode: en-gb
+status: true
+dependencies:
+  module:
+    - node
+id: advice_centre
+label: 'Advice Centre'
+type: 'canonical_entities:node'
+pattern: '/advice-centre/[node:title]'
+selection_criteria:
+  34833f9a-1315-413b-b24f-e50e9fd5021d:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 34833f9a-1315-413b-b24f-e50e9fd5021d
+    context_mapping:
+      node: node
+    bundles:
+      advice_centre: advice_centre
+selection_logic: and
+weight: -5
+relationships: {  }

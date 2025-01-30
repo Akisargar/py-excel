@@ -8,8 +8,12 @@ display:
       exposed_form:
         options:
           submit_button: Apply
-          exposed_sorts_label: 'Sort by'
+          exposed_sorts_label: 'Trier par'
       arguments:
         FileType:
           exception:
             title: All
+      filters:
+        search:
+          expose:
+            label: Recherche

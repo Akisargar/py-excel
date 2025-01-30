@@ -62,19 +62,25 @@
             {{ product_variation.field_msrp_per_unit_usd }}
           </div>
         {% endif %}
-        {% if language and language == 'en-us' %}
-          <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button product-details-cta" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb= "{{ variation_image_thumbnail }}" data-product-type = "{{ variation_product_type }}" data-attribute-width="{{ attribute_width_inches }}">{{ 'Add free sample'|t }}</button>
-        {% else %}
-          <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button product-details-cta" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb= "{{ variation_image_thumbnail }}" data-product-type = "{{ variation_product_type }}" data-attribute-width="{{ attribute_width }}">{{ 'Add free sample'|t }}</button>
+        {% if not is_modello %}
+          {% if language and language == 'en-us' %}
+            <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button product-details-cta" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb= "{{ variation_image_thumbnail }}" data-product-type = "{{ variation_product_type }}" data-attribute-width="{{ attribute_width_inches }}">{{ 'Add free sample'|t }}</button>
+          {% else %}
+            <button class="add-to-basket-btn pdp coh-link link--cta coh-style-primary-button product-details-cta" data-product-name="{{ product_title }}" data-attribute-colour="{{ attribute_colour }}" data-image-thumb= "{{ variation_image_thumbnail }}" data-product-type = "{{ variation_product_type }}" data-attribute-width="{{ attribute_width }}">{{ 'Add free sample'|t }}</button>
+          {% endif %}
         {% endif %}
-        {% if product_type == 'Decking' %}
+        {% if product_type == 'Decking' or product_type == 'Terrassendielen' or product_type == 'Terrasse' %}
           <a href="https://deckplanner.millboard.com" target="_blank">
-            <button class="coh-link link--cta coh-style-primary-button calculator-btn">{{ 'Decking Configurator'|t }}</button>
+            <button class="coh-link link--cta coh-style-primary-button calculator-btn">
+             {% if language == 'fr-fr' %} configurateur de terrasse {% elseif language == 'de-de' %} Terrassenkonfigurator {% else %} Decking Configurator {% endif %}
+            </button>
           </a>
         {% endif %}
       </div>
     </div>
   </div>
+  {{ drupal_block('millboard_millboardmodellosliderblock') }}
+  {{ drupal_block('millboard_millboardmodellocontoursliderblock') }}
   {{ product_variation.field_product_usp }}
   {{ product_variation.field_pdp_inspiration }}
   {{ product_variation.group_specifications }}

@@ -45,6 +45,7 @@ class CacheSubscriber implements EventSubscriberInterface, ContainerInjectionInt
       '/en-gb',
       '/en-us',
       '/en-ie',
+      '/en-au',
     ];
 
     // Check if the current path is in the list of paths to disable caching.

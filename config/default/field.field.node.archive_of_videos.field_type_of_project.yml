@@ -1,0 +1,35 @@
+uuid: 71a7c6e5-88bc-4b37-ab7d-bebe88668cd1
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_project
+    - node.type.archive_of_videos
+    - taxonomy.vocabulary.projects
+  module:
+    - disable_field
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.archive_of_videos.field_type_of_project
+field_name: field_type_of_project
+entity_type: node
+bundle: archive_of_videos
+label: 'Type of Project'
+description: 'Select the type of project of the resource.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      projects: projects
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

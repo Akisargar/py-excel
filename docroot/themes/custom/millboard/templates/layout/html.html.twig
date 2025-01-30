@@ -38,10 +38,17 @@ db_offline ? 'db-offline',
 <!--[if (gt IE 9)|!(IE)]><!--> <html{{ html_attributes }}> <!--<![endif]-->
 <head>
     <head-placeholder token="{{ placeholder_token }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
+    <title>{% if custom_title %}{{ custom_title }}{% else %}{{ head_title|safe_join(' | ') }}{% endif %}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
     <cohesion-placeholder></cohesion-placeholder>
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "on2cthsum5");
+    </script>
   {% if (lang == 'fr-fr' or lang == 'de-de') %}
     <!-- Facebook Pixel Code -->
     <script>
@@ -61,6 +68,7 @@ db_offline ? 'db-offline',
     </noscript>
     <!-- End Facebook Pixel Code -->
   {% endif %}
+   <script>!function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};s._saq||(s._saq=n);n.push=n;n.loaded=!0;n.version="1.0";n.queue=[];t=a.createElement(e);t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,"script","https://tags.srv.stackadapt.com/events.js");saq("ts","AnnT2Ahq2k6h2JYlylGZpA");</script>
 </head>
 <body{{ attributes.addClass(body_classes) }}>
 {#
@@ -87,11 +95,11 @@ db_offline ? 'db-offline',
           <div class='error-message coh-style-f37-ginger-light coh-style-paragraph-default' style="display:none;">
           </div>
           <div class="decking">
-            <h5 class="dec-text">Decking:</h5>
+            <h5 class="dec-text">{{ 'Decking'|t }}:</h5>
             <ul class="basket-items"></ul>
           </div>
           <div class="cladding">
-            <h5 class="dec-text">Cladding:</h5>
+            <h5 class="dec-text">{{ 'Cladding'|t }}:</h5>
             <ul class="basket-items"></ul>
           </div>
         </div>

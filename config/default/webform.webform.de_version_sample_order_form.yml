@@ -56,6 +56,8 @@ elements: |-
     '#title': Telefon
     '#required': true
     '#required_error': 'Telefonnummer ist erforderlich'
+    '#pattern': '^[+]?[0-9]+$'
+    '#pattern_error': 'Bitte geben Sie eine gültige Telefonnummer ein.'
   company:
     '#type': textfield
     '#title': Firma
@@ -347,7 +349,7 @@ elements: |-
     '#title': Projekttyp
     '#options':
       Decking: Millboard-Terrassendielen
-      Envello: Envello-Verkleidung
+      Envello: Envello-Fassadenverkleidung
   which_of_the_following_are_you:
     '#type': select
     '#title': 'Sind Sie ein Hausbesitzer oder ein Fachmann?'
@@ -409,7 +411,7 @@ elements: |-
     '#attributes':
       class:
         - order-a-sample-submit
-    '#submit__label': Senden
+    '#submit__label': 'KOSTENFREI BESTELLEN'
     '#submit__attributes':
       class:
         - coh-style-primary-button

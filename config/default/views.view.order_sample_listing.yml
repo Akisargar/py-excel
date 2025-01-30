@@ -2794,6 +2794,46 @@ display:
           content: '<p class="coh-style-container-small coh-style-inner-container-padding coh-style-padding-top-bottom-medium no-result-order-sample">No results available.</p>'
           tokenize: false
       filters:
+        status_2:
+          id: status_2
+          table: commerce_product_field_data
+          field: status
+          relationship: reverse__commerce_product__field_product_type
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_product
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         status_1:
           id: status_1
           table: commerce_product_variation_field_data
@@ -3102,7 +3142,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<span class="total-cladding-elements hidden">[view:total-rows] [view:title] Samples</span>'
+            value: '<span class="total-cladding-elements hidden">[view:total-rows]</span>'
             format: full_html
           tokenize: false
       display_extenders:
@@ -4656,6 +4696,46 @@ display:
           content: '<p class="coh-style-container-small coh-style-inner-container-padding coh-style-padding-top-bottom-medium no-result-order-sample">No results available.</p>'
           tokenize: false
       filters:
+        status_2:
+          id: status_2
+          table: commerce_product_field_data
+          field: status
+          relationship: reverse__commerce_product__field_product_type
+          group_type: group
+          admin_label: ''
+          entity_type: commerce_product
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         status_1:
           id: status_1
           table: commerce_product_variation_field_data
@@ -4978,7 +5058,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: '<span class="total-decking-elements hidden">[view:total-rows] [view:title] Samples</div>'
+            value: '<span class="total-decking-elements hidden">[view:total-rows]</div>'
             format: full_html
           tokenize: false
       exposed_block: false

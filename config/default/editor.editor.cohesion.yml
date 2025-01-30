@@ -49,10 +49,8 @@ settings:
         - heading4
         - heading5
     ckeditor5_list:
-      properties:
-        reversed: true
-        startIndex: true
-      multiBlock: true
+      reversed: true
+      startIndex: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
     ckeditor5_style:
@@ -78,9 +76,6 @@ settings:
         -
           label: 'Link Hover'
           element: '<a class="coh-style-link-hover">'
-        -
-          label: 'Small CTA/Text Link'
-          element: '<a class="coh-style-small-cta-text-link">'
         -
           label: 'Primary Button'
           element: '<a class="coh-style-primary-button">'
@@ -280,12 +275,6 @@ settings:
           label: 'Heading 5 Regular [h6]'
           element: '<h6 class="coh-style-heading-5-size-regular">'
         -
-          label: 'Right Tick [inline]'
-          element: '<span class="coh-style-green-right-tick">'
-        -
-          label: 'Dash [inline]'
-          element: '<span class="coh-style-not-ticked">'
-        -
           label: 'Millboard Green'
           element: '<span class="coh-color-millboard-green">'
         -
@@ -366,37 +355,13 @@ settings:
         -
           label: 'F37 Ginger Thin Italic [inline]'
           element: '<span class="coh-style-f37-ginger-thin-italic">'
-        -
-          label: 'Primary Button with Transparent Background'
-          element: '<a class="coh-style-primary-button-with-transparent-background">'
-        -
-          label: Ashwood
-          element: '<span class="coh-color-ashwood">'
-        -
-          label: 'Ebony Grey'
-          element: '<span class="coh-color-ebony-grey">'
-        -
-          label: Vintage-Carbon
-          element: '<span class="coh-color-vintagecarbon">'
-        -
-          label: Gold
-          element: '<span class="coh-color-gold">'
-        -
-          label: Bronze
-          element: '<span class="coh-color-bronze">'
-        -
-          label: Sage-green
-          element: '<span class="coh-color-sagegreen">'
-        -
-          label: Salt-Blue
-          element: '<span class="coh-color-saltblue">'
     media_media:
       allow_view_mode_override: true
 image_upload:
   status: true
   scheme: public
   directory: inline-images
-  max_size: null
+  max_size: ''
   max_dimensions:
     width: null
     height: null

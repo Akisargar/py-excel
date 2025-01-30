@@ -1,0 +1,30 @@
+uuid: 48da73bd-586d-409f-bcdc-b9d97f536e39
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_layout_canvas
+    - node.type.advice_centre
+  module:
+    - cohesion_elements
+  enforced:
+    module:
+      - acquia_cms_page
+      - acquia_cms_site_studio
+_core:
+  default_config_hash: GyZhbIh5aYHpFbQrqJpaLaeVBYHRgo1Rx1jbWHNl-mA
+id: node.advice_centre.field_layout_canvas
+field_name: field_layout_canvas
+entity_type: node
+bundle: advice_centre
+label: 'Layout Canvas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cohesion_layout'
+  handler_settings: {  }
+  access_elements: '0'
+field_type: cohesion_entity_reference_revisions

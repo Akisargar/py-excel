@@ -1,0 +1,29 @@
+uuid: a5a4ed78-a6be-40f9-954d-5b157a65a22c
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.advice_centre
+  module:
+    - text
+  enforced:
+    module:
+      - acquia_cms_page
+_core:
+  default_config_hash: TD93T37oSk6d5JQHqiDRSo1K-OjuaWiftkHOFePqW3M
+id: node.advice_centre.body
+field_name: body
+entity_type: node
+bundle: advice_centre
+label: Body
+description: 'A short description or teaser which will be displayed in search results.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

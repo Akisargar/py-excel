@@ -1,0 +1,29 @@
+uuid: 8816e831-979e-47fa-aa4c-eb87aaa441b7
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.archive_of_videos
+  module:
+    - disable_field
+    - text
+third_party_settings:
+  disable_field:
+    add_disable: none
+    edit_disable: none
+id: node.archive_of_videos.body
+field_name: body
+entity_type: node
+bundle: archive_of_videos
+label: 'Project Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

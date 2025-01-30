@@ -6,7 +6,6 @@ dependencies:
     - cohesion_website_settings.cohesion_color.millboard-charcoal
     - cohesion_website_settings.cohesion_color.millboard-green
     - cohesion_website_settings.cohesion_color.olive
-    - cohesion_website_settings.cohesion_icon_library.icomoon
 label: 'Primary Button'
 id: 7bacaeeb
 json_values: |
@@ -40,10 +39,10 @@ json_values: |
                   },
                   "padding": {
                       "padding-top": {
-                          "value": "10px"
+                          "value": "16px"
                       },
                       "padding-bottom": {
-                          "value": "10px"
+                          "value": "16px"
                       },
                       "padding-left": {
                           "value": "24px"
@@ -82,10 +81,10 @@ json_values: |
                           "class": ".coh-color-millboard-charcoal",
                           "variable": "$coh-color-millboard-charcoal",
                           "tags": [
-                              "millboard",
-                              "text",
-                              "background",
-                              "dark"
+                              "Millboard",
+                              "Text",
+                              "Background",
+                              "Dark"
                           ],
                           "inuse": true,
                           "wysiwyg": true
@@ -111,14 +110,6 @@ json_values: |
                           "customCss": {
                               "value": "none"
                           }
-                      },
-                      {
-                          "customCssProperty": {
-                              "value": "max-width"
-                          },
-                          "customCss": {
-                              "value": "fit-content"
-                          }
                       }
                   ],
                   "color": {
@@ -133,10 +124,10 @@ json_values: |
                           "class": ".coh-color-millboard-charcoal",
                           "variable": "$coh-color-millboard-charcoal",
                           "tags": [
-                              "millboard",
-                              "text",
-                              "background",
-                              "dark"
+                              "Millboard",
+                              "Text",
+                              "Background",
+                              "Dark"
                           ],
                           "inuse": true,
                           "wysiwyg": true
@@ -151,9 +142,7 @@ json_values: |
                   "margin": {
                       "margin-equal": {}
                   },
-                  "max-height": {},
-                  "max-width": {},
-                  "min-height": {
+                  "max-height": {
                       "value": "48px"
                   }
               }
@@ -177,8 +166,8 @@ json_values: |
                               "class": ".coh-color-millboard-green",
                               "variable": "$coh-color-millboard-green",
                               "tags": [
-                                  "millboard",
-                                  "text"
+                                  "Millboard",
+                                  "Text"
                               ],
                               "inuse": true
                           }
@@ -195,10 +184,10 @@ json_values: |
                               "class": ".coh-color-millboard-charcoal",
                               "variable": "$coh-color-millboard-charcoal",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "background",
-                                  "dark"
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
                               ],
                               "inuse": true,
                               "wysiwyg": true
@@ -237,10 +226,10 @@ json_values: |
                               "class": ".coh-color-millboard-green",
                               "variable": "$coh-color-millboard-green",
                               "tags": [
-                                  "millboard",
-                                  "text"
+                                  "Millboard",
+                                  "Text"
                               ],
-                              "inuse": true
+                              "inuse": false
                           }
                       },
                       "background-color": {
@@ -255,12 +244,11 @@ json_values: |
                               "class": ".coh-color-millboard-charcoal",
                               "variable": "$coh-color-millboard-charcoal",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "background",
-                                  "dark"
+                                  "Millboard",
+                                  "Text",
+                                  "Background"
                               ],
-                              "inuse": true,
+                              "inuse": false,
                               "wysiwyg": true
                           }
                       },
@@ -287,14 +275,42 @@ json_values: |
           "cf159e32-2b06-49cf-9a20-5c74e4130e2d": {
               "styles": {
                   "xs": {
-                      "outline-width": {},
-                      "outline-offset": {},
-                      "outline-style": {},
-                      "outline-color": {},
-                      "margin": {
-                          "margin-equal": {}
+                      "outline-width": {
+                          "value": "2px"
                       },
-                      "max-height": {},
+                      "outline-offset": {
+                          "value": "1px"
+                      },
+                      "outline-style": {
+                          "value": "solid"
+                      },
+                      "outline-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      },
+                      "margin": {
+                          "margin-equal": {
+                              "value": "3px"
+                          }
+                      },
+                      "max-height": {
+                          "value": "52px"
+                      },
                       "box-shadow": [
                           {
                               "boxshadowType": {
@@ -342,10 +358,10 @@ json_values: |
                               "class": ".coh-color-millboard-charcoal",
                               "variable": "$coh-color-millboard-charcoal",
                               "tags": [
-                                  "millboard",
-                                  "text",
-                                  "background",
-                                  "dark"
+                                  "Millboard",
+                                  "Text",
+                                  "Background",
+                                  "Dark"
                               ],
                               "inuse": true,
                               "wysiwyg": true
@@ -384,80 +400,6 @@ json_values: |
               },
               "settings": {
                   "pseudo": ":focus"
-              }
-          },
-          "10035041-b63a-4aac-a4d9-e722ef35ec8c": {
-              "styles": {
-                  "xs": {
-                      "outline-width": {
-                          "value": "2px"
-                      },
-                      "outline-offset": {
-                          "value": "1px"
-                      },
-                      "outline-color": {
-                          "value": {
-                              "link": true,
-                              "value": {
-                                  "hex": "#799513",
-                                  "rgba": "rgba(121, 149, 19, 1)"
-                              },
-                              "uid": "olive",
-                              "name": "Olive",
-                              "class": ".coh-color-olive",
-                              "variable": "$coh-color-olive",
-                              "wysiwyg": true,
-                              "tags": [
-                                  "millboard",
-                                  "text"
-                              ],
-                              "inuse": true
-                          }
-                      },
-                      "outline-style": {
-                          "value": "solid"
-                      }
-                  }
-              },
-              "settings": {
-                  "pseudo": ":focus-visible"
-              }
-          },
-          "121f787a-28fd-453f-9b16-4ec0ac2bbf6f": {
-              "styles": {
-                  "xs": {
-                      "margin": {
-                          "margin-top": {
-                              "value": "20px"
-                          }
-                      },
-                      "min-width": {
-                          "value": "100%"
-                      },
-                      "font-family": {
-                          "value": "$coh-font-f37 ginger regular"
-                      }
-                  }
-              },
-              "settings": {
-                  "class": ".calculator-btn"
-              }
-          },
-          "aee960dc-34e1-47cc-9e53-9483ab2c35fb": {
-              "styles": {
-                  "xs": {
-                      "content-icon": {
-                          "contentIcon": {
-                              "value": {
-                                  "iconName": 61932,
-                                  "fontFamily": "icomoon"
-                              }
-                          }
-                      }
-                  }
-              },
-              "settings": {
-                  "pseudo": ":before"
               }
           }
       },
@@ -751,11 +693,11 @@ json_mapper: |
                           "activeFields": [
                               {
                                   "name": "min-height",
-                                  "active": true
+                                  "active": false
                               },
                               {
                                   "name": "max-height",
-                                  "active": false
+                                  "active": true
                               },
                               {
                                   "name": "height",
@@ -950,6 +892,60 @@ json_mapper: |
               {
                   "title": ":hover",
                   "type": "container",
+                  "items": [
+                      {
+                          "title": ":focus",
+                          "type": "container",
+                          "items": [],
+                          "selectorType": "pseudo",
+                          "uuid": "c751fca8-ce1d-4885-a1be-092e32523e3d",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "box-shadow",
+                                          "activeFields": [
+                                              {
+                                                  "name": "boxshadowType",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowHorizontal",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowVertical",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowBlur",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowSpread",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "boxshadowColor",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
                   "selectorType": "pseudo",
                   "formDefinition": [
                       {
@@ -1034,67 +1030,12 @@ json_mapper: |
                           ]
                       }
                   ],
-                  "uuid": "1775e6c4-1f95-49c0-9b62-86b4316052e2",
-                  "items": [
-                      {
-                          "title": ":focus",
-                          "type": "container",
-                          "selectorType": "pseudo",
-                          "uuid": "c751fca8-ce1d-4885-a1be-092e32523e3d",
-                          "allowedTypes": [
-                              "child",
-                              "pseudo"
-                          ],
-                          "formDefinition": [
-                              {
-                                  "formKey": "layout",
-                                  "children": [
-                                      {
-                                          "formKey": "box-shadow",
-                                          "activeFields": [
-                                              {
-                                                  "name": "boxshadowType",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "boxshadowHorizontal",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "boxshadowVertical",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "boxshadowBlur",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "boxshadowSpread",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "boxshadowColor",
-                                                  "active": true
-                                              }
-                                          ],
-                                          "breakpoints": [
-                                              {
-                                                  "name": "xs"
-                                              }
-                                          ]
-                                      }
-                                  ]
-                              }
-                          ],
-                          "expanded": true,
-                          "items": []
-                      }
-                  ],
-                  "collapsed": true
+                  "uuid": "1775e6c4-1f95-49c0-9b62-86b4316052e2"
               },
               {
                   "title": ":active",
                   "type": "container",
+                  "items": [],
                   "selectorType": "pseudo",
                   "uuid": "bb50913c-3659-425f-9e18-1ae827519363",
                   "allowedTypes": [
@@ -1183,13 +1124,12 @@ json_mapper: |
                               }
                           ]
                       }
-                  ],
-                  "items": [],
-                  "collapsed": false
+                  ]
               },
               {
                   "title": ":focus",
                   "type": "container",
+                  "items": [],
                   "selectorType": "pseudo",
                   "uuid": "cf159e32-2b06-49cf-9a20-5c74e4130e2d",
                   "allowedTypes": [
@@ -1198,8 +1138,107 @@ json_mapper: |
                   ],
                   "formDefinition": [
                       {
+                          "formKey": "border-and-outline",
+                          "children": [
+                              {
+                                  "formKey": "outline-width-style-and-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "outline-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "outline-offset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "outline-color",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "outline-style",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
                           "formKey": "layout",
                           "children": [
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "height",
+                                  "activeFields": [
+                                      {
+                                          "name": "min-height",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "max-height",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "height",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              },
                               {
                                   "formKey": "box-shadow",
                                   "activeFields": [
@@ -1317,13 +1356,12 @@ json_mapper: |
                               }
                           ]
                       }
-                  ],
-                  "items": [],
-                  "collapsed": false
+                  ]
               },
               {
                   "title": "[disabled]",
                   "type": "container",
+                  "items": [],
                   "selectorType": "modifier",
                   "uuid": "abe12b2d-d97d-4690-909a-4f51d77f34f0",
                   "allowedTypes": [
@@ -1351,207 +1389,12 @@ json_mapper: |
                               }
                           ]
                       }
-                  ],
-                  "items": [],
-                  "collapsed": false
-              },
-              {
-                  "title": ":focus-visible",
-                  "type": "container",
-                  "selectorType": "pseudo",
-                  "subType": "custom-pseudo",
-                  "uuid": "10035041-b63a-4aac-a4d9-e722ef35ec8c",
-                  "allowedTypes": [
-                      "child",
-                      "pseudo"
-                  ],
-                  "formDefinition": [
-                      {
-                          "formKey": "border-and-outline",
-                          "children": [
-                              {
-                                  "formKey": "outline-width-style-and-color",
-                                  "activeFields": [
-                                      {
-                                          "name": "outline-width",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-offset",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-color",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "outline-style",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ],
-                  "items": [],
-                  "collapsed": false
-              },
-              {
-                  "title": ".calculator-btn",
-                  "type": "container",
-                  "items": [
-                      {
-                          "title": ":before",
-                          "type": "container",
-                          "items": [],
-                          "selectorType": "pseudo",
-                          "uuid": "aee960dc-34e1-47cc-9e53-9483ab2c35fb",
-                          "allowedTypes": [
-                              "child",
-                              "pseudo"
-                          ],
-                          "formDefinition": [
-                              {
-                                  "formKey": "content",
-                                  "children": [
-                                      {
-                                          "formKey": "icon",
-                                          "activeFields": [
-                                              {
-                                                  "name": "contentIcon",
-                                                  "active": true
-                                              }
-                                          ],
-                                          "breakpoints": [
-                                              {
-                                                  "name": "xs"
-                                              }
-                                          ]
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
-                  ],
-                  "selectorType": "modifier",
-                  "uuid": "121f787a-28fd-453f-9b16-4ec0ac2bbf6f",
-                  "allowedTypes": [
-                      "child",
-                      "pseudo",
-                      "modifier"
-                  ],
-                  "formDefinition": [
-                      {
-                          "formKey": "layout",
-                          "children": [
-                              {
-                                  "formKey": "margin",
-                                  "activeFields": [
-                                      {
-                                          "name": "margin-equal",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "margin-top",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "margin-bottom",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "margin-left",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "margin-right",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "margin-block-start",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "margin-block-end",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "margin-inline-start",
-                                          "active": false
-                                      },
-                                      {
-                                          "name": "margin-inline-end",
-                                          "active": false
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              },
-                              {
-                                  "formKey": "width",
-                                  "activeFields": [
-                                      {
-                                          "name": "min-width",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "max-width",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "width",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              }
-                          ]
-                      },
-                      {
-                          "formKey": "font",
-                          "children": [
-                              {
-                                  "formKey": "font-and-color",
-                                  "activeFields": [
-                                      {
-                                          "name": "font-family",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "font-weight",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "color",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "xs"
-                                      }
-                                  ]
-                              }
-                          ]
-                      }
                   ]
               }
           ]
       }
   }
-last_entity_update: entityupdate_0043
+last_entity_update: entityupdate_0042
 locked: false
 modified: true
 selectable: true
@@ -1560,4 +1403,4 @@ custom_style_type: link
 available_in_wysiwyg: true
 available_in_wysiwyg_inline: false
 parent: null
-weight: 144
+weight: 41
