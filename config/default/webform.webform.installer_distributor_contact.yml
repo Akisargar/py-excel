@@ -4,6 +4,7 @@ status: open
 dependencies:
   module:
     - hubspot
+    - simple_recaptcha_webform
 weight: 0
 open: null
 close: null
@@ -29,15 +30,22 @@ elements: |-
     '#required': true
   telephone_number:
     '#type': tel
-    '#title': 'Telephone Number'
+    '#title': 'Telephone number'
     '#required': true
-    '#required_error': 'Telephone Number is required'
   enquiry_type:
     '#type': textarea
     '#title': 'Enquiry type'
   opt_in_to_receive_latest_offers_updates_and_news_from_millboard:
     '#type': checkbox
     '#title': 'Opt-in to receive latest offers, updates and news from Millboard'
+  distributor_email:
+    '#type': hidden
+    '#title': 'Distributor Email'
+    '#default_value': '[millboard_installers_distributors:distributorEmail]'
+  type:
+    '#type': hidden
+    '#title': Type
+    '#default_value': '[millboard_installers_distributors:distributorType]'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -189,8 +197,7 @@ access:
     users: {  }
     permissions: {  }
   view_any:
-    roles:
-      - authenticated
+    roles: {  }
     users: {  }
     permissions: {  }
   update_any:
@@ -259,7 +266,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'damien.pitter@millboard.co.uk,projects@millboard.co.uk,installers@millboard.co.uk'
+      to_mail: '[millboard_installers_distributors:distributorType]@millboard.co.uk,[webform_submission:values:distributor_email]'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -273,7 +280,7 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: _default
-      body: '<p>A customer has submitted an enquiry on the Where to Buy/Installer Search for [webform_submission:source-title] on this page [webform_submission:source-url]<br>&nbsp;</p><p>Submission date is [webform_submission:created]<br>&nbsp;</p><p>Submitted details are:<br>&nbsp;</p><p>[webform_submission:values:first_name]<br>[webform_submission:values:last_name]<br>[webform_submission:values:email_address]<br>[webform_submission:values:telephone_number]<br>[webform_submission:values:enquiry_type]<br>&nbsp;</p><p>Please forward this submission onto the Distributor/Installer so that they can assist the customer.</p>'
+      body: '<p>A customer has submitted an enquiry on the Where to Buy/Installer Search for [webform_submission:source-title] on this page [webform_submission:source-url]</p><p>Submission date is [webform_submission:created]</p><p><strong>Submitted details are:</strong></p><p>[webform_submission:values:first_name]<br>[webform_submission:values:last_name]<br>[webform_submission:values:email_address][webform_submission:values:telephone_number]<br>[webform_submission:values:enquiry_type]</p>'
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
@@ -285,4 +292,17 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+  recaptcha:
+    id: simple_recaptcha
+    handler_id: recaptcha
+    label: reCAPTCHA
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      recaptcha_type: v2
+      v3_score: ''
+      v3_error_message: ''
+      hide_badge_v3: false
 variants: {  }

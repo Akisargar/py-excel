@@ -2,9 +2,13 @@ uuid: 576191ef-4764-402b-8447-e1324a4e291a
 langcode: en-gb
 status: true
 dependencies:
+  config:
+    - search_api_autocomplete.search.search
   module:
+    - commerce_product
     - eu_cookie_compliance
     - media
+    - paragraphs_type_permissions
     - search_api_autocomplete
     - system
 _core:
@@ -17,4 +21,6 @@ permissions:
   - 'access content'
   - 'display eu cookie compliance popup'
   - 'use search_api_autocomplete for search'
+  - 'view commerce_product'
   - 'view media'
+  - 'view paragraph content product_usp'

@@ -3,10 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.main.field_menu_image
+    - field.field.menu_link_content.main.field_menu_media_image
     - system.menu.main
-  module:
-    - image
 id: menu_link_content.main.default
 targetEntityType: menu_link_content
 bundle: main
@@ -17,16 +15,14 @@ content:
     third_party_settings: {  }
     weight: 1
     region: content
-  field_menu_image:
-    type: image
-    label: hidden
+  field_menu_media_image:
+    type: entity_reference_entity_view
+    label: above
     settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
+      view_mode: default
+      link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
 hidden:
   langcode: true

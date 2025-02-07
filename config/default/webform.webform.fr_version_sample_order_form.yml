@@ -56,6 +56,25 @@ elements: |-
     '#title': 'Numéro de téléphone'
     '#required': true
     '#required_error': 'Le numéro de téléphone est requis.'
+    '#pattern': '^[+]?[0-9]+$'
+    '#pattern_error': ' Veuillez insérer un numéro de téléphone valide.'
+  who_am_i:
+    '#type': select
+    '#title': 'Qui suis-je?'
+    '#options':
+      Homeowner: Propriétaire
+      'Installer / Contractor': 'Installateur / Entrepreneur'
+      'Architect / Designer': 'Architecte / Designer'
+      'Distributor / Reseller': 'Distributeur / Revendeur'
+      Other: Autre
+    '#select2': true
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
   company:
     '#type': textfield
     '#title': "Nom de l'entreprise"
@@ -338,66 +357,53 @@ elements: |-
     '#select2': true
     '#required': true
     '#required_error': 'Veuillez sélectionner un élément dans la liste.'
-  which_of_the_following_are_you:
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  how_did_you_hear_about_us:
     '#type': select
-    '#title': 'Lequel des éléments suivants êtes-vous'
+    '#title': 'Comment avez-vous entendu parler de nous ?'
     '#options':
-      'Propriétaire de maison': 'Propriétaire de maison'
-      Entrepreneur: Entrepreneur
-      Constructeur: Constructeur
-      Architecte/Designer: Architecte/Designer
-      Vendeur: Vendeur
-      'Consultance ': 'Consultance '
-      Fabricant: Fabricant
-      Presse: Presse
+      'Search Engine': 'Moteur de recherche'
+      'Social Media': 'Réseaux sociaux'
+      'Online Advertisement': 'Publicité en ligne'
+      'Friend, Family, or Colleague': 'Ami, famille ou collègue'
+      'Event, Trade Show, or Industry Recommendation': "Événement, salon ou recommandation de l'industrie"
+      'Email Newsletter': 'Newsletter par e-mail'
+      'Blog, Article, or Online Review': 'Blog, article ou avis en ligne'
+      'Retail Store or Distributor': 'Magasin de détail ou distributeur'
+      'Print or Outdoor Advertisement': 'Publicité imprimée ou extérieure'
+      Other: Autre
     '#select2': true
-    '#required': true
-    '#required_error': 'Veuillez sélectionner un élément dans la liste.'
-  project_size:
-    '#type': select
-    '#title': 'Taille du projet'
-    '#options':
-      'Moins de 20 m2': 'Moins de 20 m2'
-      'Entre 21 et 100 m2': 'Entre 21 et 100 m2'
-      'Plus de 101 m2': 'Plus de 101 m2'
-      'Je ne sais pas': 'Je ne sais pas'
-    '#select2': true
-    '#required': true
-    '#required_error': '"Taille du projet" est requis'
-  when_will_you_start_your_project_:
-    '#type': select
-    '#title': 'Début du projet'
-    '#options':
-      'Dans le mois': 'Dans le mois'
-      '1-3 mois': '1-3 mois'
-      '3-6 mois': '3-6 mois'
-      '6+ mois': '6+ mois'
-    '#select2': true
-    '#required': true
-    '#required_error': '"Date de démarrage du projet" est requis'
-  millboard_is_committed_to_protecting_and_respecting_your_privacy:
-    '#type': label
-    '#title': "Millboard s'engage à protéger et respecter votre vie privée, et nous n'utiliserons vos informations personnelles que pour gérer votre compte et fournir les produits et services que vous nous avez demandés. De temps à autre, nous aimerions vous contacter à propos de nos produits et services, ainsi que d'autres contenus susceptibles de vous intéresser. Si vous consentez à ce que nous vous contactions à cette fin, veuillez cocher ci-dessous pour indiquer comment vous aimeriez que nous vous contactions:"
-  i_agree_to_receive_other_communications_from_millboard_:
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  would_you_like_a_millboard_lookbook:
     '#type': checkbox
-    '#title': "Je consens à recevoir d'autres communications de la part de Millboard."
+    '#title': 'Souhaitez-vous un Lookbook Millboard ?'
     '#wrapper_attributes':
       class:
         - sample-order-form-agreement-checkbox
-  in_order_to_provide_you_the_content_requested_we_need_to_store_a:
-    '#type': label
-    '#title': 'Pour vous fournir le contenu demandé, nous devons stocker et traiter vos données personnelles. Si vous consentez à ce que nous stockions vos données personnelles à cette fin, veuillez cocher la case ci-dessous.'
   i_agree_to_allow_millboard_to_store_and_process_my_personal_data:
     '#type': checkbox
-    '#title': 'Je consens à permettre à Millboard de stocker et traiter mes données personnelles.'
-    '#required': true
-    '#required_error': 'Veuillez cocher la case si vous souhaitez continuer.'
+    '#title': "J'accepte que Millboard stocke et traite mes données personnelles et que je reçoive d'autres communications de Millboard.*"
+    '#default_value': true
+    '#wrapper_attributes':
+      style: 'display:none;'
+  legitimate_interest_customer:
+    '#type': checkbox
+    '#title': "Nous traitons vos données sur la base de l'intérêt légitime afin de vous fournir un contenu et des communications pertinents. Si vous préférez ne pas recevoir de communications marketing, veuillez cocher la case."
     '#wrapper_attributes':
       class:
         - sample-order-form-agreement-checkbox
-  you_can_unsubscribe_from_these_communications_at_any_time_for_mo:
-    '#type': label
-    '#title': "Vous pouvez vous désinscrire de ces communications à tout moment. Pour plus d'informations sur la manière de vous désinscrire, sur nos pratiques en matière de confidentialité, et sur notre engagement à protéger et respecter votre vie privée, veuillez consulter notre politique de confidentialité."
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -610,23 +616,21 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      form_guid: c4bea85d-386b-4123-9ace-3adcc8b7c273
+      form_guid: 5381a4be-8796-4522-a7e6-643ce1f6a58c
       field_mapping:
         sample_names: sample_names_hubspot
         firstname: first_name
         lastname: last_name
-        email: email_address
-        phone: telephone_number
-        company: company
         address: address_line_1
         city: city_town
-        zip: zip_postal_code
         country: country
-        this_project_is_to_be_installed_at: this_project_is_to_be_installed_at_
-        latest_project_category: project_type_name
-        project_start_time_dropdown: when_will_you_start_your_project_
-        project_size_dropdown: project_size
-        latest_web_order_number: website_order_code
+        zip: zip_postal_code
+        email: email_address
+        phone: telephone_number
+        who_am_i_: who_am_i
+        how_did_you_hear_about_us___cloned_: how_did_you_hear_about_us
+        would_you_like_a_millboard_lookbook___cloned_: would_you_like_a_millboard_lookbook
+        opt_out_marketing: legitimate_interest_customer
       legal_consent:
         include: never
       subscriptions: null

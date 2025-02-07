@@ -44,15 +44,16 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   node_revision_delete:
-    minimum_revisions_to_keep: 30
-    minimum_age_to_delete: 0
-    when_to_delete: 0
+    amount:
+      status: true
+      settings:
+        amount: 30
 _core:
   default_config_hash: DRQOTU7QtDlDw05-UKQObGpOjFMmIjCV7JLS4S5Z7PI
 name: Page
 type: page
 description: 'An unstructured content type that provides unique landing pages - e.g., a homepage, or marketing event landing page.'
-help: ''
+help: null
 new_revision: true
 preview_mode: 0
 display_submitted: false

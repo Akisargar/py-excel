@@ -4,8 +4,8 @@ status: true
 dependencies:
   module:
     - acquia_dam
-    - image
     - media
+    - svg_image
     - user
 _core:
   default_config_hash: O0J2yAwyi9Dg7vqNBa-XldYw_HBf-6jVnYGkspCLkkA
@@ -544,6 +544,7 @@ display:
         type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 20
           total_pages: null
           id: 0

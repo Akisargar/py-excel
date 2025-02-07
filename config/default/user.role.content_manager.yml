@@ -3,21 +3,67 @@ langcode: en
 status: true
 dependencies:
   config:
+    - cohesion_elements.cohesion_helper_category.accordion_sections
+    - cohesion_elements.cohesion_helper_category.card_sections
+    - cohesion_elements.cohesion_helper_category.hlp_cat_dynamic_helpers
+    - cohesion_elements.cohesion_helper_category.hlp_cat_hero_sections
+    - cohesion_elements.cohesion_helper_category.hlp_cat_layout_helpers
+    - cohesion_elements.cohesion_helper_category.hlp_cat_media_helpers
+    - cohesion_elements.cohesion_helper_category.hlp_cat_miscellaneous
+    - cohesion_elements.cohesion_helper_category.hlp_cat_page_layouts
+    - cohesion_elements.cohesion_helper_category.hlp_cat_slider_sections
+    - cohesion_elements.cohesion_helper_category.hlp_cat_text_sections
+    - cohesion_elements.cohesion_helper_category.tabbed_sections
+    - commerce_product.commerce_product_type.millboard_products
     - filter.format.cohesion
     - filter.format.filtered_html
-    - filter.format.full_html
+    - filter.format.product_comparision
+    - media.type.acquia_dam_documents_asset
+    - media.type.acquia_dam_image_asset
+    - media.type.acquia_dam_pdf_asset
+    - media.type.acquia_dam_spinset_asset
+    - media.type.acquia_dam_video_asset
+    - media.type.compressed_zip
+    - media.type.image
+    - media.type.video
+    - node.type.archive_of_videos
     - node.type.blog
+    - node.type.installers_distributors
+    - node.type.jobs
     - node.type.page
     - node.type.project
+    - node.type.resources
+    - node.type.showrooms
     - taxonomy.vocabulary.blog_categories
+    - taxonomy.vocabulary.categories
+    - taxonomy.vocabulary.location
+    - taxonomy.vocabulary.material
+    - taxonomy.vocabulary.product_category
+    - taxonomy.vocabulary.product_type
+    - taxonomy.vocabulary.projects
+    - taxonomy.vocabulary.showroom_type
+    - taxonomy.vocabulary.tags
     - workflows.workflow.editorial
   module:
     - cohesion
     - cohesion_elements
+    - cohesion_style_helpers
+    - commerce
+    - commerce_product
+    - commerce_store
     - content_moderation
     - content_translation
+    - contextual
+    - entity_clone
     - filter
+    - honeypot
+    - media
+    - menu_link_content
     - node
+    - paragraphs
+    - paragraphs_type_permissions
+    - path
+    - sitestudio_page_builder
     - system
     - taxonomy
     - toolbar
@@ -26,29 +72,200 @@ label: 'Content Manager'
 weight: 4
 is_admin: null
 permissions:
+  - 'access accordion_sections cohesion_helper_category group'
   - 'access administration pages'
+  - 'access card_sections cohesion_helper_category group'
+  - 'access commerce administration pages'
+  - 'access commerce_product overview'
+  - 'access commerce_store overview'
+  - 'access component content'
   - 'access components'
   - 'access content overview'
+  - 'access contextual links'
+  - 'access helpers'
+  - 'access hlp_cat_dynamic_helpers cohesion_helper_category group'
+  - 'access hlp_cat_hero_sections cohesion_helper_category group'
+  - 'access hlp_cat_layout_helpers cohesion_helper_category group'
+  - 'access hlp_cat_media_helpers cohesion_helper_category group'
+  - 'access hlp_cat_miscellaneous cohesion_helper_category group'
+  - 'access hlp_cat_page_layouts cohesion_helper_category group'
+  - 'access hlp_cat_slider_sections cohesion_helper_category group'
+  - 'access hlp_cat_text_sections cohesion_helper_category group'
+  - 'access seo'
+  - 'access tabbed_sections cohesion_helper_category group'
   - 'access taxonomy overview'
   - 'access toolbar'
+  - 'access visual page builder'
+  - 'administer commerce_product'
   - 'administer component content'
   - 'administer components'
+  - 'administer helper categories'
+  - 'administer helpers'
   - 'administer menu'
+  - 'administer style helpers'
+  - 'administer taxonomy'
+  - 'bypass honeypot protection'
+  - 'clone node entity'
+  - 'create acquia_dam_documents_asset media'
+  - 'create acquia_dam_image_asset media'
+  - 'create acquia_dam_pdf_asset media'
+  - 'create acquia_dam_spinset_asset media'
+  - 'create acquia_dam_video_asset media'
+  - 'create archive_of_videos content'
   - 'create blog content'
+  - 'create compressed_zip media'
+  - 'create content translations'
+  - 'create image media'
+  - 'create installers_distributors content'
+  - 'create jobs content'
+  - 'create media'
+  - 'create page content'
+  - 'create paragraph content product_usp'
   - 'create project content'
+  - 'create resources content'
+  - 'create showrooms content'
   - 'create terms in blog_categories'
+  - 'create terms in categories'
+  - 'create terms in location'
+  - 'create terms in material'
+  - 'create terms in product_category'
+  - 'create terms in product_type'
+  - 'create terms in projects'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'create video media'
+  - 'delete any acquia_dam_documents_asset media'
+  - 'delete any acquia_dam_image_asset media'
+  - 'delete any acquia_dam_pdf_asset media'
+  - 'delete any acquia_dam_spinset_asset media'
+  - 'delete any acquia_dam_video_asset media'
+  - 'delete any archive_of_videos content'
+  - 'delete any blog content'
+  - 'delete any compressed_zip media'
+  - 'delete any image media'
+  - 'delete any installers_distributors content'
+  - 'delete any jobs content'
+  - 'delete any media'
   - 'delete any page content'
   - 'delete any project content'
+  - 'delete any resources content'
+  - 'delete any showrooms content'
+  - 'delete any video media'
+  - 'delete archive_of_videos revisions'
+  - 'delete blog revisions'
+  - 'delete content translations'
+  - 'delete installers_distributors revisions'
+  - 'delete jobs revisions'
+  - 'delete media'
+  - 'delete own acquia_dam_documents_asset media'
+  - 'delete own acquia_dam_image_asset media'
+  - 'delete own acquia_dam_pdf_asset media'
+  - 'delete own acquia_dam_spinset_asset media'
+  - 'delete own acquia_dam_video_asset media'
+  - 'delete own archive_of_videos content'
+  - 'delete own blog content'
+  - 'delete own compressed_zip media'
+  - 'delete own image media'
+  - 'delete own installers_distributors content'
+  - 'delete own jobs content'
+  - 'delete own page content'
   - 'delete own project content'
+  - 'delete own resources content'
+  - 'delete own showrooms content'
+  - 'delete own video media'
   - 'delete page revisions'
+  - 'delete paragraph content product_usp'
   - 'delete project revisions'
+  - 'delete resources revisions'
+  - 'delete showrooms revisions'
+  - 'delete terms in blog_categories'
+  - 'delete terms in categories'
+  - 'delete terms in location'
+  - 'delete terms in material'
+  - 'delete terms in product_category'
+  - 'delete terms in product_type'
+  - 'delete terms in projects'
+  - 'delete terms in tags'
+  - 'edit any acquia_dam_documents_asset media'
+  - 'edit any acquia_dam_image_asset media'
+  - 'edit any acquia_dam_pdf_asset media'
+  - 'edit any acquia_dam_spinset_asset media'
+  - 'edit any acquia_dam_video_asset media'
+  - 'edit any archive_of_videos content'
   - 'edit any blog content'
+  - 'edit any compressed_zip media'
+  - 'edit any image media'
+  - 'edit any installers_distributors content'
+  - 'edit any jobs content'
+  - 'edit any page content'
   - 'edit any project content'
+  - 'edit any resources content'
+  - 'edit any showrooms content'
+  - 'edit any video media'
+  - 'edit own acquia_dam_documents_asset media'
+  - 'edit own acquia_dam_image_asset media'
+  - 'edit own acquia_dam_pdf_asset media'
+  - 'edit own acquia_dam_spinset_asset media'
+  - 'edit own acquia_dam_video_asset media'
+  - 'edit own archive_of_videos content'
   - 'edit own blog content'
+  - 'edit own compressed_zip media'
+  - 'edit own image media'
+  - 'edit own installers_distributors content'
+  - 'edit own jobs content'
+  - 'edit own page content'
   - 'edit own project content'
+  - 'edit own resources content'
+  - 'edit own showrooms content'
+  - 'edit own video media'
   - 'edit terms in blog_categories'
+  - 'edit terms in categories'
+  - 'edit terms in location'
+  - 'edit terms in material'
+  - 'edit terms in product_category'
+  - 'edit terms in product_type'
+  - 'edit terms in projects'
+  - 'edit terms in tags'
+  - 'manage millboard_products commerce_product_variation'
+  - 'revert archive_of_videos revisions'
+  - 'revert blog revisions'
+  - 'revert installers_distributors revisions'
+  - 'revert jobs revisions'
+  - 'revert page revisions'
   - 'revert project revisions'
+  - 'revert resources revisions'
+  - 'revert showrooms revisions'
+  - 'translate any entity'
+  - 'translate archive_of_videos node'
+  - 'translate blog node'
+  - 'translate blog_categories taxonomy_term'
+  - 'translate categories taxonomy_term'
+  - 'translate commerce_product_attribute_value'
+  - 'translate commerce_product_variation'
+  - 'translate editable entities'
+  - 'translate image media'
+  - 'translate installers_distributors node'
+  - 'translate jobs node'
+  - 'translate location taxonomy_term'
+  - 'translate material taxonomy_term'
+  - 'translate menu_link_content'
+  - 'translate millboard_products commerce_product'
+  - 'translate page node'
+  - 'translate paragraph'
+  - 'translate product_category taxonomy_term'
+  - 'translate product_type taxonomy_term'
   - 'translate project node'
+  - 'translate projects taxonomy_term'
+  - 'translate resources node'
+  - 'translate showroom_type taxonomy_term'
+  - 'translate showrooms node'
+  - 'translate tags taxonomy_term'
+  - 'translate video media'
+  - 'update any media'
+  - 'update any millboard_products commerce_product'
+  - 'update content translations'
+  - 'update media'
+  - 'update paragraph content product_usp'
   - 'use editorial transition archive'
   - 'use editorial transition archived_published'
   - 'use editorial transition create_new_draft'
@@ -57,9 +274,19 @@ permissions:
   - 'use text format cohesion'
   - 'use text format filtered_html'
   - 'use text format full_html'
+  - 'use text format product_comparision'
+  - 'view all revisions'
   - 'view any unpublished content'
+  - 'view archive_of_videos revisions'
   - 'view blog revisions'
+  - 'view installers_distributors revisions'
+  - 'view jobs revisions'
   - 'view latest version'
+  - 'view online commerce_store'
   - 'view own unpublished content'
+  - 'view own unpublished media'
+  - 'view page revisions'
   - 'view project revisions'
+  - 'view resources revisions'
+  - 'view showrooms revisions'
   - 'view the administration theme'

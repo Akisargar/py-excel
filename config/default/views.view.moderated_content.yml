@@ -2,7 +2,10 @@ uuid: 0cfb4e33-3860-4fb9-a466-5d6f4517d6b5
 langcode: en-gb
 status: true
 dependencies:
+  config:
+    - workflows.workflow.editorial
   module:
+    - content_moderation
     - node
     - user
   enforced:
@@ -415,6 +418,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: null
           id: 0

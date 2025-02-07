@@ -7,12 +7,13 @@ dependencies:
     - field.field.node.blog.field_blog_category
     - field.field.node.blog.field_blog_image
     - field.field.node.blog.field_metatag
+    - field.field.node.blog.field_product_type
+    - field.field.node.blog.field_publish_date
+    - field.field.node.blog.field_subtitle
     - field.field.node.blog.field_title_override
     - node.type.blog
   module:
     - cohesion_elements
-    - metatag
-    - text
     - user
 id: node.blog.default
 targetEntityType: node
@@ -22,53 +23,36 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_blog_builder:
     type: cohesion_entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 0
     region: content
-  field_blog_category:
-    type: entity_reference_label
+  field_subtitle:
+    type: string
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
     weight: 3
-    region: content
-  field_blog_image:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_metatag:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_title_override:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
 hidden:
+  field_blog_category: true
+  field_blog_image: true
+  field_metatag: true
+  field_product_type: true
+  field_publish_date: true
+  field_title_override: true
   langcode: true
   search_api_excerpt: true

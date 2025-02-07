@@ -5,11 +5,17 @@ dependencies:
   config:
     - image.style.coh_large_landscape
     - image.style.coh_large_super_landscape
+    - image.style.full_bleed_image_1920x1080_
   theme:
     - millboard
 id: primary_hero_responsive_image_style
 label: 'Primary Hero Responsive Image Style'
 image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: full_bleed_image_1920x1080_
+    breakpoint_id: millboard.desktop
+    multiplier: 1x
   -
     image_mapping_type: image_style
     image_mapping: coh_large_landscape

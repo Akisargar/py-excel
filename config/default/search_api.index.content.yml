@@ -3,14 +3,13 @@ langcode: en-gb
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.search_index
     - field.storage.node.body
     - field.storage.node.field_categories
     - search_api.server.database
-    - core.entity_view_mode.node.search_index
   module:
     - node
     - taxonomy
-    - search_api
   enforced:
     module:
       - acquia_cms_search
@@ -90,6 +89,7 @@ field_settings:
         - anonymous
       view_mode:
         'entity:node':
+          advice_centre: search_index
           page: search_index
   title:
     label: Title
@@ -122,7 +122,11 @@ datasource_settings:
     bundles:
       default: false
       selected:
+        - advice_centre
+        - blog
         - page
+        - project
+        - showrooms
     languages:
       default: true
       selected: {  }
@@ -132,6 +136,7 @@ processor_settings:
   content_access:
     weights:
       preprocess_query: -10
+  custom_value: {  }
   entity_type: {  }
   html_filter:
     weights:
@@ -227,6 +232,7 @@ tracker_settings:
     indexing_order: fifo
 options:
   cron_limit: 50
+  delete_on_fail: true
   index_directly: true
   track_changes_in_references: true
 server: database

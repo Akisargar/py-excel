@@ -39,6 +39,7 @@ elements: |-
   first_name:
     '#type': textfield
     '#title': 'First Name'
+    '#placeholder': 'First Name'
     '#required': true
     '#required_error': 'First Name is required'
   last_name:
@@ -56,6 +57,8 @@ elements: |-
     '#title': 'Telephone Number'
     '#required': true
     '#required_error': 'Telephone Number is required'
+    '#pattern': '^[+]?[0-9]+$'
+    '#pattern_error': 'Please insert a valid telephone number.'
   company:
     '#type': textfield
     '#title': 'Company Name'
@@ -132,9 +135,18 @@ elements: |-
       Wyoming: Wyoming
     '#select2': true
     '#required': true
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
   zip_postal_code:
     '#type': textfield
     '#title': 'Zip/Postal Code'
+    '#maxlength': 9
+    '#input_mask': '999999999'
     '#required': true
   country:
     '#type': select
@@ -396,67 +408,70 @@ elements: |-
       Zimbabwe: Zimbabwe
     '#select2': true
     '#required': true
-  which_of_the_following_are_you:
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  who_am_i:
     '#type': select
-    '#title': 'Which of the following are you?'
+    '#title': 'Who am I?'
     '#options':
       Homeowner: Homeowner
-      Contractor: Contractor
-      Builder: Builder
-      Architect/Designer: Architect/Designer
-      Dealer: Dealer
-      Consultancy: Consultancy
-      Manufacturer: Manufacturer
-      Press: Press
-      Two-stepper: Two-stepper
-      One-stepper: One-stepper
+      'Installer / Contractor': 'Installer / Contractor'
+      'Architect / Designer': 'Architect / Designer'
+      'Distributor / Reseller': 'Distributor / Reseller'
+      Other: Other
     '#select2': true
-    '#required': true
-    '#required_error': 'This field is required'
-  project_size:
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  how_did_you_hear_about_us:
     '#type': select
-    '#title': 'Your Project Size'
+    '#title': 'How did you hear about us?'
     '#options':
-      'Less than 300 sq. ft.': 'Less than 300 sq. ft.'
-      'Between 300 - 1000 sq. ft.': 'Between 300 - 1000 sq. ft.'
-      'More than 1000 sq. ft.': 'More than 1000 sq. ft.'
-      unknown_project_size: "I don't know"
+      'Search Engine': 'Search Engine'
+      'Social Media': 'Social Media'
+      'Online Advertisement': 'Online Advertisement'
+      'Friend, Family, or Colleague': ' Friend, Family, or Colleague'
+      'Event, Trade Show, or Industry Recommendation': 'Event, Trade Show, or Industry Recommendation'
+      'Email Newsletter': 'Email Newsletter'
+      'Blog, Article, or Online Review': 'Blog, Article, or Online Review'
+      'Retail Store or Distributor': 'Retail Store or Distributor'
+      'Print or Outdoor Advertisement': 'Print or Outdoor Advertisement'
+      Other: Other
     '#select2': true
-    '#required': true
-    '#required_error': 'Project Size is required'
-  when_will_you_start_your_project_:
-    '#type': select
-    '#title': 'Project Start Time'
-    '#options':
-      'Within 1 Month': 'Within 1 Month'
-      '1-3 Months': '1-3 Months'
-      '3-6 Months': '3-6 Months'
-      '6+ Months': '6+ Months'
-    '#select2': true
-    '#required': true
-    '#required_error': 'When will you start your project is required'
-  millboard_is_committed_to_protecting_and_respecting_your_privacy:
-    '#type': label
-    '#title': 'Millboard is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below to say how you would like us to contact you:'
-  i_agree_to_receive_other_communications_from_millboard_:
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  would_you_like_a_millboard_lookbook:
     '#type': checkbox
-    '#title': 'I agree to receive other communications from Millboard.'
+    '#title': 'Would you like a Millboard Lookbook?'
     '#wrapper_attributes':
       class:
         - sample-order-form-agreement-checkbox
-  in_order_to_provide_you_the_content_requested_we_need_to_store_a:
-    '#type': label
-    '#title': 'In order to provide you the content requested, we need to store and process your personal data. If you consent to us storing your personal data for this purpose, please tick the checkbox below.'
   i_agree_to_allow_millboard_to_store_and_process_my_personal_data:
     '#type': checkbox
-    '#title': 'I agree to allow Millboard to store and process my personal data.'
-    '#required': true
+    '#title': 'I agree to allow Millboard to store and process my personal data & to receive other communications from Millboard*'
+    '#default_value': true
+    '#wrapper_attributes':
+      style: 'display:none;'
+  legitimate_interest_customer:
+    '#type': checkbox
+    '#title': 'We process your data under legitimate interest to provide relevant content and communications. If you prefer not to receive marketing communications, please tick the box.'
     '#wrapper_attributes':
       class:
         - sample-order-form-agreement-checkbox
-  you_can_unsubscribe_from_these_communications_at_any_time_for_mo:
-    '#type': label
-    '#title': 'You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -669,24 +684,22 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      form_guid: 14f12c32-261a-4f75-91c4-4615b2b8eb03
+      form_guid: 8053ede5-542e-47d9-a630-1ddb1b9438ff
       field_mapping:
         sample_names: sample_names_hubspot
         firstname: first_name
         lastname: last_name
-        email: email_address
-        phone: telephone_number
-        company: company
-        this_project_is_to_be_installed_at: this_project_is_to_be_installed_at_
-        latest_project_category: project_type_name
-        project_start_time_dropdown: when_will_you_start_your_project_
-        project_size_dropdown: project_size
         address: address_line_1
         city: city_town
-        state: state_province
-        zip: zip_postal_code
+        county: 'address:country_code'
         country: country
-        us_persona: which_of_the_following_are_you
+        zip: zip_postal_code
+        email: email_address
+        phone: telephone_number
+        who_am_i_: who_am_i
+        how_did_you_hear_about_us___cloned_: how_did_you_hear_about_us
+        would_you_like_a_millboard_lookbook___cloned_: would_you_like_a_millboard_lookbook
+        opt_out_marketing: legitimate_interest_customer
       legal_consent:
         include: never
       subscriptions: null

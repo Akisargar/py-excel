@@ -11,13 +11,21 @@ dependencies:
     - field.field.node.installers_distributors.field_display_centre
     - field.field.node.installers_distributors.field_distributor_email_subject
     - field.field.node.installers_distributors.field_email_address
+    - field.field.node.installers_distributors.field_featured_image
+    - field.field.node.installers_distributors.field_gallery
+    - field.field.node.installers_distributors.field_gallery_caption
+    - field.field.node.installers_distributors.field_grading
+    - field.field.node.installers_distributors.field_is_a_showroom
+    - field.field.node.installers_distributors.field_layout_canvas
     - field.field.node.installers_distributors.field_location_image_1
     - field.field.node.installers_distributors.field_location_image_2
     - field.field.node.installers_distributors.field_location_image_3
     - field.field.node.installers_distributors.field_meta_tags
     - field.field.node.installers_distributors.field_product_range
+    - field.field.node.installers_distributors.field_publish_date
     - field.field.node.installers_distributors.field_sells_cladding
     - field.field.node.installers_distributors.field_sells_decking
+    - field.field.node.installers_distributors.field_showroom_type
     - field.field.node.installers_distributors.field_store_address
     - field.field.node.installers_distributors.field_store_location
     - field.field.node.installers_distributors.field_telephone_number
@@ -26,174 +34,114 @@ dependencies:
     - field.field.node.installers_distributors.field_website
     - node.type.installers_distributors
   module:
-    - address
-    - geolocation
-    - link
-    - metatag
+    - cohesion_elements
+    - field_group
     - options
-    - telephone
-    - text
     - user
+third_party_settings:
+  field_group:
+    group_sales_order_queries:
+      children:
+        - field_email_address
+        - field_telephone_number
+      label: 'Sales, order queries'
+      parent_name: ''
+      region: hidden
+      weight: 30
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
 id: node.installers_distributors.default
 targetEntityType: node
 bundle: installers_distributors
 mode: default
 content:
-  content_moderation_control:
+  field_display_centre:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: ''
+      format_custom_true: '| Display Center'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_gallery:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: inspiration_gallery
+      link: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_gallery_caption:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_grading:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 31
+    region: content
+  field_layout_canvas:
+    type: cohesion_entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_type_of_inst_dist:
+    type: list_default
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-  field_about:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 9
-    region: content
-  field_display_centre:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
-  field_distributor_email_subject:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 17
-    region: content
-  field_email_address:
-    type: basic_string
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 7
-    region: content
-  field_location_image_1:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 11
-    region: content
-  field_location_image_2:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 12
-    region: content
-  field_location_image_3:
-    type: entity_reference_entity_view
-    label: above
-    settings:
-      view_mode: default
-      link: false
-    third_party_settings: {  }
-    weight: 13
-    region: content
-  field_meta_tags:
-    type: metatag_empty_formatter
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 14
-    region: content
-  field_product_range:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 10
-    region: content
-  field_sells_cladding:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_sells_decking:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
-  field_store_address:
-    type: address_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 18
-    region: content
-  field_store_location:
-    type: geolocation_latlng
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 15
-    region: content
-  field_telephone_number:
-    type: telephone_link
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_telephone_number_2:
-    type: telephone_link
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_type_of_inst_dist:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 16
-    region: content
-  field_website:
-    type: link
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 1
-    region: content
 hidden:
   body: true
+  content_moderation_control: true
+  field_about: true
   field_craft_cms_canonical_id: true
   field_craft_cms_content_id: true
   field_craft_cms_original_id: true
+  field_distributor_email_subject: true
+  field_email_address: true
+  field_is_a_showroom: true
+  field_location_image_1: true
+  field_location_image_2: true
+  field_location_image_3: true
+  field_meta_tags: true
+  field_product_range: true
+  field_publish_date: true
+  field_sells_cladding: true
+  field_sells_decking: true
+  field_showroom_type: true
+  field_store_address: true
+  field_store_location: true
+  field_telephone_number: true
+  field_telephone_number_2: true
+  field_website: true
   langcode: true
+  links: true
   search_api_excerpt: true

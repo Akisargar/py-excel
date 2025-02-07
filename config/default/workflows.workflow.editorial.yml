@@ -3,10 +3,14 @@ langcode: en-gb
 status: true
 dependencies:
   config:
+    - node.type.advice_centre
     - node.type.blog
     - node.type.installers_distributors
+    - node.type.jobs
     - node.type.page
     - node.type.project
+    - node.type.resources
+    - node.type.showrooms
   module:
     - content_moderation
 _core:
@@ -35,7 +39,7 @@ type_settings:
       label: 'In review'
       weight: -1
       published: false
-      default_revision: false
+      default_revision: true
   transitions:
     archive:
       label: Archive
@@ -70,13 +74,18 @@ type_settings:
       label: 'Send to review'
       from:
         - draft
+        - published
         - review
       to: review
       weight: 0
   entity_types:
     node:
+      - advice_centre
       - blog
       - installers_distributors
+      - jobs
       - page
       - project
+      - resources
+      - showrooms
   default_moderation_state: draft

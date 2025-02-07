@@ -290,6 +290,8 @@ function millboard_preprocess_field(&$variables) {
   $current_path_segments = array_filter(explode("/", $current_path));
   $last_segment = end($current_path_segments);
   $prev_segment = prev($current_path_segments);
+  $last_segment_c = "";
+  $last_segment_l = "";
   if (strpos($last_segment, 'MDMC') !== FALSE) {
     $last_segment_c = $last_segment;
     $last_segment_l = str_replace('MDMC', 'MDML', $last_segment);
@@ -494,6 +496,11 @@ function millboard_preprocess_media(&$variables) {
  * Implements hook_preprocess_HOOK() for html.
  */
 function millboard_preprocess_html(array &$variables) {
+  $request = \Drupal::request();
+  $current_path = $request->getPathInfo();
+  $current_path_segments = array_filter(explode("/", $current_path));
+  // $variables['custom_title'] = 'test';
+
   $route_match = \Drupal::routeMatch();
   if ($node = $route_match->getParameter('node')) {
     if ($node instanceof NodeInterface && $route_match->getRouteName() == 'entity.node.canonical') {

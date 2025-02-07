@@ -4,20 +4,25 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_email_address
+    - field.storage.node.field_grading
     - field.storage.node.field_store_address
     - field.storage.node.field_store_location
     - field.storage.node.field_telephone_number
+    - field.storage.node.field_telephone_number_2
     - field.storage.node.field_type_of_inst_dist
     - node.type.installers_distributors
   module:
     - address
     - better_exposed_filters
+    - cohesion
     - geolocation
     - geolocation_google_maps
     - node
     - options
+    - taxonomy
     - telephone
     - user
+    - views_load_more
 id: millboard_find_installers
 label: 'Millboard Find Installers'
 module: views
@@ -396,9 +401,10 @@ display:
                 access_key: ''
               location_plugin_id: ipstack
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 50
       exposed_form:
         type: basic
         options:
@@ -454,7 +460,6 @@ display:
             query_param: proximity
             fallback: ''
             multiple: and
-          default_argument_skip_url: false
           summary_options:
             base_path: ''
             count: true
@@ -492,8 +497,17 @@ display:
             installers_distributors: installers_distributors
       style:
         type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
       row:
         type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -503,6 +517,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: coh-style-millboard-find-installers-view-style
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -1015,12 +1030,25 @@ display:
           output_url_as_text: false
           absolute: false
       pager:
-        type: none
+        type: some
         options:
           offset: 0
+          items_per_page: 50
       cache:
         type: none
         options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No Results Found. Would you like to view our <a href="/approved-global-distributors">Global Distributors</a>'
+          tokenize: false
       sorts:
         field_store_location_proximity:
           id: field_store_location_proximity
@@ -1035,22 +1063,7 @@ display:
           expose:
             label: Distance
             field_identifier: field_store_location_proximity
-          exposed: true
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: 'Installer Name'
-            field_identifier: title
-          exposed: true
+          exposed: false
       filters:
         status:
           id: status
@@ -1063,15 +1076,6 @@ display:
           group: 1
           expose:
             operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            installers_distributors: installers_distributors
         field_type_of_inst_dist_value:
           id: field_type_of_inst_dist_value
           table: node__field_type_of_inst_dist
@@ -1081,9 +1085,10 @@ display:
           admin_label: ''
           plugin_id: list_field
           operator: or
-          value: {  }
+          value:
+            approved_installer: approved_installer
           group: 1
-          exposed: true
+          exposed: false
           expose:
             operator_id: field_type_of_inst_dist_value_op
             label: 'Type of Installer'
@@ -1095,7 +1100,7 @@ display:
             identifier: field_type_of_inst_dist_value
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               administrator: '0'
@@ -1212,6 +1217,136 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_display_centre_value:
+          id: field_display_centre_value
+          table: node__field_display_centre
+          field: field_display_centre_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Display Centre (field_display_centre)'
+            description: ''
+            use_operator: false
+            operator: field_display_centre_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_display_centre_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              super_admin: '0'
+              agency_freelancer: '0'
+              content_manager: '0'
+              general_user: '0'
+              job_post_manager: '0'
+              distributor_installer_database_manager: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          operator: in
+          value:
+            installers_distributors: installers_distributors
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1223,21 +1358,10 @@ display:
           geolocation_field: field_store_location
           title_field: title
           label_field: none
-          marker_row_number: 1
-          marker_icon_path: ''
+          marker_row_number: 0
+          marker_icon_path: /themes/custom/millboard/svg/map_marker.svg
           even_empty: 0
           centre:
-            fit_bounds:
-              enable: false
-              weight: 0
-              settings:
-                reset_zoom: false
-                min_zoom: null
-              map_center_id: fit_bounds
-            client_location:
-              enable: false
-              weight: 0
-              map_center_id: client_location
             fixed_boundaries:
               enable: false
               weight: 0
@@ -1247,11 +1371,15 @@ display:
                 north: ''
                 east: ''
               map_center_id: fixed_boundaries
-            first_row:
+            client_location:
               enable: false
               weight: 0
+              map_center_id: client_location
+            views_proximity_argument:
+              enable: true
+              weight: 0
               settings:
-                location_option_id: first_row
+                location_option_id: field_store_location_proximity
               map_center_id: location_plugins
             fixed_value:
               enable: false
@@ -1261,12 +1389,6 @@ display:
                 latitude: null
                 longitude: null
               map_center_id: location_plugins
-            views_proximity_argument:
-              enable: true
-              weight: 0
-              settings:
-                location_option_id: field_store_location_proximity
-              map_center_id: location_plugins
             ipstack:
               enable: false
               weight: 0
@@ -1274,6 +1396,19 @@ display:
                 location_option_id: ipstack
                 access_key: ''
               map_center_id: location_plugins
+            first_row:
+              enable: false
+              weight: 0
+              settings:
+                location_option_id: first_row
+              map_center_id: location_plugins
+            fit_bounds:
+              enable: false
+              weight: 0
+              settings:
+                reset_zoom: false
+                min_zoom: null
+              map_center_id: fit_bounds
           map_provider_id: google_maps
           map_provider_settings:
             map_features:
@@ -1420,8 +1555,8 @@ display:
               map_type_style:
                 weight: 0
                 settings:
-                  style: '[]'
-                enabled: false
+                  style: "[\r\n  {\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#dedcd2\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"elementType\": \"labels.icon\",\r\n    \"stylers\": [\r\n      {\r\n        \"visibility\": \"off\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#616161\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"elementType\": \"labels.text.stroke\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#dedcd2\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"administrative.land_parcel\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#bdbdbd\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#eeeeee\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#757575\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi.park\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#e5e5e5\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi.park\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#9e9e9e\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#ffffff\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.arterial\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#757575\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.highway\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#dadada\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.highway\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#616161\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.local\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#9e9e9e\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"transit.line\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#e5e5e5\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"transit.station\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#eeeeee\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"water\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#c9c9c9\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"water\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#9e9e9e\"\r\n      }\r\n    ]\r\n  }\r\n]"
+                enabled: true
               marker_clusterer:
                 weight: 0
                 settings:
@@ -1480,7 +1615,7 @@ display:
                   disable_auto_pan: true
                   info_auto_display: false
                   max_width: null
-                enabled: true
+                enabled: false
               marker_label:
                 weight: 0
                 settings:
@@ -1527,16 +1662,21 @@ display:
                 weight: 0
                 enabled: false
             type: ROADMAP
-            zoom: 10
+            zoom: 8
             minZoom: 0
             maxZoom: 20
-            height: 400px
+            height: 720px
             width: 100%
             gestureHandling: auto
       row:
         type: fields
-        options: {  }
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       defaults:
+        empty: false
         cache: false
         use_ajax: false
         style: false
@@ -1547,10 +1687,12 @@ display:
         filter_groups: false
       use_ajax: true
       display_description: ''
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
       displays:
         block_1: block_1
-        where_to_buy: where_to_buy
       attachment_position: before
       inherit_exposed_filters: true
     cache_metadata:
@@ -1559,8 +1701,6 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
       tags:
@@ -1569,12 +1709,13 @@ display:
         - 'config:field.storage.node.field_store_location'
         - 'config:field.storage.node.field_telephone_number'
         - 'config:field.storage.node.field_type_of_inst_dist'
-  block_1:
-    id: block_1
-    display_title: Block
-    display_plugin: block
-    position: 1
+  attachment_2:
+    id: attachment_2
+    display_title: 'Map Millboard Where To Buy'
+    display_plugin: attachment
+    position: 2
     display_options:
+      title: 'Map Millboard Where To Buy'
       fields:
         title:
           id: title
@@ -1590,36 +1731,18 @@ display:
           exclude: false
           alter:
             alter_text: false
-            text: ''
             make_link: false
-            path: ''
             absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
             word_boundary: false
             ellipsis: false
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
             strip_tags: false
             trim: false
-            preserve_tags: ''
             html: false
           element_type: ''
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -1630,7 +1753,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1967,6 +2090,69 @@ display:
               settings:
                 access_key: ''
               location_plugin_id: ipstack
+        field_store_location:
+          id: field_store_location
+          table: node__field_store_location
+          field: field_store_location
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: ''
+          type: geolocation_latlng
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         view_node:
           id: view_node
           table: node
@@ -2020,523 +2206,46 @@ display:
           text: 'Find Out More'
           output_url_as_text: false
           absolute: false
-      sorts:
-        field_store_location_proximity:
-          id: field_store_location_proximity
-          table: node__field_store_location
-          field: field_store_location_proximity
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: geolocation_sort_proximity
-          order: ASC
-          expose:
-            label: Distance
-            field_identifier: field_store_location_proximity
-          exposed: true
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: 'Installer Name'
-            field_identifier: title
-          exposed: true
-      filters:
-        status:
-          id: status
-          table: node_field_data
-          field: status
-          entity_type: node
-          entity_field: status
-          plugin_id: boolean
-          value: '1'
-          group: 1
-          expose:
-            operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            installers_distributors: installers_distributors
-        field_type_of_inst_dist_value:
-          id: field_type_of_inst_dist_value
-          table: node__field_type_of_inst_dist
-          field: field_type_of_inst_dist_value
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: list_field
-          operator: or
-          value: {  }
-          group: 1
-          exposed: true
-          expose:
-            operator_id: field_type_of_inst_dist_value_op
-            label: 'Type of Installer'
-            description: ''
-            use_operator: false
-            operator: field_type_of_inst_dist_value_op
-            operator_limit_selection: false
-            operator_list: {  }
-            identifier: field_type_of_inst_dist_value
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              administrator: '0'
-              anonymous: '0'
-              super_admin: '0'
-              agency_freelancer: '0'
-              content_manager: '0'
-              general_user: '0'
-              job_post_manager: '0'
-              distributor_installer_database_manager: '0'
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      defaults:
-        use_ajax: false
-        fields: false
-        sorts: false
-        filters: false
-        filter_groups: false
-        header: false
-      use_ajax: true
-      header:
-        result:
-          id: result
-          table: views
-          field: result
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: result
-          empty: false
-          content: '@total locations'
-      display_extenders: {  }
-      block_description: 'Millboard Installers Listing'
-      block_hide_empty: true
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - url
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags:
-        - 'config:field.storage.node.field_email_address'
-        - 'config:field.storage.node.field_store_address'
-        - 'config:field.storage.node.field_telephone_number'
-        - 'config:field.storage.node.field_type_of_inst_dist'
-  where_to_buy:
-    id: where_to_buy
-    display_title: ' Millboard Where To Buy '
-    display_plugin: block
-    position: 3
-    display_options:
-      title: ' Millboard Where To Buy'
-      fields:
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            make_link: false
-            absolute: false
-            word_boundary: false
-            ellipsis: false
-            strip_tags: false
-            trim: false
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_store_address:
-          id: field_store_address
-          table: node__field_store_address
-          field: field_store_address
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: langcode
-          type: address_default
-          settings: {  }
-          group_column: ''
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_email_address:
-          id: field_email_address
-          table: node__field_email_address
-          field: field_email_address
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: basic_string
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_telephone_number:
-          id: field_telephone_number
-          table: node__field_telephone_number
-          field: field_telephone_number
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: field
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: telephone_link
-          settings:
-            title: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-        field_store_location_proximity:
-          id: field_store_location_proximity
-          table: node__field_store_location
-          field: field_store_location_proximity
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          plugin_id: geolocation_field_proximity
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          set_precision: true
-          precision: 2
-          decimal: .
-          separator: ','
-          format_plural: false
-          format_plural_string: !!binary MQNAY291bnQ=
-          prefix: ''
-          suffix: ' MILES AWAY'
-          display_unit: mi
-          center:
-            fixed_value:
-              enable: false
-              weight: 0
-              settings:
-                latitude: ''
-                longitude: ''
-              location_plugin_id: fixed_value
-            field_store_location_proximity:
-              enable: true
-              weight: 0
-              location_plugin_id: views_proximity_argument
-            ipstack:
-              enable: false
-              weight: 0
-              settings:
-                access_key: ''
-              location_plugin_id: ipstack
-      exposed_form:
-        type: bef
+      pager:
+        type: load_more
         options:
-          submit_button: Apply
-          reset_button: true
-          reset_button_label: 'Clear All'
-          exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
-          text_input_required: 'Select any filter and click on Apply to see results'
-          text_input_required_format: filtered_html
-          bef:
-            general:
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_textfield_delay: 500
-              autosubmit_hide: false
-              input_required: false
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              secondary_open: false
-              reset_button_always_show: false
-            sort:
-              plugin_id: default
-              advanced:
-                combine: false
-                combine_rewrite: ''
-                reset: false
-                reset_label: ''
-                collapsible: false
-                collapsible_label: 'Sort options'
-                is_secondary: false
-            filter:
-              field_type_of_inst_dist_value:
-                plugin_id: default
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              field_sells_decking_value:
-                plugin_id: bef_single
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
-              field_sells_cladding_value:
-                plugin_id: bef_single
-                advanced:
-                  sort_options: false
-                  rewrite:
-                    filter_rewrite_values: ''
-                  collapsible: false
-                  is_secondary: false
+          offset: 0
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          more_button_text: 'Load more'
+          end_text: ''
+          advanced:
+            content_selector: ''
+            pager_selector: ''
+            header_selector: ''
+            footer_selector: ''
+          effects:
+            type: ''
+            speed: slow
+      cache:
+        type: none
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No Results Found. Would you like to view our <a href="/approved-global-distributors">Global Distributors</a>'
+          tokenize: false
       sorts:
         field_store_location_proximity:
           id: field_store_location_proximity
@@ -2551,22 +2260,7 @@ display:
           expose:
             label: Distance
             field_identifier: field_store_location_proximity
-          exposed: true
-        title:
-          id: title
-          table: node_field_data
-          field: title
-          relationship: none
-          group_type: group
-          admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
-          order: ASC
-          expose:
-            label: 'Installer Name'
-            field_identifier: title
-          exposed: true
+          exposed: false
       filters:
         status:
           id: status
@@ -2579,15 +2273,6 @@ display:
           group: 1
           expose:
             operator: ''
-        type:
-          id: type
-          table: node_field_data
-          field: type
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
-          value:
-            installers_distributors: installers_distributors
         field_type_of_inst_dist_value:
           id: field_type_of_inst_dist_value
           table: node__field_type_of_inst_dist
@@ -2596,7 +2281,7 @@ display:
           group_type: group
           admin_label: ''
           plugin_id: list_field
-          operator: or
+          operator: and
           value: {  }
           group: 1
           exposed: true
@@ -2611,7 +2296,7 @@ display:
             identifier: field_type_of_inst_dist_value
             required: false
             remember: false
-            multiple: false
+            multiple: true
             remember_roles:
               authenticated: authenticated
               administrator: '0'
@@ -2728,19 +2413,2639 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        field_display_centre_value:
+          id: field_display_centre_value
+          table: node__field_display_centre
+          field: field_display_centre_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '='
+          value: All
+          group: 1
+          exposed: true
+          expose:
+            operator_id: ''
+            label: 'Display Centre (field_display_centre)'
+            description: ''
+            use_operator: false
+            operator: field_display_centre_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_display_centre_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              super_admin: '0'
+              agency_freelancer: '0'
+              content_manager: '0'
+              general_user: '0'
+              job_post_manager: '0'
+              distributor_installer_database_manager: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_type_of_inst_dist_value_1:
+          id: field_type_of_inst_dist_value_1
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: not
+          value:
+            approved_installer: approved_installer
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
       filter_groups:
         operator: AND
         groups:
           1: AND
+      style:
+        type: maps_common
+        options:
+          data_provider_id: geolocation_field_provider
+          geolocation_field: field_store_location
+          title_field: title
+          label_field: none
+          marker_row_number: 0
+          marker_icon_path: /themes/custom/millboard/svg/map_marker.svg
+          even_empty: 0
+          centre:
+            fixed_boundaries:
+              enable: false
+              weight: 0
+              settings:
+                south: ''
+                west: ''
+                north: ''
+                east: ''
+              map_center_id: fixed_boundaries
+            fixed_value:
+              enable: false
+              weight: 0
+              settings:
+                location_option_id: fixed_value
+                latitude: null
+                longitude: null
+              map_center_id: location_plugins
+            views_proximity_argument:
+              enable: true
+              weight: 0
+              settings:
+                location_option_id: field_store_location_proximity
+              map_center_id: location_plugins
+            ipstack:
+              enable: false
+              weight: 0
+              settings:
+                location_option_id: ipstack
+                access_key: ''
+              map_center_id: location_plugins
+            first_row:
+              enable: false
+              weight: 0
+              settings:
+                location_option_id: first_row
+              map_center_id: location_plugins
+            fit_bounds:
+              enable: false
+              weight: 0
+              settings:
+                reset_zoom: false
+                min_zoom: null
+              map_center_id: fit_bounds
+            client_location:
+              enable: false
+              weight: 0
+              map_center_id: client_location
+          map_provider_id: google_maps
+          map_provider_settings:
+            map_features:
+              google_maps_layer_bicycling:
+                weight: 0
+                enabled: false
+              client_location_indicator:
+                weight: 0
+                enabled: false
+              context_popup:
+                weight: 0
+                settings:
+                  content:
+                    value: ''
+                    format: filtered_html
+                enabled: false
+              drawing:
+                weight: 0
+                settings:
+                  polyline: false
+                  strokeColor: '#FF0000'
+                  strokeOpacity: '0.8'
+                  strokeWeight: '2'
+                  geodesic: false
+                  polygon: false
+                  fillColor: '#FF0000'
+                  fillOpacity: '0.35'
+                enabled: false
+              geolocation_google_maps_control_directions:
+                weight: 0
+                settings:
+                  position: RIGHT_CENTER
+                  behavior: default
+                  origin_source: exposed
+                  origin_static_value: ''
+                  destination_source: exposed
+                  destination_static_value: ''
+                  travel_mode: exposed
+                  directions_container: below
+                  directions_container_custom_id: ''
+                enabled: false
+              map_disable_tilt:
+                weight: 0
+                enabled: false
+              map_disable_poi:
+                weight: 0
+                enabled: false
+              map_disable_user_interaction:
+                weight: 0
+                enabled: false
+              geolocation_shapes:
+                weight: 0
+                settings:
+                  remove_markers: false
+                  polyline: true
+                  polyline_title: ''
+                  strokeColor: '#FF0000'
+                  strokeOpacity: 0.8
+                  strokeWidth: '2'
+                  polygon: false
+                  polygon_title: ''
+                  fillColor: '#FF0000'
+                  fillOpacity: 0.35
+                enabled: false
+              control_fullscreen:
+                weight: 0
+                settings:
+                  position: RIGHT_CENTER
+                  behavior: default
+                enabled: false
+              control_geocoder:
+                weight: 0
+                settings:
+                  position: TOP_LEFT
+                  geocoder: google_geocoding_api
+                  settings:
+                    label: Address
+                    description: 'Enter an address to be localized.'
+                    autocomplete_min_length: 1
+                    component_restrictions:
+                      route: ''
+                      country: ''
+                      administrative_area: ''
+                      locality: ''
+                      postal_code: ''
+                    boundary_restriction:
+                      south: ''
+                      west: ''
+                      north: ''
+                      east: ''
+                    region: ''
+                enabled: false
+              control_loading_indicator:
+                weight: 0
+                settings:
+                  position: TOP_LEFT
+                  loading_label: Loading
+                enabled: false
+              control_locate:
+                weight: 0
+                settings:
+                  position: TOP_LEFT
+                enabled: true
+              control_maptype:
+                weight: 0
+                settings:
+                  position: RIGHT_BOTTOM
+                  behavior: default
+                  style: DEFAULT
+                enabled: true
+              control_recenter:
+                weight: 0
+                settings:
+                  position: TOP_LEFT
+                enabled: false
+              control_rotate:
+                weight: 0
+                settings:
+                  position: RIGHT_CENTER
+                  behavior: default
+                enabled: false
+              control_streetview:
+                weight: 0
+                settings:
+                  position: RIGHT_CENTER
+                  behavior: default
+                enabled: false
+              control_zoom:
+                weight: 0
+                settings:
+                  position: RIGHT_CENTER
+                  behavior: default
+                  style: LARGE
+                enabled: true
+              map_restriction:
+                weight: 0
+                settings:
+                  north: ''
+                  south: ''
+                  east: ''
+                  west: ''
+                  strict: true
+                enabled: false
+              map_type_style:
+                weight: 0
+                settings:
+                  style: "[\r\n  {\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#dedcd2\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"elementType\": \"labels.icon\",\r\n    \"stylers\": [\r\n      {\r\n        \"visibility\": \"off\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#616161\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"elementType\": \"labels.text.stroke\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#dedcd2\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"administrative.land_parcel\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#bdbdbd\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#eeeeee\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#757575\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi.park\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#e5e5e5\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"poi.park\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#9e9e9e\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#ffffff\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.arterial\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#757575\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.highway\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#dadada\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.highway\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#616161\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"road.local\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#9e9e9e\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"transit.line\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#e5e5e5\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"transit.station\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#eeeeee\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"water\",\r\n    \"elementType\": \"geometry\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#c9c9c9\"\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \"featureType\": \"water\",\r\n    \"elementType\": \"labels.text.fill\",\r\n    \"stylers\": [\r\n      {\r\n        \"color\": \"#9e9e9e\"\r\n      }\r\n    ]\r\n  }\r\n]"
+                enabled: true
+              marker_clusterer:
+                weight: 0
+                settings:
+                  image_path: ''
+                  styles: ''
+                  max_zoom: 15
+                  minimum_cluster_size: 2
+                  zoom_on_click: true
+                  average_center: false
+                  grid_size: 60
+                enabled: false
+              marker_icon:
+                weight: 0
+                settings:
+                  marker_icon_path: ''
+                  anchor:
+                    x: 0
+                    'y': 0
+                  origin:
+                    x: 0
+                    'y': 0
+                  label_origin:
+                    x: 0
+                    'y': 0
+                  size:
+                    width: null
+                    height: null
+                  scaled_size:
+                    width: null
+                    height: null
+                enabled: false
+              marker_infobubble:
+                weight: 0
+                settings:
+                  close_other: 1
+                  close_button: 0
+                  close_button_src: ''
+                  shadow_style: 0
+                  padding: 10
+                  border_radius: 8
+                  border_width: 2
+                  border_color: '#039be5'
+                  background_color: '#fff'
+                  min_width: null
+                  max_width: 550
+                  min_height: null
+                  max_height: null
+                  arrow_style: 2
+                  arrow_position: 30
+                  arrow_size: 10
+                enabled: false
+              marker_infowindow:
+                weight: 0
+                settings:
+                  info_window_solitary: true
+                  disable_auto_pan: true
+                  info_auto_display: false
+                  max_width: null
+                enabled: false
+              marker_label:
+                weight: 0
+                settings:
+                  color: ''
+                  font_family: ''
+                  font_size: ''
+                  font_weight: ''
+                enabled: false
+              marker_opacity:
+                weight: 0
+                settings:
+                  opacity: 1.0
+                enabled: false
+              geolocation_marker_scroll_to_id:
+                weight: 0
+                settings:
+                  scroll_target_id: ''
+                enabled: false
+              marker_zoom_to_animate:
+                weight: 0
+                settings:
+                  marker_zoom_anchor_id: ''
+                enabled: false
+              spiderfying:
+                weight: 0
+                settings:
+                  spiderfiable_marker_path: /modules/contrib/geolocation/modules/geolocation_google_maps/images/marker-plus.svg
+                  markersWontMove: true
+                  markersWontHide: false
+                  keepSpiderfied: true
+                  ignoreMapClick: false
+                  nearbyDistance: 20
+                  circleSpiralSwitchover: 9
+                  circleFootSeparation: 23
+                  spiralFootSeparation: 26
+                  spiralLengthStart: 11
+                  spiralLengthFactor: 4
+                  legWeight: 1.5
+                enabled: false
+              google_maps_layer_traffic:
+                weight: 0
+                enabled: false
+              google_maps_layer_transit:
+                weight: 0
+                enabled: false
+            type: ROADMAP
+            zoom: 10
+            minZoom: 0
+            maxZoom: 20
+            height: 800px
+            width: 100%
+            gestureHandling: auto
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_tags: {  }
       defaults:
+        empty: false
+        cache: false
+        query: false
         title: false
         use_ajax: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+      use_ajax: true
+      display_description: ''
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      displays:
+        where_to_buy: where_to_buy
+        block_2: block_2
+      attachment_position: before
+      inherit_exposed_filters: true
+      inherit_pager: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_email_address'
+        - 'config:field.storage.node.field_store_address'
+        - 'config:field.storage.node.field_store_location'
+        - 'config:field.storage.node.field_telephone_number'
+        - 'config:field.storage.node.field_type_of_inst_dist'
+  block_1:
+    id: block_1
+    display_title: Block
+    display_plugin: block
+    position: 1
+    display_options:
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_inst_dist:
+          id: field_type_of_inst_dist
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_address:
+          id: field_store_address
+          table: node__field_store_address
+          field: field_store_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: "<div>\r\n{{ field_store_address__organization }}\r\n{{ field_store_address__address_line1 }} \r\n</div>"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: langcode
+          type: address_default
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_email_address:
+          id: field_email_address
+          table: node__field_email_address
+          field: field_email_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telephone_number:
+          id: field_telephone_number
+          table: node__field_telephone_number
+          field: field_telephone_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telephone_number_2:
+          id: field_telephone_number_2
+          table: node__field_telephone_number_2
+          field: field_telephone_number_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field_proximity
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: true
+          precision: 2
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ' MILES AWAY'
+          display_unit: mi
+          center:
+            ipstack:
+              enable: false
+              weight: 0
+              settings:
+                access_key: ''
+              location_plugin_id: ipstack
+            field_store_location_proximity:
+              enable: true
+              weight: 0
+              location_plugin_id: views_proximity_argument
+            fixed_value:
+              enable: false
+              weight: 0
+              settings:
+                latitude: ''
+                longitude: ''
+              location_plugin_id: fixed_value
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_link
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: '<a href="" class="coh-link coh-style-tertiary-button-with-underline"><a>'
+            make_link: true
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: 'coh-link coh-style-tertiary-button-with-underline'
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'Find Out More'
+          output_url_as_text: false
+          absolute: false
+        field_store_location:
+          id: field_store_location
+          table: node__field_store_location
+          field: field_store_location
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_store_location__lat }},{{ field_store_location__lng }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: ''
+          type: geolocation_latlng
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div\r\n  class=\"coh-container installer-distributor-card coh-style-installers-distributors-card-custom-style\"\r\ndata-location=\"{{ field_store_location }}\">\r\n  <h5\r\n    class=\"coh-heading installer-distributor-card-heading coh-style-heading-5-size-regular\"\r\n  >\r\n    {{ title }}\r\n  </h5>\r\n  <div\r\n    class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a\"\r\n  >\r\n    {{ field_type_of_inst_dist }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container coh-style-paragraph-regular installer-distributor-card-location\"\r\n  >\r\n    {{ field_store_location_proximity }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-adress coh-style-f37-ginger-light coh-style-paragraph-default\"\r\n  >\r\n    {{ field_store_address }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-telephone coh-style-paragraph-regular\"\r\n  >\r\n    <ul>\r\n      <li>{{ field_telephone_number }}</li>\r\n      <li>{{ field_telephone_number_2 }}</li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"coh-container installer-distributor-card-link\">\r\n    {{ view_node }}\r\n  </div>\r\n</div>\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: 'Clear All'
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: filtered_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_store_location_proximity:
+                plugin_id: bef_sliders
+                advanced:
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                min: '0'
+                max: '100'
+                step: '5'
+                animate: none
+                animate_ms: '0'
+                orientation: horizontal
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: 'No Results Found. Would you like to view our <a href="/approved-global-distributors">Global Distributors</a>'
+          tokenize: false
+      sorts:
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_sort_proximity
+          order: ASC
+          expose:
+            label: Distance
+            field_identifier: field_store_location_proximity
+          exposed: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            installers_distributors: installers_distributors
+        field_type_of_inst_dist_value:
+          id: field_type_of_inst_dist_value
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: or
+          value:
+            approved_installer: approved_installer
+          group: 1
+          exposed: false
+          expose:
+            operator_id: field_type_of_inst_dist_value_op
+            label: 'Type of Installer/Distributor'
+            description: ''
+            use_operator: false
+            operator: field_type_of_inst_dist_value_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_type_of_inst_dist_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              super_admin: '0'
+              agency_freelancer: '0'
+              content_manager: '0'
+              general_user: '0'
+              job_post_manager: '0'
+              distributor_installer_database_manager: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_filter_proximity
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: '30'
+            center: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_store_location_proximity_op
+            label: 'DISTANCE - MILES'
+            description: ''
+            use_operator: false
+            operator: field_store_location_proximity_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_store_location_proximity
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              super_admin: '0'
+              agency_freelancer: '0'
+              content_manager: '0'
+              general_user: '0'
+              job_post_manager: '0'
+              distributor_installer_database_manager: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          unit: mi
+          location_input:
+            'views_proximity_argument:field_store_location_proximity':
+              enable: true
+              weight: 0
+              settings:
+                location_plugin_id: views_proximity_argument
+              location_input_id: location_plugins
+            'ipstack:ipstack':
+              enable: false
+              weight: 0
+              settings:
+                location_settings:
+                  settings:
+                    access_key: ''
+                location_plugin_id: ipstack
+              location_input_id: location_plugins
+            'fixed_value:fixed_value':
+              enable: false
+              weight: 0
+              settings:
+                location_settings:
+                  settings:
+                    latitude: ''
+                    longitude: ''
+                location_plugin_id: fixed_value
+              location_input_id: location_plugins
+            coordinates:
+              enable: false
+              weight: 0
+              location_input_id: coordinates
+            client_location:
+              enable: false
+              weight: 0
+              settings:
+                hide_form: false
+                auto_submit: false
+              location_input_id: client_location
+            geocoder:
+              enable: false
+              weight: 0
+              settings:
+                plugin_id: google_geocoding_api
+                settings:
+                  label: Address
+                  description: 'Enter an address to be localized.'
+                  autocomplete_min_length: 1
+                  component_restrictions:
+                    route: ''
+                    country: ''
+                    administrative_area: ''
+                    locality: ''
+                    postal_code: ''
+                  boundary_restriction:
+                    south: ''
+                    west: ''
+                    north: ''
+                    east: ''
+                  region: ''
+                hide_form: false
+                auto_submit: false
+              location_input_id: geocoder
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: cohesion_layout
+        options:
+          views_template: view_tpl_millboard_find_installe
+          master_template: __none__
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        empty: false
+        css_class: false
+        use_ajax: false
         exposed_form: false
+        style: false
+        row: false
         fields: false
         sorts: false
         filters: false
         filter_groups: false
         header: false
+      css_class: coh-style-millboard-find-installers-view-style
+      use_ajax: true
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '<h4 class="coh-style-heading-4-size-statements-regular">@total locations</h4>'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+      block_description: 'Millboard Installers Listing'
+      block_hide_empty: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_email_address'
+        - 'config:field.storage.node.field_store_address'
+        - 'config:field.storage.node.field_store_location'
+        - 'config:field.storage.node.field_telephone_number'
+        - 'config:field.storage.node.field_telephone_number_2'
+        - 'config:field.storage.node.field_type_of_inst_dist'
+  us_block:
+    id: us_block
+    display_title: ' Millboard Where To Buy  - US'
+    display_plugin: block
+    position: 3
+    display_options:
+      title: ' Millboard Where To Buy - US'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_inst_dist_1:
+          id: field_type_of_inst_dist_1
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_inst_dist:
+          id: field_type_of_inst_dist
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_address:
+          id: field_store_address
+          table: node__field_store_address
+          field: field_store_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: langcode
+          type: address_default
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_email_address:
+          id: field_email_address
+          table: node__field_email_address
+          field: field_email_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telephone_number:
+          id: field_telephone_number
+          table: node__field_telephone_number
+          field: field_telephone_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telephone_number_2:
+          id: field_telephone_number_2
+          table: node__field_telephone_number_2
+          field: field_telephone_number_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field_proximity
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: true
+          precision: 2
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ' MILES AWAY'
+          display_unit: mi
+          center:
+            ipstack:
+              enable: false
+              weight: 0
+              settings:
+                access_key: ''
+              location_plugin_id: ipstack
+            field_store_location_proximity:
+              enable: true
+              weight: 0
+              location_plugin_id: views_proximity_argument
+            fixed_value:
+              enable: false
+              weight: 0
+              settings:
+                latitude: ''
+                longitude: ''
+              location_plugin_id: fixed_value
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_link
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: 'coh-link coh-style-tertiary-button-with-underline'
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'contact reseller'
+          output_url_as_text: false
+          absolute: false
+        field_grading:
+          id: field_grading
+          table: node__field_grading
+          field: field_grading
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_location:
+          id: field_store_location
+          table: node__field_store_location
+          field: field_store_location
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_store_location__lat }},{{ field_store_location__lng }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: ''
+          type: geolocation_latlng
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div\r\n  class=\"coh-container installer-distributor-card coh-style-installers-distributors-card-custom-style\" data-location=\"{{ field_store_location }} \"\r\ntitle=\"{{ title }}\"\r\n>\r\n  <h5\r\n    class=\"coh-heading installer-distributor-card-heading coh-style-heading-5-size-regular\"\r\n  >\r\n    {{ title }}\r\n  </h5>\r\n{% if field_grading|default() %}\r\n    {% if field_grading != \"Ungraded\" %}\r\n      {% if field_grading == \"Gold\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading gold-installer\">\r\n      {% elseif field_grading == \"Silver\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading silver-installer\">\r\n      {% elseif field_grading == \"Platinum\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading platinum-installer\">\r\n      {% elseif field_grading == \"Retail\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading retail-installer\">\r\n      {% endif %}\r\n\r\n      {% if field_grading == \"Retail\" %}\r\n        <b>{{ field_grading }}</b> Sales Only\r\n      {% else %}\r\n        <b>{{ field_grading }}</b> Distributor\r\n      {% endif %}\r\n      </div>\r\n\r\n\r\n    {% endif %}\r\n  {% endif %}\r\n  <div\r\n    class=\"coh-container coh-style-paragraph-regular installer-distributor-card-location\"\r\n  >\r\n    {{ field_store_location_proximity }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-adress coh-style-f37-ginger-light coh-style-paragraph-default\"\r\n  >\r\n    {{ field_store_address }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-telephone coh-style-paragraph-regular\"\r\n  >\r\n    <ul>\r\n      <li>{{ field_telephone_number }}</li>\r\n      <li>{{ field_telephone_number_2 }}</li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"coh-container installer-distributor-card-link\">\r\n    {{ view_node }}\r\n  </div>\r\n</div>\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: 'Clear All'
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: filtered_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_store_location_proximity:
+                plugin_id: bef_sliders
+                advanced:
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                min: '5'
+                max: '3000'
+                step: '5'
+                animate: slow
+                animate_ms: '0'
+                orientation: horizontal
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<div class="coh-wysiwyg coh-style-padding-left-right-small" > There are no distributors within your selected distance from your location, please increase the distance using the slider to find your nearest distributor. <br><br>Alternatively click here to view our <a href="/approved-global-distributors">Global Distributors</a>.</div>'
+          tokenize: false
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_sort_proximity
+          order: ASC
+          expose:
+            label: Distance
+            field_identifier: field_store_location_proximity
+          exposed: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            installers_distributors: installers_distributors
+          group: 1
+        field_type_of_inst_dist_value:
+          id: field_type_of_inst_dist_value
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: not
+          value:
+            approved_installer: approved_installer
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_filter_proximity
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: '500'
+            center: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_store_location_proximity_op
+            label: 'DISTANCE - MILES'
+            description: ''
+            use_operator: false
+            operator: field_store_location_proximity_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_store_location_proximity
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              super_admin: '0'
+              agency_freelancer: '0'
+              content_manager: '0'
+              general_user: '0'
+              job_post_manager: '0'
+              distributor_installer_database_manager: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Proximity (field_store_location)'
+            description: ''
+            identifier: field_store_location_proximity
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: '1'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: default
+                operator: '<'
+                value:
+                  min: ''
+                  max: ''
+                  value: '30'
+          unit: mi
+          location_input:
+            'views_proximity_argument:field_store_location_proximity':
+              enable: true
+              weight: 0
+              settings:
+                location_plugin_id: views_proximity_argument
+              location_input_id: location_plugins
+            'fixed_value:fixed_value':
+              enable: false
+              weight: 0
+              settings:
+                location_settings:
+                  settings:
+                    latitude: ''
+                    longitude: ''
+                location_plugin_id: fixed_value
+              location_input_id: location_plugins
+            'ipstack:ipstack':
+              enable: false
+              weight: 0
+              settings:
+                location_settings:
+                  settings:
+                    access_key: ''
+                location_plugin_id: ipstack
+              location_input_id: location_plugins
+            coordinates:
+              enable: false
+              weight: 0
+              location_input_id: coordinates
+            client_location:
+              enable: false
+              weight: 0
+              settings:
+                hide_form: false
+                auto_submit: false
+              location_input_id: client_location
+            geocoder:
+              enable: false
+              weight: 0
+              settings:
+                plugin_id: google_geocoding_api
+                settings:
+                  label: Address
+                  description: 'Enter an address to be localized.'
+                  autocomplete_min_length: 1
+                  component_restrictions:
+                    route: ''
+                    country: ''
+                    administrative_area: ''
+                    locality: ''
+                    postal_code: ''
+                  boundary_restriction:
+                    south: ''
+                    west: ''
+                    north: ''
+                    east: ''
+                  region: ''
+                hide_form: true
+                auto_submit: false
+              location_input_id: geocoder
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_is_a_showroom_value:
+          id: field_is_a_showroom_value
+          table: node__field_is_a_showroom
+          field: field_is_a_showroom_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: cohesion_layout
+        options:
+          views_template: view_tpl_millboard_find_installe
+          master_template: mstr_tpl_master_template_boxed
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_tags: {  }
+      defaults:
+        empty: false
+        query: false
+        title: false
+        use_ajax: false
+        pager: false
+        exposed_form: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        header: false
+        footer: false
+      relationships:
+        field_grading:
+          id: field_grading
+          table: node__field_grading
+          field: field_grading
+          relationship: none
+          group_type: group
+          admin_label: 'field_grading: Taxonomy term'
+          plugin_id: standard
+          required: false
       use_ajax: true
       display_description: ''
       header:
@@ -2753,19 +5058,1249 @@ display:
           admin_label: ''
           plugin_id: result
           empty: false
-          content: '@total locations'
-      display_extenders: {  }
+          content: '<p class="installer-header">1 - @end of @total locations</p>'
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '<p class="nstaller-footer">You''ve viewed 1 - @end of @total locations</p>'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
-        - 'url.query_args:sort_by'
-        - 'url.query_args:sort_order'
         - 'user.node_grants:view'
         - user.permissions
       tags:
         - 'config:field.storage.node.field_email_address'
+        - 'config:field.storage.node.field_grading'
         - 'config:field.storage.node.field_store_address'
+        - 'config:field.storage.node.field_store_location'
         - 'config:field.storage.node.field_telephone_number'
+        - 'config:field.storage.node.field_telephone_number_2'
+        - 'config:field.storage.node.field_type_of_inst_dist'
+  where_to_buy:
+    id: where_to_buy
+    display_title: ' Millboard Where To Buy '
+    display_plugin: block
+    position: 3
+    display_options:
+      title: ' Millboard Where To Buy'
+      fields:
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: false
+            ellipsis: false
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_inst_dist_1:
+          id: field_type_of_inst_dist_1
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_key
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_type_of_inst_dist:
+          id: field_type_of_inst_dist
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_address:
+          id: field_store_address
+          table: node__field_store_address
+          field: field_store_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: langcode
+          type: address_default
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_email_address:
+          id: field_email_address
+          table: node__field_email_address
+          field: field_email_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telephone_number:
+          id: field_telephone_number
+          table: node__field_telephone_number
+          field: field_telephone_number
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_telephone_number_2:
+          id: field_telephone_number_2
+          table: node__field_telephone_number_2
+          field: field_telephone_number_2
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field_proximity
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          set_precision: true
+          precision: 2
+          decimal: .
+          separator: ','
+          format_plural: false
+          format_plural_string: !!binary MQNAY291bnQ=
+          prefix: ''
+          suffix: ' MILES AWAY'
+          display_unit: mi
+          center:
+            ipstack:
+              enable: false
+              weight: 0
+              settings:
+                access_key: ''
+              location_plugin_id: ipstack
+            field_store_location_proximity:
+              enable: true
+              weight: 0
+              location_plugin_id: views_proximity_argument
+            fixed_value:
+              enable: false
+              weight: 0
+              settings:
+                latitude: ''
+                longitude: ''
+              location_plugin_id: fixed_value
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_link
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: true
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: 'coh-link coh-style-tertiary-button-with-underline'
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'contact reseller'
+          output_url_as_text: false
+          absolute: false
+        field_grading:
+          id: field_grading
+          table: node__field_grading
+          field: field_grading
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_store_location:
+          id: field_store_location
+          table: node__field_store_location
+          field: field_store_location
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '{{ field_store_location__lat }},{{ field_store_location__lng }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: ''
+          type: geolocation_latlng
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: "<div\r\n  class=\"coh-container installer-distributor-card coh-style-installers-distributors-card-custom-style\" data-location=\"{{ field_store_location }} \"\r\ntitle=\"{{ title }}\"\r\n>\r\n  <h5\r\n    class=\"coh-heading installer-distributor-card-heading coh-style-heading-5-size-regular\"\r\n  >\r\n    {{ title }}\r\n  </h5>\r\n{% if field_grading|default() %}\r\n    {% if field_grading != \"Ungraded\" %}\r\n      {% if field_grading == \"Gold\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading gold-installer\">\r\n      {% elseif field_grading == \"Silver\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading silver-installer\">\r\n      {% elseif field_grading == \"Platinum\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading platinum-installer\">\r\n      {% elseif field_grading == \"Retail\" %}\r\n        <div class=\"coh-container installer-distributor-type coh-style-paragraph-large installer-distributor-card-type coh-ce-a586471a grading retail-installer\">\r\n      {% endif %}\r\n\r\n      {% if field_grading == \"Retail\" %}\r\n        <b>{{ field_grading }}</b> Sales Only\r\n      {% else %}\r\n        <b>{{ field_grading }}</b> Distributor\r\n      {% endif %}\r\n      </div>\r\n\r\n\r\n    {% endif %}\r\n  {% endif %}\r\n  <div\r\n    class=\"coh-container coh-style-paragraph-regular installer-distributor-card-location\"\r\n  >\r\n    {{ field_store_location_proximity }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-adress coh-style-f37-ginger-light coh-style-paragraph-default\"\r\n  >\r\n    {{ field_store_address }}\r\n  </div>\r\n  <div\r\n    class=\"coh-container installer-distributor-card-telephone coh-style-paragraph-regular\"\r\n  >\r\n    <ul>\r\n      <li>{{ field_telephone_number }}</li>\r\n      <li>{{ field_telephone_number_2 }}</li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"coh-container installer-distributor-card-link\">\r\n    {{ view_node }}\r\n  </div>\r\n</div>\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      pager:
+        type: none
+        options:
+          offset: 0
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Apply
+          reset_button: true
+          reset_button_label: 'Clear All'
+          exposed_sorts_label: 'Sort by'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: 'Select any filter and click on Apply to see results'
+          text_input_required_format: filtered_html
+          bef:
+            general:
+              autosubmit: true
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: true
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              secondary_open: false
+              reset_button_always_show: false
+            filter:
+              field_store_location_proximity:
+                plugin_id: bef_sliders
+                advanced:
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+                min: '5'
+                max: '100'
+                step: '5'
+                animate: slow
+                animate_ms: '0'
+                orientation: horizontal
+              field_sells_decking_value:
+                plugin_id: bef_single
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+              field_sells_cladding_value:
+                plugin_id: bef_single
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
+                  collapsible: false
+                  collapsible_disable_automatic_open: false
+                  is_secondary: false
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: true
+          content: '<div class="coh-wysiwyg coh-style-padding-left-right-small" > There are no distributors within your selected distance from your location, please increase the distance using the slider to find your nearest distributor. <br><br>Alternatively click here to view our <a href="/approved-global-distributors">Global Distributors</a>.</div>'
+          tokenize: false
+      sorts:
+        weight:
+          id: weight
+          table: taxonomy_term_field_data
+          field: weight
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: weight
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_sort_proximity
+          order: ASC
+          expose:
+            label: Distance
+            field_identifier: field_store_location_proximity
+          exposed: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            installers_distributors: installers_distributors
+          group: 1
+        field_type_of_inst_dist_value:
+          id: field_type_of_inst_dist_value
+          table: node__field_type_of_inst_dist
+          field: field_type_of_inst_dist_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: list_field
+          operator: not
+          value:
+            approved_installer: approved_installer
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+        field_store_location_proximity:
+          id: field_store_location_proximity
+          table: node__field_store_location
+          field: field_store_location_proximity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: geolocation_filter_proximity
+          operator: '<'
+          value:
+            min: ''
+            max: ''
+            value: '30'
+            center: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_store_location_proximity_op
+            label: 'DISTANCE - MILES'
+            description: ''
+            use_operator: false
+            operator: field_store_location_proximity_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_store_location_proximity
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              administrator: '0'
+              anonymous: '0'
+              super_admin: '0'
+              agency_freelancer: '0'
+              content_manager: '0'
+              general_user: '0'
+              job_post_manager: '0'
+              distributor_installer_database_manager: '0'
+            min_placeholder: ''
+            max_placeholder: ''
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: 'Proximity (field_store_location)'
+            description: ''
+            identifier: field_store_location_proximity
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: '1'
+            default_group_multiple: {  }
+            group_items:
+              1:
+                title: default
+                operator: '<'
+                value:
+                  min: ''
+                  max: ''
+                  value: '30'
+          unit: mi
+          location_input:
+            'views_proximity_argument:field_store_location_proximity':
+              enable: true
+              weight: 0
+              settings:
+                location_plugin_id: views_proximity_argument
+              location_input_id: location_plugins
+            'fixed_value:fixed_value':
+              enable: false
+              weight: 0
+              settings:
+                location_settings:
+                  settings:
+                    latitude: ''
+                    longitude: ''
+                location_plugin_id: fixed_value
+              location_input_id: location_plugins
+            'ipstack:ipstack':
+              enable: false
+              weight: 0
+              settings:
+                location_settings:
+                  settings:
+                    access_key: ''
+                location_plugin_id: ipstack
+              location_input_id: location_plugins
+            coordinates:
+              enable: false
+              weight: 0
+              location_input_id: coordinates
+            client_location:
+              enable: false
+              weight: 0
+              settings:
+                hide_form: false
+                auto_submit: false
+              location_input_id: client_location
+            geocoder:
+              enable: false
+              weight: 0
+              settings:
+                plugin_id: google_geocoding_api
+                settings:
+                  label: Address
+                  description: 'Enter an address to be localized.'
+                  autocomplete_min_length: 1
+                  component_restrictions:
+                    route: ''
+                    country: ''
+                    administrative_area: ''
+                    locality: ''
+                    postal_code: ''
+                  boundary_restriction:
+                    south: ''
+                    west: ''
+                    north: ''
+                    east: ''
+                  region: ''
+                hide_form: true
+                auto_submit: false
+              location_input_id: geocoder
+        langcode:
+          id: langcode
+          table: node_field_data
+          field: langcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: langcode
+          plugin_id: language
+          operator: in
+          value:
+            '***LANGUAGE_language_interface***': '***LANGUAGE_language_interface***'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_is_a_showroom_value:
+          id: field_is_a_showroom_value
+          table: node__field_is_a_showroom
+          field: field_is_a_showroom_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: boolean
+          operator: '!='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      style:
+        type: cohesion_layout
+        options:
+          views_template: view_tpl_millboard_find_installe
+          master_template: mstr_tpl_master_template_boxed
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: true
+          replica: false
+          query_tags: {  }
+      defaults:
+        empty: false
+        query: false
+        title: false
+        use_ajax: false
+        pager: false
+        exposed_form: false
+        style: false
+        row: false
+        relationships: false
+        fields: false
+        sorts: false
+        filters: false
+        filter_groups: false
+        header: false
+        footer: false
+      relationships:
+        field_grading:
+          id: field_grading
+          table: node__field_grading
+          field: field_grading
+          relationship: none
+          group_type: group
+          admin_label: 'field_grading: Taxonomy term'
+          plugin_id: standard
+          required: false
+      use_ajax: true
+      display_description: ''
+      header:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '<p class="installer-header">1 - @end of @total locations</p>'
+      footer:
+        result:
+          id: result
+          table: views
+          field: result
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: result
+          empty: false
+          content: '<p class="nstaller-footer">You''ve viewed 1 - @end of @total locations</p>'
+      display_extenders:
+        metatag_display_extender:
+          metatags: {  }
+          tokenize: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_email_address'
+        - 'config:field.storage.node.field_grading'
+        - 'config:field.storage.node.field_store_address'
+        - 'config:field.storage.node.field_store_location'
+        - 'config:field.storage.node.field_telephone_number'
+        - 'config:field.storage.node.field_telephone_number_2'
+        - 'config:field.storage.node.field_type_of_inst_dist'

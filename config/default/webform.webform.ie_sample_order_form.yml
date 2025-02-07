@@ -56,6 +56,8 @@ elements: |-
     '#title': 'Telephone Number'
     '#required': true
     '#required_error': 'Telephone Number is required'
+    '#pattern': '^[+]?[0-9]+$'
+    '#pattern_error': 'Please insert a valid telephone number.'
   company:
     '#type': textfield
     '#title': 'Company Name'
@@ -64,70 +66,56 @@ elements: |-
     '#title': Address
     '#title_display': none
     '#loqate_api_key': loquate_key
-  this_project_is_to_be_installed_at_:
+  who_am_i:
     '#type': select
-    '#title': 'This project is to be installed at:'
+    '#title': 'Who am I?'
     '#options':
-      'My Home': 'My Home'
-      "My Client's Home": "My Client's Home"
-      'A Commercial Project': 'A Commercial Project'
+      Homeowner: Homeowner
+      'Architect / Designer': 'Architect / Designer'
+      'Distributor / Reseller': 'Distributor / Reseller'
+      Other: Other
     '#select2': true
-    '#required': true
-  project_type_name:
-    '#type': checkboxes
-    '#title': 'Project Type'
-    '#options':
-      'Millboard Decking': 'Millboard Decking'
-      'Envello Cladding': 'Envello Cladding'
-      Both: Both
-    '#required': true
-    '#attributes':
-      class:
-        - project-type-checkbox
-  project_size:
-    '#type': select
-    '#title': 'Project Size'
-    '#options':
-      'Less than 20 m2': 'Less than 20 m2'
-      'Between 21-100 m2': 'Between 21-100 m2'
-      'More than 101 m2': 'More than 101 m2'
-      'I don’t know': 'I don’t know'
-    '#select2': true
-    '#required': true
-    '#required_error': 'Project Size is required'
-  when_will_you_start_your_project_:
-    '#type': select
-    '#title': 'Project Start Time'
-    '#options':
-      'Within 1 Month': 'Within 1 Month'
-      '1-3 Months': '1-3 Months'
-      '3-6 Months': '3-6 Months'
-      '6+ Months': '6+ Months'
-    '#select2': true
-    '#required': true
-    '#required_error': 'When will you start your project is required'
-  millboard_is_committed_to_protecting_and_respecting_your_privacy:
-    '#type': label
-    '#title': 'Millboard is committed to protecting and respecting your privacy, and we’ll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below to say how you would like us to contact you:'
-  i_agree_to_receive_other_communications_from_millboard_:
-    '#type': checkbox
-    '#title': 'I agree to receive other communications from Millboard.'
     '#wrapper_attributes':
       class:
-        - sample-order-form-agreement-checkbox
-  in_order_to_provide_you_the_content_requested_we_need_to_store_a:
-    '#type': label
-    '#title': 'In order to provide you the content requested, we need to store and process your personal data. If you consent to us storing your personal data for this purpose, please tick the checkbox below.'
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  how_did_you_hear_about_us:
+    '#type': select
+    '#title': 'How did you hear about us?'
+    '#options':
+      Search-Engine: 'Search Engine'
+      social-media: 'Social Media'
+      online-advertisement: 'Online Advertisement'
+      friend-family-or-colleague: 'Friend, Family, or Colleague'
+      'event-trade-show-or-industry Recommendation': 'Event, Trade Show, or Industry Recommendation'
+      email-newsletter: 'Email Newsletter'
+      blog-article-or-nline-review: 'Blog, article ou avis en ligne'
+      retail-store-or-distributor: 'Retail Store or Distributor'
+      print-or-outdoor-advertisement: 'Print or Outdoor Advertisement'
+      other: Other
+    '#select2': true
+    '#wrapper_attributes':
+      class:
+        - form-type-textfield
+        - label-blurred-empty
+    '#label_attributes':
+      class:
+        - label-blurred-empty
+  would_you_like_a_millboard_lookbook:
+    '#type': checkbox
+    '#title': 'Would you like a Millboard Lookbook?'
   i_agree_to_allow_millboard_to_store_and_process_my_personal_data:
     '#type': checkbox
-    '#title': 'I agree to allow Millboard to store and process my personal data.'
-    '#required': true
+    '#title': 'I agree to allow Millboard to store and process my personal data & to receive other communications from Millboard*'
+    '#default_value': true
     '#wrapper_attributes':
-      class:
-        - sample-order-form-agreement-checkbox
-  you_can_unsubscribe_from_these_communications_at_any_time_for_mo:
-    '#type': label
-    '#title': 'You can unsubscribe from these communications at any time. For more information on how to unsubscribe, our privacy practices, and how we are committed to protecting and respecting your privacy, please review our Privacy Policy.'
+      style: 'display:none;'
+  legitimate_interest_customer:
+    '#type': checkbox
+    '#title': 'We process your data under legitimate interest to provide relevant content and communications. If you prefer not to receive marketing communications, please tick the box'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -341,22 +329,21 @@ handlers:
     conditions: {  }
     weight: 0
     settings:
-      form_guid: 166ded2a-88ca-436c-937f-134f7d8ab155
+      form_guid: 07b57346-5423-4e91-92bb-46ea3f4ca28d
       field_mapping:
         sample_names: sample_names_hubspot
         firstname: first_name
         lastname: last_name
-        email: email_address
-        phone: telephone_number
-        company: company
         address: 'address:address_line1'
         city: 'address:locality'
-        zip: 'address:postal_code'
         country: 'address:country_code'
-        this_project_is_to_be_installed_at: this_project_is_to_be_installed_at_
-        latest_project_category: project_type_name
-        project_start_time_dropdown: when_will_you_start_your_project_
-        project_size_dropdown: project_size
+        zip: 'address:postal_code'
+        email: email_address
+        phone: telephone_number
+        who_am_i_: who_am_i
+        how_did_you_hear_about_us___cloned_: how_did_you_hear_about_us
+        would_you_like_a_millboard_lookbook___cloned_: would_you_like_a_millboard_lookbook
+        opt_out_marketing: legitimate_interest_customer
       legal_consent:
         include: never
       subscriptions: null

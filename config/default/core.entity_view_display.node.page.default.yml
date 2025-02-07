@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_categories
     - field.field.node.page.field_layout_canvas
+    - field.field.node.page.field_metatag
     - field.field.node.page.field_page_image
+    - field.field.node.page.field_publish_date
     - field.field.node.page.field_tags
     - node.type.page
   module:
@@ -43,7 +45,7 @@ content:
       view_mode: large_super_landscape
       link: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   links:
     settings: {  }
@@ -53,7 +55,8 @@ content:
 hidden:
   body: true
   field_categories: true
-  field_layout_canvas: true
+  field_metatag: true
+  field_publish_date: true
   field_tags: true
   langcode: true
   search_api_excerpt: true
