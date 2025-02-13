@@ -73,18 +73,16 @@ class MillboardProductRedirectSubscriber implements EventSubscriberInterface {
     $path = $request->getPathInfo();
 
     $languageCode = $this->languageManager->getCurrentLanguage()->getId();
+
     // If the language code is "en-au" then redirect to home.
     if (preg_match("/en-au\/composite-/", $path)) {
-      // Remove leading slash if present
       $path = ltrim($path, '/');
-
-      // Split the path into parts
       $segments = explode('/', $path);
       $languageCode = $segments[0];
-      $newPath = '/' . $languageCode ;
+      $newPath = '/' . $languageCode;
       $this->redirect($event, $newPath);
       return;
-    } 
+    }
 
     // Extract language code and product alias from the path.
     if (preg_match('|^/([^/]+)/([^/]+)$|', $path, $matches)) {
@@ -144,7 +142,6 @@ class MillboardProductRedirectSubscriber implements EventSubscriberInterface {
 
       switch ($languageCode) {
         case "en-gb":
-        case "en-au":
         case "en-ie":
           $productVariation = $this->entityTypeManager->getStorage('commerce_product_variation')->loadByProperties([
             'sku' => $matches[4],
@@ -178,7 +175,6 @@ class MillboardProductRedirectSubscriber implements EventSubscriberInterface {
       $color_url_component = strtolower(str_replace(' ', '-', $color_name));
       switch ($languageCode) {
         case "en-gb":
-        case "en-au":
         case "en-ie":
           $newPath = '/' . $languageCode . '/composite-cladding-collections/' . $matches[2] . '/' . $color_url_component . '/' . $matches[4];
           $this->redirect($event, $newPath);
@@ -194,8 +190,8 @@ class MillboardProductRedirectSubscriber implements EventSubscriberInterface {
       $languageCode = $this->languageManager->getCurrentLanguage()->getId();
       switch ($languageCode) {
         case "en-gb":
-        case "en-au":
         case "en-ie":
+        case "en-au":
         case "en-us":
           $productVariation = $this->entityTypeManager->getStorage('commerce_product_variation')->loadByProperties([
             'sku' => $matches[4],

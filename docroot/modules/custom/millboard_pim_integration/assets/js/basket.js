@@ -76,7 +76,7 @@
               });
             });
           }
-        }, 1000);
+        }, 50);
 
         // Show/hide the basket overlay
         if(basket.length > 0) {
