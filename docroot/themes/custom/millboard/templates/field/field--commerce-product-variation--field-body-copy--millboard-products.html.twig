@@ -51,7 +51,7 @@
     </div>
   {% else %}
     {% for item in items %}
-      <div{{ attributes.addClass('product-intro') }}>{{ item.content }}</div>
+      <div{{ attributes.addClass('product-intro') }}>{{ item.content['#text']|raw }}</div>
     {% endfor %}
   {% endif %}
 {% else %}

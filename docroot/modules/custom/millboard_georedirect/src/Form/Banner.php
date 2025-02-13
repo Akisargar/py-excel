@@ -6,6 +6,7 @@ use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\RemoveCommand;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Language\LanguageManagerInterface;
 use Drupal\Core\Locale\CountryManagerInterface;
 use Drupal\Core\Path\PathValidatorInterface;
 use Drupal\Core\Routing\TrustedRedirectResponse;
@@ -61,6 +62,13 @@ class Banner extends FormBase {
   protected $aliasManager;
 
   /**
+   * The language manager service.
+   *
+   * @var \Drupal\Core\Language\LanguageManagerInterface
+   */
+  protected $languageManager;
+
+  /**
    * Constructor for the Banner form.
    *
    * @param \Drupal\millboard_georedirect\CookieManager $cookieManager
@@ -75,14 +83,17 @@ class Banner extends FormBase {
    *   The path validator.
    * @param \Drupal\path_alias\AliasManagerInterface $alias_manager
    *   The alias manager.
+   * @param \Drupal\Core\Language\LanguageManagerInterface $language_manager
+   *   The language manager.
    */
-  public function __construct($cookieManager, $regionLangManager, RequestStack $requestStack, CountryManagerInterface $countryManager, PathValidatorInterface $path_validator, AliasManagerInterface $alias_manager) {
+  public function __construct($cookieManager, $regionLangManager, RequestStack $requestStack, CountryManagerInterface $countryManager, PathValidatorInterface $path_validator, AliasManagerInterface $alias_manager, LanguageManagerInterface $language_manager) {
     $this->cookieManager = $cookieManager;
     $this->regionLangManager = $regionLangManager;
     $this->requestStack = $requestStack;
     $this->countryManager = $countryManager;
     $this->pathValidator = $path_validator;
     $this->aliasManager = $alias_manager;
+    $this->languageManager = $language_manager;
   }
 
   /**
@@ -101,7 +112,8 @@ class Banner extends FormBase {
           $container->get('request_stack'),
           $container->get('country_manager'),
           $container->get('path.validator'),
-          $container->get('path_alias.manager')
+          $container->get('path_alias.manager'),
+          $container->get('language_manager')
       );
   }
 
@@ -117,7 +129,7 @@ class Banner extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $region = $this->cookieManager->getCookie("region");
-    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $current_language = $this->languageManager->getCurrentLanguage()->getId();
 
     // Add wrapper to Banner.
     $form['localization-banner-wrapper'] = [
@@ -204,7 +216,7 @@ class Banner extends FormBase {
     // Get Region and country code.
     $region = $form_state->getValue('country');
     $countryCodes = $this->regionLangManager->getCountryCodes();
-    $current_language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $current_language = $this->languageManager->getCurrentLanguage()->getId();
 
     // Get current request from previous url.
     $previousUrl = $this->requestStack->getCurrentRequest()->server->get('HTTP_REFERER');

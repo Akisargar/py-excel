@@ -490,5 +490,21 @@
       }
     },
   };
+
+  Drupal.behaviors.webformField = {
+    attach: function (context, settings) {
+      context.addEventListener("click", function (event) {
+        const element = event.target.closest(".form-type-select");
+        if (element) {
+          const labelChild = element.querySelector("label.label-blurred-empty, label.label-blurred");
+          if (labelChild && labelChild.classList.contains("label-blurred-empty")) {
+            element.classList.remove("label-blurred-empty");
+            labelChild.classList.remove("label-blurred-empty");
+            labelChild.classList.add("label-blurred");
+          }
+        }
+      });
+    },
+  };
   
 })(jQuery, Drupal);

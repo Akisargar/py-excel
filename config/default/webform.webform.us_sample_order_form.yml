@@ -146,7 +146,6 @@ elements: |-
     '#type': textfield
     '#title': 'Zip/Postal Code'
     '#maxlength': 9
-    '#input_mask': '999999999'
     '#required': true
   country:
     '#type': select
@@ -432,17 +431,18 @@ elements: |-
     '#label_attributes':
       class:
         - label-blurred-empty
+    '#required': true
   how_did_you_hear_about_us:
     '#type': select
     '#title': 'How did you hear about us?'
     '#options':
       'Search Engine': 'Search Engine'
-      'Social Media': 'Social Media'
       'Online Advertisement': 'Online Advertisement'
-      'Friend, Family, or Colleague': ' Friend, Family, or Colleague'
-      'Event, Trade Show, or Industry Recommendation': 'Event, Trade Show, or Industry Recommendation'
+      'Social Media': 'Social Media'
+      'Friend, Family or Colleague': ' Friend, Family or Colleague'
+      'Event, Trade Show or Industry Recommendation': 'Event, Trade Show or Industry Recommendation'
       'Email Newsletter': 'Email Newsletter'
-      'Blog, Article, or Online Review': 'Blog, Article, or Online Review'
+      'Blog, Article or Online Review': 'Blog, Article or Online Review'
       'Retail Store or Distributor': 'Retail Store or Distributor'
       'Print or Outdoor Advertisement': 'Print or Outdoor Advertisement'
       Other: Other
@@ -691,9 +691,9 @@ handlers:
         lastname: last_name
         address: address_line_1
         city: city_town
-        county: 'address:country_code'
+        county: country
         country: country
-        zip: zip_postal_code
+        zip_code: zip_postal_code
         email: email_address
         phone: telephone_number
         who_am_i_: who_am_i
