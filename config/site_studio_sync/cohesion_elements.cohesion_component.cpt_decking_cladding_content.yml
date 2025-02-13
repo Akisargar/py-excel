@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - cohesion_custom_styles.cohesion_custom_style.31dc06a9
-    - cohesion_custom_styles.cohesion_custom_style.38ae32ea
+    - cohesion_custom_styles.cohesion_custom_style.4f692490
     - cohesion_custom_styles.cohesion_custom_style.5d7e1218
+    - cohesion_custom_styles.cohesion_custom_style.c09d5efe
     - cohesion_elements.cohesion_component_category.cpt_cat_basic_components
+    - cohesion_website_settings.cohesion_color.spring-wood
   content:
     - 'file:file:4cf01c21-a497-4a07-acee-be4d866712fa'
 label: 'Decking & Cladding Content'
@@ -21,77 +23,89 @@ json_values: |
               "status": {
                   "collapsed": false
               },
-              "iconColor": "layout",
-              "uuid": "57e0c2e8-5379-4279-8862-4ed0e1d4966d",
+              "uuid": "ef2e587c-0cf7-4239-a271-d456b08e9f1f",
               "parentUid": "root",
               "children": [
                   {
                       "type": "container",
-                      "uid": "column",
-                      "title": "Column",
+                      "uid": "container",
+                      "title": "Container",
                       "status": {
                           "collapsed": false
                       },
-                      "uuid": "941068d8-ee1e-4b9d-ab8b-afb59f74af5d",
+                      "iconColor": "layout",
+                      "uuid": "57e0c2e8-5379-4279-8862-4ed0e1d4966d",
                       "parentUid": "container",
                       "children": [
                           {
                               "type": "container",
-                              "uid": "container",
-                              "title": "Container",
+                              "uid": "column",
+                              "title": "Column",
                               "status": {
                                   "collapsed": false
                               },
-                              "uuid": "0065a77f-2e0a-4521-8b12-c22491f5131f",
-                              "parentUid": "column",
+                              "uuid": "941068d8-ee1e-4b9d-ab8b-afb59f74af5d",
+                              "parentUid": "container",
                               "children": [
                                   {
-                                      "type": "item",
-                                      "uid": "entity-browser",
-                                      "title": "Entity browser",
+                                      "type": "container",
+                                      "uid": "container",
+                                      "title": "Container",
                                       "status": {
-                                          "collapsed": true
+                                          "collapsed": false
                                       },
-                                      "uuid": "be7b0fc0-8f23-4c32-aaae-00302b510507",
-                                      "parentUid": "container",
-                                      "children": []
-                                  }
-                              ]
-                          },
-                          {
-                              "type": "container",
-                              "uid": "container",
-                              "title": "Container",
-                              "status": {
-                                  "collapsed": false
-                              },
-                              "iconColor": "layout",
-                              "uuid": "b1c206b1-0e48-4c9e-bee6-8a53943a23e4",
-                              "parentUid": "column",
-                              "children": [
-                                  {
-                                      "type": "item",
-                                      "uid": "entity-browser",
-                                      "title": "Entity browser",
-                                      "status": {
-                                          "collapsed": true
-                                      },
-                                      "iconColor": "drupal",
-                                      "uuid": "c169e4dc-8420-4b09-bf55-ab254bee3e6d",
-                                      "parentUid": "container",
-                                      "children": []
+                                      "uuid": "0065a77f-2e0a-4521-8b12-c22491f5131f",
+                                      "parentUid": "column",
+                                      "children": [
+                                          {
+                                              "type": "item",
+                                              "uid": "entity-browser",
+                                              "title": "Entity browser",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "uuid": "be7b0fc0-8f23-4c32-aaae-00302b510507",
+                                              "parentUid": "container",
+                                              "children": []
+                                          }
+                                      ]
                                   },
                                   {
                                       "type": "container",
-                                      "uid": "link",
-                                      "title": "Link",
+                                      "uid": "container",
+                                      "title": "Container",
                                       "status": {
-                                          "collapsed": true
+                                          "collapsed": false
                                       },
-                                      "iconColor": "content",
-                                      "uuid": "028dbbc9-2106-4d42-9b4a-926d1b24e0cc",
-                                      "parentUid": "container",
-                                      "children": []
+                                      "iconColor": "layout",
+                                      "uuid": "b1c206b1-0e48-4c9e-bee6-8a53943a23e4",
+                                      "parentUid": "column",
+                                      "children": [
+                                          {
+                                              "type": "item",
+                                              "uid": "entity-browser",
+                                              "title": "Entity browser",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "iconColor": "drupal",
+                                              "uuid": "c169e4dc-8420-4b09-bf55-ab254bee3e6d",
+                                              "parentUid": "container",
+                                              "children": []
+                                          },
+                                          {
+                                              "type": "container",
+                                              "uid": "link",
+                                              "title": "Link",
+                                              "status": {
+                                                  "collapsed": true
+                                              },
+                                              "iconColor": "content",
+                                              "uuid": "028dbbc9-2106-4d42-9b4a-926d1b24e0cc",
+                                              "parentUid": "container",
+                                              "children": []
+                                          }
+                                      ]
                                   }
                               ]
                           }
@@ -763,9 +777,134 @@ json_values: |
                   "items": [],
                   "title": "Default"
               }
+          },
+          "ef2e587c-0cf7-4239-a271-d456b08e9f1f": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "container-settings",
+                          "children": [
+                              {
+                                  "formKey": "container-width",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "container-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              },
+              "styles": {
+                  "formDefinition": [
+                      {
+                          "formKey": "background",
+                          "children": [
+                              {
+                                  "formKey": "background-color",
+                                  "activeFields": [
+                                      {
+                                          "name": "background-color",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "items": []
+              }
           }
       },
       "model": {
+          "ef2e587c-0cf7-4239-a271-d456b08e9f1f": {
+              "settings": {
+                  "width": "fluid",
+                  "title": "Container",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ]
+              },
+              "styles": {
+                  "settings": {
+                      "class": "Default"
+                  },
+                  "styles": {
+                      "xs": {
+                          "background-color": {
+                              "value": {
+                                  "link": true,
+                                  "value": {
+                                      "hex": "#f9f7f1",
+                                      "rgba": "rgba(249, 247, 241, 1)"
+                                  },
+                                  "uid": "spring-wood",
+                                  "name": "Spring Wood",
+                                  "class": ".coh-color-spring-wood",
+                                  "variable": "$coh-color-spring-wood",
+                                  "tags": [
+                                      "Millboard",
+                                      "Background",
+                                      "Light"
+                                  ],
+                                  "inuse": true,
+                                  "wysiwyg": true
+                              }
+                          }
+                      }
+                  }
+              }
+          },
           "57e0c2e8-5379-4279-8862-4ed0e1d4966d": {
               "settings": {
                   "width": "fluid",
@@ -773,6 +912,9 @@ json_values: |
                   "customStyle": [
                       {
                           "customStyle": "coh-style-decking-cladding-content-style"
+                      },
+                      {
+                          "customStyle": "coh-style-container-wide"
                       }
                   ]
               },
@@ -873,7 +1015,7 @@ json_values: |
                   "title": "Link",
                   "customStyle": [
                       {
-                          "customStyle": "coh-style-primary-button-with-background"
+                          "customStyle": "coh-style-primary-button-with-transparent-background"
                       }
                   ],
                   "type": "internal-page",
@@ -1077,7 +1219,8 @@ json_values: |
           "0065a77f-2e0a-4521-8b12-c22491f5131f": {},
           "b1c206b1-0e48-4c9e-bee6-8a53943a23e4": {},
           "941068d8-ee1e-4b9d-ab8b-afb59f74af5d": {},
-          "57e0c2e8-5379-4279-8862-4ed0e1d4966d": {}
+          "57e0c2e8-5379-4279-8862-4ed0e1d4966d": {},
+          "ef2e587c-0cf7-4239-a271-d456b08e9f1f": {}
       },
       "variableFields": {
           "e2e8308d-f30c-4cc0-af71-bdca82f3e598": [],
@@ -1103,13 +1246,14 @@ json_values: |
           "0065a77f-2e0a-4521-8b12-c22491f5131f": [],
           "b1c206b1-0e48-4c9e-bee6-8a53943a23e4": [],
           "941068d8-ee1e-4b9d-ab8b-afb59f74af5d": [],
-          "57e0c2e8-5379-4279-8862-4ed0e1d4966d": []
+          "57e0c2e8-5379-4279-8862-4ed0e1d4966d": [],
+          "ef2e587c-0cf7-4239-a271-d456b08e9f1f": []
       },
       "disabledNodes": [],
       "meta": {}
   }
 json_mapper: '{}'
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true

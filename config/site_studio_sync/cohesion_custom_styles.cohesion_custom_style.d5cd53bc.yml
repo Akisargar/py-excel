@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - cohesion_custom_styles.cohesion_custom_style.3c482d80
+    - cohesion_website_settings.cohesion_color.olive
 label: Carousel
 id: d5cd53bc
 json_values: |
@@ -177,6 +178,9 @@ json_values: |
                       },
                       "width": {
                           "value": "100%"
+                      },
+                      "max-height": {
+                          "value": "500px"
                       }
                   }
               },
@@ -205,9 +209,7 @@ json_values: |
                           "padding-top": {
                               "value": "24px"
                           },
-                          "padding-bottom": {
-                              "value": "24px"
-                          },
+                          "padding-bottom": {},
                           "padding-left": {
                               "value": "32px"
                           },
@@ -216,9 +218,7 @@ json_values: |
                           }
                       },
                       "margin": {
-                          "margin-bottom": {
-                              "value": "32px"
-                          }
+                          "margin-bottom": {}
                       }
                   },
                   "sm": {
@@ -264,8 +264,21 @@ json_values: |
                           },
                           "margin-right": {
                               "value": "8px"
+                          },
+                          "margin-top": {
+                              "value": "16px"
                           }
-                      }
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "overflow"
+                              },
+                              "customCss": {
+                                  "value": "hidden"
+                              }
+                          }
+                      ]
                   },
                   "sm": {
                       "margin": {
@@ -274,7 +287,15 @@ json_values: |
                           },
                           "margin-right": {
                               "value": "0"
+                          },
+                          "margin-top": {
+                              "value": "24px"
                           }
+                      }
+                  },
+                  "lg": {
+                      "margin": {
+                          "margin-top": {}
                       }
                   }
               },
@@ -289,9 +310,7 @@ json_values: |
                           "margin-top": {
                               "value": "32px"
                           },
-                          "margin-bottom": {
-                              "value": "32px"
-                          },
+                          "margin-bottom": {},
                           "margin-left": {
                               "value": "24px"
                           },
@@ -322,19 +341,14 @@ json_values: |
                           "margin-top": {
                               "value": "16px"
                           },
-                          "margin-bottom": {
-                              "value": "16px"
-                          },
+                          "margin-bottom": {},
                           "margin-left": {
                               "value": "16px"
                           },
                           "margin-right": {
-                              "value": "0"
+                              "value": "16px"
                           }
-                      },
-                      "custom-css": [
-                          {}
-                      ]
+                      }
                   }
               },
               "settings": {
@@ -356,6 +370,12 @@ json_values: |
                           },
                           "margin-right": {
                               "value": "24px"
+                          },
+                          "margin-bottom": {
+                              "value": "0"
+                          },
+                          "margin-top": {
+                              "value": "16px"
                           }
                       }
                   },
@@ -365,7 +385,13 @@ json_values: |
                               "value": "16px"
                           },
                           "margin-right": {
+                              "value": "16px"
+                          },
+                          "margin-bottom": {
                               "value": "0"
+                          },
+                          "margin-top": {
+                              "value": "16px"
                           }
                       }
                   }
@@ -381,9 +407,7 @@ json_values: |
                           "margin-top": {
                               "value": "16px"
                           },
-                          "margin-bottom": {
-                              "value": "16px"
-                          },
+                          "margin-bottom": {},
                           "margin-left": {
                               "value": "24px"
                           },
@@ -397,14 +421,12 @@ json_values: |
                           "margin-top": {
                               "value": "24px"
                           },
-                          "margin-bottom": {
-                              "value": "24px"
-                          },
+                          "margin-bottom": {},
                           "margin-left": {
                               "value": "16px"
                           },
                           "margin-right": {
-                              "value": "0"
+                              "value": "16px"
                           }
                       }
                   }
@@ -479,21 +501,30 @@ json_values: |
                       ]
                   },
                   "xl": {
+                      "max-width": {},
+                      "padding": {
+                          "padding-left": {},
+                          "padding-right": {},
+                          "padding-top": {},
+                          "padding-bottom": {}
+                      }
+                  },
+                  "md": {
                       "max-width": {
                           "value": "calc(100% - 272px)"
                       },
                       "padding": {
-                          "padding-left": {
-                              "value": "48px"
-                          },
-                          "padding-right": {
-                              "value": "0"
-                          },
                           "padding-top": {
                               "value": "12px"
                           },
                           "padding-bottom": {
                               "value": "12px"
+                          },
+                          "padding-left": {
+                              "value": "48px"
+                          },
+                          "padding-right": {
+                              "value": "0"
                           }
                       }
                   }
@@ -573,23 +604,25 @@ json_values: |
                   "lg": {
                       "position": {},
                       "display": {},
-                      "left": {}
+                      "left": {
+                          "value": "64px"
+                      }
                   },
                   "xl": {
-                      "display": {
-                          "value": "inline-block"
-                      },
-                      "position": {
-                          "value": "absolute"
-                      },
+                      "display": {},
+                      "position": {},
                       "left": {
                           "value": "104px"
                       },
                       "margin": {
-                          "margin-top": {
-                              "value": "24px"
-                          }
+                          "margin-top": {}
                       },
+                      "padding": {
+                          "padding-top": {},
+                          "padding-bottom": {}
+                      }
+                  },
+                  "md": {
                       "padding": {
                           "padding-top": {
                               "value": "12px"
@@ -597,6 +630,20 @@ json_values: |
                           "padding-bottom": {
                               "value": "12px"
                           }
+                      },
+                      "margin": {
+                          "margin-top": {
+                              "value": "24px"
+                          }
+                      },
+                      "position": {
+                          "value": "absolute"
+                      },
+                      "left": {
+                          "value": "24px"
+                      },
+                      "display": {
+                          "value": "inline-block"
                       }
                   }
               },
@@ -608,8 +655,9 @@ json_values: |
               "styles": {
                   "xs": {
                       "text-indent": {},
-                      "visibility": {
-                          "value": "hidden"
+                      "visibility": {},
+                      "font-size": {
+                          "value": "0"
                       }
                   }
               },
@@ -654,6 +702,40 @@ json_values: |
               },
               "settings": {
                   "element": ".slick-active[aria-hidden='false']"
+              }
+          },
+          "83526dbe-73a8-4fa6-a22f-d6fc76c4ce04": {
+              "styles": {
+                  "xs": {
+                      "outline-width": {
+                          "value": "2px"
+                      },
+                      "outline-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      },
+                      "outline-style": {
+                          "value": "solid"
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":focus-visible"
               }
           }
       },
@@ -975,6 +1057,13 @@ json_mapper: |
                                   ],
                                   "breakpoints": [
                                       {
+                                          "iconName": "laptop",
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
+                                      },
+                                      {
                                           "name": "xl"
                                       }
                                   ]
@@ -1009,7 +1098,7 @@ json_mapper: |
                                           "name": "xs"
                                       },
                                       {
-                                          "name": "xl"
+                                          "name": "md"
                                       }
                                   ]
                               },
@@ -1055,7 +1144,7 @@ json_mapper: |
                                   ],
                                   "breakpoints": [
                                       {
-                                          "name": "xl"
+                                          "name": "md"
                                       }
                                   ]
                               },
@@ -1101,7 +1190,7 @@ json_mapper: |
                                   ],
                                   "breakpoints": [
                                       {
-                                          "name": "xl"
+                                          "name": "md"
                                       }
                                   ]
                               }
@@ -1122,29 +1211,33 @@ json_mapper: |
                           ],
                           "formDefinition": [
                               {
-                                  "formKey": "layout",
+                                  "formKey": "font",
                                   "children": [
                                       {
-                                          "formKey": "display",
+                                          "formKey": "font-sizing-and-alignment",
                                           "activeFields": [
                                               {
-                                                  "name": "display",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "visibility",
+                                                  "name": "font-size",
                                                   "active": true
                                               },
                                               {
-                                                  "name": "overflow",
+                                                  "name": "line-height",
                                                   "active": false
                                               },
                                               {
-                                                  "name": "overflow-x",
+                                                  "name": "text-align",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "letter-spacing",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "word-spacing",
                                                   "active": false
                                               },
                                               {
-                                                  "name": "overflow-y",
+                                                  "name": "text-indent",
                                                   "active": false
                                               }
                                           ],
@@ -1158,8 +1251,54 @@ json_mapper: |
                               }
                           ],
                           "model": ".slick-arrow",
-                          "expanded": false,
+                          "expanded": true,
                           "items": [
+                              {
+                                  "title": ":focus-visible",
+                                  "type": "container",
+                                  "selectorType": "pseudo",
+                                  "subType": "custom-pseudo",
+                                  "uuid": "83526dbe-73a8-4fa6-a22f-d6fc76c4ce04",
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo"
+                                  ],
+                                  "formDefinition": [
+                                      {
+                                          "formKey": "border-and-outline",
+                                          "children": [
+                                              {
+                                                  "formKey": "outline-width-style-and-color",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "outline-width",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "outline-offset",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "outline-color",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "outline-style",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ],
+                                  "expanded": true,
+                                  "items": []
+                              },
                               {
                                   "title": ":before",
                                   "type": "container",
@@ -1212,7 +1351,7 @@ json_mapper: |
                           ]
                       }
                   ],
-                  "collapsed": true
+                  "collapsed": false
               },
               {
                   "title": ".coh-slider-container-inner",
@@ -1451,7 +1590,7 @@ json_mapper: |
                                                       },
                                                       {
                                                           "name": "max-height",
-                                                          "active": false
+                                                          "active": true
                                                       },
                                                       {
                                                           "name": "height",
@@ -1511,52 +1650,6 @@ json_mapper: |
                                   "formKey": "layout",
                                   "children": [
                                       {
-                                          "formKey": "margin",
-                                          "activeFields": [
-                                              {
-                                                  "name": "margin-equal",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-top",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-bottom",
-                                                  "active": true
-                                              },
-                                              {
-                                                  "name": "margin-left",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-right",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-block-start",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-block-end",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-inline-start",
-                                                  "active": false
-                                              },
-                                              {
-                                                  "name": "margin-inline-end",
-                                                  "active": false
-                                              }
-                                          ],
-                                          "breakpoints": [
-                                              {
-                                                  "name": "lg"
-                                              }
-                                          ]
-                                      },
-                                      {
                                           "formKey": "padding",
                                           "activeFields": [
                                               {
@@ -1569,7 +1662,7 @@ json_mapper: |
                                               },
                                               {
                                                   "name": "padding-bottom",
-                                                  "active": true
+                                                  "active": false
                                               },
                                               {
                                                   "name": "padding-left",
@@ -1630,7 +1723,7 @@ json_mapper: |
                               }
                           ],
                           "model": ".coh-column-right",
-                          "expanded": false,
+                          "expanded": true,
                           "items": [
                               {
                                   "title": ".coh-style-secondary-button",
@@ -1707,7 +1800,7 @@ json_mapper: |
                                                       },
                                                       {
                                                           "name": "margin-top",
-                                                          "active": false
+                                                          "active": true
                                                       },
                                                       {
                                                           "name": "margin-bottom",
@@ -1744,7 +1837,31 @@ json_mapper: |
                                                           "name": "xs"
                                                       },
                                                       {
+                                                          "iconName": "tablet",
                                                           "name": "sm"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      },
+                                      {
+                                          "formKey": "custom-css",
+                                          "children": [
+                                              {
+                                                  "formKey": "css-property-and-css-value",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "customCssProperty",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "customCss",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
                                                       }
                                                   ]
                                               }
@@ -1758,7 +1875,7 @@ json_mapper: |
                           ]
                       }
                   ],
-                  "collapsed": true
+                  "collapsed": false
               },
               {
                   "title": ".coh-carousel-inner-wrapper",
@@ -1942,7 +2059,7 @@ json_mapper: |
                                           "name": "xs"
                                       },
                                       {
-                                          "name": "xl"
+                                          "name": "md"
                                       }
                                   ]
                               },
@@ -1964,7 +2081,7 @@ json_mapper: |
                                   ],
                                   "breakpoints": [
                                       {
-                                          "name": "xl"
+                                          "name": "md"
                                       }
                                   ]
                               }
@@ -2260,7 +2377,7 @@ json_mapper: |
                           "items": []
                       }
                   ],
-                  "collapsed": true
+                  "collapsed": false
               },
               {
                   "title": ".small-subheading",
@@ -2289,7 +2406,7 @@ json_mapper: |
                                       },
                                       {
                                           "name": "margin-bottom",
-                                          "active": true
+                                          "active": false
                                       },
                                       {
                                           "name": "margin-left",
@@ -2384,29 +2501,6 @@ json_mapper: |
                                   ]
                               }
                           ]
-                      },
-                      {
-                          "formKey": "custom-css",
-                          "children": [
-                              {
-                                  "formKey": "css-property-and-css-value",
-                                  "activeFields": [
-                                      {
-                                          "name": "customCssProperty",
-                                          "active": true
-                                      },
-                                      {
-                                          "name": "customCss",
-                                          "active": true
-                                      }
-                                  ],
-                                  "breakpoints": [
-                                      {
-                                          "name": "sm"
-                                      }
-                                  ]
-                              }
-                          ]
                       }
                   ],
                   "model": ".small-subheading",
@@ -2436,11 +2530,11 @@ json_mapper: |
                                       },
                                       {
                                           "name": "margin-top",
-                                          "active": false
+                                          "active": true
                                       },
                                       {
                                           "name": "margin-bottom",
-                                          "active": false
+                                          "active": true
                                       },
                                       {
                                           "name": "margin-left",
@@ -2511,7 +2605,7 @@ json_mapper: |
                                       },
                                       {
                                           "name": "margin-bottom",
-                                          "active": true
+                                          "active": false
                                       },
                                       {
                                           "name": "margin-left",
@@ -2558,7 +2652,7 @@ json_mapper: |
           ]
       }
   }
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true

@@ -15,15 +15,27 @@ json_values: |
       "canvas": [
           {
               "type": "container",
-              "uid": "drupal-field",
-              "title": "Field",
+              "uid": "container",
+              "title": "Container",
               "status": {
-                  "collapsed": true
+                  "collapsed": false
               },
-              "parentIndex": 4,
-              "uuid": "bd79f064-9556-4964-b18f-8836d5c9b8a5",
+              "uuid": "11f2342b-1377-46b8-91dc-d2ff83e686fb",
               "parentUid": "root",
-              "children": []
+              "children": [
+                  {
+                      "type": "container",
+                      "uid": "drupal-field",
+                      "title": "Field",
+                      "status": {
+                          "collapsed": false
+                      },
+                      "parentIndex": 4,
+                      "uuid": "bd79f064-9556-4964-b18f-8836d5c9b8a5",
+                      "parentUid": "container",
+                      "children": []
+                  }
+              ]
           }
       ],
       "mapper": {
@@ -49,9 +61,116 @@ json_values: |
                   ],
                   "form": null
               }
+          },
+          "11f2342b-1377-46b8-91dc-d2ff83e686fb": {
+              "settings": {
+                  "formDefinition": [
+                      {
+                          "formKey": "container-settings",
+                          "children": [
+                              {
+                                  "formKey": "container-width",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-animation",
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ],
+                                  "activeFields": [
+                                      {
+                                          "name": "animationType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "common-link-modifier",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "modifierType",
+                                          "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "container-style",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "customStyle",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": [],
+                  "title": "Default"
+              },
+              "styles": {
+                  "formDefinition": [],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "items": []
+              },
+              "markup": {
+                  "formDefinition": [
+                      {
+                          "formKey": "tab-markup-classes-and-ids",
+                          "children": [
+                              {
+                                  "formKey": "tab-markup-add-classes",
+                                  "breakpoints": [],
+                                  "activeFields": [
+                                      {
+                                          "name": "classes",
+                                          "active": true
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "title": "Default",
+                  "selectorType": "topLevel",
+                  "form": null,
+                  "items": []
+              }
           }
       },
       "model": {
+          "11f2342b-1377-46b8-91dc-d2ff83e686fb": {
+              "settings": {
+                  "width": "fluid",
+                  "title": "Basic page Container Fluid",
+                  "customStyle": [
+                      {
+                          "customStyle": ""
+                      }
+                  ]
+              },
+              "styles": {
+                  "settings": {
+                      "class": "Default"
+                  }
+              },
+              "markup": {
+                  "classes": "page-basic-landing"
+              }
+          },
           "bd79f064-9556-4964-b18f-8836d5c9b8a5": {
               "settings": {
                   "title": "Field - Layout canvas",
@@ -70,17 +189,19 @@ json_values: |
           }
       },
       "previewModel": {
-          "bd79f064-9556-4964-b18f-8836d5c9b8a5": {}
+          "bd79f064-9556-4964-b18f-8836d5c9b8a5": {},
+          "11f2342b-1377-46b8-91dc-d2ff83e686fb": {}
       },
       "variableFields": {
-          "bd79f064-9556-4964-b18f-8836d5c9b8a5": []
+          "bd79f064-9556-4964-b18f-8836d5c9b8a5": [],
+          "11f2342b-1377-46b8-91dc-d2ff83e686fb": []
       },
       "meta": {
           "fieldHistory": []
       }
   }
 json_mapper: '{}'
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 modified: true
 selectable: true
 custom: false

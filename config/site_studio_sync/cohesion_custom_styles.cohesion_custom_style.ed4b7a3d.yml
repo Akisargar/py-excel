@@ -58,6 +58,21 @@ json_values: |
                               "value": "4"
                           }
                       }
+                  },
+                  "xs": {
+                      "content-icon": {
+                          "contentIcon": {
+                              "value": {
+                                  "iconName": 61747,
+                                  "fontFamily": "icomoon"
+                              }
+                          }
+                      },
+                      "margin": {
+                          "margin-right": {
+                              "value": "4"
+                          }
+                      }
                   }
               }
           },
@@ -78,7 +93,8 @@ json_values: |
               }
           }
       },
-      "variableFields": []
+      "variableFields": [],
+      "previewModel": {}
   }
 json_mapper: |
   {
@@ -160,7 +176,11 @@ json_mapper: |
                                   "formKey": "icon",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -179,7 +199,11 @@ json_mapper: |
                                   "formKey": "margin",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -229,7 +253,7 @@ json_mapper: |
           "form": null
       }
   }
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true

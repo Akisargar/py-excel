@@ -1,7 +1,9 @@
 uuid: fd7f9bb4-b78f-4db7-9bea-910f22f558b6
 langcode: en-gb
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - cohesion_website_settings.cohesion_color.olive
 label: 'Text Statements'
 id: 22059f50
 json_values: |
@@ -65,6 +67,240 @@ json_values: |
                           }
                       }
                   ]
+              }
+          },
+          "55cceb90-e556-4623-914b-ef5794d51bd4": {
+              "styles": {
+                  "xs": {
+                      "text-decoration": {
+                          "value": "none"
+                      },
+                      "transitions": [
+                          {
+                              "transitionProperty": {
+                                  "value": "custom"
+                              },
+                              "transitionCustomProperty": {
+                                  "value": "text-decoration"
+                              },
+                              "transitionDuration": {
+                                  "value": 300
+                              },
+                              "transitionTimingFunction": {
+                                  "value": "ease-in-out"
+                              }
+                          }
+                      ]
+                  }
+              },
+              "settings": {
+                  "pseudo": ":hover"
+              }
+          },
+          "55f49d71-82d4-413f-b5ac-057430a58bd0": {
+              "styles": {
+                  "xs": {
+                      "height": {
+                          "value": "2px"
+                      },
+                      "width": {
+                          "value": "100%"
+                      },
+                      "position": {
+                          "value": "absolute"
+                      },
+                      "top": {
+                          "value": "100%"
+                      },
+                      "left": {
+                          "value": "0"
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "content"
+                              },
+                              "customCss": {
+                                  "value": "' '"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "transform-origin"
+                              },
+                              "customCss": {
+                                  "value": "right"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "transform"
+                              },
+                              "customCss": {
+                                  "value": "scaleX(0)"
+                              }
+                          },
+                          {
+                              "customCss": {
+                                  "value": "transform .3s .3s"
+                              },
+                              "customCssProperty": {
+                                  "value": "transition"
+                              }
+                          }
+                      ],
+                      "background-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":before"
+              }
+          },
+          "08f62e6b-c1b3-4c2d-bf53-e960610c7792": {
+              "styles": {
+                  "xs": {
+                      "height": {
+                          "value": "2px"
+                      },
+                      "width": {
+                          "value": "100%"
+                      },
+                      "position": {
+                          "value": "absolute"
+                      },
+                      "top": {
+                          "value": "100%"
+                      },
+                      "left": {
+                          "value": "0"
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "content"
+                              },
+                              "customCss": {
+                                  "value": "' '"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "transform-origin"
+                              },
+                              "customCss": {
+                                  "value": "0 50%"
+                              }
+                          },
+                          {
+                              "customCss": {
+                                  "value": "scaleX(1)"
+                              },
+                              "customCssProperty": {
+                                  "value": "transform"
+                              }
+                          },
+                          {
+                              "customCss": {
+                                  "value": "transform .3s"
+                              },
+                              "customCssProperty": {
+                                  "value": "transition"
+                              }
+                          }
+                      ],
+                      "background-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "Millboard",
+                                  "Text"
+                              ],
+                              "inuse": true
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": ":after"
+              }
+          },
+          "4173daab-2312-4a84-926c-efd58f878612": {
+              "styles": {
+                  "xs": {
+                      "custom-css": [
+                          {
+                              "customCss": {
+                                  "value": "scaleX(1)"
+                              },
+                              "customCssProperty": {
+                                  "value": "transform"
+                              }
+                          },
+                          {
+                              "customCss": {
+                                  "value": "left"
+                              },
+                              "customCssProperty": {
+                                  "value": "transform-origin"
+                              }
+                          }
+                      ]
+                  }
+              },
+              "settings": {
+                  "pseudo": ":before"
+              }
+          },
+          "ec62ce20-b1cf-469d-9683-1c3086b90c6b": {
+              "styles": {
+                  "xs": {},
+                  "sm": {
+                      "custom-css": [
+                          {}
+                      ]
+                  }
+              },
+              "settings": {
+                  "pseudo": ":after"
+              }
+          },
+          "6a4e312e-6329-409f-a1cc-9b07f8bacbb0": {
+              "styles": {
+                  "xs": {
+                      "display": {
+                          "value": "inline-block"
+                      }
+                  }
+              },
+              "settings": {
+                  "element": "a"
               }
           }
       },
@@ -167,10 +403,61 @@ json_mapper: |
                   ]
               }
           ],
-          "items": []
+          "items": [
+              {
+                  "title": "a",
+                  "type": "container",
+                  "items": [],
+                  "selectorType": "child",
+                  "uuid": "6a4e312e-6329-409f-a1cc-9b07f8bacbb0",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [
+                      {
+                          "formKey": "layout",
+                          "children": [
+                              {
+                                  "formKey": "display",
+                                  "activeFields": [
+                                      {
+                                          "name": "display",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "visibility",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "overflow",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "overflow-x",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "overflow-y",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "model": "a"
+              }
+          ]
       }
   }
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true

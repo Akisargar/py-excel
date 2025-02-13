@@ -30,7 +30,7 @@ json_values: |
                   },
                   "flex-container": {
                       "justify-content": {
-                          "value": "space-between"
+                          "value": "center"
                       },
                       "align-content": {},
                       "align-items": {
@@ -39,7 +39,17 @@ json_values: |
                   },
                   "width": {
                       "value": "100%"
-                  }
+                  },
+                  "custom-css": [
+                      {
+                          "customCssProperty": {
+                              "value": "gap"
+                          },
+                          "customCss": {
+                              "value": "50px"
+                          }
+                      }
+                  ]
               },
               "sm": {
                   "custom-css": [
@@ -284,6 +294,9 @@ json_mapper: |
                               {
                                   "iconName": "desktop",
                                   "name": "lg"
+                              },
+                              {
+                                  "name": "xs"
                               }
                           ]
                       }
@@ -344,7 +357,7 @@ json_mapper: |
           ]
       }
   }
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true

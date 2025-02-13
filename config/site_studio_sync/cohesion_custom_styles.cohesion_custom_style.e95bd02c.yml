@@ -4,9 +4,12 @@ status: true
 dependencies:
   config:
     - cohesion_website_settings.cohesion_color.black
-    - cohesion_website_settings.cohesion_color.brand-color
     - cohesion_website_settings.cohesion_color.gray-10
+    - cohesion_website_settings.cohesion_color.gray-30
     - cohesion_website_settings.cohesion_color.gray-70
+    - cohesion_website_settings.cohesion_color.millboard-charcoal
+    - cohesion_website_settings.cohesion_color.millboard-davy-grey
+    - cohesion_website_settings.cohesion_color.olive
     - cohesion_website_settings.cohesion_color.white
     - cohesion_website_settings.cohesion_icon_library.icomoon
   enforced:
@@ -44,6 +47,35 @@ json_values: |
                   "xl": {
                       "display": {
                           "value": "flex"
+                      },
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      }
+                  },
+                  "xs": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      },
+                      "display": {
+                          "value": "flex"
+                      }
+                  },
+                  "md": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      }
+                  },
+                  "lg": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
                       }
                   }
               }
@@ -58,7 +90,7 @@ json_values: |
               "styles": {
                   "xl": {
                       "height": {
-                          "value": "56"
+                          "value": "48"
                       },
                       "width": {
                           "value": "100%"
@@ -75,9 +107,9 @@ json_values: |
                                   "rgba": "rgba(242, 242, 242, 1)"
                               },
                               "inuse": true,
-                              "wysiwyg": true,
+                              "wysiwyg": false,
                               "tags": [
-                                  "Light"
+                                  "light"
                               ]
                           }
                       },
@@ -86,7 +118,7 @@ json_values: |
                               "value": "24"
                           },
                           "padding-right": {
-                              "value": "24"
+                              "value": "0"
                           }
                       },
                       "border-style": {
@@ -104,10 +136,103 @@ json_values: |
                                   "rgba": "rgba(72, 72, 72, 1)"
                               },
                               "inuse": true,
-                              "wysiwyg": true,
+                              "wysiwyg": false,
                               "tags": [
-                                  "Dark"
+                                  "dark"
                               ]
+                          }
+                      },
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      }
+                  },
+                  "xs": {
+                      "background-image-settings": [
+                          {
+                              "backgroundLayerType": {
+                                  "value": "none"
+                              },
+                              "backgroundImageSize": {},
+                              "backgroundImageRepeat": {},
+                              "backgroundImageAttachment": {},
+                              "backgroundImagePositionX": {},
+                              "backgroundImagePositionY": {},
+                              "backgroundImageOrigin": {},
+                              "backgroundImageClip": {},
+                              "backgroundImage": {}
+                          }
+                      ],
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      },
+                      "background-color": {
+                          "value": {
+                              "link": true,
+                              "name": "Gray 10",
+                              "uid": "gray-10",
+                              "class": ".coh-color-gray-10",
+                              "variable": "$coh-color-gray-10",
+                              "value": {
+                                  "hex": "#f2f2f2",
+                                  "rgba": "rgba(242, 242, 242, 1)"
+                              },
+                              "inuse": true,
+                              "wysiwyg": false,
+                              "tags": [
+                                  "light"
+                              ]
+                          }
+                      },
+                      "height": {
+                          "value": "48"
+                      },
+                      "border-style": {
+                          "value": "none"
+                      },
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#575756",
+                                  "rgba": "rgba(87, 87, 86, 1)"
+                              },
+                              "uid": "millboard-davy-grey",
+                              "name": "Millboard Davy Grey",
+                              "class": ".coh-color-millboard-davy-grey",
+                              "variable": "$coh-color-millboard-davy-grey",
+                              "tags": [
+                                  "millboard",
+                                  "background",
+                                  "dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
+                          }
+                      },
+                      "width": {
+                          "value": "100%"
+                      },
+                      "padding": {
+                          "padding-left": {
+                              "value": "16"
+                          }
+                      }
+                  },
+                  "md": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      }
+                  },
+                  "lg": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
                           }
                       }
                   }
@@ -131,6 +256,42 @@ json_values: |
                           "padding-equal": {
                               "value": "0"
                           }
+                      },
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      }
+                  },
+                  "xs": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      },
+                      "padding": {
+                          "padding-equal": {
+                              "value": "0"
+                          }
+                      },
+                      "flex-item": {
+                          "flex-grow": {
+                              "value": "1"
+                          }
+                      }
+                  },
+                  "md": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
+                      }
+                  },
+                  "lg": {
+                      "margin": {
+                          "margin-bottom": {
+                              "value": "0px"
+                          }
                       }
                   }
               }
@@ -145,10 +306,10 @@ json_values: |
               "styles": {
                   "xl": {
                       "height": {
-                          "value": "56"
+                          "value": "0"
                       },
                       "width": {
-                          "value": "56"
+                          "value": "0"
                       },
                       "padding": {
                           "padding-equal": {
@@ -157,15 +318,20 @@ json_values: |
                       },
                       "background-color": {
                           "value": {
+                              "link": true,
                               "value": {
-                                  "hex": "transparent",
-                                  "rgba": "rgba(0, 0, 0, 0)"
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
                               },
-                              "name": "Transparent",
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
                               "wysiwyg": true,
-                              "uid": "dx8-transparent",
-                              "class": ".dx8-transparent",
-                              "variable": "$coh-dx8-transparent",
+                              "tags": [
+                                  "millboard",
+                                  "text"
+                              ],
                               "inuse": true
                           }
                       },
@@ -174,16 +340,20 @@ json_values: |
                       },
                       "color": {
                           "value": {
+                              "name": "White",
+                              "uid": "white",
                               "value": {
-                                  "hex": "transparent",
-                                  "rgba": "rgba(0, 0, 0, 0)"
+                                  "hex": "#ffffff",
+                                  "rgba": "rgba(255, 255, 255, 1)"
                               },
-                              "name": "Transparent",
-                              "wysiwyg": true,
-                              "uid": "dx8-transparent",
-                              "class": ".dx8-transparent",
-                              "variable": "$coh-dx8-transparent",
-                              "inuse": true
+                              "wysiwyg": false,
+                              "class": ".coh-color-white",
+                              "variable": "$coh-color-white",
+                              "inuse": true,
+                              "link": true,
+                              "tags": [
+                                  "light"
+                              ]
                           }
                       },
                       "custom-css": [
@@ -196,6 +366,69 @@ json_values: |
                               }
                           }
                       ]
+                  },
+                  "xs": {
+                      "background-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "millboard",
+                                  "text"
+                              ],
+                              "inuse": true
+                          }
+                      },
+                      "color": {
+                          "value": {
+                              "name": "White",
+                              "uid": "white",
+                              "value": {
+                                  "hex": "#ffffff",
+                                  "rgba": "rgba(255, 255, 255, 1)"
+                              },
+                              "wysiwyg": false,
+                              "class": ".coh-color-white",
+                              "variable": "$coh-color-white",
+                              "inuse": true,
+                              "link": true,
+                              "tags": [
+                                  "light"
+                              ]
+                          }
+                      },
+                      "border-style": {
+                          "value": "none"
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "z-index"
+                              },
+                              "customCss": {
+                                  "value": "1"
+                              }
+                          }
+                      ],
+                      "padding": {
+                          "padding-equal": {
+                              "value": ""
+                          }
+                      },
+                      "width": {
+                          "value": "0"
+                      },
+                      "height": {
+                          "value": "0"
+                      }
                   }
               }
           },
@@ -221,20 +454,16 @@ json_values: |
                       },
                       "background-color": {
                           "value": {
-                              "link": true,
-                              "name": "Gray 10",
-                              "uid": "gray-10",
-                              "class": ".coh-color-gray-10",
-                              "variable": "$coh-color-gray-10",
                               "value": {
-                                  "hex": "#f2f2f2",
-                                  "rgba": "rgba(242, 242, 242, 1)"
+                                  "hex": "transparent",
+                                  "rgba": "rgba(0, 0, 0, 0)"
                               },
-                              "inuse": true,
+                              "name": "Transparent",
                               "wysiwyg": true,
-                              "tags": [
-                                  "Light"
-                              ]
+                              "uid": "dx8-transparent",
+                              "class": ".dx8-transparent",
+                              "variable": "$ssa-dx8-transparent",
+                              "inuse": true
                           }
                       },
                       "transitions": [
@@ -255,6 +484,51 @@ json_values: |
                               "value": "0"
                           }
                       }
+                  },
+                  "xs": {
+                      "background-color": {
+                          "value": {
+                              "value": {
+                                  "hex": "transparent",
+                                  "rgba": "rgba(0, 0, 0, 0)"
+                              },
+                              "name": "Transparent",
+                              "wysiwyg": true,
+                              "uid": "dx8-transparent",
+                              "class": ".dx8-transparent",
+                              "variable": "$ssa-dx8-transparent",
+                              "inuse": true
+                          }
+                      },
+                      "padding": {
+                          "padding-equal": {
+                              "value": "0"
+                          }
+                      },
+                      "display": {
+                          "value": "flex"
+                      },
+                      "flex-container": {
+                          "justify-content": {
+                              "value": "center"
+                          },
+                          "align-items": {
+                              "value": "center"
+                          }
+                      },
+                      "transitions": [
+                          {
+                              "transitionProperty": {
+                                  "value": "background-color"
+                              },
+                              "transitionDuration": {
+                                  "value": 300
+                              },
+                              "transitionTimingFunction": {
+                                  "value": "ease"
+                              }
+                          }
+                      ]
                   }
               }
           },
@@ -291,13 +565,57 @@ json_values: |
                               "uid": "black",
                               "class": ".coh-color-black",
                               "variable": "$coh-color-black",
-                              "wysiwyg": true,
+                              "wysiwyg": false,
                               "inuse": true,
                               "link": true,
                               "tags": [
-                                  "Dark"
+                                  "dark"
                               ]
                           }
+                      },
+                      "transitions": [
+                          {
+                              "transitionProperty": {
+                                  "value": "color"
+                              },
+                              "transitionDuration": {
+                                  "value": 300
+                              },
+                              "transitionTimingFunction": {
+                                  "value": "ease"
+                              }
+                          }
+                      ]
+                  },
+                  "xs": {
+                      "content-icon": {
+                          "contentIcon": {
+                              "value": {
+                                  "iconName": 61442,
+                                  "fontFamily": "icomoon"
+                              }
+                          }
+                      },
+                      "color": {
+                          "value": {
+                              "value": {
+                                  "hex": "#000000",
+                                  "rgba": "rgba(0, 0, 0, 1)"
+                              },
+                              "name": "Black",
+                              "uid": "black",
+                              "class": ".coh-color-black",
+                              "variable": "$coh-color-black",
+                              "wysiwyg": false,
+                              "inuse": true,
+                              "link": true,
+                              "tags": [
+                                  "dark"
+                              ]
+                          }
+                      },
+                      "position": {
+                          "value": "absolute"
                       },
                       "transitions": [
                           {
@@ -324,24 +642,7 @@ json_values: |
               },
               "styles": {
                   "xl": {
-                      "background-color": {
-                          "value": {
-                              "link": true,
-                              "name": "Brand color",
-                              "uid": "brand-color",
-                              "class": ".coh-color-brand-color",
-                              "variable": "$coh-color-brand-color",
-                              "value": {
-                                  "hex": "#26a3dd",
-                                  "rgba": "rgba(38, 163, 221, 1)"
-                              },
-                              "inuse": true,
-                              "wysiwyg": true,
-                              "tags": [
-                                  "Color"
-                              ]
-                          }
-                      }
+                      "background-color": {}
                   }
               }
           },
@@ -362,13 +663,43 @@ json_values: |
                                   "hex": "#ffffff",
                                   "rgba": "rgba(255, 255, 255, 1)"
                               },
-                              "wysiwyg": true,
+                              "wysiwyg": false,
                               "class": ".coh-color-white",
                               "variable": "$coh-color-white",
                               "inuse": true,
                               "link": true,
                               "tags": [
-                                  "Light"
+                                  "light"
+                              ]
+                          }
+                      },
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "cursor"
+                              },
+                              "customCss": {
+                                  "value": "pointer"
+                              }
+                          }
+                      ]
+                  },
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "name": "Gray 10",
+                              "uid": "gray-10",
+                              "class": ".coh-color-gray-10",
+                              "variable": "$coh-color-gray-10",
+                              "value": {
+                                  "hex": "#f2f2f2",
+                                  "rgba": "rgba(242, 242, 242, 1)"
+                              },
+                              "inuse": true,
+                              "wysiwyg": false,
+                              "tags": [
+                                  "light"
                               ]
                           }
                       },
@@ -396,30 +727,84 @@ json_values: |
                   "xl": {
                       "background-color": {
                           "value": {
+                              "link": true,
                               "value": {
-                                  "hex": "transparent",
-                                  "rgba": "rgba(0, 0, 0, 0)"
+                                  "hex": "#414042",
+                                  "rgba": "rgba(65, 64, 66, 1)"
                               },
-                              "name": "Transparent",
-                              "wysiwyg": true,
-                              "uid": "dx8-transparent",
-                              "class": ".dx8-transparent",
-                              "variable": "$coh-dx8-transparent",
-                              "inuse": true
+                              "uid": "millboard-charcoal",
+                              "name": "Millboard Charcoal",
+                              "class": ".coh-color-millboard-charcoal",
+                              "variable": "$coh-color-millboard-charcoal",
+                              "tags": [
+                                  "millboard",
+                                  "text",
+                                  "background",
+                                  "dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
                           }
                       },
                       "color": {
                           "value": {
+                              "link": true,
                               "value": {
-                                  "hex": "transparent",
-                                  "rgba": "rgba(0, 0, 0, 0)"
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
                               },
-                              "name": "Transparent",
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
                               "wysiwyg": true,
-                              "uid": "dx8-transparent",
-                              "class": ".dx8-transparent",
-                              "variable": "$coh-dx8-transparent",
+                              "tags": [
+                                  "millboard",
+                                  "text"
+                              ],
                               "inuse": true
+                          }
+                      }
+                  },
+                  "xs": {
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#799513",
+                                  "rgba": "rgba(121, 149, 19, 1)"
+                              },
+                              "uid": "olive",
+                              "name": "Olive",
+                              "class": ".coh-color-olive",
+                              "variable": "$coh-color-olive",
+                              "wysiwyg": true,
+                              "tags": [
+                                  "millboard",
+                                  "text"
+                              ],
+                              "inuse": true
+                          }
+                      },
+                      "background-color": {
+                          "value": {
+                              "link": true,
+                              "value": {
+                                  "hex": "#414042",
+                                  "rgba": "rgba(65, 64, 66, 1)"
+                              },
+                              "uid": "millboard-charcoal",
+                              "name": "Millboard Charcoal",
+                              "class": ".coh-color-millboard-charcoal",
+                              "variable": "$coh-color-millboard-charcoal",
+                              "tags": [
+                                  "millboard",
+                                  "text",
+                                  "background",
+                                  "dark"
+                              ],
+                              "inuse": true,
+                              "wysiwyg": true
                           }
                       }
                   }
@@ -432,10 +817,61 @@ json_values: |
                           "value": "16"
                       }
                   }
+              },
+              "xs": {
+                  "margin": {
+                      "margin-bottom": {
+                          "value": "20"
+                      }
+                  }
+              }
+          },
+          "46edd658-e972-41a5-8f17-ce23bb236246": {
+              "styles": {},
+              "settings": {
+                  "element": "input"
+              }
+          },
+          "6fc4793e-b311-4670-9a9b-91bca8ae5ef4": {
+              "styles": {
+                  "xs": {
+                      "custom-css": [
+                          {
+                              "customCssProperty": {
+                                  "value": "opacity"
+                              },
+                              "customCss": {
+                                  "value": "1"
+                              }
+                          }
+                      ],
+                      "color": {
+                          "value": {
+                              "link": true,
+                              "name": "Gray 30",
+                              "uid": "gray-30",
+                              "class": ".coh-color-gray-30",
+                              "variable": "$coh-color-gray-30",
+                              "value": {
+                                  "hex": "#bfbfbf",
+                                  "rgba": "rgba(191, 191, 191, 1)"
+                              },
+                              "inuse": true,
+                              "wysiwyg": false,
+                              "tags": [
+                                  "light"
+                              ]
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "pseudo": "#edit-keywords--2::placeholder"
               }
           }
       },
-      "variableFields": []
+      "variableFields": [],
+      "previewModel": {}
   }
 json_mapper: |
   {
@@ -450,7 +886,11 @@ json_mapper: |
                           "formKey": "margin",
                           "breakpoints": [
                               {
+                                  "iconName": "television",
                                   "name": "xl"
+                              },
+                              {
+                                  "name": "xs"
                               }
                           ],
                           "activeFields": [
@@ -517,7 +957,11 @@ json_mapper: |
                                   "formKey": "display",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -540,6 +984,62 @@ json_mapper: |
                                       {
                                           "name": "overflow-y",
                                           "active": false
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
+                                      },
+                                      {
+                                          "name": "xl"
                                       }
                                   ]
                               }
@@ -568,7 +1068,11 @@ json_mapper: |
                                   "formKey": "flex-item",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -602,7 +1106,11 @@ json_mapper: |
                                   "formKey": "padding",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -641,6 +1149,62 @@ json_mapper: |
                                       {
                                           "name": "padding-inline-end",
                                           "active": false
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
+                                      },
+                                      {
+                                          "name": "xl"
                                       }
                                   ]
                               }
@@ -669,7 +1233,11 @@ json_mapper: |
                                   "formKey": "width",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -691,7 +1259,11 @@ json_mapper: |
                                   "formKey": "height",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -713,7 +1285,11 @@ json_mapper: |
                                   "formKey": "padding",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -754,6 +1330,62 @@ json_mapper: |
                                           "active": false
                                       }
                                   ]
+                              },
+                              {
+                                  "formKey": "margin",
+                                  "activeFields": [
+                                      {
+                                          "name": "margin-equal",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-top",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-bottom",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-left",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-right",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "margin-block-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-block-end",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-start",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "margin-inline-end",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "md"
+                                      },
+                                      {
+                                          "name": "lg"
+                                      },
+                                      {
+                                          "name": "xl"
+                                      }
+                                  ]
                               }
                           ]
                       },
@@ -764,7 +1396,11 @@ json_mapper: |
                                   "formKey": "border-style",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -815,13 +1451,87 @@ json_mapper: |
                                   "formKey": "background-color",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
                                       {
                                           "name": "background-color",
                                           "active": true
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "background-image-and-gradient",
+                                  "activeFields": [
+                                      {
+                                          "name": "backgroundLayerType",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImage",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageGradient",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "imageStyle",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageSize",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageWidth",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageHeight",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageRepeat",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageAttachment",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionX",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionXOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionY",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImagePositionYOffset",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "backgroundImageOrigin",
+                                          "active": false
+                                      },
+                                      {
+                                          "name": "backgroundImageClip",
+                                          "active": false
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
                                       }
                                   ]
                               }
@@ -834,7 +1544,11 @@ json_mapper: |
                                   "formKey": "font-and-color",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -879,7 +1593,7 @@ json_mapper: |
                                           "formKey": "icon",
                                           "breakpoints": [
                                               {
-                                                  "name": "xl"
+                                                  "name": "xs"
                                               }
                                           ],
                                           "activeFields": [
@@ -898,7 +1612,11 @@ json_mapper: |
                                           "formKey": "position",
                                           "breakpoints": [
                                               {
+                                                  "iconName": "television",
                                                   "name": "xl"
+                                              },
+                                              {
+                                                  "name": "xs"
                                               }
                                           ],
                                           "activeFields": [
@@ -971,7 +1689,11 @@ json_mapper: |
                                           "formKey": "font-and-color",
                                           "breakpoints": [
                                               {
+                                                  "iconName": "television",
                                                   "name": "xl"
+                                              },
+                                              {
+                                                  "name": "xs"
                                               }
                                           ],
                                           "activeFields": [
@@ -998,14 +1720,14 @@ json_mapper: |
                                           "formKey": "transition",
                                           "breakpoints": [
                                               {
+                                                  "iconName": "television",
                                                   "name": "xl"
+                                              },
+                                              {
+                                                  "name": "xs"
                                               }
                                           ],
                                           "activeFields": [
-                                              {
-                                                  "name": "transitions",
-                                                  "active": true
-                                              },
                                               {
                                                   "name": "transitionProperty",
                                                   "active": true
@@ -1055,7 +1777,11 @@ json_mapper: |
                                                   "formKey": "font-and-color",
                                                   "breakpoints": [
                                                       {
+                                                          "iconName": "television",
                                                           "name": "xl"
+                                                      },
+                                                      {
+                                                          "name": "xs"
                                                       }
                                                   ],
                                                   "activeFields": [
@@ -1082,14 +1808,14 @@ json_mapper: |
                                                   "formKey": "css-property-and-css-value",
                                                   "breakpoints": [
                                                       {
+                                                          "iconName": "television",
                                                           "name": "xl"
+                                                      },
+                                                      {
+                                                          "name": "xs"
                                                       }
                                                   ],
                                                   "activeFields": [
-                                                      {
-                                                          "name": "custom-css",
-                                                          "active": true
-                                                      },
                                                       {
                                                           "name": "customCssProperty",
                                                           "active": true
@@ -1126,7 +1852,7 @@ json_mapper: |
                                           "activeFields": [
                                               {
                                                   "name": "background-color",
-                                                  "active": true
+                                                  "active": false
                                               }
                                           ]
                                       }
@@ -1152,7 +1878,11 @@ json_mapper: |
                                   "formKey": "display",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1182,7 +1912,11 @@ json_mapper: |
                                   "formKey": "flex-container",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1224,7 +1958,11 @@ json_mapper: |
                                   "formKey": "padding",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1265,6 +2003,28 @@ json_mapper: |
                                           "active": false
                                       }
                                   ]
+                              },
+                              {
+                                  "formKey": "width",
+                                  "activeFields": [
+                                      {
+                                          "name": "min-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "max-width",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "width",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "name": "xs"
+                                      }
+                                  ]
                               }
                           ]
                       },
@@ -1275,7 +2035,11 @@ json_mapper: |
                                   "formKey": "background-color",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1294,14 +2058,14 @@ json_mapper: |
                                   "formKey": "transition",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
-                                      {
-                                          "name": "transitions",
-                                          "active": true
-                                      },
                                       {
                                           "name": "transitionProperty",
                                           "active": true
@@ -1351,7 +2115,11 @@ json_mapper: |
                                           "formKey": "background-color",
                                           "breakpoints": [
                                               {
+                                                  "iconName": "television",
                                                   "name": "xl"
+                                              },
+                                              {
+                                                  "name": "xs"
                                               }
                                           ],
                                           "activeFields": [
@@ -1370,7 +2138,11 @@ json_mapper: |
                                           "formKey": "font-and-color",
                                           "breakpoints": [
                                               {
+                                                  "iconName": "television",
                                                   "name": "xl"
+                                              },
+                                              {
+                                                  "name": "xs"
                                               }
                                           ],
                                           "activeFields": [
@@ -1410,7 +2182,11 @@ json_mapper: |
                                   "formKey": "width",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1432,7 +2208,11 @@ json_mapper: |
                                   "formKey": "height",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1454,7 +2234,11 @@ json_mapper: |
                                   "formKey": "padding",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1505,7 +2289,11 @@ json_mapper: |
                                   "formKey": "background-color",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1524,7 +2312,11 @@ json_mapper: |
                                   "formKey": "border-style",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1575,7 +2367,11 @@ json_mapper: |
                                   "formKey": "font-and-color",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
@@ -1602,14 +2398,14 @@ json_mapper: |
                                   "formKey": "css-property-and-css-value",
                                   "breakpoints": [
                                       {
+                                          "iconName": "television",
                                           "name": "xl"
+                                      },
+                                      {
+                                          "name": "xs"
                                       }
                                   ],
                                   "activeFields": [
-                                      {
-                                          "name": "custom-css",
-                                          "active": true
-                                      },
                                       {
                                           "name": "customCssProperty",
                                           "active": true
@@ -1623,12 +2419,91 @@ json_mapper: |
                           ]
                       }
                   ]
+              },
+              {
+                  "title": "input",
+                  "type": "container",
+                  "items": [
+                      {
+                          "title": "#edit-keywords--2::placeholder",
+                          "type": "container",
+                          "items": [],
+                          "selectorType": "pseudo",
+                          "subType": "custom-pseudo",
+                          "uuid": "6fc4793e-b311-4670-9a9b-91bca8ae5ef4",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "font",
+                                  "children": [
+                                      {
+                                          "formKey": "font-and-color",
+                                          "activeFields": [
+                                              {
+                                                  "name": "font-family",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "font-weight",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "color",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "custom-css",
+                                  "children": [
+                                      {
+                                          "formKey": "css-property-and-css-value",
+                                          "activeFields": [
+                                              {
+                                                  "name": "customCssProperty",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "customCss",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      }
+                  ],
+                  "selectorType": "child",
+                  "uuid": "46edd658-e972-41a5-8f17-ce23bb236246",
+                  "allowedTypes": [
+                      "child",
+                      "pseudo",
+                      "modifier"
+                  ],
+                  "formDefinition": [],
+                  "model": "input"
               }
           ],
           "form": null
       }
   }
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true

@@ -24,12 +24,8 @@ json_values: |
           "styles": {
               "xs": {
                   "padding": {
-                      "padding-left": {
-                          "value": "8px"
-                      },
-                      "padding-right": {
-                          "value": "8px"
-                      },
+                      "padding-left": {},
+                      "padding-right": {},
                       "padding-top": {},
                       "padding-bottom": {}
                   },
@@ -77,12 +73,8 @@ json_values: |
               },
               "xl": {
                   "padding": {
-                      "padding-left": {
-                          "value": "24px"
-                      },
-                      "padding-right": {
-                          "value": "24px"
-                      }
+                      "padding-left": {},
+                      "padding-right": {}
                   }
               },
               "md": {}
@@ -205,6 +197,53 @@ json_values: |
               "settings": {
                   "element": ".coh-style-container-wrapper"
               }
+          },
+          "0bbb527f-5d7f-4341-bd04-d40d988aa000": {
+              "styles": {
+                  "xs": {
+                      "padding": {
+                          "padding-left": {
+                              "value": "0"
+                          },
+                          "padding-right": {
+                              "value": "0"
+                          }
+                      }
+                  },
+                  "sm": {
+                      "custom-css": [
+                          {
+                              "customCss": {
+                                  "value": "clamp(16px, -3.5782rem + 9.538vw, 80px)"
+                              },
+                              "customCssProperty": {
+                                  "value": "padding-left"
+                              }
+                          },
+                          {
+                              "customCssProperty": {
+                                  "value": "padding-right"
+                              },
+                              "customCss": {
+                                  "value": "clamp(16px, -3.5782rem + 9.538vw, 80px)"
+                              }
+                          }
+                      ]
+                  },
+                  "lg": {
+                      "padding": {
+                          "padding-left": {
+                              "value": "80px"
+                          },
+                          "padding-right": {
+                              "value": "80px"
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "class": ".secondary-row"
+              }
           }
       },
       "variableFields": [],
@@ -288,56 +327,6 @@ json_mapper: |
                           "breakpoints": [
                               {
                                   "name": "xs"
-                              }
-                          ]
-                      },
-                      {
-                          "formKey": "padding",
-                          "activeFields": [
-                              {
-                                  "name": "padding-equal",
-                                  "active": false
-                              },
-                              {
-                                  "name": "padding-top",
-                                  "active": false
-                              },
-                              {
-                                  "name": "padding-bottom",
-                                  "active": false
-                              },
-                              {
-                                  "name": "padding-left",
-                                  "active": true
-                              },
-                              {
-                                  "name": "padding-right",
-                                  "active": true
-                              },
-                              {
-                                  "name": "padding-block-start",
-                                  "active": false
-                              },
-                              {
-                                  "name": "padding-block-end",
-                                  "active": false
-                              },
-                              {
-                                  "name": "padding-inline-start",
-                                  "active": false
-                              },
-                              {
-                                  "name": "padding-inline-end",
-                                  "active": false
-                              }
-                          ],
-                          "breakpoints": [
-                              {
-                                  "iconName": "mobile",
-                                  "name": "xs"
-                              },
-                              {
-                                  "name": "xl"
                               }
                           ]
                       }
@@ -600,14 +589,107 @@ json_mapper: |
                           "combinator": " > ",
                           "expanded": true,
                           "items": []
+                      },
+                      {
+                          "title": ".secondary-row",
+                          "type": "container",
+                          "selectorType": "modifier",
+                          "uuid": "0bbb527f-5d7f-4341-bd04-d40d988aa000",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "layout",
+                                  "children": [
+                                      {
+                                          "formKey": "padding",
+                                          "activeFields": [
+                                              {
+                                                  "name": "padding-equal",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "padding-top",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "padding-bottom",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "padding-left",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "padding-right",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "padding-block-start",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "padding-block-end",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "padding-inline-start",
+                                                  "active": false
+                                              },
+                                              {
+                                                  "name": "padding-inline-end",
+                                                  "active": false
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "iconName": "mobile",
+                                                  "name": "xs"
+                                              },
+                                              {
+                                                  "name": "lg"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              },
+                              {
+                                  "formKey": "custom-css",
+                                  "children": [
+                                      {
+                                          "formKey": "css-property-and-css-value",
+                                          "activeFields": [
+                                              {
+                                                  "name": "customCssProperty",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "customCss",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "sm"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "expanded": true,
+                          "items": []
                       }
                   ],
-                  "collapsed": false
+                  "collapsed": true
               }
           ]
       }
   }
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true
@@ -616,4 +698,4 @@ custom_style_type: layout
 available_in_wysiwyg: false
 available_in_wysiwyg_inline: false
 parent: null
-weight: 0
+weight: 54

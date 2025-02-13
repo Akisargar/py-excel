@@ -1821,6 +1821,23 @@ json_values: |
               "settings": {
                   "class": ".carbon"
               }
+          },
+          "d589b79d-595e-447a-920a-d60056192c12": {
+              "styles": {
+                  "xs": {
+                      "background-color": {
+                          "value": {
+                              "value": {
+                                  "hex": "#44464e",
+                                  "rgba": "rgba(68, 70, 78, 1)"
+                              }
+                          }
+                      }
+                  }
+              },
+              "settings": {
+                  "class": ".anthracite"
+              }
           }
       },
       "previewModel": {},
@@ -3994,6 +4011,39 @@ json_mapper: |
                           "items": [],
                           "selectorType": "modifier",
                           "uuid": "9ed51112-2ce4-4780-a09f-48453e93f36b",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "background",
+                                  "children": [
+                                      {
+                                          "formKey": "background-color",
+                                          "activeFields": [
+                                              {
+                                                  "name": "background-color",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ]
+                      },
+                      {
+                          "title": ".anthracite",
+                          "type": "container",
+                          "items": [],
+                          "selectorType": "modifier",
+                          "uuid": "d589b79d-595e-447a-920a-d60056192c12",
                           "allowedTypes": [
                               "child",
                               "pseudo",

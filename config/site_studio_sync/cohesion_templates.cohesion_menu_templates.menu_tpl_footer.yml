@@ -770,6 +770,73 @@ json_values: |
                                                                           ]
                                                                       }
                                                                   ]
+                                                              },
+                                                              {
+                                                                  "formKey": "custom-css",
+                                                                  "children": [
+                                                                      {
+                                                                          "formKey": "css-property-and-css-value",
+                                                                          "activeFields": [
+                                                                              {
+                                                                                  "name": "customCssProperty",
+                                                                                  "active": true
+                                                                              },
+                                                                              {
+                                                                                  "name": "customCss",
+                                                                                  "active": true
+                                                                              }
+                                                                          ],
+                                                                          "breakpoints": [
+                                                                              {
+                                                                                  "name": "xs"
+                                                                              }
+                                                                          ]
+                                                                      },
+                                                                      {
+                                                                          "formKey": "css-property-and-css-value",
+                                                                          "activeFields": [],
+                                                                          "breakpoints": [
+                                                                              {
+                                                                                  "name": "xs"
+                                                                              }
+                                                                          ]
+                                                                      }
+                                                                  ]
+                                                              },
+                                                              {
+                                                                  "formKey": "layout",
+                                                                  "children": [
+                                                                      {
+                                                                          "formKey": "display",
+                                                                          "activeFields": [
+                                                                              {
+                                                                                  "name": "display",
+                                                                                  "active": true
+                                                                              },
+                                                                              {
+                                                                                  "name": "visibility",
+                                                                                  "active": true
+                                                                              },
+                                                                              {
+                                                                                  "name": "overflow",
+                                                                                  "active": true
+                                                                              },
+                                                                              {
+                                                                                  "name": "overflow-x",
+                                                                                  "active": true
+                                                                              },
+                                                                              {
+                                                                                  "name": "overflow-y",
+                                                                                  "active": true
+                                                                              }
+                                                                          ],
+                                                                          "breakpoints": [
+                                                                              {
+                                                                                  "name": "xs"
+                                                                              }
+                                                                          ]
+                                                                      }
+                                                                  ]
                                                               }
                                                           ],
                                                           "expanded": true,
@@ -922,6 +989,33 @@ json_values: |
                                   ]
                               }
                           ]
+                      },
+                      {
+                          "formKey": "custom-css",
+                          "children": [
+                              {
+                                  "formKey": "css-property-and-css-value",
+                                  "activeFields": [
+                                      {
+                                          "name": "customCssProperty",
+                                          "active": true
+                                      },
+                                      {
+                                          "name": "customCss",
+                                          "active": true
+                                      }
+                                  ],
+                                  "breakpoints": [
+                                      {
+                                          "iconName": "mobile",
+                                          "name": "xs"
+                                      },
+                                      {
+                                          "name": "sm"
+                                      }
+                                  ]
+                              }
+                          ]
                       }
                   ],
                   "title": "Default",
@@ -940,7 +1034,7 @@ json_values: |
                           "formDefinition": [],
                           "items": [
                               {
-                                  "title": "> a",
+                                  "title": "> a, span",
                                   "type": "container",
                                   "selectorType": "child",
                                   "uuid": "93a878ec-701f-4b0d-bc63-bc6dc15575ed",
@@ -950,7 +1044,7 @@ json_values: |
                                       "modifier"
                                   ],
                                   "formDefinition": [],
-                                  "model": "> a",
+                                  "model": "> a, span",
                                   "expanded": true,
                                   "items": [
                                       {
@@ -1077,7 +1171,7 @@ json_values: |
                                   "expanded": true,
                                   "items": [
                                       {
-                                          "title": "> a",
+                                          "title": "> a, span",
                                           "type": "container",
                                           "selectorType": "child",
                                           "uuid": "955f602e-ec27-4648-8149-0c9029b09d28",
@@ -1087,7 +1181,7 @@ json_values: |
                                               "modifier"
                                           ],
                                           "formDefinition": [],
-                                          "model": "> a",
+                                          "model": "> a, span",
                                           "expanded": true,
                                           "items": [
                                               {
@@ -1181,7 +1275,7 @@ json_values: |
                                   "expanded": true,
                                   "items": [
                                       {
-                                          "title": "> a",
+                                          "title": "> a, span",
                                           "type": "container",
                                           "selectorType": "child",
                                           "uuid": "41721e8f-2731-4d0b-900e-484951ff68c1",
@@ -1191,7 +1285,7 @@ json_values: |
                                               "modifier"
                                           ],
                                           "formDefinition": [],
-                                          "model": "> a",
+                                          "model": "> a, span",
                                           "expanded": true,
                                           "items": [
                                               {
@@ -1355,6 +1449,85 @@ json_values: |
                                   ]
                               }
                           ]
+                      },
+                      {
+                          "title": "span",
+                          "type": "container",
+                          "items": [
+                              {
+                                  "title": ":active",
+                                  "type": "container",
+                                  "items": [],
+                                  "selectorType": "pseudo",
+                                  "uuid": "526852ff-7bb6-4390-907b-6bd6f4c03551",
+                                  "allowedTypes": [
+                                      "child",
+                                      "pseudo"
+                                  ],
+                                  "formDefinition": [
+                                      {
+                                          "formKey": "font",
+                                          "children": [
+                                              {
+                                                  "formKey": "font-and-color",
+                                                  "activeFields": [
+                                                      {
+                                                          "name": "font-family",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "font-weight",
+                                                          "active": true
+                                                      },
+                                                      {
+                                                          "name": "color",
+                                                          "active": true
+                                                      }
+                                                  ],
+                                                  "breakpoints": [
+                                                      {
+                                                          "name": "xs"
+                                                      }
+                                                  ]
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "selectorType": "child",
+                          "uuid": "42a61923-0d4a-4d82-a003-41f3bee0db69",
+                          "allowedTypes": [
+                              "child",
+                              "pseudo",
+                              "modifier"
+                          ],
+                          "formDefinition": [
+                              {
+                                  "formKey": "custom-css",
+                                  "children": [
+                                      {
+                                          "formKey": "css-property-and-css-value",
+                                          "activeFields": [
+                                              {
+                                                  "name": "customCssProperty",
+                                                  "active": true
+                                              },
+                                              {
+                                                  "name": "customCss",
+                                                  "active": true
+                                              }
+                                          ],
+                                          "breakpoints": [
+                                              {
+                                                  "name": "xs"
+                                              }
+                                          ]
+                                      }
+                                  ]
+                              }
+                          ],
+                          "model": "span"
                       }
                   ]
               },
@@ -1673,7 +1846,7 @@ json_values: |
                           "type": "container",
                           "items": [],
                           "selectorType": "pseudo",
-                          "uuid": "1571df2c-37c2-47f3-9bf9-5fc5dc6724f7",
+                          "uuid": "72303604-67f3-41b9-b1a4-6ad4cdf0d5cb",
                           "allowedTypes": [
                               "child",
                               "pseudo"
@@ -2491,10 +2664,10 @@ json_values: |
                           "border-color": {},
                           "padding": {
                               "padding-left": {
-                                  "value": "24px"
+                                  "value": "0"
                               },
                               "padding-right": {
-                                  "value": "24px"
+                                  "value": "0"
                               }
                           }
                       },
@@ -2570,7 +2743,7 @@ json_values: |
                                       "value": "column-gap"
                                   },
                                   "customCss": {
-                                      "value": "clamp(24px, -8.6598rem + 21.1663vw, 98px)"
+                                      "value": "clamp(24px, -8.6598rem + 20.1663vw, 86px)"
                                   }
                               }
                           ]
@@ -2667,6 +2840,19 @@ json_values: |
                                       "variable": "$ssa-dx8-transparent",
                                       "inuse": true
                                   }
+                              },
+                              "custom-css": [
+                                  {
+                                      "customCssProperty": {
+                                          "value": "content"
+                                      },
+                                      "customCss": {
+                                          "value": "' ' !important"
+                                      }
+                                  }
+                              ],
+                              "display": {
+                                  "value": "none"
                               }
                           }
                       },
@@ -2777,7 +2963,11 @@ json_values: |
                           "display": {},
                           "flex-container": {
                               "flex-direction": {}
-                          }
+                          },
+                          "background-color": {},
+                          "custom-css": [
+                              {}
+                          ]
                       },
                       "sm": {
                           "font-size": {},
@@ -2795,7 +2985,17 @@ json_values: |
                           },
                           "max-width": {
                               "value": "224px"
-                          }
+                          },
+                          "custom-css": [
+                              {
+                                  "customCssProperty": {
+                                      "value": ""
+                                  },
+                                  "customCss": {
+                                      "value": ""
+                                  }
+                              }
+                          ]
                       },
                       "md": {
                           "display": {},
@@ -2899,7 +3099,7 @@ json_values: |
                           }
                       },
                       "settings": {
-                          "element": "> a"
+                          "element": "> a, span"
                       }
                   },
                   "7592a7b1-b1e4-4b38-98c5-a72f0a70cb4c": {
@@ -2947,7 +3147,7 @@ json_values: |
                   "955f602e-ec27-4648-8149-0c9029b09d28": {
                       "styles": {},
                       "settings": {
-                          "element": "> a"
+                          "element": "> a, span"
                       }
                   },
                   "a557f117-f1af-4fde-bef0-c0015c9407f6": {
@@ -2973,7 +3173,7 @@ json_values: |
                   "41721e8f-2731-4d0b-900e-484951ff68c1": {
                       "styles": {},
                       "settings": {
-                          "element": "> a"
+                          "element": "> a, span"
                       }
                   },
                   "9f9b0380-95dc-41da-8771-7bb6ef6d52f9": {
@@ -3030,6 +3230,56 @@ json_values: |
                       },
                       "settings": {
                           "pseudo": ":last-child"
+                      }
+                  },
+                  "42a61923-0d4a-4d82-a003-41f3bee0db69": {
+                      "styles": {
+                          "xs": {
+                              "color": {},
+                              "custom-css": [
+                                  {
+                                      "customCssProperty": {
+                                          "value": "cursor"
+                                      },
+                                      "customCss": {
+                                          "value": "default"
+                                      }
+                                  }
+                              ]
+                          }
+                      },
+                      "settings": {
+                          "element": "span"
+                      }
+                  },
+                  "526852ff-7bb6-4390-907b-6bd6f4c03551": {
+                      "styles": {
+                          "xs": {
+                              "color": {
+                                  "value": {
+                                      "link": true,
+                                      "value": {
+                                          "hex": "#414042",
+                                          "rgba": "rgba(65, 64, 66, 1)"
+                                      },
+                                      "uid": "millboard-charcoal",
+                                      "name": "Millboard Charcoal",
+                                      "class": ".coh-color-millboard-charcoal",
+                                      "variable": "$coh-color-millboard-charcoal",
+                                      "tags": [
+                                          "Millboard",
+                                          "Text",
+                                          "Background",
+                                          "Dark"
+                                      ],
+                                      "inuse": true,
+                                      "wysiwyg": true
+                                  }
+                              }
+                          }
+                      },
+                      "settings": {
+                          "pseudo": ":active"
                       }
                   }
               },
@@ -3097,9 +3347,10 @@ json_values: |
                                   "tags": [
                                       "Millboard",
                                       "Text",
-                                      "Background"
+                                      "Background",
+                                      "Dark"
                                   ],
-                                  "inuse": false,
+                                  "inuse": true,
                                   "wysiwyg": true
                               }
                           },
@@ -3156,7 +3407,7 @@ json_values: |
                           }
                       }
                   },
-                  "1571df2c-37c2-47f3-9bf9-5fc5dc6724f7": {
+                  "72303604-67f3-41b9-b1a4-6ad4cdf0d5cb": {
                       "styles": {
                           "xs": {
                               "color": {
@@ -3175,7 +3426,37 @@ json_values: |
                                           "Millboard",
                                           "Text"
                                       ],
-                                      "inuse": false
+                                      "inuse": true
+                                  }
+                              }
+                          }
+                      },
+                      "settings": {
+                          "pseudo": ":active"
+                      }
+                  },
+                  "803d1928-6b3d-45e9-9b4e-fa5fa6a7490e": {
+                      "styles": {
+                          "xs": {
+                              "color": {
+                                  "value": {
+                                      "link": true,
+                                      "value": {
+                                          "hex": "#414042",
+                                          "rgba": "rgba(65, 64, 66, 1)"
+                                      },
+                                      "uid": "millboard-charcoal",
+                                      "name": "Millboard Charcoal",
+                                      "class": ".coh-color-millboard-charcoal",
+                                      "variable": "$coh-color-millboard-charcoal",
+                                      "tags": [
+                                          "Millboard",
+                                          "Text",
+                                          "Background",
+                                          "Dark"
+                                      ],
+                                      "inuse": true,
+                                      "wysiwyg": true
                                   }
                               }
                           }
@@ -3383,6 +3664,26 @@ json_values: |
                               "margin-bottom": {}
                           }
                       }
+                  },
+                  "38aa31a4-92c7-4d09-af9d-f1bc3e0be8fb": {
+                      "styles": {
+                          "xs": {
+                              "content-image": {},
+                              "custom-css": [
+                                  {
+                                      "customCssProperty": {
+                                          "value": "content"
+                                      },
+                                      "customCss": {
+                                          "value": "' '"
+                                      }
+                                  }
+                              ]
+                          }
+                      },
+                      "settings": {
+                          "pseudo": ":after"
+                      }
                   }
               }
           },
@@ -3518,7 +3819,7 @@ json_values: |
       }
   }
 json_mapper: '{}'
-last_entity_update: entityupdate_0042
+last_entity_update: entityupdate_0043
 locked: false
 modified: true
 selectable: true
