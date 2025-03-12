@@ -84,6 +84,24 @@
   {{ product_variation.field_product_usp }}
   {{ product_variation.field_pdp_inspiration }}
   {{ product_variation.group_specifications }}
+  {% if product_documents %}
+    <div class="coh-container coh-ce-cpt_document_download-a7e435d3">
+      <h3 class="coh-heading coh-style-heading-3-size">{{ 'DOWNLOADS'|t }}</h3>
+      <ul class="coh-list-container coh-unordered-list coh-style-grid-layout coh-ce-cpt_document_download-wrapper">
+        {% for document in product_documents %}
+          <li class="coh-list-item document-download-entity coh-ce-cpt_document_download-item">
+            <div class="coh-container download-icon">
+              <img class="coh-image coh-image-responsive-xs" src="/sites/default/files/Outline_0.png" title="Download Image" alt="Download Image">
+            </div>
+            <div class="coh-container document-download-entity document-download-link">
+              <p class="coh-inline-element coh-download-link-text coh-style-text-with-underline-">{{ document.file_name['#markup'] }}</p>
+              <a target="_blank" class="downloadable-media" href="{{ document.file_url['#markup'] }}" download="">{{ document.file_name['#markup'] }}</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
   {{ product_variation.field_content_builder }}
 </div>
 {{ attach_library('millboard_pim_integration/millboard_pim_integration.basket') }}

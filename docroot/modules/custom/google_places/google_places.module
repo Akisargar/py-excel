@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * Description of the file's purpose.
+ *
+ * @author Your Name
+ * @date YYYY-MM-DD
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function google_places_page_attachments(array &$attachments) {
+  $config = \Drupal::config('google_places.settings');
+  $api_key = $config->get('api_key');
+
+  if (!empty($api_key)) {
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => [
+          'src' => "https://maps.googleapis.com/maps/api/js?key={$api_key}&libraries=places",
+        ],
+      ],
+      'google_maps_api',
+    ];
+
+    $attachments['#attached']['library'][] = 'google_places/google_places_autocomplete';
+  }
+}

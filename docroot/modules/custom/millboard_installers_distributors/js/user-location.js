@@ -5,7 +5,41 @@
     let cardElementsWrapper = $('.find-installers-results-wrapper');
     let cardElements = $('.find-installers-results-wrapper .installer-distributor-card, .view-id-showrooms_listing .installer-distributor-card');
     let map;
-    
+    let url = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
+    let proximity = params.get('proximity');
+    let ajaxComplete = 0;
+
+    $(window).on('load', function() {
+      ajaxComplete = 0;
+      if (proximity) {
+        let match = proximity.match(/<=([\d.]+)mi/);
+        let dist = $('.form-item-field-store-location-proximity input');
+
+        if (match && match[1] !== dist.val()) {
+            $('.form-item-field-store-location-proximity input').val(match[1]).trigger('change');
+        }
+      }
+    });
+
+    $(document).ajaxComplete(function(){
+      ajaxComplete++;
+      if(ajaxComplete > 1) {
+        let dist = $('.form-item-field-store-location-proximity input').val(); 
+        if (proximity) {
+          let updatedProximity = proximity.replace(/<=\d+mi/, `<=${dist}mi`);
+          params.set('proximity', updatedProximity);
+          window.history.replaceState({}, '', `${url.pathname}?${params.toString()}`);
+        }
+        if($('.find-installers-results-wrapper .installer-distributor-card').length) {
+          if(!$(".geolocation-map-wrapper").length) {
+            window.location.reload();
+            dist.val(dist);
+          }
+        }
+      }
+    });
+
     // Highlight map marker on distributor listing item click.
     $(".view-id-millboard_find_installers .installer-distributor-card, .view-id-showrooms_listing .installer-distributor-card").click(function () {
       let cardIndex = $(this).attr('ind');
